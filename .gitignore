@@ -29,11 +29,8 @@ build/
 *.key
 *.pem
 
-# Data / models (uncomment or add paths you use)
-# *.pt
-# *.pth
-# data/
-# models/
+# Data (large files)
+data/UMLS.csv
 
 # OS
 Thumbs.db
