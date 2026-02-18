@@ -1,45 +1,24 @@
-"""
-Test Stage a: PDF → extract_text → raw_text
-
-This stage extracts raw text from PDF guidelines.
-Can be tested locally without GPU.
-"""
-
 import sys
 import json
 from pathlib import Path
-# Add parent to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
-
 from pipeline.data import PDFGuidelines, RawText
 from pipeline.transforms import ExtractText
-
-
 def test_stage_a():
-    """Test Stage a: PDF text extraction."""
     print("=" * 70)
     print("STAGE a: PDF -> extract_text -> raw_text")
     print("=" * 70)
-    
-    # Configuration
     pdf_dir = "data"
     skip_first_pages = 3
     skip_last_pages = 5
     output_file = Path(__file__).parent / "outputs" / "stage_a_raw_text.json"
-    
-    # Ensure output directory exists
     output_file.parent.mkdir(exist_ok=True)
-    
-    # Step 1: Load PDF guidelines
     print("\n[1] Loading PDF guidelines...")
     pdf_guidelines = PDFGuidelines(pdf_dir=pdf_dir)
     print(f"    Found: {pdf_guidelines}")
-    
     if pdf_guidelines.count() == 0:
         print("    ERROR: No PDF files found!")
         return None
-    
-    # Step 2: Initialize extractor
     print(f"\n[2] Initializing text extractor...")
     print(f"    Skip first pages: {skip_first_pages}")
     print(f"    Skip last pages: {skip_last_pages}")
@@ -47,13 +26,9 @@ def test_stage_a():
         skip_first_pages=skip_first_pages,
         skip_last_pages=skip_last_pages
     )
-    
-    # Step 3: Extract text
     print("\n[3] Extracting text from PDFs...")
     raw_text = extractor.transform(pdf_guidelines)
     print(f"    Result: {raw_text}")
-    
-    # Step 4: Save output
     print(f"\n[4] Saving output to {output_file}...")
     output_data = {
         "metadata": {
@@ -65,22 +40,16 @@ def test_stage_a():
         },
         "pages": raw_text.get_pages()
     }
-    
     output_file.write_text(
         json.dumps(output_data, indent=2, ensure_ascii=False),
         encoding="utf-8"
     )
-    
-    # Step 5: Summary
     print("\n" + "=" * 70)
     print("STAGE a COMPLETE")
     print("=" * 70)
     print(f"  Total pages extracted: {raw_text.count()}")
     print(f"  Output file: {output_file}")
     print("=" * 70)
-
     return raw_text
-
-
 if __name__ == "__main__":
     test_stage_a()
