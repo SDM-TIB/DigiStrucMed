@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "total_statements": 22,
+    "confidence_threshold": 0.0,
+    "validation_method": "LLM"
+  },
+  "validated_statements": [
+    {
+      "subject": "Stage B",
+      "predicate": "includes",
+      "object": "1 of the following",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Stage B: Pre-HFNo symptoms or signs of heart failure and evidence of 1 of the following: Structural heart disease* Reduced left or right ventricular systolic function Reduced ejection fraction, reduced strainVentricular hypertrophyChamber enlargementWall motion abnormalitiesValvular heart disease Evidence for increased filling pressures* By invasive hemodynamic measurementsBy noninvasive imaging suggesting elevated filling pressures (eg, Doppler echocardiography) Patients with risk factors andIncreased levels of BNPs* orPersistently elevated cardiac troponinin the absence of competing diagnoses resulting in such biomarker elevations such as acute coronary syndrome, chronic kidney disease, pulmonary embolus, or myopericarditis Stage C: Symptomatic HFStructural heart disease with current or previous symptoms of heart failure.",
+      "chunk_id": 67,
+      "source_pdf": null,
+      "page": 10
+    },
+    {
+      "subject": "US",
+      "predicate": "had",
+      "object": "1.2 million heart failure hospitalizations",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "heart",
+          "label": "Disease_disorder",
+          "id": "C0018787"
+        },
+        {
+          "text": "heart failure",
+          "label": "Disease_disorder",
+          "id": "C0018801"
+        }
+      ],
+      "source_text": "In 2017, there were 1.2 million heart failure hospitalizations in the United States among 924 000 patients with heart failure.4 This represents a 26% increase in heart failure hospitalizations and number of patients hospitalized with heart failure. Although the absolute number of patients with heart failure has partly grown as a result of the increasing number of older adults, the incidence of heart failure has decreased.5 Among US Medicare beneficiaries, heart failure incidence declined from 36 cases per 1000 beneficiaries in 2011 to 27 cases per 1000 beneficiaries in 2014 and remained stable through 2016.5 Divergent trends in the incidence of heart failure have been observed for those with heart failure with reduced ejection fraction (decreasing incidence) and heart failure with preserved ejection fraction (increasing incidence).",
+      "chunk_id": 88,
+      "source_pdf": null,
+      "page": 13
+    },
+    {
+      "subject": "chest x-ray",
+      "predicate": "is",
+      "object": "a useful initial diagnostic test",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "The chest x-ray is a useful initial diagnostic test for the evaluation of patients presenting with signs and symptoms of heart failure because it assesses cardiomegaly, pulmonary venous congestion, and interstitial or alveolar edema and may reveal alternative causes, cardiopulmonary or otherwise, of the patient’s symptoms. Apart from congestion, other findings on chest x-ray are associated with heart failure only in the context of clinical presentation.",
+      "chunk_id": 174,
+      "source_pdf": null,
+      "page": 20
+    },
+    {
+      "subject": "oxygen uptake",
+      "predicate": "is",
+      "object": "a measure",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "It provides analysis of gas exchange and yields measures of oxygen uptake (oxygen consumption/oxygen uptake), carbon dioxide output, and ventilation. These measures can be integrated with standard exercise testing variables, such as heart rate, blood pressure, electrocardiographic findings, and symptoms to provide insights into the physiologic mechanisms underlying a patient’s dyspnea.",
+      "chunk_id": 227,
+      "source_pdf": null,
+      "page": 24
+    },
+    {
+      "subject": "patients with HF3",
+      "predicate": "should receive",
+      "object": "a personalized diet plan",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "diet",
+          "label": "Diagnostic_procedure",
+          "id": "C0012155"
+        }
+      ],
+      "source_text": "However, there are promising pilot trials of sodium restriction in patients with HF3, The AHA currently recommends a reduction of sodium intake to <2300 mg/d for general cardiovascular health promotion12; however, there are no trials to support this level of restriction in patients with heart failure.13 Sodium restriction can result in poor dietary quality with inadequate macronutrient and micronutrient intake.14 Nutritional inadequacies have been associated with clinical instability,15–17 but routine supplementation of oral iron,18 thiamine,19 zinc,20 vitamin D,21 or multivitamins has not proven beneficial.22 The DASH diet is rich in antioxidants and potassium, can achieve sodium restriction without compromising nutritional adequacy when accompanied by dietary counseling,5 and may be associated",
+      "chunk_id": 299,
+      "source_pdf": null,
+      "page": 31
+    },
+    {
+      "subject": "angiotensin receptor-neprilysin inhibitors",
+      "predicate": "were numerically higher",
+      "object": "rates of angioedema",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "angioedema",
+          "label": "Disease_disorder",
+          "id": "C0002994"
+        }
+      ],
+      "source_text": "Because of these observations, angioedema was an exclusion criterion in the first large trial assessing angiotensin receptor-neprilysin inhibitor therapy in patients with hypertension35 and then in the large trial that showed clinical benefit of angiotensin receptor-neprilysin inhibitor therapy in heart failure with reduced ejection fraction.1 The rates of angioedema were numerically higher in patients treated with angiotensin receptor-neprilysin inhibitor than in patients treated with angiotensin-converting enzyme inhibitors in PARADIGM-heart failure, although this difference did not reach significance.1 angiotensin receptor-neprilysin inhibitor therapy should not be administered in patients with a history of angioedema because of the concern that it will increase the risk of a recurrence of angioedema.",
+      "chunk_id": 364,
+      "source_pdf": null,
+      "page": 36
+    },
+    {
+      "subject": "death",
+      "predicate": "was reduced from",
+      "object": "29%",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Death from any cause was reduced from 29% with placebo to 27% in those treated with omega-3 PUFA.2 The outcome of death or admission to hospital for a cardiovascular event was also significantly reduced. The REDUCE-IT trial randomized patients with established CVD or diabetes with risk factors to 2 g of icosapent ethyl (a highly purified EPA) twice daily or placebo and showed a reduced risk for the composite of cardiovascular death, nonfatal myocardial infarction, nonfatal stroke, coronary revascularization, or unstable angina.3 In reported studies, omega-3 PUFA therapy has been well tolerated.",
+      "chunk_id": 421,
+      "source_pdf": null,
+      "page": 40
+    },
+    {
+      "subject": "COX, nonselective inhibitors (NSAIDs)",
+      "predicate": "exacerbates",
+      "object": "heart failure",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "heart failure",
+          "label": "Disease_disorder",
+          "id": "C0018801"
+        }
+      ],
+      "source_text": "Associated With heart failure Exacerbates Underlying Myocardial Dysfunction Magnitude of heart failure Induction or Precipitation LOE for heart failure Induction or PrecipitationPossible Mechanism(s) Onset Causes Direct Myocardial Toxicity Drug or Therapeutic Class COX, nonselective inhibitors (NSAIDs) XMajorB Prostaglandin inhibition leading to sodium and water retention, increased systemic vascular resistance, and blunted response to diuretics Immediate COX, selective inhibitors (COX-2 inhibitors) XMajorB ThiazolidinedionesX MajorA Possible calcium channel blockadeIntermediate SaxagliptinX MajorA UnknownIntermediate to delayedAlogliptinX MajorA FlecainideX MajorA Negative inotrope, proarrhythmic effectsImmediate to intermediate DisopyramideX MajorB SotalolX MajorA Proarrhythmic properties, beta blockadeImmediate to",
+      "chunk_id": 436,
+      "source_pdf": null,
+      "page": 42
+    },
+    {
+      "subject": "atrial fibrillation",
+      "predicate": "indicates",
+      "object": "atrial fibrillation",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "atrial fibrillation",
+          "label": "Disease_disorder",
+          "id": "C0004238"
+        },
+        {
+          "text": "fibrillation",
+          "label": "Disease_disorder",
+          "id": "C0232197"
+        }
+      ],
+      "source_text": "atrial fibrillation indicates atrial fibrillation; immunoglobulin light chain amyloid cardiomyopathy, amyloid cardiomyopathy; transthyretin amyloid cardiomyopathy, transthyretin amyloid cardiomyopathy; variant transthyretin amyloidosis, variant transthyretin amyloidosis; wild-type transthyretin amyloidosis, wild-type transthyretin amyloidosis; CHA2DS2-VASc, congestive heart failure, hypertension, age ≥75 years, diabetes mellitus, stroke or transient ischemic attack (TIA), vascular disease, age 65 to 74 years, sex category; electrocardiogram, electrocardiogram; H/CL, heart to contralateral chest; heart failure with reduced ejection fraction, heart failure with reduced ejection fraction; IFE, immunofixation electrophoresis; MRI, magnetic resonance imaging; New York Heart Association, New York Heart Association; PYP, pyrophosphate; Tc, technetium; and TTR, transthyretin.",
+      "chunk_id": 638,
+      "source_pdf": null,
+      "page": 59
+    },
+    {
+      "subject": "fluid restriction",
+      "predicate": "improved",
+      "object": "hyponatremia marginally",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "In a registry study of hyponatremia in acute decompensated heart failure, fluid restriction only improved hyponatremia marginally.1 A registered dietitian-guided fluid and sodium restriction intervention improved New York Heart Association functional classification and leg edema in patients with heart failure with reduced ejection fraction who were not in stage D heart failure,2 and fluid restriction improved quality of life in a pilot RCT of patients with heart failure with reduced ejection fraction and heart failure with preserved ejection fraction (New York Heart Association class I to IV).3 In a meta-analysis of RCTs on fluid restriction in heart failure in general, restricted fluid intake compared with free fluid consumption did not result in reduced hospitalization or mortality rates, changes in thirst, the duration of intravenous diuretic use, serum creatinine, or serum sodium levels.4 The validity of a previous trial supporting clinical benefits of fluid restriction in heart failure is in",
+      "chunk_id": 685,
+      "source_pdf": null,
+      "page": 62
+    },
+    {
+      "subject": "patients with heart failure with reduced ejection fraction",
+      "predicate": "have",
+      "object": "no changes made to oral guideline-directed medical therapy",
+      "exception": null,
+      "duration": "12 months",
+      "entities": [
+        {
+          "text": "medical therapy",
+          "label": "Therapeutic_procedure",
+          "id": "C0418981"
+        },
+        {
+          "text": "heart",
+          "label": "Disease_disorder",
+          "id": "C0018787"
+        }
+      ],
+      "source_text": "Based on data from the CHAMP-heart failure (Change the Management of Patients with Heart Failure) registry, however, only 73%, 66%, and 33% of eligible patients with heart failure with reduced ejection fraction were prescribed angiotensin-converting enzyme inhibitors-angiotensin (II) receptor blockers-angiotensin receptor-neprilysin inhibitor, beta blockers, and mineralocorticoid receptor antagonist therapy, respectively.19 Furthermore, based on information obtained from claims data, roughly 42% of patients are not prescribed any guideline-directed medical therapy within 30 days postindex hospitalization,20 and 45% are prescribed either no oral guideline-directed medical therapy or monotherapy within 1-year post-hospitalization.21 In the management of patients with heart failure with reduced ejection fraction in the community, very few receive target doses of oral guideline-directed medical therapy.6 Moreover, most patients with heart failure with reduced ejection fraction have no changes made to oral guideline-directed medical therapy over 12 months,21 despite being discharged on suboptimal doses or no guideline-directed medical therapy.22 It cannot be assumed that oral guideline-directed medical therapy will be initiated or",
+      "chunk_id": 757,
+      "source_pdf": null,
+      "page": 68
+    },
+    {
+      "subject": "low-dose group",
+      "predicate": "were",
+      "object": "more likely to require",
+      "exception": null,
+      "duration": "48 hours",
+      "entities": [],
+      "source_text": "Patients in the low-dose group were more likely to require a 50% increase in the dose at 48 hours than were those in the highdose group, and all treatment groups had higher doses of diuretics compared with baseline preadmission doses, underlining the necessity to intensify and individualize diuretic regimen.1 MRAs have mild diuretics properties and addition of MRAs can help with diuresis in addition to significant cardiovascular benefits in patients with heart failure. Addition of low-dose dopamine to diuretic therapy in the setting of reduced estimated glomerular filtration rate did not improve outcomes in a study that included patients with all EFs, but a subset analysis showed increased urine output and weight loss in patients with left ventricular ejection fraction <0. with significant interaction of effect with left ventricular ejection fraction.",
+      "chunk_id": 778,
+      "source_pdf": null,
+      "page": 70
+    },
+    {
+      "subject": "tachyphylaxis",
+      "predicate": "may develop",
+      "object": "within 24 hours",
+      "exception": null,
+      "duration": "24 hours",
+      "entities": [
+        {
+          "text": "tachyphylaxis",
+          "label": "Sign_symptom",
+          "id": "C0039242"
+        }
+      ],
+      "source_text": "However, tachyphylaxis may develop within 24 hours, and up to 20% of those with heart failure may develop resistance to even high doses. Because of sodium nitroprusside’s potential for producing marked hypotension, invasive hemodynamic blood pressure monitoring (eg, an arterial line) is typically required, and nitroprusside is usually used in the intensive care setting; longer infusions of the drug have been associated, albeit rarely, with thiocyanate and cyanide toxicity, particularly in the setting of renal insufficiency and significant hepatic disease.",
+      "chunk_id": 786,
+      "source_pdf": null,
+      "page": 71
+    },
+    {
+      "subject": "PAVE trial",
+      "predicate": "was",
+      "object": "conducted",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Early studies with right ventricular pacing showed benefit. However, when right ventricular pacing was compared with cardiac resynchronization in more recent trials, especially in those with reduced LVEFs, cardiac resynchronization therapy generally produced more benefit than right ventricular pacing. The PAVE (Left Ventricular-Based Cardiac Stimulation post AV Nodal Ablation Evaluation) and the BLOCK-heart failure (Biventricular versus Right Ventricular Pacing in Patients with AV block) trials included patients with left ventricular ejection fraction >35%, with mean EF 46%22 in PAVE and 40% in BLOCK-heart failure (enrolled ≤50%).",
+      "chunk_id": 884,
+      "source_pdf": null,
+      "page": 79
+    },
+    {
+      "subject": "BLOCK-heart failure trial",
+      "predicate": "was",
+      "object": "conducted",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Early studies with right ventricular pacing showed benefit. However, when right ventricular pacing was compared with cardiac resynchronization in more recent trials, especially in those with reduced LVEFs, cardiac resynchronization therapy generally produced more benefit than right ventricular pacing. The PAVE (Left Ventricular-Based Cardiac Stimulation post AV Nodal Ablation Evaluation) and the BLOCK-heart failure (Biventricular versus Right Ventricular Pacing in Patients with AV block) trials included patients with left ventricular ejection fraction >35%, with mean EF 46%22 in PAVE and 40% in BLOCK-heart failure (enrolled ≤50%).",
+      "chunk_id": 884,
+      "source_pdf": null,
+      "page": 79
+    },
+    {
+      "subject": "neighborhood deprivation index",
+      "predicate": "was associated with",
+      "object": "a 12% increase in risk of heart failure",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "heart failure",
+          "label": "Disease_disorder",
+          "id": "C0018801"
+        }
+      ],
+      "source_text": "socioeconomic status populationsAmong 27 078 White and Black adults of low income (70% earned <$15 000/y) participating from 2002–2009 in the Southern Community Cohort Study, a 1 interquartile increase in neighborhood deprivation index was associated with a 12% increase in risk of heart failure (adjusted HR, 1.12; 95% CI, 1..18).46 Black populationsIn MESA, patients of Black race had highest risk of incident heart failure (4.6/1000 person-years) and highest proportion of nonischemic incident heart failure.26 Higher prevalence of heart failure risk factors including hypertension, obesity, and diabetes, compared with White populations.75 Hispanic populationsMESA study showed higher heart failure incidence in Hispanic compared with non-Hispanic White groups (3.5 versus 2.4 per 1000 person-years) but lower than for African Americans (4.6/1000",
+      "chunk_id": 895,
+      "source_pdf": null,
+      "page": 80
+    },
+    {
+      "subject": "heart failure",
+      "predicate": "is",
+      "object": "a condition characterized by the heart's inability to pump enough blood to meet the body's needs",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "heart",
+          "label": "Disease_disorder",
+          "id": "C0018787"
+        }
+      ],
+      "source_text": "Among older adults, low income, social isolation, and lack of caregiver support increase heart failure mortality and low quality of life. Nursing home residents, and elderly inpatients with acute heart failure, are at risk of inadequate guideline-directed medical therapy prescription, although interventions in nursing facilities can improve care delivery for heart failure.–45 Lower socioeconomic status is associated with heart failure incidence and heart failure mortality. Homelessness,48 substance use, food insecurity, and lack of transportation each represent potential barriers to optimal disease management.49 Case management and social work services are essential to the comprehensive multidisciplinary heart failure team approach for coordinating complex medical, psychiatric, and social needs across multiple sectors.",
+      "chunk_id": 903,
+      "source_pdf": null,
+      "page": 80
+    },
+    {
+      "subject": "third trimester",
+      "predicate": "should consider",
+      "object": "routine echocardiographic screening",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Consideration of routine echocardiographic screening in the third trimester for reassessment of myocardial structure and function before labor; echocardiography for any significant changes in heart failure symptoms or signs during pregnancy, or if heart failure medications are reduced or discontinued.18 For women presenting with decompensated heart failure or cardiogenic shock, heart failure management should include hemodynamic monitoring and mechanical circulatory support as appropriate For women planning a pregnancy, provide personalized counseling that promotes the autonomy and goals of the patient (and her partner, as applicable), the patient’s ability for self-care and risk awareness, and ensures adequate psychosocial support for decision-making.3 B-type natriuretic peptide or N-terminal prohormone of B-type natriuretic peptide monitoring during pregnancy may have some value for prediction",
+      "chunk_id": 954,
+      "source_pdf": null,
+      "page": 85
+    },
+    {
+      "subject": "pregnancy",
+      "predicate": "should include",
+      "object": "personalized counseling",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "counseling",
+          "label": "Diagnostic_procedure",
+          "id": "C0010210"
+        }
+      ],
+      "source_text": "Consideration of routine echocardiographic screening in the third trimester for reassessment of myocardial structure and function before labor; echocardiography for any significant changes in heart failure symptoms or signs during pregnancy, or if heart failure medications are reduced or discontinued.18 For women presenting with decompensated heart failure or cardiogenic shock, heart failure management should include hemodynamic monitoring and mechanical circulatory support as appropriate For women planning a pregnancy, provide personalized counseling that promotes the autonomy and goals of the patient (and her partner, as applicable), the patient’s ability for self-care and risk awareness, and ensures adequate psychosocial support for decision-making.3 B-type natriuretic peptide or N-terminal prohormone of B-type natriuretic peptide monitoring during pregnancy may have some value for prediction",
+      "chunk_id": 954,
+      "source_pdf": null,
+      "page": 85
+    },
+    {
+      "subject": "decompensated heart failure",
+      "predicate": "should include",
+      "object": "hemodynamic monitoring and mechanical circulatory support",
+      "exception": null,
+      "duration": null,
+      "entities": [
+        {
+          "text": "heart failure",
+          "label": "Disease_disorder",
+          "id": "C0018801"
+        },
+        {
+          "text": "hemodynamic monitoring",
+          "label": "Diagnostic_procedure",
+          "id": "C4082936"
+        }
+      ],
+      "source_text": "Consideration of routine echocardiographic screening in the third trimester for reassessment of myocardial structure and function before labor; echocardiography for any significant changes in heart failure symptoms or signs during pregnancy, or if heart failure medications are reduced or discontinued.18 For women presenting with decompensated heart failure or cardiogenic shock, heart failure management should include hemodynamic monitoring and mechanical circulatory support as appropriate For women planning a pregnancy, provide personalized counseling that promotes the autonomy and goals of the patient (and her partner, as applicable), the patient’s ability for self-care and risk awareness, and ensures adequate psychosocial support for decision-making.3 B-type natriuretic peptide or N-terminal prohormone of B-type natriuretic peptide monitoring during pregnancy may have some value for prediction",
+      "chunk_id": 954,
+      "source_pdf": null,
+      "page": 85
+    },
+    {
+      "subject": "B-type natriuretic peptide",
+      "predicate": "may have some value",
+      "object": "for prediction of fetal growth restriction or placental insufficiency",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Consideration of routine echocardiographic screening in the third trimester for reassessment of myocardial structure and function before labor; echocardiography for any significant changes in heart failure symptoms or signs during pregnancy, or if heart failure medications are reduced or discontinued.18 For women presenting with decompensated heart failure or cardiogenic shock, heart failure management should include hemodynamic monitoring and mechanical circulatory support as appropriate For women planning a pregnancy, provide personalized counseling that promotes the autonomy and goals of the patient (and her partner, as applicable), the patient’s ability for self-care and risk awareness, and ensures adequate psychosocial support for decision-making.3 B-type natriuretic peptide or N-terminal prohormone of B-type natriuretic peptide monitoring during pregnancy may have some value for prediction",
+      "chunk_id": 954,
+      "source_pdf": null,
+      "page": 85
+    },
+    {
+      "subject": "B-type natriuretic peptide testing",
+      "predicate": "is limited by",
+      "object": "the availability of B-type natriuretic peptide testing",
+      "exception": null,
+      "duration": null,
+      "entities": [],
+      "source_text": "Consideration of routine echocardiographic screening in the third trimester for reassessment of myocardial structure and function before labor; echocardiography for any significant changes in heart failure symptoms or signs during pregnancy, or if heart failure medications are reduced or discontinued.18 For women presenting with decompensated heart failure or cardiogenic shock, heart failure management should include hemodynamic monitoring and mechanical circulatory support as appropriate For women planning a pregnancy, provide personalized counseling that promotes the autonomy and goals of the patient (and her partner, as applicable), the patient’s ability for self-care and risk awareness, and ensures adequate psychosocial support for decision-making.3 B-type natriuretic peptide or N-terminal prohormone of B-type natriuretic peptide monitoring during pregnancy may have some value for prediction",
+      "chunk_id": 954,
+      "source_pdf": null,
+      "page": 85
+    }
+  ]
+}

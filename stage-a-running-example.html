@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage A: PDF Text Extraction – Running Example</title>
+  <style>
+    html { font-size: clamp(14px, 1.25vw + 12px, 18px); -webkit-text-size-adjust: 100%; }
+    :root {
+      --bg: #faf9f7;
+      --bg-subtle: #f0eeeb;
+      --card: #ffffff;
+      --card-hover: #f8f6f4;
+      --border: #d4cfc7;
+      --border-strong: #b8b0a4;
+      --text: #1c1917;
+      --text-soft: #44403c;
+      --muted: #78716c;
+      --accent: #0d9488;
+      --accent-dim: rgba(13, 148, 136, 0.12);
+      --stage-a: #0d9488;
+      --stage-a-dim: rgba(13, 148, 136, 0.14);
+      --radius: clamp(8px, 1vw, 12px);
+      --radius-sm: clamp(6px, 0.8vw, 8px);
+      --shadow: 0 2px 8px rgba(28, 25, 23, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(13, 148, 136, 0.06), transparent);
+      color: var(--text);
+      margin: 0;
+      padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.25rem) clamp(2rem, 6vw, 4rem);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .container { max-width: min(1100px, 92vw); margin: 0 auto; }
+    .header {
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .subtitle { color: var(--muted); font-size: clamp(0.875rem, 1.2vw, 0.95rem); margin: 0; max-width: 56ch; }
+    .subtitle .doc-name { color: var(--stage-a); font-weight: 500; }
+    .doc-badge {
+      font-size: clamp(0.7rem, 1vw, 0.8rem);
+      color: var(--muted);
+      margin-top: 0.75rem;
+      padding: clamp(0.3rem, 0.8vw, 0.35rem) clamp(0.6rem, 1.5vw, 0.75rem);
+      background: var(--bg-subtle);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+    .doc-badge span { color: var(--stage-a); font-weight: 500; }
+
+    .pipeline { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
+    .pipeline .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pipeline .step::before {
+      content: '';
+      width: 4px;
+      height: 100%;
+      min-height: 36px;
+      background: var(--stage-a);
+      border-radius: 4px 0 0 4px;
+      margin-left: -1px;
+    }
+    .pipeline .step-number {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--stage-a);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pipeline .step-title { font-weight: 700; font-size: clamp(0.8rem, 1.1vw, 0.9rem); }
+    .pipeline .step-io { font-size: 0.65rem; color: var(--muted); margin-top: 0.25rem; }
+    .pipeline .arrow { color: var(--muted); flex-shrink: 0; }
+
+    .section-title { font-size: clamp(1rem, 1.5vw, 1.1rem); font-weight: 700; color: var(--text); margin: 2rem 0 1rem; }
+    .process-desc {
+      font-size: clamp(0.85rem, 1.2vw, 0.9rem);
+      color: var(--text-soft);
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 0;
+      line-height: 1.5;
+    }
+    .process-desc code { background: var(--bg-subtle); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+
+    .examples-grid { display: grid; gap: 1.5rem; }
+    .example-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .example-card-header {
+      background: var(--stage-a-dim);
+      padding: 0.6rem 1rem;
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.1vw, 0.875rem);
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .example-card-header span { color: var(--stage-a); font-weight: 600; }
+    .example-card-body { padding: 1rem; display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: start; }
+    @media (max-width: 768px) { .example-card-body { grid-template-columns: 1fr; } }
+    .example-label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.5rem; }
+    .example-input {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: clamp(0.7rem, 1vw, 0.75rem);
+      line-height: 1.5;
+      color: var(--text-soft);
+      max-height: 220px;
+      overflow: auto;
+    }
+    .example-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .example-arrow { display: flex; align-items: center; justify-content: center; padding: 0.5rem; color: var(--accent); font-size: 1.25rem; }
+    @media (max-width: 768px) { .example-arrow { transform: rotate(90deg); } }
+    .example-output {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+      font-size: clamp(0.68rem, 0.95vw, 0.72rem);
+      line-height: 1.5;
+      color: var(--text);
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 220px;
+      overflow: auto;
+    }
+    .example-output .json-key { color: #0d9488; }
+    .example-output .json-str { color: #b45309; }
+    .example-output .json-num { color: #4f46e5; }
+
+    .two-col-diagram {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .two-col-diagram .col {
+      flex: 1;
+      min-width: 140px;
+      border: 2px solid var(--stage-a);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      background: var(--stage-a-dim);
+    }
+    .two-col-diagram .col strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.5rem; }
+    .two-col-diagram .col .block { padding: 0.25rem 0; font-size: 0.8rem; color: var(--text-soft); }
+    .two-col-diagram .read-order { align-self: center; font-size: 1rem; color: var(--accent); font-weight: 700; }
+
+    .example-table-wrap {
+      margin-top: 0.75rem;
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #fff;
+    }
+    .example-table-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(0.7rem, 1vw, 0.8rem);
+    }
+    .example-table-wrap th, .example-table-wrap td {
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.6rem;
+      text-align: left;
+    }
+    .example-table-wrap th { background: var(--bg-subtle); font-weight: 600; color: var(--text); }
+
+    .noise-rules { font-size: 0.8rem; color: var(--text-soft); margin-top: 0.5rem; }
+    .noise-rules dl { margin: 0.5rem 0 0; padding-left: 0.5rem; }
+    .noise-rules dt { font-weight: 600; color: var(--text); margin-top: 0.4rem; }
+    .noise-rules dd { margin: 0.15rem 0 0 1rem; }
+
+    .how-it-works {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: clamp(0.8rem, 1.1vw, 0.85rem);
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+    .how-it-works h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.5rem; }
+    .how-it-works ul { margin: 0; padding-left: 1.25rem; }
+    .how-it-works li { margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Stage A: PDF Text Extraction – Running Example</h1>
+      <p class="subtitle">Stage A reads PDF guideline files and produces <strong>raw text per page</strong> (and optional tables). Shown below are several real examples from the same guideline to illustrate how different page types are extracted.</p>
+      <div class="doc-badge">Example document: <span>Heidenreich, 2022, AHA,ACC,HFSA guidelines.pdf</span></div>
+    </header>
+
+    <section class="pipeline" aria-label="Stage A in pipeline">
+      <div class="step">
+        <span class="step-number">a</span>
+        <div>
+          <div class="step-title">Extract text</div>
+          <div class="step-io"><strong>In:</strong> PDF files &nbsp;|&nbsp; <strong>Out:</strong> raw_text (pages)</div>
+        </div>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="step" style="border-style: dashed;">
+        <div class="step-title" style="color: var(--muted);">raw_text (pages)</div>
+        <div class="step-io">page, text, source, tables[]</div>
+      </div>
+    </section>
+
+    <p class="process-desc">
+      <strong>What Stage A does:</strong> Loads PDFs from a directory (e.g. <code>data/</code>), uses <strong>PyMuPDF</strong> for main text and <strong>pdfplumber</strong> for table detection. For each page it: skips first N and last M pages (e.g. cover and references), extracts text blocks in reading order (with 2-column detection), dehyphenates line breaks, merges incomplete paragraphs, and filters noise (TOC lines, headers/footers, URLs, reference list lines). Tables are extracted separately into <code>tables[]</code>. Output matches <code>ExtractText</code> transform and <code>stage_a_raw_text.json</code>.
+    </p>
+
+    <h2 class="section-title">Two-column reading order</h2>
+    <p class="process-desc">
+      When a page has two columns (e.g. left and right text blocks), the code does <strong>not</strong> read row-by-row. It reads <strong>left column from top to bottom</strong>, then <strong>right column from top to bottom</strong>. PyMuPDF returns blocks with bounding boxes <code>(x0, y0, x1, y1)</code>. The code finds the largest horizontal gap in block positions; if that gap is at least 22% of page width and each side has at least 3 blocks, the page is treated as 2-column. Blocks with <code>x0 &lt; boundary</code> are sorted by <code>(y0, x0)</code> → left column order; blocks with <code>x0 ≥ boundary</code> are sorted the same way → right column order. Final order is <strong>left blocks first</strong>, then <strong>right blocks</strong>.
+    </p>
+    <div class="two-col-diagram">
+      <div class="col">
+        <strong>Left column (read first)</strong>
+        <div class="block">Block 1 (top)</div>
+        <div class="block">Block 2</div>
+        <div class="block">Block 3 (bottom)</div>
+      </div>
+      <span class="read-order" aria-hidden="true">→</span>
+      <div class="col">
+        <strong>Right column (read second)</strong>
+        <div class="block">Block 4 (top)</div>
+        <div class="block">Block 5</div>
+        <div class="block">Block 6 (bottom)</div>
+      </div>
+    </div>
+    <p class="process-desc" style="margin-top: 0;">
+      So the final page text order is: Block 1 → Block 2 → Block 3 → Block 4 → Block 5 → Block 6.
+    </p>
+
+    <h2 class="section-title">Processing steps with output examples</h2>
+    <p class="process-desc">Each step: short input and the resulting output.</p>
+
+    <!-- in “How Stage A works” -->
+
+    <div class="examples-grid">
+      <!-- 1. Skip pages -->
+      <article class="example-card">
+        <div class="example-card-header">1. Skip pages</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">Pages at the start and end are skipped by configuration (default: skip first 3, last 5) to avoid covers, TOC, and references.</div>
+            <div class="example-label">Input</div>
+            <div class="example-input">PDF 89 pages; skip_first=3, skip_last=5. Pages 1–3 = cover/TOC, 85–89 = references.</div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-output">Only pages 4–84 in output. pages[0].page === 4, pages[1].page === 5, … pages[80].page === 84.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Two-column order -->
+      <article class="example-card">
+        <div class="example-card-header">2. Two-column reading order</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">For two-column pages, blocks are ordered left column top→bottom, then right column top→bottom based on block bounding boxes.</div>
+            <div class="example-label">Input</div>
+            <div class="example-input">Page with left blocks (A,B,C) and right blocks (D,E,F).</div>
+            <div class="two-col-diagram" style="margin-top: 0.5rem;">
+              <div class="col"><strong>Left</strong><div class="block">A</div><div class="block">B</div><div class="block">C</div></div>
+              <span class="read-order">→</span>
+              <div class="col"><strong>Right</strong><div class="block">D</div><div class="block">E</div><div class="block">F</div></div>
+            </div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-output">page.text order = A, B, C, D, E, F (left top→bottom, then right top→bottom).</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Text blocks -->
+      <article class="example-card">
+        <div class="example-card-header">3. Text blocks (cleaning)</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">Hyphenated line breaks and mid-word splits are joined to recover clean tokens before paragraph assembly.</div>
+            <div class="example-label">Input</div>
+            <div class="example-input">"heart fail\nure"  "medica-\ntion"</div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-output">"heart failure"  "medication"</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Step 3: Noise filtering (how TOC, headers, etc. are eliminated) -->
+      <article class="example-card">
+        <div class="example-card-header">4. Noise filtering</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">Table-of-contents lines, headers/footers, URLs, short all-caps metadata, and reference lines are removed; a REFERENCES heading can drop trailing pages.</div>
+            <div class="example-label">Input (removed)</div>
+            <div class="example-input">• TOC: "1.2. Organization of the Writing Committee ........ 5"
+• Short all-caps: "INTENDED USE"
+• Running header: "Heidenreich et al 2022 Guideline for the Management of Heart Failure"
+• Reference line: "1. Smith A, Jones B. Heart failure. N Engl J Med. 2020."
+• URL: "https://www.acc.org/guidelines"</div>
+            <div class="noise-rules" style="display:none;">
+              <strong>Detection rules (collapsed):</strong>
+              <dl>
+                <dt>TOC</dt>
+                <dd>Block contains 3+ consecutive dots (<code>\.{3,}</code>) and a page number at end (<code>\b\d{1,4}\s*$</code>); or starts with section numbering (<code>^\d+(\.\d+)+</code>) and ends with page number, and is short (≤220 chars, ≤18 words).</dd>
+                <dt>Headers / footers</dt>
+                <dd>Block is in the top 12% of the page (<code>y0 ≤ 0.12×page height</code>) or bottom 10% (<code>y1 ≥ 0.90×page height</code>), and matches: “Page N”, “N of M”, plain number, or short ALL CAPS (≤6 words).</dd>
+                <dt>Running header (start of page)</dt>
+                <dd>Regex: line containing “et al”, a year, and “Guideline(s)” near the start of the page text — stripped once from the beginning.</dd>
+                <dt>Reference lines</dt>
+                <dd>Line matches <code>^\d+\.\s+[A-Z][a-z]+\s+[A-Z]</code> (e.g. “1. Smith A…”) or contains “et al.”; used in reference-zone pages and for REFERENCES section cutoff.</dd>
+                <dt>URLs / metadata</dt>
+                <dd>Block contains <code>https?://</code>, <code>doi:</code>, or “downloaded from” / “accessed on”; or (near start of doc) short line that is all caps + punctuation (≤60 chars) or ends with a 4-digit year (≤30 chars).</dd>
+                <dt>REFERENCES section</dt>
+                <dd>If a line equals “REFERENCES” (in first ~40 lines of a page) and the page has high reference-style density (e.g. numbered citations), that page and all following pages are dropped.</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-output">These lines do not appear in page.text. Only body paragraphs kept. If "REFERENCES" heading found, that page and all after are dropped.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Tables -->
+      <article class="example-card">
+        <div class="example-card-header">5. Tables</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">Tables are extracted separately via pdfplumber and stored as structured rows, not merged into the page text.</div>
+            <div class="example-label">Input</div>
+            <div class="example-input">PDF table: Abbreviation | Meaning/Phrase; ACEi | angiotensin-converting enzyme inhibitors; ARNi | …</div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-table-wrap">
+              <table>
+                <thead><tr><th>Abbreviation</th><th>Meaning/Phrase</th></tr></thead>
+                <tbody>
+                  <tr><td>ACEi</td><td>angiotensin-converting enzyme inhibitors</td></tr>
+                  <tr><td>ARNi</td><td>angiotensin receptor-neprilysin inhibitors</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="example-output" style="margin-top: 0.5rem;">"<span class="json-key">tables</span>": [{ "<span class="json-key">title</span>": "", "<span class="json-key">rows</span>": [["Abbreviation","Meaning/Phrase"], ["ACEi","…"], ["ARNi","…"]] }]</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Output per page -->
+      <article class="example-card">
+        <div class="example-card-header">6. Output per page (RawText / stage_a_raw_text.json)</div>
+        <div class="example-card-body">
+          <div>
+            <div class="example-desc">Each page is serialized with page number, cleaned text, source filename, and any extracted tables.</div>
+            <div class="example-label">Input</div>
+            <div class="example-input">One extracted page (e.g. page 5, body text only).</div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div>
+            <div class="example-label">Output</div>
+            <div class="example-output">{
+  "<span class="json-key">page</span>": <span class="json-num">5</span>,
+  "<span class="json-key">text</span>": "<span class="json-str">The term guideline-directed medical therapy (GDMT) encompasses clinical evaluation, diagnostic testing…</span>",
+  "<span class="json-key">source</span>": "<span class="json-str">Heidenreich, 2022, AHA,ACC,HFSA guidelines.pdf</span>",
+  "<span class="json-key">tables</span>": []
+}</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="how-it-works" style="display:none;">
+      <h4>Summary (hidden)</h4>
+      <ul>
+        <li><strong>Skip pages:</strong> First 3 and last 5 pages are skipped by default (cover, TOC, references). → <em>Example above: pages 1–3 and 85–89 skipped; output starts at page 4.</em></li>
+        <li><strong>Text blocks:</strong> PyMuPDF returns blocks with coordinates; blocks are ordered (2-column: left column top→bottom, then right column top→bottom; see “Two-column reading order” above), then cleaned (dehyphenation, mid-word newline merge, whitespace normalization). → <em>Example above: "heart fail\nure" → "heart failure".</em></li>
+        <li><strong>Noise filtering:</strong> TOC lines (leader dots + page number), short all-caps metadata lines, headers/footers, URL blocks, and reference-list lines are removed. A "REFERENCES" section can drop the rest of the document. → <em>Example above: TOC, header, URL lines are removed.</em></li>
+        <li><strong>Tables:</strong> pdfplumber detects and extracts tables per page; each table is stored as <code>{"title": "", "rows": [[cell, ...], ...]}</code> in the <code>tables</code> array — i.e. as structured rows/cells, not as consecutive sentences in the page text (see table renderings above). → <em>Example above and in Example 3 (page 6).</em></li>
+        <li><strong>Output:</strong> One object per page: <code>page</code>, <code>text</code> (full cleaned text), <code>source</code> (PDF filename), <code>tables</code> (array of table objects). Matches <code>RawText</code> / <code>stage_a_raw_text.json</code>. → <em>Example above; full pages in Examples 1–4.</em></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

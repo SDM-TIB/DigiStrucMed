@@ -1,0 +1,48 @@
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.manifest
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets / environment
+.env
+.env.*
+*.key
+*.pem
+
+# Data / models (uncomment or add paths you use)
+# *.pt
+# *.pth
+# data/
+# models/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Logs
+*.log
+logs/
