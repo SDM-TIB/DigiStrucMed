@@ -5,12 +5,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 import fitz
-import pdfplumber
 try:
     from pipeline.data import PDFGuidelines, RawText
 except Exception:
     from pdf_guidelines import PDFGuidelines
     from raw_text import RawText
+from .extract_tables import ExtractTables
 @dataclass(frozen=True)
 class ExtractionConfig:
     skip_first_pages: int = 3
@@ -138,72 +138,7 @@ class ExtractText:
                 "text": str(txt),
             })
         return raw_blocks
-    _TABLE_CAPTION_PATTERN = re.compile(
-        r"^\s*(?:Table|TABLE)\s+\d+[.\s—:\-]+(.+)$", re.IGNORECASE
-    )
-    def _find_caption_for_table(
-        self,
-        table_bbox: Tuple[float, float, float, float],
-        page_blocks: List[Dict],
-    ) -> str:
-        tx0, ttop, tx1, tbottom = table_bbox
-        tolerance = 25.0
-        def block_above(blk: Dict) -> bool:
-            return blk["y1"] <= ttop + tolerance and blk["y1"] >= ttop - 120
-        def block_below(blk: Dict) -> bool:
-            return blk["y0"] >= tbottom - tolerance and blk["y0"] <= tbottom + 120
-        for blk in page_blocks:
-            text = (blk.get("text") or "").strip()
-            if not text:
-                continue
-            if block_above(blk):
-                match = self._TABLE_CAPTION_PATTERN.search(text)
-                if match:
-                    return text.strip()
-            if block_below(blk):
-                match = self._TABLE_CAPTION_PATTERN.search(text)
-                if match:
-                    return text.strip()
-        return ""
-    def _extract_tables_for_page(
-        self,
-        pdf_plumber_doc: Any,
-        page_index: int,
-        page_blocks: Optional[List[Dict]] = None,
-    ) -> List[Dict]:
-        tables_out: List[Dict] = []
-        page_blocks = page_blocks or []
-        try:
-            if page_index >= len(pdf_plumber_doc.pages):
-                return tables_out
-            page = pdf_plumber_doc.pages[page_index]
-            found = page.find_tables()
-            for table in found:
-                raw = table.extract()
-                if not raw:
-                    continue
-                rows: List[List[str]] = []
-                for row in raw:
-                    if row is None:
-                        continue
-                    cells = [
-                        re.sub(r"\s+", " ", str(c).strip()) if c is not None else ""
-                        for c in row
-                    ]
-                    if any(cells):
-                        rows.append(cells)
-                if not rows:
-                    continue
-                total_chars = sum(len(str(c)) for row in rows for c in row)
-                if total_chars < 50:
-                    continue
-                caption = ""
-                if hasattr(table, "bbox") and table.bbox and page_blocks:
-                    caption = self._find_caption_for_table(table.bbox, page_blocks)
-                tables_out.append({"title": caption, "rows": rows})
-        except Exception:
-            pass
-        return tables_out
+
     def _order_blocks(self, blocks: List[Dict], page_width: float) -> List[Dict]:
         if not blocks:
             return blocks
@@ -475,45 +410,48 @@ class ExtractText:
             references_cutoff = None
             if self.config.filter_references_near_end and self.config.drop_references_section:
                 references_cutoff = self._detect_references_cutoff(doc)
-            with pdfplumber.open(pdf_path) as pdf_plumber_doc:
-                for page_index in range(total_pages):
-                    page_num = page_index + 1
-                    if page_num <= self.config.skip_first_pages:
+            for page_index in range(total_pages):
+                page_num = page_index + 1
+                if page_num <= self.config.skip_first_pages:
+                    continue
+                if page_num > total_pages - self.config.skip_last_pages:
+                    continue
+                if references_cutoff is not None and page_num >= references_cutoff:
+                    continue
+                page = doc.load_page(page_index)
+                page_rect = page.rect
+                page_width = float(page_rect.width)
+                raw_blocks = self._get_raw_blocks(page)
+                ordered = self._order_blocks(raw_blocks, page_width)
+                cleaned_blocks: List[str] = []
+                for blk in ordered:
+                    t = self._clean_block_text(blk["text"])
+                    if not t:
                         continue
-                    if page_num > total_pages - self.config.skip_last_pages:
-                        continue
-                    if references_cutoff is not None and page_num >= references_cutoff:
-                        continue
-                    page = doc.load_page(page_index)
-                    page_rect = page.rect
-                    page_width = float(page_rect.width)
-                    raw_blocks = self._get_raw_blocks(page)
-                    ordered = self._order_blocks(raw_blocks, page_width)
-                    cleaned_blocks: List[str] = []
-                    for blk in ordered:
-                        t = self._clean_block_text(blk["text"])
-                        if not t:
-                            continue
-                        if self._should_keep_block(t, blk, page_rect, page_num, total_pages):
-                            cleaned_blocks.append(t)
-                    if not cleaned_blocks:
-                        continue
-                    if self.config.preserve_paragraphs:
-                        page_text = self.config.paragraph_separator.join(cleaned_blocks)
-                    else:
-                        page_text = " ".join(cleaned_blocks)
-                    page_text = self._remove_control_chars(page_text)
-                    page_text = self._strip_running_header(page_text)
-                    page_text = self._merge_incomplete_paragraphs(page_text)
-                    if not page_text.strip():
-                        continue
-                    drop, _reason = self._should_drop_page(
-                        page_text, cleaned_blocks, page_num, total_pages
-                    )
-                    if drop:
-                        continue
-                    tables = self._extract_tables_for_page(
-                        pdf_plumber_doc, page_index, page_blocks=ordered
-                    )
-                    pages.append({"page": page_num, "text": page_text, "tables": tables})
+                    if self._should_keep_block(t, blk, page_rect, page_num, total_pages):
+                        cleaned_blocks.append(t)
+                if not cleaned_blocks:
+                    continue
+                if self.config.preserve_paragraphs:
+                    page_text = self.config.paragraph_separator.join(cleaned_blocks)
+                else:
+                    page_text = " ".join(cleaned_blocks)
+                page_text = self._remove_control_chars(page_text)
+                page_text = self._strip_running_header(page_text)
+                page_text = self._merge_incomplete_paragraphs(page_text)
+                if not page_text.strip():
+                    continue
+                drop, _reason = self._should_drop_page(
+                    page_text, cleaned_blocks, page_num, total_pages
+                )
+                if drop:
+                    continue
+                pages.append({"page": page_num, "text": page_text, "tables": []})
+        # Attach tables from dedicated table extractor (separate module)
+        if pages:
+            table_extractor = ExtractTables()
+            page_nums = [p["page"] for p in pages]
+            tables_by_page = table_extractor.extract_from_pdf(pdf_path, page_numbers=page_nums)
+            for p in pages:
+                p["tables"] = tables_by_page.get(p["page"], [])
         return pages
