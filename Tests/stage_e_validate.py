@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import CandidateStatements, ValidatedFactsAndQualifiers
 from pipeline.models import ValidationModel
-from pipeline.devices import Validate
+from pipeline.inference import Validate
 def test_stage_e():
     print("=" * 70)
     print("STAGE e: candidate_statements -> validate -> validated_facts_AND_qualifiers")

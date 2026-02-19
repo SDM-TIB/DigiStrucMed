@@ -1,12 +1,18 @@
+"""
+Stage B: Content preparation — chunk raw text and convert tables to SPO triples.
+Consumes raw_text_and_tables (raw text + tables from Stage A) and produces
+text chunks and table triples (two outputs).
+"""
+from __future__ import annotations
+
 import nltk
 import re
 from typing import List, Dict, Optional
-from pipeline.data import RawText, TextChunks
+
+from pipeline.data import RawText, TextChunks, TextChunksAndTableTriples
 from pipeline.models.parsing_rules import ParsingRules
-from pipeline.transforms.table_to_sentences import (
-    classify_table,
-    table_rows_to_sentences,
-)
+from pipeline.models.table_spo_rules import tables_pages_to_spo_list
+
 DEFAULT_MAX_CHUNK_CHARS = 400
 CITATION_PATTERNS = [
     re.compile(r"\b\d+(?:,\s*\d+)+\b"),
@@ -19,11 +25,18 @@ CITATION_TRAILING_PATTERNS = [
     re.compile(r"[–\-]\d{1,4}\s*$"),
 ]
 try:
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find("tokenizers/punkt")
 except LookupError:
-    nltk.download('punkt', quiet=True)
+    nltk.download("punkt", quiet=True)
 from nltk.tokenize import sent_tokenize
-class ChunkText:
+
+
+class ContentPreparation:
+    """
+    Stage B transform: takes raw text + tables (raw_text_and_tables) and produces
+    (1) text chunks and (2) table SPO triples.
+    """
+
     def __init__(
         self,
         parsing_rules: ParsingRules,
@@ -36,9 +49,15 @@ class ChunkText:
         self.max_chunk_chars = max_chunk_chars
         self.filter_noise = filter_noise
         self._noise_exemplar_vocab: Optional[set] = None
-    def transform(self, raw_text: RawText) -> TextChunks:
-        text_chunks = TextChunks()
+
+    def transform(self, raw_text: RawText) -> TextChunksAndTableTriples:
         pages = raw_text.get_pages()
+        text_chunks = self._build_text_chunks(pages)
+        table_triples = tables_pages_to_spo_list(pages)
+        return TextChunksAndTableTriples(text_chunks=text_chunks, table_triples=table_triples)
+
+    def _build_text_chunks(self, pages: List[Dict]) -> TextChunks:
+        text_chunks = TextChunks()
         chunk_id = 0
         for page in pages:
             text = page["text"]
@@ -65,7 +84,7 @@ class ChunkText:
                             page=page_number,
                             text=normalized_text.strip(),
                             source=source_file,
-                            chunk_id=chunk_id
+                            chunk_id=chunk_id,
                         )
                         chunk_id += 1
         merged_chunks = self._merge_small_chunks(text_chunks.get_chunks())
@@ -79,48 +98,25 @@ class ChunkText:
                 c for c in text_chunks.chunks
                 if not self._is_noise_chunk(c.get("text", ""))
             ]
-        chunk_id = len(text_chunks.chunks)
-        for page in pages:
-            page_number = page["page"]
-            source_file = page.get("source", "")
-            tables = page.get("tables", [])
-            for ti, table in enumerate(tables):
-                rows = table.get("rows", [])
-                if not rows:
-                    continue
-                table_type = classify_table(rows)
-                table_title = table.get("title") or ""
-                for sentence, row_index in table_rows_to_sentences(
-                    rows, table_type, table_title=table_title
-                ):
-                    if len(sentence) >= self.min_chars:
-                        text_chunks.add_chunk(
-                            page=page_number,
-                            text=sentence,
-                            source=source_file,
-                            chunk_id=chunk_id,
-                            from_table=True,
-                            table_index=ti,
-                            row_index=row_index,
-                        )
-                        chunk_id += 1
         for i, chunk in enumerate(text_chunks.chunks):
             chunk["chunk_id"] = i
         return text_chunks
+
     def _normalize_newlines(self, text: str) -> str:
         if not text:
             return text
-        text = re.sub(r'\n{2,}', ' ', text)
-        text = re.sub(r'([a-z])\n([a-z])', r'\1 \2', text)
-        text = re.sub(r'([.,;:!?])\n', r'\1 ', text)
-        text = re.sub(r'\n([.,;:!?])', r'\1', text)
-        text = re.sub(r'([a-zA-Z])\n(\d)', r'\1 \2', text)
-        text = re.sub(r'(\d)\n([a-zA-Z])', r'\1 \2', text)
-        text = re.sub(r'\n', ' ', text)
-        text = re.sub(r'\s+([.,;:!?])', r'\1', text)
-        text = re.sub(r'([.,;:!?])([A-Za-z])', r'\1 \2', text)
-        text = ' '.join(text.split())
+        text = re.sub(r"\n{2,}", " ", text)
+        text = re.sub(r"([a-z])\n([a-z])", r"\1 \2", text)
+        text = re.sub(r"([.,;:!?])\n", r"\1 ", text)
+        text = re.sub(r"\n([.,;:!?])", r"\1", text)
+        text = re.sub(r"([a-zA-Z])\n(\d)", r"\1 \2", text)
+        text = re.sub(r"(\d)\n([a-zA-Z])", r"\1 \2", text)
+        text = re.sub(r"\n", " ", text)
+        text = re.sub(r"\s+([.,;:!?])", r"\1", text)
+        text = re.sub(r"([.,;:!?])([A-Za-z])", r"\1 \2", text)
+        text = " ".join(text.split())
         return text
+
     def _strip_citations(self, text: str) -> str:
         if not text or not text.strip():
             return text
@@ -133,6 +129,7 @@ class ChunkText:
         out = re.sub(r"\s*,\s*,", ",", out)
         out = re.sub(r"^\s*,\s*", "", out)
         return out
+
     def _get_noise_exemplar_vocab(self) -> set:
         if self._noise_exemplar_vocab is not None:
             return self._noise_exemplar_vocab
@@ -149,6 +146,7 @@ class ChunkText:
                     vocab.add(w)
         self._noise_exemplar_vocab = vocab
         return self._noise_exemplar_vocab
+
     def _is_noise_chunk(self, text: str) -> bool:
         if not text or len(text) < 50:
             return False
@@ -159,6 +157,7 @@ class ChunkText:
         overlap = len(words & vocab) / len(words)
         has_ending = bool(re.search(r"[.!?]$", text.strip()))
         return overlap < 0.12 and not has_ending
+
     def _segment_page(self, text: str) -> List[str]:
         text = self._normalize_newlines(text)
         sentences = sent_tokenize(text)
@@ -196,13 +195,14 @@ class ChunkText:
             if chunk_text and self._is_sentence_complete(chunk_text):
                 chunks.append(chunk_text)
         return chunks
+
     def _is_sentence_complete(self, sentence: str) -> bool:
         if not sentence:
             return False
         sentence_clean = sentence.strip()
-        if '=' in sentence_clean[-5:]:
+        if "=" in sentence_clean[-5:]:
             return False
-        if sentence_clean and sentence_clean[-1] in '.!?':
+        if sentence_clean and sentence_clean[-1] in ".!?":
             words_before_punct = sentence_clean[:-1].split()
             if not words_before_punct:
                 return True
@@ -211,23 +211,24 @@ class ChunkText:
             words = sentence_clean.split()
             if not words:
                 return False
-            last_word = words[-1].rstrip('.!?;:,)]}"\'-')
+            last_word = words[-1].rstrip(".!?;:,)]}\"'-")
         if not last_word:
             return True
-        if len(last_word) == 1 and last_word.isalpha() and last_word.lower() not in 'aeiouy':
+        if len(last_word) == 1 and last_word.isalpha() and last_word.lower() not in "aeiouy":
             return False
         uncommon_endings = [
-            r'[bcdfghjklmnpqrstvwxz]{4,}$',
-            r'[pbtdkg][lrwy]$',
-            r'[sz][ptk]$',
+            r"[bcdfghjklmnpqrstvwxz]{4,}$",
+            r"[pbtdkg][lrwy]$",
+            r"[sz][ptk]$",
         ]
         for pattern in uncommon_endings:
             if re.search(pattern, last_word.lower()):
                 return False
         if len(last_word) == 2:
-            if re.match(r'^[bcdfghjklmnpqrstvwxz]{2}$', last_word.lower()):
+            if re.match(r"^[bcdfghjklmnpqrstvwxz]{2}$", last_word.lower()):
                 return False
         return True
+
     def _merge_small_chunks(self, chunks: List[Dict], max_merged_length: int = 550) -> List[Dict]:
         if not chunks:
             return []
@@ -239,7 +240,7 @@ class ChunkText:
             is_very_short = len(current_text) < 60
             needs_merge = self.parsing_rules.should_merge_with_next(
                 current_text,
-                chunks[i + 1]["text"] if i + 1 < len(chunks) else None
+                chunks[i + 1]["text"] if i + 1 < len(chunks) else None,
             )
             should_merge = (is_very_short or needs_merge) and i + 1 < len(chunks)
             if should_merge:
@@ -253,7 +254,7 @@ class ChunkText:
                             "chunk_id": current["chunk_id"],
                             "page": current["page"],
                             "text": merged_text,
-                            "source": current.get("source", "")
+                            "source": current.get("source", ""),
                         })
                         i += 2
                         continue
@@ -268,8 +269,8 @@ class ChunkText:
                 prev = pass2[-1]
                 prev_text = prev["text"].strip()
                 merged_len = len(prev_text) + len(current_text) + 1
-                is_abbreviation_list = '=' in prev_text[-10:]
-                is_mid_sentence_continuation = not prev_text.endswith(('.', '!', '?'))
+                is_abbreviation_list = "=" in prev_text[-10:]
+                is_mid_sentence_continuation = not prev_text.endswith((".", "!", "?"))
                 is_short_fragment = len(current_text) < 150
                 if is_abbreviation_list or is_mid_sentence_continuation or is_short_fragment:
                     effective_limit = 800
@@ -282,13 +283,14 @@ class ChunkText:
                             "chunk_id": prev["chunk_id"],
                             "page": prev["page"],
                             "text": merged_text,
-                            "source": prev.get("source", "")
+                            "source": prev.get("source", ""),
                         }
                         i += 1
                         continue
             pass2.append(current)
             i += 1
         return pass2
+
     def _deduplicate_chunks(self, chunks: List[Dict]) -> List[Dict]:
         if not chunks:
             return []
@@ -317,7 +319,7 @@ class ChunkText:
                     union = len(text_words | seen_words)
                     similarity = intersection / union if union > 0 else 0
                     if similarity > 0.8:
-                        if len(text) > len(seen) and text.endswith(('.', '!', '?')):
+                        if len(text) > len(seen) and text.endswith((".", "!", "?")):
                             replace_index = i
                         else:
                             is_duplicate = True
@@ -338,6 +340,7 @@ class ChunkText:
                 unique_chunks.append(chunk)
                 seen_texts.append(text)
         return unique_chunks
+
     def _enforce_max_length(self, chunks: List[Dict], max_length: int = 550) -> List[Dict]:
         result = []
         for chunk in chunks:
@@ -356,7 +359,7 @@ class ChunkText:
                         "chunk_id": chunk["chunk_id"],
                         "page": chunk["page"],
                         "text": part_text,
-                        "source": chunk.get("source", "")
+                        "source": chunk.get("source", ""),
                     })
                     current_part = []
                     current_length = 0
@@ -369,7 +372,7 @@ class ChunkText:
                                 "chunk_id": chunk["chunk_id"],
                                 "page": chunk["page"],
                                 "text": part_text,
-                                "source": chunk.get("source", "")
+                                "source": chunk.get("source", ""),
                             })
                             current_part = []
                             current_length = 0
@@ -384,9 +387,10 @@ class ChunkText:
                     "chunk_id": chunk["chunk_id"],
                     "page": chunk["page"],
                     "text": part_text,
-                    "source": chunk.get("source", "")
+                    "source": chunk.get("source", ""),
                 })
         return result
+
     def _split_long_text(self, text: str, max_length: int) -> List[str]:
         if len(text) <= max_length:
             return [text]
@@ -405,3 +409,5 @@ class ChunkText:
         if current_part:
             parts.append(" ".join(current_part))
         return parts
+
+

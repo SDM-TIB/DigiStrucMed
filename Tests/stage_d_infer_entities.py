@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import StatementsWithMedicalEntities, CandidateStatements
 from pipeline.models import EntitiesLinker
-from pipeline.devices import InferEntities
+from pipeline.inference import InferEntities
 STAGE_D_CONFIG = {
     "umls_csv_path": None,
     "filter_unmatched": False,

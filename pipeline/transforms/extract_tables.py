@@ -20,6 +20,7 @@ class TableExtractionConfig:
     min_table_chars: int = 50  # skip very small tables
     caption_tolerance: float = 25.0
     caption_vertical_margin: float = 120.0
+    caption_above_margin: float = 220.0  # search further above for captions (e.g. Table 6.)
 
 
 class ExtractTables:
@@ -31,6 +32,9 @@ class ExtractTables:
 
     _TABLE_CAPTION_PATTERN = re.compile(
         r"^\s*(?:Table|TABLE)\s+\d+[.\s—:\-]+(.+)$", re.IGNORECASE
+    )
+    _TABLE_CAPTION_LOOSE = re.compile(
+        r"^\s*(?:Table|TABLE)\s+\d+[.\s—:\-].+", re.IGNORECASE | re.DOTALL
     )
 
     def __init__(self, config: Optional[TableExtractionConfig] = None):
@@ -57,9 +61,10 @@ class ExtractTables:
         tx0, ttop, tx1, tbottom = table_bbox
         tol = self.config.caption_tolerance
         margin = self.config.caption_vertical_margin
+        above_margin = self.config.caption_above_margin
 
         def block_above(blk: Dict) -> bool:
-            return blk["y1"] <= ttop + tol and blk["y1"] >= ttop - margin
+            return blk["y1"] <= ttop + tol and blk["y1"] >= ttop - above_margin
 
         def block_below(blk: Dict) -> bool:
             return blk["y0"] >= tbottom - tol and blk["y0"] <= tbottom + margin
@@ -74,6 +79,17 @@ class ExtractTables:
             if block_below(blk):
                 if self._TABLE_CAPTION_PATTERN.search(text):
                     return text.strip()
+        # Fallback: any block above table that starts with "Table N."
+        candidates = []
+        for blk in page_blocks:
+            if not block_above(blk):
+                continue
+            text = (blk.get("text") or "").strip()
+            if text and self._TABLE_CAPTION_LOOSE.search(text):
+                candidates.append((blk["y1"], text))
+        if candidates:
+            candidates.sort(key=lambda x: -x[0])  # closest to table top (largest y1)
+            return candidates[0][1].strip()
         return ""
 
     def _extract_tables_for_page(

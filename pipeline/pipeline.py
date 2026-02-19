@@ -17,9 +17,9 @@ from pipeline.models import (
 )
 from pipeline.transforms import (
     ExtractText,
-    ChunkText
+    ContentPreparation,
 )
-from pipeline.devices import (
+from pipeline.inference import (
     RecognizeEntities,
     InferEntities,
     Validate
@@ -69,9 +69,9 @@ class Pipeline:
             skip_first_pages=skip_first_pages,
             skip_last_pages=skip_last_pages
         )
-        self.chunk_text = ChunkText(
+        self.content_preparation = ContentPreparation(
             parsing_rules=self.parsing_rules,
-            min_chars=min_chunk_chars
+            min_chars=min_chunk_chars,
         )
         self.recognize_entities = RecognizeEntities(
             neural_model=self.neural_model,
@@ -119,7 +119,8 @@ class Pipeline:
             Path(self.extracted_tables_file).write_text(
                 json.dumps(tables_out, indent=2, ensure_ascii=False), encoding="utf-8"
             )
-        text_chunks = self.chunk_text.transform(raw_text)
+        content_result = self.content_preparation.transform(raw_text)
+        text_chunks = content_result.get_text_chunks()
         statements_with_entities = self.recognize_entities.infer(text_chunks)
         candidate_statements = self.infer_entities.infer(statements_with_entities)
         if not self.skip_llm_validation:

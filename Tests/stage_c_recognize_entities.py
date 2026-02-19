@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import TextChunks, StatementsWithMedicalEntities
 from pipeline.models import NeuralModel
-from pipeline.devices import RecognizeEntities
+from pipeline.inference import RecognizeEntities
 STAGE_C_CONFIG = {
     "neural_model_name": "d4data/biomedical-ner-all",
     "min_ner_score": 0.55,
@@ -26,7 +26,7 @@ def test_stage_c():
     output_file.parent.mkdir(exist_ok=True)
     print(f"\n[1] Loading Stage b output from {input_file}...")
     if not input_file.exists():
-        print("    ERROR: Stage b output not found! Run stage_b_chunk_text.py first.")
+        print("    ERROR: Stage b output not found! Run stage_b_test.py first.")
         return None
     with open(input_file, "r", encoding="utf-8") as f:
         stage_b_data = json.load(f)

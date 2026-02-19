@@ -1,9 +1,13 @@
 from .extract_text import ExtractText
 from .extract_tables import ExtractTables, TableExtractionConfig
-from .chunk_text import ChunkText
+from .content_preparation import ContentPreparation
+from pipeline.models.table_spo_rules import table_rows_to_spo, tables_pages_to_spo_list
+
 __all__ = [
     "ExtractText",
     "ExtractTables",
     "TableExtractionConfig",
-    "ChunkText",
+    "ContentPreparation",
+    "table_rows_to_spo",
+    "tables_pages_to_spo_list",
 ]
