@@ -1,4 +1,5 @@
 from __future__ import annotations
+import json
 import re
 import unicodedata
 from dataclasses import dataclass
@@ -31,10 +32,12 @@ class ExtractText:
         skip_first_pages: int = 3,
         skip_last_pages: int = 5,
         config: Optional[ExtractionConfig] = None,
+        stage_output_dir: Optional[str] = "outputs/STAGE_A_v1",
     ):
         self.config = config or ExtractionConfig(
             skip_first_pages=skip_first_pages, skip_last_pages=skip_last_pages
         )
+        self.stage_output_dir = stage_output_dir
         self._compile_patterns()
     def _compile_patterns(self) -> None:
         self.url_pattern = re.compile(
@@ -402,7 +405,34 @@ class ExtractText:
                         source_file=str(pdf_path.name),
                         tables=page_data.get("tables", []),
                     )
+        if self.stage_output_dir:
+            self._write_stage_output(raw_text)
         return raw_text
+
+    def _write_stage_output(self, raw_text: RawText) -> None:
+        """Write Stage A output (text and tables) into this version's output folder."""
+        out_path = Path(self.stage_output_dir)
+        out_path.mkdir(parents=True, exist_ok=True)
+        pages = raw_text.get_pages()
+        texts_out = [
+            {"source_file": p.get("source", ""), "page": p["page"], "text": p["text"]}
+            for p in pages
+        ]
+        (out_path / "text.json").write_text(
+            json.dumps(texts_out, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        tables_out = []
+        for p in pages:
+            for t in p.get("tables", []):
+                tables_out.append({
+                    "source_file": p.get("source", ""),
+                    "page": p["page"],
+                    "caption": t.get("title", ""),
+                    "rows": t.get("rows", []),
+                })
+        (out_path / "tables.json").write_text(
+            json.dumps(tables_out, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
     def _extract_pdf(self, pdf_path: Path) -> List[Dict]:
         pages: List[Dict] = []
         with fitz.open(pdf_path) as doc:

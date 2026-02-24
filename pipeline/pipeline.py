@@ -17,6 +17,7 @@ from pipeline.models import (
 )
 from pipeline.transforms import (
     ExtractText,
+    ExtractTextV2,
     ContentPreparation,
 )
 from pipeline.inference import (
@@ -27,7 +28,7 @@ from pipeline.inference import (
 class Pipeline:
     def __init__(
         self,
-        pdf_dir: str = "data",
+        pdf_dir: str = "input",
         output_file: str = "candidate_statements.json",
         neural_model_name: str = "d4data/biomedical-ner-all",
         validation_model_name: str = "meta-llama/Llama-3.2-3B-Instruct",
@@ -42,13 +43,13 @@ class Pipeline:
         filter_unmatched_entities: bool = False,
         acronym_file: str = None,
         skip_llm_validation: bool = True,
-        extracted_texts_file: Optional[str] = "extracted_texts.json",
-        extracted_tables_file: Optional[str] = "extracted_tables.json",
+        output_dir: str = "outputs",
+        stage_a_version: str = "v1",
     ):
         self.pdf_dir = pdf_dir
         self.output_file = output_file
-        self.extracted_texts_file = extracted_texts_file
-        self.extracted_tables_file = extracted_tables_file
+        self.output_dir = output_dir
+        self.stage_a_version = stage_a_version
         self.confidence_threshold = confidence_threshold
         self.skip_llm_validation = skip_llm_validation
         self.parsing_rules = ParsingRules()
@@ -65,10 +66,19 @@ class Pipeline:
             self.validation_model = ValidationModel(model_name=validation_model_name)
         else:
             self.validation_model = None
-        self.extract_text = ExtractText(
-            skip_first_pages=skip_first_pages,
-            skip_last_pages=skip_last_pages
-        )
+        stage_a_output_dir = f"{output_dir}/STAGE_A_{stage_a_version}"
+        if stage_a_version == "v2":
+            self.extract_text = ExtractTextV2(
+                skip_first_pages=skip_first_pages,
+                skip_last_pages=skip_last_pages,
+                stage_output_dir=stage_a_output_dir,
+            )
+        else:
+            self.extract_text = ExtractText(
+                skip_first_pages=skip_first_pages,
+                skip_last_pages=skip_last_pages,
+                stage_output_dir=stage_a_output_dir,
+            )
         self.content_preparation = ContentPreparation(
             parsing_rules=self.parsing_rules,
             min_chars=min_chunk_chars,
@@ -98,27 +108,6 @@ class Pipeline:
             else:
                 return ValidatedFactsAndQualifiers()
         raw_text = self.extract_text.transform(pdf_guidelines)
-        if self.extracted_texts_file:
-            texts_out = [
-                {"source_file": p.get("source", ""), "page": p["page"], "text": p["text"]}
-                for p in raw_text.get_pages()
-            ]
-            Path(self.extracted_texts_file).write_text(
-                json.dumps(texts_out, indent=2, ensure_ascii=False), encoding="utf-8"
-            )
-        if self.extracted_tables_file:
-            tables_out = []
-            for p in raw_text.get_pages():
-                for t in p.get("tables", []):
-                    tables_out.append({
-                        "source_file": p.get("source", ""),
-                        "page": p["page"],
-                        "caption": t.get("title", ""),
-                        "rows": t.get("rows", []),
-                    })
-            Path(self.extracted_tables_file).write_text(
-                json.dumps(tables_out, indent=2, ensure_ascii=False), encoding="utf-8"
-            )
         content_result = self.content_preparation.transform(raw_text)
         text_chunks = content_result.get_text_chunks()
         statements_with_entities = self.recognize_entities.infer(text_chunks)

@@ -45,3 +45,10 @@ Thumbs.db
 logs/
 
 papers/
+
+
+# Input/output: ignore all contents (any depth), keep folder via .gitkeep
+input/**
+!input/.gitkeep
+outputs/**
+!outputs/.gitkeep

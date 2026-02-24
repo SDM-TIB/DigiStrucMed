@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 class PDFGuidelines:
-    def __init__(self, pdf_dir: str = "data"):
+    def __init__(self, pdf_dir: str = "input"):
         self.pdf_dir = Path(pdf_dir)
         self.pdf_files: List[Path] = []
         if self.pdf_dir.exists():
