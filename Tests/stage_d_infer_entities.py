@@ -1,17 +1,17 @@
-import sys
+﻿import sys
 import json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import StatementsWithMedicalEntities, CandidateStatements
 from pipeline.models import EntitiesLinker
-from pipeline.inference import InferEntities
+from pipeline.inference.infer_entities import InferEntities
 
 PROJECT_ROOT = Path(__file__).parent.parent
 STAGE_C_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_C_v1"
 STAGE_D_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_D_v1"
 
 STAGE_D_CONFIG = {
-    "umls_csv_path": None,
+    "umls_csv_path": str(PROJECT_ROOT / "data" / "UMLS.csv"),
     "filter_unmatched": False,
     "use_partial_umls_match": False,
 }
@@ -95,3 +95,5 @@ def test_stage_d():
     return candidate_statements
 if __name__ == "__main__":
     test_stage_d()
+
+

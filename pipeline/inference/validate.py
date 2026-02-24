@@ -41,7 +41,7 @@ class Validate:
                 {
                     "text": e.get("concept_name") or e.get("text"),
                     "label": e.get("label"),
-                    "id": e.get("umls_id") or e.get("concept_id")
+                    "id": e.get("cui_id") or e.get("umls_id") or e.get("concept_id")
                 }
                 for e in entities
             ])

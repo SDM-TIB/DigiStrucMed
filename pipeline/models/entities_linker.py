@@ -83,33 +83,14 @@ class EntitiesLinker:
             if umls_match:
                 linked = {
                     "concept_name": umls_match["label"],
-                    "umls_id": umls_match["cui"],
+                    "cui_id": umls_match["cui"],
                     "label": entity_label,
                 }
                 for key in ["score", "start", "end"]:
                     if key in entity:
                         linked[key] = entity[key]
                 linked_entities.append(linked)
-            else:
-                if self.filter_unmatched:
-                    continue
-                concept_id, concept_name = self._find_pattern_concept(entity_text, entity_label)
-                if concept_id:
-                    linked = {
-                        "concept_name": concept_name,
-                        "umls_id": concept_id,
-                        "label": entity_label,
-                    }
-                else:
-                    linked = {
-                        "concept_name": entity_text,
-                        "umls_id": self._normalize_text(entity_text),
-                        "label": entity_label,
-                    }
-                for key in ["score", "start", "end"]:
-                    if key in entity:
-                        linked[key] = entity[key]
-                linked_entities.append(linked)
+            # Only keep entities with a real UMLS CUI; skip rule-based and normalized fallbacks
         return linked_entities
     def _find_umls_concept(self, text: str) -> Optional[Dict]:
         if not self.umls_loaded:
