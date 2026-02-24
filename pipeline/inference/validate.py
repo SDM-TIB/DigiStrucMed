@@ -47,7 +47,6 @@ class Validate:
             ])
             source_text = stmt.get("text", "")
             chunk_id = stmt.get("chunk_id")
-            source_pdf = stmt.get("source_pdf")
             page = stmt.get("page")
             for one in extracted_list:
                 if not isinstance(one, dict):
@@ -67,15 +66,70 @@ class Validate:
                     "subject": subject,
                     "predicate": predicate,
                     "object": obj,
-                    "exception": exception,
-                    "duration": duration,
                     "entities": entities_aligned,
                     "source_text": source_text,
                     "chunk_id": chunk_id,
-                    "source_pdf": source_pdf,
+                    "exception": exception,
+                    "duration": duration,
                     "page": page,
                 })
         return validated
+
+    def validate_table_triples(
+        self,
+        validated: ValidatedFactsAndQualifiers,
+        table_triples: List[Dict],
+    ) -> None:
+        """Run each table_triple through LLM: validate as single fact or split object into multiple triples; append to validated (same 9-field format)."""
+        total = len(table_triples)
+        for idx, triple in enumerate(table_triples):
+            subj = (triple.get("subject") or "").strip()
+            pred = (triple.get("predicate") or "").strip()
+            obj = (triple.get("object") or "").strip()
+            if not pred:
+                continue
+            extracted = self.validation_model.validate_and_split_table_triple(
+                subj, pred, obj, max_new_tokens=self.max_new_tokens
+            )
+            if not extracted:
+                extracted = [{"subject": subj, "predicate": pred, "object": obj}]
+            entities = triple.get("entities", [])
+            simplified = self._filter_entities([
+                {
+                    "text": e.get("concept_name") or e.get("text", ""),
+                    "label": e.get("label", ""),
+                    "id": e.get("cui_id") or e.get("umls_id") or e.get("concept_id"),
+                }
+                for e in entities
+            ])
+            source_text = f"{subj} {pred} {obj}".strip()[:2000]
+            page = triple.get("page")
+            for one in extracted:
+                if not isinstance(one, dict):
+                    continue
+                s = (one.get("subject") or "unspecified").strip()
+                p = (one.get("predicate") or "").strip()
+                o = one.get("object")
+                if o is not None and isinstance(o, str):
+                    o = o.strip()
+                if not p:
+                    continue
+                aligned = self._filter_entities_by_spo_alignment(simplified, s, o or "")
+                validated.add_validated({
+                    "subject": s,
+                    "predicate": p,
+                    "object": o,
+                    "entities": aligned,
+                    "source_text": source_text,
+                    "chunk_id": None,
+                    "exception": one.get("exception"),
+                    "duration": self._clean_duration(one.get("duration")),
+                    "page": page,
+                })
+            if (idx + 1) % 50 == 0 or (idx + 1) == total:
+                print(f"    Table triples (LLM): {idx + 1}/{total}")
+        return
+
     def _filter_entities(self, entities: List[Dict]) -> List[Dict]:
         filtered = []
         seen_texts = set()

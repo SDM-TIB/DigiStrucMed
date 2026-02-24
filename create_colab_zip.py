@@ -12,7 +12,7 @@ def create_colab_zip():
         "pipeline/",
         "input/",
         "Tests/",
-        "COLAB_NOTEBOOK.ipynb",
+        "colab_stage_e.ipynb",
         "COLAB_Stage_C.ipynb",
         "requirements.txt",
         "README.md",
@@ -123,9 +123,9 @@ if __name__ == "__main__":
         print("=" * 60)
         print("\nNext steps:")
         print("1. Go to Google Colab and upload this ZIP (Step 4 in the notebook)")
-        print("2. Open COLAB_NOTEBOOK.ipynb from the extracted files (or upload it)")
+        print("2. Open colab_stage_e.ipynb from the extracted files (or upload it)")
         print("3. Runtime -> Change runtime type -> T4 GPU")
-        print("4. Run all cells to execute the full pipeline (a->e)")
+        print("4. Run all cells to execute Stage E (upload Stage D JSON, then run)")
     except Exception as e:
         print(f"\n[ERROR] {e}")
         import traceback

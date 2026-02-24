@@ -5,6 +5,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import CandidateStatements, ValidatedFactsAndQualifiers
 from pipeline.models import ValidationModel
 from pipeline.inference import Validate
+
+PROJECT_ROOT = Path(__file__).parent.parent
+STAGE_D_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_D_v1"
+STAGE_E_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_E_v1"
+
+
 def test_stage_e():
     print("=" * 70)
     print("STAGE e: candidate_statements -> validate -> validated_facts_AND_qualifiers")
@@ -13,19 +19,21 @@ def test_stage_e():
     validation_model_name = "meta-llama/Llama-3.2-3B-Instruct"
     batch_size = 4
     max_extraction_tokens = 400
-    input_file = Path(__file__).parent / "outputs" / "stage_d_candidate_statements.json"
-    output_file = Path(__file__).parent / "outputs" / "stage_e_validated_output.json"
-    output_file.parent.mkdir(exist_ok=True)
-    print(f"\n[1] Loading Stage d output from {input_file}...")
+    input_file = STAGE_D_V1_DIR / "stage_d_candidate_statements.json"
+    output_file = STAGE_E_V1_DIR / "stage_e_validated_output.json"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    print(f"\n[1] Loading Stage D v1 output from {input_file}...")
     if not input_file.exists():
-        print("    ERROR: Stage d output not found! Run stage_d_infer_entities.py first.")
+        print("    ERROR: Stage D v1 output not found! Run stage_d_infer_entities.py first.")
         return None
     with open(input_file, "r", encoding="utf-8") as f:
         stage_d_data = json.load(f)
     candidate_statements = CandidateStatements()
     for stmt in stage_d_data["statements"]:
         candidate_statements.add_statement(stmt)
+    table_triples = stage_d_data.get("table_triples", [])
     print(f"    Loaded: {candidate_statements}")
+    print(f"    Table triples: {len(table_triples)}")
     print(f"\n[2] Initializing extraction model: {validation_model_name}...")
     validation_model = ValidationModel(model_name=validation_model_name)
     print(f"\n[3] Initializing validate device...")
@@ -36,16 +44,21 @@ def test_stage_e():
         batch_size=batch_size,
         max_new_tokens=max_extraction_tokens
     )
-    print("\n[4] Extracting factual statements...")
+    print("\n[4] Extracting factual statements from text...")
     validated_facts = validator.validate(candidate_statements)
     print(f"    Result: {validated_facts}")
+    if table_triples:
+        print("\n[4b] Running table_triples through LLM (validate/split)...")
+        validator.validate_table_triples(validated_facts, table_triples)
+        print(f"    Result after table triples: {validated_facts}")
     print(f"\n[5] Saving output to {output_file}...")
     output_data = {
         "metadata": {
             "stage": "e",
-            "description": "Extracted factual statements (subject, predicate, object, exception, duration) for expert validation",
+            "description": "Extracted factual statements (subject, predicate, object, entities) from text and table triples for expert validation",
             "total_statements": validated_facts.count(),
-            "extraction_model": validation_model_name
+            "extraction_model": validation_model_name,
+            "table_triples_through_llm": len(table_triples),
         },
         "validated_statements": validated_facts.get_all()
     }

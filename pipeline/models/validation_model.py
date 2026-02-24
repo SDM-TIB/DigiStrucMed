@@ -148,6 +148,36 @@ Schema for each statement in the JSON array:
 Example output:
 [{"subject": "ACEi", "predicate": "is", "object": "angiotensin-converting enzyme inhibitors", "exception": null, "duration": null}, {"subject": "patients with HFrEF", "predicate": "should receive", "object": "ACE inhibitors", "exception": null, "duration": null}]
 If no factual statement, output: []""".strip()
+
+    def validate_and_split_table_triple(
+        self,
+        subject: str,
+        predicate: str,
+        obj: str,
+        max_new_tokens: int = 400,
+    ) -> List[Dict]:
+        """Run table triple through LLM: if valid single fact return [triple]; if object has multiple statements return list of split triples."""
+        prompt = self._build_table_triple_prompt(subject or "", predicate or "", obj or "")
+        raw = self.run_inference(prompt, max_new_tokens=max_new_tokens)
+        return self._parse_extraction_output(raw)
+
+    def _build_table_triple_prompt(self, subject: str, predicate: str, obj: str) -> str:
+        return f"""You are a medical guideline assistant. You are given a triple (subject, predicate, object) extracted from a guideline TABLE.
+
+TRIPLE:
+- subject: {subject}
+- predicate: {predicate}
+- object: {obj}
+
+TASK:
+1. If this is already ONE clear, well-formed factual statement, output it as a single-item JSON array.
+2. If the object is LONG TEXT that contains MULTIPLE distinct recommendations or statements, SPLIT it into separate triples. Each triple should have subject, predicate, object. Use the same or a shortened subject when appropriate. Output a JSON array with one object per statement.
+
+Output ONLY a JSON array of objects. Each object must have: "subject", "predicate", "object". Use "exception" and "duration" only if explicitly stated (otherwise omit or null).
+Example single: [{{"subject": "ACEi", "predicate": "is", "object": "angiotensin-converting enzyme inhibitors"}}]
+Example split: [{{"subject": "Clinical Assessment", "predicate": "recommends", "object": "assess vital signs at each encounter"}}, {{"subject": "Clinical Assessment", "predicate": "recommends", "object": "adjust diuretics based on congestion"}}]
+Output valid JSON only, no other text.""".strip()
+
     def _extract_json_or_null(self, raw: str) -> Optional[str]:
         if raw is None:
             return None
@@ -250,3 +280,63 @@ If no factual statement, output: []""".strip()
             "exception": exception,
             "duration": duration,
         }
+
+    def enrich_triple_for_kg(
+        self,
+        subject: Optional[str],
+        predicate: Optional[str],
+        obj: Optional[str],
+        max_new_tokens: int = 120,
+    ) -> Dict:
+        """Use LLM to map a (subject, predicate, object) triple to knowledge-graph style IDs.
+        Returns dict with object_cui, subject_cui, relation_type (or nulls when not linkable).
+        Focus: triples with text as object -> suggest UMLS CUI for object (and subject if entity).
+        """
+        if not obj and not subject:
+            return {"object_cui": None, "subject_cui": None, "relation_type": None}
+        prompt = self._build_kg_enrichment_prompt(subject or "", predicate or "", obj or "")
+        raw = self.run_inference(prompt, max_new_tokens=max_new_tokens)
+        return self._parse_kg_enrichment_output(raw)
+
+    def _build_kg_enrichment_prompt(self, subject: str, predicate: str, obj: str) -> str:
+        return f"""You are a medical knowledge graph assistant. Given a factual triple from a clinical guideline, suggest UMLS-style concept identifiers for use in a knowledge graph.
+
+Triple:
+- subject: {subject or 'unspecified'}
+- predicate: {predicate or 'unspecified'}
+- object: {obj or 'unspecified'}
+
+If the subject or object refers to a medical/clinical concept that typically has a UMLS CUI (format C followed by 7 digits, e.g. C0004238), suggest the most likely CUI. If you are unsure or it is not a standard medical concept, use null.
+For relation_type, give a short canonical relation label (e.g. TREATS, RECOMMENDS, ASSOCIATED_WITH, HAS_INDICATION) or null.
+
+Output valid JSON only, no other text. Use double quotes.
+Format: {{"subject_cui": "C######## or null", "object_cui": "C######## or null", "relation_type": "UPPER_SNAKE or null"}}
+""".strip()
+
+    def _parse_kg_enrichment_output(self, raw: str) -> Dict:
+        out = {"object_cui": None, "subject_cui": None, "relation_type": None}
+        if not raw:
+            return out
+        parsed = self._extract_json_or_null(raw)
+        if not parsed:
+            return out
+        try:
+            obj = json.loads(parsed) if isinstance(parsed, str) else parsed
+            if not isinstance(obj, dict):
+                return out
+            for key in ["subject_cui", "object_cui", "relation_type"]:
+                v = obj.get(key)
+                if v is None:
+                    continue
+                if isinstance(v, str):
+                    v = v.strip()
+                    if v.lower() in {"null", "none", "n/a", ""}:
+                        v = None
+                if v and key != "relation_type" and isinstance(v, str):
+                    if not (v.startswith("C") and len(v) >= 8 and v[1:].replace(" ", "").isdigit()):
+                        v = None
+                if v is not None:
+                    out[key] = v
+        except Exception:
+            pass
+        return out
