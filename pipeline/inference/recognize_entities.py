@@ -62,6 +62,44 @@ class RecognizeEntities:
                 "entities": validated_entities
             })
         return result
+
+    def enrich_triples_with_entities(self, table_triples: List[Dict]) -> List[Dict]:
+        """Run NER on subject and object of each triple; add an 'entities' field to each triple."""
+        enriched = []
+        for triple in table_triples:
+            out = dict(triple)
+            subject = (triple.get("subject") or "").strip()
+            obj = (triple.get("object") or "").strip()
+            entities = []
+            seen_texts = set()
+            for text in (subject, obj):
+                if not text:
+                    continue
+                expanded = self.acronym_expander.expand(text)
+                if not expanded or not expanded.strip():
+                    expanded = text
+                extracted = self.neural_model.extract_entities(
+                    text=expanded,
+                    min_score=self.min_score,
+                    max_entities=1000
+                )
+                validated = self._validate_entities(extracted, expanded)
+                if self.filter_labels:
+                    validated = self._filter_by_labels(validated)
+                for ent in validated:
+                    t = (ent.get("text") or "").strip()
+                    if not t:
+                        continue
+                    t = " ".join(t.split())
+                    key = t.lower()
+                    if key in seen_texts:
+                        continue
+                    seen_texts.add(key)
+                    entities.append(ent)
+            out["entities"] = entities
+            enriched.append(out)
+        return enriched
+
     def _should_process_chunk(self, text: str) -> bool:
         if not text or not text.strip():
             return False

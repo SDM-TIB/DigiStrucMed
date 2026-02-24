@@ -72,6 +72,8 @@ def test_stage_c():
     print("\n[4] Running NER with acronym expansion...")
     statements_with_entities = recognizer.infer(text_chunks)
     print(f"    Result: {statements_with_entities}")
+    print("    Enriching table triples with NER on subject/object...")
+    table_triples = recognizer.enrich_triples_with_entities(table_triples)
     print(f"\n[5] Saving output (statements + table_triples) to {output_file}...")
     output_data = {
         "metadata": {

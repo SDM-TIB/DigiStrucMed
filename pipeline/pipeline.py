@@ -112,6 +112,7 @@ class Pipeline:
         text_chunks = content_result.get_text_chunks()
         table_triples = content_result.get_table_triples()
         statements_with_entities = self.recognize_entities.infer(text_chunks)
+        table_triples = self.recognize_entities.enrich_triples_with_entities(table_triples)
         # Write Stage C output (statements + table_triples) to outputs/STAGE_C_v1
         stage_c_dir = Path(self.output_dir) / "STAGE_C_v1"
         stage_c_dir.mkdir(parents=True, exist_ok=True)

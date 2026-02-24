@@ -17,7 +17,10 @@ except Exception:
 
 # Use fitz only for page count (lightweight)
 import fitz
-from docling.document_converter import DocumentConverter
+try:
+    from docling.document_converter import DocumentConverter
+except ImportError:
+    DocumentConverter = None  # optional; required only for Stage A v2
 
 
 class ExtractTextV2:
@@ -29,6 +32,10 @@ class ExtractTextV2:
         skip_last_pages: int = 5,
         stage_output_dir: Optional[str] = "outputs/STAGE_A_v2",
     ):
+        if DocumentConverter is None:
+            raise ImportError(
+                "docling is required for Stage A v2. Install with: pip install docling"
+            )
         self.skip_first_pages = skip_first_pages
         self.skip_last_pages = skip_last_pages
         self.stage_output_dir = stage_output_dir
