@@ -1,7 +1,7 @@
 """
-Stage B: Content preparation.
-Inputs: raw_text_and_tables (stage_a_raw_text.json + stage_a_tables.json).
-Outputs: stage_b_text_chunks.json, stage_b_table_triples.json.
+Stage B v1: Content preparation.
+Inputs: outputs/STAGE_A_v1/text.json + tables.json.
+Outputs: outputs/STAGE_B_v1/stage_b_text_chunks.json, stage_b_table_triples.json.
 """
 import sys
 import json
@@ -12,92 +12,66 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import RawText
 from pipeline.models import ParsingRules
 from pipeline.transforms import ContentPreparation
-from pipeline.transforms.table_to_sentences import classify_table
 
-INPUT_FILE = Path(__file__).parent / "outputs" / "stage_a_raw_text.json"
-TABLES_FILE = Path(__file__).parent / "outputs" / "stage_a_tables.json"
-OUTPUT_TEXT_CHUNKS = Path(__file__).parent / "outputs" / "stage_b_text_chunks.json"
-OUTPUT_TABLE_TRIPLES = Path(__file__).parent / "outputs" / "stage_b_table_triples.json"
-TABLE_COMPARISON_FILE = Path(__file__).parent / "outputs" / "stage_b_table_comparison.json"
+PROJECT_ROOT = Path(__file__).parent.parent
+STAGE_A_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_A_v1"
+STAGE_B_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_B_v1"
+
+TEXT_FILE = STAGE_A_V1_DIR / "text.json"
+TABLES_FILE = STAGE_A_V1_DIR / "tables.json"
+OUTPUT_TEXT_CHUNKS = STAGE_B_V1_DIR / "stage_b_text_chunks.json"
+OUTPUT_TABLE_TRIPLES = STAGE_B_V1_DIR / "stage_b_table_triples.json"
 
 
-def build_table_comparison(stage_a_data: dict, chunks: list) -> dict:
-    by_page_table = defaultdict(lambda: defaultdict(list))
-    for c in chunks:
-        if not c.get("from_table"):
-            continue
-        page = c["page"]
-        ti = c.get("table_index", 0)
-        by_page_table[page][ti].append({
-            "row_index": c.get("row_index"),
-            "sentence": c["text"],
-            "chunk_id": c.get("chunk_id"),
-        })
-    for page in by_page_table:
-        for ti in by_page_table[page]:
-            by_page_table[page][ti].sort(key=lambda x: (x["row_index"] is None, x["row_index"] or 0))
-    report = {"by_page": {}}
-    for page_data in stage_a_data.get("pages", []):
-        page_num = page_data["page"]
-        tables = page_data.get("tables", [])
-        if not tables:
-            continue
-        page_key = str(page_num)
-        report["by_page"][page_key] = []
-        for ti, table in enumerate(tables):
-            rows = table.get("rows", [])
-            table_type = classify_table(rows)
-            sentences = by_page_table.get(page_num, {}).get(ti, [])
-            report["by_page"][page_key].append({
-                "table_index": ti,
-                "table_type": table_type,
-                "stage_a_row_count": len(rows),
-                "stage_a_rows": rows,
-                "stage_b_sentences": sentences,
-                "stage_b_sentence_count": len(sentences),
-            })
-    report["metadata"] = {
-        "description": "Compare Stage A tables to Stage B table-derived sentences",
-        "total_pages_with_tables": len(report["by_page"]),
-    }
-    return report
+def load_stage_a_v1(text_path: Path, tables_path: Path) -> RawText | None:
+    """Load Stage A v1 output (text.json + tables.json) into RawText."""
+    if not text_path.exists():
+        return None, None
+    with open(text_path, "r", encoding="utf-8") as f:
+        texts = json.load(f)
+    if not isinstance(texts, list):
+        texts = texts.get("pages", texts) if isinstance(texts, dict) else []
+    tables_list = []
+    if tables_path.exists():
+        with open(tables_path, "r", encoding="utf-8") as f:
+            tables_list = json.load(f)
+    if not isinstance(tables_list, list):
+        tables_list = []
+
+    tables_by_key = defaultdict(list)
+    for t in tables_list:
+        key = (t.get("source_file", ""), t.get("page", 0))
+        tables_by_key[key].append({"title": t.get("caption", ""), "rows": t.get("rows", [])})
+
+    raw_text = RawText()
+    pages_with_tables = []
+    for item in texts:
+        source_file = item.get("source_file", "")
+        page_num = item.get("page", 0)
+        text = item.get("text", "")
+        key = (source_file, page_num)
+        tables = tables_by_key.get(key, [])
+        raw_text.add_page(
+            page_num=page_num,
+            text=text,
+            source_file=source_file,
+            tables=tables,
+        )
+    return raw_text
 
 
 def test_stage_b():
     print("=" * 70)
-    print("STAGE B: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
+    print("STAGE B v1: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
     print("=" * 70)
     min_chunk_chars = 40
-    OUTPUT_TEXT_CHUNKS.parent.mkdir(exist_ok=True)
+    STAGE_B_V1_DIR.mkdir(parents=True, exist_ok=True)
 
-    print(f"\n[1] Loading Stage A output (raw_text_and_tables): {INPUT_FILE} + {TABLES_FILE}...")
-    if not INPUT_FILE.exists():
-        print("    ERROR: Stage A output not found! Run stagee_a_extract_text_table.py first.")
+    print(f"\n[1] Loading Stage A v1 output: {TEXT_FILE} + {TABLES_FILE}...")
+    raw_text = load_stage_a_v1(TEXT_FILE, TABLES_FILE)
+    if raw_text is None:
+        print("    ERROR: Stage A v1 output not found! Run stagee_a_extract_text_table.py first.")
         return None
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        stage_a_data = json.load(f)
-    tables_by_page_source = {}
-    if TABLES_FILE.exists():
-        with open(TABLES_FILE, "r", encoding="utf-8") as f:
-            tables_data = json.load(f)
-        for p in tables_data.get("pages", []):
-            key = (p["page"], p.get("source", ""))
-            tables_by_page_source[key] = p.get("tables", [])
-    raw_text = RawText()
-    pages_with_tables = []
-    for page in stage_a_data["pages"]:
-        page_num = page["page"]
-        source = page.get("source", "")
-        key = (page_num, source)
-        tables = tables_by_page_source.get(key, page.get("tables", []))
-        raw_text.add_page(
-            page_num=page_num,
-            text=page["text"],
-            source_file=source,
-            tables=tables,
-        )
-        pages_with_tables.append({"page": page_num, "source": source, "tables": tables})
-    stage_a_data_for_comparison = {"pages": pages_with_tables}
     print(f"    Loaded: {raw_text}")
 
     print(f"\n[2] Initializing content_preparation transform...")
@@ -146,20 +120,13 @@ def test_stage_b():
     print(f"    Text chunks -> {OUTPUT_TEXT_CHUNKS}")
     print(f"    Table triples -> {OUTPUT_TABLE_TRIPLES}")
 
-    print(f"\n[5] Building table comparison report -> {TABLE_COMPARISON_FILE}...")
-    comparison = build_table_comparison(stage_a_data_for_comparison, text_chunks.get_chunks())
-    TABLE_COMPARISON_FILE.write_text(
-        json.dumps(comparison, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-
     print("\n" + "=" * 70)
-    print("STAGE B COMPLETE")
+    print("STAGE B v1 COMPLETE")
     print("=" * 70)
     print(f"  Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"  Table triples: {len(table_triples)}")
     print(f"  Outputs: {OUTPUT_TEXT_CHUNKS.name}, {OUTPUT_TABLE_TRIPLES.name}")
-    print(f"  Table comparison: {TABLE_COMPARISON_FILE.name}")
+    print(f"  Dir: {STAGE_B_V1_DIR}")
     print("=" * 70)
     return result
 

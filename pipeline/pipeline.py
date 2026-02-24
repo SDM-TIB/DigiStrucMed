@@ -110,7 +110,27 @@ class Pipeline:
         raw_text = self.extract_text.transform(pdf_guidelines)
         content_result = self.content_preparation.transform(raw_text)
         text_chunks = content_result.get_text_chunks()
+        table_triples = content_result.get_table_triples()
         statements_with_entities = self.recognize_entities.infer(text_chunks)
+        # Write Stage C output (statements + table_triples) to outputs/STAGE_C_v1
+        stage_c_dir = Path(self.output_dir) / "STAGE_C_v1"
+        stage_c_dir.mkdir(parents=True, exist_ok=True)
+        stage_c_file = stage_c_dir / "stage_c_statements_with_entities.json"
+        stage_c_data = {
+            "metadata": {
+                "stage": "c",
+                "description": "Statements with medical entities (NER) and table triples from Stage B",
+                "total_statements": statements_with_entities.count(),
+                "total_entities": statements_with_entities.get_entity_count(),
+                "total_table_triples": len(table_triples),
+            },
+            "statements": statements_with_entities.get_all(),
+            "table_triples": table_triples,
+        }
+        stage_c_file.write_text(
+            json.dumps(stage_c_data, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
         candidate_statements = self.infer_entities.infer(statements_with_entities)
         if not self.skip_llm_validation:
             validated_facts = self.validate.validate(candidate_statements)

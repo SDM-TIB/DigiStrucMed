@@ -10,9 +10,10 @@ def create_colab_zip():
     zip_filename = "Thesis_llama_colab.zip"
     include_items = [
         "pipeline/",
-        "data/",
+        "input/",
         "Tests/",
         "COLAB_NOTEBOOK.ipynb",
+        "COLAB_Stage_C.ipynb",
         "requirements.txt",
         "README.md",
     ]

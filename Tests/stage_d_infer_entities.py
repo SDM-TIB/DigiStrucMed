@@ -5,31 +5,47 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from pipeline.data import StatementsWithMedicalEntities, CandidateStatements
 from pipeline.models import EntitiesLinker
 from pipeline.inference import InferEntities
+
+PROJECT_ROOT = Path(__file__).parent.parent
+STAGE_C_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_C_v1"
+STAGE_D_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_D_v1"
+
 STAGE_D_CONFIG = {
     "umls_csv_path": None,
     "filter_unmatched": False,
     "use_partial_umls_match": False,
 }
-INPUT_FILE = Path(__file__).parent / "outputs" / "stage_c_statements_with_entities.json"
-OUTPUT_FILE = Path(__file__).parent / "outputs" / "stage_d_candidate_statements.json"
+INPUT_FILE = STAGE_C_V1_DIR / "stage_c_statements_with_entities.json"
+INPUT_FILE_FALLBACK_TESTS = Path(__file__).parent / "outputs" / "stage_c_statements_with_entities.json"
+INPUT_FILE_FALLBACK_NER = PROJECT_ROOT / "stage_c_statements_with_entities_NER.json"
+OUTPUT_FILE = STAGE_D_V1_DIR / "stage_d_candidate_statements.json"
+
+
+def _resolve_stage_c_input() -> Path:
+    if INPUT_FILE.exists():
+        return INPUT_FILE
+    if INPUT_FILE_FALLBACK_TESTS.exists():
+        return INPUT_FILE_FALLBACK_TESTS
+    if INPUT_FILE_FALLBACK_NER.exists():
+        return INPUT_FILE_FALLBACK_NER
+    return INPUT_FILE
+
+
 def test_stage_d():
     print("=" * 70)
-    print("STAGE d: statements_with_medical_entities -> infer:entities -> candidate_statements")
+    print("STAGE D v1: statements_with_medical_entities -> infer_entities -> candidate_statements")
     print("=" * 70)
     cfg = STAGE_D_CONFIG
     umls_csv_path = cfg["umls_csv_path"]
-    input_file = INPUT_FILE
+    input_file = _resolve_stage_c_input()
     if not input_file.exists():
-        root = Path(__file__).parent.parent
-        input_file = root / "stage_c_statements_with_entities_NER.json"
-    if not input_file.exists():
-        print("    ERROR: Stage c output not found. Run stage_c_recognize_entities.py first.")
+        print("    ERROR: Stage C v1 output not found. Run stage_c_recognize_entities.py first.")
         return None
     output_file = OUTPUT_FILE
-    output_file.parent.mkdir(exist_ok=True)
-    print(f"\n[1] Loading Stage c output from {input_file}...")
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    print(f"\n[1] Loading Stage C v1 output from {input_file}...")
     if not input_file.exists():
-        print("    ERROR: Stage c output not found! Run stage_c_recognize_entities.py first.")
+        print("    ERROR: Stage C v1 output not found! Run stage_c_recognize_entities.py first.")
         return None
     with open(input_file, "r", encoding="utf-8") as f:
         stage_c_data = json.load(f)
@@ -70,11 +86,11 @@ def test_stage_d():
         encoding="utf-8"
     )
     print("\n" + "=" * 70)
-    print("STAGE d COMPLETE")
+    print("STAGE D v1 COMPLETE")
     print("=" * 70)
     print(f"  Total statements: {candidate_statements.count()}")
     print(f"  Candidate statements: {candidate_statements.count_candidates()}")
-    print(f"  Output file: {output_file}")
+    print(f"  Output: {output_file}")
     print("=" * 70)
     return candidate_statements
 if __name__ == "__main__":
