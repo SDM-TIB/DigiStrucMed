@@ -82,6 +82,7 @@ class Pipeline:
         self.content_preparation = ContentPreparation(
             parsing_rules=self.parsing_rules,
             min_chars=min_chunk_chars,
+            stage_output_dir=str(Path(self.output_dir) / "STAGE_B_v1"),
         )
         self.recognize_entities = RecognizeEntities(
             neural_model=self.neural_model,

@@ -65,7 +65,6 @@ def test_stage_b():
     print("STAGE B v1: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
     print("=" * 70)
     min_chunk_chars = 40
-    STAGE_B_V1_DIR.mkdir(parents=True, exist_ok=True)
 
     print(f"\n[1] Loading Stage A v1 output: {TEXT_FILE} + {TABLES_FILE}...")
     raw_text = load_stage_a_v1(TEXT_FILE, TABLES_FILE)
@@ -76,10 +75,12 @@ def test_stage_b():
 
     print(f"\n[2] Initializing content_preparation transform...")
     print(f"    Minimum chunk chars: {min_chunk_chars}")
+    print(f"    Stage B v1 output dir: {STAGE_B_V1_DIR}")
     parsing_rules = ParsingRules()
     content_prep = ContentPreparation(
         parsing_rules=parsing_rules,
         min_chars=min_chunk_chars,
+        stage_output_dir=str(STAGE_B_V1_DIR),
     )
 
     print("\n[3] Running content preparation (text chunks + table triples)...")
@@ -89,44 +90,14 @@ def test_stage_b():
     table_derived_count = sum(1 for c in text_chunks.get_chunks() if c.get("from_table"))
     print(f"    Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"    Table triples: {len(table_triples)}")
-
-    print(f"\n[4] Saving outputs...")
-    output_chunks_data = {
-        "metadata": {
-            "stage": "b",
-            "description": "Text chunks from content_preparation",
-            "total_chunks": text_chunks.count(),
-            "table_derived_chunks": table_derived_count,
-            "min_chunk_chars": min_chunk_chars,
-        },
-        "chunks": text_chunks.get_chunks(),
-    }
-    OUTPUT_TEXT_CHUNKS.write_text(
-        json.dumps(output_chunks_data, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-    output_triples_data = {
-        "metadata": {
-            "stage": "b",
-            "description": "Table SPO triples from content_preparation",
-            "total_triples": len(table_triples),
-        },
-        "triples": table_triples,
-    }
-    OUTPUT_TABLE_TRIPLES.write_text(
-        json.dumps(output_triples_data, indent=2, ensure_ascii=False),
-        encoding="utf-8",
-    )
-    print(f"    Text chunks -> {OUTPUT_TEXT_CHUNKS}")
-    print(f"    Table triples -> {OUTPUT_TABLE_TRIPLES}")
+    print(f"    Output written to {STAGE_B_V1_DIR} (stage_b_text_chunks.json, stage_b_table_triples.json)")
 
     print("\n" + "=" * 70)
     print("STAGE B v1 COMPLETE")
     print("=" * 70)
     print(f"  Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"  Table triples: {len(table_triples)}")
-    print(f"  Outputs: {OUTPUT_TEXT_CHUNKS.name}, {OUTPUT_TABLE_TRIPLES.name}")
-    print(f"  Dir: {STAGE_B_V1_DIR}")
+    print(f"  Outputs: {STAGE_B_V1_DIR / 'stage_b_text_chunks.json'}, {STAGE_B_V1_DIR / 'stage_b_table_triples.json'}")
     print("=" * 70)
     return result
 

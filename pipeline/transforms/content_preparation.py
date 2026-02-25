@@ -5,8 +5,10 @@ text chunks and table triples (two outputs).
 """
 from __future__ import annotations
 
+import json
 import nltk
 import re
+from pathlib import Path
 from typing import List, Dict, Optional
 
 from pipeline.data import RawText, TextChunks, TextChunksAndTableTriples
@@ -43,18 +45,53 @@ class ContentPreparation:
         min_chars: int = 40,
         max_chunk_chars: int = DEFAULT_MAX_CHUNK_CHARS,
         filter_noise: bool = False,
+        stage_output_dir: Optional[str] = "outputs/STAGE_B_v1",
     ):
         self.parsing_rules = parsing_rules
         self.min_chars = min_chars
         self.max_chunk_chars = max_chunk_chars
         self.filter_noise = filter_noise
+        self.stage_output_dir = stage_output_dir
         self._noise_exemplar_vocab: Optional[set] = None
 
     def transform(self, raw_text: RawText) -> TextChunksAndTableTriples:
         pages = raw_text.get_pages()
         text_chunks = self._build_text_chunks(pages)
         table_triples = tables_pages_to_spo_list(pages)
-        return TextChunksAndTableTriples(text_chunks=text_chunks, table_triples=table_triples)
+        result = TextChunksAndTableTriples(text_chunks=text_chunks, table_triples=table_triples)
+        if self.stage_output_dir:
+            self._write_stage_output(text_chunks, table_triples)
+        return result
+
+    def _write_stage_output(self, text_chunks: TextChunks, table_triples: List[Dict]) -> None:
+        """Write Stage B v1 output to this stage's output folder. Creates folder if missing; overwrites files if existing."""
+        out_path = Path(self.stage_output_dir)
+        out_path.mkdir(parents=True, exist_ok=True)
+        table_derived_count = sum(1 for c in text_chunks.get_chunks() if c.get("from_table"))
+        (out_path / "stage_b_text_chunks.json").write_text(
+            json.dumps({
+                "metadata": {
+                    "stage": "b",
+                    "description": "Text chunks from content_preparation",
+                    "total_chunks": text_chunks.count(),
+                    "table_derived_chunks": table_derived_count,
+                    "min_chunk_chars": self.min_chars,
+                },
+                "chunks": text_chunks.get_chunks(),
+            }, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (out_path / "stage_b_table_triples.json").write_text(
+            json.dumps({
+                "metadata": {
+                    "stage": "b",
+                    "description": "Table SPO triples from content_preparation",
+                    "total_triples": len(table_triples),
+                },
+                "triples": table_triples,
+            }, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
     def _build_text_chunks(self, pages: List[Dict]) -> TextChunks:
         text_chunks = TextChunks()
