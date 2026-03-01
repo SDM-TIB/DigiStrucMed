@@ -10,6 +10,13 @@ DEFAULT_KEEP_LABELS = [
     "Sign_symptom",
     "Therapeutic_procedure",
 ]
+# Preferred full phrases for table triples: when subject/object equals one of these, use it as the entity (so Stage D links e.g. HFrEF not just "heart failure").
+PREFERRED_TABLE_PHRASES = {
+    "heart failure with reduced ejection fraction",
+    "heart failure with preserved ejection fraction",
+    "heart failure with mildly reduced ejection fraction",
+    "heart failure with improved ejection fraction",
+}
 class RecognizeEntities:
     def __init__(
         self,
@@ -64,7 +71,9 @@ class RecognizeEntities:
         return result
 
     def enrich_triples_with_entities(self, table_triples: List[Dict]) -> List[Dict]:
-        """Run NER on subject and object of each triple; add an 'entities' field to each triple."""
+        """Run NER on subject and object of each triple; add an 'entities' field to each triple.
+        Subject and object are expanded, cleaned for NER, then written back so output reflects
+        the text used for entity extraction."""
         enriched = []
         for triple in table_triples:
             out = dict(triple)
@@ -72,12 +81,17 @@ class RecognizeEntities:
             obj = (triple.get("object") or "").strip()
             entities = []
             seen_texts = set()
-            for text in (subject, obj):
+            for i, text in enumerate((subject, obj)):
                 if not text:
                     continue
                 expanded = self.acronym_expander.expand(text)
                 if not expanded or not expanded.strip():
                     expanded = text
+                expanded = self._clean_table_phrase_for_ner(expanded)
+                if i == 0:
+                    out["subject"] = expanded
+                else:
+                    out["object"] = expanded
                 extracted = self.neural_model.extract_entities(
                     text=expanded,
                     min_score=self.min_score,
@@ -95,8 +109,9 @@ class RecognizeEntities:
                     if key in seen_texts:
                         continue
                     seen_texts.add(key)
-                    entities.append(ent)
-            out["entities"] = entities
+                    entities.append({"text": t, "label": ent.get("label", ""), "score": ent.get("score")})
+            # Prefer full phrases for subject/object: if cleaned subject equals a preferred phrase, add it and drop substring entities (e.g. "heart failure").
+            out["entities"] = self._apply_preferred_phrases(entities, out.get("subject", ""), out.get("object", ""))
             enriched.append(out)
         return enriched
 
@@ -130,8 +145,7 @@ class RecognizeEntities:
                 continue
             if not self._has_valid_boundary(text, original_text):
                 continue
-            validated_ent = ent.copy()
-            validated_ent["text"] = text
+            validated_ent = {"text": text, "label": ent.get("label", ""), "score": ent.get("score")}
             validated.append(validated_ent)
             seen_texts.add(text_key)
         return validated
@@ -156,3 +170,77 @@ class RecognizeEntities:
                    for keep_label in self.keep_labels_lower):
                 filtered.append(ent)
         return filtered
+
+    def _apply_preferred_phrases(
+        self, entities: List[Dict], cleaned_subject: str, cleaned_object: str
+    ) -> List[Dict]:
+        """When cleaned subject equals a preferred full phrase, add it and drop substring entities (e.g. 'heart failure'). Reuse score from dropped substring if any. Return entities without start/end."""
+        subject_lower = (cleaned_subject or "").strip().lower()
+        subject_matches = subject_lower in {p.lower() for p in PREFERRED_TABLE_PHRASES}
+        result = []
+        if subject_matches and cleaned_subject:
+            # Reuse score from a dropped substring entity (e.g. "heart failure") if present
+            preferred_score = None
+            for e in entities:
+                t = (e.get("text") or "").strip()
+                if not t:
+                    continue
+                t_lower = t.lower()
+                if t_lower == subject_lower:
+                    continue
+                if subject_lower.startswith(t_lower + " ") or subject_lower == t_lower:
+                    s = e.get("score")
+                    if s is not None and (preferred_score is None or (isinstance(s, (int, float)) and isinstance(preferred_score, (int, float)) and s > preferred_score)):
+                        preferred_score = s
+            result.append({"text": cleaned_subject.strip(), "label": "Disease_disorder", "score": preferred_score})
+            for e in entities:
+                t = (e.get("text") or "").strip()
+                if not t:
+                    continue
+                t_lower = t.lower()
+                if t_lower == subject_lower:
+                    continue
+                if subject_lower.startswith(t_lower + " ") or subject_lower == t_lower:
+                    continue
+                result.append({"text": t, "label": e.get("label", ""), "score": e.get("score")})
+            return result
+        for e in entities:
+            result.append({"text": (e.get("text") or "").strip(), "label": e.get("label", ""), "score": e.get("score")})
+        return result
+
+    def _clean_table_phrase_for_ner(self, text: str) -> str:
+        """Clean expanded table subject/object phrase before NER: trim, collapse whitespace,
+        and remove redundant parenthetical duplicates (e.g. 'X (abbreviated X)' -> 'X').
+        Used only for table triple enrichment; conservative."""
+        if not text:
+            return text
+        s = text.strip()
+        s = " ".join(s.split())
+        if not s:
+            return s
+        # Single trailing parenthetical: "X (Y)" -> possibly keep only X if Y is redundant
+        m = re.match(r"^(.+?)\s*\(([^)]+)\)\s*$", s)
+        if not m:
+            return s
+        x, y = m.group(1).strip(), m.group(2).strip()
+        x = " ".join(x.split())
+        y = " ".join(y.split())
+        if not x or not y:
+            return s
+        x_lower, y_lower = x.lower(), y.lower()
+        # Duplicate: same content (normalized)
+        if x_lower == y_lower:
+            return x
+        # Y is a substring of X -> redundant
+        if y_lower in x_lower:
+            return x
+        # Y looks like shorthand of X: same leading words, Y shorter (e.g. "heart failure with reduced EF" vs "heart failure with reduced ejection fraction")
+        x_words, y_words = x.split(), y.split()
+        if len(y_words) >= 2 and len(y_words) <= len(x_words):
+            if x_lower.startswith(y_lower) or y_lower.startswith(x_lower[:len(" ".join(y_words))].lower()):
+                return x
+            # First 2+ words of Y match first 2+ words of X and Y is not longer
+            n = min(2, len(y_words), len(x_words))
+            if n >= 2 and [w.lower() for w in y_words[:n]] == [w.lower() for w in x_words[:n]]:
+                return x
+        return s

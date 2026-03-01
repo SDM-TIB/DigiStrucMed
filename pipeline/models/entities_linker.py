@@ -86,9 +86,8 @@ class EntitiesLinker:
                     "cui_id": umls_match["cui"],
                     "label": entity_label,
                 }
-                for key in ["score", "start", "end"]:
-                    if key in entity:
-                        linked[key] = entity[key]
+                if "score" in entity:
+                    linked["score"] = entity["score"]
                 linked_entities.append(linked)
             # Only keep entities with a real UMLS CUI; skip rule-based and normalized fallbacks
         return linked_entities
