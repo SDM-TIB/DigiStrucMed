@@ -59,16 +59,21 @@ def load_stage_a_v1(text_path: Path, tables_path: Path) -> RawText | None:
 
 def _resolve_stage_b_paths(
     stage_a_version: str | None = None,
+    stage_b_version: str | None = None,
     input_dir: str | Path | None = None,
     output_dir: str | Path | None = None,
 ) -> tuple[Path, Path]:
     """
     Resolve input/output directories for Stage B.
 
+    Input: from previous stage (Stage A).
+    Output: where this stage writes.
+
     Priority:
     1. Explicit input_dir / output_dir (if provided)
-    2. Stage A version via config.stage_a_dir(stage_a_version)
-    3. Defaults from config (config.stage_a_dir(), config.stage_b_dir())
+    2. stage_a_version -> config.stage_a_dir() for input
+    3. stage_b_version -> config.stage_b_dir() for output
+    4. Defaults from config
     """
     if input_dir is not None:
         in_dir = Path(input_dir)
@@ -78,23 +83,26 @@ def _resolve_stage_b_paths(
     if output_dir is not None:
         out_dir = Path(output_dir)
     else:
-        out_dir = config.stage_b_dir()
+        out_dir = config.stage_b_dir(stage_b_version)
 
     return in_dir, out_dir
 
 
 def test_stage_b(
     stage_a_version: str | None = None,
+    stage_b_version: str | None = None,
     input_dir: str | Path | None = None,
     output_dir: str | Path | None = None,
 ):
+    effective_b_version = stage_b_version or config.DEFAULT_STAGE_B_VERSION
     print("=" * 70)
-    print("STAGE B v1: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
+    print(f"STAGE B {effective_b_version}: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
     print("=" * 70)
     min_chunk_chars = 40
 
     input_root, output_root = _resolve_stage_b_paths(
         stage_a_version=stage_a_version,
+        stage_b_version=stage_b_version,
         input_dir=input_dir,
         output_dir=output_dir,
     )
@@ -110,7 +118,7 @@ def test_stage_b(
 
     print(f"\n[2] Initializing content_preparation transform...")
     print(f"    Minimum chunk chars: {min_chunk_chars}")
-    print(f"    Stage B v1 output dir: {output_root}")
+    print(f"    Stage B output dir: {output_root}")
     parsing_rules = ParsingRules()
     content_prep = ContentPreparation(
         parsing_rules=parsing_rules,
@@ -128,7 +136,7 @@ def test_stage_b(
     print(f"    Output written to {output_root} (stage_b_text_chunks.json, stage_b_table_triples.json)")
 
     print("\n" + "=" * 70)
-    print("STAGE B v1 COMPLETE")
+    print(f"STAGE B {effective_b_version} COMPLETE")
     print("=" * 70)
     print(f"  Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"  Table triples: {len(table_triples)}")
@@ -154,15 +162,22 @@ if __name__ == "__main__":
         help="Explicit input directory containing text.json and tables.json. Overrides --stage-a-version.",
     )
     parser.add_argument(
+        "--stage-b-version",
+        type=str,
+        default=None,
+        help="Stage B version to write to (e.g. v1, v2). Default: config.DEFAULT_STAGE_B_VERSION.",
+    )
+    parser.add_argument(
         "--output-dir",
         type=str,
         default=None,
-        help="Explicit output directory for Stage B artifacts. Defaults to config.stage_b_dir().",
+        help="Explicit output directory. Overrides --stage-b-version.",
     )
     args = parser.parse_args()
 
     test_stage_b(
         stage_a_version=args.stage_a_version,
+        stage_b_version=args.stage_b_version,
         input_dir=args.input_dir,
         output_dir=args.output_dir,
     )
