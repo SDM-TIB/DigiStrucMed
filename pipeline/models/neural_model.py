@@ -1,11 +1,28 @@
+from pathlib import Path
 from transformers import pipeline
 from typing import List, Dict, Optional
+
 DEFAULT_MIN_SCORE = 0.55
+
+
+def _resolve_model_path(model_name: str) -> str:
+    """Use local cache if available, else Hugging Face model ID."""
+    try:
+        import config
+        local = config.ner_model_local_path(model_name)
+        if local is not None:
+            return str(local)
+    except Exception:
+        pass
+    return model_name
+
+
 class NeuralModel:
     def __init__(self, model_name: str = "d4data/biomedical-ner-all"):
+        model_path = _resolve_model_path(model_name)
         self.pipeline = pipeline(
             task="token-classification",
-            model=model_name,
+            model=model_path,
             aggregation_strategy="simple"
         )
     def extract_entities(

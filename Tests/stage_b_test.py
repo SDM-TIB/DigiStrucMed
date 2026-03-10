@@ -1,7 +1,13 @@
 """
 Stage B v1: Content preparation.
-Inputs: outputs/STAGE_A_v1/text.json + tables.json.
-Outputs: outputs/STAGE_B_v1/stage_b_text_chunks.json, stage_b_table_triples.json.
+
+By default, reads Stage A output from the directory configured in config.py
+and writes Stage B output to the configured Stage B directory.
+
+You can override this by:
+- Passing an explicit input directory (containing text.json + tables.json)
+- Passing an explicit output directory
+- Specifying a Stage A version, which is resolved via config.stage_a_dir(...)
 """
 import sys
 import json
@@ -9,24 +15,16 @@ from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+import config
 from pipeline.data import RawText
 from pipeline.models import ParsingRules
 from pipeline.transforms import ContentPreparation
-
-PROJECT_ROOT = Path(__file__).parent.parent
-STAGE_A_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_A_v1"
-STAGE_B_V1_DIR = PROJECT_ROOT / "outputs" / "STAGE_B_v1"
-
-TEXT_FILE = STAGE_A_V1_DIR / "text.json"
-TABLES_FILE = STAGE_A_V1_DIR / "tables.json"
-OUTPUT_TEXT_CHUNKS = STAGE_B_V1_DIR / "stage_b_text_chunks.json"
-OUTPUT_TABLE_TRIPLES = STAGE_B_V1_DIR / "stage_b_table_triples.json"
 
 
 def load_stage_a_v1(text_path: Path, tables_path: Path) -> RawText | None:
     """Load Stage A v1 output (text.json + tables.json) into RawText."""
     if not text_path.exists():
-        return None, None
+        return None
     with open(text_path, "r", encoding="utf-8") as f:
         texts = json.load(f)
     if not isinstance(texts, list):
@@ -44,7 +42,6 @@ def load_stage_a_v1(text_path: Path, tables_path: Path) -> RawText | None:
         tables_by_key[key].append({"title": t.get("caption", ""), "rows": t.get("rows", [])})
 
     raw_text = RawText()
-    pages_with_tables = []
     for item in texts:
         source_file = item.get("source_file", "")
         page_num = item.get("page", 0)
@@ -60,27 +57,65 @@ def load_stage_a_v1(text_path: Path, tables_path: Path) -> RawText | None:
     return raw_text
 
 
-def test_stage_b():
+def _resolve_stage_b_paths(
+    stage_a_version: str | None = None,
+    input_dir: str | Path | None = None,
+    output_dir: str | Path | None = None,
+) -> tuple[Path, Path]:
+    """
+    Resolve input/output directories for Stage B.
+
+    Priority:
+    1. Explicit input_dir / output_dir (if provided)
+    2. Stage A version via config.stage_a_dir(stage_a_version)
+    3. Defaults from config (config.stage_a_dir(), config.stage_b_dir())
+    """
+    if input_dir is not None:
+        in_dir = Path(input_dir)
+    else:
+        in_dir = config.stage_a_dir(stage_a_version)
+
+    if output_dir is not None:
+        out_dir = Path(output_dir)
+    else:
+        out_dir = config.stage_b_dir()
+
+    return in_dir, out_dir
+
+
+def test_stage_b(
+    stage_a_version: str | None = None,
+    input_dir: str | Path | None = None,
+    output_dir: str | Path | None = None,
+):
     print("=" * 70)
     print("STAGE B v1: raw_text_and_tables -> content_preparation -> text_chunks + table_triples")
     print("=" * 70)
     min_chunk_chars = 40
 
-    print(f"\n[1] Loading Stage A v1 output: {TEXT_FILE} + {TABLES_FILE}...")
-    raw_text = load_stage_a_v1(TEXT_FILE, TABLES_FILE)
+    input_root, output_root = _resolve_stage_b_paths(
+        stage_a_version=stage_a_version,
+        input_dir=input_dir,
+        output_dir=output_dir,
+    )
+    text_file = input_root / "text.json"
+    tables_file = input_root / "tables.json"
+
+    print(f"\n[1] Loading Stage A output from: {text_file} + {tables_file}...")
+    raw_text = load_stage_a_v1(text_file, tables_file)
     if raw_text is None:
-        print("    ERROR: Stage A v1 output not found! Run stagee_a_extract_text_table.py first.")
+        print("    ERROR: Stage A output not found! Check input directory or run Stage A first.")
         return None
     print(f"    Loaded: {raw_text}")
 
     print(f"\n[2] Initializing content_preparation transform...")
     print(f"    Minimum chunk chars: {min_chunk_chars}")
-    print(f"    Stage B v1 output dir: {STAGE_B_V1_DIR}")
+    print(f"    Stage B v1 output dir: {output_root}")
     parsing_rules = ParsingRules()
     content_prep = ContentPreparation(
         parsing_rules=parsing_rules,
         min_chars=min_chunk_chars,
-        stage_output_dir=str(STAGE_B_V1_DIR),
+        stage_output_dir=str(output_root),
     )
 
     print("\n[3] Running content preparation (text chunks + table triples)...")
@@ -90,17 +125,44 @@ def test_stage_b():
     table_derived_count = sum(1 for c in text_chunks.get_chunks() if c.get("from_table"))
     print(f"    Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"    Table triples: {len(table_triples)}")
-    print(f"    Output written to {STAGE_B_V1_DIR} (stage_b_text_chunks.json, stage_b_table_triples.json)")
+    print(f"    Output written to {output_root} (stage_b_text_chunks.json, stage_b_table_triples.json)")
 
     print("\n" + "=" * 70)
     print("STAGE B v1 COMPLETE")
     print("=" * 70)
     print(f"  Text chunks: {text_chunks.count()} (table-derived: {table_derived_count})")
     print(f"  Table triples: {len(table_triples)}")
-    print(f"  Outputs: {STAGE_B_V1_DIR / 'stage_b_text_chunks.json'}, {STAGE_B_V1_DIR / 'stage_b_table_triples.json'}")
+    print(f"  Outputs: {output_root / 'stage_b_text_chunks.json'}, {output_root / 'stage_b_table_triples.json'}")
     print("=" * 70)
     return result
 
 
 if __name__ == "__main__":
-    test_stage_b()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run Stage B v1 (content preparation).")
+    parser.add_argument(
+        "--stage-a-version",
+        type=str,
+        default=None,
+        help="Stage A version to read from (e.g. v1, v2). If not set, uses config.DEFAULT_STAGE_A_VERSION.",
+    )
+    parser.add_argument(
+        "--input-dir",
+        type=str,
+        default=None,
+        help="Explicit input directory containing text.json and tables.json. Overrides --stage-a-version.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=None,
+        help="Explicit output directory for Stage B artifacts. Defaults to config.stage_b_dir().",
+    )
+    args = parser.parse_args()
+
+    test_stage_b(
+        stage_a_version=args.stage_a_version,
+        input_dir=args.input_dir,
+        output_dir=args.output_dir,
+    )

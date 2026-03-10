@@ -1,6 +1,8 @@
 from pathlib import Path
 import json
 from typing import Optional
+
+import config
 from pipeline.data import (
     PDFGuidelines,
     RawText,
@@ -44,12 +46,13 @@ class Pipeline:
         acronym_file: str = None,
         skip_llm_validation: bool = True,
         output_dir: str = "outputs",
-        stage_a_version: str = "v1",
+        stage_a_version: Optional[str] = None,
     ):
         self.pdf_dir = pdf_dir
         self.output_file = output_file
         self.output_dir = output_dir
-        self.stage_a_version = stage_a_version
+        # Fall back to config default if no Stage A version provided
+        self.stage_a_version = stage_a_version or config.DEFAULT_STAGE_A_VERSION
         self.confidence_threshold = confidence_threshold
         self.skip_llm_validation = skip_llm_validation
         self.parsing_rules = ParsingRules()
@@ -66,8 +69,9 @@ class Pipeline:
             self.validation_model = ValidationModel(model_name=validation_model_name)
         else:
             self.validation_model = None
-        stage_a_output_dir = f"{output_dir}/STAGE_A_{stage_a_version}"
-        if stage_a_version == "v2":
+        # Resolve Stage A/B directories via config so defaults live in one place
+        stage_a_output_dir = str(config.stage_a_dir(self.stage_a_version))
+        if self.stage_a_version == "v2":
             self.extract_text = ExtractTextV2(
                 skip_first_pages=skip_first_pages,
                 skip_last_pages=skip_last_pages,
@@ -82,7 +86,7 @@ class Pipeline:
         self.content_preparation = ContentPreparation(
             parsing_rules=self.parsing_rules,
             min_chars=min_chunk_chars,
-            stage_output_dir=str(Path(self.output_dir) / "STAGE_B_v1"),
+            stage_output_dir=str(config.stage_b_dir()),
         )
         self.recognize_entities = RecognizeEntities(
             neural_model=self.neural_model,
@@ -114,8 +118,8 @@ class Pipeline:
         table_triples = content_result.get_table_triples()
         statements_with_entities = self.recognize_entities.infer(text_chunks)
         table_triples = self.recognize_entities.enrich_triples_with_entities(table_triples)
-        # Write Stage C output (statements + table_triples) to outputs/STAGE_C_v1
-        stage_c_dir = Path(self.output_dir) / "STAGE_C_v1"
+        # Write Stage C output (statements + table_triples) to the configured Stage C dir
+        stage_c_dir = config.stage_c_dir()
         stage_c_dir.mkdir(parents=True, exist_ok=True)
         stage_c_file = stage_c_dir / "stage_c_statements_with_entities.json"
         stage_c_data = {

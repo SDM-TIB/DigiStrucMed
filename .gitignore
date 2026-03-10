@@ -32,6 +32,9 @@ build/
 # Data (large files)
 data/UMLS.csv
 
+# Downloaded NER models (run download_ner_model.py)
+models/
+
 # OS
 Thumbs.db
 .DS_Store

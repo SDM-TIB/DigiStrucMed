@@ -24,12 +24,14 @@ class RecognizeEntities:
         min_score: float = 0.55,
         keep_labels: Optional[List[str]] = None,
         filter_labels: bool = True,
-        acronym_file: str = None
+        acronym_file: str = None,
+        verbose: bool = False,
     ):
         self.neural_model = neural_model
         self.min_score = min_score
         self.acronym_expander = AcronymExpander(acronym_file)
         self.filter_labels = filter_labels
+        self.verbose = verbose
         if self.filter_labels:
             self.keep_labels = keep_labels if keep_labels else DEFAULT_KEEP_LABELS
             self.keep_labels_lower = [label.lower() for label in self.keep_labels]
@@ -39,7 +41,10 @@ class RecognizeEntities:
     def infer(self, text_chunks: TextChunks) -> StatementsWithMedicalEntities:
         result = StatementsWithMedicalEntities()
         chunks = text_chunks.get_chunks()
-        for chunk in chunks:
+        total = len(chunks)
+        for i, chunk in enumerate(chunks):
+            if self.verbose and total > 0:
+                print(f"    Processing chunk {i + 1}/{total}...", flush=True)
             original_text = chunk.get("text", "")
             expanded_text = self.acronym_expander.expand(original_text)
             if not self._should_process_chunk(expanded_text):
@@ -75,7 +80,10 @@ class RecognizeEntities:
         Subject and object are expanded, cleaned for NER, then written back so output reflects
         the text used for entity extraction."""
         enriched = []
-        for triple in table_triples:
+        total = len(table_triples)
+        for j, triple in enumerate(table_triples):
+            if self.verbose and total > 0:
+                print(f"    Enriching triple {j + 1}/{total}...", flush=True)
             out = dict(triple)
             subject = (triple.get("subject") or "").strip()
             obj = (triple.get("object") or "").strip()
