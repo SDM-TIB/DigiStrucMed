@@ -16,6 +16,7 @@ def create_colab_zip():
         "Tests/",
         "colab_stage_e.ipynb",
         "COLAB_Stage_C.ipynb",
+        "COLAB_Stage_D_v2.ipynb",
         "requirements.txt",
         "README.md",
     ]

@@ -4,14 +4,25 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
 from pipeline.data import StatementsWithMedicalEntities, CandidateStatements
-from pipeline.models import EntitiesLinker
+from pipeline.models import EntitiesLinker, BiEncoderLinker
 from pipeline.inference.infer_entities import InferEntities
 
 PROJECT_ROOT = Path(__file__).parent.parent
 STAGE_D_CONFIG = {
-    "umls_csv_path": str(PROJECT_ROOT / "data" / "UMLS.csv"),
+    "umls_csv_path": str(PROJECT_ROOT / "input" / "UMLS.csv"),
     "filter_unmatched": False,
     "use_partial_umls_match": False,
+    "max_candidates_per_entity": 8,
+    "max_anchor_bucket_hits": 250,
+    "max_candidate_pool_size": 300,
+    "enable_type_constraints": True,
+    "biencoder_index_dir": None,
+    "biencoder_model_name": "cambridgeltl/SapBERT-from-PubMedBERT-fulltext",
+    "biencoder_top_k": 16,
+    "biencoder_min_link_score": 0.72,
+    "biencoder_use_type_rerank": True,
+    "biencoder_prefer_shorter_concept": True,
+    "biencoder_disambiguator": None,
 }
 INPUT_FILE_FALLBACK_TESTS = Path(__file__).parent / "outputs" / "stage_c_statements_with_entities.json"
 INPUT_FILE_FALLBACK_NER = PROJECT_ROOT / "stage_c_statements_with_entities_NER.json"
@@ -47,6 +58,7 @@ def test_stage_d(
     stage_d_version: str | None = None,
     input_dir: str | Path | None = None,
     output_dir: str | Path | None = None,
+    biencoder_index_dir: str | Path | None = None,
 ):
     effective_d_version = stage_d_version or config.DEFAULT_STAGE_D_VERSION
     input_path, output_root = _resolve_stage_d_paths(
@@ -82,14 +94,35 @@ def test_stage_d(
     table_triples_raw = stage_c_data.get("table_triples", [])
     print(f"    Loaded: {statements_with_entities}")
     print(f"    Table triples: {len(table_triples_raw)}")
-    print(f"\n[2] Initializing EntitiesLinker...")
-    if umls_csv_path and Path(umls_csv_path).exists():
-        print(f"    Using UMLS: {umls_csv_path}")
+    index_dir = biencoder_index_dir or cfg.get("biencoder_index_dir")
+    index_path = Path(index_dir) if index_dir else None
+
+    print(f"\n[2] Initializing linker (v{effective_d_version})...")
+    if effective_d_version == "v2" and index_path and index_path.exists():
+        print(f"    Using bi-encoder (Stage D v2): {index_path}")
+        entities_linker = BiEncoderLinker(
+            model_name=cfg.get("biencoder_model_name", "cambridgeltl/SapBERT-from-PubMedBERT-fulltext"),
+            index_dir=str(index_path),
+            top_k=cfg.get("biencoder_top_k", 16),
+            min_link_score=cfg.get("biencoder_min_link_score"),
+            use_type_rerank=cfg.get("biencoder_use_type_rerank", True),
+            prefer_shorter_concept=cfg.get("biencoder_prefer_shorter_concept", True),
+            disambiguator=cfg.get("biencoder_disambiguator"),
+        )
+    elif effective_d_version == "v2":
+        print("    ERROR: Stage D v2 requires --biencoder-index-dir (or build index in Colab first).")
+        return None
+    elif umls_csv_path and Path(umls_csv_path).exists():
+        print(f"    Using UMLS (v1): {umls_csv_path}")
         entities_linker = EntitiesLinker(
             knowledge_base="umls",
             umls_csv_path=umls_csv_path,
             filter_unmatched=cfg["filter_unmatched"],
             use_partial_umls_match=cfg.get("use_partial_umls_match", False),
+            max_candidates_per_entity=cfg.get("max_candidates_per_entity", 8),
+            max_anchor_bucket_hits=cfg.get("max_anchor_bucket_hits", 250),
+            max_candidate_pool_size=cfg.get("max_candidate_pool_size", 300),
+            enable_type_constraints=cfg.get("enable_type_constraints", True),
         )
     else:
         print("    Using rule-based linking (no UMLS)")
@@ -105,6 +138,15 @@ def test_stage_d(
         out = dict(triple)
         entities = triple.get("entities", [])
         if entities:
+            triple_context = " ".join(
+                part.strip()
+                for part in (
+                    triple.get("subject", ""),
+                    triple.get("predicate", ""),
+                    triple.get("object", ""),
+                )
+                if isinstance(part, str) and part.strip()
+            )
             linker_input = [
                 {"text": e.get("text", ""), "label": e.get("label", "")}
                 for e in entities
@@ -117,7 +159,10 @@ def test_stage_d(
                         linker_input[i]["start"] = e["start"]
                     if "end" in e:
                         linker_input[i]["end"] = e["end"]
-            linked = entities_linker.link_entities(linker_input)
+            linked = entities_linker.link_entities(
+                linker_input,
+                context_text=triple_context,
+            )
             out["entities"] = linked
         table_triples_enriched.append(out)
     print(f"    Enriched {len(table_triples_enriched)} table triples with CUI")
@@ -129,7 +174,7 @@ def test_stage_d(
             "total_statements": candidate_statements.count(),
             "total_candidates": candidate_statements.count_candidates(),
             "total_table_triples": len(table_triples_enriched),
-            "umls_linking": umls_csv_path is not None and Path(umls_csv_path).exists()
+            "umls_linking": effective_d_version == "v2" or (umls_csv_path is not None and Path(umls_csv_path).exists())
         },
         "statements": candidate_statements.get_all(),
         "table_triples": table_triples_enriched
@@ -175,6 +220,12 @@ if __name__ == "__main__":
         default=None,
         help="Explicit Stage D output directory. Overrides --stage-d-version.",
     )
+    parser.add_argument(
+        "--biencoder-index-dir",
+        type=str,
+        default=None,
+        help="For Stage D v2: path to pre-built bi-encoder index (umls.faiss + cui_map.json).",
+    )
     args = parser.parse_args()
 
     test_stage_d(
@@ -182,6 +233,7 @@ if __name__ == "__main__":
         stage_d_version=args.stage_d_version,
         input_dir=args.input_dir,
         output_dir=args.output_dir,
+        biencoder_index_dir=args.biencoder_index_dir,
     )
 
 

@@ -19,6 +19,7 @@ from pipeline.models import (
     ParsingRules,
     NeuralModel,
     EntitiesLinker,
+    BiEncoderLinker,
     ValidationModel,
 )
 from pipeline.transforms import ExtractText, ExtractTextV2, ContentPreparation
@@ -47,6 +48,11 @@ class Pipeline:
         skip_last_pages: int = 5,
         umls_csv_path: Optional[str] = None,
         filter_unmatched_entities: bool = False,
+        linker_use_partial_umls_match: bool = False,
+        linker_max_candidates_per_entity: int = 8,
+        linker_max_anchor_bucket_hits: int = 250,
+        linker_max_candidate_pool_size: int = 300,
+        linker_enable_type_constraints: bool = True,
         acronym_file: Optional[str] = None,
         skip_llm_validation: bool = True,
         output_dir: str = "outputs",
@@ -55,6 +61,13 @@ class Pipeline:
         stage_c_version: Optional[str] = None,
         stage_d_version: Optional[str] = None,
         stage_e_version: Optional[str] = None,
+        biencoder_index_dir: Optional[str] = None,
+        biencoder_model_name: str = "cambridgeltl/SapBERT-from-PubMedBERT-fulltext",
+        biencoder_top_k: int = 16,
+        biencoder_min_link_score: Optional[float] = 0.72,
+        biencoder_use_type_rerank: bool = True,
+        biencoder_prefer_shorter_concept: bool = True,
+        biencoder_disambiguator: Optional[object] = None,
     ):
         self.pdf_dir = pdf_dir or str(config.PDF_DIR)
         self.output_file = output_file
@@ -68,11 +81,26 @@ class Pipeline:
         self.skip_llm_validation = skip_llm_validation
         self.parsing_rules = ParsingRules()
         self.neural_model = NeuralModel(model_name=neural_model_name)
-        if umls_csv_path:
+        if self.stage_d_version == "v2" and biencoder_index_dir:
+            self.entities_linker = BiEncoderLinker(
+                model_name=biencoder_model_name,
+                index_dir=biencoder_index_dir,
+                top_k=biencoder_top_k,
+                min_link_score=biencoder_min_link_score,
+                use_type_rerank=biencoder_use_type_rerank,
+                prefer_shorter_concept=biencoder_prefer_shorter_concept,
+                disambiguator=biencoder_disambiguator,
+            )
+        elif umls_csv_path:
             self.entities_linker = EntitiesLinker(
                 knowledge_base="umls",
                 umls_csv_path=umls_csv_path,
                 filter_unmatched=filter_unmatched_entities,
+                use_partial_umls_match=linker_use_partial_umls_match,
+                max_candidates_per_entity=linker_max_candidates_per_entity,
+                max_anchor_bucket_hits=linker_max_anchor_bucket_hits,
+                max_candidate_pool_size=linker_max_candidate_pool_size,
+                enable_type_constraints=linker_enable_type_constraints,
             )
         else:
             self.entities_linker = EntitiesLinker(knowledge_base="rule-based")
@@ -173,6 +201,15 @@ class Pipeline:
             out = dict(triple)
             entities = triple.get("entities", [])
             if entities:
+                triple_context = " ".join(
+                    part.strip()
+                    for part in (
+                        triple.get("subject", ""),
+                        triple.get("predicate", ""),
+                        triple.get("object", ""),
+                    )
+                    if isinstance(part, str) and part.strip()
+                )
                 linker_input = [
                     {"text": e.get("text", ""), "label": e.get("label", "")}
                     for e in entities
@@ -185,7 +222,10 @@ class Pipeline:
                             linker_input[i]["start"] = e["start"]
                         if "end" in e:
                             linker_input[i]["end"] = e["end"]
-                linked = self.entities_linker.link_entities(linker_input)
+                linked = self.entities_linker.link_entities(
+                    linker_input,
+                    context_text=triple_context,
+                )
                 out["entities"] = linked
             table_triples_enriched.append(out)
         stage_d_dir = config.stage_d_dir(self.stage_d_version)
