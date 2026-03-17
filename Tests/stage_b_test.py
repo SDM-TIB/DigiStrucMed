@@ -116,14 +116,17 @@ def test_stage_b(
         return None
     print(f"    Loaded: {raw_text}")
 
-    print(f"\n[2] Initializing content_preparation transform...")
+    print(f"\n[2] Initializing content_preparation transform (version: {effective_b_version})...")
     print(f"    Minimum chunk chars: {min_chunk_chars}")
     print(f"    Stage B output dir: {output_root}")
+    if effective_b_version == "v2":
+        print("    Table-body filter: ON (chunks overlapping table-cell content are excluded)")
     parsing_rules = ParsingRules()
     content_prep = ContentPreparation(
         parsing_rules=parsing_rules,
         min_chars=min_chunk_chars,
         stage_output_dir=str(output_root),
+        stage_b_version=effective_b_version,
     )
 
     print("\n[3] Running content preparation (text chunks + table triples)...")

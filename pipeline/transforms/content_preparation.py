@@ -37,7 +37,23 @@ class ContentPreparation:
     """
     Stage B transform: takes raw text + tables (raw_text_and_tables) and produces
     (1) text chunks and (2) table SPO triples.
+
+    stage_b_version controls chunking behaviour:
+      v1 (default) – original logic, chunks all page text including any table body
+                     text that leaked from the PDF extractor.
+      v2           – same JSON schema, but filters out chunks whose content is
+                     predominantly composed of table-cell material already captured in
+                     the structured table triples path.  No hard-coded phrases: the
+                     filter compares each chunk against actual cell content extracted
+                     by Stage A.
     """
+
+    # Minimum cell length to use in table-content matching (short cells like "1."
+    # or "Yes" are too common to be reliable signals).
+    _TABLE_CELL_MIN_LEN: int = 20
+    # Fraction of a chunk's words that must appear in table-cell vocabulary before
+    # the chunk is considered table-derived (v2 only).
+    _TABLE_OVERLAP_THRESHOLD: float = 0.55
 
     def __init__(
         self,
@@ -46,12 +62,14 @@ class ContentPreparation:
         max_chunk_chars: int = DEFAULT_MAX_CHUNK_CHARS,
         filter_noise: bool = False,
         stage_output_dir: Optional[str] = "outputs/STAGE_B_v1",
+        stage_b_version: str = "v1",
     ):
         self.parsing_rules = parsing_rules
         self.min_chars = min_chars
         self.max_chunk_chars = max_chunk_chars
         self.filter_noise = filter_noise
         self.stage_output_dir = stage_output_dir
+        self.stage_b_version = stage_b_version
         self._noise_exemplar_vocab: Optional[set] = None
 
     def transform(self, raw_text: RawText) -> TextChunksAndTableTriples:
@@ -93,13 +111,163 @@ class ContentPreparation:
             encoding="utf-8",
         )
 
+    # ------------------------------------------------------------------
+    # Table-content filtering helpers (used only in v2)
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _camel_split(text: str) -> List[str]:
+        """Split a camelCase / PascalCase / all-caps run into individual tokens."""
+        tokens = re.findall(r"[A-Z]+(?=[A-Z][a-z])|[A-Z]?[a-z]+|[A-Z]+|[0-9]+", text)
+        return [t.lower() for t in tokens if len(t) >= 3]
+
+    def _build_table_vocab(self, tables: List[Dict]) -> set:
+        """Return a lower-case word set built from all substantial table cells."""
+        vocab: set = set()
+        for table in tables:
+            for row in table.get("rows", []):
+                for cell in (row if isinstance(row, list) else []):
+                    cell_text = str(cell).strip()
+                    if len(cell_text) >= self._TABLE_CELL_MIN_LEN:
+                        for word in re.findall(r"[a-zA-Z]{3,}", cell_text.lower()):
+                            vocab.add(word)
+        return vocab
+
+    def _build_table_header_vocab(self, tables: List[Dict]) -> set:
+        """
+        Return a lower-case word set built from short header-like cells (4-19 chars).
+        Used only in the suffix-trim pass to catch PDF column-header artifacts like
+        'CORLOERecommendations' which are concatenations of short column names.
+        """
+        vocab: set = set()
+        for table in tables:
+            for row in table.get("rows", []):
+                for cell in (row if isinstance(row, list) else []):
+                    cell_text = str(cell).strip()
+                    cell_len = len(cell_text)
+                    if 4 <= cell_len < self._TABLE_CELL_MIN_LEN:
+                        for word in re.findall(r"[a-zA-Z]{3,}", cell_text.lower()):
+                            vocab.add(word)
+                    elif cell_len >= self._TABLE_CELL_MIN_LEN:
+                        for word in re.findall(r"[a-zA-Z]{3,}", cell_text.lower()):
+                            vocab.add(word)
+            # Also include the table title words as header vocab
+            title = str(table.get("title", "")).strip()
+            if title:
+                for word in re.findall(r"[a-zA-Z]{3,}", title.lower()):
+                    vocab.add(word)
+        return vocab
+
+    def _is_table_derived_chunk(self, chunk_text: str, table_vocab: set) -> bool:
+        """
+        Return True when the chunk is predominantly composed of table-cell words.
+
+        Two complementary checks are applied:
+        1. Vocabulary overlap – fraction of the chunk's words that appear in the
+           per-page table-cell vocabulary.
+        2. Substring containment – at least one full table-cell string (≥ 30 chars)
+           is contained verbatim inside the chunk.  This catches concatenated-cell
+           blocks that may use rare words not in the vocabulary.
+        """
+        if not table_vocab:
+            return False
+        words = re.findall(r"[a-zA-Z]{3,}", chunk_text.lower())
+        if not words:
+            return False
+        overlap = sum(1 for w in words if w in table_vocab) / len(words)
+        return overlap >= self._TABLE_OVERLAP_THRESHOLD
+
+    def _build_table_substrings(self, tables: List[Dict]) -> List[str]:
+        """Collect long cell strings for verbatim substring matching."""
+        substrings: List[str] = []
+        for table in tables:
+            for row in table.get("rows", []):
+                for cell in (row if isinstance(row, list) else []):
+                    cell_text = str(cell).strip()
+                    if len(cell_text) >= 30:
+                        substrings.append(cell_text.lower())
+        return substrings
+
+    def _chunk_contains_table_cell(self, chunk_lower: str, substrings: List[str]) -> bool:
+        return any(sub in chunk_lower for sub in substrings)
+
+    def _trim_table_suffix(self, text: str, table_vocab: set) -> str:
+        """
+        Strip a trailing table-artifact suffix from a chunk.
+
+        PDF extractors sometimes append concatenated table-header cells at the end
+        of a narrative paragraph (e.g. "…interventions. CORLOERecommendations 2aB-NR1.",
+        or mid-sentence: "…because CORLOERecommendations 8.").
+        We scan the last 160 characters for a token whose camelCase-split sub-words
+        are predominantly table-vocab words; if found, we trim from that token's start.
+        Uses camelCase splitting so "CORLOERecommendations" → ["CORLOE","Recommendations"].
+        """
+        if not table_vocab or len(text) < 60:
+            return text
+        scan_window = 160
+        tail = text[-scan_window:] if len(text) > scan_window else text
+        tail_offset = max(0, len(text) - scan_window)
+
+        # Tokenise tail into (start_in_tail, end_in_tail, word_string) triples
+        token_spans = [(m.start(), m.end(), m.group()) for m in re.finditer(r"[A-Za-z]{4,}", tail)]
+        if not token_spans:
+            return text
+
+        # Walk tokens from the end; find the first (from end) whose camelCase tokens
+        # are ≥ 40% table-vocab.  That marks the start of the artifact suffix.
+        for start_pos, end_pos, word in reversed(token_spans):
+            sub_tokens = self._camel_split(word)
+            if not sub_tokens:
+                continue
+            vocab_hits = sum(1 for t in sub_tokens if t in table_vocab)
+            if vocab_hits / len(sub_tokens) >= 0.4:
+                # Trim from start_pos backward to the nearest whitespace / punctuation
+                cut_in_text = tail_offset + start_pos
+                # Back up past any preceding spaces or commas/semicolons
+                while cut_in_text > 0 and text[cut_in_text - 1] in " ,;":
+                    cut_in_text -= 1
+                trimmed = text[:cut_in_text].strip()
+                if len(trimmed) >= self.min_chars:
+                    return trimmed
+                # Trimming too much — leave the chunk unchanged
+                return text
+        return text
+
+    # ------------------------------------------------------------------
+
     def _build_text_chunks(self, pages: List[Dict]) -> TextChunks:
         text_chunks = TextChunks()
         chunk_id = 0
+        use_table_filter = self.stage_b_version == "v2"
+
+        # Build document-wide table vocabs once.
+        # global_table_vocab  – cells >= TABLE_CELL_MIN_LEN, used for chunk-level overlap filter.
+        # global_header_vocab – all cells (including short header cells) + camelCase-split tokens,
+        #                       used only in the post-merge suffix-trim pass.
+        if use_table_filter:
+            global_table_vocab: set = set()
+            global_header_vocab: set = set()
+            for p in pages:
+                p_tables = p.get("tables", [])
+                global_table_vocab |= self._build_table_vocab(p_tables)
+                global_header_vocab |= self._build_table_header_vocab(p_tables)
+        else:
+            global_table_vocab = set()
+            global_header_vocab = set()
+
         for page in pages:
             text = page["text"]
             page_number = page["page"]
             source_file = page.get("source", "")
+            page_tables = page.get("tables", [])
+
+            if use_table_filter and page_tables:
+                table_vocab = self._build_table_vocab(page_tables)
+                table_substrings = self._build_table_substrings(page_tables)
+            else:
+                table_vocab = set()
+                table_substrings = []
+
             chunks = self._segment_page(text)
             for chunk_text in chunks:
                 if self.parsing_rules.is_artifact_chunk(chunk_text):
@@ -107,6 +275,12 @@ class ContentPreparation:
                 if self.parsing_rules.is_table_metadata(chunk_text):
                     continue
                 if len(chunk_text) < self.min_chars:
+                    continue
+                # v2: skip chunks that are table-body content already in triples
+                if use_table_filter and (
+                    self._is_table_derived_chunk(chunk_text, table_vocab)
+                    or self._chunk_contains_table_cell(chunk_text.lower(), table_substrings)
+                ):
                     continue
                 sub_chunks = self.parsing_rules.split_multiple_recommendations(chunk_text)
                 for sub_text in sub_chunks:
@@ -129,6 +303,21 @@ class ContentPreparation:
         length_enforced = self._enforce_max_length(deduplicated_chunks, max_length=800)
         final_merged = self._merge_small_chunks(length_enforced)
         final_chunks = self._deduplicate_chunks(final_merged)
+
+        # v2 post-merge pass: trim trailing table-artifact suffixes that were glued
+        # onto good narrative chunks by _merge_small_chunks
+        # (e.g. "…interventions. CORLOERecommendations 2aB-NR1.").
+        # Uses the broader header vocab + camelCase splitting.
+        if use_table_filter and global_header_vocab:
+            cleaned: List[Dict] = []
+            for chunk in final_chunks:
+                trimmed_text = self._trim_table_suffix(chunk["text"], global_header_vocab)
+                if trimmed_text.strip() and len(trimmed_text.strip()) >= self.min_chars:
+                    cleaned.append({**chunk, "text": trimmed_text.strip()})
+                elif chunk["text"].strip() and len(chunk["text"].strip()) >= self.min_chars:
+                    cleaned.append(chunk)
+            final_chunks = cleaned
+
         text_chunks.chunks = final_chunks
         if self.filter_noise:
             text_chunks.chunks = [

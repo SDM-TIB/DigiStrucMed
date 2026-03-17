@@ -127,6 +127,7 @@ class Pipeline:
             parsing_rules=self.parsing_rules,
             min_chars=min_chunk_chars,
             stage_output_dir=str(stage_b_dir),
+            stage_b_version=self.stage_b_version,
         )
         self.recognize_entities = RecognizeEntities(
             neural_model=self.neural_model,
