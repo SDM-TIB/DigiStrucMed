@@ -19,6 +19,8 @@ _DEFAULTS = {
         "C": "v1",
         "D": "v1",
         "E": "v1",
+        "F": "v1",
+        "G": "v1",
     },
 }
 
@@ -65,6 +67,8 @@ DEFAULT_STAGE_B_VERSION = _CONFIG["versions"].get("B", "v1")
 DEFAULT_STAGE_C_VERSION = _CONFIG["versions"].get("C", "v1")
 DEFAULT_STAGE_D_VERSION = _CONFIG["versions"].get("D", "v1")
 DEFAULT_STAGE_E_VERSION = _CONFIG["versions"].get("E", "v1")
+DEFAULT_STAGE_F_VERSION = _CONFIG["versions"].get("F", "v1")
+DEFAULT_STAGE_G_VERSION = _CONFIG["versions"].get("G", "v1")
 
 
 def stage_a_dir(version: str | None = None) -> Path:
@@ -95,6 +99,18 @@ def stage_e_dir(version: str | None = None) -> Path:
     """Return the directory containing Stage E outputs for the given version."""
     v = version or DEFAULT_STAGE_E_VERSION
     return OUTPUTS_ROOT / f"STAGE_E_{v}"
+
+
+def stage_f_dir(version: str | None = None) -> Path:
+    """Return the directory containing Stage F outputs (SHACL constraints)."""
+    v = version or DEFAULT_STAGE_F_VERSION
+    return OUTPUTS_ROOT / f"STAGE_F_{v}"
+
+
+def stage_g_dir(version: str | None = None) -> Path:
+    """Return the directory containing Stage G outputs (validation results)."""
+    v = version or DEFAULT_STAGE_G_VERSION
+    return OUTPUTS_ROOT / f"STAGE_G_{v}"
 
 
 def get_config() -> dict:

@@ -9,7 +9,14 @@ from collections import defaultdict
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 
-from pipeline.data import RawText, TextChunks, StatementsWithMedicalEntities, CandidateStatements
+from pipeline.data import (
+    RawText,
+    TextChunks,
+    StatementsWithMedicalEntities,
+    CandidateStatements,
+    ValidatedFactsAndQualifiers,
+    ShaclConstraints,
+)
 
 
 def load_stage_a_output(input_dir: Path) -> Optional[RawText]:
@@ -87,6 +94,30 @@ def load_stage_c_output(input_dir: Path) -> Tuple[StatementsWithMedicalEntities,
             statements.add_statement(stmt)
         table_triples = data.get("table_triples", [])
     return statements, table_triples
+
+
+def load_stage_e_output(input_dir: Path) -> ValidatedFactsAndQualifiers:
+    """Load Stage E output (validated factual statements) from input_dir."""
+    file_path = input_dir / "stage_e_validated_output.json"
+    facts = ValidatedFactsAndQualifiers()
+    if file_path.exists():
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for stmt in data.get("validated_statements", []):
+            facts.add_validated(stmt)
+    return facts
+
+
+def load_stage_f_output(input_dir: Path) -> ShaclConstraints:
+    """Load Stage F output (SHACL constraints) from input_dir."""
+    file_path = input_dir / "stage_f_shacl_constraints.json"
+    constraints = ShaclConstraints()
+    if file_path.exists():
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for c in data.get("constraints", []):
+            constraints.add_constraint(c)
+    return constraints
 
 
 def load_stage_d_output(input_dir: Path) -> Tuple[CandidateStatements, List[Dict]]:

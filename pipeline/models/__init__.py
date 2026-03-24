@@ -7,6 +7,8 @@ from .entities_linker import (
     build_biencoder_index,
     make_llm_disambiguator,
 )
+from .shacl_extractor import ShaclExtractor
+
 __all__ = [
     "ParsingRules",
     "NeuralModel",
@@ -15,10 +17,12 @@ __all__ = [
     "build_biencoder_index",
     "make_llm_disambiguator",
     "ValidationModel",
+    "ShaclExtractor",
 ]
 if TYPE_CHECKING:
     from .neural_model import NeuralModel as NeuralModel
     from .validation_model import ValidationModel as ValidationModel
+
 def __getattr__(name: str):
     if name == "NeuralModel":
         from .neural_model import NeuralModel as _NeuralModel

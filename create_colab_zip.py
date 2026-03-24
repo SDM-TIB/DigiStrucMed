@@ -12,13 +12,13 @@ def create_colab_zip():
         "pipeline/",
         "config.py",
         "config.json",
-        "input/",
         "Tests/",
-        "colab_stage_e.ipynb",
+        "COLAB_Full_Pipeline_v2.ipynb",   # single-session all stages
+        "COLAB_Stage_AB_v2.ipynb",         # individual stage notebooks (backup)
         "COLAB_Stage_C.ipynb",
         "COLAB_Stage_D_v2.ipynb",
+        "colab_stage_e.ipynb",
         "requirements.txt",
-        "README.md",
     ]
     exclude_folders = {
         "__pycache__",
@@ -125,10 +125,14 @@ if __name__ == "__main__":
         print("[SUCCESS] Your ZIP is ready for Google Colab!")
         print("=" * 60)
         print("\nNext steps:")
-        print("1. Go to Google Colab and upload this ZIP (Step 4 in the notebook)")
-        print("2. Open colab_stage_e.ipynb from the extracted files (or upload it)")
-        print("3. Runtime -> Change runtime type -> T4 GPU")
-        print("4. Run all cells to execute Stage E (upload Stage D JSON, then run)")
+        print("1. Open Google Colab: https://colab.research.google.com")
+        print("2. Upload COLAB_Stage_AB_v2.ipynb -> Runtime: T4 GPU -> run all cells")
+        print("   (upload this ZIP + your PDFs when prompted; download stage_b_*.json at the end)")
+        print("3. Upload COLAB_Stage_C.ipynb -> Runtime: T4 GPU -> run all cells")
+        print("   (upload this ZIP + both stage_b_*.json files; download stage_c_*.json at the end)")
+        print("4. Upload COLAB_Stage_D_v2.ipynb -> Runtime: T4 GPU -> run all cells")
+        print("   (upload this ZIP + stage_c_*.json + UMLS.csv; download stage_d_*.json at the end)")
+        print("5. stage_d_candidate_statements.json is your final output!")
     except Exception as e:
         print(f"\n[ERROR] {e}")
         import traceback

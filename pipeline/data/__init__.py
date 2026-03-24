@@ -5,6 +5,9 @@ from .text_chunks_and_table_triples import TextChunksAndTableTriples
 from .statements_with_medical_entities import StatementsWithMedicalEntities
 from .candidate_statements import CandidateStatements
 from .validated_facts_and_qualifiers import ValidatedFactsAndQualifiers
+from .shacl_constraints import ShaclConstraints
+from .validation_results import ValidationResults
+
 __all__ = [
     "PDFGuidelines",
     "RawText",
@@ -13,4 +16,6 @@ __all__ = [
     "StatementsWithMedicalEntities",
     "CandidateStatements",
     "ValidatedFactsAndQualifiers",
+    "ShaclConstraints",
+    "ValidationResults",
 ]

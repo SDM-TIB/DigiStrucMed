@@ -4,11 +4,13 @@
     "outputs_root": "outputs"
   },
   "versions": {
-    "A": "v1",
-    "B": "v1",
-    "C": "v1",
-    "D": "v1",
-    "E": "v1"
+    "A": "v2",
+    "B": "v2",
+    "C": "v2",
+    "D": "v2",
+    "E": "v1",
+    "F": "v1",
+    "G": "v1"
   },
   "_comment": "paths.pdf_dir = PDF input for Stage A. paths.outputs_root = base for all stage outputs. Stage output: {outputs_root}/STAGE_{X}_{version}/. Stage B–E input = previous stage's output dir."
 }
