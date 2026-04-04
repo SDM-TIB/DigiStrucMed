@@ -19,6 +19,5 @@ travshacl>=1.9.0
 pyshacl>=0.25.0
 
 # NLP / Entity linking
-openai>=1.0.0
 huggingface_hub>=0.23.0
 rapidfuzz>=3.0.0

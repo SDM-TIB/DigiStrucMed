@@ -140,12 +140,19 @@ def _call_llm_spo(
     page_ents: list[dict],
     ontology: OntologyIndex,
     llm_backend: str,
-    openai_api_key: Optional[str],
     hf_token: Optional[str],
     hf_model: str,
-    openai_model: str = "gpt-4",
 ) -> list[dict]:
-    from hf_llm import hf_inference_chat, hf_local_generate, parse_json_array
+    from hf_llm import (
+        format_exception,
+        hf_inference_chat,
+        hf_local_generate,
+        parse_json_array,
+    )
+
+    if llm_backend == "openai":
+        log("3b", "Backend 'openai' is no longer supported; using 'hf_local' instead.")
+        llm_backend = "hf_local"
 
     entities_block = "\n".join(
         f'  - "{e["text"]}"  (type: {e["type"]}, CUI: {e["cui_final"]})'
@@ -161,17 +168,7 @@ def _call_llm_spo(
         props_block=props_block,
     )
     try:
-        if llm_backend == "openai" and openai_api_key:
-            from openai import OpenAI
-            client = OpenAI(api_key=openai_api_key)
-            resp = client.chat.completions.create(
-                model=openai_model,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=600,
-                temperature=0.0,
-            )
-            raw = resp.choices[0].message.content.strip()
-        elif llm_backend == "hf_inference" and hf_token:
+        if llm_backend == "hf_inference" and hf_token:
             raw = hf_inference_chat(prompt, hf_model, hf_token, max_new_tokens=600)
         elif llm_backend == "hf_local":
             raw = hf_local_generate(prompt, hf_model, hf_token, max_new_tokens=600)
@@ -181,7 +178,7 @@ def _call_llm_spo(
             return []
         return parse_json_array(raw)
     except Exception as exc:
-        log("3b", f"LLM SPO error: {exc}")
+        log("3b", f"LLM SPO error: {format_exception(exc)}")
         return []
 
 
@@ -222,22 +219,23 @@ def _run_v2(
     entities: list[dict],
     text_blocks: list[dict],
     ontology: OntologyIndex,
-    llm_backend: str = "none",
-    openai_api_key: Optional[str] = None,
+    llm_backend: str = "hf_local",
     hf_token: Optional[str] = None,
-    hf_model: str = "meta-llama/Meta-Llama-3-8B-Instruct",
-    openai_model: str = "gpt-4",
+    hf_model: str = "meta-llama/Llama-3.2-3B-Instruct",
 ) -> list[dict]:
     """
     v2: LLM proposes SPO records; ontology-gated filter applied.
     """
+    from hf_llm import probe_hf_local_backend
+
+    if llm_backend == "openai":
+        log("3b", "Backend 'openai' is no longer supported; using 'hf_local' instead.")
+        llm_backend = "hf_local"
     if llm_backend == "llama":
         llm_backend = "hf_local"
 
     can_run = False
-    if llm_backend == "openai" and openai_api_key:
-        can_run = True
-    elif llm_backend == "hf_inference" and hf_token:
+    if llm_backend == "hf_inference" and hf_token:
         can_run = True
     elif llm_backend == "hf_local":
         can_run = True  # public models work without token; gated need HF_TOKEN
@@ -245,6 +243,11 @@ def _run_v2(
     if not can_run:
         log("3b", "v2: no usable LLM backend — falling back to v1 co-occurrence rules")
         return _run_v1(entities, text_blocks, ontology)
+    if llm_backend == "hf_local":
+        probe_error = probe_hf_local_backend(hf_model, hf_token)
+        if probe_error:
+            log("3b", f"v2: local LLM probe failed â€” falling back to v1. {probe_error}")
+            return _run_v1(entities, text_blocks, ontology)
 
     linked = [e for e in entities if e.get("cui_final")]
     by_page: dict[int, list[dict]] = defaultdict(list)
@@ -265,10 +268,8 @@ def _run_v2(
             page_ents,
             ontology,
             llm_backend=llm_backend,
-            openai_api_key=openai_api_key,
             hf_token=hf_token,
             hf_model=hf_model,
-            openai_model=openai_model,
         )
 
         for cand in raw_candidates:
@@ -318,11 +319,9 @@ def run_text_path(
     ontology_path: str = "input/hf_guideline_ontology.ttl",
     output_dir: str = "outputs/step3",
     version: str = "v1",              # "v1" | "v2"
-    llm_backend: str = "none",
-    openai_api_key: Optional[str] = None,
-    openai_model: str = "gpt-4",
+    llm_backend: str = "hf_local",
     hf_token: Optional[str] = None,
-    hf_model: str = "meta-llama/Meta-Llama-3-8B-Instruct",
+    hf_model: str = "meta-llama/Llama-3.2-3B-Instruct",
     confidence_threshold: float = 0.6,
 ) -> dict:
     """
@@ -350,10 +349,8 @@ def run_text_path(
             text_blocks,
             ontology,
             llm_backend=llm_backend,
-            openai_api_key=openai_api_key,
             hf_token=hf_token,
             hf_model=hf_model,
-            openai_model=openai_model,
         )
 
     # Apply confidence filter

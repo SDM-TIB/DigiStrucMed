@@ -43,6 +43,8 @@ DEFAULT_TOP_K = 15
 # Max BK rows to score per mention after index retrieval (avoids O(mentions × |BK|))
 DEFAULT_MAX_SCORE = 12_000
 DEFAULT_CACHE_DIR = "outputs/cache"
+# Bump when BK row shape / index logic changes (invalidates old .pkl.gz caches).
+_UMLS_LINKING_CACHE_VERSION = 4
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+", re.I)
 
@@ -64,19 +66,128 @@ def _tokens(text: str) -> list[str]:
     return [t.lower() for t in _TOKEN_RE.findall(text) if len(t) >= 2]
 
 
+def _normalize_umls_header_key(k: object) -> str:
+    """Strip BOM/whitespace and lowercase so DictReader keys align with cui/label."""
+    if k is None:
+        return ""
+    s = str(k).replace("\ufeff", "").strip().strip("\"'").lower()
+    return s
+
+
+def _normalize_umls_row_keys(row: dict) -> dict:
+    """
+    Lowercase and strip CSV header keys so CUI/Label match cui/label.
+    Values are kept as read from CSV (str); None becomes "".
+    """
+    out: dict[str, object] = {}
+    for k, v in row.items():
+        key = _normalize_umls_header_key(k)
+        if not key:
+            continue
+        if v is None:
+            out[key] = ""
+        else:
+            out[key] = v
+    return out
+
+
+def _canonicalize_concept_row(row: dict[str, object]) -> dict[str, object]:
+    """
+    Ensure every row has string ``cui`` and ``label`` for indexing and output.
+
+    UMLS/RxNorm exports often use STR instead of Label; some files omit one key
+    if BOM mangled the header.
+    """
+    r = dict(row)
+
+    def _first_nonempty(keys: tuple[str, ...]) -> str:
+        for key in keys:
+            raw = r.get(key)
+            if raw is None:
+                continue
+            s = str(raw).strip()
+            if s:
+                return s
+        return ""
+
+    cui = _first_nonempty(("cui", "cui_code", "code", "umls_cui"))
+    label = _first_nonempty(
+        ("label", "str", "string", "preferred_name", "name", "term", "synonym")
+    )
+
+    r["cui"] = cui
+    r["label"] = label
+    return r
+
+
+def _preview_text(value: object, limit: int = 120) -> str:
+    text = str(value or "").replace("\n", "\\n").strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 3] + "..."
+
+
 def load_umls_bk(umls_csv_path: str) -> list[dict]:
     """
     Load UMLS Background Knowledge from a CSV file.
 
     Expected columns (at minimum): cui, label, semantic_type, definition
-    Extra columns are kept as-is.
+    Header names are matched case-insensitively (e.g. CUI, Label).
+    ``STR`` / ``name`` / etc. are mapped to ``label`` when ``label`` is empty.
+    File is read as UTF-8 with optional BOM (utf-8-sig).
+    Delimiter is sniffed (``,``, ``;``, tab) so European CSV exports still parse.
     """
     bk: list[dict] = []
-    with open(umls_csv_path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+    # utf-8-sig strips BOM so the first header is "CUI" not "\ufeffCUI"
+    with open(umls_csv_path, newline="", encoding="utf-8-sig") as f:
+        head = f.read(65536)
+        f.seek(0)
+        try:
+            dialect = csv.Sniffer().sniff(head, delimiters=",\t;")
+        except csv.Error:
+            dialect = csv.get_dialect("excel")
+        reader = csv.DictReader(f, dialect=dialect)
+        raw_headers = list(reader.fieldnames or [])
+        normalized_headers = [
+            _normalize_umls_header_key(h) for h in raw_headers if h is not None
+        ]
         for row in reader:
-            bk.append(dict(row))
-    log("1d", f"Loaded UMLS BK: {len(bk)} concepts from {umls_csv_path}")
+            bk.append(_canonicalize_concept_row(_normalize_umls_row_keys(row)))
+    nonempty_labels = sum(1 for x in bk if str(x.get("label", "")).strip())
+    nonempty_cuis = sum(1 for x in bk if str(x.get("cui", "")).strip())
+    sample = bk[0] if bk else {}
+    log(
+        "1d",
+        f"Loaded UMLS BK: {len(bk)} concepts from {umls_csv_path} "
+        f"({nonempty_labels} rows with non-empty label)",
+    )
+    log(
+        "1d",
+        "CSV diagnostics: "
+        f"delimiter={getattr(dialect, 'delimiter', ',')!r}; "
+        f"headers={raw_headers[:8]!r}; "
+        f"normalized={normalized_headers[:8]!r}",
+    )
+    if bk:
+        log(
+            "1d",
+            "Sample parsed concept: "
+            f"cui={_preview_text(sample.get('cui'))!r}; "
+            f"label={_preview_text(sample.get('label'))!r}; "
+            f"keys={sorted(sample.keys())[:8]!r}",
+        )
+    if bk and nonempty_cuis == 0:
+        raise ValueError(
+            "UMLS CSV loaded rows but no non-empty CUI values were found. "
+            f"Headers seen: {raw_headers[:12]!r}"
+        )
+    if bk and nonempty_labels == 0:
+        raise ValueError(
+            "UMLS CSV loaded rows but no non-empty labels were found, so entity "
+            "linking cannot build an index. "
+            f"Headers seen: {raw_headers[:12]!r}; "
+            f"sample row keys: {sorted(sample.keys())[:12]!r}"
+        )
     return bk
 
 
@@ -84,7 +195,7 @@ def _build_inverted_index(bk: list[dict]) -> dict[str, set[int]]:
     """Token (from label) -> set of row indices."""
     inverted: dict[str, set[int]] = defaultdict(set)
     for i, concept in enumerate(bk):
-        label = concept.get("label") or ""
+        label = str(concept.get("label") or "")
         for tok in _tokens(label):
             inverted[tok].add(i)
     return dict(inverted)
@@ -108,6 +219,8 @@ def _load_bk_index_from_cache(cache_file: Path, expect_fp: str) -> tuple[list[di
             payload = pickle.load(f)
     except (OSError, EOFError, pickle.UnpicklingError):
         return None
+    if payload.get("cache_version") != _UMLS_LINKING_CACHE_VERSION:
+        return None
     if payload.get("fingerprint") != expect_fp:
         return None
     bk = payload["bk"]
@@ -125,6 +238,7 @@ def _save_bk_index_cache(
 ) -> None:
     cache_file.parent.mkdir(parents=True, exist_ok=True)
     payload = {
+        "cache_version": _UMLS_LINKING_CACHE_VERSION,
         "fingerprint": fingerprint,
         "bk": bk,
         "inverted": inverted,
@@ -169,6 +283,14 @@ def load_bk_and_inverted_index(
         "1d",
         f"Index ready: {len(inverted)} distinct tokens in {time.perf_counter() - t_idx0:.1f}s",
     )
+    if len(inverted) == 0 and bk:
+        s0 = bk[0]
+        raise ValueError(
+            "UMLS token index is empty after parsing labels. "
+            f"First row keys={sorted(s0.keys())!r}; "
+            f"cui={str(s0.get('cui'))[:40]!r}; "
+            f"label={str(s0.get('label'))[:80]!r}"
+        )
 
     if use_cache and cache_dir:
         cache_file = Path(cache_dir) / f"umls_linking_{fp}.pkl.gz"
@@ -242,7 +364,7 @@ def _link_one_mention(
     scored: list[dict] = []
     for idx in _candidate_indices(entity_text, inverted, freq, max_score):
         concept = bk[idx]
-        label = concept.get("label", "")
+        label = str(concept.get("label") or "")
         s = _sim_ratio(entity_text, label)
         if s > 0.25:
             scored.append({**concept, "_sim": round(s, 4)})
