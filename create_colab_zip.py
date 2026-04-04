@@ -1,139 +1,86 @@
+"""
+Build a single ZIP for Google Colab: notebook + scripts + requirements.
+
+Output (default): DigiStructMed_thesis_colab.zip  (in repo root)
+
+Upload that ZIP to Colab, unzip, add input/guideline.pdf and
+input/hf_guideline_ontology.ttl, then open COLAB_Pipeline.ipynb.
+
+Usage (from repo root):
+    python create_colab_zip.py
+"""
+from __future__ import annotations
+
 import zipfile
-import os
 from pathlib import Path
-def create_colab_zip():
-    print("=" * 60)
-    print("Creating ZIP file for Google Colab")
-    print("=" * 60)
-    project_root = Path(__file__).parent
-    os.chdir(project_root)
-    zip_filename = "Thesis_llama_colab.zip"
-    include_items = [
-        "pipeline/",
-        "config.py",
-        "config.json",
-        "Tests/",
-        "COLAB_Full_Pipeline_v2.ipynb",   # single-session all stages
-        "COLAB_Stage_AB_v2.ipynb",         # individual stage notebooks (backup)
-        "COLAB_Stage_C.ipynb",
-        "COLAB_Stage_D_v2.ipynb",
-        "colab_stage_e.ipynb",
-        "requirements.txt",
-    ]
-    exclude_folders = {
-        "__pycache__",
-        ".git",
-        ".ipynb_checkpoints",
-        "llm",
-        "src",
-        "papers"
-    }
-    exclude_extensions = {
-        ".pyc",
-        ".pyo",
-        ".pyd",
-        ".so",
-        ".dll"
-    }
-    exclude_files = set()
-    print(f"\n[*] Creating: {zip_filename}")
-    print(f"[*] Working directory: {os.getcwd()}\n")
-    missing_items = []
-    for item in include_items:
-        if not os.path.exists(item):
-            missing_items.append(item)
-    if missing_items:
-        print("[!] Warning: Some items not found:")
-        for item in missing_items:
-            print(f"   - {item}")
-        print()
-    total_files = 0
-    total_size = 0
-    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
-        for item in include_items:
-            if not os.path.exists(item):
+
+ROOT = Path(__file__).resolve().parent
+OUT_NAME = "DigiStructMed_thesis_colab.zip"
+
+# Files at repo root to include
+ROOT_FILES = [
+    "COLAB_Pipeline.ipynb",
+    "requirements.txt",
+    "PIPELINE_CONSENSUS.md",
+    "pipeline_overview.html",
+]
+
+# Directories to pack recursively (only *.py under scripts/)
+DIRS = ["scripts"]
+
+INSTRUCTIONS = """DigiStructMed — Colab upload bundle
+================================
+
+What is in this ZIP
+  - COLAB_Pipeline.ipynb   → run this in Colab (Runtime → Run all)
+  - scripts/               → pipeline steps (imported by the notebook)
+  - requirements.txt       → reference; the notebook installs deps in cell 1
+
+Before running
+  1. Unzip this archive on the Colab machine (or upload and unzip).
+  2. Run section "0b. Upload inputs" — it prompts you to upload the PDF, the
+     ontology (.ttl), and optionally a UMLS CSV; it creates input/ for you.
+     Or skip uploads and copy files into input/ manually.
+  3. Optional: HF_TOKEN for LLM steps (see config cell).
+
+The notebook adds scripts/ to sys.path automatically when cwd is the unzip folder.
+
+"""
+
+
+def _should_skip(path: Path) -> bool:
+    parts = path.parts
+    if "__pycache__" in parts:
+        return True
+    if path.suffix in {".pyc", ".pyo"}:
+        return True
+    return False
+
+
+def main() -> None:
+    out_path = ROOT / OUT_NAME
+    with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("COLAB_UPLOAD_INSTRUCTIONS.txt", INSTRUCTIONS)
+
+        for name in ROOT_FILES:
+            p = ROOT / name
+            if p.is_file():
+                zf.write(p, arcname=name)
+
+        for dname in DIRS:
+            d = ROOT / dname
+            if not d.is_dir():
                 continue
-            if os.path.isfile(item):
-                zipf.write(item)
-                size = os.path.getsize(item)
-                total_size += size
-                total_files += 1
-                print(f"[+] Added: {item} ({size / 1024:.1f} KB)")
-            elif os.path.isdir(item):
-                print(f"\n[*] Adding folder: {item}")
-                folder_files = 0
-                folder_size = 0
-                for root, dirs, files in os.walk(item):
-                    dirs[:] = [d for d in dirs if d not in exclude_folders]
-                    for file in files:
-                        if any(file.endswith(ext) for ext in exclude_extensions):
-                            continue
-                        if file in exclude_files:
-                            continue
-                        filepath = os.path.join(root, file)
-                        arcname = filepath
-                        zipf.write(filepath, arcname)
-                        size = os.path.getsize(filepath)
-                        total_size += size
-                        folder_size += size
-                        total_files += 1
-                        folder_files += 1
-                print(f"    [+] {folder_files} files ({folder_size / (1024 * 1024):.2f} MB)")
-    final_size = os.path.getsize(zip_filename)
-    print("\n" + "=" * 60)
-    print("[SUCCESS] ZIP file created successfully!")
-    print("=" * 60)
-    print(f"File: {zip_filename}")
-    print(f"Total files: {total_files}")
-    print(f"ZIP size: {final_size / (1024 * 1024):.2f} MB")
-    print(f"Uncompressed: {total_size / (1024 * 1024):.2f} MB")
-    print(f"Compression: {(1 - final_size / total_size) * 100:.1f}%")
-    print("=" * 60)
-    if final_size / (1024 * 1024) < 50:
-        print("[OK] Good size for Colab upload!")
-    elif final_size / (1024 * 1024) < 200:
-        print("[!] Upload might be slow, but should work")
-    else:
-        print("[X] Too large for easy upload (>200MB)")
-    print(f"\n[*] Ready to upload to Google Colab!")
-    print(f"    Location: {os.path.join(os.getcwd(), zip_filename)}")
-    return zip_filename
-def list_zip_contents(zip_filename):
-    print(f"\n\nZIP Contents Preview:")
-    print("=" * 60)
-    with zipfile.ZipFile(zip_filename, 'r') as zipf:
-        folders = {}
-        for name in zipf.namelist():
-            top_folder = name.split('/')[0] if '/' in name else name
-            if top_folder not in folders:
-                folders[top_folder] = []
-            folders[top_folder].append(name)
-        for folder, files in sorted(folders.items()):
-            print(f"\n[*] {folder}/")
-            if len(files) <= 10:
-                for f in files:
-                    print(f"    - {f}")
-            else:
-                for f in files[:5]:
-                    print(f"    - {f}")
-                print(f"    ... and {len(files) - 5} more files")
+            for f in d.rglob("*"):
+                if not f.is_file() or _should_skip(f):
+                    continue
+                arc = f.relative_to(ROOT).as_posix()
+                zf.write(f, arcname=arc)
+
+    kb = out_path.stat().st_size // 1024
+    print(f"Wrote {out_path} ({kb} KB)")
+    print("  Upload this file to Colab, unzip, add input PDF + ontology, run the notebook.")
+
+
 if __name__ == "__main__":
-    try:
-        zip_filename = create_colab_zip()
-        list_zip_contents(zip_filename)
-        print("\n\n" + "=" * 60)
-        print("[SUCCESS] Your ZIP is ready for Google Colab!")
-        print("=" * 60)
-        print("\nNext steps:")
-        print("1. Open Google Colab: https://colab.research.google.com")
-        print("2. Upload COLAB_Stage_AB_v2.ipynb -> Runtime: T4 GPU -> run all cells")
-        print("   (upload this ZIP + your PDFs when prompted; download stage_b_*.json at the end)")
-        print("3. Upload COLAB_Stage_C.ipynb -> Runtime: T4 GPU -> run all cells")
-        print("   (upload this ZIP + both stage_b_*.json files; download stage_c_*.json at the end)")
-        print("4. Upload COLAB_Stage_D_v2.ipynb -> Runtime: T4 GPU -> run all cells")
-        print("   (upload this ZIP + stage_c_*.json + UMLS.csv; download stage_d_*.json at the end)")
-        print("5. stage_d_candidate_statements.json is your final output!")
-    except Exception as e:
-        print(f"\n[ERROR] {e}")
-        import traceback
-        traceback.print_exc()
+    main()

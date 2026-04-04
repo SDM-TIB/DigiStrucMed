@@ -39,6 +39,9 @@ models/
 Thumbs.db
 .DS_Store
 
+# Generated Colab bundle (python create_colab_zip.py)
+DigiStructMed_thesis_colab.zip
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints

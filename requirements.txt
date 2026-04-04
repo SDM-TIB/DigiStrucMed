@@ -7,3 +7,18 @@ transformers>=4.30.0
 accelerate>=0.20.0
 sentencepiece>=0.1.99
 pydantic>=2.0.0
+
+# KG / RDF
+rdflib>=6.3.0
+morph-kgc>=2.0.0
+
+# SHACL validation
+# TravSHACL  — professor's named tool (SDM-TIB/Trav-SHACL); requires a SPARQL endpoint
+travshacl>=1.9.0
+# pySHACL    — fallback for local .ttl file validation (Colab / no SPARQL server)
+pyshacl>=0.25.0
+
+# NLP / Entity linking
+openai>=1.0.0
+huggingface_hub>=0.23.0
+rapidfuzz>=3.0.0
