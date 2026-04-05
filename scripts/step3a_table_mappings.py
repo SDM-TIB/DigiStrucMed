@@ -32,12 +32,34 @@ ACCEPT_THRESHOLD = 0.72     # auto-include in RML
 REVIEW_THRESHOLD = 0.50     # flag for human review
 REJECT_BELOW    = 0.50     # discard silently
 
-_NON_PROPERTY_HEADERS = {
-    "reference", "references", "reference/link", "reference link",
-    "organization", "source", "notes", "comments", "footnote",
-    "abbreviation", "meaning/phrase", "meaning", "measure title",
-    "care setting", "title",
-}
+def _is_metadata_header(header: str, ontology: "OntologyIndex") -> bool:
+    """
+    Detect metadata column headers that are not ontology properties.
+    Uses structural heuristics instead of a hardcoded list.
+    """
+    h = header.lower().strip().rstrip(":")
+    tokens = set(h.split())
+
+    metadata_indicators = {"reference", "source", "footnote", "abbreviation"}
+    if tokens & metadata_indicators:
+        return True
+
+    if h in {"notes", "comments", "organization", "title"}:
+        return True
+
+    if tokens >= {"meaning", "phrase"} or tokens >= {"care", "setting"}:
+        return True
+
+    if "measure" in tokens and any(w in tokens for w in ("title", "no", "no.", "domain")):
+        return True
+
+    all_prop_labels = {p.label.lower() for p in ontology.all_properties().values()}
+    if h not in all_prop_labels and len(tokens) == 1 and h not in {
+        c.get("label", "").lower() for c in ontology.classes.values()
+    }:
+        pass
+
+    return False
 
 # ── RML header ─────────────────────────────────────────────────────────────
 
@@ -207,6 +229,139 @@ def _safe_ref(header: str) -> str:
     return header.strip().replace(" ", "_").replace("/", "_").replace("(", "").replace(")", "")
 
 
+def _csv_sample_values(csv_path: str, header: str, n: int = 3) -> list[str]:
+    """Return up to n non-empty sample values from a column."""
+    samples: list[str] = []
+    try:
+        with Path(csv_path).open(newline="", encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f):
+                val = (row.get(header) or "").strip()
+                if val and val not in samples:
+                    samples.append(val)
+                    if len(samples) >= n:
+                        break
+    except Exception:
+        pass
+    return samples
+
+
+def _llm_match_columns(
+    unmatched: list[dict],
+    ontology: OntologyIndex,
+    llm_backend: str = "hf_local",
+    hf_token: str | None = None,
+    hf_model: str = "meta-llama/Llama-3.1-8B-Instruct",
+) -> list[dict]:
+    """
+    Use the LLM to match table columns that fuzzy-matching could not resolve.
+    For each unmatched column, the LLM sees the column header, sample values,
+    and the full list of ontology properties, and must pick the best match
+    or respond NONE.
+    """
+    if not unmatched:
+        return []
+
+    try:
+        from hf_llm import (
+            probe_hf_local_backend,
+            hf_local_generate,
+            hf_inference_chat,
+        )
+    except ImportError:
+        log("3a", "  LLM fallback: hf_llm module not available — skipping")
+        return []
+
+    if llm_backend in ("hf_local", "llama"):
+        probe_err = probe_hf_local_backend(hf_model, hf_token)
+        if probe_err:
+            log("3a", f"  LLM fallback: probe failed — {probe_err}")
+            return []
+
+    def _query(prompt: str) -> str:
+        if llm_backend in ("hf_local", "llama"):
+            return hf_local_generate(prompt, hf_model, hf_token, max_new_tokens=512)
+        return hf_inference_chat(prompt, hf_model, hf_token, max_new_tokens=512)
+
+    prop_list = []
+    for uri, prop in ontology.all_properties().items():
+        domain_label = ", ".join(
+            ontology.class_label(d) for d in prop.domain
+        ) or "any"
+        range_label = ", ".join(
+            ontology.class_label(r) if prop.prop_type == "object"
+            else r.split("#")[-1]
+            for r in prop.range_
+        ) or "any"
+        prop_list.append(
+            f"  URI: {uri}\n  label: {prop.label}\n"
+            f"  type: {prop.prop_type}\n  domain: {domain_label}\n"
+            f"  range: {range_label}"
+        )
+    props_text = "\n---\n".join(prop_list)
+
+    matched: list[dict] = []
+    batch_size = 5
+    for i in range(0, len(unmatched), batch_size):
+        batch = unmatched[i:i + batch_size]
+        columns_text = ""
+        for item in batch:
+            samples = _csv_sample_values(item["csv_path"], item["header"])
+            columns_text += (
+                f"\nColumn: \"{item['header']}\"\n"
+                f"Table: {item['table_id']}\n"
+                f"Sample values: {samples}\n"
+            )
+
+        prompt = (
+            f"You are mapping table columns to ontology properties.\n\n"
+            f"ONTOLOGY PROPERTIES:\n{props_text}\n\n"
+            f"COLUMNS TO MATCH:{columns_text}\n\n"
+            f"For each column, respond with the best matching property URI "
+            f"or NONE if no property fits.\n"
+            f"Respond ONLY as a JSON array of objects:\n"
+            f'[{{"column": "<header>", "table": "<table_id>", '
+            f'"property_uri": "<URI or NONE>"}}]\n\nJSON:'
+        )
+
+        try:
+            raw = _query(prompt)
+            import json as _json
+            start = raw.find("[")
+            end = raw.rfind("]") + 1
+            if start >= 0 and end > start:
+                proposals = _json.loads(raw[start:end])
+                for prop in proposals:
+                    uri = prop.get("property_uri", "NONE")
+                    if uri == "NONE" or not uri:
+                        continue
+                    onto_prop = ontology.all_properties().get(uri)
+                    if not onto_prop:
+                        continue
+                    col_header = prop.get("column", "")
+                    tbl_id = prop.get("table", "")
+                    for item in batch:
+                        if item["header"] == col_header and item["table_id"] == tbl_id:
+                            matched.append({
+                                "table_id": tbl_id,
+                                "csv_path": item["csv_path"],
+                                "header": col_header,
+                                "match": {
+                                    "uri": uri,
+                                    "label": onto_prop.label,
+                                    "prop_type": onto_prop.prop_type,
+                                    "range_": onto_prop.range_,
+                                    "score": 0.60,
+                                },
+                                "source": "llm",
+                            })
+                            break
+        except Exception as exc:
+            log("3a", f"  LLM batch {i // batch_size + 1} failed: {exc}")
+
+    log("3a", f"  LLM fallback: {len(matched)} additional column(s) matched out of {len(unmatched)} attempted")
+    return matched
+
+
 def _read_csv_headers(csv_path: str) -> list[str]:
     """First row of the CSV as written by Step 1b — source of truth for Morph-KGC."""
     p = Path(csv_path)
@@ -222,6 +377,400 @@ def _ttl_dquote(s: str) -> str:
     return s.replace("\\", "\\\\").replace('"', '\\"')
 
 
+# ── Enum-subject detection ─────────────────────────────────────────────────
+
+def _compute_common_prefix(strings: list[str]) -> str:
+    """Find the longest common prefix among a list of strings (case-insensitive)."""
+    if not strings:
+        return ""
+    lower = [s.lower() for s in strings]
+    prefix = lower[0]
+    for s in lower[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return ""
+    last_space = prefix.rfind(" ")
+    if last_space > 0:
+        return prefix[:last_space + 1]
+    return prefix
+
+
+def _build_enum_label_index(
+    ontology: OntologyIndex,
+) -> dict[str, tuple[str, str]]:
+    """
+    Build a lookup: normalised-label → (member_uri, enum_class_uri).
+    Dynamically detects the common prefix of member labels within each enum
+    class and strips it to create short-form keys for CSV value matching.
+    """
+    index: dict[str, tuple[str, str]] = {}
+    for enum_cls, member_uris in ontology.enumerations.items():
+        labels: list[str] = []
+        for mu in member_uris:
+            info = ontology.named_individuals.get(mu, {})
+            label = info.get("label", "")
+            if not label:
+                label = mu.split("/")[-1].split("#")[-1]
+            labels.append(label)
+
+        common_prefix = _compute_common_prefix(labels) if len(labels) > 1 else ""
+
+        for mu, label in zip(member_uris, labels):
+            norm = label.strip().lower()
+            index[norm] = (mu, enum_cls)
+
+            if common_prefix and norm.startswith(common_prefix):
+                short = norm[len(common_prefix):].strip()
+                if short:
+                    index[short] = (mu, enum_cls)
+    return index
+
+
+def _match_csv_value_to_enum(
+    value: str,
+    enum_index: dict[str, tuple[str, str]],
+) -> tuple[str, str] | None:
+    """
+    Return (member_uri, enum_class_uri) if the CSV cell matches an enum member.
+    Uses exact match against the full label or the short (prefix-stripped) form.
+    No substring matching — that causes false positives with short enum labels.
+    """
+    norm = value.strip().lower()
+    if not norm:
+        return None
+    if norm in enum_index:
+        return enum_index[norm]
+    norm_nospace = re.sub(r"[\s\-_:]+", "", norm)
+    for label, info in enum_index.items():
+        if re.sub(r"[\s\-_:]+", "", label) == norm_nospace:
+            return info
+    return None
+
+
+def _detect_enum_subject(
+    csv_path: str,
+    csv_headers: list[str],
+    ontology: OntologyIndex,
+) -> dict | None:
+    """
+    Check if the subject column (col 0) contains ontology enum values.
+
+    Returns a dict with restructuring info if detected:
+      { "enum_columns": [{col_idx, header, prop_uri, enum_class, member_map}, ...],
+        "text_columns": [{col_idx, header}, ...] }
+    Or None if this is a normal table.
+    """
+    if not ontology.enumerations or len(csv_headers) < 2:
+        return None
+
+    enum_index = _build_enum_label_index(ontology)
+    if not enum_index:
+        return None
+
+    p = Path(csv_path)
+    if not p.is_file():
+        return None
+
+    try:
+        with p.open(newline="", encoding="utf-8", errors="replace") as f:
+            rows = list(csv.DictReader(f))
+    except Exception:
+        return None
+
+    if not rows:
+        return None
+
+    enum_columns: list[dict] = []
+    text_columns: list[dict] = []
+
+    for col_idx, header in enumerate(csv_headers):
+        if not header.strip():
+            continue
+
+        values = [
+            (r.get(header) or "").strip()
+            for r in rows[:20]
+            if (r.get(header) or "").strip()
+        ]
+        if not values:
+            text_columns.append({"col_idx": col_idx, "header": header})
+            continue
+
+        matches = 0
+        member_map: dict[str, str] = {}
+        class_counts: dict[str, int] = {}
+        for v in values:
+            result = _match_csv_value_to_enum(v, enum_index)
+            if result:
+                matches += 1
+                member_map[v] = result[0]
+                class_counts[result[1]] = class_counts.get(result[1], 0) + 1
+
+        if not class_counts:
+            text_columns.append({"col_idx": col_idx, "header": header})
+            continue
+
+        dominant_class = max(class_counts, key=class_counts.get)
+        dominant_count = class_counts[dominant_class]
+
+        distinct_members = len(set(member_map.values()))
+        is_enum = (
+            dominant_count / len(values) >= 0.8
+            and len(class_counts) == 1
+            and distinct_members >= 2
+        )
+
+        if is_enum:
+            prop_uri = _find_property_for_enum_range(dominant_class, ontology)
+            enum_columns.append({
+                "col_idx": col_idx,
+                "header": header,
+                "prop_uri": prop_uri,
+                "enum_class": dominant_class,
+                "member_map": member_map,
+            })
+        else:
+            text_columns.append({"col_idx": col_idx, "header": header})
+
+    if not enum_columns:
+        return None
+
+    subject_is_enum = any(ec["col_idx"] == 0 for ec in enum_columns)
+    if not subject_is_enum:
+        return None
+
+    distinct_enum_classes = {ec["enum_class"] for ec in enum_columns}
+    if len(distinct_enum_classes) < 2 and len(enum_columns) > 1:
+        return None
+
+    return {
+        "enum_columns": enum_columns,
+        "text_columns": text_columns,
+    }
+
+
+def _find_property_for_enum_range(
+    enum_class_uri: str,
+    ontology: OntologyIndex,
+) -> str | None:
+    """Find the object property whose rdfs:range is the given enum class."""
+    for uri, prop in ontology.object_properties.items():
+        if enum_class_uri in prop.range_:
+            return uri
+    return None
+
+
+def _extract_section_slug(headers: list[str]) -> str:
+    """
+    Extract a meaningful section name from the table column headers by
+    finding their longest common prefix (the shared section title) and
+    slugifying it. Fully dynamic — no hardcoded suffixes or prefixes.
+    """
+    if not headers:
+        return ""
+
+    common = _compute_common_prefix(headers)
+    if not common or len(common) < 4:
+        return re.sub(r"[^a-zA-Z0-9]+", "_", headers[0]).strip("_").lower()[:60]
+
+    common = common.rstrip(". \t")
+
+    slug = re.sub(r"[^a-zA-Z0-9]+", "_", common).strip("_").lower()
+
+    if len(slug) > 60:
+        slug = slug[:60].rsplit("_", 1)[0]
+
+    return slug if len(slug) > 3 else ""
+
+
+def _extract_rec_number(text: str) -> str:
+    """
+    Extract the recommendation number from the start of recommendation text.
+    "1. For patients with stage C HF..." → "1"
+    "8. For patients who have LVEF ≤ 35%..." → "8"
+    """
+    m = re.match(r"^\s*(\d+)\.", text)
+    return m.group(1) if m else ""
+
+
+def _restructure_enum_table(
+    table_id: str,
+    csv_path: str,
+    enum_info: dict,
+    ontology: OntologyIndex,
+) -> tuple[str, dict | None]:
+    """
+    Rewrite the CSV to add a _subject_id column and generate an RML mapping
+    that treats enum columns as object properties pointing to named individuals.
+
+    Subject IDs are meaningful: rec_{section}_{number}, e.g.
+    "rec_dietary_sodium_restriction_1" for recommendation 1 from the
+    Dietary Sodium Restriction section.
+
+    Returns (rml_block, mapping_index_entry) or ("", None) on failure.
+    """
+    p = Path(csv_path)
+    try:
+        with p.open(newline="", encoding="utf-8", errors="replace") as f:
+            rows = list(csv.DictReader(f))
+    except Exception:
+        return "", None
+
+    if not rows:
+        return "", None
+
+    enum_columns = enum_info["enum_columns"]
+    text_columns = enum_info["text_columns"]
+
+    domain_class = None
+    for ec in enum_columns:
+        if ec["prop_uri"]:
+            prop = ontology.object_properties.get(ec["prop_uri"])
+            if prop and prop.domain:
+                domain_class = prop.domain[0]
+                break
+
+    enum_index = _build_enum_label_index(ontology)
+    enum_col_headers = {ec["header"] for ec in enum_columns}
+
+    original_headers = list(rows[0].keys()) if rows else []
+    section_slug = _extract_section_slug(original_headers)
+    new_header = "_subject_id"
+    new_csv_path = p.parent / f"{table_id}_restructured.csv"
+
+    text_header = text_columns[0]["header"] if text_columns else None
+
+    with new_csv_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([new_header] + original_headers)
+        for i, row in enumerate(rows):
+            rec_num = ""
+            if text_header:
+                rec_num = _extract_rec_number(row.get(text_header, ""))
+
+            if section_slug and rec_num:
+                subj_id = f"rec_{section_slug}_{rec_num}"
+            elif section_slug:
+                subj_id = f"rec_{section_slug}_{i}"
+            else:
+                subj_id = f"rec_{table_id}_{rec_num or str(i)}"
+
+            out_vals = [subj_id]
+            for h in original_headers:
+                raw = row.get(h, "")
+                if h in enum_col_headers:
+                    match_result = _match_csv_value_to_enum(raw, enum_index)
+                    if match_result:
+                        uri_local = match_result[0].split("/")[-1].split("#")[-1]
+                        out_vals.append(uri_local)
+                    else:
+                        out_vals.append(raw)
+                else:
+                    out_vals.append(raw)
+            writer.writerow(out_vals)
+
+    src = new_csv_path.resolve().as_posix()
+    subj_t = _morph_instance_template(new_header)
+
+    poms: list[str] = []
+
+    if domain_class:
+        poms.append(
+            f'    rr:predicateObjectMap [\n'
+            f'        rr:predicate <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;\n'
+            f'        rr:objectMap  [ rr:constant <{domain_class}> ]\n'
+            f'    ] ;'
+        )
+
+    ont_ns = "http://digistructmed.org/ontology/"
+    for uri in ontology.classes:
+        ont_ns = uri.rsplit("/", 1)[0] + "/"
+        break
+
+    for ec in enum_columns:
+        if not ec["prop_uri"]:
+            continue
+        header = ec["header"]
+        enum_template = ont_ns + "{" + header + "}"
+        poms.append(
+            f'    rr:predicateObjectMap [\n'
+            f'        rr:predicate <{ec["prop_uri"]}> ;\n'
+            f'        rr:objectMap  [ rr:template "{_ttl_dquote(enum_template)}" ]\n'
+            f'    ] ;'
+        )
+
+    text_col_props: list[dict] = []
+    for tc in text_columns:
+        header = tc["header"]
+        cref = _ttl_dquote(header)
+        best_match = match_header(header, ontology)
+        if best_match:
+            prop_uri = best_match["uri"]
+        else:
+            prop_uri = None
+            best_score = 0.0
+            for uri, prop in ontology.datatype_properties.items():
+                score = SequenceMatcher(None, header.lower(), prop.label.lower()).ratio()
+                if score > best_score:
+                    best_score = score
+                    prop_uri = uri
+            if not prop_uri:
+                prop_uri = next(iter(ontology.datatype_properties), header)
+
+        text_col_props.append({"header": header, "prop_uri": prop_uri})
+        poms.append(
+            f'    rr:predicateObjectMap [\n'
+            f'        rr:predicate <{prop_uri}> ;\n'
+            f'        rr:objectMap  [ rml:reference "{cref}" ;\n'
+            f'                        rr:datatype <http://www.w3.org/2001/XMLSchema#string> ]\n'
+            f'    ] ;'
+        )
+
+    pom_block = "\n".join(poms)
+    rml = (
+        f"<#{table_id}_Map>\n"
+        f"    a rr:TriplesMap ;\n"
+        f"    rml:logicalSource [\n"
+        f'        rml:source             "{_ttl_dquote(src)}" ;\n'
+        f"        rml:referenceFormulation ql:CSV\n"
+        f"    ] ;\n"
+        f"    rr:subjectMap [\n"
+        f'        rr:template "{_ttl_dquote(subj_t)}"\n'
+        f"    ] ;\n"
+        f"{pom_block}\n"
+        f"    .\n"
+    )
+
+    n_enum = len(enum_columns)
+    n_text = len(text_columns)
+    mapping_entry = {
+        "table_id": table_id,
+        "csv_path": str(new_csv_path),
+        "subject_header": new_header,
+        "restructured": True,
+        "enum_columns": n_enum,
+        "text_columns": n_text,
+        "domain_class": domain_class,
+        "columns": [
+            {"header": ec["header"], "predicate_uri": ec["prop_uri"],
+             "prop_type": "object", "range": [ec["enum_class"]]}
+            for ec in enum_columns if ec["prop_uri"]
+        ] + [
+            {"header": tcp["header"],
+             "predicate_uri": tcp["prop_uri"],
+             "prop_type": "datatype",
+             "range": ["http://www.w3.org/2001/XMLSchema#string"]}
+            for tcp in text_col_props
+        ],
+    }
+
+    log("3a", f"  {table_id}: enum-subject detected → restructured "
+        f"({n_enum} enum cols, {n_text} text cols, domain={ontology.class_label(domain_class) if domain_class else '?'})")
+
+    return rml, mapping_entry
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def generate_table_mappings(
@@ -229,6 +778,10 @@ def generate_table_mappings(
     ontology: OntologyIndex | None = None,
     ontology_path: str = "input/hf_guideline_ontology.ttl",
     output_dir: str = "outputs/step3",
+    llm_backend: str = "hf_local",
+    hf_token: str | None = None,
+    hf_model: str = "meta-llama/Llama-3.1-8B-Instruct",
+    use_llm_fallback: bool = True,
 ) -> dict:
     """
     Generate RML mappings for all extracted tables.
@@ -265,6 +818,20 @@ def generate_table_mappings(
         if not subject_header:
             log("3a", f"  skip {table_id}: empty first-column header (no subject for RML)")
             continue
+
+        enum_info = _detect_enum_subject(csv_path, csv_headers, ontology)
+        if enum_info is not None:
+            rml_block, mapping_entry = _restructure_enum_table(
+                table_id, csv_path, enum_info, ontology,
+            )
+            if rml_block and mapping_entry:
+                rml_blocks.append(rml_block)
+                all_table_mappings.append(mapping_entry)
+                n_enum_cols = len(enum_info["enum_columns"])
+                n_text_cols = len(enum_info["text_columns"])
+                accepted_count += n_enum_cols + n_text_cols
+            continue
+
         fallback_headers: list[str] = table.get("headers") or []
 
         col_mappings: list[dict] = []
@@ -273,7 +840,7 @@ def generate_table_mappings(
             if not header.strip() or col_idx == 0:
                 continue
 
-            if header.lower().strip() in _NON_PROPERTY_HEADERS:
+            if _is_metadata_header(header, ontology):
                 rejected.append({"table": table_id, "header": header, "reason": "non_property_header"})
                 continue
 
@@ -295,6 +862,12 @@ def generate_table_mappings(
                     rejected.append({"table": table_id, "header": header,
                                      "best_candidate": match, "reason": "text_column_vs_numeric_range"})
                     continue
+
+            if match["prop_type"] == "object" and _column_has_freetext(csv_path, header):
+                rejected.append({"table": table_id, "header": header,
+                                 "best_candidate": match,
+                                 "reason": "freetext_in_object_property_column"})
+                continue
 
             if match["score"] < REVIEW_THRESHOLD:
                 rejected.append({"table": table_id, "header": header,
@@ -333,6 +906,72 @@ def generate_table_mappings(
         )
         if rml_block:
             rml_blocks.append(rml_block)
+
+    # ── LLM fallback for unmatched columns ─────────────────────────────────
+    if use_llm_fallback:
+        no_match = [r for r in rejected if r.get("reason") == "no_ontology_match"]
+        if no_match:
+            llm_unmatched = []
+            table_csv_map: dict[str, str] = {}
+            table_subj_map: dict[str, str] = {}
+            for table in table_index:
+                table_csv_map[table["table_id"]] = table["csv_path"]
+                headers = _read_csv_headers(table["csv_path"])
+                if headers:
+                    table_subj_map[table["table_id"]] = headers[0].strip()
+
+            for r in no_match:
+                tid = r["table"]
+                if tid in table_csv_map and tid in table_subj_map:
+                    llm_unmatched.append({
+                        "table_id": tid,
+                        "csv_path": table_csv_map[tid],
+                        "header": r["header"],
+                        "subject_header": table_subj_map[tid],
+                    })
+
+            llm_matches = _llm_match_columns(
+                llm_unmatched, ontology,
+                llm_backend=llm_backend, hf_token=hf_token, hf_model=hf_model,
+            )
+
+            for lm in llm_matches:
+                match = lm["match"]
+                if match["prop_type"] == "object" and _column_has_freetext(lm["csv_path"], lm["header"]):
+                    continue
+
+                tid = lm["table_id"]
+                subj_h = lm.get("subject_header", table_subj_map.get(tid, ""))
+
+                existing = next((m for m in all_table_mappings if m["table_id"] == tid), None)
+                col_entry = {
+                    "header": lm["header"],
+                    "predicate_uri": match["uri"],
+                    "prop_type": match["prop_type"],
+                    "range": match["range_"],
+                }
+                if existing:
+                    existing["columns"].append(col_entry)
+                else:
+                    all_table_mappings.append({
+                        "table_id": tid,
+                        "csv_path": lm["csv_path"],
+                        "subject_header": subj_h,
+                        "columns": [col_entry],
+                    })
+
+                rml_block = _rml_triples_map(
+                    tid, lm["csv_path"],
+                    [{"header": lm["header"], "match": match}],
+                    subject_header=subj_h,
+                )
+                if rml_block:
+                    rml_blocks.append(rml_block)
+                accepted_count += 1
+
+            rejected = [r for r in rejected if r.get("reason") != "no_ontology_match"
+                        or not any(lm["header"] == r["header"] and lm["table_id"] == r["table"]
+                                   for lm in llm_matches)]
 
     rml_path = out_dir / "table_mappings.ttl"
     rml_path.write_text("\n".join(rml_blocks), encoding="utf-8")

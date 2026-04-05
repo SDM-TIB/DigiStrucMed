@@ -381,6 +381,37 @@ JSON:"""
 _LLM_SKIP_PROPERTIES: set[str] = set()
 
 
+def _detect_inverse_properties(ontology: OntologyIndex) -> set[str]:
+    """
+    Dynamically detect inverse/structural properties from the ontology.
+    Uses owl:inverseOf declarations and domain==range self-referencing
+    instead of hardcoded property label strings.
+    """
+    from rdflib import Graph as RG, RDF as R, OWL as O, RDFS as RS, BNode
+    skip: set[str] = set()
+
+    ont_path = getattr(ontology, '_source_path', None)
+    if not ont_path:
+        return skip
+
+    g = RG()
+    try:
+        g.parse(ont_path, format="turtle")
+    except Exception:
+        return skip
+
+    for s, _, o in g.triples((None, O.inverseOf, None)):
+        skip.add(str(s))
+
+    for p in g.subjects(R.type, O.ObjectProperty):
+        domains = set(str(d) for d in g.objects(p, RS.domain) if not isinstance(d, BNode))
+        ranges = set(str(r) for r in g.objects(p, RS.range) if not isinstance(r, BNode))
+        if domains and ranges and domains == ranges:
+            skip.add(str(p))
+
+    return skip
+
+
 def _relevant_properties_for_page(
     page_entity_ancestors: list[set[str]],
     ontology: OntologyIndex,
@@ -388,15 +419,11 @@ def _relevant_properties_for_page(
     """
     Select ontology properties relevant to the entities on this page:
     only properties whose domain and range overlap with any of the entity
-    class ancestors.  Filters out inverse/structural properties that confuse
-    the LLM (isStageOf, isPhenotypeOf, progressesTo, continuesTherapyOf).
+    class ancestors.  Filters out inverse/structural properties detected
+    dynamically from owl:inverseOf declarations in the ontology.
     """
     if not _LLM_SKIP_PROPERTIES:
-        for _u, p in ontology.object_properties.items():
-            lbl = p.label.lower()
-            if any(kw in lbl for kw in ("is stage of", "is phenotype of",
-                                         "progresses to", "continues therapy")):
-                _LLM_SKIP_PROPERTIES.add(p.uri)
+        _LLM_SKIP_PROPERTIES.update(_detect_inverse_properties(ontology))
 
     all_ancestors: set[str] = set()
     for anc in page_entity_ancestors:
@@ -631,27 +658,63 @@ def _run_v2(
 #  RML GENERATOR  (shared)
 # ═══════════════════════════════════════════════════════════════════════════
 
-def _generate_text_rml(assertions_path: str, version: str) -> str:
-    return (
-        _RML_HEADER
-        + f"<#TextAssertions_{version}>\n"
-        + "    a rr:TriplesMap ;\n"
-        + "    rml:logicalSource [\n"
-        + f'        rml:source             "{assertions_path}" ;\n'
-        + "        rml:referenceFormulation ql:JSONPath ;\n"
-        + '        rml:iterator           "$[*]"\n'
-        + "    ] ;\n"
-        + "    rr:subjectMap [\n"
-        + '        rr:template "http://digistructmed.org/instance/{subject_cui}" ;\n'
-        + "        rr:class    ex:Entity\n"
-        + "    ] ;\n"
-        + "    rr:predicateObjectMap [\n"
-        + '        rr:predicateMap [ rml:reference "predicate_uri" ] ;\n'
-        + "        rr:objectMap    [\n"
-        + '            rr:template "http://digistructmed.org/instance/{object_cui}"\n'
-        + "        ]\n"
-        + "    ] .\n"
-    )
+def _ttl_escape(s: str) -> str:
+    """Escape a string for use inside Turtle double-quoted literals."""
+    return s.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def _generate_text_rml(
+    assertions: list[dict], output_dir: str, version: str,
+) -> str:
+    """
+    Generate RML with one TriplesMap per distinct predicate_uri.
+    Each map uses a **static** ``rr:predicate`` and its own per-predicate
+    JSON source file.  This avoids ``rr:predicateMap [ rml:reference … ]``
+    (dynamic predicate) which SDM-RDFizer does not support.
+    """
+    by_pred: dict[str, list[dict]] = defaultdict(list)
+    for a in assertions:
+        pred_uri = a.get("predicate_uri", "")
+        if pred_uri:
+            by_pred[pred_uri].append(a)
+
+    if not by_pred:
+        return _RML_HEADER
+
+    rml_parts = [_RML_HEADER]
+    out = Path(output_dir)
+
+    for pred_uri, pred_assertions in sorted(by_pred.items()):
+        local_name = pred_uri.rsplit("/", 1)[-1].rsplit("#", 1)[-1]
+        safe_name = re.sub(r"[^a-zA-Z0-9_]", "_", local_name)
+
+        pred_json_path = out / f"text_assertions_{version}_pred_{safe_name}.json"
+        save_json(pred_assertions, str(pred_json_path))
+
+        src = _ttl_escape(str(pred_json_path))
+
+        rml_parts.append(
+            f"<#TextAssertions_{version}_{safe_name}>\n"
+            f"    a rr:TriplesMap ;\n"
+            f"    rml:logicalSource [\n"
+            f'        rml:source             "{src}" ;\n'
+            f"        rml:referenceFormulation ql:JSONPath ;\n"
+            f'        rml:iterator           "$[*]"\n'
+            f"    ] ;\n"
+            f"    rr:subjectMap [\n"
+            f'        rr:template "http://digistructmed.org/instance/{{subject_cui}}" ;\n'
+            f"        rr:class    ex:Entity\n"
+            f"    ] ;\n"
+            f"    rr:predicateObjectMap [\n"
+            f"        rr:predicate <{pred_uri}> ;\n"
+            f"        rr:objectMap    [\n"
+            f'            rr:template "http://digistructmed.org/instance/{{object_cui}}"\n'
+            f"        ]\n"
+            f"    ] .\n\n"
+        )
+
+    log("3b", f"RML: {len(by_pred)} static-predicate TriplesMaps generated")
+    return "".join(rml_parts)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -703,7 +766,7 @@ def run_text_path(
     assertions_path = out_dir / f"text_assertions_{version}.json"
     save_json(assertions, str(assertions_path))
 
-    rml_content = _generate_text_rml(str(assertions_path), version)
+    rml_content = _generate_text_rml(assertions, str(out_dir), version)
     rml_path = out_dir / f"text_mappings_{version}.ttl"
     rml_path.write_text(rml_content, encoding="utf-8")
 

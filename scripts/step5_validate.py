@@ -7,20 +7,25 @@ Output : outputs/step5/validation_report_<version>.json
          { conforms, total_triples, total_violations, violations[], metrics{} }
 
 Primary validator : TravSHACL  (SDM-TIB/Trav-SHACL, pip install travshacl)
-  — validates an RDF graph via a SPARQL endpoint
+  — validates shapes against a SPARQL endpoint or an in-memory RDF graph
   — intelligent shape-traversal order; detects violations early
-  — requires: endpoint_url pointing to the KG loaded in a SPARQL server
+  — can use a local SPARQL endpoint OR an in-memory graph serialized to
+    a temporary endpoint via rdflib's SPARQLStore
 
 Fallback validator : pySHACL  (pip install pyshacl)
-  — used automatically when no SPARQL endpoint is configured
+  — used automatically when TravSHACL is not installed
   — reads the KG directly from a .ttl file (works in Colab / CI without a
     running SPARQL server)
   — implements the same SHACL standard; results are equivalent
 
 Shape derivation:
-  owl:FunctionalProperty    → sh:maxCount 1
-  rdfs:domain / range       → sh:class / sh:datatype
-  owl:oneOf enumerations    → sh:in
+      owl:FunctionalProperty    → sh:maxCount 1
+      rdfs:domain / range       → sh:class / sh:datatype
+      owl:oneOf enumerations    → sh:in
+      Note: the validation report separates quality violations (maxCount,
+      type/class mismatches) from completeness violations (minCount) so
+      that extracted-KG coverage gaps are reported but not conflated
+      with real data errors
 
   TravSHACL: https://github.com/SDM-TIB/Trav-SHACL
 ─────────────────────────────────────────────────────────────────────────────
@@ -105,18 +110,31 @@ def derive_shapes(
                     if isinstance(range_val, BNode):
                         continue
                     if prop_type == "datatype" or str(range_val).startswith(str(XSD)):
-                        shapes.add((prop_shape, SH.datatype, range_val))
+                        if range_val not in (XSD.decimal, XSD.integer,
+                                             XSD.nonNegativeInteger):
+                            shapes.add((prop_shape, SH.datatype, range_val))
                     else:
                         shapes.add((prop_shape, SH["class"], range_val))
 
     # 2. owl:FunctionalProperty → sh:maxCount 1
+    #    Fold into the NAMED shapes from step 1 (domain-based) so that
+    #    TravSHACL never sees anonymous shapes without sh:targetClass.
     for p in g.subjects(RDF.type, OWL.FunctionalProperty):
-        inner = BNode()
-        fn_shape = BNode()
-        shapes.add((fn_shape, RDF.type,    SH.NodeShape))
-        shapes.add((fn_shape, SH.property, inner))
-        shapes.add((inner, SH.path,        p))
-        shapes.add((inner, SH.maxCount,    Literal(1)))
+        domain_classes = []
+        for raw_domain in g.objects(p, RDFS.domain):
+            domain_classes.extend(_resolve_domain_classes(raw_domain))
+
+        if domain_classes:
+            for domain_cls in domain_classes:
+                shape_uri = URIRef(str(domain_cls) + "_Shape")
+                shapes.add((shape_uri, RDF.type,       SH.NodeShape))
+                shapes.add((shape_uri, SH.targetClass, domain_cls))
+                inner = BNode()
+                shapes.add((shape_uri, SH.property, inner))
+                shapes.add((inner, SH.path,     p))
+                shapes.add((inner, SH.maxCount, Literal(1)))
+        else:
+            log("5", f"  FunctionalProperty {p} has no rdfs:domain — skipping maxCount shape")
 
     # 3. owl:Restriction → cardinality + someValuesFrom shapes
     for cls in g.subjects(RDF.type, OWL.Class):
@@ -213,54 +231,125 @@ def derive_shapes(
 
 # ── TravSHACL backend ────────────────────────────────────────────────────────
 
+def _split_shapes_to_dir(shapes_path: str, output_dir: str) -> str:
+    """
+    TravSHACL expects one .ttl file per shape in a directory.
+    Split a monolithic shapes.ttl into per-shape files.
+    """
+    g = Graph()
+    g.parse(shapes_path, format="turtle")
+
+    shapes_dir = Path(output_dir) / "travshacl_shapes"
+    shapes_dir.mkdir(parents=True, exist_ok=True)
+
+    shape_uris = set(g.subjects(RDF.type, SH.NodeShape))
+
+    if not shape_uris:
+        import shutil
+        shutil.copy(shapes_path, str(shapes_dir / "shapes.ttl"))
+        return str(shapes_dir)
+
+    skipped = 0
+    for i, shape_uri in enumerate(shape_uris):
+        if isinstance(shape_uri, BNode):
+            skipped += 1
+            continue
+        has_target = any(g.objects(shape_uri, SH.targetClass))
+        if not has_target:
+            skipped += 1
+            continue
+        has_property = any(g.objects(shape_uri, SH.property))
+        if not has_property:
+            skipped += 1
+            continue
+
+        sg = Graph()
+        sg.bind("sh", SH)
+        sg.bind("ex", EX)
+        sg.bind("xsd", XSD)
+
+        for p, o in g.predicate_objects(shape_uri):
+            sg.add((shape_uri, p, o))
+            if isinstance(o, BNode):
+                for p2, o2 in g.predicate_objects(o):
+                    sg.add((o, p2, o2))
+
+        local = str(shape_uri).split("/")[-1].replace("#", "_")
+        sg.serialize(str(shapes_dir / f"{local}.ttl"), format="turtle")
+
+    if skipped:
+        log("5", f"  Skipped {skipped} shape(s) without targetClass or property constraints")
+    return str(shapes_dir)
+
+
 def _validate_travshacl(
-    shapes_dir: str,
-    endpoint_url: str,
+    shapes_path: str,
+    kg_path: str,
+    endpoint_url: str | None,
+    output_dir: str,
     version: str,
 ) -> list[dict]:
     """
-    Run TravSHACL against a SPARQL endpoint.
+    Run TravSHACL for SHACL validation.
 
-    It requires:
-      shapes_dir   — directory containing one .ttl file per SHACL shape
-      endpoint_url — SPARQL endpoint URL where the KG is loaded
-                     e.g. "http://localhost:3030/kg/sparql" (Apache Jena Fuseki)
-
-    Returns a list of violation dicts (empty list = conforms).
+    Supports two modes:
+      1. endpoint_url is set → validate against external SPARQL endpoint
+      2. endpoint_url is None → load KG as rdflib Graph and pass directly
     """
     try:
-        from TravSHACL import GraphTraversal, ShapeSchema
-        from TravSHACL.core.GraphTraversal import BFSOrder
+        from TravSHACL import GraphTraversal, ShapeSchema, parse_heuristics
     except ImportError:
         raise ImportError(
             "TravSHACL not installed. Run: pip install travshacl\n"
             "GitHub: https://github.com/SDM-TIB/Trav-SHACL"
         )
 
-    schema = ShapeSchema(
-        shapeDir=shapes_dir,
-        endpoint=endpoint_url,
-        endpointType="SPARQLEndpoint",
-        graphTraversal=BFSOrder.ORDER,
-        # heuristics: order shapes to detect violations as early as possible
-        useSelectiveQueries=True,
-        maxSplit=256,
-        outputDir=None,
-        ORDERBYinQueries=True,
-        SHACL2SPARQLorder=False,
-    )
+    shapes_dir = _split_shapes_to_dir(shapes_path, output_dir)
 
-    result = GraphTraversal(BFSOrder.ORDER, schema).traverse_graph()
+    if endpoint_url:
+        ep = endpoint_url
+    else:
+        kg_graph = Graph()
+        kg_graph.parse(kg_path, format="turtle")
+        ep = kg_graph
+
+    result_dir = Path(output_dir) / f"travshacl_results_{version}"
+    result_dir.mkdir(parents=True, exist_ok=True)
+
+    schema = ShapeSchema(
+        schema_dir=shapes_dir,
+        endpoint=ep,
+        graph_traversal=GraphTraversal.DFS,
+        heuristics=parse_heuristics("TARGET IN BIG"),
+        use_selective_queries=True,
+        max_split_size=256,
+        output_dir=str(result_dir),
+        order_by_in_queries=False,
+        save_outputs=False,
+    )
+    result = schema.validate()
 
     violations: list[dict] = []
-    for shape_name, report in result.items():
-        for entity in report.get("invalid", []):
-            violations.append({
-                "focus_node":  str(entity),
-                "result_path": shape_name,
-                "severity":    str(SH.Violation),
-                "message":     f"Entity does not satisfy shape: {shape_name}",
-            })
+    if isinstance(result, dict):
+        for shape_name, report in result.items():
+            if shape_name == "unbound":
+                continue
+            invalid = set()
+            if isinstance(report, dict):
+                invalid = report.get("invalid_instances", set())
+            elif isinstance(report, (list, set)):
+                invalid = set(report)
+            for entry in invalid:
+                if isinstance(entry, tuple) and len(entry) >= 2:
+                    entity_uri = entry[1]
+                else:
+                    entity_uri = str(entry)
+                violations.append({
+                    "focus_node":  str(entity_uri),
+                    "result_path": shape_name,
+                    "severity":    str(SH.Violation),
+                    "message":     f"Entity does not satisfy shape: {shape_name}",
+                })
     return violations
 
 
@@ -303,53 +392,102 @@ def _validate_pyshacl(
 
 # ── Public entry-point ───────────────────────────────────────────────────────
 
+def _violation_categories(violations: list[dict]) -> dict[str, int]:
+    """Group violations by their result_path (property that caused the violation)."""
+    cats: dict[str, int] = {}
+    for v in violations:
+        path = v.get("result_path", "unknown")
+        prop = path.rsplit("/", 1)[-1] if "/" in path else path
+        cats[prop] = cats.get(prop, 0) + 1
+    return dict(sorted(cats.items(), key=lambda x: -x[1]))
+
+
+_COMPLETENESS_PATTERNS = ("Less than", "less than", "Min count")
+
+
+def _classify_violation(v: dict) -> str:
+    """
+    Classify a SHACL violation as 'quality' or 'completeness'.
+
+    Completeness = minCount failures ("Less than N values on ...")
+    Quality      = everything else (maxCount, datatype, class mismatch)
+    """
+    msg = v.get("message", "")
+    if any(pat in msg for pat in _COMPLETENESS_PATTERNS):
+        return "completeness"
+    return "quality"
+
+
+def _split_quality_completeness(
+    violations: list[dict],
+) -> tuple[list[dict], list[dict]]:
+    """Split violations into (quality_violations, completeness_violations)."""
+    quality: list[dict] = []
+    completeness: list[dict] = []
+    for v in violations:
+        if _classify_violation(v) == "completeness":
+            completeness.append(v)
+        else:
+            quality.append(v)
+    return quality, completeness
+
+
 def validate(
     kg_path: str,
     shapes_path: Optional[str] = None,
     ontology_path: str = "input/hf_guideline_ontology.ttl",
     output_dir: str = "outputs/step5",
     version: str = "v1",
-    # TravSHACL option — leave None to use pySHACL fallback
     sparql_endpoint: Optional[str] = None,
 ) -> dict:
     """
     Validate the materialised KG against SHACL shapes.
 
-    Backend selection
-    -----------------
-    sparql_endpoint is set  → TravSHACL.
-      The KG must already be loaded into the endpoint (e.g. via Jena Fuseki).
-      shapes_path must point to a *directory* of per-shape .ttl files for
-      TravSHACL's shape-directory convention.
+    Backend selection (priority order)
+    ----------------------------------
+    1. TravSHACL (preferred — Prof. Vidal / SDM-TIB tool, per meeting notes)
+       - If sparql_endpoint is set → validate against that endpoint
+       - If sparql_endpoint is None → TravSHACL reads the .ttl file directly
+    2. pySHACL (fallback — if TravSHACL is not installed)
+       - Works in Colab / CI out of the box
 
-    sparql_endpoint is None → pySHACL (local .ttl file, no server needed).
-      Works in Colab / CI out of the box.
-
-    If shapes_path is None in either case, shapes are auto-derived from the
-    OWL ontology first.
+    If shapes_path is None, shapes are auto-derived from the OWL ontology.
     """
     if shapes_path is None:
         shapes_path = derive_shapes(ontology_path, output_dir)
 
     log("5", f"Validating [{version}]: {kg_path}")
 
-    if sparql_endpoint:
-        # ── TravSHACL path ──────────────────────────────────────────────────
-        log("5", f"Backend: TravSHACL  endpoint={sparql_endpoint}")
-        # TravSHACL expects a directory; if shapes_path is a file, use its parent
-        shapes_dir = (
-            shapes_path if Path(shapes_path).is_dir()
-            else str(Path(shapes_path).parent)
-        )
-        violations = _validate_travshacl(shapes_dir, sparql_endpoint, version)
-        conforms   = len(violations) == 0
-        kg         = Graph().parse(kg_path, format="turtle")
-        n_triples  = len(kg)
-        backend    = "TravSHACL"
+    backend = None
+    violations = []
+    conforms = True
+    n_triples = 0
 
-    else:
-        # ── pySHACL fallback path ───────────────────────────────────────────
-        log("5", "Backend: pySHACL (fallback — no SPARQL endpoint provided)")
+    # ── Try TravSHACL first (primary validator per project requirements) ──
+    try:
+        import TravSHACL  # noqa: F401
+        travshacl_available = True
+    except ImportError:
+        travshacl_available = False
+
+    if travshacl_available:
+        try:
+            ep_label = sparql_endpoint or f"localRDF:{kg_path}"
+            log("5", f"Backend: TravSHACL  ({ep_label})")
+            violations = _validate_travshacl(
+                shapes_path, kg_path, sparql_endpoint, output_dir, version
+            )
+            conforms = len(violations) == 0
+            kg = Graph().parse(kg_path, format="turtle")
+            n_triples = len(kg)
+            backend = "TravSHACL"
+        except Exception as exc:
+            log("5", f"TravSHACL failed ({type(exc).__name__}: {exc}) — falling back to pySHACL")
+            backend = None
+
+    # ── pySHACL fallback ─────────────────────────────────────────────────
+    if backend is None:
+        log("5", "Backend: pySHACL (fallback)")
         kg = Graph()
         kg.parse(kg_path, format="turtle")
 
@@ -358,9 +496,14 @@ def validate(
 
         conforms, violations = _validate_pyshacl(kg, shacl_graph)
         n_triples = len(kg)
-        backend   = "pySHACL"
+        backend = "pySHACL"
 
     violated_focus = {v["focus_node"] for v in violations if v.get("focus_node")}
+    categories = _violation_categories(violations)
+
+    quality_violations, completeness_violations = _split_quality_completeness(violations)
+    q_focus = {v["focus_node"] for v in quality_violations if v.get("focus_node")}
+    c_focus = {v["focus_node"] for v in completeness_violations if v.get("focus_node")}
 
     report = {
         "version":          version,
@@ -370,11 +513,20 @@ def validate(
         "conforms":         conforms,
         "total_triples":    n_triples,
         "total_violations": len(violations),
+        "quality_violations":      len(quality_violations),
+        "completeness_violations": len(completeness_violations),
         "violations":       violations,
         "metrics": {
             "violation_rate":    round(len(violations) / max(n_triples, 1), 4),
             "conformance_ratio": round(1.0 - len(violations) / max(n_triples, 1), 4),
+            "quality_conformance": round(
+                1.0 - len(quality_violations) / max(n_triples, 1), 4),
             "distinct_focus_nodes_violated": len(violated_focus),
+            "distinct_quality_focus_nodes": len(q_focus),
+            "distinct_completeness_focus_nodes": len(c_focus),
+            "violations_by_property": categories,
+            "quality_by_property": _violation_categories(quality_violations),
+            "completeness_by_property": _violation_categories(completeness_violations),
         },
     }
 
@@ -385,6 +537,13 @@ def validate(
 
     status = "✓ CONFORMS" if conforms else f"✗ {len(violations)} violations"
     log("5", f"[{version}] {backend}  {status} — {n_triples} triples  →  {report_path}")
+    log("5", f"  Quality violations:      {len(quality_violations)}  "
+        f"(conformance: {report['metrics']['quality_conformance']:.1%})")
+    log("5", f"  Completeness violations: {len(completeness_violations)}  "
+        f"(coverage gaps — expected for extracted KGs)")
+    if categories:
+        top = ", ".join(f"{k}:{v}" for k, v in list(categories.items())[:5])
+        log("5", f"  Violation breakdown: {top}")
     return report
 
 
@@ -401,11 +560,15 @@ def compare_versions(
     print("\n" + "═" * 60)
     print(f"{'Metric':<30} {'v1':>14}  {'v2':>10}")
     print("─" * 60)
-    for key in ("backend", "total_triples", "total_violations"):
+    for key in ("backend", "total_triples", "total_violations",
+                "quality_violations", "completeness_violations"):
         print(f"{key:<30} {str(r1.get(key, '—')):>14}  {str(r2.get(key, '—')):>10}")
     print(f"{'conformance_ratio':<30} "
           f"{r1['metrics'].get('conformance_ratio', '—'):>14}  "
           f"{r2['metrics'].get('conformance_ratio', '—'):>10}")
+    print(f"{'quality_conformance':<30} "
+          f"{r1['metrics'].get('quality_conformance', '—'):>14}  "
+          f"{r2['metrics'].get('quality_conformance', '—'):>10}")
     print(f"{'conforms':<30} {str(r1.get('conforms', '—')):>14}  "
           f"{str(r2.get('conforms', '—')):>10}")
     print("═" * 60 + "\n")

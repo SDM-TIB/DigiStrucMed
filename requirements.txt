@@ -8,8 +8,9 @@ accelerate>=0.20.0
 sentencepiece>=0.1.99
 pydantic>=2.0.0
 
-# KG / RDF
+# KG / RDF — RML materialization engines (priority: SDM-RDFizer > Morph-KGC)
 rdflib>=6.3.0
+rdfizer>=4.0.0
 morph-kgc>=2.0.0
 
 # SHACL validation

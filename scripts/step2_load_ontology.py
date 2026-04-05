@@ -73,6 +73,7 @@ class OntologyIndex:
     datatype_properties: dict[str, PropertyInfo] = field(default_factory=dict)
     named_individuals: dict[str, dict] = field(default_factory=dict)
     enumerations: dict[str, list[str]] = field(default_factory=dict)
+    _source_path: str = ""
 
     # ── Quick lookups ──────────────────────────────────────────────────────
 
@@ -98,7 +99,7 @@ def load_ontology(ttl_path: str) -> OntologyIndex:
     g.parse(ttl_path, format="turtle")
     log("2", f"Graph loaded: {len(g)} triples")
 
-    idx = OntologyIndex()
+    idx = OntologyIndex(_source_path=ttl_path)
 
     # ── Classes ────────────────────────────────────────────────────────────
     for cls in g.subjects(RDF.type, OWL.Class):

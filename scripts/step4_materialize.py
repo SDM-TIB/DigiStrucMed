@@ -7,8 +7,10 @@ Input  : M = { outputs/step3/table_mappings.ttl,
          T-Box : input/hf_guideline_ontology.ttl
 Output : outputs/step4/output_<version>.ttl   (A-Box + T-Box merged)
 
-Tool   : Morph-KGC (primary)  — pip install morph-kgc
-         rdflib fallback        (always available, covers text + tables)
+RML engines (priority order):
+  1. SDM-RDFizer  — pip install rdfizer  (SDM-TIB, Prof. Vidal's group)
+  2. Morph-KGC    — pip install morph-kgc
+  3. rdflib fallback (always available, covers text + tables)
 ─────────────────────────────────────────────────────────────────────────────
 CUI linking:
   For every entity with a cui_final, emit (deduplicated):
@@ -111,6 +113,91 @@ def _load_constrained_classes(ontology_path: str) -> set[str]:
     return constrained
 
 
+def _load_class_hierarchy(ontology_path: str) -> dict[str, set[str]]:
+    """
+    Build a map  class_uri → set of ancestor class URIs  from rdfs:subClassOf.
+    Used to detect contradictory typing (e.g. entity matched as Drug but also
+    being typed as a Disease subclass).
+    """
+    from rdflib import Graph as RG, RDF as R, RDFS as RS, OWL as O
+    g = RG()
+    g.parse(ontology_path, format="turtle")
+    parents: dict[str, set[str]] = {}
+    for cls in g.subjects(R.type, O.Class):
+        uri = str(cls)
+        ancestors: set[str] = set()
+        for sup in g.objects(cls, RS.subClassOf):
+            if not isinstance(sup, URIRef):
+                continue
+            ancestors.add(str(sup))
+        parents[uri] = ancestors
+
+    changed = True
+    while changed:
+        changed = False
+        for uri, ancs in parents.items():
+            new_ancs = set()
+            for a in ancs:
+                if a in parents:
+                    new_ancs |= parents[a]
+            before = len(ancs)
+            ancs |= new_ancs
+            if len(ancs) > before:
+                changed = True
+    return parents
+
+
+def _find_disjoint_branches(ontology_path: str) -> list[tuple[set[str], set[str]]]:
+    """
+    Discover pairs of ontology class families that are semantically disjoint
+    (e.g. Disease-branch vs Drug-branch).  An entity should not be typed into
+    both branches simultaneously.
+
+    Detects branches by looking at classes that are domains of different
+    property groups (e.g. hasStage domain vs initialDose domain).
+    """
+    hierarchy = _load_class_hierarchy(ontology_path)
+
+    from rdflib import Graph as RG, RDF as R, RDFS as RS, OWL as O
+    g = RG()
+    g.parse(ontology_path, format="turtle")
+
+    prop_domains: dict[str, set[str]] = {}
+    for p in g.subjects(R.type, O.ObjectProperty):
+        uri = str(p)
+        for d in g.objects(p, RS.domain):
+            if isinstance(d, URIRef):
+                prop_domains.setdefault(uri, set()).add(str(d))
+    for p in g.subjects(R.type, O.DatatypeProperty):
+        uri = str(p)
+        for d in g.objects(p, RS.domain):
+            if isinstance(d, URIRef):
+                prop_domains.setdefault(uri, set()).add(str(d))
+
+    def _family(cls_uri: str) -> set[str]:
+        family = {cls_uri}
+        family |= hierarchy.get(cls_uri, set())
+        for c, ancs in hierarchy.items():
+            if cls_uri in ancs:
+                family.add(c)
+        return family
+
+    constrained = _load_constrained_classes(ontology_path)
+
+    constrained_families: list[set[str]] = []
+    seen_roots: set[str] = set()
+    for cls_uri in constrained:
+        root = cls_uri
+        for anc in hierarchy.get(cls_uri, set()):
+            if anc in constrained:
+                root = anc
+        if root not in seen_roots:
+            seen_roots.add(root)
+            constrained_families.append(_family(root))
+
+    return constrained_families
+
+
 def _add_entity_types(
     g: Graph,
     assertions: list[dict],
@@ -120,12 +207,27 @@ def _add_entity_types(
     Add rdf:type triples for entity instances using the ontology class
     computed by Step 3b (fields subject_class / object_class).
 
-    Skips typing for classes that carry mandatory cardinality constraints
-    unless the assertion confidence is high (>= 0.70).  This prevents
-    table-sourced or low-confidence entities from being typed as e.g.
-    HeartFailure and then failing hasStage cardinality checks.
+    Guards (all derived dynamically from the ontology, no hardcoding):
+    - Skips typing for constrained classes when confidence < 0.70
+    - Detects contradictory typing: if an entity appears in assertions with
+      DIFFERENT ontology-class families across roles (e.g. typed as Drug in
+      one assertion but as HeartFailure in another), only the non-constrained
+      class is kept
     """
     constrained = _load_constrained_classes(ontology_path)
+    constrained_families = _find_disjoint_branches(ontology_path)
+
+    entity_classes: dict[str, set[str]] = {}
+    for a in assertions:
+        for role in ("subject", "object"):
+            cls = a.get(f"{role}_class", "")
+            text = a.get(f"{role}_text", "")
+            cui = a.get(f"{role}_cui")
+            if not cui or not cls:
+                continue
+            slug = _slug(text) if text else _slug(cui)
+            entity_classes.setdefault(slug, set()).add(cls)
+
     seen: set[tuple[str, str]] = set()
     added = 0
 
@@ -142,6 +244,21 @@ def _add_entity_types(
                 continue
 
             ent_slug = _slug(text) if text else _slug(cui)
+
+            if cls in constrained:
+                other_classes = entity_classes.get(ent_slug, set()) - {cls}
+                skip = False
+                for family in constrained_families:
+                    if cls in family:
+                        for oc in other_classes:
+                            if oc not in family and oc not in constrained:
+                                skip = True
+                                break
+                    if skip:
+                        break
+                if skip:
+                    continue
+
             key = (ent_slug, cls)
             if key in seen:
                 continue
@@ -151,6 +268,57 @@ def _add_entity_types(
             added += 1
 
     return added
+
+
+
+# ── SDM-RDFizer materializer (Prof. Vidal / SDM-TIB) ─────────────────────
+
+def _rdfizer_materialize(
+    table_mappings: str,
+    text_mappings: str,
+    output_path: str,
+    output_dir: str,
+) -> Graph:
+    """
+    Materialize KG using SDM-RDFizer (https://github.com/SDM-TIB/SDM-RDFizer).
+    SDM-RDFizer reads RML mappings and executes them against data sources.
+    """
+    import rdfizer
+
+    config_content = (
+        "[default]\n"
+        f"main_directory: {output_dir}\n\n"
+        "[datasets]\n"
+        "number_of_datasets: 2\n"
+        f"output_folder: {output_dir}\n"
+        "all_in_one_file: yes\n"
+        "remove_duplicate: yes\n"
+        "enrichment: yes\n"
+        "name: output\n"
+        "ordered: no\n"
+        f"output_format: n-triples\n\n"
+        "[dataset1]\n"
+        "name: tables\n"
+        f"mapping: {table_mappings}\n\n"
+        "[dataset2]\n"
+        "name: text\n"
+        f"mapping: {text_mappings}\n"
+    )
+    cfg_path = Path(output_dir) / "rdfizer_config.ini"
+    cfg_path.write_text(config_content)
+
+    rdfizer.semantify(str(cfg_path))
+
+    nt_file = Path(output_dir) / "output.nt"
+    g = Graph()
+    if nt_file.is_file():
+        g.parse(str(nt_file), format="nt")
+    else:
+        for f in Path(output_dir).glob("*.nt"):
+            g.parse(str(f), format="nt")
+
+    log("4", f"SDM-RDFizer: {len(g)} triples materialised")
+    return g
 
 
 # ── Morph-KGC materializer ────────────────────────────────────────────────
@@ -274,20 +442,41 @@ def materialize(
 
     log("4", f"Materialising KG [{version}]")
 
-    # ── Try Morph-KGC first, fall back to rdflib on any error ─────────────
+    # ── Try RML engines: SDM-RDFizer → Morph-KGC → rdflib fallback ──────
     g: Graph | None = None
+    engine_used = "none"
+
+    # 1. SDM-RDFizer (preferred — Prof. Vidal / SDM-TIB)
     try:
-        import morph_kgc  # noqa: F401
-        g = _morph_materialize(
+        import rdfizer  # noqa: F401
+        g = _rdfizer_materialize(
             table_mappings_path, text_mappings_path, output_path, str(out_dir)
         )
+        engine_used = "SDM-RDFizer"
     except ImportError:
-        log("4", "Morph-KGC not installed — using rdflib fallback")
+        log("4", "SDM-RDFizer not installed — trying Morph-KGC")
     except Exception as exc:
-        log("4", f"Morph-KGC failed ({type(exc).__name__}: {exc}) — using rdflib fallback")
+        log("4", f"SDM-RDFizer failed ({type(exc).__name__}: {exc}) — trying Morph-KGC")
 
+    # 2. Morph-KGC
+    if g is None:
+        try:
+            import morph_kgc  # noqa: F401
+            g = _morph_materialize(
+                table_mappings_path, text_mappings_path, output_path, str(out_dir)
+            )
+            engine_used = "Morph-KGC"
+        except ImportError:
+            log("4", "Morph-KGC not installed — using rdflib fallback")
+        except Exception as exc:
+            log("4", f"Morph-KGC failed ({type(exc).__name__}: {exc}) — using rdflib fallback")
+
+    # 3. rdflib fallback
     if g is None:
         g = _rdflib_materialize(text_assertions_path, table_mapping_index_path)
+        engine_used = "rdflib-fallback"
+
+    log("4", f"Engine: {engine_used}")
 
     # ── Merge T-Box ───────────────────────────────────────────────────────
     tbox = Graph()
