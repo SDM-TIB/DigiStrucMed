@@ -51,8 +51,12 @@ def derive_shapes(
     Conversions applied:
       rdfs:domain  → NodeShape + sh:property with sh:path
       rdfs:range   → sh:class (object prop) or sh:datatype (datatype prop)
-      owl:FunctionalProperty → sh:maxCount 1
-      owl:oneOf    → sh:in enumeration
+      owl:FunctionalProperty       → sh:maxCount 1
+      owl:qualifiedCardinality     → sh:minCount + sh:maxCount
+      owl:minQualifiedCardinality  → sh:minCount
+      owl:maxQualifiedCardinality  → sh:maxCount
+      owl:someValuesFrom           → sh:minCount 1
+      owl:oneOf                    → sh:in enumeration
     """
     g = Graph()
     g.parse(ontology_path, format="turtle")
@@ -63,6 +67,22 @@ def derive_shapes(
     shapes.bind("xsd", XSD)
     shapes.bind("owl", OWL)
 
+    def _resolve_domain_classes(domain_node) -> list:
+        """Resolve a domain value (may be blank-node union) to class URIs."""
+        if isinstance(domain_node, BNode):
+            union = g.value(domain_node, OWL.unionOf)
+            if union:
+                members = []
+                cur = union
+                while cur and str(cur) != str(RDF.nil):
+                    first = g.value(cur, RDF.first)
+                    if first:
+                        members.append(first)
+                    cur = g.value(cur, RDF.rest)
+                return members
+            return []
+        return [domain_node]
+
     # 1. rdfs:domain / rdfs:range → NodeShape per domain class
     for p in (
         list(g.subjects(RDF.type, OWL.ObjectProperty))
@@ -71,20 +91,23 @@ def derive_shapes(
         prop_type = (
             "object" if (p, RDF.type, OWL.ObjectProperty) in g else "datatype"
         )
-        for domain_cls in g.objects(p, RDFS.domain):
-            shape_uri = URIRef(str(domain_cls) + "_Shape")
-            prop_shape = BNode()
+        for raw_domain in g.objects(p, RDFS.domain):
+            for domain_cls in _resolve_domain_classes(raw_domain):
+                shape_uri = URIRef(str(domain_cls) + "_Shape")
+                prop_shape = BNode()
 
-            shapes.add((shape_uri, RDF.type,        SH.NodeShape))
-            shapes.add((shape_uri, SH.targetClass,  domain_cls))
-            shapes.add((shape_uri, SH.property,     prop_shape))
-            shapes.add((prop_shape, SH.path,         p))
+                shapes.add((shape_uri, RDF.type,        SH.NodeShape))
+                shapes.add((shape_uri, SH.targetClass,  domain_cls))
+                shapes.add((shape_uri, SH.property,     prop_shape))
+                shapes.add((prop_shape, SH.path,         p))
 
-            for range_val in g.objects(p, RDFS.range):
-                if prop_type == "datatype" or str(range_val).startswith(str(XSD)):
-                    shapes.add((prop_shape, SH.datatype, range_val))
-                else:
-                    shapes.add((prop_shape, SH["class"], range_val))
+                for range_val in g.objects(p, RDFS.range):
+                    if isinstance(range_val, BNode):
+                        continue
+                    if prop_type == "datatype" or str(range_val).startswith(str(XSD)):
+                        shapes.add((prop_shape, SH.datatype, range_val))
+                    else:
+                        shapes.add((prop_shape, SH["class"], range_val))
 
     # 2. owl:FunctionalProperty → sh:maxCount 1
     for p in g.subjects(RDF.type, OWL.FunctionalProperty):
@@ -95,7 +118,64 @@ def derive_shapes(
         shapes.add((inner, SH.path,        p))
         shapes.add((inner, SH.maxCount,    Literal(1)))
 
-    # 3. owl:oneOf enumerations → sh:in
+    # 3. owl:Restriction → cardinality + someValuesFrom shapes
+    for cls in g.subjects(RDF.type, OWL.Class):
+        for restriction in g.objects(cls, RDFS.subClassOf):
+            if not isinstance(restriction, BNode):
+                continue
+            if (restriction, RDF.type, OWL.Restriction) not in g:
+                continue
+
+            on_prop = g.value(restriction, OWL.onProperty)
+            if on_prop is None:
+                continue
+
+            shape_uri = URIRef(str(cls) + "_Shape")
+            shapes.add((shape_uri, RDF.type,       SH.NodeShape))
+            shapes.add((shape_uri, SH.targetClass, cls))
+
+            # owl:qualifiedCardinality → sh:minCount + sh:maxCount
+            q_card = g.value(restriction, OWL.qualifiedCardinality)
+            if q_card is not None:
+                ps = BNode()
+                shapes.add((shape_uri, SH.property, ps))
+                shapes.add((ps, SH.path,     on_prop))
+                shapes.add((ps, SH.minCount, Literal(int(q_card))))
+                shapes.add((ps, SH.maxCount, Literal(int(q_card))))
+                on_class = g.value(restriction, OWL.onClass)
+                if on_class and not isinstance(on_class, BNode):
+                    shapes.add((ps, SH["class"], on_class))
+
+            # owl:minQualifiedCardinality
+            min_qc = g.value(restriction, OWL.minQualifiedCardinality)
+            if min_qc is not None:
+                ps = BNode()
+                shapes.add((shape_uri, SH.property, ps))
+                shapes.add((ps, SH.path,     on_prop))
+                shapes.add((ps, SH.minCount, Literal(int(min_qc))))
+                on_class = g.value(restriction, OWL.onClass)
+                if on_class and not isinstance(on_class, BNode):
+                    shapes.add((ps, SH["class"], on_class))
+
+            # owl:maxQualifiedCardinality
+            max_qc = g.value(restriction, OWL.maxQualifiedCardinality)
+            if max_qc is not None:
+                ps = BNode()
+                shapes.add((shape_uri, SH.property, ps))
+                shapes.add((ps, SH.path,     on_prop))
+                shapes.add((ps, SH.maxCount, Literal(int(max_qc))))
+
+            # owl:someValuesFrom → sh:minCount 1
+            some_from = g.value(restriction, OWL.someValuesFrom)
+            if some_from is not None:
+                ps = BNode()
+                shapes.add((shape_uri, SH.property, ps))
+                shapes.add((ps, SH.path,     on_prop))
+                shapes.add((ps, SH.minCount, Literal(1)))
+                if not isinstance(some_from, BNode):
+                    shapes.add((ps, SH["class"], some_from))
+
+    # 4. owl:oneOf enumerations → sh:in
     for cls in g.subjects(RDF.type, OWL.Class):
         one_of_node = g.value(cls, OWL.oneOf)
         if not one_of_node:
@@ -280,6 +360,8 @@ def validate(
         n_triples = len(kg)
         backend   = "pySHACL"
 
+    violated_focus = {v["focus_node"] for v in violations if v.get("focus_node")}
+
     report = {
         "version":          version,
         "backend":          backend,
@@ -292,6 +374,7 @@ def validate(
         "metrics": {
             "violation_rate":    round(len(violations) / max(n_triples, 1), 4),
             "conformance_ratio": round(1.0 - len(violations) / max(n_triples, 1), 4),
+            "distinct_focus_nodes_violated": len(violated_focus),
         },
     }
 

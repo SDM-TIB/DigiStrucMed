@@ -80,7 +80,7 @@ def disambiguate(
     grounded_path: str = "outputs/step1/grounded_entities.json",
     output_dir: str = "outputs/step1",
     hf_token: Optional[str] = None,
-    hf_model: str = "meta-llama/Llama-3.2-3B-Instruct",
+    hf_model: str = "meta-llama/Llama-3.1-8B-Instruct",
     max_new_tokens: int = 64,
     llama_model: Optional[str] = None,
     batch_size: int = DEFAULT_DISAMBIGUATION_BATCH_SIZE,

@@ -211,6 +211,61 @@ def _apply_preferred_phrases(entities: List[Dict], source_text: str) -> List[Dic
     return filtered
 
 
+_MIN_ENTITY_CHARS = 4
+
+_GENERIC_WORDS: Set[str] = {
+    "medical", "therapy", "treatment", "treatments", "clinical", "functional",
+    "structural", "negative", "favorable", "features", "complex", "measure",
+    "blood", "heart", "failure", "reduced", "full", "reported", "available",
+    "increased", "improved", "higher", "evidence", "changes", "oral", "factor",
+    "risk", "class", "assessment", "care", "disease", "events", "positive",
+    "severe", "moderate", "mild", "advanced", "chronic", "acute", "general",
+    "specific", "primary", "secondary", "major", "minor", "total", "standard",
+    "normal", "common", "related", "associated", "management", "evaluation",
+    "level", "value", "rate", "effect", "effects", "outcome", "outcomes",
+    "study", "studies", "data", "results", "patients", "population", "group",
+    "time", "year", "years", "month", "months", "week", "day", "days",
+    "high", "low", "mean", "median", "baseline", "control", "significant",
+    # Bare medical adjectives that UMLS has entries for but are not entities
+    "cardiac", "renal", "hepatic", "pulmonary", "vascular", "coronary",
+    "systemic", "arterial", "venous", "peripheral", "central", "lateral",
+    "anterior", "posterior", "inferior", "superior", "proximal", "distal",
+    "congenital", "acquired", "progressive", "recurrent", "persistent",
+    "bilateral", "unilateral", "invasive", "noninvasive", "subcutaneous",
+    "intravenous", "elevated", "decreased", "impaired",
+    # Process/action words that are not medical entities
+    "medication", "medications", "injection", "examination", "detection",
+    "recognition", "communication", "education", "recommendation",
+    "recommendations", "reconstruction", "rehabilitation", "enhancement",
+    "improvement", "improvements", "reduction", "reductions", "conditions",
+    "restriction", "elevation", "elevations", "information", "screening",
+    "remodeling", "measurement", "implantation", "intervention",
+    "interventions", "complication", "complications",
+}
+
+
+def _is_valid_entity(text_span: str) -> bool:
+    """
+    Post-NER quality gate. Rejects:
+      - spans shorter than _MIN_ENTITY_CHARS
+      - pure numbers / reference markers
+      - generic English words that UMLS happens to have entries for
+      - spans that are mostly non-alpha (table/formula fragments)
+      - single-word entities that are just adjectives/generic nouns
+    """
+    t = text_span.strip()
+    if len(t) < _MIN_ENTITY_CHARS:
+        return False
+    if re.match(r"^[\d\s\.\-,;:/%()]+$", t):
+        return False
+    alpha = sum(1 for c in t if c.isalpha())
+    if len(t) > 0 and alpha / len(t) < 0.6:
+        return False
+    if t.lower() in _GENERIC_WORDS:
+        return False
+    return True
+
+
 def _should_process(text: str) -> bool:
     """Skip blocks that are clearly not natural-language sentences."""
     if not text or not text.strip():
@@ -308,6 +363,9 @@ def run_ner(
 
                 # Word-boundary validation
                 if not _has_valid_boundary(text_span, chunk):
+                    continue
+
+                if not _is_valid_entity(text_span):
                     continue
 
                 window_ents.append({
