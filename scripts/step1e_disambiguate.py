@@ -196,5 +196,5 @@ def disambiguate(
 if __name__ == "__main__":
     disambiguate(
         hf_token=os.environ.get("HF_TOKEN"),
-        hf_model=os.environ.get("HF_MODEL", "meta-llama/Llama-3.2-3B-Instruct"),
+        hf_model=os.environ.get("HF_MODEL", "meta-llama/Llama-3.1-8B-Instruct"),
     )

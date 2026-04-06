@@ -58,3 +58,6 @@ input/**
 !input/.gitkeep
 outputs/**
 !outputs/.gitkeep
+
+# Trav-SHACL repo checkout (local clone)
+Trav-SHACL-master/**

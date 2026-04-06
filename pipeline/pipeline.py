@@ -38,7 +38,7 @@ class Pipeline:
         pdf_dir: Optional[str] = None,
         output_file: str = "candidate_statements.json",
         neural_model_name: str = "d4data/biomedical-ner-all",
-        validation_model_name: str = "meta-llama/Llama-3.2-3B-Instruct",
+        validation_model_name: str = "meta-llama/Llama-3.1-8B-Instruct",
         confidence_threshold: float = 0.0,
         min_chunk_chars: int = 40,
         min_ner_score: float = 0.55,

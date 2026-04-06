@@ -55,7 +55,7 @@ def test_stage_e(
     print("STAGE E: candidate_statements -> validate -> validated_facts_AND_qualifiers")
     print("(extraction only; experts validate later)")
     print("=" * 70)
-    validation_model_name = "meta-llama/Llama-3.2-3B-Instruct"
+    validation_model_name = "meta-llama/Llama-3.1-8B-Instruct"
     batch_size = 4
     max_extraction_tokens = 400
     print(f"\n[1] Loading Stage D output from {input_file}...")

@@ -250,7 +250,7 @@ def _llm_match_columns(
     ontology: OntologyIndex,
     llm_backend: str = "hf_local",
     hf_token: str | None = None,
-    hf_model: str = "meta-llama/Llama-3.1-8B-Instruct",
+    hf_model: str = "meta-llama/Llama-3.1-8B-Instruct"
 ) -> list[dict]:
     """
     Use the LLM to match table columns that fuzzy-matching could not resolve.

@@ -88,6 +88,20 @@ def derive_shapes(
             return []
         return [domain_node]
 
+    # ── Collect all property constraints into a merged dict ──────────────
+    # Key: (shape_uri, path_uri) → merged constraint dict
+    # This prevents duplicate sh:property blocks for the same path,
+    # which causes TravSHACL to crash with NotImplementedError.
+    merged: dict[tuple, dict] = {}
+
+    def _ensure(shape_uri, path_uri):
+        key = (str(shape_uri), str(path_uri))
+        if key not in merged:
+            merged[key] = {"shape": shape_uri, "path": path_uri}
+            shapes.add((shape_uri, RDF.type, SH.NodeShape))
+            shapes.add((shape_uri, SH.targetClass, URIRef(str(shape_uri).replace("_Shape", ""))))
+        return merged[key]
+
     # 1. rdfs:domain / rdfs:range → NodeShape per domain class
     for p in (
         list(g.subjects(RDF.type, OWL.ObjectProperty))
@@ -99,12 +113,8 @@ def derive_shapes(
         for raw_domain in g.objects(p, RDFS.domain):
             for domain_cls in _resolve_domain_classes(raw_domain):
                 shape_uri = URIRef(str(domain_cls) + "_Shape")
-                prop_shape = BNode()
-
-                shapes.add((shape_uri, RDF.type,        SH.NodeShape))
-                shapes.add((shape_uri, SH.targetClass,  domain_cls))
-                shapes.add((shape_uri, SH.property,     prop_shape))
-                shapes.add((prop_shape, SH.path,         p))
+                shapes.add((shape_uri, SH.targetClass, domain_cls))
+                entry = _ensure(shape_uri, p)
 
                 for range_val in g.objects(p, RDFS.range):
                     if isinstance(range_val, BNode):
@@ -112,86 +122,77 @@ def derive_shapes(
                     if prop_type == "datatype" or str(range_val).startswith(str(XSD)):
                         if range_val not in (XSD.decimal, XSD.integer,
                                              XSD.nonNegativeInteger):
-                            shapes.add((prop_shape, SH.datatype, range_val))
+                            entry["datatype"] = range_val
                     else:
-                        shapes.add((prop_shape, SH["class"], range_val))
+                        entry["class"] = range_val
 
     # 2. owl:FunctionalProperty → sh:maxCount 1
-    #    Fold into the NAMED shapes from step 1 (domain-based) so that
-    #    TravSHACL never sees anonymous shapes without sh:targetClass.
     for p in g.subjects(RDF.type, OWL.FunctionalProperty):
         domain_classes = []
         for raw_domain in g.objects(p, RDFS.domain):
             domain_classes.extend(_resolve_domain_classes(raw_domain))
-
         if domain_classes:
             for domain_cls in domain_classes:
                 shape_uri = URIRef(str(domain_cls) + "_Shape")
-                shapes.add((shape_uri, RDF.type,       SH.NodeShape))
                 shapes.add((shape_uri, SH.targetClass, domain_cls))
-                inner = BNode()
-                shapes.add((shape_uri, SH.property, inner))
-                shapes.add((inner, SH.path,     p))
-                shapes.add((inner, SH.maxCount, Literal(1)))
+                entry = _ensure(shape_uri, p)
+                entry["maxCount"] = 1
         else:
-            log("5", f"  FunctionalProperty {p} has no rdfs:domain — skipping maxCount shape")
+            log("5", f"  FunctionalProperty {p} has no rdfs:domain — skipping")
 
-    # 3. owl:Restriction → cardinality + someValuesFrom shapes
+    # 3. owl:Restriction → cardinality + someValuesFrom
     for cls in g.subjects(RDF.type, OWL.Class):
         for restriction in g.objects(cls, RDFS.subClassOf):
             if not isinstance(restriction, BNode):
                 continue
             if (restriction, RDF.type, OWL.Restriction) not in g:
                 continue
-
             on_prop = g.value(restriction, OWL.onProperty)
             if on_prop is None:
                 continue
 
             shape_uri = URIRef(str(cls) + "_Shape")
-            shapes.add((shape_uri, RDF.type,       SH.NodeShape))
             shapes.add((shape_uri, SH.targetClass, cls))
+            entry = _ensure(shape_uri, on_prop)
 
-            # owl:qualifiedCardinality → sh:minCount + sh:maxCount
             q_card = g.value(restriction, OWL.qualifiedCardinality)
             if q_card is not None:
-                ps = BNode()
-                shapes.add((shape_uri, SH.property, ps))
-                shapes.add((ps, SH.path,     on_prop))
-                shapes.add((ps, SH.minCount, Literal(int(q_card))))
-                shapes.add((ps, SH.maxCount, Literal(int(q_card))))
+                entry["minCount"] = int(q_card)
+                entry["maxCount"] = int(q_card)
                 on_class = g.value(restriction, OWL.onClass)
                 if on_class and not isinstance(on_class, BNode):
-                    shapes.add((ps, SH["class"], on_class))
+                    entry["class"] = on_class
 
-            # owl:minQualifiedCardinality
             min_qc = g.value(restriction, OWL.minQualifiedCardinality)
             if min_qc is not None:
-                ps = BNode()
-                shapes.add((shape_uri, SH.property, ps))
-                shapes.add((ps, SH.path,     on_prop))
-                shapes.add((ps, SH.minCount, Literal(int(min_qc))))
+                entry["minCount"] = int(min_qc)
                 on_class = g.value(restriction, OWL.onClass)
                 if on_class and not isinstance(on_class, BNode):
-                    shapes.add((ps, SH["class"], on_class))
+                    entry["class"] = on_class
 
-            # owl:maxQualifiedCardinality
             max_qc = g.value(restriction, OWL.maxQualifiedCardinality)
             if max_qc is not None:
-                ps = BNode()
-                shapes.add((shape_uri, SH.property, ps))
-                shapes.add((ps, SH.path,     on_prop))
-                shapes.add((ps, SH.maxCount, Literal(int(max_qc))))
+                entry["maxCount"] = int(max_qc)
 
-            # owl:someValuesFrom → sh:minCount 1
             some_from = g.value(restriction, OWL.someValuesFrom)
             if some_from is not None:
-                ps = BNode()
-                shapes.add((shape_uri, SH.property, ps))
-                shapes.add((ps, SH.path,     on_prop))
-                shapes.add((ps, SH.minCount, Literal(1)))
+                entry["minCount"] = 1
                 if not isinstance(some_from, BNode):
-                    shapes.add((ps, SH["class"], some_from))
+                    entry["class"] = some_from
+
+    # ── Emit merged property shapes ──────────────────────────────────────
+    for _key, entry in merged.items():
+        ps = BNode()
+        shapes.add((entry["shape"], SH.property, ps))
+        shapes.add((ps, SH.path, entry["path"]))
+        if "class" in entry:
+            shapes.add((ps, SH["class"], entry["class"]))
+        if "datatype" in entry:
+            shapes.add((ps, SH.datatype, entry["datatype"]))
+        if "maxCount" in entry:
+            shapes.add((ps, SH.maxCount, Literal(entry["maxCount"])))
+        if "minCount" in entry:
+            shapes.add((ps, SH.minCount, Literal(entry["minCount"])))
 
     # 4. owl:oneOf enumerations → sh:in
     for cls in g.subjects(RDF.type, OWL.Class):
@@ -259,6 +260,10 @@ def _split_shapes_to_dir(shapes_path: str, output_dir: str) -> str:
             skipped += 1
             continue
         has_property = any(g.objects(shape_uri, SH.property))
+        has_in = any(g.objects(shape_uri, SH["in"]))
+        if has_in:
+            skipped += 1
+            continue
         if not has_property:
             skipped += 1
             continue
