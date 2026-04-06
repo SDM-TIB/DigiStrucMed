@@ -702,13 +702,13 @@ def _generate_text_rml(
             f'        rml:iterator           "$[*]"\n'
             f"    ] ;\n"
             f"    rr:subjectMap [\n"
-            f'        rr:template "http://digistructmed.org/instance/{{subject_cui}}" ;\n'
+            f'        rr:template "http://digistructmed.org/instance/cui_{{subject_cui}}" ;\n'
             f"        rr:class    ex:Entity\n"
             f"    ] ;\n"
             f"    rr:predicateObjectMap [\n"
             f"        rr:predicate <{pred_uri}> ;\n"
             f"        rr:objectMap    [\n"
-            f'            rr:template "http://digistructmed.org/instance/{{object_cui}}"\n'
+            f'            rr:template "http://digistructmed.org/instance/cui_{{object_cui}}"\n'
             f"        ]\n"
             f"    ] .\n\n"
         )

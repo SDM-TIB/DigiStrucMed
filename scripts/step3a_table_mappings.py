@@ -804,6 +804,192 @@ def _restructure_enum_table(
     return rml, mapping_entry
 
 
+# ── COR/LOE/Recommendation 3-column detector ──────────────────────────────
+
+def _detect_cor_loe_rec_table(
+    csv_path: str,
+    csv_headers: list[str],
+    ontology: "OntologyIndex",
+) -> tuple[str, dict | None]:
+    """
+    Detect tables whose columns match the pattern *.COR | *.LOE | *.Recommendation(s).
+    These are recommendation tables that the enum detector misses because they
+    have no text-subject column to anchor restructuring.
+
+    Returns (rml_block, mapping_entry) or ("", None) if not a COR/LOE/Rec table.
+    """
+    if len(csv_headers) < 2:
+        return "", None
+
+    norm = [h.strip().lower().rstrip(".") for h in csv_headers]
+    suffixes = [n.rsplit(".", 1)[-1] if "." in n else n for n in norm]
+
+    cor_idx = loe_idx = rec_idx = None
+    for i, suf in enumerate(suffixes):
+        if suf == "cor":
+            cor_idx = i
+        elif suf == "loe":
+            loe_idx = i
+        elif suf in ("recommendation", "recommendations"):
+            rec_idx = i
+
+    if cor_idx is None and loe_idx is None:
+        return "", None
+    if rec_idx is None and cor_idx is not None and loe_idx is not None:
+        for i, suf in enumerate(suffixes):
+            if i not in (cor_idx, loe_idx) and suf not in ("cor", "loe"):
+                rec_idx = i
+                break
+
+    if cor_idx is None or loe_idx is None:
+        return "", None
+
+    p = Path(csv_path)
+    try:
+        with p.open(newline="", encoding="utf-8", errors="replace") as f:
+            rows = list(csv.DictReader(f))
+    except Exception:
+        return "", None
+
+    if not rows:
+        return "", None
+
+    table_id = p.stem.replace("_restructured", "")
+    section_slug = _extract_section_slug(csv_headers)
+
+    new_header = "_subject_id"
+    new_csv_path = p.parent / f"{table_id}_rec.csv"
+    cor_header = csv_headers[cor_idx]
+    loe_header = csv_headers[loe_idx]
+    rec_header = csv_headers[rec_idx] if rec_idx is not None else None
+
+    enum_index = _build_enum_label_index(ontology)
+
+    cor_enum_classes = set()
+    for mu, (_, ecls) in enum_index.items():
+        if "ClassOfRecommendation" in ecls:
+            cor_enum_classes.add(mu)
+
+    skipped_subheaders = 0
+    rec_row_idx = 0
+
+    with new_csv_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        out_headers = [new_header, cor_header, loe_header]
+        if rec_header:
+            out_headers.append(rec_header)
+        writer.writerow(out_headers)
+
+        for i, row in enumerate(rows):
+            cor_val = (row.get(cor_header) or "").strip()
+            cor_match = _match_csv_value_to_enum(cor_val, enum_index)
+
+            if not cor_match:
+                skipped_subheaders += 1
+                continue
+
+            rec_num = ""
+            if rec_header:
+                rec_num = _extract_rec_number(row.get(rec_header, ""))
+
+            if section_slug and rec_num:
+                subj_id = f"rec_{section_slug}_{rec_num}"
+            elif section_slug:
+                subj_id = f"rec_{section_slug}_{rec_row_idx}"
+            else:
+                subj_id = f"rec_{table_id}_{rec_num or str(rec_row_idx)}"
+            rec_row_idx += 1
+
+            cor_val = cor_match[0].split("/")[-1].split("#")[-1]
+
+            loe_val = (row.get(loe_header) or "").strip()
+            loe_match = _match_csv_value_to_enum(loe_val, enum_index)
+            if loe_match:
+                loe_val = loe_match[0].split("/")[-1].split("#")[-1]
+
+            out_vals = [subj_id, cor_val, loe_val]
+            if rec_header:
+                out_vals.append(row.get(rec_header, ""))
+            writer.writerow(out_vals)
+
+    if skipped_subheaders:
+        log("3a", f"    skipped {skipped_subheaders} section subheader row(s) (COR not in enum)")
+
+    ont_ns = "http://digistructmed.org/ontology/"
+    rec_cls = ont_ns + "Recommendation"
+    src = new_csv_path.resolve().as_posix()
+    subj_t = _morph_instance_template(new_header)
+
+    poms = []
+    poms.append(
+        f'    rr:predicateObjectMap [\n'
+        f'        rr:predicate <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;\n'
+        f'        rr:objectMap  [ rr:constant <{rec_cls}> ]\n'
+        f'    ] ;'
+    )
+    cor_template = ont_ns + "{" + cor_header + "}"
+    poms.append(
+        f'    rr:predicateObjectMap [\n'
+        f'        rr:predicate <{ont_ns}hasCOR> ;\n'
+        f'        rr:objectMap  [ rr:template "{_ttl_dquote(cor_template)}" ]\n'
+        f'    ] ;'
+    )
+    loe_template = ont_ns + "{" + loe_header + "}"
+    poms.append(
+        f'    rr:predicateObjectMap [\n'
+        f'        rr:predicate <{ont_ns}hasLOE> ;\n'
+        f'        rr:objectMap  [ rr:template "{_ttl_dquote(loe_template)}" ]\n'
+        f'    ] ;'
+    )
+    if rec_header:
+        cref = _ttl_dquote(rec_header)
+        poms.append(
+            f'    rr:predicateObjectMap [\n'
+            f'        rr:predicate <{ont_ns}recommendationText> ;\n'
+            f'        rr:objectMap  [ rml:reference "{cref}" ;\n'
+            f'                        rr:datatype <http://www.w3.org/2001/XMLSchema#string> ]\n'
+            f'    ] ;'
+        )
+
+    pom_block = "\n".join(poms)
+    rml = (
+        f"<#{table_id}_RecMap>\n"
+        f"    a rr:TriplesMap ;\n"
+        f"    rml:logicalSource [\n"
+        f'        rml:source             "{_ttl_dquote(src)}" ;\n'
+        f"        rml:referenceFormulation ql:CSV\n"
+        f"    ] ;\n"
+        f"    rr:subjectMap [\n"
+        f'        rr:template "{_ttl_dquote(subj_t)}"\n'
+        f"    ] ;\n"
+        f"{pom_block}\n"
+        f"    .\n"
+    )
+
+    n_cols = 2 + (1 if rec_header else 0)
+    mapping_entry = {
+        "table_id": table_id,
+        "csv_path": str(new_csv_path),
+        "subject_header": new_header,
+        "restructured": True,
+        "recommendation_table": True,
+        "domain_class": rec_cls,
+        "columns": [
+            {"header": cor_header, "predicate_uri": ont_ns + "hasCOR",
+             "prop_type": "object", "range": [ont_ns + "ClassOfRecommendation"]},
+            {"header": loe_header, "predicate_uri": ont_ns + "hasLOE",
+             "prop_type": "object", "range": [ont_ns + "LevelOfEvidence"]},
+        ] + ([
+            {"header": rec_header, "predicate_uri": ont_ns + "recommendationText",
+             "prop_type": "datatype", "range": ["http://www.w3.org/2001/XMLSchema#string"]}
+        ] if rec_header else []),
+    }
+
+    log("3a", f"  {table_id}: COR/LOE/Rec table detected -> restructured "
+        f"({n_cols} cols, {len(rows)} recs)")
+    return rml, mapping_entry
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def generate_table_mappings(
@@ -850,6 +1036,14 @@ def generate_table_mappings(
         subject_header = csv_headers[0].strip()
         if not subject_header:
             log("3a", f"  skip {table_id}: empty first-column header (no subject for RML)")
+            continue
+
+        # COR/LOE/Rec 3-column recommendation tables (before enum detection)
+        rec_rml, rec_entry = _detect_cor_loe_rec_table(csv_path, csv_headers, ontology)
+        if rec_rml and rec_entry:
+            rml_blocks.append(rec_rml)
+            all_table_mappings.append(rec_entry)
+            accepted_count += len(rec_entry.get("columns", []))
             continue
 
         enum_info = _detect_enum_subject(csv_path, csv_headers, ontology)

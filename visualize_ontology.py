@@ -16,7 +16,9 @@ from rdflib.term import BNode
 
 EX = "http://digistructmed.org/ontology/"
 TTL_PATH = Path("input/hf_guideline_ontology.ttl")
-OUT_PATH = Path("outputs/STAGE_F/ontology_graph_v2.html")
+# Write to input/ so you can open the "usual" HTML directly.
+# (This file is fully self-contained: it embeds the graph JSON.)
+OUT_PATH = Path("input/ontology_graph.html")
 
 
 def _local(uri) -> str:
@@ -471,6 +473,23 @@ function edgeHidden(e){{
   return layerOff(e.group)||(!!e.u&&!showUmls);
 }}
 
+function diamondSvg(text){{
+  var fs=11,cw=fs*0.58,lines=[text];
+  if(text.length>16){{var m=Math.floor(text.length/2),s=text.lastIndexOf(' ',m);if(s<4)s=text.indexOf(' ',m);if(s>0)lines=[text.slice(0,s),text.slice(s+1)];}}
+  var ml=0;lines.forEach(function(l){{if(l.length>ml)ml=l.length;}});
+  var w=Math.max(110,ml*cw+60),h=Math.max(58,w*0.52),cx=w/2,cy=h/2,ts='';
+  if(lines.length===1){{var e=lines[0].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    ts='<text x="'+cx+'" y="'+cy+'" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="'+fs+'" font-weight="500" fill="#0d5c2d">'+e+'</text>';
+  }}else{{var lh=fs*1.35,sy=cy-lh*(lines.length-1)/2;
+    lines.forEach(function(line,i){{var e=line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      ts+='<text x="'+cx+'" y="'+(sy+i*lh)+'" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="'+fs+'" font-weight="500" fill="#0d5c2d">'+e+'</text>';
+    }});
+  }}
+  return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+    +'<polygon points="'+cx+',2 '+(w-2)+','+cy+' '+cx+','+(h-2)+' 2,'+cy+'" fill="#d4edda" stroke="#137333" stroke-width="2.5"/>'
+    +ts+'</svg>');
+}}
+
 function build(){{
   nDS.clear();eDS.clear();
 
@@ -539,17 +558,32 @@ function build(){{
     }});
   }});
 
-  // Object property edges (UMLS bundle: hasUMLSConcept and any link involving class CUI)
+  // Object property diamond nodes (EER-style relationship diamonds)
   D.obj_props.forEach((p,i)=>{{
     const opU=p.name==='hasUMLSConcept'||p.range==='CUI'||p.domain==='CUI';
+    const diamId='rel_'+i;
+    const bFrom=classPos[p.domain]||{{x:0,y:0}};
+    const bTo=classPos[p.range]||{{x:0,y:0}};
+    let mx=(bFrom.x+bTo.x)/2, my=(bFrom.y+bTo.y)/2;
+    if(p.domain===p.range){{mx+=80;my-=70;}}
+    nDS.add({{
+      id:diamId, label:'', title:p.name+': '+p.domain+' → '+p.range,
+      x:mx,y:my, shape:'image', image:diamondSvg(p.label),
+      shapeProperties:{{useImageSize:true}},
+      group:'rel',
+      u:opU, hidden:nodeHidden({{group:'rel',u:opU}}),
+    }});
     eDS.add({{
-      id:'op_'+i, from:'c_'+p.domain, to:'c_'+p.range,
-      label:p.label, title:p.name+': '+p.domain+' → '+p.range,
-      color:{{color:'#3d79e6',highlight:'#0b57d0',hover:'#1565d8'}},
-      width:1.2, arrows:{{to:{{enabled:true,scaleFactor:.7,type:'arrow'}}}},
-      font:{{color:'#054da9',size:8,align:'middle',face:'Inter',strokeWidth:2,strokeColor:'#ffffff'}},
-      smooth:{{type:'dynamic'}},
-      u:opU, hidden:edgeHidden({{group:'rel',u:opU}}), group:'rel',
+      id:'ope_f_'+i, from:'c_'+p.domain, to:diamId,
+      color:{{color:'#0b57d0',highlight:'#0344a3',hover:'#1565d8'}},
+      width:1.5, arrows:{{to:{{enabled:false}}}},
+      smooth:false, u:opU, hidden:edgeHidden({{group:'rel',u:opU}}), group:'rel',
+    }});
+    eDS.add({{
+      id:'ope_t_'+i, from:diamId, to:'c_'+p.range,
+      color:{{color:'#0b57d0',highlight:'#0344a3',hover:'#1565d8'}},
+      width:1.5, arrows:{{to:{{enabled:true,scaleFactor:.8,type:'arrow'}}}},
+      smooth:false, u:opU, hidden:edgeHidden({{group:'rel',u:opU}}), group:'rel',
     }});
   }});
 

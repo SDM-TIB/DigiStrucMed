@@ -363,17 +363,19 @@ def _rdflib_materialize(
     g.bind("ex", EX)
     g.bind("inst", INST)
 
-    # 1. Text assertions
+    # 1. Text assertions — use cui_{CUI} URIs so they merge with CUI instances
     if Path(text_assertions_path).is_file():
         assertions: list[dict] = json.loads(
             Path(text_assertions_path).read_text(encoding="utf-8")
         )
         for a in assertions:
-            s_cui = a.get("subject_cui") or _slug(a.get("subject_text", "unknown"))
-            o_cui = a.get("object_cui") or _slug(a.get("object_text", "unknown"))
+            s_cui = a.get("subject_cui")
+            o_cui = a.get("object_cui")
+            if not s_cui or not o_cui:
+                continue
             pred = URIRef(a.get("predicate_uri", str(EX.relatedTo)))
-            s_uri = INST[f"entity_{_slug(a.get('subject_text', s_cui))}"]
-            o_uri = INST[f"entity_{_slug(a.get('object_text', o_cui))}"]
+            s_uri = INST[f"cui_{s_cui}"]
+            o_uri = INST[f"cui_{o_cui}"]
             g.add((s_uri, pred, o_uri))
 
         log("4", f"rdflib fallback: {len(assertions)} role triples from text assertions")
