@@ -192,14 +192,7 @@ def _rml_triples_map(
                 f'    ] ;'
             )
         else:
-            xsd_type = match["range_"][0] if match["range_"] else "http://www.w3.org/2001/XMLSchema#string"
-            if is_object or xsd_type not in (
-                "http://www.w3.org/2001/XMLSchema#string",
-                "http://www.w3.org/2001/XMLSchema#integer",
-                "http://www.w3.org/2001/XMLSchema#decimal",
-                "http://www.w3.org/2001/XMLSchema#boolean",
-            ):
-                xsd_type = "http://www.w3.org/2001/XMLSchema#string"
+            xsd_type = "http://www.w3.org/2001/XMLSchema#string"
             poms.append(
                 f'    rr:predicateObjectMap [\n'
                 f'        rr:predicate <{match["uri"]}> ;\n'
@@ -561,6 +554,46 @@ def _find_property_for_enum_range(
     return None
 
 
+def _subject_column_is_enum(
+    csv_path: str,
+    subject_header: str,
+    ontology: OntologyIndex,
+) -> bool:
+    """
+    Check if the subject column (col 0) contains only ontology enum values
+    like COR codes ("1", "2a", "2b") or LOE codes ("A", "B-R").
+    These should not be used as entity identifiers — they produce
+    resources like inst:1 or inst:2a that merge different recommendations.
+
+    Returns True if ≥80% of sampled subject values are enum members.
+    """
+    if not ontology.enumerations:
+        return False
+    enum_index = _build_enum_label_index(ontology)
+    if not enum_index:
+        return False
+
+    p = Path(csv_path)
+    if not p.is_file():
+        return False
+    try:
+        with p.open(newline="", encoding="utf-8", errors="replace") as f:
+            rows = list(csv.DictReader(f))
+    except Exception:
+        return False
+
+    values = [
+        (r.get(subject_header) or "").strip()
+        for r in rows[:20]
+        if (r.get(subject_header) or "").strip()
+    ]
+    if not values:
+        return False
+
+    matches = sum(1 for v in values if _match_csv_value_to_enum(v, enum_index))
+    return matches / len(values) >= 0.8
+
+
 def _extract_section_slug(headers: list[str]) -> str:
     """
     Extract a meaningful section name from the table column headers by
@@ -820,6 +853,11 @@ def generate_table_mappings(
             continue
 
         enum_info = _detect_enum_subject(csv_path, csv_headers, ontology)
+
+        if enum_info is None and _subject_column_is_enum(csv_path, subject_header, ontology):
+            log("3a", f"  skip {table_id}: subject column contains enum values "
+                f"(not entity identifiers) — header: {subject_header[:60]}")
+            continue
         if enum_info is not None:
             rml_block, mapping_entry = _restructure_enum_table(
                 table_id, csv_path, enum_info, ontology,

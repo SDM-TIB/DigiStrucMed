@@ -277,6 +277,8 @@ def _split_shapes_to_dir(shapes_path: str, output_dir: str) -> str:
             sg.add((shape_uri, p, o))
             if isinstance(o, BNode):
                 for p2, o2 in g.predicate_objects(o):
+                    if p2 == SH.minCount:
+                        continue
                     sg.add((o, p2, o2))
 
         local = str(shape_uri).split("/")[-1].replace("#", "_")
