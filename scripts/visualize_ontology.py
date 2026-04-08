@@ -210,12 +210,16 @@ def parse_ttl(path: Path):
                 break
         if all_leaves:
             labels = []
+            child_objs = []
             for ch in children:
                 lbl = classes[ch]["label"] if ch in classes else ch
+                cmt = classes[ch].get("comment", "") if ch in classes else ""
                 labels.append(lbl)
+                child_objs.append({"id": ch, "label": lbl, "comment": cmt})
             collapsed_groups[parent] = {
                 "values": sorted(labels),
                 "children": list(children),
+                "child_objs": child_objs,
             }
             for ch in children:
                 collapsed_classes.add(ch)
@@ -228,7 +232,15 @@ def parse_ttl(path: Path):
     for parent, info in collapsed_groups.items():
         examples = ", ".join(info["values"][:5])
         if len(info["values"]) > 5:
-            examples += ", ..."
+            examples += f", ... ({len(info['values'])} total)"
+        # Annotate parent class with collapsed children info
+        if parent in classes:
+            classes[parent]["collapsed_children"] = info["values"]
+            classes[parent]["collapsed_children_ids"] = info.get("child_objs", [])
+            classes[parent]["comment"] = (
+                classes[parent].get("comment", "")
+                + f"\n\n[Collapsed {len(info['values'])} subclasses: {examples}]"
+            ).strip()
         if "CUI" in classes:
             obj_props.append({
                 "name": "hasUMLSConcept",
@@ -352,12 +364,15 @@ def parse_ttl(path: Path):
         "dt_props": dt_props,
         "individuals": individuals,
         "max_level": max_lvl,
+        "collapsed_count": len(collapsed_classes),
     }
 
 
 def render_html(data: dict) -> str:
     d = json.dumps(data, ensure_ascii=False)
     nc = len(data["classes"])
+    nc_collapsed = data.get("collapsed_count", 0)
+    nc_total = nc + nc_collapsed
     nj = len(data["junctions"])
     no = len(data["obj_props"])
     ni = len(data["individuals"])
@@ -415,16 +430,17 @@ html,body{{height:100%;overflow:hidden;background:var(--bg);color:var(--text);fo
 <h1>&#9670; HF Ontology EER</h1><div class="sep"></div>
 <button class="btn active" id="btn-cls" onclick="toggleLayer('cls')">Classes</button>
 <button class="btn active" id="btn-rel" onclick="toggleLayer('rel')">Relationships</button>
-<button class="btn" id="btn-ind" onclick="toggleLayer('ind')">Example instances</button>
+<button class="btn" id="btn-ind" onclick="toggleLayer('ind')">Enumerations ({ni})</button>
 <button class="btn active" id="btn-dt" onclick="toggleLayer('dt')">Datatype Props</button>
 <button class="btn" id="btn-umls" onclick="toggleUmls()" title="Show UMLS: class CUI, hasUMLSConcept links, and datatype props on CUI (hidden by default for a cleaner graph)">UMLS / CUI</button>
 <div class="sep"></div>
 <button class="btn" onclick="network.fit()">&#x2922; Fit</button>
 <button class="btn" id="btn-ph" onclick="togglePh()">&#9889; Physics</button>
+<button class="btn" id="btn-expand" onclick="toggleExpand()" title="Show all {nc_collapsed} collapsed leaf subclasses as individual nodes">&#9654; Expand (+{nc_collapsed})</button>
 <div class="sep"></div>
 <input id="search" placeholder="Search…" oninput="filterList(this.value)">
 <div class="sep"></div>
-<span class="badge b-blue">{nc} classes</span>
+<span class="badge b-blue" id="badge-cls">{nc} visible / {nc_total} total classes</span>
 <span class="badge b-green">{no} obj props</span>
 <span class="badge b-amber">{nj} specializations</span>
 <span class="badge b-purple">{ni} examples</span>
@@ -433,9 +449,10 @@ html,body{{height:100%;overflow:hidden;background:var(--bg);color:var(--text);fo
 <div>
 <h3>Legend</h3>
 <div class="legend-item"><div class="sw" style="background:#e3f2ff;border-color:#0b57d0"></div>Class (owl:Class)</div>
+<div class="legend-item"><div class="sw" style="background:#dceeff;border-color:#0344a3;border-width:3px"></div>Class with collapsed subclasses [+N]</div>
 <div class="legend-item"><div class="sw-circ" style="background:#e6ffef;border-color:#137333;color:#137333">d</div>Disjoint specialization</div>
 <div class="legend-item"><div class="sw-circ" style="background:#fff8e6;border-color:#b35900;color:#b35900">o</div>Overlapping specialization</div>
-<div class="legend-item"><div class="sw" style="background:#f6edff;border-color:#6e40c9"></div>Example instance (NamedIndividual)</div>
+<div class="legend-item"><div class="sw" style="background:#f6edff;border-color:#6e40c9"></div>Enumeration value (NamedIndividual)</div>
 <div class="legend-item" style="margin-top:4px"><svg width="24" height="14"><line x1="0" y1="7" x2="18" y2="7" stroke="#137333" stroke-width="2.5"/><polygon points="18,3 24,7 18,11" fill="#137333"/></svg>subClassOf</div>
 <div class="legend-item"><svg width="24" height="14"><line x1="0" y1="7" x2="18" y2="7" stroke="#0b57d0" stroke-width="1.5"/><polygon points="18,3 24,7 18,11" fill="#0b57d0"/></svg>Object property</div>
 <div class="legend-item"><div class="sw-oval" style="background:#fff4d6;border:2px dashed #b35900"></div>Attribute (datatype / literal)</div>
@@ -443,7 +460,7 @@ html,body{{height:100%;overflow:hidden;background:var(--bg);color:var(--text);fo
 <div class="legend-item" style="margin-top:6px;font-size:10px;color:var(--dim);line-height:1.35">UMLS / CUI layer is <b>off</b> at load (toolbar) — turn on to see vocabulary anchors.</div>
 </div>
 <div>
-<h3>Classes <span id="cnt" style="color:var(--dim)">({nc})</span></h3>
+<h3>Classes <span id="cnt" style="color:var(--dim)"></span></h3>
 <div class="entity-list" id="elist"></div>
 </div>
 </div>
@@ -458,6 +475,8 @@ const nDS=new vis.DataSet(),eDS=new vis.DataSet();
 const layers={{cls:true,rel:true,ind:false,dt:true}};
 let showUmls=false;
 let phOn=false;
+let expandedAll=false;
+let classPos={{}};
 
 function layerOff(g){{
   if(g==='cls')return !layers.cls;
@@ -498,7 +517,7 @@ function build(){{
   const maxL=D.max_level??0;
   const byLv={{}};D.classes.forEach(c=>{{const L=c.level??0;(byLv[L]=byLv[L]||[]).push(c);}});
   Object.keys(byLv).forEach(k=>byLv[k].sort((a,b)=>(a.label||a.id).localeCompare(b.label||b.id)));
-  const classPos={{}};const juncPos={{}};const dtPerDom={{}};function rndOff(s){{let h=0;for(let i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i)|0;return h;}}
+  classPos={{}};const juncPos={{}};const dtPerDom={{}};function rndOff(s){{let h=0;for(let i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i)|0;return h;}}
   Object.keys(byLv).forEach(k=>{{
     const L=+k;const arr=byLv[k];const x=(maxL-L)*XGAP;
     arr.forEach((c,i)=>{{const y=(i-(arr.length-1)/2)*YGAP;classPos[c.id]={{x,y}};}});
@@ -511,13 +530,18 @@ function build(){{
   // Class nodes — light fills + strong borders + dark text
   D.classes.forEach(c=>{{
     const isRoot=c.level===0;
+    const hasCollapsed=!!(c.collapsed_children&&c.collapsed_children.length);
+    const nCollapsed=hasCollapsed?c.collapsed_children.length:0;
+    const boxLabel=hasCollapsed?c.label+' [+'+nCollapsed+']':c.label;
     const pos=classPos[c.id]||{{x:0,y:0}};
+    const bg=hasCollapsed?'#dceeff':isRoot?'#cfe5ff':'#e3f2ff';
+    const bdr=hasCollapsed?'#0344a3':isRoot?'#0550ae':'#0b57d0';
     nDS.add({{
-      id:'c_'+c.id, label:c.label, title:'<b>'+c.label+'</b>'+(c.comment?'<br>'+c.comment:''),
+      id:'c_'+c.id, label:boxLabel, title:'<b>'+c.label+'</b>'+(c.comment?'<br>'+c.comment.replace(/\\n/g,'<br>'):''),
       x:pos.x,y:pos.y,shape:'box', group:'cls',
-      color:{{background:isRoot?'#cfe5ff':'#e3f2ff',border:isRoot?'#0550ae':'#0b57d0',highlight:{{background:'#b6d9ff',border:'#0344a3'}},hover:{{background:'#d7ebff',border:'#0550ae'}}}},
-      font:{{color:'#032563',size:isRoot?14:11,face:'JetBrains Mono,monospace',bold:isRoot}},
-      borderWidth:isRoot?3:2, mass:isRoot?3:1,
+      color:{{background:bg,border:bdr,highlight:{{background:'#b6d9ff',border:'#0344a3'}},hover:{{background:'#d7ebff',border:'#0550ae'}}}},
+      font:{{color:'#032563',size:isRoot?14:hasCollapsed?12:11,face:'JetBrains Mono,monospace',bold:isRoot||hasCollapsed}},
+      borderWidth:hasCollapsed?3.5:isRoot?3:2, mass:isRoot?3:hasCollapsed?2:1,
       u:c.id==='CUI', hidden:nodeHidden({{group:'cls',u:c.id==='CUI'}}), _data:c,
     }});
   }});
@@ -704,10 +728,71 @@ function togglePh(){{
   document.getElementById('btn-ph').classList.toggle('active',phOn);
 }}
 
+function toggleExpand(){{
+  expandedAll=!expandedAll;
+  const btn=document.getElementById('btn-expand');
+  btn.classList.toggle('active',expandedAll);
+  if(expandedAll){{
+    btn.textContent='\u25bc Collapse';
+    D.classes.forEach(c=>{{
+      if(!c.collapsed_children_ids||!c.collapsed_children_ids.length)return;
+      const pp=classPos[c.id]||{{x:0,y:0}};
+      const n=c.collapsed_children_ids.length;
+      c.collapsed_children_ids.forEach((ch,idx)=>{{
+        const angle=(2*Math.PI*idx/n)-Math.PI/2;
+        const r=160;
+        nDS.add({{
+          id:'cx_'+ch.id,label:ch.label,
+          title:'<b>'+ch.label+'</b>'+(ch.comment?'<br>'+ch.comment:''),
+          x:pp.x+r*Math.cos(angle),y:pp.y+r*Math.sin(angle),
+          shape:'box',group:'cls',
+          color:{{background:'#e8f4fd',border:'#0b57d0',highlight:{{background:'#b6d9ff',border:'#0344a3'}},hover:{{background:'#d7ebff',border:'#0550ae'}}}},
+          font:{{color:'#032563',size:10,face:'JetBrains Mono,monospace'}},
+          borderWidth:1.5,mass:0.8,u:false,hidden:nodeHidden({{group:'cls',u:false}}),
+        }});
+        const junc=D.junctions.find(j=>j.parent===c.id);
+        const target=junc?junc.id:'c_'+c.id;
+        eDS.add({{
+          id:'ex_'+ch.id,from:'cx_'+ch.id,to:target,
+          color:{{color:'#137333',highlight:'#0d5c2d',hover:'#18a957'}},
+          width:1.5,arrows:{{to:{{enabled:true,scaleFactor:.8,type:'triangle'}}}},
+          smooth:false,u:false,hidden:edgeHidden({{group:'cls',u:false}}),group:'cls',
+        }});
+      }});
+      nDS.update({{id:'c_'+c.id,label:c.label,borderWidth:2,mass:1,
+        color:{{background:'#e3f2ff',border:'#0b57d0',
+          highlight:{{background:'#b6d9ff',border:'#0344a3'}},
+          hover:{{background:'#d7ebff',border:'#0550ae'}}}}}});
+    }});
+    document.getElementById('badge-cls').textContent=(D.classes.length+D.collapsed_count)+' visible / '+(D.classes.length+D.collapsed_count)+' total classes';
+  }}else{{
+    btn.textContent='\u25ba Expand (+{nc_collapsed})';
+    D.classes.forEach(c=>{{
+      if(!c.collapsed_children_ids||!c.collapsed_children_ids.length)return;
+      c.collapsed_children_ids.forEach(ch=>{{
+        try{{nDS.remove('cx_'+ch.id);}}catch(e){{}}
+        try{{eDS.remove('ex_'+ch.id);}}catch(e){{}}
+      }});
+      const nc=c.collapsed_children_ids.length;
+      nDS.update({{id:'c_'+c.id,label:c.label+' [+'+nc+']',borderWidth:3.5,mass:2,
+        color:{{background:'#dceeff',border:'#0344a3',
+          highlight:{{background:'#b6d9ff',border:'#0344a3'}},
+          hover:{{background:'#d7ebff',border:'#0550ae'}}}}}});
+    }});
+    document.getElementById('badge-cls').textContent='{nc} visible / {nc_total} total classes';
+  }}
+  buildList(document.getElementById('search').value);
+  network.stabilize(220);
+}}
+
 network.on('click',p=>{{
   if(p.nodes.length>0){{
     const nid=p.nodes[0];
-    if(nid.startsWith('c_'))showI(nid.slice(2));
+    if(nid.startsWith('cx_')){{
+      const cid=nid.slice(3);let found=null;
+      D.classes.forEach(c=>{{if(c.collapsed_children_ids)c.collapsed_children_ids.forEach(ch=>{{if(ch.id===cid)found=ch;}});}});
+      if(found){{document.getElementById('ititle').textContent=found.label;document.getElementById('idesc').textContent=found.comment||'';document.getElementById('info').classList.add('vis');}}
+    }}else if(nid.startsWith('c_'))showI(nid.slice(2));
     else if(nid.startsWith('i_'))showI(nid.slice(2));
   }} else closeI();
 }});
@@ -726,11 +811,28 @@ function closeI(){{document.getElementById('info').classList.remove('vis');docum
 
 function buildList(f){{
   const el=document.getElementById('elist');el.innerHTML='';
-  const list=f?D.classes.filter(c=>c.id.toLowerCase().includes(f.toLowerCase())):D.classes;
+  let list=f?D.classes.filter(c=>c.id.toLowerCase().includes(f.toLowerCase())):D.classes.slice();
+  if(expandedAll){{
+    D.classes.forEach(c=>{{
+      if(!c.collapsed_children_ids)return;
+      c.collapsed_children_ids.forEach(ch=>{{
+        if(!f||ch.id.toLowerCase().includes(f.toLowerCase()))list.push({{...ch,_expanded:true}});
+      }});
+    }});
+  }}
   document.getElementById('cnt').textContent='('+list.length+')';
   list.forEach(c=>{{
     const d=document.createElement('div');d.className='entity-item';d.textContent=c.id;
-    d.onclick=()=>{{network.focus('c_'+c.id,{{scale:1.1,animation:{{duration:400}}}});showI(c.id)}};
+    if(c._expanded){{
+      d.onclick=()=>{{
+        try{{network.focus('cx_'+c.id,{{scale:1.1,animation:{{duration:400}}}});}}catch(e){{}}
+        document.getElementById('ititle').textContent=c.label;
+        document.getElementById('idesc').textContent=c.comment||'';
+        document.getElementById('info').classList.add('vis');
+      }};
+    }}else{{
+      d.onclick=()=>{{network.focus('c_'+c.id,{{scale:1.1,animation:{{duration:400}}}});showI(c.id)}};
+    }}
     el.appendChild(d);
   }});
 }}

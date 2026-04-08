@@ -373,14 +373,14 @@ cy.on('tap', function(evt) {{
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--kg", default="outputs/pipeline-output13/step4/output_v2.ttl")
-    ap.add_argument("--out", default="outputs/pipeline-output13/step4/kg_graph.html")
+    ap.add_argument("--kg", default="outputs/pipeline-output14/step4/output_v2.ttl")
+    ap.add_argument("--out", default=None, help="Output HTML path (default: kg_graph.html next to the KG file)")
     ap.add_argument("--max-edges", type=int, default=1200)
     ap.add_argument("--seed", type=int, default=13)
     args = ap.parse_args()
 
     kg_path = Path(args.kg)
-    out_path = Path(args.out)
+    out_path = Path(args.out) if args.out else kg_path.parent / "kg_graph.html"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     if not kg_path.is_file():

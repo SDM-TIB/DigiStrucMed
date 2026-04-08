@@ -4,8 +4,6 @@ Automated knowledge graph construction from medical PDF guidelines. Extracts tex
 
 ## Pipeline
 
-The pipeline runs as a sequence of steps, each reading the previous step's output. Versions are configurable per stage via `config.json`.
-
 ```
 PDF  ──►  1a Text extraction  ──►  1b Table extraction
                │                         │
@@ -40,34 +38,58 @@ PDF  ──►  1a Text extraction  ──►  1b Table extraction
 | 3a | `step3a_table_mappings.py` | Fuzzy-match table headers to ontology properties, generate RML |
 | 3b | `step3b_text_path.py` | Generate text assertions via entity co-occurrence + ontology matching (v1 symbolic, v2 adds LLM augmentation) |
 | 4 | `step4_materialize.py` | Materialize RDF triples using SDM-RDFizer / Morph-KGC / rdflib fallback |
-| 5 | `step5_validate.py` | Validate KG against SHACL shapes derived from the ontology (TravSHACL / pySHACL) |
+| 5 | `step5_validate.py` | Validate KG against SHACL shapes derived from the ontology (TravSHACL / pySHACL fallback) |
 
 ## Running
 
+The pipeline is designed to run on **Google Colab** (GPU recommended for LLM steps).
+
+### Full pipeline — from PDF to validated KG
+
+Upload `DigiStructMed_thesis_colab.zip` to Colab, unzip it, place your input PDF and ontology in the `input/` folder, then open and run:
+
+```
+COLAB_Pipeline.ipynb
+```
+
+### Resume from Step 3a — skip extraction/NER, start from table mappings
+
+If extraction and NER outputs are already available (e.g. from a previous run), use the lighter notebook:
+
+```
+COLAB_From_Step3a.ipynb
+```
+
+### Build the Colab zip (local)
+
 ```bash
-# Full pipeline with config.json versions
-python run_orchestrator.py
+python create_colab_zip.py
+# Writes DigiStructMed_thesis_colab.zip — upload this to Colab
+```
 
-# Override versions per stage
-python run_orchestrator.py --A v2 --B v2 --C v1
+### Visualize outputs (local)
 
-# Run a subset of stages
-python run_orchestrator.py --from B --to D
+```bash
+# Interactive KG viewer (Cytoscape.js, offline-ready)
+python visualize_kg.py --kg outputs/<run-dir>/step4/output_v2.ttl
 
-# Visualize the output KG
-python visualize_kg.py --kg outputs/step4/output_v2.ttl
+# Regenerate the ontology graph
+python visualize_ontology.py
+# Output: input/ontology_graph.html
 ```
 
 ## Project structure
 
 ```
-scripts/          Step scripts (step1a – step5, utils, hf_llm)
-input/            Source PDFs, ontology, UMLS CSV
-outputs/          Per-stage versioned output directories
-config.json       Stage version configuration
-config.py         Resolved paths and version helpers
-run_orchestrator.py   End-to-end pipeline runner
-visualize_kg.py       Interactive KG visualization (Cytoscape.js)
+scripts/              Step scripts (step1a – step5, utils, hf_llm)
+input/                Source PDFs, ontology, UMLS CSV, ontology_graph.html
+outputs/              Pipeline run directories (pipeline-output<N>/)
+COLAB_Pipeline.ipynb        Full pipeline notebook (Colab)
+COLAB_From_Step3a.ipynb     Resume-from-step3a notebook (Colab)
+create_colab_zip.py         Packages scripts + input stubs for Colab upload
+visualize_kg.py             Interactive KG visualization (Cytoscape.js)
+visualize_ontology.py       Regenerate ontology_graph.html
+input/FIXES_LOG.md          Per-run change log and metrics
 ```
 
 ## Requirements
