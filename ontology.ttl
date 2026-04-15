@@ -1,0 +1,508 @@
+@prefix ex: <http://digistructmed.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://digistructmed.org/ontology/containsDisease
+ex:containsDisease rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Contains ;
+                   rdfs:range ex:Disease .
+
+
+###  http://digistructmed.org/ontology/containsGuideline
+ex:containsGuideline rdf:type owl:ObjectProperty ;
+                     rdfs:domain ex:Contains ;
+                     rdfs:range ex:Guideline .
+
+
+###  http://digistructmed.org/ontology/containsRecommendation
+ex:containsRecommendation rdf:type owl:ObjectProperty ;
+                          rdfs:domain ex:Contains ;
+                          rdfs:range ex:Recommendation .
+
+
+###  http://digistructmed.org/ontology/evaluatedBy
+ex:evaluatedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:Disease ;
+               rdfs:range ex:Assessment .
+
+
+###  http://digistructmed.org/ontology/hasAdverseEvent
+ex:hasAdverseEvent rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Drug ;
+                   rdfs:range ex:AdverseEvent .
+
+
+###  http://digistructmed.org/ontology/hasAnnotation
+ex:hasAnnotation rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:MedicalConcept ;
+                 rdfs:range ex:AnnotationConcept .
+
+
+###  http://digistructmed.org/ontology/hasCause
+ex:hasCause rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Disease ;
+            rdfs:range ex:Cause .
+
+
+###  http://digistructmed.org/ontology/hasPhenotype
+ex:hasPhenotype rdf:type owl:ObjectProperty ;
+                rdfs:domain ex:Disease ;
+                rdfs:range ex:Phenotype .
+
+
+###  http://digistructmed.org/ontology/hasStage
+ex:hasStage rdf:type owl:ObjectProperty ;
+            rdfs:domain ex:Disease ;
+            rdfs:range ex:Stage .
+
+
+###  http://digistructmed.org/ontology/treatsDisease
+ex:treatsDisease rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:Treats ;
+                 rdfs:range ex:Disease .
+
+
+###  http://digistructmed.org/ontology/treatsDrug
+ex:treatsDrug rdf:type owl:ObjectProperty ;
+              rdfs:domain ex:Treats ;
+              rdfs:range ex:Drug .
+
+
+###  http://digistructmed.org/ontology/treatsTherapy
+ex:treatsTherapy rdf:type owl:ObjectProperty ;
+                 rdfs:domain ex:Treats ;
+                 rdfs:range ex:Therapy .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://digistructmed.org/ontology/adverseEventName
+ex:adverseEventName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:AdverseEvent ;
+                    rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/adverseEventSeverity
+ex:adverseEventSeverity rdf:type owl:DatatypeProperty ;
+                        rdfs:domain ex:AdverseEvent ;
+                        rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/agentName
+ex:agentName rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Drug ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/assessmentName
+ex:assessmentName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Assessment ;
+                  rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/assessmentValue
+ex:assessmentValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Assessment ;
+                   rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/assessmentId
+ex:assessmentId rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Assessment ;
+                rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/causeName
+ex:causeName rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Cause ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/causeId
+ex:causeId rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Cause ;
+           rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/conceptId
+ex:conceptId rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:AnnotationConcept ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/conceptName
+ex:conceptName rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:AnnotationConcept ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/containsId
+ex:containsId rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Contains ;
+              rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/diseaseName
+ex:diseaseName rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Disease ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/diseaseId
+ex:diseaseId rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Disease ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/drugCategory
+ex:drugCategory rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Drug ;
+                rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/drugId
+ex:drugId rdf:type owl:DatatypeProperty ;
+          rdfs:domain ex:Drug ;
+          rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/duration
+ex:duration rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Drug ;
+            rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/guidelineDate
+ex:guidelineDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Guideline ;
+                 rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/guidelineSource
+ex:guidelineSource rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Guideline ;
+                   rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/guidelineTitle
+ex:guidelineTitle rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Guideline ;
+                  rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/guidelineId
+ex:guidelineId rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Guideline ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/maxDose
+ex:maxDose rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Drug ;
+           rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/minDose
+ex:minDose rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Drug ;
+           rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/phenotypeId
+ex:phenotypeId rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Phenotype ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/phenotypeCode
+ex:phenotypeCode rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Phenotype ;
+                 rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/phenotypeCriteria
+ex:phenotypeCriteria rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ex:Phenotype ;
+                     rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/recommendationText
+ex:recommendationText rdf:type owl:DatatypeProperty ;
+                      rdfs:domain ex:Recommendation ;
+                      rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/recommendationId
+ex:recommendationId rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Recommendation ;
+                    rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/stageId
+ex:stageId rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Stage ;
+           rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/stageLevel
+ex:stageLevel rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Stage ;
+              rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/stageName
+ex:stageName rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Stage ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/stageScheme
+ex:stageScheme rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Stage ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/stageCriteriaText
+ex:stageCriteriaText rdf:type owl:DatatypeProperty ;
+                     rdfs:domain ex:Stage ;
+                     rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/therapyType
+ex:therapyType rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Therapy ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/therapyName
+ex:therapyName rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Therapy ;
+               rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/therapyId
+ex:therapyId rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Therapy ;
+             rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/treatsId
+ex:treatsId rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Treats ;
+            rdfs:range xsd:string .
+
+
+###  http://digistructmed.org/ontology/adverseEventId
+ex:adverseEventId rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:AdverseEvent ;
+                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://digistructmed.org/ontology/AdverseEvent
+ex:AdverseEvent rdf:type owl:Class ;
+                rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/AnnotationConcept
+ex:AnnotationConcept rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Assessment
+ex:Assessment rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Cause
+ex:Cause rdf:type owl:Class ;
+         rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/Contains
+ex:Contains rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Disease
+ex:Disease rdf:type owl:Class ;
+           rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/Drug
+ex:Drug rdf:type owl:Class ;
+        rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/Guideline
+ex:Guideline rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/MedicalConcept
+ex:MedicalConcept rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Phenotype
+ex:Phenotype rdf:type owl:Class ;
+             rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/Recommendation
+ex:Recommendation rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Stage
+ex:Stage rdf:type owl:Class .
+
+
+###  http://digistructmed.org/ontology/Therapy
+ex:Therapy rdf:type owl:Class ;
+           rdfs:subClassOf ex:MedicalConcept .
+
+
+###  http://digistructmed.org/ontology/Treats
+ex:Treats rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://digistructmed.org/AdverseEvent_Hyperkalemia
+<http://digistructmed.org/AdverseEvent_Hyperkalemia> rdf:type owl:NamedIndividual ,
+                                                              ex:AdverseEvent ;
+                                                     ex:adverseEventId "AdverseEvent_Hyperkalemia" ;
+                                                     ex:adverseEventName "Hyperkalemia" ;
+                                                     ex:adverseEventSeverity "severe" .
+
+
+###  http://digistructmed.org/AnnotationConcept_HF_UMLS
+<http://digistructmed.org/AnnotationConcept_HF_UMLS> rdf:type owl:NamedIndividual ,
+                                                              ex:AnnotationConcept ;
+                                                     ex:conceptId "C0018801" ;
+                                                     ex:conceptName "Heart failure" .
+
+
+###  http://digistructmed.org/Assessment_Echocardiography
+<http://digistructmed.org/Assessment_Echocardiography> rdf:type owl:NamedIndividual ,
+                                                                ex:Assessment ;
+                                                       ex:assessmentId "Assessment_Echocardiography" ;
+                                                       ex:assessmentName "Echocardiography" ;
+                                                       ex:assessmentValue "LVEF 35%" .
+
+
+###  http://digistructmed.org/Cause_IschemicHeartDisease
+<http://digistructmed.org/Cause_IschemicHeartDisease> rdf:type owl:NamedIndividual ,
+                                                               ex:Cause ;
+                                                      ex:causeId "Cause_IschemicHeartDisease" ;
+                                                      ex:causeName "Ischemic heart disease" .
+
+
+###  http://digistructmed.org/Contains_1
+<http://digistructmed.org/Contains_1> rdf:type owl:NamedIndividual ,
+                                               ex:Contains ;
+                                      ex:containsId "Contains_1" ;
+                                      ex:containsDisease <http://digistructmed.org/Disease_HF> ;
+                                      ex:containsGuideline <http://digistructmed.org/Guideline_Heidenreich> ;
+                                      ex:containsRecommendation <http://digistructmed.org/Rec_1> .
+
+
+###  http://digistructmed.org/Disease_HF
+<http://digistructmed.org/Disease_HF> rdf:type owl:NamedIndividual ,
+                                               ex:Disease ;
+                                      ex:diseaseId "Disease_HF" ;
+                                      ex:diseaseName "Heart Failure" ;
+                                      ex:evaluatedBy <http://digistructmed.org/Assessment_Echocardiography> ;
+                                      ex:hasAnnotation <http://digistructmed.org/AnnotationConcept_HF_UMLS> ;
+                                      ex:hasCause <http://digistructmed.org/Cause_IschemicHeartDisease> ;
+                                      ex:hasPhenotype <http://digistructmed.org/Phenotype_HFrEF> ;
+                                      ex:hasStage <http://digistructmed.org/Stage_C> .
+
+
+###  http://digistructmed.org/Drug_SacubitrilValsartan
+<http://digistructmed.org/Drug_SacubitrilValsartan> rdf:type owl:NamedIndividual ,
+                                                             ex:Drug ;
+                                                    ex:hasAdverseEvent <http://digistructmed.org/AdverseEvent_Hyperkalemia> ;
+                                                    ex:agentName "Sacubitril/Valsartan" ;
+                                                    ex:drugId "Drug_SacubitrilValsartan" ;
+                                                    ex:drugCategory "beneficial" ;
+                                                    ex:duration "chronic" ;
+                                                    ex:maxDose "97/103 mg twice daily" ;
+                                                    ex:minDose "24/26 mg twice daily" .
+
+
+###  http://digistructmed.org/Guideline_Heidenreich
+<http://digistructmed.org/Guideline_Heidenreich> rdf:type owl:NamedIndividual ,
+                                                          ex:Guideline ;
+                                                 ex:guidelineDate "2022-04-01" ;
+                                                 ex:guidelineId "Guideline_Heidenreich" ;
+                                                 ex:guidelineSource "AHA/ACC/HFSA" ;
+                                                 ex:guidelineTitle "2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure" .
+
+
+###  http://digistructmed.org/Phenotype_HFrEF
+<http://digistructmed.org/Phenotype_HFrEF> rdf:type owl:NamedIndividual ,
+                                                    ex:Phenotype ;
+                                           ex:phenotypeId "Phenotype_HFrEF" ;
+                                           ex:phenotypeCode "HFrEF" ;
+                                           ex:phenotypeCriteria "LVEF <= 40%" .
+
+
+###  http://digistructmed.org/Rec_1
+<http://digistructmed.org/Rec_1> rdf:type owl:NamedIndividual ,
+                                          ex:Recommendation ;
+                                 ex:recommendationId "Rec_1" ;
+                                 ex:recommendsDrug <http://digistructmed.org/Drug_SacubitrilValsartan> ;
+                                 ex:recommendsTherapy <http://digistructmed.org/Therapy_CRT> ;
+                                 ex:recommendationText "In patients with chronic symptomatic HFrEF (LVEF ≤ 40%), use an ARNI (sacubitril/valsartan) instead of an ACE inhibitor or ARB to reduce morbidity and mortality, if tolerated." .
+
+
+###  http://digistructmed.org/Stage_C
+<http://digistructmed.org/Stage_C> rdf:type owl:NamedIndividual ,
+                                            ex:Stage ;
+                                   ex:stageCriteriaText "Structural heart disease with prior or current symptoms of HF." ;
+                                   ex:stageId "Stage_C" ;
+                                   ex:stageLevel "C" ;
+                                   ex:stageName "Stage C (Symptomatic HF)" ;
+                                   ex:stageScheme "AHA_Stage" .
+
+
+###  http://digistructmed.org/Therapy_CRT
+<http://digistructmed.org/Therapy_CRT> rdf:type owl:NamedIndividual ,
+                                                ex:Therapy ;
+                                       ex:therapyId "Therapy_CRT" ;
+                                       ex:therapyName "Cardiac Resynchronization Therapy" ;
+                                       ex:therapyType "device" .
+
+
+###  http://digistructmed.org/Treats_1
+<http://digistructmed.org/Treats_1> rdf:type owl:NamedIndividual ,
+                                             ex:Treats ;
+                                    ex:treatsId "Treats_1" ;
+                                    ex:treatsDisease <http://digistructmed.org/Disease_HF> ;
+                                    ex:treatsDrug <http://digistructmed.org/Drug_SacubitrilValsartan> ;
+                                    ex:treatsTherapy <http://digistructmed.org/Therapy_CRT> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

@@ -1,6 +1,6 @@
 """
-Step 1d — Entity Linking  [SYMBOLIC]
-─────────────────────────────────────────────────────────────────────────────
+Step 1d ÔÇö Entity Linking  [SYMBOLIC]
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
 Input  : outputs/step1/entity_mentions.json   (from Step 1c)
          UMLS background knowledge CSV         (cui, label, semantic_type,
                                                 definition)
@@ -11,16 +11,16 @@ Output : outputs/step1/grounded_entities.json
              linking_status: "direct" | "needs_disambiguation" | "no_match" }
 
 Hybrid (symbolic + neural is split across steps):
-  · Step 1d — Rule-based candidate generation: token inverted index over UMLS
+  ┬À Step 1d ÔÇö Rule-based candidate generation: token inverted index over UMLS
     labels + fuzzy scores on a bounded candidate set only (no full-BK scan).
     Cheap heuristics decide direct link vs unresolved.
-  · Step 1e — AI ambiguity resolution: LLM runs only for mentions with
+  ┬À Step 1e ÔÇö AI ambiguity resolution: LLM runs only for mentions with
     linking_status == needs_disambiguation, choosing among the candidate list
     from 1d (see step1e_disambiguate.py).
 
   Optional disk cache: after the first CSV load + index build, the BK and index
   are stored under outputs/cache/ so later runs skip re-reading millions of rows.
-─────────────────────────────────────────────────────────────────────────────
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
 """
 from __future__ import annotations
 
@@ -36,11 +36,11 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from utils import log, save_json
+from pipeline.step1.utils import log, save_json
 
 DEFAULT_SIM_THRESHOLD = 0.96
 DEFAULT_TOP_K = 15
-# Max BK rows to score per mention after index retrieval (avoids O(mentions × |BK|))
+# Max BK rows to score per mention after index retrieval (avoids O(mentions ├ù |BK|))
 DEFAULT_MAX_SCORE = 12_000
 DEFAULT_CACHE_DIR = "outputs/cache"
 # Bump when BK row shape / index logic changes (invalidates old .pkl.gz caches).
@@ -258,7 +258,7 @@ def load_bk_and_inverted_index(
     Load BK from CSV and build the token index, or restore both from cache.
 
     Cache is keyed by resolved path + file size + mtime (not a full hash of
-    4M rows — cheap and usually sufficient).
+    4M rows ÔÇö cheap and usually sufficient).
     """
     fp = _umls_file_fingerprint(umls_csv_path)
     if use_cache and cache_dir:
@@ -269,13 +269,13 @@ def load_bk_and_inverted_index(
             bk, inverted, freq = restored
             log(
                 "1d",
-                f"Restored BK + index from cache ({len(bk)} concepts) → {cache_file.name}",
+                f"Restored BK + index from cache ({len(bk)} concepts) ÔåÆ {cache_file.name}",
             )
             return bk, inverted, freq
-        log("1d", "No valid cache for this UMLS file — loading CSV and building index…")
+        log("1d", "No valid cache for this UMLS file ÔÇö loading CSV and building indexÔÇª")
 
     bk = load_umls_bk(umls_csv_path)
-    log("1d", f"Building token index over labels (similarity={_SIM_BACKEND})…")
+    log("1d", f"Building token index over labels (similarity={_SIM_BACKEND})ÔÇª")
     t_idx0 = time.perf_counter()
     inverted = _build_inverted_index(bk)
     freq = _token_freq(inverted)
@@ -299,7 +299,7 @@ def load_bk_and_inverted_index(
             _save_bk_index_cache(cache_file, fp, bk, inverted, freq)
             log(
                 "1d",
-                f"Wrote cache ({time.perf_counter() - t_w0:.1f}s) → {cache_file}",
+                f"Wrote cache ({time.perf_counter() - t_w0:.1f}s) ÔåÆ {cache_file}",
             )
         except OSError as e:
             log("1d", f"Could not write cache ({e}); continuing without.")
@@ -446,7 +446,7 @@ def link_entities(
             })
         out_path = Path(output_dir) / "grounded_entities.json"
         save_json(results, str(out_path))
-        log("1d", "No UMLS path — all mentions marked needs_disambiguation")
+        log("1d", "No UMLS path ÔÇö all mentions marked needs_disambiguation")
         return results
 
     t0 = time.perf_counter()
@@ -470,7 +470,7 @@ def link_entities(
             elapsed = time.perf_counter() - t0
             log(
                 "1d",
-                f"  … {i + 1}/{n} mentions ({elapsed:.0f}s elapsed)",
+                f"  ÔÇª {i + 1}/{n} mentions ({elapsed:.0f}s elapsed)",
             )
 
     out_path = Path(output_dir) / "grounded_entities.json"
@@ -478,7 +478,7 @@ def link_entities(
     log(
         "1d",
         (
-            f"Linked {len(results)} entities — "
+            f"Linked {len(results)} entities ÔÇö "
             f"direct: {counts['direct']}, "
             f"needs_disambiguation: {counts['needs_disambiguation']}, "
             f"no_match: {counts['no_match']} "

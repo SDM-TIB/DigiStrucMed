@@ -1,12 +1,12 @@
-"""
+﻿"""
 Shared Hugging Face LLM helpers for Step 1e (disambiguation) and Step 3b (SPO).
 
 Modes
 -----
-hf_local     — Load a causal LM from the Hub (Llama 3, etc.). Requires HF_TOKEN
+hf_local     ÔÇö Load a causal LM from the Hub (Llama 3, etc.). Requires HF_TOKEN
                for gated models. Model stays cached in-process after first load.
 
-hf_inference — Serverless Inference API (no local GPU). Same token; calls Hub.
+hf_inference ÔÇö Serverless Inference API (no local GPU). Same token; calls Hub.
 """
 from __future__ import annotations
 

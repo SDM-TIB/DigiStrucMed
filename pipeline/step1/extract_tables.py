@@ -2,8 +2,8 @@
 Step 1b — Table Extraction
 ─────────────────────────────────────────────────────────────────────────────
 Input  : PDF file path
-Output : outputs/step1/tables/<table_id>.csv   (one CSV per table)
-         outputs/step1/table_index.json
+Output : <output_dir>/tables/<table_id>.csv   (one CSV per table)
+         <output_dir>/table_index.json
          Each index record: { table_id, page, source_file, csv_path,
                                caption, headers, row_count }
 
@@ -17,13 +17,13 @@ v1 (default) — pdfplumber (table detection) + PyMuPDF (bbox caption lookup)
 v2 — Docling
   • Uses Docling's document model to detect and extract tables structurally
   • Docling understands nested headers, merged cells, and complex layouts
-  • Should be used together with step1a version="v2" so both steps share the
+  • Should be used together with extract_text version="v2" so both steps share the
     same Docling-parsed document representation
   • Caption comes from Docling's table.label / table.caption attributes
 
-Use matching versions for step1a and step1b:
-  step1a v1 + step1b v1   (PyMuPDF text + pdfplumber tables)
-  step1a v2 + step1b v2   (Docling text + Docling tables)
+Use matching versions for extract_text and extract_tables:
+  extract_text v1 + extract_tables v1   (PyMuPDF text + pdfplumber tables)
+  extract_text v2 + extract_tables v2   (Docling text + Docling tables)
 ─────────────────────────────────────────────────────────────────────────────
 """
 from __future__ import annotations
@@ -37,7 +37,14 @@ from typing import Dict, List, Optional, Tuple
 import fitz        # PyMuPDF — used for bbox positions and caption lookup (v1)
 import pdfplumber  # table detection (v1)
 
-from utils import log, save_json
+if __package__ in (None, ""):
+    import sys
+
+    _REPO_ROOT = Path(__file__).resolve().parents[2]
+    if str(_REPO_ROOT) not in sys.path:
+        sys.path.insert(0, str(_REPO_ROOT))
+
+from pipeline.step1.utils import log, save_json
 
 
 # ── Shared constants ─────────────────────────────────────────────────────────
@@ -232,8 +239,6 @@ def _extract_v2(
     pdf_path: str,
     tables_dir: Path,
     source_name: str,
-    skip_first_pages: int,
-    skip_last_pages: int,
 ) -> List[Dict]:
     """
     Docling-based table extraction.
@@ -244,8 +249,8 @@ def _extract_v2(
       • Tables without visible borders
       • Tables that span page boundaries
 
-    The page-by-page conversion loop mirrors step1a v2 so both steps share
-    identical Docling processing and skip the same pages.
+    The page-by-page conversion loop mirrors extract_text v2 so both steps share
+    identical Docling processing for every page.
     """
     try:
         from docling.document_converter import DocumentConverter
@@ -262,11 +267,6 @@ def _extract_v2(
         total_pages = len(fitz_doc)
 
     for page_num in range(1, total_pages + 1):
-        if page_num <= skip_first_pages:
-            continue
-        if page_num > total_pages - skip_last_pages:
-            continue
-
         try:
             res  = converter.convert(str(pdf_path), page_range=(page_num, page_num))
             ddoc = res.document
@@ -317,20 +317,16 @@ def extract_tables(
     pdf_path: str,
     output_dir: str = "outputs/step1",
     version: str = "v1",
-    skip_first_pages: int = 3,
-    skip_last_pages: int = 5,
 ) -> List[Dict]:
     """
     Extract tables from a PDF into individual CSV files with caption metadata.
 
     Parameters
     ----------
-    pdf_path         : path to source PDF
-    output_dir       : directory for CSVs and table_index.json
-    version          : 'v1' (pdfplumber + PyMuPDF bbox captions)
-                     | 'v2' (Docling — use with step1a version='v2')
-    skip_first_pages : pages to skip from start (should match step1a setting)
-    skip_last_pages  : pages to skip from end   (should match step1a setting)
+    pdf_path   : path to source PDF
+    output_dir : directory for CSVs and table_index.json
+    version    : 'v1' (pdfplumber + PyMuPDF bbox captions)
+               | 'v2' (Docling — use with extract_text version='v2')
 
     Returns the table index (list of metadata dicts) and writes:
     - one CSV per table  → outputs/step1/tables/<table_id>.csv
@@ -352,10 +348,7 @@ def extract_tables(
     log("1b", f"Extracting tables from {pdf_path} [version={version}]")
 
     if version == "v2":
-        table_index = _extract_v2(
-            pdf_path, tables_dir, source_name,
-            skip_first_pages, skip_last_pages,
-        )
+        table_index = _extract_v2(pdf_path, tables_dir, source_name)
     else:
         table_index = _extract_v1(pdf_path, tables_dir, source_name)
 
@@ -365,7 +358,27 @@ def extract_tables(
 
 
 if __name__ == "__main__":
-    import sys
-    _pdf = sys.argv[1] if len(sys.argv) > 1 else "input/guideline.pdf"
-    _ver = sys.argv[2] if len(sys.argv) > 2 else "v1"
-    extract_tables(_pdf, version=_ver)
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        description="Step 1b: extract tables to CSV + table_index.json (v1=pdfplumber, v2=Docling).",
+    )
+    ap.add_argument(
+        "pdf",
+        nargs="?",
+        default="input/Heidenreich, 2022, AHA,ACC,HFSA guidelines.pdf",
+        help="source PDF path",
+    )
+    ap.add_argument("--out", default="outputs/step1", help="directory for table_index.json and tables/")
+    ap.add_argument(
+        "--version",
+        choices=["v1", "v2"],
+        default="v1",
+        help="v1=pdfplumber+PyMuPDF; v2=Docling (match extract_text --version)",
+    )
+    args = ap.parse_args()
+    extract_tables(
+        args.pdf,
+        output_dir=args.out,
+        version=args.version,
+    )

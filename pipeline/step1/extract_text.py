@@ -2,7 +2,7 @@
 Step 1a — Text Extraction
 ─────────────────────────────────────────────────────────────────────────────
 Input  : PDF file path
-Output : outputs/step1/text_blocks.json
+Output : <output_dir>/text_blocks.json
          Each record: { page, source_file, text }
 
 Versions
@@ -32,7 +32,16 @@ from typing import Dict, List, Optional, Tuple
 
 import fitz  # PyMuPDF
 
-from utils import log, save_json
+# Support `python -m pipeline.step1.extract_text` and
+# `python pipeline/step1/extract_text.py` from the repo root.
+if __package__ in (None, ""):
+    import sys
+
+    _REPO_ROOT = Path(__file__).resolve().parents[2]
+    if str(_REPO_ROOT) not in sys.path:
+        sys.path.insert(0, str(_REPO_ROOT))
+
+from pipeline.step1.utils import log, save_json
 
 
 # ── Shared constants ─────────────────────────────────────────────────────────
@@ -102,9 +111,11 @@ class _ExtractorV1:
     All class machinery is internal; the public API is extract_text().
     """
 
-    def __init__(self, skip_first: int, skip_last: int, min_chars: int) -> None:
-        self.skip_first = skip_first
-        self.skip_last = skip_last
+    # Heuristic windows (not “skipped pages”): block/page filters near start / end.
+    _FRONT_ZONE_PAGES = 8
+    _END_ZONE_PAGES = 15
+
+    def __init__(self, min_chars: int) -> None:
         self.min_chars = min_chars
         self._compile_patterns()
 
@@ -341,7 +352,7 @@ class _ExtractorV1:
             return False
         if self._is_toc_block(t):
             return False
-        near_start = page_num <= self.skip_first + 5
+        near_start = page_num <= self._FRONT_ZONE_PAGES
         if near_start and self._is_metadata_block(t):
             return False
         return True
@@ -361,7 +372,7 @@ class _ExtractorV1:
             all_caps = sum(1 for w in words if w.isupper())
             if all_caps / max(1, len(words)) > 0.35:
                 return True
-        in_ref_zone = page_num > total_pages - self.skip_last - 10
+        in_ref_zone = page_num > total_pages - self._END_ZONE_PAGES
         if in_ref_zone and len(page_blocks) >= 5:
             ref_lines = 0
             total_lines = 0
@@ -381,10 +392,7 @@ class _ExtractorV1:
 
     def _detect_references_cutoff(self, doc) -> Optional[int]:
         total = len(doc)
-        considered = [
-            p for p in range(1, total + 1)
-            if self.skip_first < p <= total - self.skip_last
-        ]
+        considered = list(range(1, total + 1))
         if not considered:
             return None
 
@@ -435,10 +443,6 @@ class _ExtractorV1:
 
             for page_index in range(total):
                 page_num = page_index + 1
-                if page_num <= self.skip_first:
-                    continue
-                if page_num > total - self.skip_last:
-                    continue
                 if ref_cutoff and page_num >= ref_cutoff:
                     continue
 
@@ -488,10 +492,8 @@ class _ExtractorV2:
     because it models the document structure before rendering text.
     """
 
-    def __init__(self, skip_first: int, skip_last: int, min_chars: int) -> None:
-        self.skip_first = skip_first
-        self.skip_last  = skip_last
-        self.min_chars  = min_chars
+    def __init__(self, min_chars: int) -> None:
+        self.min_chars = min_chars
 
     def extract(self, pdf_path: str) -> List[Dict]:
         try:
@@ -510,10 +512,6 @@ class _ExtractorV2:
             total = len(doc)
 
         for page_num in range(1, total + 1):
-            if page_num <= self.skip_first:
-                continue
-            if page_num > total - self.skip_last:
-                continue
             try:
                 res  = converter.convert(str(pdf_path), page_range=(page_num, page_num))
                 ddoc = res.document
@@ -542,8 +540,6 @@ class _ExtractorV2:
 def extract_text(
     pdf_path: str,
     output_dir: str = "outputs/step1",
-    skip_first_pages: int = 3,
-    skip_last_pages: int = 5,
     min_chars: int = 80,
     version: str = "v1",
 ) -> List[Dict]:
@@ -552,24 +548,20 @@ def extract_text(
 
     Parameters
     ----------
-    pdf_path         : path to the source PDF
-    output_dir       : directory for text_blocks.json
-    skip_first_pages : cover / copyright pages to skip (default 3)
-    skip_last_pages  : reference / index pages to skip from end (default 5)
-    min_chars        : minimum characters to keep a page block
-    version          : 'v1' (PyMuPDF, full noise filtering)
-                     | 'v2' (Docling, better for complex layouts)
+    pdf_path   : path to the source PDF
+    output_dir : directory for text_blocks.json
+    min_chars  : minimum characters to keep a page block
+    version    : 'v1' (PyMuPDF, full noise filtering)
+               | 'v2' (Docling, better for complex layouts)
 
     Returns list of { page, source_file, text } and writes text_blocks.json.
     """
     log("1a", f"Extracting text from {pdf_path} [version={version}]")
 
     if version == "v2":
-        extractor: _ExtractorV1 | _ExtractorV2 = _ExtractorV2(
-            skip_first_pages, skip_last_pages, min_chars
-        )
+        extractor: _ExtractorV1 | _ExtractorV2 = _ExtractorV2(min_chars)
     else:
-        extractor = _ExtractorV1(skip_first_pages, skip_last_pages, min_chars)
+        extractor = _ExtractorV1(min_chars)
 
     blocks = extractor.extract(pdf_path)
 
@@ -581,7 +573,29 @@ def extract_text(
 
 
 if __name__ == "__main__":
-    import sys
-    _pdf = sys.argv[1] if len(sys.argv) > 1 else "input/guideline.pdf"
-    _ver = sys.argv[2] if len(sys.argv) > 2 else "v1"
-    extract_text(_pdf, version=_ver)
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        description="Step 1a: extract page-level text to text_blocks.json (v1=PyMuPDF, v2=Docling).",
+    )
+    ap.add_argument(
+        "pdf",
+        nargs="?",
+        default="input/Heidenreich, 2022, AHA,ACC,HFSA guidelines.pdf",
+        help="source PDF path",
+    )
+    ap.add_argument("--out", default="outputs/step1", help="directory for text_blocks.json")
+    ap.add_argument(
+        "--version",
+        choices=["v1", "v2"],
+        default="v1",
+        help="v1=PyMuPDF; v2=Docling (use v2 for extract_tables as well)",
+    )
+    ap.add_argument("--min-chars", type=int, default=80, dest="min_chars")
+    args = ap.parse_args()
+    extract_text(
+        args.pdf,
+        output_dir=args.out,
+        min_chars=args.min_chars,
+        version=args.version,
+    )

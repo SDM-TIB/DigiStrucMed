@@ -1,5 +1,5 @@
 """
-Shared utilities for the DigiStructMed pipeline.
+Shared utilities for step 1 (JSON I/O and logging). Imported by step2/step3 as needed.
 """
 import json
 from pathlib import Path
@@ -21,4 +21,4 @@ def load_json(path: str):
 
 def log(step: str, msg: str) -> None:
     ts = datetime.now().strftime("%H:%M:%S")
-    print(f"[{step}] {ts} — {msg}")
+    print(f"[{step}] {ts} - {msg}")
