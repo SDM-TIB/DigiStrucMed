@@ -1,14 +1,5 @@
-r"""
-Link strings from ontology-shaped CSVs to UMLS (CUI + label).
+"""Link Step 2 CSV strings to UMLS; writes ``grounded_entities.json``, reports, optional JSONL."""
 
-Reads Step 2 CSVs from ``shaped_dir`` and writes all Step 3 artifacts to
-``out_dir`` (which defaults to ``shaped_dir`` for backward compatibility):
-
-  - ``grounded_entities.json``  — full linker state for Llama disambiguation
-  - ``S_annotation_concept.csv`` — unique CUI/label pairs with ``cui_final``
-  - ``entity_linking_report.json``
-  - ``entity_linking_details.jsonl`` (optional)
-"""
 from __future__ import annotations
 
 import argparse
@@ -29,6 +20,7 @@ from pipeline.step3._entity_linking import (  # noqa: E402
 )
 from pipeline.step1.utils import log, save_json  # noqa: E402
 
+
 class _el:
     load_bk_and_inverted_index = staticmethod(load_bk_and_inverted_index)
     _link_one_mention = staticmethod(_link_one_mention)
@@ -37,14 +29,14 @@ class _el:
 _DEFAULT_SOURCES: tuple[tuple[str, str, int, str], ...] = (
     ("S_drug.csv", "agentName", 2, "Drug"),
     ("S_therapy.csv", "therapy_name", 2, "Therapy"),
-    ("S_cause.csv", "causeName", 2, "Disease Cause"),
-    ("S_phenotype.csv", "phenotypeCode", 2, "Disease Phenotype"),
+    ("S_cause.csv", "causeName", 2, "Condition Cause"),
+    ("S_phenotype.csv", "phenotypeCode", 2, "Condition Phenotype"),
     ("S_adverse_event.csv", "adverseEventName", 2, "Adverse Event"),
-    ("S_disease.csv", "diseaseName", 2, "Disease"),
+    ("S_condition.csv", "conditionName", 2, "Condition"),
 )
 
 
-def _config_disease_abbreviations(config_path: Path | None) -> dict[str, str]:
+def _config_condition_abbreviations(config_path: Path | None) -> dict[str, str]:
     if config_path is None:
         config_path = _STEP2 / "guideline_config.json"
     else:
@@ -52,13 +44,13 @@ def _config_disease_abbreviations(config_path: Path | None) -> dict[str, str]:
     if not config_path.is_file():
         return {}
     cfg = json.loads(config_path.read_text(encoding="utf-8"))
-    d = cfg.get("disease") or {}
-    disease_name = (d.get("disease_name") or "").strip()
+    d = cfg.get("condition") or {}
+    condition_name = (d.get("condition_name") or "").strip()
     out: dict[str, str] = {}
     for a in d.get("abbreviations") or []:
         a = str(a).strip()
-        if a and disease_name:
-            out[a] = disease_name
+        if a and condition_name:
+            out[a] = condition_name
     return out
 
 
@@ -66,7 +58,7 @@ def _merge_acronym_table(config_path: Path | None) -> dict[str, str]:
     from pipeline.step1.extract_text import _HF_ACRONYMS
 
     merged = dict(_HF_ACRONYMS)
-    for k, v in _config_disease_abbreviations(config_path).items():
+    for k, v in _config_condition_abbreviations(config_path).items():
         merged.setdefault(k, v)
     return merged
 
@@ -82,7 +74,6 @@ def _expand_acronyms(text: str, table: dict[str, str]) -> str:
 
 
 def _row_context(row: dict, linked_col: str) -> str:
-    """Build a short descriptive string from all other columns in the row."""
     parts = []
     for k, v in row.items():
         if k == linked_col or not v or k.endswith("_id"):
@@ -140,8 +131,38 @@ def _label_for_cui(cui: str, candidates: list | None) -> str:
     return str(cui)
 
 
+def _guideline_id_from_step2(shaped_dir: Path) -> str:
+    """Read guideline_id from S_guideline.csv near ``shaped_dir``.
+
+    Looks in ``shaped_dir`` itself (when Step 3 writes into the Step 2
+    folder), then in sibling folders ``step2/`` and ``step2_v2/`` so the
+    helper works regardless of whether Step 3 targets step2 or step3.
+    """
+    candidates = [
+        shaped_dir / "S_guideline.csv",
+        shaped_dir.parent / "step2" / "S_guideline.csv",
+        shaped_dir.parent / "step2_v2" / "S_guideline.csv",
+    ]
+    for p in candidates:
+        if not p.exists():
+            continue
+        try:
+            with p.open(encoding="utf-8", newline="") as f:
+                for row in csv.DictReader(f):
+                    gid = (row.get("guideline_id") or "").strip()
+                    if gid:
+                        return gid
+        except Exception:
+            continue
+    return "guideline_unknown"
+
+
 def write_s_annotation_concept(shaped_dir: Path, entities: list[dict]) -> int:
-    """Write ``S_annotation_concept.csv`` from any records with ``cui_final``."""
+    """Write ``S_annotation_concept.csv`` from any records with ``cui_final``.
+
+    Rows are prefixed with ``guideline_id`` so per-guideline scoping (RML
+    templates) can keep identically-named concepts distinct in merged KGs.
+    """
     by_cui: dict[str, str] = {}
     for e in entities:
         cui = e.get("cui_final")
@@ -155,10 +176,12 @@ def write_s_annotation_concept(shaped_dir: Path, entities: list[dict]) -> int:
                 str(cui), cands if isinstance(cands, list) else None
             )
         by_cui[str(cui)] = lab
+    gid = _guideline_id_from_step2(shaped_dir)
     out_csv = shaped_dir / "S_annotation_concept.csv"
-    rows = [{"concept_id": c, "conceptName": n} for c, n in sorted(by_cui.items())]
+    rows = [{"guideline_id": gid, "concept_id": c, "conceptName": n}
+            for c, n in sorted(by_cui.items())]
     with out_csv.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["concept_id", "conceptName"])
+        w = csv.DictWriter(f, fieldnames=["guideline_id", "concept_id", "conceptName"])
         w.writeheader()
         w.writerows(rows)
     return len(rows)
@@ -254,6 +277,15 @@ def run_entity_linking(
         "acronym_table_size": len(acronym_table) if acronym_table else 0,
         "grounded_entities_path": str(target / "grounded_entities.json") if save_grounded else None,
     }
+    try:
+        from pipeline.step3.build_annotation_links import build_links_for_run
+
+        link_counts = build_links_for_run(target.parent.resolve())
+        if link_counts:
+            report["annotation_link_csvs"] = link_counts
+    except Exception as exc:
+        log("EL", f"annotation link CSVs skipped: {exc}")
+
     save_json(report, str(target / "entity_linking_report.json"))
 
     if write_jsonl:
@@ -266,7 +298,12 @@ def run_entity_linking(
         "EL",
         f"Wrote {n_concepts} concepts -> S_annotation_concept.csv; "
         f"direct={direct}/{n} ({report['rate_direct']:.1%}), "
-        f"no_match={none_}/{n}; grounded_entities.json={'yes' if save_grounded else 'no'}",
+        f"no_match={none_}/{n}; grounded_entities.json={'yes' if save_grounded else 'no'}"
+        + (
+            f"; annotation bridges={sum(report['annotation_link_csvs'].values())} rows"
+            if report.get("annotation_link_csvs")
+            else ""
+        ),
     )
     return report
 

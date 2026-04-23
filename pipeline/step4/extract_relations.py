@@ -1,16 +1,4 @@
-"""
-LLM-based relation extraction from guideline text (Step 4).
-
-Reads ``text_blocks.json`` (Step 1) and entity CSVs (Step 2), finds passages
-mentioning 2+ known entities, sends them to a local Llama model, and outputs
-relation CSVs using the **existing** ontology schema.
-
-Output CSVs (all written to ``<run>/step4/``):
-  Structural (deterministic from entity CSVs):
-    S_contains.csv, S_disease_phenotype.csv, S_disease_stage.csv
-  LLM-derived (from text passages):
-    S_treats.csv, S_recommendation.csv, S_drug_adverse_event.csv, S_disease_assessment.csv, S_disease_cause.csv
-"""
+"""Step 4: relation CSVs from ``text_blocks.json`` + Step 2 entities (structural + LLM)."""
 from __future__ import annotations
 
 import csv
@@ -28,9 +16,6 @@ _SCRIPTS = _ROOT / "scripts"
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
 
-
-# ── Entity index ────────────────────────────────────────────────────────────
-
 _ENTITY_SOURCES = [
     ("S_drug.csv",           "drug_id",       "agentName",        "Drug"),
     ("S_therapy.csv",        "therapy_id",    "therapy_name",     "Therapy"),
@@ -39,7 +24,7 @@ _ENTITY_SOURCES = [
     ("S_cause.csv",          "cause_id",      "causeName",        "Cause"),
     ("S_stage.csv",          "stage_id",      "stageName",        "Stage"),
     ("S_adverse_event.csv",  "ae_id",         "adverseEventName", "AdverseEvent"),
-    ("S_disease.csv",        "disease_id",    "diseaseName",      "Disease"),
+    ("S_condition.csv",      "condition_id",  "conditionName",    "Condition"),
     ("S_guideline.csv",      "guideline_id",  "guidelineTitle",   "Guideline"),
     ("S_recommendation.csv", "rec_id",        "recommendationText", "Recommendation"),
 ]
@@ -53,7 +38,6 @@ class Entity:
 
 
 def load_entity_index(step2_dir: Path) -> dict[str, Entity]:
-    """Build ``{lowercase_name: Entity}`` from Step 2 CSVs."""
     index: dict[str, Entity] = {}
     for fname, id_col, name_col, etype in _ENTITY_SOURCES:
         p = step2_dir / fname
@@ -74,14 +58,10 @@ def _read_csv_rows(path: Path) -> list[dict]:
     with path.open(encoding="utf-8", newline="") as f:
         return list(csv.DictReader(f))
 
-
-# ── Passage filtering ───────────────────────────────────────────────────────
-
 _SENT_SPLIT = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9])')
 
 
 def _split_sentences(text: str) -> list[str]:
-    """Split a page-level text block into rough sentence groups."""
     paras = [p.strip() for p in text.split("\n\n") if p.strip()]
     sents: list[str] = []
     for para in paras:
@@ -93,7 +73,6 @@ def _split_sentences(text: str) -> list[str]:
 
 
 def _is_noisy_header_or_keyword_sentence(sent: str) -> bool:
-    """Drop structurally noisy lines that spuriously co-mention entities."""
     s = sent.strip()
     if not s:
         return True
@@ -157,9 +136,6 @@ def find_relation_passages(
                                         entities_found=found))
     return passages
 
-
-# ── LLM prompt ──────────────────────────────────────────────────────────────
-
 _ALLOWED_RELATIONS = [
     "treats",
     "hasAdverseEvent",
@@ -172,10 +148,10 @@ You are a biomedical knowledge extraction system. Given a clinical text passage 
 and a list of known entities, extract factual relations between them.
 
 ALLOWED RELATION TYPES (use ONLY these):
-- treats(Drug/Therapy, Disease): a drug or therapy is used to treat the disease
+- treats(Drug/Therapy, Condition): a drug or therapy is used to treat the condition
 - hasAdverseEvent(Drug, AdverseEvent): a drug causes an adverse event
-- evaluatedBy(Disease, Assessment): the disease is evaluated using an assessment
-- hasCause(Disease, Cause): a cause/etiology of the disease
+- evaluatedBy(Condition, Assessment): the condition is evaluated using an assessment
+- hasCause(Condition, Cause): a cause/etiology of the condition
 
 KNOWN ENTITIES in this passage:
 {entities_block}
@@ -204,9 +180,6 @@ def _build_prompt(passage: Passage) -> str:
         entities_block=_build_entities_block(passage.entities_found),
         passage_text=passage.text[:1200],
     )
-
-
-# ── LLM extraction ─────────────────────────────────────────────────────────
 
 @dataclass
 class ExtractedRelation:
@@ -323,9 +296,6 @@ def extract_relations_llm(
 
     return all_relations
 
-
-# ── Resolve extracted names to entity IDs ───────────────────────────────────
-
 def _resolve_entity(name: str, expected_type: str,
                     entity_index: dict[str, Entity]) -> Entity | None:
     key = name.lower().strip()
@@ -339,9 +309,6 @@ def _resolve_entity(name: str, expected_type: str,
             return e
     return None
 
-
-# ── Write output CSVs ──────────────────────────────────────────────────────
-
 def _write_csv(path: Path, fieldnames: list[str], rows: list[dict]) -> int:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
@@ -354,17 +321,14 @@ def _write_csv(path: Path, fieldnames: list[str], rows: list[dict]) -> int:
 def _slug(text: str) -> str:
     return re.sub(r'[^A-Za-z0-9]+', '_', text).strip('_')[:60]
 
-
-# ── Structural (deterministic) relation generators ─────────────────────────
-
 def _generate_contains(step2_dir: Path) -> list[dict]:
-    """S_contains: every recommendation belongs to the guideline about the disease."""
+    """S_contains: every recommendation belongs to the guideline about the condition."""
     guidelines = _read_csv_rows(step2_dir / "S_guideline.csv")
-    diseases = _read_csv_rows(step2_dir / "S_disease.csv")
+    conditions = _read_csv_rows(step2_dir / "S_condition.csv")
     recs = _read_csv_rows(step2_dir / "S_recommendation.csv")
 
     guideline_id = guidelines[0].get("guideline_id", "Unknown") if guidelines else "Unknown"
-    disease_id = diseases[0].get("disease_id", "Unknown") if diseases else "Unknown"
+    condition_id = conditions[0].get("condition_id", "Unknown") if conditions else "Unknown"
 
     rows = []
     if recs:
@@ -374,24 +338,24 @@ def _generate_contains(step2_dir: Path) -> list[dict]:
                 rows.append({
                     "contains_id": f"contains_{rid}",
                     "guideline_id": guideline_id,
-                    "disease_id": disease_id,
+                    "condition_id": condition_id,
                     "rec_id": rid,
                 })
     if not rows:
         rows.append({
-            "contains_id": f"contains_{guideline_id}_{disease_id}",
+            "contains_id": f"contains_{guideline_id}_{condition_id}",
             "guideline_id": guideline_id,
-            "disease_id": disease_id,
+            "condition_id": condition_id,
             "rec_id": "",
         })
     return rows
 
 
-def _generate_disease_phenotype(step2_dir: Path) -> list[dict]:
-    """S_disease_phenotype: each phenotype is a phenotype of the disease."""
-    diseases = _read_csv_rows(step2_dir / "S_disease.csv")
+def _generate_condition_phenotype(step2_dir: Path) -> list[dict]:
+    """S_condition_phenotype: each phenotype is a phenotype of the condition."""
+    conditions = _read_csv_rows(step2_dir / "S_condition.csv")
     phenotypes = _read_csv_rows(step2_dir / "S_phenotype.csv")
-    disease_id = diseases[0].get("disease_id", "Unknown") if diseases else "Unknown"
+    condition_id = conditions[0].get("condition_id", "Unknown") if conditions else "Unknown"
 
     rows = []
     seen: set[str] = set()
@@ -399,15 +363,15 @@ def _generate_disease_phenotype(step2_dir: Path) -> list[dict]:
         pid = p.get("phenotype_id", "")
         if pid and pid not in seen:
             seen.add(pid)
-            rows.append({"disease_id": disease_id, "phenotype_id": pid})
+            rows.append({"condition_id": condition_id, "phenotype_id": pid})
     return rows
 
 
-def _generate_disease_stage(step2_dir: Path) -> list[dict]:
-    """S_disease_stage: each stage is a stage of the disease."""
-    diseases = _read_csv_rows(step2_dir / "S_disease.csv")
+def _generate_condition_stage(step2_dir: Path) -> list[dict]:
+    """S_condition_stage: each stage is a stage of the condition."""
+    conditions = _read_csv_rows(step2_dir / "S_condition.csv")
     stages = _read_csv_rows(step2_dir / "S_stage.csv")
-    disease_id = diseases[0].get("disease_id", "Unknown") if diseases else "Unknown"
+    condition_id = conditions[0].get("condition_id", "Unknown") if conditions else "Unknown"
 
     rows = []
     seen: set[str] = set()
@@ -415,14 +379,14 @@ def _generate_disease_stage(step2_dir: Path) -> list[dict]:
         sid = s.get("stage_id", "")
         if sid and sid not in seen:
             seen.add(sid)
-            rows.append({"disease_id": disease_id, "stage_id": sid})
+            rows.append({"condition_id": condition_id, "stage_id": sid})
     return rows
 
 
 def _recommendation_ids_by_page(step2_dir: Path) -> dict[int, list[str]]:
-    """Index recommendation IDs by source page inferred from rec_id format."""
+    """Index recommendation IDs and texts by source page inferred from rec_id."""
     recs = _read_csv_rows(step2_dir / "S_recommendation.csv")
-    page_map: dict[int, list[str]] = {}
+    page_map: dict[int, list[tuple[str, str]]] = {}
     for row in recs:
         rid = (row.get("rec_id") or "").strip()
         if not rid:
@@ -431,11 +395,9 @@ def _recommendation_ids_by_page(step2_dir: Path) -> dict[int, list[str]]:
         if not m:
             continue
         page = int(m.group(1))
-        page_map.setdefault(page, []).append(rid)
+        rtxt = (row.get("recommendationText") or "").strip()
+        page_map.setdefault(page, []).append((rid, rtxt))
     return page_map
-
-
-# ── Post-processing quality filters ────────────────────────────────────────
 
 def _tokenize_entity_name(name: str) -> list[str]:
     toks = [t for t in re.findall(r"[a-z0-9]+", name.lower()) if len(t) >= 3]
@@ -453,6 +415,51 @@ def _entity_mentioned_with_min_overlap(name: str, text: str, min_hits: int = 1) 
     return hits >= min_hits
 
 
+def _text_tokens(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", (text or "").lower()) if len(t) >= 3}
+
+
+def _jaccard(a: set[str], b: set[str]) -> float:
+    if not a or not b:
+        return 0.0
+    i = len(a & b)
+    if i == 0:
+        return 0.0
+    return i / len(a | b)
+
+
+def _match_recommendations_for_relation(
+    rel: ExtractedRelation,
+    candidates: list[tuple[str, str]],
+    required_entity_names: list[str],
+) -> list[str]:
+    """Pick recommendation IDs on the same page that best match the relation passage.
+
+    Rules:
+    - Required entities (drug/therapy/AE) must be present in recommendation text.
+    - Keep only the best-scoring recommendation per relation to avoid page fan-out.
+    """
+    if not candidates:
+        return []
+    passage_tokens = _text_tokens(rel.source_passage)
+    scored: list[tuple[float, str]] = []
+    for rec_id, rec_text in candidates:
+        text = (rec_text or "").strip()
+        if not text:
+            continue
+        if required_entity_names:
+            if not all(_entity_mentioned_with_min_overlap(n, text, min_hits=1) for n in required_entity_names):
+                continue
+        score = _jaccard(passage_tokens, _text_tokens(text))
+        if score < 0.08:
+            continue
+        scored.append((score, rec_id))
+    if not scored:
+        return []
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [scored[0][1]]
+
+
 def _has_valid_drug_ae_context(rel: ExtractedRelation, drug_name: str, ae_name: str) -> bool:
     """Generic validation: require local co-mention in at least one sentence."""
     passage = (rel.source_passage or "").strip()
@@ -468,8 +475,31 @@ def _has_valid_drug_ae_context(rel: ExtractedRelation, drug_name: str, ae_name: 
             return True
     return False
 
+def _current_guideline_id(step2_dir: Path) -> str:
+    """Read guideline_id from S_guideline.csv (Step 2 output)."""
+    p = step2_dir / "S_guideline.csv"
+    if not p.exists():
+        return "guideline_unknown"
+    with p.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            gid = (row.get("guideline_id") or "").strip()
+            if gid:
+                return gid
+    return "guideline_unknown"
 
-# ── LLM-derived relation writer ────────────────────────────────────────────
+
+def _stamp(rows: list[dict], gid: str) -> list[dict]:
+    """Ensure every row carries the current guideline_id."""
+    out: list[dict] = []
+    for r in rows:
+        if r.get("guideline_id"):
+            out.append(r)
+        else:
+            nr = dict(r)
+            nr["guideline_id"] = gid
+            out.append(nr)
+    return out
+
 
 def write_relation_csvs(
     relations: list[ExtractedRelation],
@@ -477,39 +507,37 @@ def write_relation_csvs(
     out_dir: Path,
     step2_dir: Path,
 ) -> dict[str, int]:
-    """Write all relation CSVs: 3 structural + 5 LLM-derived."""
     out_dir.mkdir(parents=True, exist_ok=True)
+    gid = _current_guideline_id(step2_dir)
     stats: dict[str, int] = {}
 
-    # ── Structural relations ──
     stats["S_contains"] = _write_csv(
         out_dir / "S_contains.csv",
-        ["contains_id", "guideline_id", "disease_id", "rec_id"],
-        _generate_contains(step2_dir))
-    stats["S_disease_phenotype"] = _write_csv(
-        out_dir / "S_disease_phenotype.csv",
-        ["disease_id", "phenotype_id"],
-        _generate_disease_phenotype(step2_dir))
-    stats["S_disease_stage"] = _write_csv(
-        out_dir / "S_disease_stage.csv",
-        ["disease_id", "stage_id"],
-        _generate_disease_stage(step2_dir))
+        ["guideline_id", "contains_id", "condition_id", "rec_id"],
+        _stamp(_generate_contains(step2_dir), gid))
+    stats["S_condition_phenotype"] = _write_csv(
+        out_dir / "S_condition_phenotype.csv",
+        ["guideline_id", "condition_id", "phenotype_id"],
+        _stamp(_generate_condition_phenotype(step2_dir), gid))
+    stats["S_condition_stage"] = _write_csv(
+        out_dir / "S_condition_stage.csv",
+        ["guideline_id", "condition_id", "stage_id"],
+        _stamp(_generate_condition_stage(step2_dir), gid))
 
-    # ── LLM-derived relations ──
     treats_rows: list[dict] = []
     recommends_rows: list[dict] = []
     drug_ae_rows: list[dict] = []
-    disease_assess_rows: list[dict] = []
-    disease_cause_rows: list[dict] = []
+    condition_assess_rows: list[dict] = []
+    condition_cause_rows: list[dict] = []
     seen_treats: set[tuple[str, str, str]] = set()
-    seen_recommends: set[tuple[str, str, str]] = set()
+    seen_recommends: set[tuple[str, str, str, str]] = set()
     seen_drug_ae: set[tuple[str, str]] = set()
     seen_assess: set[tuple[str, str]] = set()
     seen_cause: set[tuple[str, str]] = set()
     rec_ids_by_page = _recommendation_ids_by_page(step2_dir)
 
-    disease_entities = [e for e in entity_index.values() if e.entity_type == "Disease"]
-    default_disease_id = disease_entities[0].entity_id if disease_entities else "Unknown"
+    condition_entities = [e for e in entity_index.values() if e.entity_type == "Condition"]
+    default_condition_id = condition_entities[0].entity_id if condition_entities else "Unknown"
 
     for rel in relations:
         subj = _resolve_entity(rel.subject, rel.subject_type, entity_index)
@@ -519,9 +547,9 @@ def write_relation_csvs(
 
         if rel.relation == "treats":
             therapy_ent = subj if subj.entity_type in ("Therapy", "Drug") else obj
-            disease_ent = obj if obj.entity_type == "Disease" else (
-                subj if subj.entity_type == "Disease" else None)
-            disease_id = disease_ent.entity_id if disease_ent else default_disease_id
+            condition_ent = obj if obj.entity_type == "Condition" else (
+                subj if subj.entity_type == "Condition" else None)
+            condition_id = condition_ent.entity_id if condition_ent else default_condition_id
 
             drug_id = therapy_ent.entity_id if therapy_ent.entity_type == "Drug" else ""
             therapy_id = therapy_ent.entity_id if therapy_ent.entity_type == "Therapy" else ""
@@ -529,28 +557,34 @@ def write_relation_csvs(
             if not drug_id and not therapy_id:
                 continue
 
-            key = (disease_id, therapy_id or drug_id, drug_id)
+            key = (condition_id, therapy_id or drug_id, drug_id)
             if key in seen_treats:
                 continue
             seen_treats.add(key)
             tid = f"treats_step4_{therapy_ent.entity_id}"
             treats_rows.append({
                 "treats_id": tid,
-                "disease_id": disease_id,
+                "condition_id": condition_id,
                 "therapy_id": therapy_id,
                 "drug_id": drug_id,
             })
-            # Recommendation-centric link (new): bind treatment to rec(s) on same page.
-            for rec_id in rec_ids_by_page.get(rel.page, []):
-                rkey = (rec_id, therapy_id, drug_id)
+            # Bind treatment to the best-matching recommendation text on the same page.
+            matched_rec_ids = _match_recommendations_for_relation(
+                rel,
+                rec_ids_by_page.get(rel.page, []),
+                required_entity_names=[therapy_ent.name],
+            )
+            for rec_id in matched_rec_ids:
+                rkey = (rec_id, therapy_id, drug_id, "")
                 if rkey in seen_recommends:
                     continue
                 seen_recommends.add(rkey)
                 recommends_rows.append({
                     "rec_id": rec_id,
-                    "disease_id": disease_id,
+                    "condition_id": condition_id,
                     "therapy_id": therapy_id,
                     "drug_id": drug_id,
+                    "ae_id": "",
                 })
 
         elif rel.relation == "hasAdverseEvent":
@@ -563,64 +597,78 @@ def write_relation_csvs(
             if not _has_valid_drug_ae_context(rel, drug_ent.name, ae_ent.name):
                 continue
             key = (drug_ent.entity_id, ae_ent.entity_id)
-            if key in seen_drug_ae:
-                continue
-            seen_drug_ae.add(key)
-            drug_ae_rows.append({"drug_id": drug_ent.entity_id, "ae_id": ae_ent.entity_id})
+            if key not in seen_drug_ae:
+                seen_drug_ae.add(key)
+                drug_ae_rows.append({"drug_id": drug_ent.entity_id, "ae_id": ae_ent.entity_id})
+            # Attach to best-matching recommendation text where both entities are mentioned.
+            matched_rec_ids = _match_recommendations_for_relation(
+                rel,
+                rec_ids_by_page.get(rel.page, []),
+                required_entity_names=[drug_ent.name, ae_ent.name],
+            )
+            for rec_id in matched_rec_ids:
+                rkey = (rec_id, "", drug_ent.entity_id, ae_ent.entity_id)
+                if rkey in seen_recommends:
+                    continue
+                seen_recommends.add(rkey)
+                recommends_rows.append({
+                    "rec_id": rec_id,
+                    "condition_id": default_condition_id,
+                    "therapy_id": "",
+                    "drug_id": drug_ent.entity_id,
+                    "ae_id": ae_ent.entity_id,
+                })
 
         elif rel.relation == "evaluatedBy":
-            disease_ent = subj if subj.entity_type == "Disease" else (
-                obj if obj.entity_type == "Disease" else None)
+            condition_ent = subj if subj.entity_type == "Condition" else (
+                obj if obj.entity_type == "Condition" else None)
             assess_ent = obj if obj.entity_type == "Assessment" else (
                 subj if subj.entity_type == "Assessment" else None)
             if not assess_ent:
                 continue
-            d_id = disease_ent.entity_id if disease_ent else default_disease_id
+            d_id = condition_ent.entity_id if condition_ent else default_condition_id
             key = (d_id, assess_ent.entity_id)
             if key in seen_assess:
                 continue
             seen_assess.add(key)
-            disease_assess_rows.append({"disease_id": d_id, "assessment_id": assess_ent.entity_id})
+            condition_assess_rows.append({"condition_id": d_id, "assessment_id": assess_ent.entity_id})
 
         elif rel.relation == "hasCause":
-            disease_ent = subj if subj.entity_type == "Disease" else (
-                obj if obj.entity_type == "Disease" else None)
+            condition_ent = subj if subj.entity_type == "Condition" else (
+                obj if obj.entity_type == "Condition" else None)
             cause_ent = obj if obj.entity_type == "Cause" else (
                 subj if subj.entity_type == "Cause" else None)
             if not cause_ent:
                 continue
-            d_id = disease_ent.entity_id if disease_ent else default_disease_id
+            d_id = condition_ent.entity_id if condition_ent else default_condition_id
             key = (d_id, cause_ent.entity_id)
             if key in seen_cause:
                 continue
             seen_cause.add(key)
-            disease_cause_rows.append({"disease_id": d_id, "cause_id": cause_ent.entity_id})
+            condition_cause_rows.append({"condition_id": d_id, "cause_id": cause_ent.entity_id})
 
     stats["S_treats"] = _write_csv(
         out_dir / "S_treats.csv",
-        ["treats_id", "disease_id", "therapy_id", "drug_id"],
-        treats_rows)
+        ["guideline_id", "treats_id", "condition_id", "therapy_id", "drug_id"],
+        _stamp(treats_rows, gid))
     stats["S_recommendation"] = _write_csv(
         out_dir / "S_recommendation.csv",
-        ["rec_id", "disease_id", "therapy_id", "drug_id"],
-        recommends_rows)
+        ["guideline_id", "rec_id", "condition_id", "therapy_id", "drug_id", "ae_id"],
+        _stamp(recommends_rows, gid))
     stats["S_drug_adverse_event"] = _write_csv(
         out_dir / "S_drug_adverse_event.csv",
-        ["drug_id", "ae_id"],
-        drug_ae_rows)
-    stats["S_disease_assessment"] = _write_csv(
-        out_dir / "S_disease_assessment.csv",
-        ["disease_id", "assessment_id"],
-        disease_assess_rows)
-    stats["S_disease_cause"] = _write_csv(
-        out_dir / "S_disease_cause.csv",
-        ["disease_id", "cause_id"],
-        disease_cause_rows)
+        ["guideline_id", "drug_id", "ae_id"],
+        _stamp(drug_ae_rows, gid))
+    stats["S_condition_assessment"] = _write_csv(
+        out_dir / "S_condition_assessment.csv",
+        ["guideline_id", "condition_id", "assessment_id"],
+        _stamp(condition_assess_rows, gid))
+    stats["S_condition_cause"] = _write_csv(
+        out_dir / "S_condition_cause.csv",
+        ["guideline_id", "condition_id", "cause_id"],
+        _stamp(condition_cause_rows, gid))
 
     return stats
-
-
-# ── Public orchestrator ─────────────────────────────────────────────────────
 
 def run_relation_extraction(
     run_dir: str | Path,
@@ -630,7 +678,6 @@ def run_relation_extraction(
     hf_token: str | None = None,
     batch_size: int = 4,
 ) -> dict:
-    """Full Step 4 pipeline: load entities, find passages, LLM extract, write CSVs."""
     import os
 
     run_dir = Path(run_dir)

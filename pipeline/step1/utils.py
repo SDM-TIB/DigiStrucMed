@@ -1,6 +1,4 @@
-"""
-Shared utilities for step 1 (JSON I/O and logging). Imported by step2/step3 as needed.
-"""
+"""Step 1 JSON I/O and logging (also used from step2/step3)."""
 import json
 from pathlib import Path
 from datetime import datetime

@@ -1,20 +1,7 @@
-"""
-Llama 3.1 disambiguation for UMLS entity linking (Step 3b).
+"""Step 3b: Llama disambiguation for ``needs_disambiguation`` rows in ``grounded_entities.json``.
 
-Reads ``grounded_entities.json`` produced by ``entity_link_sources`` (records with
-``linking_status == "needs_disambiguation"`` and non-empty ``cui_candidates``),
-calls the same local Hugging Face stack as ``scripts/step1e_disambiguate.py``,
-and writes:
-
-  - ``resolved_entities.json`` — full list; ``cui_candidates`` removed;
-    disambiguated rows get ``linking_status`` ``disambiguated`` or ``no_match_after_llm``
-  - ``disambiguation_report.json`` — counts
-  - Refreshes ``S_annotation_concept.csv`` via all rows with ``cui_final``
-
-Requires: ``HF_TOKEN`` in the environment (or ``--hf-token``) for gated Llama on the Hub;
-GPU recommended for ``hf_local`` (default).
-
-Colab: run ``pip install torch transformers accelerate`` then this module with repo root on ``sys.path``.
+Writes ``resolved_entities.json``, ``disambiguation_report.json``, and refreshes
+``S_annotation_concept.csv``. Needs ``HF_TOKEN`` (or ``--hf-token``) for gated Hub models.
 """
 from __future__ import annotations
 
@@ -36,6 +23,7 @@ from pipeline.step3._hf_llm import (  # noqa: E402
     probe_hf_local_backend,
 )
 
+from pipeline.step3.build_annotation_links import build_links_for_run  # noqa: E402
 from pipeline.step3.entity_link_sources import write_s_annotation_concept  # noqa: E402
 from pipeline.step1.utils import log, save_json  # noqa: E402
 
@@ -202,7 +190,6 @@ def _finalize_and_write(
     *,
     resolved: int,
 ) -> None:
-    # Refresh CSV while candidates still exist (for direct-link rows).
     n_csv = write_s_annotation_concept(shaped_dir, entities)
     for e in entities:
         e.pop("cui_candidates", None)
@@ -216,6 +203,12 @@ def _finalize_and_write(
         "with_cui_final": linked,
         "s_annotation_concept_rows": n_csv,
     }
+    try:
+        link_counts = build_links_for_run(shaped_dir.parent.resolve())
+        if link_counts:
+            rep["annotation_link_csvs"] = link_counts
+    except Exception as exc:
+        log("3b", f"annotation link CSVs skipped: {exc}")
     save_json(rep, str(report_dir / "disambiguation_report.json"))
     log(
         "3b",
@@ -225,7 +218,7 @@ def _finalize_and_write(
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description="Llama UMLS disambiguation (Step 3b).")
     ap.add_argument(
         "--grounded",
         type=Path,

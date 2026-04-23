@@ -1,13 +1,4 @@
-﻿"""
-Shared Hugging Face LLM helpers for Step 1e (disambiguation) and Step 3b (SPO).
-
-Modes
------
-hf_local     ÔÇö Load a causal LM from the Hub (Llama 3, etc.). Requires HF_TOKEN
-               for gated models. Model stays cached in-process after first load.
-
-hf_inference ÔÇö Serverless Inference API (no local GPU). Same token; calls Hub.
-"""
+"""HF helpers: local causal LM (``hf_local``) and optional Inference API (``hf_inference``)."""
 from __future__ import annotations
 
 import json
@@ -15,15 +6,10 @@ import re
 import traceback
 from typing import Any, Optional
 
-# One cached (tokenizer, model) per (model_id, token) for local mode
 _local_cache: dict[tuple[str, str | None], tuple[Any, Any]] = {}
 
 
 def check_hf_local_backend() -> Optional[str]:
-    """
-    Return None when local HF generation dependencies look usable, otherwise
-    return a human-readable error message describing the first failure.
-    """
     try:
         import torch  # noqa: F401
     except Exception as exc:
@@ -44,10 +30,6 @@ def check_hf_local_backend() -> Optional[str]:
 
 
 def format_exception(exc: BaseException) -> str:
-    """
-    Produce a compact but informative exception string.
-    Some HF/torch exceptions stringify to "", so fall back to repr().
-    """
     text = str(exc).strip()
     if text:
         return f"{type(exc).__name__}: {text}"
@@ -59,10 +41,6 @@ def probe_hf_local_backend(
     hf_token: Optional[str],
     max_new_tokens: int = 8,
 ) -> Optional[str]:
-    """
-    End-to-end smoke test for local generation.
-    Returns None on success, otherwise a readable failure summary.
-    """
     dep_error = check_hf_local_backend()
     if dep_error:
         return dep_error
@@ -83,11 +61,6 @@ def probe_hf_local_backend(
 
 
 def _pick_torch_dtype(torch) -> Any:
-    """
-    Choose a local-generation dtype that is broadly compatible with Colab GPUs.
-
-    T4/V100 often do not support bfloat16 well; float16 is the safer CUDA default.
-    """
     if not torch.cuda.is_available():
         return torch.float32
     if torch.cuda.is_bf16_supported():
@@ -120,10 +93,6 @@ def _get_local_model(model_id: str, hf_token: Optional[str]) -> tuple[Any, Any]:
 
 
 def _model_input_device(model: Any) -> Any:
-    """
-    Device for input_ids / attention_mask.
-    device_map='auto' models often lack .device; prefer embedding weights, then any parameter.
-    """
     import torch
 
     try:
@@ -140,7 +109,6 @@ def _model_input_device(model: Any) -> Any:
 
 
 def _generation_sequences(out: Any, torch: Any) -> Any:
-    """Handle raw LongTensor vs GenerateOutput / ModelOutput with .sequences."""
     if torch.is_tensor(out):
         return out
     seq = getattr(out, "sequences", None)
@@ -150,7 +118,6 @@ def _generation_sequences(out: Any, torch: Any) -> Any:
 
 
 def _tokenize_chat_prompt_ids(tok: Any, prompt: str, torch: Any) -> Any:
-    """CPU 1-D LongTensor of token ids for one user message (chat template if present)."""
     messages = [{"role": "user", "content": prompt}]
     if getattr(tok, "chat_template", None) is not None:
         try:
@@ -184,7 +151,6 @@ def hf_local_generate(
     hf_token: Optional[str],
     max_new_tokens: int = 256,
 ) -> str:
-    """Generate with a locally loaded HF causal LM (Llama 3, Mistral, etc.)."""
     import torch
 
     tok, model = _get_local_model(model_id, hf_token)
@@ -224,10 +190,6 @@ def hf_local_generate_batch(
     hf_token: Optional[str],
     max_new_tokens: int = 256,
 ) -> list[str]:
-    """
-    Batched greedy generation for the same model. Left-pads prompts to one tensor.
-    Returns one decoded string per prompt (new tokens only).
-    """
     if not prompts:
         return []
 
@@ -302,10 +264,6 @@ def hf_inference_chat(
     hf_token: Optional[str],
     max_new_tokens: int = 256,
 ) -> str:
-    """
-    Hugging Face Serverless Inference API (chat completions).
-    No GPU required; uses your HF token quota.
-    """
     try:
         from huggingface_hub import InferenceClient
     except ImportError as e:
@@ -335,7 +293,6 @@ def hf_inference_text_generation(
     hf_token: Optional[str],
     max_new_tokens: int = 256,
 ) -> str:
-    """Fallback: text_generation endpoint for completion-style models."""
     from huggingface_hub import InferenceClient
 
     client = InferenceClient(model=model_id, token=hf_token)
@@ -347,7 +304,6 @@ def hf_inference_text_generation(
 
 
 def parse_cui_answer(raw: str) -> str:
-    """Extract a UMLS CUI (C + 7 digits) or NO_MATCH from model output."""
     if not raw:
         return "NO_MATCH"
     up = raw.upper()
@@ -360,7 +316,6 @@ def parse_cui_answer(raw: str) -> str:
 
 
 def parse_json_array(raw: str) -> list:
-    """Best-effort parse of JSON array from LLM output (strips markdown fences)."""
     t = raw.strip()
     if t.startswith("```"):
         t = re.sub(r"^```(?:json)?\s*", "", t)

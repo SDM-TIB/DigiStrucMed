@@ -1,28 +1,4 @@
-"""
-Step 1a — Text Extraction
-─────────────────────────────────────────────────────────────────────────────
-Input  : PDF file path
-Output : <output_dir>/text_blocks.json
-         Each record: { page, source_file, text }
-
-Versions
---------
-v1 (default) — PyMuPDF with full noise-filtering:
-  • Two-column layout detection (gap-based, no hard-coded margins)
-  • Automatic references-section cutoff
-  • Header / footer stripping (bbox-based)
-  • Side-margin block removal
-  • TOC (dot-leader) removal
-  • URL / download-citation stripping
-  • De-hyphenation across line breaks
-  • Incomplete-paragraph merging
-  • Abbreviation / all-caps page detection and drop
-
-v2 — Docling (proven for complex PDF layouts; same output schema)
-  docling proved itself a lot — use when v1 misses multi-column content or
-  has layout parsing issues.
-─────────────────────────────────────────────────────────────────────────────
-"""
+"""Step 1a: text to ``text_blocks.json`` (v1: PyMuPDF; v2: Docling — pair with ``extract_tables`` version)."""
 from __future__ import annotations
 
 import re
@@ -32,8 +8,6 @@ from typing import Dict, List, Optional, Tuple
 
 import fitz  # PyMuPDF
 
-# Support `python -m pipeline.step1.extract_text` and
-# `python pipeline/step1/extract_text.py` from the repo root.
 if __package__ in (None, ""):
     import sys
 
@@ -43,12 +17,6 @@ if __package__ in (None, ""):
 
 from pipeline.step1.utils import log, save_json
 
-
-# ── Shared constants ─────────────────────────────────────────────────────────
-
-# Heart-failure domain acronyms — expanded BEFORE NER so the model sees full
-# medical terms rather than abbreviations it may not have been trained on.
-# Keep in sync with pipeline/data/heart_failure_acronyms.json
 _HF_ACRONYMS: Dict[str, str] = {
     "HFrEF": "heart failure with reduced ejection fraction",
     "HFmrEF": "heart failure with mildly reduced ejection fraction",
@@ -102,14 +70,7 @@ def _expand_acronyms(text: str) -> str:
         text = re.sub(pattern, expansion, text)
     return text
 
-
-# ── v1: PyMuPDF extractor ────────────────────────────────────────────────────
-
 class _ExtractorV1:
-    """
-    Full-featured PyMuPDF extractor ported from pipeline/transforms/extract_text.py.
-    All class machinery is internal; the public API is extract_text().
-    """
 
     # Heuristic windows (not “skipped pages”): block/page filters near start / end.
     _FRONT_ZONE_PAGES = 8
@@ -118,8 +79,6 @@ class _ExtractorV1:
     def __init__(self, min_chars: int) -> None:
         self.min_chars = min_chars
         self._compile_patterns()
-
-    # ── Pattern compilation ──────────────────────────────────────────────────
 
     def _compile_patterns(self) -> None:
         self.url_pat = re.compile(
@@ -156,8 +115,6 @@ class _ExtractorV1:
             r"shall be)\s*$",
             re.IGNORECASE,
         )
-
-    # ── Text cleaning ────────────────────────────────────────────────────────
 
     def _remove_control(self, text: str) -> str:
         return "".join(
@@ -207,8 +164,6 @@ class _ExtractorV1:
             merged.append(p)
             i += 1
         return sep.join(merged)
-
-    # ── Block-level filters ──────────────────────────────────────────────────
 
     def _get_raw_blocks(self, page) -> List[Dict]:
         blocks = []
@@ -357,8 +312,6 @@ class _ExtractorV1:
             return False
         return True
 
-    # ── Page-level filters ───────────────────────────────────────────────────
-
     def _should_drop_page(
         self, page_text: str, page_blocks: List[str], page_num: int, total_pages: int
     ) -> bool:
@@ -387,8 +340,6 @@ class _ExtractorV1:
             if total_lines >= 8 and ref_lines / max(1, total_lines) >= 0.85:
                 return True
         return False
-
-    # ── References cutoff ────────────────────────────────────────────────────
 
     def _detect_references_cutoff(self, doc) -> Optional[int]:
         total = len(doc)
@@ -430,8 +381,6 @@ class _ExtractorV1:
         if consec >= 3 and earliest is not None:
             return earliest
         return None
-
-    # ── Main extraction ──────────────────────────────────────────────────────
 
     def extract(self, pdf_path: str) -> List[Dict]:
         source_name = Path(pdf_path).name
@@ -482,15 +431,7 @@ class _ExtractorV1:
 
         return pages
 
-
-# ── v2: Docling extractor ────────────────────────────────────────────────────
-
 class _ExtractorV2:
-    """
-    Docling-based extractor ported from pipeline/transforms/extract_text_v2.py.
-    Docling is preferred for complex layouts (multi-column, mixed tables+text)
-    because it models the document structure before rendering text.
-    """
 
     def __init__(self, min_chars: int) -> None:
         self.min_chars = min_chars
@@ -534,28 +475,12 @@ class _ExtractorV2:
 
         return pages_out
 
-
-# ── Public entry-point ───────────────────────────────────────────────────────
-
 def extract_text(
     pdf_path: str,
     output_dir: str = "outputs/step1",
     min_chars: int = 80,
     version: str = "v1",
 ) -> List[Dict]:
-    """
-    Extract page-level text blocks from a PDF.
-
-    Parameters
-    ----------
-    pdf_path   : path to the source PDF
-    output_dir : directory for text_blocks.json
-    min_chars  : minimum characters to keep a page block
-    version    : 'v1' (PyMuPDF, full noise filtering)
-               | 'v2' (Docling, better for complex layouts)
-
-    Returns list of { page, source_file, text } and writes text_blocks.json.
-    """
     log("1a", f"Extracting text from {pdf_path} [version={version}]")
 
     if version == "v2":

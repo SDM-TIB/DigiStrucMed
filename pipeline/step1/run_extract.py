@@ -1,12 +1,4 @@
-"""
-Step 1 runner — extract text and tables from a PDF.
-
-Defaults target ``outputs/pipeline-output18/step1`` (override with ``--out``).
-
-Usage (repo root):
-  python -m pipeline.step1.run_extract
-  python -m pipeline.step1.run_extract path/to/other.pdf --version v2
-"""
+"""Step 1: extract text + tables from a PDF into ``--out`` (default ``outputs/pipeline-output18/step1``)."""
 from __future__ import annotations
 
 import argparse
@@ -19,7 +11,7 @@ DEFAULT_PDF = Path("input") / "Heidenreich, 2022, AHA,ACC,HFSA guidelines.pdf"
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description="Step 1: PDF text + table extraction.")
     ap.add_argument("pdf", nargs="?", type=Path, default=DEFAULT_PDF)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT, help="step1 output directory")
     ap.add_argument("--version", choices=["v1", "v2"], default="v1")

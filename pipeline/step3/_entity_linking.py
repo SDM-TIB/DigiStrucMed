@@ -1,26 +1,6 @@
-"""
-Step 1d ÔÇö Entity Linking  [SYMBOLIC]
-ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
-Input  : outputs/step1/entity_mentions.json   (from Step 1c)
-         UMLS background knowledge CSV         (cui, label, semantic_type,
-                                                definition)
-Output : outputs/step1/grounded_entities.json
-         Each record inherits Step 1c fields plus:
-           { cui_candidates: [{cui, label, semantic_type, definition, sim}],
-             cui_final: str | None,
-             linking_status: "direct" | "needs_disambiguation" | "no_match" }
+"""UMLS linking core: inverted index + fuzzy scoring; optional ``outputs/cache`` pickle.
 
-Hybrid (symbolic + neural is split across steps):
-  ┬À Step 1d ÔÇö Rule-based candidate generation: token inverted index over UMLS
-    labels + fuzzy scores on a bounded candidate set only (no full-BK scan).
-    Cheap heuristics decide direct link vs unresolved.
-  ┬À Step 1e ÔÇö AI ambiguity resolution: LLM runs only for mentions with
-    linking_status == needs_disambiguation, choosing among the candidate list
-    from 1d (see step1e_disambiguate.py).
-
-  Optional disk cache: after the first CSV load + index build, the BK and index
-  are stored under outputs/cache/ so later runs skip re-reading millions of rows.
-ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Bump ``_UMLS_LINKING_CACHE_VERSION`` when BK/index shape or logic changes.
 """
 from __future__ import annotations
 
@@ -40,7 +20,7 @@ from pipeline.step1.utils import log, save_json
 
 DEFAULT_SIM_THRESHOLD = 0.96
 DEFAULT_TOP_K = 15
-# Max BK rows to score per mention after index retrieval (avoids O(mentions ├ù |BK|))
+# Max BK rows to score per mention after index retrieval.
 DEFAULT_MAX_SCORE = 12_000
 DEFAULT_CACHE_DIR = "outputs/cache"
 # Bump when BK row shape / index logic changes (invalidates old .pkl.gz caches).

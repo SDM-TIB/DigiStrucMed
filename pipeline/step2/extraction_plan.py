@@ -1,24 +1,9 @@
-"""
-extraction_plan.py — Ontology-driven extraction plan builder.
-
-Reads the OWL/TTL ontology and produces a JSON plan of:
-  - classes (with hierarchy)
-  - object & datatype properties (with domain/range)
-  - canonical target sources (ontology-shaped CSVs)
-  - role_hints: header/caption patterns for automatic table-role detection
-
-This plan is GUIDELINE-AGNOSTIC: it derives targets from the ontology alone.
-Individual normalizers use the plan to decide what to extract.
-
-Lecture 9 grounding: ⟨O, S, M⟩ — the ontology O defines the target schema,
-the sources S are populated by the normalizer, and mappings M (RML) are
-written against the stable canonical sources.
-"""
+"""Build ontology-driven ``extraction_plan.json`` (classes, properties, role_hints, sources)."""
 from __future__ import annotations
 
 import argparse
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
@@ -28,24 +13,13 @@ from rdflib import Graph, Namespace, RDF, RDFS, OWL, URIRef
 EX = Namespace("http://digistructmed.org/ontology/")
 
 
-def _load_config(config_path=None):
-    """Load guideline-specific configuration from JSON file."""
-    if config_path is None:
-        config_path = Path(__file__).parent / "guideline_config.json"
-    else:
-        config_path = Path(config_path)
-    if config_path.exists():
-        return json.loads(config_path.read_text(encoding="utf-8"))
-    return {}
-
-
 @dataclass(frozen=True)
 class PropRow:
     iri: str
     label: str | None
     domain: str | None
     range: str | None
-    kind: str  # "object" | "datatype"
+    kind: str  # "object" | "datatype" | "general"
 
 
 def _qname_or_str(g: Graph, iri: URIRef) -> str:
@@ -78,24 +52,11 @@ def _iter_props(g: Graph, rdf_type: URIRef, kind: str) -> Iterable[PropRow]:
         )
 
 
-def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
-    """
-    Build a compact, ontology-driven extraction plan.
-    """
-    cfg = _load_config(config_path)
-    disease_abbrevs = cfg.get("disease", {}).get("abbreviations", [])
-    disease_name = cfg.get("disease", {}).get("disease_name", "the target disease")
-    staging_systems = cfg.get("detection_hints", {}).get("staging_systems", [])
-    pheno_headers = cfg.get("detection_hints", {}).get("phenotype_header_terms", ["phenotype"])
-    pheno_captions = cfg.get("detection_hints", {}).get("phenotype_caption_terms", [])
-    mcs_kw = cfg.get("detection_hints", {}).get("mcs_keywords", [])
-    orgs = cfg.get("guideline_organizations", [])
-
+def build_extraction_plan(ontology_path: str) -> dict:
     g = Graph()
     g.parse(ontology_path, format="turtle")
 
     classes: list[dict] = []
-    # Support both owl:Class and rdfs:Class
     class_iris = set()
     for c in g.subjects(RDF.type, OWL.Class):
         if isinstance(c, URIRef):
@@ -125,21 +86,17 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
 
     obj_props = sorted(_iter_props(g, OWL.ObjectProperty, "object"), key=lambda r: r.iri)
     dt_props = sorted(_iter_props(g, OWL.DatatypeProperty, "datatype"), key=lambda r: r.iri)
-    # Also check rdf:Property (used in new ontology style)
     rdf_props = sorted(_iter_props(g, RDF.Property, "general"), key=lambda r: r.iri)
 
-    # Canonical target sources — ontology-shaped CSVs.
-    # Each source corresponds to a class or a link table for an object property.
     canonical_sources = [
-        # Entity tables
         {"name": "S_guideline.csv", "class": "ex:Guideline",
          "fields": ["guideline_id", "guidelineTitle", "guidelineSource", "guidelineDate"]},
         {"name": "S_recommendation.csv", "class": "ex:Recommendation",
          "fields": ["rec_id", "recommendationText"]},
         {"name": "S_stage.csv", "class": "ex:Stage",
          "fields": ["stage_id", "stageScheme", "stageLevel", "stageName", "StageCriteriaText"]},
-        {"name": "S_disease.csv", "class": "ex:Disease",
-         "fields": ["disease_id", "diseaseName"]},
+        {"name": "S_condition.csv", "class": "ex:Condition",
+         "fields": ["condition_id", "conditionName"]},
         {"name": "S_drug.csv", "class": "ex:Drug",
          "fields": ["drug_id", "agentName", "drugCategory", "minDose", "maxDose", "duration"]},
         {"name": "S_therapy.csv", "class": "ex:Therapy",
@@ -154,34 +111,25 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
          "fields": ["phenotype_id", "phenotypeCode", "phenotypeCriteria"]},
         {"name": "S_annotation_concept.csv", "class": "ex:AnnotationConcept",
          "fields": ["concept_id", "conceptName"]},
-        # Reification tables (n-ary relationships)
         {"name": "S_contains.csv", "class": "ex:Contains",
-         "fields": ["contains_id", "guideline_id", "disease_id", "rec_id"]},
+         "fields": ["contains_id", "guideline_id", "condition_id", "rec_id"]},
         {"name": "S_treats.csv", "class": "ex:Treats",
-         "fields": ["treats_id", "disease_id", "therapy_id", "drug_id"]},
-        # Link tables (binary object properties)
-        {"name": "S_disease_stage.csv", "property": "ex:hasStage",
-         "fields": ["disease_id", "stage_id"]},
-        {"name": "S_disease_cause.csv", "property": "ex:hasCause",
-         "fields": ["disease_id", "cause_id"]},
-        {"name": "S_disease_phenotype.csv", "property": "ex:hasPhenotype",
-         "fields": ["disease_id", "phenotype_id"]},
-        {"name": "S_disease_assessment.csv", "property": "ex:evaluatedBy",
-         "fields": ["disease_id", "assessment_id"]},
+         "fields": ["treats_id", "condition_id", "therapy_id", "drug_id"]},
+        {"name": "S_condition_stage.csv", "property": "ex:hasStage",
+         "fields": ["condition_id", "stage_id"]},
+        {"name": "S_condition_cause.csv", "property": "ex:hasCause",
+         "fields": ["condition_id", "cause_id"]},
+        {"name": "S_condition_phenotype.csv", "property": "ex:hasPhenotype",
+         "fields": ["condition_id", "phenotype_id"]},
+        {"name": "S_condition_assessment.csv", "property": "ex:evaluatedBy",
+         "fields": ["condition_id", "assessment_id"]},
         {"name": "S_drug_adverse_event.csv", "property": "ex:hasAdverseEvent",
          "fields": ["drug_id", "ae_id"]},
-        # Passthrough for unmatched tables
         {"name": "S_unmatched/", "class": "PASSTHROUGH",
          "fields": ["original_csv_copied_with_metadata"]},
     ]
 
-    # Role hints — guideline-agnostic header/caption patterns used by
-    # normalize_tables.py to classify tables into ontology roles.
-    # These are OPEN patterns (substring/regex), NOT hardcoded table IDs.
-    # Build disease-aware role hints from config
-    _abbr_lower = [a.lower() for a in disease_abbrevs]
-    _orgs_lower = [o.lower() for o in orgs]
-
+    # Generic clinical guideline role hints (no disease-specific terms)
     role_hints = {
         "recommendation": {
             "description": "Guideline recommendation text tables",
@@ -192,31 +140,31 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
         "drug_dosing": {
             "description": "Drug dosing tables with initial/target doses",
             "header_patterns": ["drug", "dose", "initial", "target"],
-            "caption_patterns": ["drug", "dose"] + cfg.get("detection_hints", {}).get("drug_dosing_caption_extras", []),
+            "caption_patterns": ["drug", "dose"],
         },
         "harmful_drug": {
-            "description": f"Drugs that may cause or exacerbate {disease_name}",
+            "description": "Drugs that may cause or exacerbate a condition",
             "header_patterns": ["drug", "therapeutic class", "magnitude", "mechanism"],
             "caption_patterns": ["harm", "exacerbat", "cause or"],
         },
         "stage": {
-            "description": f"Disease stage definitions ({', '.join(staging_systems[:3])})",
+            "description": "Condition stage definitions",
             "header_patterns": ["stage", "definition", "criteria"],
             "caption_patterns": ["stage"],
         },
         "phenotype": {
-            "description": f"{disease_name} phenotype classification",
-            "header_patterns": pheno_headers + ["criteria"],
-            "caption_patterns": pheno_captions + ["phenotype"],
+            "description": "Condition phenotype classification",
+            "header_patterns": ["phenotype", "criteria"],
+            "caption_patterns": ["classification", "phenotype"],
         },
         "cause": {
-            "description": f"Causes or etiologies of {disease_name}",
+            "description": "Causes or etiologies of a condition",
             "header_patterns": ["cause", "etiology", "aetiology"],
             "caption_patterns": ["cause", "etiolog", "aetiolog"],
         },
         "comorbidity": {
             "description": "Co-occurring conditions and prevalence",
-            "header_patterns": ["beneficiar", "condition", "prevalence", "n", "%"],
+            "header_patterns": ["condition", "prevalence"],
             "caption_patterns": ["co-occur", "comorbidit", "chronic condition"],
         },
         "risk_score": {
@@ -225,9 +173,9 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
             "caption_patterns": ["risk score", "predict"],
         },
         "staging_classification": {
-            "description": f"Clinical staging systems ({', '.join(staging_systems[:4])})",
-            "header_patterns": ["profile", "description", "features", "bedside", "hemodynamics"],
-            "caption_patterns": staging_systems,
+            "description": "Clinical staging systems",
+            "header_patterns": ["profile", "description", "features", "hemodynamics"],
+            "caption_patterns": ["profile", "staging"],
         },
         "self_care_barrier": {
             "description": "Self-care barriers with screening tools and interventions",
@@ -236,11 +184,11 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
         },
         "vulnerable_population": {
             "description": "Risk and outcomes in special populations",
-            "header_patterns": ["vulnerable", "population"] + [f"risk of {a.lower()}" for a in disease_abbrevs[:1]] + ["outcome"],
+            "header_patterns": ["vulnerable", "population", "outcome"],
             "caption_patterns": ["vulnerable", "special population", "disparit"],
         },
         "therapy_benefit": {
-            "description": "Evidence-based therapy benefit comparison (NNT, RRR)",
+            "description": "Evidence-based therapy benefit comparison",
             "header_patterns": ["nnt", "relative risk", "evidence-based therapy", "mortality"],
             "caption_patterns": ["benefit", "evidence-based", "nnt"],
         },
@@ -255,7 +203,7 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
             "caption_patterns": ["cancer therap", "cardiotox", "cardiomyopathy"],
         },
         "pregnancy_management": {
-            "description": f"{disease_name} management across pregnancy continuum",
+            "description": "Condition management across pregnancy continuum",
             "header_patterns": ["preconception", "during pregnancy", "postpartum"],
             "caption_patterns": ["pregnancy"],
         },
@@ -265,7 +213,7 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
             "caption_patterns": ["genetic", "cardiomyopathy"],
         },
         "precipitating_factor": {
-            "description": f"Common factors precipitating {disease_name} hospitalization",
+            "description": "Common factors precipitating hospitalization",
             "header_patterns": [],
             "caption_patterns": ["precipitat", "factor"],
         },
@@ -284,20 +232,20 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
             "header_patterns": ["transitional", "care plan"],
             "caption_patterns": ["transitional", "care plan"],
         },
-        "advanced_hf_definition": {
-            "description": f"Definitions and criteria for advanced {disease_name}",
+        "advanced_definition": {
+            "description": "Definitions and criteria for advanced condition",
             "header_patterns": ["criteria", "guideline-directed"],
-            "caption_patterns": [f"advanced {a.lower()}" for a in disease_abbrevs[:1]] + ["definition of advanced"],
+            "caption_patterns": ["advanced", "definition of advanced"],
         },
         "mcs_indication": {
-            "description": "MCS indications and contraindications",
+            "description": "Mechanical circulatory support indications",
             "header_patterns": ["indication", "contraindication"],
-            "caption_patterns": mcs_kw,
+            "caption_patterns": ["mechanical", "durable", "support"],
         },
         "clinical_indicator": {
-            "description": f"Clinical indicators of advanced {disease_name}",
+            "description": "Clinical indicators of advanced condition",
             "header_patterns": ["repeated hospitalization", "refractory"],
-            "caption_patterns": ["clinical indicator"] + [f"advanced {a.lower()}" for a in disease_abbrevs[:1]],
+            "caption_patterns": ["clinical indicator", "advanced"],
         },
         "shock_criteria": {
             "description": "Cardiogenic shock clinical/hemodynamic criteria",
@@ -310,14 +258,15 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
             "caption_patterns": ["natriuretic peptide", "elevated"],
         },
         "associated_guideline": {
-            "description": "Cross-reference to other associated guidelines",
+            "description": "Cross-reference to other guidelines",
             "header_patterns": ["title", "organization", "publication year"],
-            "caption_patterns": ["associated guideline"] + [f"other {'/'.join(_orgs_lower[:2])}"] if _orgs_lower else ["associated guideline"],
+            "caption_patterns": ["associated guideline"],
         },
     }
 
     return {
         "ontology_path": str(Path(ontology_path)),
+        "version": "v2-generic",
         "classes": sorted(classes, key=lambda x: x["qname"]),
         "properties": {
             "object": [r.__dict__ for r in obj_props],
@@ -327,10 +276,9 @@ def build_extraction_plan(ontology_path: str, config_path: str = None) -> dict:
         "canonical_sources": canonical_sources,
         "role_hints": role_hints,
         "notes": [
-            "This plan is ontology-driven: it lists the target classes and slots (properties) to populate.",
-            "role_hints provide guideline-agnostic patterns for classifying extracted tables.",
-            "Unmatched tables are preserved in S_unmatched/ as passthrough for manual review.",
-            "The canonical_sources list is a guideline-agnostic target schema.",
+            "This plan is purely ontology-driven with no guideline-specific config.",
+            "Role hints use generic clinical guideline vocabulary only.",
+            "Condition identity and metadata are extracted from the document at runtime.",
         ],
     }
 
@@ -339,10 +287,9 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ontology", default="ontology.ttl")
     ap.add_argument("--out", required=True, help="Path to write extraction_plan.json")
-    ap.add_argument("--config", default=None, help="Path to guideline_config.json")
     args = ap.parse_args()
 
-    plan = build_extraction_plan(args.ontology, config_path=args.config)
+    plan = build_extraction_plan(args.ontology)
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(plan, indent=2, ensure_ascii=False), encoding="utf-8")

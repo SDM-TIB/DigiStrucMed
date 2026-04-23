@@ -1,31 +1,4 @@
-"""
-Step 1b — Table Extraction
-─────────────────────────────────────────────────────────────────────────────
-Input  : PDF file path
-Output : <output_dir>/tables/<table_id>.csv   (one CSV per table)
-         <output_dir>/table_index.json
-         Each index record: { table_id, page, source_file, csv_path,
-                               caption, headers, row_count }
-
-Versions
---------
-v1 (default) — pdfplumber (table detection) + PyMuPDF (bbox caption lookup)
-  • Finds table regions with pdfplumber's layout engine
-  • Matches caption text blocks above/below each table using bounding boxes
-  • Best for simple PDF layouts with clear table borders
-
-v2 — Docling
-  • Uses Docling's document model to detect and extract tables structurally
-  • Docling understands nested headers, merged cells, and complex layouts
-  • Should be used together with extract_text version="v2" so both steps share the
-    same Docling-parsed document representation
-  • Caption comes from Docling's table.label / table.caption attributes
-
-Use matching versions for extract_text and extract_tables:
-  extract_text v1 + extract_tables v1   (PyMuPDF text + pdfplumber tables)
-  extract_text v2 + extract_tables v2   (Docling text + Docling tables)
-─────────────────────────────────────────────────────────────────────────────
-"""
+"""Step 1b: table extraction (v1: pdfplumber+PyMuPDF; v2: Docling — match ``extract_text`` version)."""
 from __future__ import annotations
 
 import csv
@@ -46,9 +19,6 @@ if __package__ in (None, ""):
 
 from pipeline.step1.utils import log, save_json
 
-
-# ── Shared constants ─────────────────────────────────────────────────────────
-
 _CAPTION_STRICT = re.compile(
     r"^\s*(?:Table|TABLE)\s+\d+[.\s—:\-]+(.+)$",
     re.IGNORECASE,
@@ -62,9 +32,6 @@ _CAPTION_TOLERANCE    = 25.0
 _CAPTION_BELOW_MARGIN = 120.0
 _CAPTION_ABOVE_MARGIN = 220.0
 _MIN_TABLE_CHARS      = 50
-
-
-# ── v1 helpers: PyMuPDF + pdfplumber ────────────────────────────────────────
 
 def _get_page_blocks(page) -> List[Dict]:
     blocks = []
@@ -83,11 +50,6 @@ def _find_caption(
     table_bbox: Tuple[float, float, float, float],
     page_blocks: List[Dict],
 ) -> str:
-    """
-    Locate the caption for a table by searching PyMuPDF text blocks above and
-    below the table's bounding box.  Priority: strict match above → strict below
-    → loose match closest above.
-    """
     tx0, ttop, tx1, tbottom = table_bbox
     tol = _CAPTION_TOLERANCE
 
@@ -133,15 +95,11 @@ def _clean_rows(raw: List[List]) -> List[List[str]]:
             rows.append(cells)
     return rows
 
-
-# ── v1 extraction ────────────────────────────────────────────────────────────
-
 def _extract_v1(
     pdf_path: str,
     tables_dir: Path,
     source_name: str,
 ) -> List[Dict]:
-    """pdfplumber table detection + PyMuPDF bbox caption lookup."""
     table_index: List[Dict] = []
 
     with fitz.open(pdf_path) as fitz_doc:
@@ -198,18 +156,7 @@ def _extract_v1(
 
     return table_index
 
-
-# ── v2 extraction (Docling) ──────────────────────────────────────────────────
-
 def _docling_rows(table, ddoc) -> Optional[List[List[str]]]:
-    """
-    Extract rows from a Docling TableItem.
-
-    Tries multiple Docling API shapes (the API evolves across versions):
-      1. table.export_to_dataframe(doc=ddoc) — Docling ≤ 1.x
-      2. table.export_to_dataframe()          — Docling ≥ 2.x
-      3. table.export_to_csv()                — fallback text path
-    """
     # Attempt 1 & 2: DataFrame export
     for kwargs in [{"doc": ddoc}, {}]:
         try:
@@ -310,37 +257,11 @@ def _extract_v2(
 
     return table_index
 
-
-# ── Public entry-point ───────────────────────────────────────────────────────
-
 def extract_tables(
     pdf_path: str,
     output_dir: str = "outputs/step1",
     version: str = "v1",
 ) -> List[Dict]:
-    """
-    Extract tables from a PDF into individual CSV files with caption metadata.
-
-    Parameters
-    ----------
-    pdf_path   : path to source PDF
-    output_dir : directory for CSVs and table_index.json
-    version    : 'v1' (pdfplumber + PyMuPDF bbox captions)
-               | 'v2' (Docling — use with extract_text version='v2')
-
-    Returns the table index (list of metadata dicts) and writes:
-    - one CSV per table  → outputs/step1/tables/<table_id>.csv
-    - table_index.json   → outputs/step1/table_index.json
-
-    Each index record:
-        table_id    : unique ID  e.g. "table_p12_0"
-        page        : 1-based page number
-        source_file : PDF filename
-        csv_path    : path to CSV file
-        caption     : detected table caption (empty string if not found)
-        headers     : first row as list of strings
-        row_count   : number of data rows (excluding header)
-    """
     tables_dir = Path(output_dir) / "tables"
     tables_dir.mkdir(parents=True, exist_ok=True)
     source_name = Path(pdf_path).name

@@ -4,10 +4,10 @@ Ontology-driven normalization following the ⟨O, S, M⟩ paradigm. All runnable
 
 ## Layout
 
-- **`normalize_tables.py`**, **`normalize_text.py`** — v1 config-aware normalizers (`guideline_config.json` in this folder).
-- **`normalize_tables_v2.py`**, **`normalize_text_v2.py`** — generic v2 normalizers.
-- **`run_normalize.py`** — run v1 table + text normalization (default run: `outputs/pipeline-output18`).
-- **`extraction_plan.py`**, **`extraction_plan_v2.py`**, **`guideline_config.json`** — plan builder + config.
+- **`normalize_tables.py`**, **`normalize_text.py`** — generic ontology-driven normalizers.
+- **`run_normalize.py`** — run table + text normalization (default run: `outputs/pipeline-output2`).
+- **`extraction_plan.py`** — builds `extraction_plan.json` from the ontology TTL.
+- **`validate_entities_llm.py`** — optional Llama-based entity validation, runs after the normalizers.
 
 ## Commands
 
@@ -28,8 +28,8 @@ See `pipeline/step3/` — `python -m pipeline.step3.run_step3` and `COLAB_Step3_
 ### Architecture (normalizers)
 
 1. **`extraction_plan.py`** reads the ontology TTL and produces `extraction_plan.json` (classes, properties, `role_hints`).
-2. **`normalize_tables.py`** classifies every extracted table into a role and writes ontology-shaped CSVs.
-3. **`normalize_text.py`** fills text slots (assessments, adverse events, etc.).
+2. **`normalize_tables.py`** classifies every extracted table into a role and writes ontology-shaped CSVs (each row is stamped with `guideline_id` for provenance).
+3. **`normalize_text.py`** fills text slots (assessments, adverse events, etc.), also stamped with `guideline_id`.
 
 ### PDF extraction (before step 2)
 
@@ -44,4 +44,4 @@ python -m pipeline.step1.extract_tables --out outputs/my-run/step1 --version v2
 
 ### Output layout (`step2/`)
 
-`S_recommendation.csv`, `S_drug.csv`, `S_disease_stage.csv`, `S_phenotype.csv`, `S_cause.csv`, link CSVs, `S_assessment.csv`, `references/S_reference_*.csv`, `S_unmatched/`, `normalization_report.json`, etc.
+`S_recommendation.csv`, `S_drug.csv`, `S_condition_stage.csv`, `S_phenotype.csv`, `S_cause.csv`, link CSVs, `S_assessment.csv`, `references/S_reference_*.csv`, `S_unmatched/`, `normalization_report.json`, etc.
