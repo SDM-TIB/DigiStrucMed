@@ -1,0 +1,43 @@
+QuestionId,QuestionBody,QuestionnarieId,SectionId
+M002_01,wie Hilfreich: Wie hilfreich fanden Sie die Inhalte des Moduls?,ME1,
+M003_01,Fragenbeantwortung: Wurden all Ihre Fragen zum Thema ausreichend beantwortet?,ME1,
+M004_01,Verst�ndnis: Wie gut haben Sie den Stoff der einzelnen Lektionen verstanden?,ME1,
+M005,Medienart,ME1,
+M006_01,Gesamterfahrung: Wie w�rden Sie die Gesamterfahrung mit den zur Verf�gung gestellten Inhalten in diesem Modul bewerten?,ME1,
+M007_01,Freitext positiv: Hier k�nnen Sie Ihre Antwort verfassen,ME1,
+M008_01,Freitext W�nsche: Hier k�nnen Sie Ihre Antwort verfassen,ME1,
+M010_01,neue Erkenntnisse: Haben Sie neue Erkenntnisse und Informationen durch die Bearbeitung des Moduls erhalten?,ME1,
+SU01_01,"System Usability Scale (SUS): Ich denke, ich w�rde die Lernplattform gerne h�ufiger benutzen.",SUS,
+SU01_02,System Usability Scale (SUS): Ich finde die Lernplattform unn�tig komplex. (umgepolt),SUS,
+SU01_03,"System Usability Scale (SUS): Ich finde, die Lernplattform ist einfach zu benutzen.",SUS,
+SU01_04,"System Usability Scale (SUS): Ich denke, ich w�rde die Unterst�tzung einer technisch versierten Person ben�tigen, um die Lernplattform benutzen zu k�nnen. (umgepolt)",SUS,
+SU01_05,"System Usability Scale (SUS): Ich finde, die verschiedenen Funktionen in diesem Programm sind gut integriert.",SUS,
+SU01_06,"System Usability Scale (SUS): Ich denke, es gibt zu viele Inkonsistenzen auf der Lernplattform. (umgepolt)",SUS,
+SU01_07,"System Usability Scale (SUS): Ich k�nnte mir vorstellen, dass die meisten Personen sehr schnell lernen w�rden mit diesem Programm umzugehen.",SUS,
+SU01_08,System Usability Scale (SUS): Ich fand die Lernplattform sehr umst�ndlich zu nutzen. (umgepolt),SUS,
+SU01_09,System Usability Scale (SUS): Ich f�hlte mich sehr sicher bei der Benutzung der Lernplattform.,SUS,
+SU01_10,"System Usability Scale (SUS): Ich musste eine Menge lernen, bevor ich mit der Lernplattform zurechtkam. (umgepolt)",SUS,
+UM01,A1,uMARS,A1
+UM02,A2,uMARS,A2
+UM03,A3,uMARS,A3
+UM04,A4,uMARS,A4
+UM06,B1,uMARS,B1
+UM07,B2,uMARS,B2
+UM08,B3,uMARS,B3
+UM09,C1,uMARS,C1
+UM10,C2,uMARS,C2
+UM11,C3,uMARS,C3
+UM12,D1,uMARS,D1
+UM13,D2,uMARS,D2
+UM14,D3,uMARS,D3
+UM15,D4,uMARS,D4
+UM16,E1,uMARS,E1
+UM17,E2,uMARS,E2
+UM18,E3,uMARS,E3
+UM19,E4,uMARS,E4
+UM20,F1,uMARS,F1
+UM21,F2,uMARS,F2
+UM22,F3,uMARS,F3
+UM23,F4,uMARS,F4
+UM24,F5,uMARS,F5
+UM25,F6,uMARS,F6

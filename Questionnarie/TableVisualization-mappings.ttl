@@ -1,0 +1,252 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ds: <http://digistrucmed.org/questionnaire#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ============================================
+# Platform Mapping
+# ============================================
+<#PlatformMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/Platform.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{PlatformId}" ;
+    rr:class ds:Platform
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:PlatformId ;
+    rr:objectMap [ rml:reference "PlatformId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "PlatformTitle" ; rr:datatype xsd:string ]
+  ] .
+
+# ============================================
+# User Mapping
+# ============================================
+<#UserMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/User.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{UserId}" ;
+    rr:class ds:User
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:UserId ;
+    rr:objectMap [ rml:reference "UserId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "Username" ; rr:datatype xsd:string ]
+  ] .
+
+# ============================================
+# Questionnaire Mapping
+# ============================================
+<#QuestionnaireMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/Questionnarie.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{QuestionnarieId}" ;
+    rr:class ds:Questionnaire
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:QuestionnaireId ;
+    rr:objectMap [ rml:reference "QuestionnarieId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rml:reference "QuestionnarieType" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdf:type ;
+    rr:objectMap [
+      rr:template "http://digistrucmed.org/questionnaire#{QuestionnarieType}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:shortDescription ;
+    rr:objectMap [ rml:reference "Description" ; rr:datatype xsd:string ]
+  ] .
+
+# ============================================
+# Questions Mapping
+# ============================================
+<#QuestionsMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/Questions.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{QuestionId}" ;
+    rr:class ds:Question
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:QuestionId ;
+    rr:objectMap [ rml:reference "QuestionId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:QuestionDescription ;
+    rr:objectMap [ rml:reference "QuestionBody" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:belongsTo ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionnaireMap> ;
+      rr:joinCondition [
+        rr:child "QuestionnarieId" ;
+        rr:parent "QuestionnarieId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:sectionId ;
+    rr:objectMap [ rml:reference "SectionId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:hasPossibleAnswer ;
+    rr:objectMap [
+      rr:parentTriplesMap <#AnswerMap> ;
+      rr:joinCondition [
+        rr:child "QuestionId" ;
+        rr:parent "QuestionId"
+      ]
+    ]
+  ] .
+
+# ============================================
+# Answer Mapping
+# ============================================
+<#AnswerMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/Answer.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{AnswerId}" ;
+    rr:class ds:Answer
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:AnswerId ;
+    rr:objectMap [ rml:reference "AnswerId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdf:type ;
+    rr:objectMap [
+      rr:template "http://digistrucmed.org/questionnaire#{Type}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:isAnswerTo ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionsMap> ;
+      rr:joinCondition [
+        rr:child "QuestionId" ;
+        rr:parent "QuestionId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:ResponseCode ;
+    rr:objectMap [ rml:reference "ResponseCode" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:ResponseLabel ;
+    rr:objectMap [ rml:reference "ResponseLabel" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:answerType ;
+    rr:objectMap [ rml:reference "Type" ; rr:datatype xsd:string ]
+  ] .
+
+# ============================================
+# Answered Mapping
+# ============================================
+<#AnsweredMap> a rml:TriplesMap ;
+  rml:logicalSource [
+    rml:source "input-tables/Answered.csv" ;
+    rml:referenceFormulation ql:CSV
+  ] ;
+  rr:subjectMap [
+    rr:template "http://digistrucmed.org/questionnaire#{VisitId}_{QuestionId}" ;
+    rr:class ds:Answered
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:VisitId ;
+    rr:objectMap [ rml:reference "VisitId" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:answeredByUser ;
+    rr:objectMap [
+      rr:parentTriplesMap <#UserMap> ;
+      rr:joinCondition [
+        rr:child "UserId" ;
+        rr:parent "UserId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:answeredOnPlatform ;
+    rr:objectMap [
+      rr:parentTriplesMap <#PlatformMap> ;
+      rr:joinCondition [
+        rr:child "PlatformId" ;
+        rr:parent "PlatformId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:answeredInQuestionnaire ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionnaireMap> ;
+      rr:joinCondition [
+        rr:child "QuestionnarieId" ;
+        rr:parent "QuestionnarieId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:hasQuestion ;
+    rr:objectMap [
+      rr:parentTriplesMap <#QuestionsMap> ;
+      rr:joinCondition [
+        rr:child "QuestionId" ;
+        rr:parent "QuestionId"
+      ]
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:hasAnswer ;
+    rr:objectMap [
+      rr:template "http://digistrucmed.org/questionnaire#{AnswerId}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:startTime ;
+    rr:objectMap [ rml:reference "StartTime" ; rr:datatype xsd:dateTime ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:endTime ;
+    rr:objectMap [ rml:reference "EndTime" ; rr:datatype xsd:dateTime ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:speed ;
+    rr:objectMap [ rml:reference "Speed" ; rr:datatype xsd:decimal ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:rawResponseValue ;
+    rr:objectMap [ rml:reference "RawResponseValue" ; rr:datatype xsd:string ]
+  ] .

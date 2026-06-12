@@ -1,0 +1,34 @@
+<http://digistrucmed.org/questionnaire#M002_01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Question>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#QuestionId> "M002_01"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#QuestionDescription> "wie Hilfreich: Wie hilfreich fanden Sie die Inhalte des Moduls?"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#belongsTo> <http://digistrucmed.org/questionnaire#ME1>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020101>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020102>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020103>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020104>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020105>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020106>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020107>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020108>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020109>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020110>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020111>.
+<http://digistrucmed.org/questionnaire#M002_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10020112>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Question>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#QuestionId> "M003_01"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#QuestionDescription> "Fragenbeantwortung: Wurden all Ihre Fragen zum Thema ausreichend beantwortet?"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#belongsTo> <http://digistrucmed.org/questionnaire#ME1>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030101>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030102>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030103>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030104>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030105>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030106>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030107>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030108>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030109>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030110>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030111>.
+<http://digistrucmed.org/questionnaire#M003_01> <http://digistrucmed.org/questionnaire#hasPossibleAnswer> <http://digistrucmed.org/questionnaire#10030112>.
+<http://digistrucmed.org/questionnaire#M004_01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Question>.
+<http://digistrucmed.org/questionnaire#M004_01> <http://digistrucmed.org/questionnaire#QuestionId> "M004_01"^^<http://www.w3.org/2001/XMLSchema#string>.
