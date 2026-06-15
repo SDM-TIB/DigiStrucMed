@@ -35205,56 +35205,56 @@
 <http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#AnswerId> "10020102"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#ResponseLabel> "[2]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020102> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#AnswerId> "10020103"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#ResponseLabel> "[3]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020103> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#AnswerId> "10020104"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#ResponseLabel> "[4]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020104> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#AnswerId> "10020105"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#ResponseLabel> "[5]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020105> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#AnswerId> "10020106"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#ResponseCode> "6"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 6"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#ResponseLabel> "[6]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020106> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#AnswerId> "10020107"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#ResponseCode> "7"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 7"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#ResponseLabel> "[7]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020107> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#AnswerId> "10020108"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#ResponseCode> "8"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 8"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#ResponseLabel> "[8]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020108> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#AnswerId> "10020109"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#ResponseCode> "9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#ResponseLabel> "[9]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10020109> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M002_01>.
 <http://digistrucmed.org/questionnaire#10020110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
@@ -35282,56 +35282,56 @@
 <http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#AnswerId> "10030102"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#ResponseLabel> "[2]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030102> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#AnswerId> "10030103"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#ResponseLabel> "[3]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030103> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#AnswerId> "10030104"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#ResponseLabel> "[4]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030104> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#AnswerId> "10030105"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#ResponseLabel> "[5]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030105> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#AnswerId> "10030106"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#ResponseCode> "6"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 6"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#ResponseLabel> "[6]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030106> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#AnswerId> "10030107"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#ResponseCode> "7"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 7"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#ResponseLabel> "[7]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030107> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#AnswerId> "10030108"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#ResponseCode> "8"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 8"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#ResponseLabel> "[8]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030108> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#AnswerId> "10030109"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#ResponseCode> "9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#ResponseLabel> "[9]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10030109> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M003_01>.
 <http://digistrucmed.org/questionnaire#10030110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
@@ -35359,56 +35359,56 @@
 <http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#AnswerId> "10040102"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#ResponseLabel> "[2]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040102> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#AnswerId> "10040103"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#ResponseLabel> "[3]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040103> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#AnswerId> "10040104"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#ResponseLabel> "[4]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040104> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#AnswerId> "10040105"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#ResponseLabel> "[5]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040105> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#AnswerId> "10040106"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#ResponseCode> "6"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 6"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#ResponseLabel> "[6]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040106> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#AnswerId> "10040107"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#ResponseCode> "7"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 7"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#ResponseLabel> "[7]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040107> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#AnswerId> "10040108"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#ResponseCode> "8"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 8"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#ResponseLabel> "[8]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040108> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#AnswerId> "10040109"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#ResponseCode> "9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#ResponseLabel> "[9]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10040109> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M004_01>.
 <http://digistrucmed.org/questionnaire#10040110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
@@ -35464,56 +35464,56 @@
 <http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#AnswerId> "10060102"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#ResponseLabel> "[2]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060102> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#AnswerId> "10060103"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#ResponseLabel> "[3]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060103> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#AnswerId> "10060104"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#ResponseLabel> "[4]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060104> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#AnswerId> "10060105"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#ResponseLabel> "[5]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060105> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#AnswerId> "10060106"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#ResponseCode> "6"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 6"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#ResponseLabel> "[6]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060106> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#AnswerId> "10060107"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#ResponseCode> "7"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 7"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#ResponseLabel> "[7]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060107> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#AnswerId> "10060108"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#ResponseCode> "8"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 8"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#ResponseLabel> "[8]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060108> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#AnswerId> "10060109"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#ResponseCode> "9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#ResponseLabel> "[9]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10060109> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M006_01>.
 <http://digistrucmed.org/questionnaire#10060110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
@@ -35541,56 +35541,56 @@
 <http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#AnswerId> "10100102"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100102> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#ResponseLabel> "[2]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100102> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#AnswerId> "10100103"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100103> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#ResponseLabel> "[3]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100103> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#AnswerId> "10100104"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#ResponseLabel> "[4]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100104> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#AnswerId> "10100105"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#ResponseLabel> "[5]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100105> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#AnswerId> "10100106"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#ResponseCode> "6"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 6"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#ResponseLabel> "[6]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100106> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#AnswerId> "10100107"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#ResponseCode> "7"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 7"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#ResponseLabel> "[7]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100107> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#AnswerId> "10100108"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#ResponseCode> "8"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 8"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#ResponseLabel> "[8]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100108> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#AnswerId> "10100109"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100109> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Ordinal>.
 <http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#ResponseCode> "9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#ResponseLabel> "Skalenwert 9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#ResponseLabel> "[9]"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#answerType> "Ordinal"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#10100109> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#M010_01>.
 <http://digistrucmed.org/questionnaire#10100110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.

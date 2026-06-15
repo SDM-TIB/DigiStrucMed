@@ -1,35 +1,35 @@
 AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
-10020101,M002_01,,1,�berhaupt nicht [1],Ordinal
-10020102,M002_01,,2,[2],Ordinal
-10020103,M002_01,,3,[3],Ordinal
-10020104,M002_01,,4,[4],Ordinal
-10020105,M002_01,,5,[5],Ordinal
-10020106,M002_01,,6,[6],Ordinal
-10020107,M002_01,,7,[7],Ordinal
-10020108,M002_01,,8,[8],Ordinal
-10020109,M002_01,,9,[9],Ordinal
+10020101,M002_01,,1,überhaupt nicht [1],Ordinal
+10020102,M002_01,,2,Skalenwert 2,Ordinal
+10020103,M002_01,,3,Skalenwert 3,Ordinal
+10020104,M002_01,,4,Skalenwert 4,Ordinal
+10020105,M002_01,,5,Skalenwert 5,Ordinal
+10020106,M002_01,,6,Skalenwert 6,Ordinal
+10020107,M002_01,,7,Skalenwert 7,Ordinal
+10020108,M002_01,,8,Skalenwert 8,Ordinal
+10020109,M002_01,,9,Skalenwert 9,Ordinal
 10020110,M002_01,,10,sehr [10],Ordinal
 10020111,M002_01,,-9,nicht beantwortet,Ordinal
-10030101,M003_01,,1,�berhaupt keine [1],Ordinal
-10030102,M003_01,,2,[2],Ordinal
-10030103,M003_01,,3,[3],Ordinal
-10030104,M003_01,,4,[4],Ordinal
-10030105,M003_01,,5,[5],Ordinal
-10030106,M003_01,,6,[6],Ordinal
-10030107,M003_01,,7,[7],Ordinal
-10030108,M003_01,,8,[8],Ordinal
-10030109,M003_01,,9,[9],Ordinal
+10030101,M003_01,,1,überhaupt keine [1],Ordinal
+10030102,M003_01,,2,Skalenwert 2,Ordinal
+10030103,M003_01,,3,Skalenwert 3,Ordinal
+10030104,M003_01,,4,Skalenwert 4,Ordinal
+10030105,M003_01,,5,Skalenwert 5,Ordinal
+10030106,M003_01,,6,Skalenwert 6,Ordinal
+10030107,M003_01,,7,Skalenwert 7,Ordinal
+10030108,M003_01,,8,Skalenwert 8,Ordinal
+10030109,M003_01,,9,Skalenwert 9,Ordinal
 10030110,M003_01,,10,alle [10],Ordinal
 10030111,M003_01,,-9,nicht beantwortet,Ordinal
-10040101,M004_01,,1,�berhaupt nicht [1],Ordinal
-10040102,M004_01,,2,[2],Ordinal
-10040103,M004_01,,3,[3],Ordinal
-10040104,M004_01,,4,[4],Ordinal
-10040105,M004_01,,5,[5],Ordinal
-10040106,M004_01,,6,[6],Ordinal
-10040107,M004_01,,7,[7],Ordinal
-10040108,M004_01,,8,[8],Ordinal
-10040109,M004_01,,9,[9],Ordinal
+10040101,M004_01,,1,überhaupt nicht [1],Ordinal
+10040102,M004_01,,2,Skalenwert 2,Ordinal
+10040103,M004_01,,3,Skalenwert 3,Ordinal
+10040104,M004_01,,4,Skalenwert 4,Ordinal
+10040105,M004_01,,5,Skalenwert 5,Ordinal
+10040106,M004_01,,6,Skalenwert 6,Ordinal
+10040107,M004_01,,7,Skalenwert 7,Ordinal
+10040108,M004_01,,8,Skalenwert 8,Ordinal
+10040109,M004_01,,9,Skalenwert 9,Ordinal
 10040110,M004_01,,10,sehr gut [10],Ordinal
 10040111,M004_01,,-9,nicht beantwortet,Ordinal
 10050001,M005,,1,Text,Nominal
@@ -37,25 +37,25 @@ AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
 10050003,M005,,3,Quiz,Nominal
 10050004,M005,,-9,nicht beantwortet,Nominal
 10060101,M006_01,,1,sehr schlecht [1],Ordinal
-10060102,M006_01,,2,[2],Ordinal
-10060103,M006_01,,3,[3],Ordinal
-10060104,M006_01,,4,[4],Ordinal
-10060105,M006_01,,5,[5],Ordinal
-10060106,M006_01,,6,[6],Ordinal
-10060107,M006_01,,7,[7],Ordinal
-10060108,M006_01,,8,[8],Ordinal
-10060109,M006_01,,9,[9],Ordinal
+10060102,M006_01,,2,Skalenwert 2,Ordinal
+10060103,M006_01,,3,Skalenwert 3,Ordinal
+10060104,M006_01,,4,Skalenwert 4,Ordinal
+10060105,M006_01,,5,Skalenwert 5,Ordinal
+10060106,M006_01,,6,Skalenwert 6,Ordinal
+10060107,M006_01,,7,Skalenwert 7,Ordinal
+10060108,M006_01,,8,Skalenwert 8,Ordinal
+10060109,M006_01,,9,Skalenwert 9,Ordinal
 10060110,M006_01,,10,sehr gut [10],Ordinal
 10060111,M006_01,,-9,nicht beantwortet,Ordinal
-10100101,M010_01,,1,�berhaupt nicht [1],Ordinal
-10100102,M010_01,,2,[2],Ordinal
-10100103,M010_01,,3,[3],Ordinal
-10100104,M010_01,,4,[4],Ordinal
-10100105,M010_01,,5,[5],Ordinal
-10100106,M010_01,,6,[6],Ordinal
-10100107,M010_01,,7,[7],Ordinal
-10100108,M010_01,,8,[8],Ordinal
-10100109,M010_01,,9,[9],Ordinal
+10100101,M010_01,,1,überhaupt nicht [1],Ordinal
+10100102,M010_01,,2,Skalenwert 2,Ordinal
+10100103,M010_01,,3,Skalenwert 3,Ordinal
+10100104,M010_01,,4,Skalenwert 4,Ordinal
+10100105,M010_01,,5,Skalenwert 5,Ordinal
+10100106,M010_01,,6,Skalenwert 6,Ordinal
+10100107,M010_01,,7,Skalenwert 7,Ordinal
+10100108,M010_01,,8,Skalenwert 8,Ordinal
+10100109,M010_01,,9,Skalenwert 9,Ordinal
 10100110,M010_01,,10,sehr [10],Ordinal
 10100111,M010_01,,-9,nicht beantwortet,Ordinal
 20010101,SU01_01,,1,trifft gar nicht zu,Ordinal
@@ -118,99 +118,98 @@ AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
 20011004,SU01_10,,4,Likert response 4,Ordinal
 20011005,SU01_10,,5,trifft gar nicht zu,Ordinal
 20011006,SU01_10,,-9,nicht beantwortet,Ordinal
-30010001,UM01,A1,1,"1 Langweilig, gar nicht unterhaltsam",Nominal
-30010002,UM01,A1,2,2 �berwiegend langweilig,Nominal
-30010003,UM01,A1,3,"3 OK, unterhaltsam genug um sich f�r eine kurze Zeit mit der Lernplattform zu besch�ftigen (< 5 Minuten)",Nominal
-30010004,UM01,A1,4,"4 Mittelm��ig lustig und unterhaltsam, w�rde einen User f�r einige Zeit unterhalten (5-10 Minuten)",Nominal
-30010005,UM01,A1,5,"5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an",Nominal
-30010006,UM01,A1,-9,nicht beantwortet,Nominal
-30020001,UM02,A2,1,1<tab>�berhaupt nicht interessant,Nominal
-30020002,UM02,A2,2,2<tab>�berwiegend nicht interessant,Nominal
-30020003,UM02,A2,3,"3<tab>OK, weder interessant noch uninteressant; Nutzer w�rden sich damit eine kurze Zeit besch�ftigen (< 5 Minuten)",Nominal
-30020004,UM02,A2,4,4<tab>Mittelm��ig interessant; Nutzer w�rden sich damit einige Zeit besch�ftigen (insgesamt 5-10 Minuten),Nominal
-30020005,UM02,A2,5,"5<tab>�beraus interessant, so dass man zur wiederholten Nutzung der Lernplattform angeregt wird",Nominal
+30010001,UM01,A1,2,2 Überwiegend langweilig,Nominal
+30010002,UM01,A1,3,"3 OK, unterhaltsam genug um sich für eine kurze Zeit mit der Lernplattform zu beschäftigen (< 5 Minuten)",Nominal
+30010003,UM01,A1,4,"4 Mittelmäßig lustig und unterhaltsam, würde einen User für einige Zeit unterhalten (5-10 Minuten)",Nominal
+30010004,UM01,A1,5,"5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an",Nominal
+30010005,UM01,A1,-9,nicht beantwortet,Nominal
+30020001,UM02,A2,1,1<tab>Überhaupt nicht interessant,Nominal
+30020002,UM02,A2,2,2<tab>Überwiegend nicht interessant,Nominal
+30020003,UM02,A2,3,"3<tab>OK, weder interessant noch uninteressant; Nutzer würden sich damit eine kurze Zeit beschäftigen (< 5 Minuten)",Nominal
+30020004,UM02,A2,4,4<tab>Mittelmäßig interessant; Nutzer würden sich damit einige Zeit beschäftigen (insgesamt 5-10 Minuten),Nominal
+30020005,UM02,A2,5,"5<tab>Überaus interessant, so dass man zur wiederholten Nutzung der Lernplattform angeregt wird",Nominal
 30020006,UM02,A2,-9,nicht beantwortet,Nominal
-30030001,UM03,A3,1,1<tab>Keine interaktiven Funktionen und/oder keine Eingaben der Nutzer sind m�glich,Nominal
-30030002,UM03,A3,2,"2<tab>Unzureichende Interaktivit�t, oder Feedback, oder Optionen f�r Eingaben der User, limitierte Funktionalit�t",Nominal
-30030003,UM03,A3,3,"3<tab>Grundlegende interaktive Funktionen, angemessene Funktionalit�t",Nominal
-30030004,UM03,A3,4,"4<tab>Vielf�ltige interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind vorhanden",Nominal
-30030005,UM03,A3,5,"5<tab>Interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind auf einem so hohen Niveau, dass man das Gef�hl hat, die Lernplattform stellt sich auf die Person des Nutzers ein",Nominal
+30030001,UM03,A3,1,1<tab>Keine interaktiven Funktionen und/oder keine Eingaben der Nutzer sind möglich,Nominal
+30030002,UM03,A3,2,"2<tab>Unzureichende Interaktivität, oder Feedback, oder Optionen für Eingaben der User, limitierte Funktionalität",Nominal
+30030003,UM03,A3,3,"3<tab>Grundlegende interaktive Funktionen, angemessene Funktionalität",Nominal
+30030004,UM03,A3,4,"4<tab>Vielfältige interaktive Funktionen, Feedback und Optionen für Eingaben der Nutzer sind vorhanden",Nominal
+30030005,UM03,A3,5,"5<tab>Interaktive Funktionen, Feedback und Optionen für Eingaben der Nutzer sind auf einem so hohen Niveau, dass man das Gefühl hat, die Lernplattform stellt sich auf die Person des Nutzers ein",Nominal
 30030006,UM03,A3,-9,nicht beantwortet,Nominal
 30040001,UM04,A4,1,1<tab>Sehr unpassend/unklar/verwirrend,Nominal
 30040002,UM04,A4,2,2<tab>Eher unpassend/unklar/verwirrend,Nominal
 30040003,UM04,A4,3,"3<tab>OK, aber nicht Zielgruppen orientiert. Kann unpassend/unklar/verwirrend sein",Nominal
-30040004,UM04,A4,4,"4<tab>Zielgruppenspezifisch, mit kleinen M�ngeln",Nominal
+30040004,UM04,A4,4,"4<tab>Zielgruppenspezifisch, mit kleinen Mängeln",Nominal
 30040005,UM04,A4,5,"5<tab>Sehr zielgruppenspezifisch, keine Probleme",Nominal
 30040006,UM04,A4,-9,nicht beantwortet,Nominal
-30060001,UM06,B1,1,"1<tab>Die Lernplattform funktioniert nicht. Keine oder unzureichende Antwort (z.B. Abbr�che, Fehler, nicht funktionierende Funktionen, etc.)",Nominal
-30060002,UM06,B1,2,"2<tab>Einige Funktionen laufen, jedoch langsam oder gr��ere technische Probleme.",Nominal
+30060001,UM06,B1,1,"1<tab>Die Lernplattform funktioniert nicht. Keine oder unzureichende Antwort (z.B. Abbrüche, Fehler, nicht funktionierende Funktionen, etc.)",Nominal
+30060002,UM06,B1,2,"2<tab>Einige Funktionen laufen, jedoch langsam oder größere technische Probleme.",Nominal
 30060003,UM06,B1,3,3<tab>Lernplattform funktioniert im Allgemeinen. Einige technische Probleme oder gelegentlich langsam,Nominal
-30060004,UM06,B1,4,"4<tab>Die Lernplattform funktioniert insgesamt gut, mit kleineren, vernachl�ssigbaren Problemen",Nominal
-30060005,UM06,B1,5,"5<tab>Die Lernplattform arbeitet fehlerfrei und schnell; keine technischen Fehler, oder � falls zutreffend � enth�lt einen Fortschrittsbalken",Nominal
+30060004,UM06,B1,4,"4<tab>Die Lernplattform funktioniert insgesamt gut, mit kleineren, vernachlässigbaren Problemen",Nominal
+30060005,UM06,B1,5,"5<tab>Die Lernplattform arbeitet fehlerfrei und schnell; keine technischen Fehler, oder – falls zutreffend – enthält einen Fortschrittsbalken",Nominal
 30060006,UM06,B1,-9,nicht beantwortet,Nominal
-30070001,UM07,B2,1,1<tab>Keine oder unzureichende Erkl�rungen; Men�beschriftungen und Symbole sind verwirrend und/oder kompliziert,Nominal
+30070001,UM07,B2,1,1<tab>Keine oder unzureichende Erklärungen; Menübeschriftungen und Symbole sind verwirrend und/oder kompliziert,Nominal
 30070002,UM07,B2,2,2<tab>Nach hohem Aufwand benutzbar,Nominal
 30070003,UM07,B2,3,3<tab>Nach einigem Aufwand benutzbar,Nominal
 30070004,UM07,B2,4,4<tab>Benutzung ist leicht erlernbar oder die Lernplattform weist klare Instruktionen zur Benutzung auf,Nominal
-30070005,UM07,B2,5,5<tab>Eine intuitive und einfache Benutzung der Lernplattform ist sofort m�glich,Nominal
+30070005,UM07,B2,5,5<tab>Eine intuitive und einfache Benutzung der Lernplattform ist sofort möglich,Nominal
 30070006,UM07,B2,-9,nicht beantwortet,Nominal
-30080001,UM08,B3,1,1<tab>Verschiedene Abschnitte wirken unzusammenh�ngend/zuf�llig/verwirrend. Die Navigation ist kompliziert,Nominal
+30080001,UM08,B3,1,1<tab>Verschiedene Abschnitte wirken unzusammenhängend/zufällig/verwirrend. Die Navigation ist kompliziert,Nominal
 30080002,UM08,B3,2,2<tab>Nach geraumer Zeit und hohem Aufwand benutzbar,Nominal
-30080003,UM08,B3,3,3<tab>Nach einiger Zeit und einigem Bem�hen benutzbar,Nominal
-30080004,UM08,B3,4,4<tab>Leicht zu bedienen; es fehlen vernachl�ssigbare Verkn�pfungen,Nominal
-30080005,UM08,B3,5,"5<tab>Sehr logisch, einfach, klar und intuitive Men�f�hrung. Bietet Verkn�pfungen zum schnellen Wechsel zwischen verschiedenen Bereichen/Men�punkten an",Nominal
+30080003,UM08,B3,3,3<tab>Nach einiger Zeit und einigem Bemühen benutzbar,Nominal
+30080004,UM08,B3,4,4<tab>Leicht zu bedienen; es fehlen vernachlässigbare Verknüpfungen,Nominal
+30080005,UM08,B3,5,"5<tab>Sehr logisch, einfach, klar und intuitive Menüführung. Bietet Verknüpfungen zum schnellen Wechsel zwischen verschiedenen Bereichen/Menüpunkten an",Nominal
 30080006,UM08,B3,-9,nicht beantwortet,Nominal
-30090001,UM09,C1,1,"1<tab>Mangelhaftes Design � unordentlich/ungeordnet; einige Optionen k�nnen nicht ausgew�hlt, gefunden, gesehen oder gelesen werden; Bildschirm wird nicht optimal genutzt",Nominal
-30090002,UM09,C1,2,"2<tab>Schwaches Design - nicht einheitlich, unklar; einige Optionen sind schwierig auszuw�hlen, zu finden, zu sehen und zu lesen.",Nominal
-30090003,UM09,C1,3,"3<tab>Mittelm��ige Qualit�t des Designs - einige Probleme Optionen auszuw�hlen, zu finden, zu sehen und zu lesen.",Nominal
-30090004,UM09,C1,4,"4<tab>Gutes Design - �berwiegend klar; Optionen k�nnen ausgew�hlt, gefunden, gesehen und gelesen werden.",Nominal
-30090005,UM09,C1,5,"5<tab>Professionelles Design - einfach, klar, �bersichtlich, logisch organisiert; Bildschirm wird optimal genutzt; jede einzelne Komponente des Designs erf�llt seinen Zweck",Nominal
+30090001,UM09,C1,1,"1<tab>Mangelhaftes Design – unordentlich/ungeordnet; einige Optionen können nicht ausgewählt, gefunden, gesehen oder gelesen werden; Bildschirm wird nicht optimal genutzt",Nominal
+30090002,UM09,C1,2,"2<tab>Schwaches Design - nicht einheitlich, unklar; einige Optionen sind schwierig auszuwählen, zu finden, zu sehen und zu lesen.",Nominal
+30090003,UM09,C1,3,"3<tab>Mittelmäßige Qualität des Designs - einige Probleme Optionen auszuwählen, zu finden, zu sehen und zu lesen.",Nominal
+30090004,UM09,C1,4,"4<tab>Gutes Design - überwiegend klar; Optionen können ausgewählt, gefunden, gesehen und gelesen werden.",Nominal
+30090005,UM09,C1,5,"5<tab>Professionelles Design - einfach, klar, übersichtlich, logisch organisiert; Bildschirm wird optimal genutzt; jede einzelne Komponente des Designs erfüllt seinen Zweck",Nominal
 30090006,UM09,C1,-9,nicht beantwortet,Nominal
-30100001,UM10,C2,1,"1<tab>Grafiken wirken amateurhaft, schlechtes visuelles Design - v�llig unproportional, stilistisch nicht einheitlich",Nominal
-30100002,UM10,C2,2,2<tab>Niedrige Qualit�t (z.B. Aufl�sung) der Grafiken. Niedrige Qualit�t des visuellen Designs - unproportional und stilistisch nicht einheitlich,Nominal
-30100003,UM10,C2,3,3<tab>Mittelm��ige Qualit�t der Grafiken und des visuellen Designs - �berwiegend einheitlich im Design,Nominal
-30100004,UM10,C2,4,4<tab>Hohe Qualit�t der Grafiken und gute Aufl�sung des visuellen Designs - �berwiegend proportional und einheitlich im Stil,Nominal
-30100005,UM10,C2,5,5<tab>Sehr hohe Qualit�t der Grafiken und sehr gute Aufl�sung des visuellen Designs - durchgehend proportional und einheitlich im Stil,Nominal
+30100001,UM10,C2,1,"1<tab>Grafiken wirken amateurhaft, schlechtes visuelles Design - völlig unproportional, stilistisch nicht einheitlich",Nominal
+30100002,UM10,C2,2,2<tab>Niedrige Qualität (z.B. Auflösung) der Grafiken. Niedrige Qualität des visuellen Designs - unproportional und stilistisch nicht einheitlich,Nominal
+30100003,UM10,C2,3,3<tab>Mittelmäßige Qualität der Grafiken und des visuellen Designs - überwiegend einheitlich im Design,Nominal
+30100004,UM10,C2,4,4<tab>Hohe Qualität der Grafiken und gute Auflösung des visuellen Designs - überwiegend proportional und einheitlich im Stil,Nominal
+30100005,UM10,C2,5,5<tab>Sehr hohe Qualität der Grafiken und sehr gute Auflösung des visuellen Designs - durchgehend proportional und einheitlich im Stil,Nominal
 30100006,UM10,C2,-9,nicht beantwortet,Nominal
-30110001,UM11,C3,1,"1<tab>Kein visueller Anreiz - unangenehm zu betrachten, schwaches Design, bei�ende oder nicht zusammenpassende Farben",Nominal
+30110001,UM11,C3,1,"1<tab>Kein visueller Anreiz - unangenehm zu betrachten, schwaches Design, beißende oder nicht zusammenpassende Farben",Nominal
 30110002,UM11,C3,2,"2<tab>Wenig visueller Anreiz - schlechtes Design, schlechter Farbgebrauch, visuell langweilig",Nominal
 30110003,UM11,C3,3,3<tab>Etwas visueller Anreiz - durchschnittlich weder angenehm noch unangenehm,Nominal
 30110004,UM11,C3,4,"4<tab>Hoher visueller Anreiz - makellose Grafiken, einheitliches und professionelles Design",Nominal
-30110005,UM11,C3,5,"5<tab>Wie in Punkt 4 beschrieben, dar�ber hinaus: �beraus gro�er visueller Anreiz - einpr�gsam, sticht positiv heraus; Farbgestaltung wirkt sich positiv auf die Optionen und die Men�f�hrung der Lernplattform aus",Nominal
+30110005,UM11,C3,5,"5<tab>Wie in Punkt 4 beschrieben, darüber hinaus: Überaus großer visueller Anreiz - einprägsam, sticht positiv heraus; Farbgestaltung wirkt sich positiv auf die Optionen und die Menüführung der Lernplattform aus",Nominal
 30110006,UM11,C3,-9,nicht beantwortet,Nominal
-30120001,UM12,D1,6,N/A <tab>Die Lernplattform enth�lt keine Informationen,Nominal
-30120002,UM12,D1,1,"1<tab>Irrelevant, ungeeignet, unzusammenh�ngend, nicht korrekt",Nominal
-30120003,UM12,D1,2,"2<tab>Kaum relevant, kaum geeignet, kaum zusammenh�ngend, m�glicherweise nicht korrekt",Nominal
-30120004,UM12,D1,3,"3<tab>Mittelm��ig relevant, mittelm��ig geeignet, mittelm��ig zusammenh�ngend, wirkt korrekt",Nominal
-30120005,UM12,D1,4,"4<tab>Relevant, geeignet, zusammenh�ngend, korrekt",Nominal
-30120006,UM12,D1,5,"5<tab>Sehr Relevant, sehr geeignet, sehr zusammenh�ngend, sehr korrekt",Nominal
+30120001,UM12,D1,6,N/A <tab>Die Lernplattform enthält keine Informationen,Nominal
+30120002,UM12,D1,1,"1<tab>Irrelevant, ungeeignet, unzusammenhängend, nicht korrekt",Nominal
+30120003,UM12,D1,2,"2<tab>Kaum relevant, kaum geeignet, kaum zusammenhängend, möglicherweise nicht korrekt",Nominal
+30120004,UM12,D1,3,"3<tab>Mittelmäßig relevant, mittelmäßig geeignet, mittelmäßig zusammenhängend, wirkt korrekt",Nominal
+30120005,UM12,D1,4,"4<tab>Relevant, geeignet, zusammenhängend, korrekt",Nominal
+30120006,UM12,D1,5,"5<tab>Sehr Relevant, sehr geeignet, sehr zusammenhängend, sehr korrekt",Nominal
 30120007,UM12,D1,-9,nicht beantwortet,Nominal
 30130001,UM13,D2,6,N/A <tab>Die Lernplattform beinhaltet keine Informationen,Nominal
-30130002,UM13,D2,1,1<tab>Minimal oder �berfordernd,Nominal
-30130003,UM13,D2,2,2<tab>Unzureichend oder m�glicherweise �berfordernd,Nominal
-30130004,UM13,D2,3,"3<tab>Ok, aber weder umfangreich noch pr�gnant",Nominal
-30130005,UM13,D2,4,"4<tab>Bietet eine gro�e Menge an Informationen, hat L�cken oder unn�tige Details oder bietet keine weiteren Hinweise auf Literatur zum Vertiefen",Nominal
-30130006,UM13,D2,5,5<tab>Umfangreich und pr�gnant; beinhaltet Hinweise auf Literatur zum Vertiefen,Nominal
+30130002,UM13,D2,1,1<tab>Minimal oder überfordernd,Nominal
+30130003,UM13,D2,2,2<tab>Unzureichend oder möglicherweise überfordernd,Nominal
+30130004,UM13,D2,3,"3<tab>Ok, aber weder umfangreich noch prägnant",Nominal
+30130005,UM13,D2,4,"4<tab>Bietet eine große Menge an Informationen, hat Lücken oder unnötige Details oder bietet keine weiteren Hinweise auf Literatur zum Vertiefen",Nominal
+30130006,UM13,D2,5,5<tab>Umfangreich und prägnant; beinhaltet Hinweise auf Literatur zum Vertiefen,Nominal
 30130007,UM13,D2,-9,nicht beantwortet,Nominal
 30140001,UM14,D3,6,N/A <tab>Lernplattform beinhaltet keine visuellen Informationen (beinhaltet z.B. nur Audio-Dateien oder Text),Nominal
-30140002,UM14,D3,1,"1<tab>Vollkommen unklar/verwirrend/falsch oder visuelle Informationen sind eigentlich n�tig, fehlen aber",Nominal
-30140003,UM14,D3,2,2<tab>�berwiegend unklar/verwirrend/falsch,Nominal
+30140002,UM14,D3,1,"1<tab>Vollkommen unklar/verwirrend/falsch oder visuelle Informationen sind eigentlich nötig, fehlen aber",Nominal
+30140003,UM14,D3,2,2<tab>Überwiegend unklar/verwirrend/falsch,Nominal
 30140004,UM14,D3,3,"3<tab>Ok, aber oft unklar/verwirrend/falsch",Nominal
-30140005,UM14,D3,4,"4<tab>Meistens klar, logisch und richtig, mit unerheblichen/vernachl�ssigbaren Problemen",Nominal
+30140005,UM14,D3,4,"4<tab>Meistens klar, logisch und richtig, mit unerheblichen/vernachlässigbaren Problemen",Nominal
 30140006,UM14,D3,5,"5<tab>Perfekt klar, logisch und richtig",Nominal
 30140007,UM14,D3,-9,nicht beantwortet,Nominal
-30150001,UM15,D4,6,N/A<tab>Lernplattform liefert diesbez�glich keine Informationen,Nominal
-30150002,UM15,D4,1,1<tab>Die Quelle ist fragw�rdig,Nominal
-30150003,UM15,D4,2,2<tab>Es fehlt an Glaubw�rdigkeit der Quelle,Nominal
-30150004,UM15,D4,3,"3<tab>Keine fragw�rdige Quelle, aber die Legitimit�t der Quelle ist unklar",Nominal
-30150005,UM15,D4,4,4<tab>Stammt m�glicherweise von einer legitimen Quelle,Nominal
+30150001,UM15,D4,6,N/A<tab>Lernplattform liefert diesbezüglich keine Informationen,Nominal
+30150002,UM15,D4,1,1<tab>Die Quelle ist fragwürdig,Nominal
+30150003,UM15,D4,2,2<tab>Es fehlt an Glaubwürdigkeit der Quelle,Nominal
+30150004,UM15,D4,3,"3<tab>Keine fragwürdige Quelle, aber die Legitimität der Quelle ist unklar",Nominal
+30150005,UM15,D4,4,4<tab>Stammt möglicherweise von einer legitimen Quelle,Nominal
 30150006,UM15,D4,5,5<tab>Stammt definitiv aus einer legitimen/spezialisierten Quelle,Nominal
 30150007,UM15,D4,-9,nicht beantwortet,Nominal
-30160001,UM16,E1,1,1<tab>Ich w�rde die Lernplattform niemanden empfehlen,Nominal
-30160002,UM16,E1,2,2<tab>Ich w�rde die Lernplattform nur wenigen Personen empfehlen,Nominal
-30160003,UM16,E1,3,3<tab>Ich w�rde die Lernplattform einigen Personen empfehlen,Nominal
-30160004,UM16,E1,4,4<tab>Ich w�rde die Lernplattform vielen Personen empfehlen,Nominal
-30160005,UM16,E1,5,5<tab>Ich w�rde die Lernplattform jedem empfehlen,Nominal
+30160001,UM16,E1,1,1<tab>Ich würde die Lernplattform niemanden empfehlen,Nominal
+30160002,UM16,E1,2,2<tab>Ich würde die Lernplattform nur wenigen Personen empfehlen,Nominal
+30160003,UM16,E1,3,3<tab>Ich würde die Lernplattform einigen Personen empfehlen,Nominal
+30160004,UM16,E1,4,4<tab>Ich würde die Lernplattform vielen Personen empfehlen,Nominal
+30160005,UM16,E1,5,5<tab>Ich würde die Lernplattform jedem empfehlen,Nominal
 30160006,UM16,E1,-9,nicht beantwortet,Nominal
 30170001,UM17,E2,1,1<tab>Nie,Nominal
 30170002,UM17,E2,2,2<tab>1-2,Nominal
@@ -218,7 +217,7 @@ AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
 30170004,UM17,E2,4,4<tab>10-50,Nominal
 30170005,UM17,E2,5,5<tab>>50,Nominal
 30170006,UM17,E2,-9,nicht beantwortet,Nominal
-30180001,UM18,E3,1,1<tab>�berhaupt nicht,Nominal
+30180001,UM18,E3,1,1<tab>Überhaupt nicht,Nominal
 30180002,UM18,E3,2,2,Nominal
 30180003,UM18,E3,3,3,Nominal
 30180004,UM18,E3,4,4,Nominal
@@ -230,37 +229,37 @@ AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
 30190004,UM19,E4,4,4,Nominal
 30190005,UM19,E4,5,"5 Eine der besten Lernplattformen, die ich je genutzt habe",Nominal
 30190006,UM19,E4,-9,nicht beantwortet,Nominal
-30200001,UM20,F1,1,1 Stimme �berhaupt nicht zu,Nominal
+30200001,UM20,F1,1,1 Stimme überhaupt nicht zu,Nominal
 30200002,UM20,F1,2,2,Nominal
 30200003,UM20,F1,3,3,Nominal
 30200004,UM20,F1,4,4,Nominal
 30200005,UM20,F1,5,5 Stimme sehr zu,Nominal
 30200006,UM20,F1,-9,nicht beantwortet,Nominal
-30210001,UM21,F2,1,1 Stimme �berhaupt nicht zu,Nominal
+30210001,UM21,F2,1,1 Stimme überhaupt nicht zu,Nominal
 30210002,UM21,F2,2,2,Nominal
 30210003,UM21,F2,3,3,Nominal
 30210004,UM21,F2,4,4,Nominal
 30210005,UM21,F2,5,5 Stimme sehr zu,Nominal
 30210006,UM21,F2,-9,nicht beantwortet,Nominal
-30220001,UM22,F3,1,1 Stimme �berhaupt nicht zu,Nominal
+30220001,UM22,F3,1,1 Stimme überhaupt nicht zu,Nominal
 30220002,UM22,F3,2,2,Nominal
 30220003,UM22,F3,3,3,Nominal
 30220004,UM22,F3,4,4,Nominal
 30220005,UM22,F3,5,5 Stimme sehr zu,Nominal
 30220006,UM22,F3,-9,nicht beantwortet,Nominal
-30230001,UM23,F4,1,1 Stimme �berhaupt nicht zu,Nominal
+30230001,UM23,F4,1,1 Stimme überhaupt nicht zu,Nominal
 30230002,UM23,F4,2,2,Nominal
 30230003,UM23,F4,3,3,Nominal
 30230004,UM23,F4,4,4,Nominal
 30230005,UM23,F4,5,5 Stimme sehr zu,Nominal
 30230006,UM23,F4,-9,nicht beantwortet,Nominal
-30240001,UM24,F5,1,1 Stimme �berhaupt nicht zu,Nominal
+30240001,UM24,F5,1,1 Stimme überhaupt nicht zu,Nominal
 30240002,UM24,F5,2,2,Nominal
 30240003,UM24,F5,3,3,Nominal
 30240004,UM24,F5,4,4,Nominal
 30240005,UM24,F5,5,5 Stimme sehr zu,Nominal
 30240006,UM24,F5,-9,nicht beantwortet,Nominal
-30250001,UM25,F6,1,1 Stimme �berhaupt nicht zu,Nominal
+30250001,UM25,F6,1,1 Stimme überhaupt nicht zu,Nominal
 30250002,UM25,F6,2,2,Nominal
 30250003,UM25,F6,3,3,Nominal
 30250004,UM25,F6,4,4,Nominal
@@ -286,7 +285,7 @@ AnswerId,QuestionId,SectionId,ResponseCode,ResponseLabel,Type
 20010807,SU01_08,,null,No recorded response,NullAnswer
 20010907,SU01_09,,null,No recorded response,NullAnswer
 20011007,SU01_10,,null,No recorded response,NullAnswer
-30010007,UM01,A1,null,No recorded response,NullAnswer
+30010006,UM01,A1,null,No recorded response,NullAnswer
 30020007,UM02,A2,null,No recorded response,NullAnswer
 30030007,UM03,A3,null,No recorded response,NullAnswer
 30040007,UM04,A4,null,No recorded response,NullAnswer

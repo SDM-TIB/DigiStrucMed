@@ -1,0 +1,273 @@
+answer,responseCode,responseLabel,frequency,answer_short,answer_display,percentage_overall
+http://digistrucmed.org/questionnaire#10080102,,No recorded response,105,10080102,No recorded response,2.84
+http://digistrucmed.org/questionnaire#10070101,TEXT,Textual response,99,10070101,Textual response,2.68
+http://digistrucmed.org/questionnaire#10050001,1,Text,88,10050001,Text,2.38
+http://digistrucmed.org/questionnaire#10070102,,No recorded response,67,10070102,No recorded response,1.81
+http://digistrucmed.org/questionnaire#10030110,10,alle [10],66,10030110,alle [10],1.79
+http://digistrucmed.org/questionnaire#10080101,TEXT,Textual response,61,10080101,Textual response,1.65
+http://digistrucmed.org/questionnaire#10020110,10,sehr [10],61,10020110,sehr [10],1.65
+http://digistrucmed.org/questionnaire#10040110,10,sehr gut [10],59,10040110,sehr gut [10],1.6
+http://digistrucmed.org/questionnaire#10050002,2,Video,56,10050002,Video,1.52
+http://digistrucmed.org/questionnaire#10060110,10,sehr gut [10],55,10060110,sehr gut [10],1.49
+http://digistrucmed.org/questionnaire#10100109,9,[9],53,10100109,[9],1.44
+http://digistrucmed.org/questionnaire#10100109,9,Skalenwert 9,53,10100109,Skalenwert 9,1.44
+http://digistrucmed.org/questionnaire#10060108,8,[8],46,10060108,[8],1.25
+http://digistrucmed.org/questionnaire#10060108,8,Skalenwert 8,46,10060108,Skalenwert 8,1.25
+http://digistrucmed.org/questionnaire#10020108,8,[8],44,10020108,[8],1.19
+http://digistrucmed.org/questionnaire#10020108,8,Skalenwert 8,44,10020108,Skalenwert 8,1.19
+http://digistrucmed.org/questionnaire#10040109,9,[9],38,10040109,[9],1.03
+http://digistrucmed.org/questionnaire#10040109,9,Skalenwert 9,38,10040109,Skalenwert 9,1.03
+http://digistrucmed.org/questionnaire#10040108,8,[8],36,10040108,[8],0.97
+http://digistrucmed.org/questionnaire#10040108,8,Skalenwert 8,36,10040108,Skalenwert 8,0.97
+http://digistrucmed.org/questionnaire#10060109,9,[9],34,10060109,[9],0.92
+http://digistrucmed.org/questionnaire#10060109,9,Skalenwert 9,34,10060109,Skalenwert 9,0.92
+http://digistrucmed.org/questionnaire#10100108,8,[8],31,10100108,[8],0.84
+http://digistrucmed.org/questionnaire#10100108,8,Skalenwert 8,31,10100108,Skalenwert 8,0.84
+http://digistrucmed.org/questionnaire#10030109,9,[9],31,10030109,[9],0.84
+http://digistrucmed.org/questionnaire#10030109,9,Skalenwert 9,31,10030109,Skalenwert 9,0.84
+http://digistrucmed.org/questionnaire#10020109,9,[9],29,10020109,[9],0.79
+http://digistrucmed.org/questionnaire#10020109,9,Skalenwert 9,29,10020109,Skalenwert 9,0.79
+http://digistrucmed.org/questionnaire#10030108,8,[8],28,10030108,[8],0.76
+http://digistrucmed.org/questionnaire#10030108,8,Skalenwert 8,28,10030108,Skalenwert 8,0.76
+http://digistrucmed.org/questionnaire#20010405,5,trifft gar nicht zu,28,20010405,trifft gar nicht zu,0.76
+http://digistrucmed.org/questionnaire#30070004,4,4<tab>Benutzung ist leicht erlernbar oder die Lernplattform weist klare Instruktionen zur Benutzung auf,26,30070004,4<tab>Benutzung ist leicht erlernbar oder die Lernplattform weist klare Instruktionen zur Benutzung auf,0.7
+http://digistrucmed.org/questionnaire#30100004,4,4<tab>Hohe Qualit�t der Grafiken und gute Aufl�sung des visuellen Designs - �berwiegend proportional und einheitlich im Stil,26,30100004,4<tab>Hohe Qualit�t der Grafiken und gute Aufl�sung des visuellen Designs - �berwiegend proportional und einheitlich im Stil,0.7
+http://digistrucmed.org/questionnaire#20010205,5,trifft gar nicht zu,25,20010205,trifft gar nicht zu,0.68
+http://digistrucmed.org/questionnaire#30090004,4,"4<tab>Gutes Design - �berwiegend klar; Optionen k�nnen ausgew�hlt, gefunden, gesehen und gelesen werden.",25,30090004,"4<tab>Gutes Design - �berwiegend klar; Optionen k�nnen ausgew�hlt, gefunden, gesehen und gelesen werden.",0.68
+http://digistrucmed.org/questionnaire#20010805,5,trifft gar nicht zu,24,20010805,trifft gar nicht zu,0.65
+http://digistrucmed.org/questionnaire#30030003,3,"3<tab>Grundlegende interaktive Funktionen, angemessene Funktionalit�t",24,30030003,"3<tab>Grundlegende interaktive Funktionen, angemessene Funktionalit�t",0.65
+http://digistrucmed.org/questionnaire#30120005,4,"4<tab>Relevant, geeignet, zusammenh�ngend, korrekt",23,30120005,"4<tab>Relevant, geeignet, zusammenh�ngend, korrekt",0.62
+http://digistrucmed.org/questionnaire#10100110,10,sehr [10],22,10100110,sehr [10],0.6
+http://digistrucmed.org/questionnaire#20010305,5,trifft voll zu,22,20010305,trifft voll zu,0.6
+http://digistrucmed.org/questionnaire#30140005,4,"4<tab>Meistens klar, logisch und richtig, mit unerheblichen/vernachl�ssigbaren Problemen",22,30140005,"4<tab>Meistens klar, logisch und richtig, mit unerheblichen/vernachl�ssigbaren Problemen",0.6
+http://digistrucmed.org/questionnaire#30150006,5,5<tab>Stammt definitiv aus einer legitimen/spezialisierten Quelle,22,30150006,5<tab>Stammt definitiv aus einer legitimen/spezialisierten Quelle,0.6
+http://digistrucmed.org/questionnaire#30170003,3,3<tab>3-10,22,30170003,3<tab>3-10,0.6
+http://digistrucmed.org/questionnaire#30190004,4,4,22,30190004,4,0.6
+http://digistrucmed.org/questionnaire#30130005,4,"4<tab>Bietet eine gro�e Menge an Informationen, hat L�cken oder unn�tige Details oder bietet keine weiteren Hinweise auf Literatur zum Vertiefen",22,30130005,"4<tab>Bietet eine gro�e Menge an Informationen, hat L�cken oder unn�tige Details oder bietet keine weiteren Hinweise auf Literatur zum Vertiefen",0.6
+http://digistrucmed.org/questionnaire#20011005,5,trifft gar nicht zu,21,20011005,trifft gar nicht zu,0.57
+http://digistrucmed.org/questionnaire#30110004,4,"4<tab>Hoher visueller Anreiz - makellose Grafiken, einheitliches und professionelles Design",21,30110004,"4<tab>Hoher visueller Anreiz - makellose Grafiken, einheitliches und professionelles Design",0.57
+http://digistrucmed.org/questionnaire#30200005,5,5 Stimme sehr zu,21,30200005,5 Stimme sehr zu,0.57
+http://digistrucmed.org/questionnaire#20010905,5,trifft voll zu,20,20010905,trifft voll zu,0.54
+http://digistrucmed.org/questionnaire#30060005,5,"5<tab>Die Lernplattform arbeitet fehlerfrei und schnell; keine technischen Fehler, oder � falls zutreffend � enth�lt einen Fortschrittsbalken",20,30060005,"5<tab>Die Lernplattform arbeitet fehlerfrei und schnell; keine technischen Fehler, oder � falls zutreffend � enth�lt einen Fortschrittsbalken",0.54
+http://digistrucmed.org/questionnaire#30080005,5,"5<tab>Sehr logisch, einfach, klar und intuitive Men�f�hrung. Bietet Verkn�pfungen zum schnellen Wechsel zwischen verschiedenen Bereichen/Men�punkten an",20,30080005,"5<tab>Sehr logisch, einfach, klar und intuitive Men�f�hrung. Bietet Verkn�pfungen zum schnellen Wechsel zwischen verschiedenen Bereichen/Men�punkten an",0.54
+http://digistrucmed.org/questionnaire#30160005,5,5<tab>Ich w�rde die Lernplattform jedem empfehlen,20,30160005,5<tab>Ich w�rde die Lernplattform jedem empfehlen,0.54
+http://digistrucmed.org/questionnaire#20010103,3,Likert response 3,20,20010103,Likert response 3,0.54
+http://digistrucmed.org/questionnaire#30010002,3,"3 OK, unterhaltsam genug um sich f�r eine kurze Zeit mit der Lernplattform zu besch�ftigen (< 5 Minuten)",20,30010002,"3 OK, unterhaltsam genug um sich f�r eine kurze Zeit mit der Lernplattform zu besch�ftigen (< 5 Minuten)",0.54
+http://digistrucmed.org/questionnaire#30210005,5,5 Stimme sehr zu,19,30210005,5 Stimme sehr zu,0.51
+http://digistrucmed.org/questionnaire#20010904,4,Likert response 4,18,20010904,Likert response 4,0.49
+http://digistrucmed.org/questionnaire#10050003,3,Quiz,18,10050003,Quiz,0.49
+http://digistrucmed.org/questionnaire#30020005,5,"5<tab>�beraus interessant, so dass man zur wiederholten Nutzung der Lernplattform angeregt wird",18,30020005,"5<tab>�beraus interessant, so dass man zur wiederholten Nutzung der Lernplattform angeregt wird",0.49
+http://digistrucmed.org/questionnaire#30040005,5,"5<tab>Sehr zielgruppenspezifisch, keine Probleme",18,30040005,"5<tab>Sehr zielgruppenspezifisch, keine Probleme",0.49
+http://digistrucmed.org/questionnaire#30040004,4,"4<tab>Zielgruppenspezifisch, mit kleinen M�ngeln",18,30040004,"4<tab>Zielgruppenspezifisch, mit kleinen M�ngeln",0.49
+http://digistrucmed.org/questionnaire#30150005,4,4<tab>Stammt m�glicherweise von einer legitimen Quelle,18,30150005,4<tab>Stammt m�glicherweise von einer legitimen Quelle,0.49
+http://digistrucmed.org/questionnaire#20010504,4,Likert response 4,17,20010504,Likert response 4,0.46
+http://digistrucmed.org/questionnaire#20010604,4,Likert response 4,17,20010604,Likert response 4,0.46
+http://digistrucmed.org/questionnaire#30140006,5,"5<tab>Perfekt klar, logisch und richtig",17,30140006,"5<tab>Perfekt klar, logisch und richtig",0.46
+http://digistrucmed.org/questionnaire#30020004,4,4<tab>Mittelm��ig interessant; Nutzer w�rden sich damit einige Zeit besch�ftigen (insgesamt 5-10 Minuten),17,30020004,4<tab>Mittelm��ig interessant; Nutzer w�rden sich damit einige Zeit besch�ftigen (insgesamt 5-10 Minuten),0.46
+http://digistrucmed.org/questionnaire#30240004,4,4,17,30240004,4,0.46
+http://digistrucmed.org/questionnaire#20010704,4,Likert response 4,16,20010704,Likert response 4,0.43
+http://digistrucmed.org/questionnaire#30060004,4,"4<tab>Die Lernplattform funktioniert insgesamt gut, mit kleineren, vernachl�ssigbaren Problemen",16,30060004,"4<tab>Die Lernplattform funktioniert insgesamt gut, mit kleineren, vernachl�ssigbaren Problemen",0.43
+http://digistrucmed.org/questionnaire#30180003,3,3,16,30180003,3,0.43
+http://digistrucmed.org/questionnaire#30230004,4,4,16,30230004,4,0.43
+http://digistrucmed.org/questionnaire#20010505,5,trifft voll zu,16,20010505,trifft voll zu,0.43
+http://digistrucmed.org/questionnaire#20010605,5,trifft gar nicht zu,16,20010605,trifft gar nicht zu,0.43
+http://digistrucmed.org/questionnaire#30030004,4,"4<tab>Vielf�ltige interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind vorhanden",16,30030004,"4<tab>Vielf�ltige interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind vorhanden",0.43
+http://digistrucmed.org/questionnaire#30210004,4,4,16,30210004,4,0.43
+http://digistrucmed.org/questionnaire#30250003,3,3,16,30250003,3,0.43
+http://digistrucmed.org/questionnaire#30120006,5,"5<tab>Sehr Relevant, sehr geeignet, sehr zusammenh�ngend, sehr korrekt",15,30120006,"5<tab>Sehr Relevant, sehr geeignet, sehr zusammenh�ngend, sehr korrekt",0.41
+http://digistrucmed.org/questionnaire#20010304,4,Likert response 4,15,20010304,Likert response 4,0.41
+http://digistrucmed.org/questionnaire#30220004,4,4,15,30220004,4,0.41
+http://digistrucmed.org/questionnaire#30180001,1,1<tab>�berhaupt nicht,15,30180001,1<tab>�berhaupt nicht,0.41
+http://digistrucmed.org/questionnaire#20010705,5,trifft voll zu,14,20010705,trifft voll zu,0.38
+http://digistrucmed.org/questionnaire#30010003,4,"4 Mittelm��ig lustig und unterhaltsam, w�rde einen User f�r einige Zeit unterhalten (5-10 Minuten)",14,30010003,"4 Mittelm��ig lustig und unterhaltsam, w�rde einen User f�r einige Zeit unterhalten (5-10 Minuten)",0.38
+http://digistrucmed.org/questionnaire#30080004,4,4<tab>Leicht zu bedienen; es fehlen vernachl�ssigbare Verkn�pfungen,14,30080004,4<tab>Leicht zu bedienen; es fehlen vernachl�ssigbare Verkn�pfungen,0.38
+http://digistrucmed.org/questionnaire#30130006,5,5<tab>Umfangreich und pr�gnant; beinhaltet Hinweise auf Literatur zum Vertiefen,14,30130006,5<tab>Umfangreich und pr�gnant; beinhaltet Hinweise auf Literatur zum Vertiefen,0.38
+http://digistrucmed.org/questionnaire#30160004,4,4<tab>Ich w�rde die Lernplattform vielen Personen empfehlen,14,30160004,4<tab>Ich w�rde die Lernplattform vielen Personen empfehlen,0.38
+http://digistrucmed.org/questionnaire#10020107,7,[7],14,10020107,[7],0.38
+http://digistrucmed.org/questionnaire#10020107,7,Skalenwert 7,14,10020107,Skalenwert 7,0.38
+http://digistrucmed.org/questionnaire#30250004,4,4,14,30250004,4,0.38
+http://digistrucmed.org/questionnaire#30220003,3,3,14,30220003,3,0.38
+http://digistrucmed.org/questionnaire#20010804,4,Likert response 4,13,20010804,Likert response 4,0.35
+http://digistrucmed.org/questionnaire#10100107,7,[7],13,10100107,[7],0.35
+http://digistrucmed.org/questionnaire#10100107,7,Skalenwert 7,13,10100107,Skalenwert 7,0.35
+http://digistrucmed.org/questionnaire#10030107,7,[7],13,10030107,[7],0.35
+http://digistrucmed.org/questionnaire#10030107,7,Skalenwert 7,13,10030107,Skalenwert 7,0.35
+http://digistrucmed.org/questionnaire#30110003,3,3<tab>Etwas visueller Anreiz - durchschnittlich weder angenehm noch unangenehm,13,30110003,3<tab>Etwas visueller Anreiz - durchschnittlich weder angenehm noch unangenehm,0.35
+http://digistrucmed.org/questionnaire#30190003,3,3 Durchschnittlich,13,30190003,3 Durchschnittlich,0.35
+http://digistrucmed.org/questionnaire#30230003,3,3,13,30230003,3,0.35
+http://digistrucmed.org/questionnaire#20010204,4,Likert response 4,12,20010204,Likert response 4,0.32
+http://digistrucmed.org/questionnaire#10040107,7,[7],12,10040107,[7],0.32
+http://digistrucmed.org/questionnaire#10040107,7,Skalenwert 7,12,10040107,Skalenwert 7,0.32
+http://digistrucmed.org/questionnaire#10060107,7,[7],12,10060107,[7],0.32
+http://digistrucmed.org/questionnaire#10060107,7,Skalenwert 7,12,10060107,Skalenwert 7,0.32
+http://digistrucmed.org/questionnaire#30230005,5,5 Stimme sehr zu,12,30230005,5 Stimme sehr zu,0.32
+http://digistrucmed.org/questionnaire#10100106,6,[6],12,10100106,[6],0.32
+http://digistrucmed.org/questionnaire#10100106,6,Skalenwert 6,12,10100106,Skalenwert 6,0.32
+http://digistrucmed.org/questionnaire#30100005,5,5<tab>Sehr hohe Qualit�t der Grafiken und sehr gute Aufl�sung des visuellen Designs - durchgehend proportional und einheitlich im Stil,12,30100005,5<tab>Sehr hohe Qualit�t der Grafiken und sehr gute Aufl�sung des visuellen Designs - durchgehend proportional und einheitlich im Stil,0.32
+http://digistrucmed.org/questionnaire#30120008,,No recorded response,12,30120008,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30130008,,No recorded response,12,30130008,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30140008,,No recorded response,12,30140008,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30150008,,No recorded response,12,30150008,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30160007,,No recorded response,12,30160007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30170007,,No recorded response,12,30170007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30180007,,No recorded response,12,30180007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30190007,,No recorded response,12,30190007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30200007,,No recorded response,12,30200007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30210007,,No recorded response,12,30210007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30220007,,No recorded response,12,30220007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30230007,,No recorded response,12,30230007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30240007,,No recorded response,12,30240007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#30250007,,No recorded response,12,30250007,No recorded response,0.32
+http://digistrucmed.org/questionnaire#20010105,5,trifft voll zu,11,20010105,trifft voll zu,0.3
+http://digistrucmed.org/questionnaire#20010104,4,Likert response 4,11,20010104,Likert response 4,0.3
+http://digistrucmed.org/questionnaire#30220005,5,5 Stimme sehr zu,11,30220005,5 Stimme sehr zu,0.3
+http://digistrucmed.org/questionnaire#30240003,3,3,11,30240003,3,0.3
+http://digistrucmed.org/questionnaire#10030106,6,[6],11,10030106,[6],0.3
+http://digistrucmed.org/questionnaire#10030106,6,Skalenwert 6,11,10030106,Skalenwert 6,0.3
+http://digistrucmed.org/questionnaire#30200004,4,4,11,30200004,4,0.3
+http://digistrucmed.org/questionnaire#20010703,3,Likert response 3,11,20010703,Likert response 3,0.3
+http://digistrucmed.org/questionnaire#30090007,,No recorded response,11,30090007,No recorded response,0.3
+http://digistrucmed.org/questionnaire#30100007,,No recorded response,11,30100007,No recorded response,0.3
+http://digistrucmed.org/questionnaire#30110007,,No recorded response,11,30110007,No recorded response,0.3
+http://digistrucmed.org/questionnaire#30250005,5,5 Stimme sehr zu,10,30250005,5 Stimme sehr zu,0.27
+http://digistrucmed.org/questionnaire#30010004,5,"5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an",10,30010004,"5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an",0.27
+http://digistrucmed.org/questionnaire#30240005,5,5 Stimme sehr zu,10,30240005,5 Stimme sehr zu,0.27
+http://digistrucmed.org/questionnaire#20010603,3,Likert response 3,10,20010603,Likert response 3,0.27
+http://digistrucmed.org/questionnaire#30070005,5,5<tab>Eine intuitive und einfache Benutzung der Lernplattform ist sofort m�glich,10,30070005,5<tab>Eine intuitive und einfache Benutzung der Lernplattform ist sofort m�glich,0.27
+http://digistrucmed.org/questionnaire#30090005,5,"5<tab>Professionelles Design - einfach, klar, �bersichtlich, logisch organisiert; Bildschirm wird optimal genutzt; jede einzelne Komponente des Designs erf�llt seinen Zweck",10,30090005,"5<tab>Professionelles Design - einfach, klar, �bersichtlich, logisch organisiert; Bildschirm wird optimal genutzt; jede einzelne Komponente des Designs erf�llt seinen Zweck",0.27
+http://digistrucmed.org/questionnaire#20010503,3,Likert response 3,10,20010503,Likert response 3,0.27
+http://digistrucmed.org/questionnaire#30060007,,No recorded response,10,30060007,No recorded response,0.27
+http://digistrucmed.org/questionnaire#30070007,,No recorded response,10,30070007,No recorded response,0.27
+http://digistrucmed.org/questionnaire#30080007,,No recorded response,10,30080007,No recorded response,0.27
+http://digistrucmed.org/questionnaire#10030105,5,[5],9,10030105,[5],0.24
+http://digistrucmed.org/questionnaire#10030105,5,Skalenwert 5,9,10030105,Skalenwert 5,0.24
+http://digistrucmed.org/questionnaire#10040106,6,[6],9,10040106,[6],0.24
+http://digistrucmed.org/questionnaire#10040106,6,Skalenwert 6,9,10040106,Skalenwert 6,0.24
+http://digistrucmed.org/questionnaire#30170002,2,2<tab>1-2,9,30170002,2<tab>1-2,0.24
+http://digistrucmed.org/questionnaire#30020003,3,"3<tab>OK, weder interessant noch uninteressant; Nutzer w�rden sich damit eine kurze Zeit besch�ftigen (< 5 Minuten)",9,30020003,"3<tab>OK, weder interessant noch uninteressant; Nutzer w�rden sich damit eine kurze Zeit besch�ftigen (< 5 Minuten)",0.24
+http://digistrucmed.org/questionnaire#30010006,,No recorded response,9,30010006,No recorded response,0.24
+http://digistrucmed.org/questionnaire#30020007,,No recorded response,9,30020007,No recorded response,0.24
+http://digistrucmed.org/questionnaire#30030007,,No recorded response,9,30030007,No recorded response,0.24
+http://digistrucmed.org/questionnaire#30040007,,No recorded response,9,30040007,No recorded response,0.24
+http://digistrucmed.org/questionnaire#10100102,2,[2],8,10100102,[2],0.22
+http://digistrucmed.org/questionnaire#10100102,2,Skalenwert 2,8,10100102,Skalenwert 2,0.22
+http://digistrucmed.org/questionnaire#10060106,6,[6],8,10060106,[6],0.22
+http://digistrucmed.org/questionnaire#10060106,6,Skalenwert 6,8,10060106,Skalenwert 6,0.22
+http://digistrucmed.org/questionnaire#10100105,5,[5],8,10100105,[5],0.22
+http://digistrucmed.org/questionnaire#10100105,5,Skalenwert 5,8,10100105,Skalenwert 5,0.22
+http://digistrucmed.org/questionnaire#20011004,4,Likert response 4,8,20011004,Likert response 4,0.22
+http://digistrucmed.org/questionnaire#30180002,2,2,8,30180002,2,0.22
+http://digistrucmed.org/questionnaire#30110005,5,"5<tab>Wie in Punkt 4 beschrieben, dar�ber hinaus: �beraus gro�er visueller Anreiz - einpr�gsam, sticht positiv heraus; Farbgestaltung wirkt sich positiv auf die Optionen und die Men�f�hrung der Lernplattform aus",8,30110005,"5<tab>Wie in Punkt 4 beschrieben, dar�ber hinaus: �beraus gro�er visueller Anreiz - einpr�gsam, sticht positiv heraus; Farbgestaltung wirkt sich positiv auf die Optionen und die Men�f�hrung der Lernplattform aus",0.22
+http://digistrucmed.org/questionnaire#30200003,3,3,8,30200003,3,0.22
+http://digistrucmed.org/questionnaire#20011002,2,Likert response 2,8,20011002,Likert response 2,0.22
+http://digistrucmed.org/questionnaire#20010107,,No recorded response,8,20010107,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010207,,No recorded response,8,20010207,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010307,,No recorded response,8,20010307,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010407,,No recorded response,8,20010407,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010507,,No recorded response,8,20010507,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010607,,No recorded response,8,20010607,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010707,,No recorded response,8,20010707,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010807,,No recorded response,8,20010807,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010907,,No recorded response,8,20010907,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20011007,,No recorded response,8,20011007,No recorded response,0.22
+http://digistrucmed.org/questionnaire#20010403,3,Likert response 3,7,20010403,Likert response 3,0.19
+http://digistrucmed.org/questionnaire#20011003,3,Likert response 3,7,20011003,Likert response 3,0.19
+http://digistrucmed.org/questionnaire#30190005,5,"5 Eine der besten Lernplattformen, die ich je genutzt habe",7,30190005,"5 Eine der besten Lernplattformen, die ich je genutzt habe",0.19
+http://digistrucmed.org/questionnaire#20010203,3,Likert response 3,7,20010203,Likert response 3,0.19
+http://digistrucmed.org/questionnaire#20010404,4,Likert response 4,7,20010404,Likert response 4,0.19
+http://digistrucmed.org/questionnaire#30210003,3,3,7,30210003,3,0.19
+http://digistrucmed.org/questionnaire#30040003,3,"3<tab>OK, aber nicht Zielgruppen orientiert. Kann unpassend/unklar/verwirrend sein",7,30040003,"3<tab>OK, aber nicht Zielgruppen orientiert. Kann unpassend/unklar/verwirrend sein",0.19
+http://digistrucmed.org/questionnaire#30060003,3,3<tab>Lernplattform funktioniert im Allgemeinen. Einige technische Probleme oder gelegentlich langsam,7,30060003,3<tab>Lernplattform funktioniert im Allgemeinen. Einige technische Probleme oder gelegentlich langsam,0.19
+http://digistrucmed.org/questionnaire#30160003,3,3<tab>Ich w�rde die Lernplattform einigen Personen empfehlen,7,30160003,3<tab>Ich w�rde die Lernplattform einigen Personen empfehlen,0.19
+http://digistrucmed.org/questionnaire#30090003,3,"3<tab>Mittelm��ige Qualit�t des Designs - einige Probleme Optionen auszuw�hlen, zu finden, zu sehen und zu lesen.",6,30090003,"3<tab>Mittelm��ige Qualit�t des Designs - einige Probleme Optionen auszuw�hlen, zu finden, zu sehen und zu lesen.",0.16
+http://digistrucmed.org/questionnaire#10100104,4,[4],6,10100104,[4],0.16
+http://digistrucmed.org/questionnaire#10100104,4,Skalenwert 4,6,10100104,Skalenwert 4,0.16
+http://digistrucmed.org/questionnaire#20010803,3,Likert response 3,6,20010803,Likert response 3,0.16
+http://digistrucmed.org/questionnaire#30070003,3,3<tab>Nach einigem Aufwand benutzbar,6,30070003,3<tab>Nach einigem Aufwand benutzbar,0.16
+http://digistrucmed.org/questionnaire#30080003,3,3<tab>Nach einiger Zeit und einigem Bem�hen benutzbar,6,30080003,3<tab>Nach einiger Zeit und einigem Bem�hen benutzbar,0.16
+http://digistrucmed.org/questionnaire#30170004,4,4<tab>10-50,6,30170004,4<tab>10-50,0.16
+http://digistrucmed.org/questionnaire#10020105,5,[5],5,10020105,[5],0.14
+http://digistrucmed.org/questionnaire#10020105,5,Skalenwert 5,5,10020105,Skalenwert 5,0.14
+http://digistrucmed.org/questionnaire#10100103,3,[3],5,10100103,[3],0.14
+http://digistrucmed.org/questionnaire#10100103,3,Skalenwert 3,5,10100103,Skalenwert 3,0.14
+http://digistrucmed.org/questionnaire#30130004,3,"3<tab>Ok, aber weder umfangreich noch pr�gnant",5,30130004,"3<tab>Ok, aber weder umfangreich noch pr�gnant",0.14
+http://digistrucmed.org/questionnaire#20010303,3,Likert response 3,5,20010303,Likert response 3,0.14
+http://digistrucmed.org/questionnaire#10060105,5,[5],4,10060105,[5],0.11
+http://digistrucmed.org/questionnaire#10060105,5,Skalenwert 5,4,10060105,Skalenwert 5,0.11
+http://digistrucmed.org/questionnaire#30100003,3,3<tab>Mittelm��ige Qualit�t der Grafiken und des visuellen Designs - �berwiegend einheitlich im Design,4,30100003,3<tab>Mittelm��ige Qualit�t der Grafiken und des visuellen Designs - �berwiegend einheitlich im Design,0.11
+http://digistrucmed.org/questionnaire#10020106,6,[6],4,10020106,[6],0.11
+http://digistrucmed.org/questionnaire#10020106,6,Skalenwert 6,4,10020106,Skalenwert 6,0.11
+http://digistrucmed.org/questionnaire#10100101,1,�berhaupt nicht [1],4,10100101,�berhaupt nicht [1],0.11
+http://digistrucmed.org/questionnaire#20010702,2,Likert response 2,4,20010702,Likert response 2,0.11
+http://digistrucmed.org/questionnaire#20010902,2,Likert response 2,4,20010902,Likert response 2,0.11
+http://digistrucmed.org/questionnaire#30120004,3,"3<tab>Mittelm��ig relevant, mittelm��ig geeignet, mittelm��ig zusammenh�ngend, wirkt korrekt",4,30120004,"3<tab>Mittelm��ig relevant, mittelm��ig geeignet, mittelm��ig zusammenh�ngend, wirkt korrekt",0.11
+http://digistrucmed.org/questionnaire#30240002,2,2,4,30240002,2,0.11
+http://digistrucmed.org/questionnaire#10020112,,No recorded response,4,10020112,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10030112,,No recorded response,4,10030112,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10040112,,No recorded response,4,10040112,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10050005,,No recorded response,4,10050005,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10060112,,No recorded response,4,10060112,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10100112,,No recorded response,4,10100112,No recorded response,0.11
+http://digistrucmed.org/questionnaire#10040105,5,[5],3,10040105,[5],0.08
+http://digistrucmed.org/questionnaire#10040105,5,Skalenwert 5,3,10040105,Skalenwert 5,0.08
+http://digistrucmed.org/questionnaire#30170005,5,5<tab>>50,3,30170005,5<tab>>50,0.08
+http://digistrucmed.org/questionnaire#20010302,2,Likert response 2,3,20010302,Likert response 2,0.08
+http://digistrucmed.org/questionnaire#30030005,5,"5<tab>Interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind auf einem so hohen Niveau, dass man das Gef�hl hat, die Lernplattform stellt sich auf die Person des Nutzers ein",3,30030005,"5<tab>Interaktive Funktionen, Feedback und Optionen f�r Eingaben der Nutzer sind auf einem so hohen Niveau, dass man das Gef�hl hat, die Lernplattform stellt sich auf die Person des Nutzers ein",0.08
+http://digistrucmed.org/questionnaire#30140004,3,"3<tab>Ok, aber oft unklar/verwirrend/falsch",3,30140004,"3<tab>Ok, aber oft unklar/verwirrend/falsch",0.08
+http://digistrucmed.org/questionnaire#30080002,2,2<tab>Nach geraumer Zeit und hohem Aufwand benutzbar,3,30080002,2<tab>Nach geraumer Zeit und hohem Aufwand benutzbar,0.08
+http://digistrucmed.org/questionnaire#20010903,3,Likert response 3,3,20010903,Likert response 3,0.08
+http://digistrucmed.org/questionnaire#10020102,2,[2],2,10020102,[2],0.05
+http://digistrucmed.org/questionnaire#10020102,2,Skalenwert 2,2,10020102,Skalenwert 2,0.05
+http://digistrucmed.org/questionnaire#10030102,2,[2],2,10030102,[2],0.05
+http://digistrucmed.org/questionnaire#10030102,2,Skalenwert 2,2,10030102,Skalenwert 2,0.05
+http://digistrucmed.org/questionnaire#10040102,2,[2],2,10040102,[2],0.05
+http://digistrucmed.org/questionnaire#10040102,2,Skalenwert 2,2,10040102,Skalenwert 2,0.05
+http://digistrucmed.org/questionnaire#10040104,4,[4],2,10040104,[4],0.05
+http://digistrucmed.org/questionnaire#10040104,4,Skalenwert 4,2,10040104,Skalenwert 4,0.05
+http://digistrucmed.org/questionnaire#20010502,2,Likert response 2,2,20010502,Likert response 2,0.05
+http://digistrucmed.org/questionnaire#20010401,1,trifft voll zu,2,20010401,trifft voll zu,0.05
+http://digistrucmed.org/questionnaire#30200002,2,2,2,30200002,2,0.05
+http://digistrucmed.org/questionnaire#30220002,2,2,2,30220002,2,0.05
+http://digistrucmed.org/questionnaire#30250002,2,2,2,30250002,2,0.05
+http://digistrucmed.org/questionnaire#30040002,2,2<tab>Eher unpassend/unklar/verwirrend,2,30040002,2<tab>Eher unpassend/unklar/verwirrend,0.05
+http://digistrucmed.org/questionnaire#20010101,1,trifft gar nicht zu,2,20010101,trifft gar nicht zu,0.05
+http://digistrucmed.org/questionnaire#30170001,1,1<tab>Nie,2,30170001,1<tab>Nie,0.05
+http://digistrucmed.org/questionnaire#10020104,4,[4],2,10020104,[4],0.05
+http://digistrucmed.org/questionnaire#10020104,4,Skalenwert 4,2,10020104,Skalenwert 4,0.05
+http://digistrucmed.org/questionnaire#30180005,5,5<tab>Auf jeden Fall,2,30180005,5<tab>Auf jeden Fall,0.05
+http://digistrucmed.org/questionnaire#30180004,4,4,1,30180004,4,0.03
+http://digistrucmed.org/questionnaire#10020101,1,�berhaupt nicht [1],1,10020101,�berhaupt nicht [1],0.03
+http://digistrucmed.org/questionnaire#10030101,1,�berhaupt keine [1],1,10030101,�berhaupt keine [1],0.03
+http://digistrucmed.org/questionnaire#10040101,1,�berhaupt nicht [1],1,10040101,�berhaupt nicht [1],0.03
+http://digistrucmed.org/questionnaire#10060101,1,sehr schlecht [1],1,10060101,sehr schlecht [1],0.03
+http://digistrucmed.org/questionnaire#30150004,3,"3<tab>Keine fragw�rdige Quelle, aber die Legitimit�t der Quelle ist unklar",1,30150004,"3<tab>Keine fragw�rdige Quelle, aber die Legitimit�t der Quelle ist unklar",0.03
+http://digistrucmed.org/questionnaire#20011001,1,trifft voll zu,1,20011001,trifft voll zu,0.03
+http://digistrucmed.org/questionnaire#30030002,2,"2<tab>Unzureichende Interaktivit�t, oder Feedback, oder Optionen f�r Eingaben der User, limitierte Funktionalit�t",1,30030002,"2<tab>Unzureichende Interaktivit�t, oder Feedback, oder Optionen f�r Eingaben der User, limitierte Funktionalit�t",0.03
+http://digistrucmed.org/questionnaire#30150001,6,N/A<tab>Lernplattform liefert diesbez�glich keine Informationen,1,30150001,N/A<tab>Lernplattform liefert diesbez�glich keine Informationen,0.03
+http://digistrucmed.org/questionnaire#20010102,2,Likert response 2,1,20010102,Likert response 2,0.03
+http://digistrucmed.org/questionnaire#20010202,2,Likert response 2,1,20010202,Likert response 2,0.03
+http://digistrucmed.org/questionnaire#20010801,1,trifft voll zu,1,20010801,trifft voll zu,0.03
+http://digistrucmed.org/questionnaire#30010001,2,2 �berwiegend langweilig,1,30010001,2 �berwiegend langweilig,0.03
+http://digistrucmed.org/questionnaire#30020002,2,2<tab>�berwiegend nicht interessant,1,30020002,2<tab>�berwiegend nicht interessant,0.03
+http://digistrucmed.org/questionnaire#30030001,1,1<tab>Keine interaktiven Funktionen und/oder keine Eingaben der Nutzer sind m�glich,1,30030001,1<tab>Keine interaktiven Funktionen und/oder keine Eingaben der Nutzer sind m�glich,0.03
+http://digistrucmed.org/questionnaire#30060001,1,"1<tab>Die Lernplattform funktioniert nicht. Keine oder unzureichende Antwort (z.B. Abbr�che, Fehler, nicht funktionierende Funktionen, etc.)",1,30060001,"1<tab>Die Lernplattform funktioniert nicht. Keine oder unzureichende Antwort (z.B. Abbr�che, Fehler, nicht funktionierende Funktionen, etc.)",0.03
+http://digistrucmed.org/questionnaire#30070001,1,1<tab>Keine oder unzureichende Erkl�rungen; Men�beschriftungen und Symbole sind verwirrend und/oder kompliziert,1,30070001,1<tab>Keine oder unzureichende Erkl�rungen; Men�beschriftungen und Symbole sind verwirrend und/oder kompliziert,0.03
+http://digistrucmed.org/questionnaire#30080001,1,1<tab>Verschiedene Abschnitte wirken unzusammenh�ngend/zuf�llig/verwirrend. Die Navigation ist kompliziert,1,30080001,1<tab>Verschiedene Abschnitte wirken unzusammenh�ngend/zuf�llig/verwirrend. Die Navigation ist kompliziert,0.03
+http://digistrucmed.org/questionnaire#30090001,1,"1<tab>Mangelhaftes Design � unordentlich/ungeordnet; einige Optionen k�nnen nicht ausgew�hlt, gefunden, gesehen oder gelesen werden; Bildschirm wird nicht optimal genutzt",1,30090001,"1<tab>Mangelhaftes Design � unordentlich/ungeordnet; einige Optionen k�nnen nicht ausgew�hlt, gefunden, gesehen oder gelesen werden; Bildschirm wird nicht optimal genutzt",0.03
+http://digistrucmed.org/questionnaire#30100001,1,"1<tab>Grafiken wirken amateurhaft, schlechtes visuelles Design - v�llig unproportional, stilistisch nicht einheitlich",1,30100001,"1<tab>Grafiken wirken amateurhaft, schlechtes visuelles Design - v�llig unproportional, stilistisch nicht einheitlich",0.03
+http://digistrucmed.org/questionnaire#30110001,1,"1<tab>Kein visueller Anreiz - unangenehm zu betrachten, schwaches Design, bei�ende oder nicht zusammenpassende Farben",1,30110001,"1<tab>Kein visueller Anreiz - unangenehm zu betrachten, schwaches Design, bei�ende oder nicht zusammenpassende Farben",0.03
+http://digistrucmed.org/questionnaire#20010602,2,Likert response 2,1,20010602,Likert response 2,0.03
+http://digistrucmed.org/questionnaire#30160001,1,1<tab>Ich w�rde die Lernplattform niemanden empfehlen,1,30160001,1<tab>Ich w�rde die Lernplattform niemanden empfehlen,0.03
+http://digistrucmed.org/questionnaire#30230002,2,2,1,30230002,2,0.03
+http://digistrucmed.org/questionnaire#10060103,3,[3],1,10060103,[3],0.03
+http://digistrucmed.org/questionnaire#10060103,3,Skalenwert 3,1,10060103,Skalenwert 3,0.03
+http://digistrucmed.org/questionnaire#20010601,1,trifft voll zu,1,20010601,trifft voll zu,0.03
+http://digistrucmed.org/questionnaire#30130003,2,2<tab>Unzureichend oder m�glicherweise �berfordernd,1,30130003,2<tab>Unzureichend oder m�glicherweise �berfordernd,0.03
+http://digistrucmed.org/questionnaire#20010802,2,Likert response 2,1,20010802,Likert response 2,0.03
+http://digistrucmed.org/questionnaire#30070002,2,2<tab>Nach hohem Aufwand benutzbar,1,30070002,2<tab>Nach hohem Aufwand benutzbar,0.03
+http://digistrucmed.org/questionnaire#30090002,2,"2<tab>Schwaches Design - nicht einheitlich, unklar; einige Optionen sind schwierig auszuw�hlen, zu finden, zu sehen und zu lesen.",1,30090002,"2<tab>Schwaches Design - nicht einheitlich, unklar; einige Optionen sind schwierig auszuw�hlen, zu finden, zu sehen und zu lesen.",0.03
+http://digistrucmed.org/questionnaire#20010402,2,Likert response 2,1,20010402,Likert response 2,0.03
+http://digistrucmed.org/questionnaire#10030104,4,[4],1,10030104,[4],0.03
+http://digistrucmed.org/questionnaire#10030104,4,Skalenwert 4,1,10030104,Skalenwert 4,0.03
+http://digistrucmed.org/questionnaire#10060104,4,[4],1,10060104,[4],0.03
+http://digistrucmed.org/questionnaire#10060104,4,Skalenwert 4,1,10060104,Skalenwert 4,0.03
