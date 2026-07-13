@@ -1,0 +1,293 @@
+########################################################################
+# SPARQL queries for KG-Questionnaire.nt
+# Namespace used throughout:
+PREFIX q: <http://digistrucmed.org/questionnaire#>
+########################################################################
+
+########################################################################
+# 1) MAIN QUERY — count of each answer category ("very_positive",
+#    "positive", "neutral", "negative", "very_negative", "nan" ...)
+#    for every question whose hasQuestionCategory = q:Quality.
+#
+#    Real chain in this graph:
+#      Answered (X_QuestionId) --hasAnswer--> Answer
+#      Answer --isAnswerTo--> Question
+#      Answer --hasAnswerCategory--> very_positive|positive|neutral|
+#                                     negative|very_negative|nan
+########################################################################
+
+SELECT ?question ?questionDesc ?category (COUNT(DISTINCT ?resp) AS ?numPeople)
+WHERE {
+  ?question a q:Question ;
+            q:hasQuestionCategory q:Quality ;
+            q:QuestionDescription ?questionDesc .
+
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          q:hasAnswerCategory ?category .
+}
+GROUP BY ?question ?questionDesc ?category
+ORDER BY ?question ?category
+
+
+########################################################################
+# 1b) SAME QUERY, PIVOTED — one row per question, one column per
+#     category (very_positive / positive / neutral / negative /
+#     very_negative / nan). Easiest to read as a table, matches your
+#     example: "16 said very positive, 10 said very negative" etc.
+########################################################################
+
+SELECT ?questionDesc
+       (COUNT(DISTINCT IF(?category = q:very_positive, ?resp, UNDEF)) AS ?veryPositive)
+       (COUNT(DISTINCT IF(?category = q:positive,      ?resp, UNDEF)) AS ?positive)
+       (COUNT(DISTINCT IF(?category = q:neutral,       ?resp, UNDEF)) AS ?neutral)
+       (COUNT(DISTINCT IF(?category = q:negative,      ?resp, UNDEF)) AS ?negative)
+       (COUNT(DISTINCT IF(?category = q:very_negative, ?resp, UNDEF)) AS ?veryNegative)
+       (COUNT(DISTINCT IF(?category = q:nan,           ?resp, UNDEF)) AS ?noResponse)
+WHERE {
+  ?question a q:Question ;
+            q:hasQuestionCategory q:Quality ;
+            q:QuestionDescription ?questionDesc .
+
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          q:hasAnswerCategory ?category .
+}
+GROUP BY ?questionDesc
+ORDER BY ?questionDesc
+
+
+########################################################################
+# 1c) OVERALL total (all Quality questions combined) — a single summary
+#     across the whole Quality category, exactly the "16 people / 10
+#     people" style total you described.
+########################################################################
+
+SELECT ?category (COUNT(DISTINCT ?resp) AS ?numPeople)
+WHERE {
+  ?question a q:Question ;
+            q:hasQuestionCategory q:Quality .
+
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          q:hasAnswerCategory ?category .
+}
+GROUP BY ?category
+ORDER BY DESC(?numPeople)
+
+
+########################################################################
+# 2) GENERALIZED VERSION — works for any question category, not just
+#    Quality (q:Agreement, q:Degree, q:Preference, q:Frequency,
+#    q:Recommendation, ...). ?catType is left as a free variable.
+########################################################################
+
+SELECT ?catType ?questionDesc ?category (COUNT(DISTINCT ?resp) AS ?numPeople)
+WHERE {
+  ?question a q:Question ;
+            q:hasQuestionCategory ?catType ;
+            q:QuestionDescription ?questionDesc .
+
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          q:hasAnswerCategory ?category .
+}
+GROUP BY ?catType ?questionDesc ?category
+ORDER BY ?catType ?questionDesc ?category
+
+
+########################################################################
+########################################################################
+##  CONNECTIVITY / GRAPH-HEALTH QUERIES
+########################################################################
+########################################################################
+
+########################################################################
+# C1) Class inventory — what types of nodes exist and how many of each
+########################################################################
+
+SELECT ?type (COUNT(?s) AS ?count)
+WHERE {
+  ?s a ?type .
+}
+GROUP BY ?type
+ORDER BY DESC(?count)
+
+
+########################################################################
+# C2) Predicate usage — which relations are used and how often
+#     (a quick map of how densely connected the graph is)
+########################################################################
+
+SELECT ?predicate (COUNT(*) AS ?count)
+WHERE {
+  ?s ?predicate ?o .
+}
+GROUP BY ?predicate
+ORDER BY DESC(?count)
+
+
+########################################################################
+# C3) Orphan questions — questions with NO recorded Answered responses
+#     at all (broken link, or genuinely never answered)
+########################################################################
+
+SELECT ?question ?questionDesc
+WHERE {
+  ?question a q:Question ;
+            q:QuestionDescription ?questionDesc .
+  FILTER NOT EXISTS {
+    ?resp a q:Answered ; q:hasAnswer/q:isAnswerTo ?question .
+  }
+}
+ORDER BY ?question
+
+
+########################################################################
+# C4) Orphan users — users who exist as nodes but have no Answered
+#     responses linked via answeredByUser (disconnected participants)
+########################################################################
+
+SELECT ?user
+WHERE {
+  ?user a q:User .
+  FILTER NOT EXISTS {
+    ?resp q:answeredByUser ?user .
+  }
+}
+
+
+########################################################################
+# C5) Dangling references — Answered nodes whose hasAnswer target is
+#     not typed as q:Answer (structural integrity check)
+########################################################################
+
+SELECT ?resp ?answer
+WHERE {
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+  FILTER NOT EXISTS { ?answer a q:Answer }
+}
+
+
+########################################################################
+# C6) Dangling references — Answer nodes whose isAnswerTo target is
+#     not typed as q:Question
+########################################################################
+
+SELECT ?answer ?question
+WHERE {
+  ?answer a q:Answer ;
+          q:isAnswerTo ?question .
+  FILTER NOT EXISTS { ?question a q:Question }
+}
+
+
+########################################################################
+# C7) Response completeness per user — how many questions each user
+#     answered (participation level / dropout detection)
+########################################################################
+
+SELECT ?user (COUNT(DISTINCT ?resp) AS ?numAnswered)
+WHERE {
+  ?resp a q:Answered ;
+        q:answeredByUser ?user .
+}
+GROUP BY ?user
+ORDER BY ?numAnswered
+
+
+########################################################################
+# C8) Response completeness per questionnaire — how many Answered
+#     responses and distinct users per questionnaire (q:ModuleEvaluation,
+#     q:SUS, q:uMARS, etc.), useful to compare questionnaire coverage
+########################################################################
+
+SELECT ?questionnaire (COUNT(?resp) AS ?numResponses) (COUNT(DISTINCT ?user) AS ?numUsers)
+WHERE {
+  ?resp a q:Answered ;
+        q:answeredInQuestionnaire ?questionnaire ;
+        q:answeredByUser ?user .
+}
+GROUP BY ?questionnaire
+ORDER BY DESC(?numResponses)
+
+
+########################################################################
+# C9) Questions per questionnaire/module (belongsTo) — structural
+#     overview of how questionnaires are composed
+########################################################################
+
+SELECT ?questionnaire (COUNT(?question) AS ?numQuestions)
+WHERE {
+  ?question a q:Question ;
+            q:belongsTo ?questionnaire .
+}
+GROUP BY ?questionnaire
+ORDER BY DESC(?numQuestions)
+
+
+########################################################################
+# C10) Platform usage — how responses are distributed across
+#      answeredOnPlatform values (device/platform connectivity)
+########################################################################
+
+SELECT ?platform (COUNT(?resp) AS ?numResponses)
+WHERE {
+  ?resp a q:Answered ;
+        q:answeredOnPlatform ?platform .
+}
+GROUP BY ?platform
+ORDER BY DESC(?numResponses)
+
+
+########################################################################
+# C11) "NO_RECORDED_RESPONSE" / NullAnswer rate per question —
+#      data-quality check, shows which questions have the most
+#      missing/null answers
+########################################################################
+
+SELECT ?question ?questionDesc (COUNT(?resp) AS ?numNullResponses)
+WHERE {
+  ?question a q:Question ;
+            q:QuestionDescription ?questionDesc .
+
+  ?resp a q:Answered ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          a q:NullAnswer .
+}
+GROUP BY ?question ?questionDesc
+ORDER BY DESC(?numNullResponses)
+
+
+########################################################################
+# C12) Full answer chain for one user — trace a single participant's
+#      full response path across the graph (good sanity/debug query)
+########################################################################
+
+SELECT ?questionDesc ?rawResponseValue ?category ?questionnaire
+WHERE {
+  VALUES ?user { q:48 }    # <-- replace q:48 with any UserId you want to inspect
+
+  ?resp a q:Answered ;
+        q:answeredByUser ?user ;
+        q:rawResponseValue ?rawResponseValue ;
+        q:answeredInQuestionnaire ?questionnaire ;
+        q:hasAnswer ?answer .
+
+  ?answer q:isAnswerTo ?question ;
+          q:hasAnswerCategory ?category .
+
+  ?question q:QuestionDescription ?questionDesc .
+}
+ORDER BY ?questionnaire

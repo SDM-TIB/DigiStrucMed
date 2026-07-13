@@ -11,7 +11,7 @@
 # ============================================
 <#PlatformMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/Platform.csv" ;
+    rml:source "output_tables/Platform.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [
@@ -32,7 +32,7 @@
 # ============================================
 <#UserMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/User.csv" ;
+    rml:source "output_tables/User.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [
@@ -41,7 +41,7 @@
   ] ;
   rr:predicateObjectMap [
     rr:predicate ds:UserId ;
-    rr:objectMap [ rml:reference "UserId" ; rr:datatype xsd:string ]
+    rr:objectMap [ rr:template "http://digistrucmed.org/questionnaire#{UserId}" ;  rr:termType rr:IRI ]
   ] ;
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
@@ -53,7 +53,7 @@
 # ============================================
 <#QuestionnaireMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/Questionnarie.csv" ;
+    rml:source "output_tables/Questionnarie.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [
@@ -85,7 +85,7 @@
 # ============================================
 <#QuestionsMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/Questions.csv" ;
+    rml:source "output_tables/Questions.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [
@@ -94,7 +94,7 @@
   ] ;
   rr:predicateObjectMap [
     rr:predicate ds:QuestionId ;
-    rr:objectMap [ rml:reference "QuestionId" ; rr:datatype xsd:string ]
+    rr:objectMap [ rr:template "http://digistrucmed.org/questionnaire#{QuestionId}" ;  rr:termType rr:IRI ]
   ] ;
   rr:predicateObjectMap [
     rr:predicate ds:QuestionDescription ;
@@ -115,6 +115,13 @@
     rr:objectMap [ rml:reference "SectionId" ; rr:datatype xsd:string ]
   ] ;
   rr:predicateObjectMap [
+    rr:predicate ds:hasQuestionCategory ;
+    rr:objectMap [
+      rr:template "http://digistrucmed.org/questionnaire#{questionCategory}" ;
+      rr:termType rr:IRI
+    ]
+  ] ;
+  rr:predicateObjectMap [
     rr:predicate ds:hasPossibleAnswer ;
     rr:objectMap [
       rr:parentTriplesMap <#AnswerMap> ;
@@ -130,7 +137,7 @@
 # ============================================
 <#AnswerMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/Answer.csv" ;
+    rml:source "output_tables/Answer.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [
@@ -139,7 +146,7 @@
   ] ;
   rr:predicateObjectMap [
     rr:predicate ds:AnswerId ;
-    rr:objectMap [ rml:reference "AnswerId" ; rr:datatype xsd:string ]
+    rr:objectMap [ rr:template "http://digistrucmed.org/questionnaire#{AnswerId}" ;  rr:termType rr:IRI ]
   ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
@@ -169,6 +176,13 @@
   rr:predicateObjectMap [
     rr:predicate ds:answerType ;
     rr:objectMap [ rml:reference "Type" ; rr:datatype xsd:string ]
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ds:hasAnswerCategory ;
+    rr:objectMap [
+      rr:template "http://digistrucmed.org/questionnaire#{answerCategory}" ;
+      rr:termType rr:IRI
+    ]
   ] .
 
 # ============================================
@@ -176,7 +190,7 @@
 # ============================================
 <#AnsweredMap> a rml:TriplesMap ;
   rml:logicalSource [
-    rml:source "input-tables/Answered.csv" ;
+    rml:source "output_tables/Answered.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
   rr:subjectMap [

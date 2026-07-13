@@ -1,0 +1,43 @@
+QuestionId,QuestionBody,QuestionnarieId,SectionId,questionCategory
+M002_01,wie Hilfreich: Wie hilfreich fanden Sie die Inhalte des Moduls?,ME1,,Degree
+M003_01,Fragenbeantwortung: Wurden all Ihre Fragen zum Thema ausreichend beantwortet?,ME1,,Degree
+M004_01,Verständnis: Wie gut haben Sie den Stoff der einzelnen Lektionen verstanden?,ME1,,Degree
+M005,Medienart,ME1,,Preference
+M006_01,Gesamterfahrung: Wie würden Sie die Gesamterfahrung mit den zur Verfügung gestellten Inhalten in diesem Modul bewerten?,ME1,,Quality
+M007_01,Freitext positiv: Hier können Sie Ihre Antwort verfassen,ME1,,Preference
+M008_01,Freitext Wünsche: Hier können Sie Ihre Antwort verfassen,ME1,,Preference
+M010_01,neue Erkenntnisse: Haben Sie neue Erkenntnisse und Informationen durch die Bearbeitung des Moduls erhalten?,ME1,,Degree
+SU01_01,"System Usability Scale (SUS): Ich denke, ich würde die Lernplattform gerne häufiger benutzen.",SUS,,Agreement
+SU01_02,System Usability Scale (SUS): Ich finde die Lernplattform unnötig komplex. (umgepolt),SUS,,Agreement
+SU01_03,"System Usability Scale (SUS): Ich finde, die Lernplattform ist einfach zu benutzen.",SUS,,Agreement
+SU01_04,"System Usability Scale (SUS): Ich denke, ich würde die Unterstützung einer technisch versierten Person benötigen, um die Lernplattform benutzen zu können. (umgepolt)",SUS,,Agreement
+SU01_05,"System Usability Scale (SUS): Ich finde, die verschiedenen Funktionen in diesem Programm sind gut integriert.",SUS,,Agreement
+SU01_06,"System Usability Scale (SUS): Ich denke, es gibt zu viele Inkonsistenzen auf der Lernplattform. (umgepolt)",SUS,,Agreement
+SU01_07,"System Usability Scale (SUS): Ich könnte mir vorstellen, dass die meisten Personen sehr schnell lernen würden mit diesem Programm umzugehen.",SUS,,Agreement
+SU01_08,System Usability Scale (SUS): Ich fand die Lernplattform sehr umständlich zu nutzen. (umgepolt),SUS,,Agreement
+SU01_09,System Usability Scale (SUS): Ich fühlte mich sehr sicher bei der Benutzung der Lernplattform.,SUS,,Agreement
+SU01_10,"System Usability Scale (SUS): Ich musste eine Menge lernen, bevor ich mit der Lernplattform zurechtkam. (umgepolt)",SUS,,Agreement
+UM01,A1,uMARS,A1,Quality
+UM02,A2,uMARS,A2,Quality
+UM03,A3,uMARS,A3,Quality
+UM04,A4,uMARS,A4,Quality
+UM06,B1,uMARS,B1,Quality
+UM07,B2,uMARS,B2,Quality
+UM08,B3,uMARS,B3,Quality
+UM09,C1,uMARS,C1,Quality
+UM10,C2,uMARS,C2,Quality
+UM11,C3,uMARS,C3,Quality
+UM12,D1,uMARS,D1,Quality
+UM13,D2,uMARS,D2,Quality
+UM14,D3,uMARS,D3,Quality
+UM15,D4,uMARS,D4,Quality
+UM16,E1,uMARS,E1,Recommendation
+UM17,E2,uMARS,E2,Frequency
+UM18,E3,uMARS,E3,Degree
+UM19,E4,uMARS,E4,Quality
+UM20,F1,uMARS,F1,Agreement
+UM21,F2,uMARS,F2,Agreement
+UM22,F3,uMARS,F3,Agreement
+UM23,F4,uMARS,F4,Agreement
+UM24,F5,uMARS,F5,Agreement
+UM25,F6,uMARS,F6,Agreement

@@ -34,26 +34,29 @@
 <http://digistrucmed.org/questionnaire#Answer> rdf:type owl:Class ;
                                   rdfs:comment "A possible coded or textual answer option for a question." .
 
+###  http://digistrucmed.org/questionnaire#ScaleType
+<http://digistrucmed.org/questionnaire#ScaleType> rdf:type owl:Class ;
+                                  rdfs:comment "A reusable answer scale/type category, such as nominal, ordinal, textual, or null." .
                                 
 ###  http://digistrucmed.org/questionnaire#Nominal
-<http://digistrucmed.org/questionnaire#Nominal> rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://digistrucmed.org/questionnaire#Answer> ;
-                                  rdfs:comment "A nominal value for a question." .
+<http://digistrucmed.org/questionnaire#Nominal> rdf:type owl:NamedIndividual,
+                                           <http://digistrucmed.org/questionnaire#ScaleType> ;
+                                  rdfs:comment "A nominal answer scale/type category." .
 
 ###  http://digistrucmed.org/questionnaire#Ordinal 
-<http://digistrucmed.org/questionnaire#Ordinal> rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://digistrucmed.org/questionnaire#Answer> ;
-                                  rdfs:comment "An ordinal value for a question." .
+<http://digistrucmed.org/questionnaire#Ordinal> rdf:type owl:NamedIndividual,
+                                           <http://digistrucmed.org/questionnaire#ScaleType> ;
+                                  rdfs:comment "An ordinal answer scale/type category." .
 
 ###  http://digistrucmed.org/questionnaire#Textual
-<http://digistrucmed.org/questionnaire#Textual> rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://digistrucmed.org/questionnaire#Answer> ;
-                                  rdfs:comment "A textual value for a question." .
+<http://digistrucmed.org/questionnaire#Textual> rdf:type owl:NamedIndividual,
+                                           <http://digistrucmed.org/questionnaire#ScaleType> ;
+                                  rdfs:comment "A textual answer scale/type category." .
 
 ###  http://digistrucmed.org/questionnaire#NullAnswer
-<http://digistrucmed.org/questionnaire#NullAnswer> rdf:type owl:Class ;
-                                  rdfs:subClassOf <http://digistrucmed.org/questionnaire#Answer> ;
-                                  rdfs:comment "A null answer representing that the user did not provide an answer." .
+<http://digistrucmed.org/questionnaire#NullAnswer> rdf:type owl:NamedIndividual,
+                                           <http://digistrucmed.org/questionnaire#ScaleType> ;
+                                  rdfs:comment "A null answer scale/type category representing that the user did not provide an answer." .
 
 
 ###  http://digistrucmed.org/questionnaire#Questionnaire
@@ -137,6 +140,12 @@
                                   owl:inverseOf <http://digistrucmed.org/questionnaire#hasPossibleAnswer> ;
                                   rdfs:comment "Associates an answer option with the question it can answer." .
 
+### http://digistrucmed.org/questionnaire#answerType
+<http://digistrucmed.org/questionnaire#answerType> rdf:type rdf:Property, owl:ObjectProperty ;
+                                  rdfs:domain <http://digistrucmed.org/questionnaire#Answer> ;
+                                  rdfs:range <http://digistrucmed.org/questionnaire#ScaleType> ;
+                                  rdfs:comment "Associates an answer option with a reusable answer scale/type category, such as nominal, ordinal, textual, or null." .
+
 
 
 
@@ -202,12 +211,6 @@
     rdfs:domain <http://digistrucmed.org/questionnaire#Answer> ;
     rdfs:range xsd:string ;
     rdfs:comment "Human-readable label for an answer option." .
-
-### http://digistrucmed.org/questionnaire#answerType
-<http://digistrucmed.org/questionnaire#answerType> rdf:type rdfs:Property, owl:DatatypeProperty ;
-    rdfs:domain <http://digistrucmed.org/questionnaire#Answer> ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Type category of an answer option, such as nominal, ordinal, textual, or null." .
 
 ### http://digistrucmed.org/questionnaire#VisitId
 <http://digistrucmed.org/questionnaire#VisitId> rdf:type rdfs:Property, owl:DatatypeProperty ;
