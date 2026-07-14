@@ -99,16 +99,6 @@
       rr:template "http://digistrucmed.org/questionnaire#{questionCategory}" ;
       rr:termType rr:IRI
     ]
-  ] ;
-  rr:predicateObjectMap [
-    rr:predicate ds:hasPossibleAnswer ;
-    rr:objectMap [
-      rr:parentTriplesMap <#AnswerMap> ;
-      rr:joinCondition [
-        rr:child "QuestionId" ;
-        rr:parent "QuestionId"
-      ]
-    ]
   ] .
 
 # ============================================
