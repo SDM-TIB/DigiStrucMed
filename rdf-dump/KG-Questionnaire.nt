@@ -35881,43 +35881,51 @@
 <http://digistrucmed.org/questionnaire#30010001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010001>.
 <http://digistrucmed.org/questionnaire#30010001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
-<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#ResponseLabel> "2 Überwiegend langweilig"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#ResponseCode> "1"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#ResponseLabel> "1 Langweilig, gar nicht unterhaltsam"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#answerType> "Nominal"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#negative>.
+<http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#very_negative>.
 <http://digistrucmed.org/questionnaire#30010001> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
 <http://digistrucmed.org/questionnaire#30010002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010002>.
 <http://digistrucmed.org/questionnaire#30010002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
-<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#ResponseLabel> "3 OK, unterhaltsam genug um sich für eine kurze Zeit mit der Lernplattform zu beschäftigen (< 5 Minuten)"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#ResponseCode> "2"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#ResponseLabel> "2 Überwiegend langweilig"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#answerType> "Nominal"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#neutral>.
+<http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#negative>.
 <http://digistrucmed.org/questionnaire#30010002> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
 <http://digistrucmed.org/questionnaire#30010003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010003>.
 <http://digistrucmed.org/questionnaire#30010003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
-<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#ResponseLabel> "4 Mittelmäßig lustig und unterhaltsam, würde einen User für einige Zeit unterhalten (5-10 Minuten)"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#ResponseCode> "3"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#ResponseLabel> "3 OK, unterhaltsam genug um sich für eine kurze Zeit mit der Lernplattform zu beschäftigen (< 5 Minuten)"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#answerType> "Nominal"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#positive>.
+<http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#neutral>.
 <http://digistrucmed.org/questionnaire#30010003> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
 <http://digistrucmed.org/questionnaire#30010004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010004>.
 <http://digistrucmed.org/questionnaire#30010004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
-<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#ResponseLabel> "5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#ResponseCode> "4"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#ResponseLabel> "4 Mittelmäßig lustig und unterhaltsam, würde einen User für einige Zeit unterhalten (5-10 Minuten)"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#answerType> "Nominal"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#very_positive>.
+<http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#positive>.
 <http://digistrucmed.org/questionnaire#30010004> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
 <http://digistrucmed.org/questionnaire#30010005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010005>.
-<http://digistrucmed.org/questionnaire#30010005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#NullAnswer>.
-<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#ResponseCode> "-9"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#ResponseLabel> "nicht beantwortet"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#answerType> "NullAnswer"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#Empty>.
+<http://digistrucmed.org/questionnaire#30010005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
+<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#ResponseCode> "5"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#ResponseLabel> "5 Sehr unterhaltsam und lustig, regt zu mehrmaligen Benutzen an"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#answerType> "Nominal"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#very_positive>.
 <http://digistrucmed.org/questionnaire#30010005> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
+<http://digistrucmed.org/questionnaire#30010006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30010006>.
+<http://digistrucmed.org/questionnaire#30010006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#NullAnswer>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#ResponseCode> "-9"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#ResponseLabel> "nicht beantwortet"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#answerType> "NullAnswer"^^<http://www.w3.org/2001/XMLSchema#string>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#Empty>.
+<http://digistrucmed.org/questionnaire#30010006> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM01>.
 <http://digistrucmed.org/questionnaire#30020001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30020001> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30020001>.
 <http://digistrucmed.org/questionnaire#30020001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Nominal>.
@@ -36572,7 +36580,7 @@
 <http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#ResponseCode> "-9"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#ResponseLabel> "nicht beantwortet"^^<http://www.w3.org/2001/XMLSchema#string>.
 <http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#answerType> "NullAnswer"^^<http://www.w3.org/2001/XMLSchema#string>.
-<http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#nan>.
+<http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#hasAnswerCategory> <http://digistrucmed.org/questionnaire#Empty>.
 <http://digistrucmed.org/questionnaire#30150007> <http://digistrucmed.org/questionnaire#isAnswerTo> <http://digistrucmed.org/questionnaire#UM15>.
 <http://digistrucmed.org/questionnaire#30160001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://digistrucmed.org/questionnaire#Answer>.
 <http://digistrucmed.org/questionnaire#30160001> <http://digistrucmed.org/questionnaire#AnswerId> <http://digistrucmed.org/questionnaire#30160001>.
