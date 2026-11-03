@@ -1,0 +1,2196 @@
+{
+ "request": "Create a brief patient-education scene that explains how beta-blockers protect the heart in heart failure.",
+ "candidates": [
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "If Channel Blocker ivabradine Corlanor Reduce heart rate, similar to beta blockers May be prescribed for people for whom beta blockers don’t reduce the heart rate enough.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*"
+   ],
+   "entities": [
+    "Corlanor",
+    "If Channel Blocker",
+    "beta blockers",
+    "heart rate",
+    "ivabradine",
+    "people for whom beta blockers don’t reduce the heart rate enough"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**",
+    "Medications for HFrEF (the 4 pillars)"
+   ],
+   "entities": [
+    "Beta blocker",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "heart damage",
+    "heart rate",
+    "metoprolol succinate"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Sinoatrial node inhibitor This medicine slows heart rate and reduces the amount of oxygen the heart needs and how much the heart needs to work to pump blood. It is used with beta blockers if they do not lower heart rate enough. ivabradine (Corlanor)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)",
+    "Medications that may be added"
+   ],
+   "entities": [
+    "Sinoatrial node inhibitor",
+    "amount of oxygen the heart needs",
+    "beta blockers",
+    "heart rate",
+    "how much the heart needs to work to pump blood",
+    "ivabradine"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "2. In patients with symptomatic outflow tract VT in an otherwise normal heart, a beta blocker or a calcium channel blocker is useful (S8.1-1–S8.1-3).",
+   "file": "51e05ca1ccfe_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "In patients with symptomatic outflow tract VT in an otherwise normal heart",
+    "beta blocker",
+    "calcium channel blocker"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Maximally tolerated beta-blocker dose with persistent resting heart rate ≥70 beats/min; 5 mg twice daily with meals",
+   "file": "d35416ad073e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Maximally tolerated beta-blocker dose with persistent resting heart rate ≥70 beats/min",
+    "Initial dose"
+   ],
+   "entities": [
+    "5 mg twice daily",
+    "beta-blocker",
+    "heart rate",
+    "twice daily"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Beta blockers carvedilol, metoprolol succinate, metoprolol tartrate, bisoprolol, atenolol Coreg, Toprol XL, Lopressor, Zebeta, Tenormin Slow the heart rate (how fast the heart beats). Reduce blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "Beta blockers",
+    "Coreg",
+    "Lopressor",
+    "Tenormin",
+    "Toprol XL",
+    "Zebeta",
+    "atenolol",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "easier for the heart to pump blood",
+    "heart rate",
+    "metoprolol succinate",
+    "metoprolol tartrate"
+   ]
+  },
+  {
+   "text": "1. In patients with symptomatic PVCs in an otherwise normal heart, treatment with a beta blocker or non-dihydropyridine calcium channel blocker is useful to reduce recurrent arrhythmias and improve symptoms (S8-1,S8-2).",
+   "file": "a852da9264b8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATION"
+   ],
+   "entities": [
+    "In patients with symptomatic PVCs in an otherwise normal heart",
+    "beta blocker",
+    "non-dihydropyridine calcium channel blocker",
+    "recurrent arrhythmias",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "8. In adults with repaired severe complexity adult congenital heart disease and frequent or complex VA, a beta blocker can be beneficial to reduce the risk of SCA (S10.8-26).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "In adults with repaired severe complexity adult congenital heart disease and frequent or complex VA",
+    "SCA",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Target BP is 130/80 mmHg Hypertension is linked to immunosuppressive therapy and denervation of cardiac volume receptors It is sensitive to a low-sodium diet. Treatment with amlodipine and ACEIs/ARBs are first choice, usually completed by diuretics. Beta-blockers are contra-indicated as they hamper the already delayed chronotropic response of the denervated heart during the early term but they showed the beneficial effects as a treatment more than 1–1.5 years after HTX and in the case of post-transplant heart failure development. Nifedipine and diltiazem may increase the effects of calcineurin inhibitors due to the drug interactions",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Blood pressure monitoring",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "130/80 mmHg",
+    "ACEIs/ARBs",
+    "Beta-blockers",
+    "Hypertension",
+    "Nifedipine and diltiazem",
+    "Target BP",
+    "amlodipine",
+    "calcineurin inhibitors",
+    "denervation of cardiac volume receptors",
+    "diuretics",
+    "early term",
+    "immunosuppressive therapy",
+    "low-sodium diet",
+    "more than 1–1.5 years after HTX",
+    "post-transplant heart failure development"
+   ]
+  },
+  {
+   "text": "2. In patients with symptomatic VA in an otherwise normal heart, treatment with an antiarrhythmic medication is reasonable to reduce recurrent symptomatic arrhythmias and improve symptoms if beta blockers and nondihydropyridine calcium channel blockers are ineffective or not tolerated (S8-3,S8-4).",
+   "file": "a852da9264b8_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATION"
+   ],
+   "entities": [
+    "In patients with symptomatic VA in an otherwise normal heart",
+    "antiarrhythmic medication",
+    "beta blockers",
+    "nondihydropyridine calcium channel blockers",
+    "recurrent symptomatic arrhythmias",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "10. In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors, ICD implantation may be considered if meaningful survival of greater than 1 year is expected (S10.8-14–S10.8-16,S10.8-20).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "1 year",
+    "ICD implantation",
+    "In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors",
+    "meaningful survival"
+   ]
+  },
+  {
+   "text": "Within a construct of multidisciplinary shared decision-making, medications that may be appropriate during breastfeeding include ACEi (enalapril or captopril preferred, monitor neonatal weight), beta blockers (metoprolol preferred, monitor neonatal heart rate).",
+   "file": "c6018cd21eaa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Pharmacological strategies",
+    "Table 30. HF Management Strategies Across the Pregnancy Continuum",
+    "Postpartum"
+   ],
+   "entities": [
+    "ACEi",
+    "beta blockers",
+    "captopril",
+    "during breastfeeding",
+    "enalapril",
+    "metoprolol",
+    "multidisciplinary shared decision-making",
+    "neonatal heart rate",
+    "neonatal weight"
+   ]
+  },
+  {
+   "text": "Beta-blocker Decreases sinus node frequency, prolongs PR interval, shortens QT interval PVC, VT (LQTS, CPVT) Various (various) Cardiac: Bradycardia, AV block, hypotension, negative inotrope Extracardiac: Fatigue, bronchospasm, sexual disturbances, depression, cold extremities Contraindications: Severe sinus node dysfunction, severe AV conduction disturbances, decompensated heart failure, coronary vasospasm, severe asthma, BrS",
+   "file": "3c0bee988dc9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 8 Anti-arrhythmic drugs (acute and chronic treatment)**",
+    "Side effects",
+    "Contraindications, precautions, other considerations",
+    "Indications (specific indication)",
+    "Effects on ECG",
+    "Anti-arrhythmic drug",
+    "Oral dose per day (i.v. dose)"
+   ],
+   "entities": [
+    "AV block",
+    "Beta-blocker",
+    "BrS",
+    "Bradycardia",
+    "Decreases sinus node frequency, prolongs PR interval, shortens QT interval",
+    "Fatigue",
+    "PVC, VT (LQTS, CPVT)",
+    "Severe sinus node dysfunction",
+    "bronchospasm",
+    "cold extremities",
+    "coronary vasospasm",
+    "decompensated heart failure",
+    "depression",
+    "hypotension",
+    "negative inotrope",
+    "severe AV conduction disturbances",
+    "severe asthma",
+    "sexual disturbances"
+   ]
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "■ HFrEF (EF ≤35% ) ■ On maximum tolerated dose of beta-blocker ■ Sinus rhythm with a resting heart rate ≥70 beats/min ■ NYHA class II or III HF",
+   "file": "5aa8b14118d4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**TABLE 2** Indications for ARNI, Ivabradine, and SGLT2 Inhibitor Use",
+    "Indications for Use of Ivabradine",
+    "Indications for Use of an SGLT2 Inhibitor"
+   ],
+   "entities": [
+    "HFrEF (EF",
+    "NYHA class II or III HF",
+    "On maximum tolerated dose of beta-blocker",
+    "Sinus rhythm with a resting heart rate",
+    "beats/min",
+    "≤35%",
+    "≥70"
+   ]
+  },
+  {
+   "text": "In adults with CHD with biventricular physiology and a left systemic ventricle presenting with symptomatic heart failure (NYHA II/III) and EF ≤35% despite ≥3 months of OMT, ICD implantation is indicated.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in congenital heart disease"
+   ],
+   "entities": [
+    "EF ≤35%",
+    "ICD implantation",
+    "adults with CHD with biventricular physiology and a left systemic ventricle",
+    "symptomatic heart failure (NYHA II/III)",
+    "≥3 months of OMT"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in SR and a resting heart rate ≥70 b.p.m. who are unable to tolerate or have contraindications for a beta-blocker to reduce the risk of HF hospitalization and CV death. Patients should also receive an ACE-I (or ARNI) and an MRA. 140",
+   "file": "2858a92259e7_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "I_f-channel inhibitor",
+    "Levelb",
+    "Classa",
+    "Recommendations"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARNI",
+    "CV death",
+    "HF hospitalization",
+    "Ivabradine",
+    "LVEF",
+    "MRA",
+    "SR",
+    "beta-blocker",
+    "resting heart rate",
+    "symptomatic patients",
+    "unable to tolerate or have contraindications for a beta-blocker",
+    "≤35%",
+    "≥70 b.p.m."
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**",
+    "Medications for HFrEF (the 4 pillars)"
+   ],
+   "entities": [
+    "Beta blocker",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "heart damage",
+    "heart rate",
+    "metoprolol succinate"
+   ]
+  },
+  {
+   "text": "Beta blockers carvedilol, metoprolol succinate, metoprolol tartrate, bisoprolol, atenolol Coreg, Toprol XL, Lopressor, Zebeta, Tenormin Slow the heart rate (how fast the heart beats). Reduce blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "Beta blockers",
+    "Coreg",
+    "Lopressor",
+    "Tenormin",
+    "Toprol XL",
+    "Zebeta",
+    "atenolol",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "easier for the heart to pump blood",
+    "heart rate",
+    "metoprolol succinate",
+    "metoprolol tartrate"
+   ]
+  },
+  {
+   "text": "Beta-blocker Decreases sinus node frequency, prolongs PR interval, shortens QT interval PVC, VT (LQTS, CPVT) Various (various) Cardiac: Bradycardia, AV block, hypotension, negative inotrope Extracardiac: Fatigue, bronchospasm, sexual disturbances, depression, cold extremities Contraindications: Severe sinus node dysfunction, severe AV conduction disturbances, decompensated heart failure, coronary vasospasm, severe asthma, BrS",
+   "file": "3c0bee988dc9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 8 Anti-arrhythmic drugs (acute and chronic treatment)**",
+    "Side effects",
+    "Contraindications, precautions, other considerations",
+    "Indications (specific indication)",
+    "Effects on ECG",
+    "Anti-arrhythmic drug",
+    "Oral dose per day (i.v. dose)"
+   ],
+   "entities": [
+    "AV block",
+    "Beta-blocker",
+    "BrS",
+    "Bradycardia",
+    "Decreases sinus node frequency, prolongs PR interval, shortens QT interval",
+    "Fatigue",
+    "PVC, VT (LQTS, CPVT)",
+    "Severe sinus node dysfunction",
+    "bronchospasm",
+    "cold extremities",
+    "coronary vasospasm",
+    "decompensated heart failure",
+    "depression",
+    "hypotension",
+    "negative inotrope",
+    "severe AV conduction disturbances",
+    "severe asthma",
+    "sexual disturbances"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Beta‑Blockers Protect Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee. Today we’ll talk about beta‑blockers for heart failure.",
+    "visual_description": "Doctor greeting patient in a calm exam room.",
+    "on_screen_text": "Beta‑blockers in heart failure"
+   },
+   {
+    "scene_number": 2,
+    "narration": "You have heart failure with reduced pumping ability, so this medicine is important for you.",
+    "visual_description": "Doctor points to a simple heart diagram showing reduced pumping.",
+    "on_screen_text": "For reduced‑EF patients"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Beta‑blockers slow your heart rate. They lower your blood pressure. They may help reverse some heart damage.",
+    "visual_description": "Doctor holds a heart model and shows slower beat.",
+    "on_screen_text": "Slows rate, lowers pressure"
+   },
+   {
+    "scene_number": 4,
+    "narration": "You may see names like bisoprolol, carvedilol, or metoprolol on your prescription.",
+    "visual_description": "Doctor displays a pill bottle with label names.",
+    "on_screen_text": "Common drug names"
+   },
+   {
+    "scene_number": 5,
+    "narration": "You might feel tired, have cold hands, or notice shortness of breath.",
+    "visual_description": "Doctor shows a list of possible side effects.",
+    "on_screen_text": "Possible side effects"
+   },
+   {
+    "scene_number": 6,
+    "narration": "If you have any questions, please talk with your care team.",
+    "visual_description": "Doctor gestures inviting conversation, patient listening.",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence is only a greeting and introduction, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence contains only a name and no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about beta‑blockers for heart failure.",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence discusses beta‑blockers for heart failure, which matches fact 1 that indicates beta‑blockers are part of optimal treatment for heart failure patients with reduced EF.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Beta‑blockers in heart failure",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "Sentence matches fact about beta‑blockers in heart failure.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with heart failure with reduced EF",
+    "sentence_is_about": "patients with heart failure",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "You have heart failure with reduced pumping ability, so this medicine is important for you.",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "Sentence aligns with fact 1 about HFrEF treatment importance.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with HFrEF",
+    "sentence_is_about": "you",
+    "same_people": true,
+    "added": [
+     "this medicine is important for you"
+    ],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "For reduced‑EF patients",
+   "label": "NO_CLAIM",
+   "fact": 1,
+   "reason": "The sentence merely identifies the patient group and does not state or contradict any fact.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "patients with reduced EF",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Beta‑blockers slow your heart rate.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta‑blockers slow the heart rate.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They lower your blood pressure.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta blockers lower blood pressure.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They may help reverse some heart damage.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Sentence matches fact 2 about beta blockers reversing heart damage.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "patients with heart failure",
+    "sentence_is_about": "beta blockers",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Slows rate, lowers pressure",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "Matches fact 2 about beta blockers slowing heart rate and lowering blood pressure.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "patients with heart failure with reduced EF",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 3,
+   "field": "narration",
+   "sentence": "You may see names like bisoprolol, carvedilol, or metoprolol on your prescription.",
+   "label": "NOT_SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence lists beta‑blocker names that are in fact 3, but it adds that they may appear on a prescription, which fact 3 does not state.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 3,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [
+     "you may see names like bisoprolol, carvedilol, or metoprolol on your prescription"
+    ],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 3,
+   "field": "on_screen_text",
+   "sentence": "Common drug names",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The phrase \"Common drug names\" is a heading, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 4,
+   "field": "narration",
+   "sentence": "You might feel tired, have cold hands, or notice shortness of breath.",
+   "label": "NOT_SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence lists side effects (fatigue, cold extremities) that are covered by fact 4, plus an additional symptom (shortness of breath).",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "beta-blocker users",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [
+     "shortness of breath"
+    ],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 4,
+   "field": "on_screen_text",
+   "sentence": "Possible side effects",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The phrase indicates side effects, matching fact 4.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 5,
+   "field": "narration",
+   "sentence": "If you have any questions, please talk with your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to talk with their care team and does not provide medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 5,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence only invites the patient to ask their care team, with no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Beta‑Blockers Protect Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee. This video explains how beta‑blockers help heart failure.",
+    "visual_description": "Doctor greets patient in calm exam room.",
+    "on_screen_text": "Beta‑blockers overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "Beta‑blockers are recommended for all heart‑failure patients whose heart’s pumping ability is reduced.",
+    "visual_description": "Doctor points to simple heart diagram showing reduced pumping.",
+    "on_screen_text": "For reduced‑EF patients"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Beta‑blockers slow your heart rate. They lower your blood pressure. They make it easier for the heart to pump blood.",
+    "visual_description": "Doctor holds heart model, shows slower beat.",
+    "on_screen_text": "How they work"
+   },
+   {
+    "scene_number": 4,
+    "narration": "You may see bisoprolol, carvedilol, or metoprolol on your prescription label.",
+    "visual_description": "Doctor displays pill bottle with name list.",
+    "on_screen_text": "Common drug names"
+   },
+   {
+    "scene_number": 5,
+    "narration": "You might feel tired, have cold hands, or notice shortness of breath.",
+    "visual_description": "Doctor points to side‑effect icons.",
+    "on_screen_text": "Possible side effects"
+   },
+   {
+    "scene_number": 6,
+    "narration": "If you have questions, please talk with your care team.",
+    "visual_description": "Doctor gestures inviting conversation.",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence is only a greeting and introduction, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence contains only a name and no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This video explains how beta‑blockers help heart failure.",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states that beta‑blockers help heart failure, which is supported by fact 1 (indication for all HFrEF patients) and fact 3 (benefits that aid heart function).",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with heart failure with reduced EF",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [
+     "help heart failure"
+    ],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Beta‑blockers overview",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence is only a title and does not provide medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "Beta‑blockers are recommended for all heart‑failure patients whose heart’s pumping ability is reduced.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Sentence matches fact 1 about beta‑blockers for HFrEF patients.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "patients with reduced EF",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "For reduced‑EF patients",
+   "label": "NO_CLAIM",
+   "fact": 1,
+   "reason": "The sentence merely identifies the patient group and does not state or contradict any fact.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "patients with reduced EF",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Beta‑blockers slow your heart rate.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta‑blockers slow the heart rate.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They lower your blood pressure.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta blockers lower blood pressure.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They make it easier for the heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence repeats the fact verbatim.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 3,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "How they work",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The phrase \"How they work\" contains no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 3,
+   "field": "narration",
+   "sentence": "You may see bisoprolol, carvedilol, or metoprolol on your prescription label.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence lists beta‑blockers that are mentioned in fact 2, but it adds the detail that they may appear on a prescription label, which fact 2 does not state.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [
+     "you may see bisoprolol, carvedilol, or metoprolol on your prescription label."
+    ],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 3,
+   "field": "on_screen_text",
+   "sentence": "Common drug names",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The phrase \"Common drug names\" is a heading, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 4,
+   "field": "narration",
+   "sentence": "You might feel tired, have cold hands, or notice shortness of breath.",
+   "label": "NOT_SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence lists side effects (fatigue, cold extremities) that are covered by fact 4, plus an additional symptom (shortness of breath).",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "beta-blocker users",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [
+     "shortness of breath"
+    ],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 4,
+   "field": "on_screen_text",
+   "sentence": "Possible side effects",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The phrase indicates side effects, matching fact 4.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 5,
+   "field": "narration",
+   "sentence": "If you have questions, please talk with your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to talk with their care team and contains no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  },
+  {
+   "scene": 5,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence only invites the patient to ask their care team, with no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   }
+  }
+ ],
+ "emptied_fields": [
+  [
+   3,
+   "narration"
+  ],
+  [
+   4,
+   "narration"
+  ]
+ ],
+ "refill_storyboard": {
+  "title": "Beta‑Blockers Protect Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee.",
+    "visual_description": "Doctor greets patient in calm exam room.",
+    "on_screen_text": "Beta‑blockers overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "Beta‑blockers are recommended for all heart‑failure patients whose heart’s pumping ability is reduced.",
+    "visual_description": "Doctor points to simple heart diagram showing reduced pumping.",
+    "on_screen_text": "For reduced‑EF patients"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Beta‑blockers slow your heart rate. They lower your blood pressure. They make it easier for the heart to pump blood.",
+    "visual_description": "Doctor holds heart model, shows slower beat.",
+    "on_screen_text": "How they work"
+   },
+   {
+    "scene_number": 4,
+    "narration": "Bisoprolol, carvedilol, and metoprolol are common beta‑blocker names.",
+    "visual_description": "Doctor displays pill bottle with name list.",
+    "on_screen_text": "Common drug names"
+   },
+   {
+    "scene_number": 5,
+    "narration": "You may notice fatigue, cold extremities, or bronchospasm.",
+    "visual_description": "Doctor points to side‑effect icons.",
+    "on_screen_text": "Possible side effects"
+   },
+   {
+    "scene_number": 6,
+    "narration": "If you have questions, please talk with your care team.",
+    "visual_description": "Doctor gestures inviting conversation.",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "refill_verdicts": [
+  {
+   "scene": 3,
+   "field": "narration",
+   "sentence": "Bisoprolol, carvedilol, and metoprolol are common beta‑blocker names.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence lists the same beta‑blocker names that fact 2 identifies as common examples.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   }
+  },
+  {
+   "scene": 4,
+   "field": "narration",
+   "sentence": "You may notice fatigue, cold extremities, or bronchospasm.",
+   "label": "NOT_SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence lists side effects that fact 4 identifies for beta‑blocker users.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "beta‑blocker users",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [
+     "you may notice"
+    ],
+    "conflicts": false,
+    "states_it": true
+   }
+  }
+ ],
+ "final_storyboard": {
+  "title": "Beta‑Blockers Protect Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee.",
+    "visual_description": "Doctor greets patient in calm exam room.",
+    "on_screen_text": "Beta‑blockers overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "Beta‑blockers are recommended for all heart‑failure patients whose heart’s pumping ability is reduced.",
+    "visual_description": "Doctor points to simple heart diagram showing reduced pumping.",
+    "on_screen_text": "For reduced‑EF patients"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Beta‑blockers slow your heart rate. They lower your blood pressure. They make it easier for the heart to pump blood.",
+    "visual_description": "Doctor holds heart model, shows slower beat.",
+    "on_screen_text": "How they work"
+   },
+   {
+    "scene_number": 4,
+    "narration": "Bisoprolol, carvedilol, and metoprolol are common beta‑blocker names.",
+    "visual_description": "Doctor displays pill bottle with name list.",
+    "on_screen_text": "Common drug names"
+   },
+   {
+    "scene_number": 5,
+    "narration": "",
+    "visual_description": "Doctor points to side‑effect icons.",
+    "on_screen_text": "Possible side effects"
+   },
+   {
+    "scene_number": 6,
+    "narration": "If you have questions, please talk with your care team.",
+    "visual_description": "Doctor gestures inviting conversation.",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence is only a greeting and introduction, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence contains only a name and no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This video explains how beta‑blockers help heart failure.",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states that beta‑blockers help heart failure, which is supported by fact 1 (indication for all HFrEF patients) and fact 3 (benefits that aid heart function).",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with heart failure with reduced EF",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [
+     "help heart failure"
+    ],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Beta‑blockers overview",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence is only a title and does not provide medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "Beta‑blockers are recommended for all heart‑failure patients whose heart’s pumping ability is reduced.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Sentence matches fact 1 about beta‑blockers for HFrEF patients.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "patients with reduced EF",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "For reduced‑EF patients",
+   "label": "NO_CLAIM",
+   "fact": 1,
+   "reason": "The sentence merely identifies the patient group and does not state or contradict any fact.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": 1,
+    "fact_is_about": "patients with reduced EF",
+    "sentence_is_about": "patients with reduced EF",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Beta‑blockers slow your heart rate.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta‑blockers slow the heart rate.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5eb0ba5cf757_annotation.nt",
+    "headers": [
+     "Common examples - listed by the generic followed by (brand) name",
+     "**Check off which medications you are already taking and which ones are being added.**",
+     "Medications for HFrEF (the 4 pillars)"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They lower your blood pressure.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence directly reflects fact 2 that beta blockers lower blood pressure.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5eb0ba5cf757_annotation.nt",
+    "headers": [
+     "Common examples - listed by the generic followed by (brand) name",
+     "**Check off which medications you are already taking and which ones are being added.**",
+     "Medications for HFrEF (the 4 pillars)"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "They make it easier for the heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence repeats the fact verbatim.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 3,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta blockers carvedilol, metoprolol succinate, metoprolol tartrate, bisoprolol, atenolol Coreg, Toprol XL, Lopressor, Zebeta, Tenormin Slow the heart rate (how fast the heart beats). Reduce blood pressure. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "How they work",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The phrase \"How they work\" contains no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 3,
+   "field": "narration",
+   "sentence": "You may see bisoprolol, carvedilol, or metoprolol on your prescription label.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence lists beta‑blockers that are mentioned in fact 2, but it adds the detail that they may appear on a prescription label, which fact 2 does not state.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [
+     "you may see bisoprolol, carvedilol, or metoprolol on your prescription label."
+    ],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5eb0ba5cf757_annotation.nt",
+    "headers": [
+     "Common examples - listed by the generic followed by (brand) name",
+     "**Check off which medications you are already taking and which ones are being added.**",
+     "Medications for HFrEF (the 4 pillars)"
+    ]
+   }
+  },
+  {
+   "scene": 3,
+   "field": "on_screen_text",
+   "sentence": "Common drug names",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The phrase \"Common drug names\" is a heading, not a medical statement.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 4,
+   "field": "narration",
+   "sentence": "You might feel tired, have cold hands, or notice shortness of breath.",
+   "label": "NOT_SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence lists side effects (fatigue, cold extremities) that are covered by fact 4, plus an additional symptom (shortness of breath).",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "beta-blocker users",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [
+     "shortness of breath"
+    ],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta-blocker Decreases sinus node frequency, prolongs PR interval, shortens QT interval PVC, VT (LQTS, CPVT) Various (various) Cardiac: Bradycardia, AV block, hypotension, negative inotrope Extracardiac: Fatigue, bronchospasm, sexual disturbances, depression, cold extremities Contraindications: Severe sinus node dysfunction, severe AV conduction disturbances, decompensated heart failure, coronary vasospasm, severe asthma, BrS",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3c0bee988dc9_annotation.nt",
+    "headers": [
+     "**Table 8 Anti-arrhythmic drugs (acute and chronic treatment)**",
+     "Side effects",
+     "Contraindications, precautions, other considerations",
+     "Indications (specific indication)",
+     "Effects on ECG",
+     "Anti-arrhythmic drug",
+     "Oral dose per day (i.v. dose)"
+    ]
+   }
+  },
+  {
+   "scene": 4,
+   "field": "on_screen_text",
+   "sentence": "Possible side effects",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The phrase indicates side effects, matching fact 4.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta-blocker Decreases sinus node frequency, prolongs PR interval, shortens QT interval PVC, VT (LQTS, CPVT) Various (various) Cardiac: Bradycardia, AV block, hypotension, negative inotrope Extracardiac: Fatigue, bronchospasm, sexual disturbances, depression, cold extremities Contraindications: Severe sinus node dysfunction, severe AV conduction disturbances, decompensated heart failure, coronary vasospasm, severe asthma, BrS",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3c0bee988dc9_annotation.nt",
+    "headers": [
+     "**Table 8 Anti-arrhythmic drugs (acute and chronic treatment)**",
+     "Side effects",
+     "Contraindications, precautions, other considerations",
+     "Indications (specific indication)",
+     "Effects on ECG",
+     "Anti-arrhythmic drug",
+     "Oral dose per day (i.v. dose)"
+    ]
+   }
+  },
+  {
+   "scene": 5,
+   "field": "narration",
+   "sentence": "If you have questions, please talk with your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to talk with their care team and contains no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": null,
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 5,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence only invites the patient to ask their care team, with no medical content.",
+   "checklist": {
+    "medical_statement": false,
+    "fact": null,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": false,
+    "added": [],
+    "conflicts": false,
+    "states_it": false
+   },
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 3,
+   "field": "narration",
+   "sentence": "Bisoprolol, carvedilol, and metoprolol are common beta‑blocker names.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence lists the same beta‑blocker names that fact 2 identifies as common examples.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 2,
+    "fact_is_about": "everyone",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5eb0ba5cf757_annotation.nt",
+    "headers": [
+     "Common examples - listed by the generic followed by (brand) name",
+     "**Check off which medications you are already taking and which ones are being added.**",
+     "Medications for HFrEF (the 4 pillars)"
+    ]
+   }
+  },
+  {
+   "scene": 4,
+   "field": "narration",
+   "sentence": "You may notice fatigue, cold extremities, or bronchospasm.",
+   "label": "NOT_SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence lists side effects that fact 4 identifies for beta‑blocker users.",
+   "checklist": {
+    "medical_statement": true,
+    "fact": 4,
+    "fact_is_about": "beta‑blocker users",
+    "sentence_is_about": "everyone",
+    "same_people": true,
+    "added": [
+     "you may notice"
+    ],
+    "conflicts": false,
+    "states_it": true
+   },
+   "guideline_fact": "Beta-blocker Decreases sinus node frequency, prolongs PR interval, shortens QT interval PVC, VT (LQTS, CPVT) Various (various) Cardiac: Bradycardia, AV block, hypotension, negative inotrope Extracardiac: Fatigue, bronchospasm, sexual disturbances, depression, cold extremities Contraindications: Severe sinus node dysfunction, severe AV conduction disturbances, decompensated heart failure, coronary vasospasm, severe asthma, BrS",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3c0bee988dc9_annotation.nt",
+    "headers": [
+     "**Table 8 Anti-arrhythmic drugs (acute and chronic treatment)**",
+     "Side effects",
+     "Contraindications, precautions, other considerations",
+     "Indications (specific indication)",
+     "Effects on ECG",
+     "Anti-arrhythmic drug",
+     "Oral dose per day (i.v. dose)"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

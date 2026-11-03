@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beta-blockers video</title>
+<style>
+  :root { --page: #15181d; --page-ink: #e8e8e8; }
+  html, body { margin: 0; background: var(--page); color: var(--page-ink); font-family: "Segoe UI", system-ui, sans-serif; }
+  #wrap { width: 100%; max-width: 1280px; margin: 0 auto; aspect-ratio: 16 / 9; position: relative; overflow: hidden; }
+  #stage { width: 1280px; height: 720px; position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #controls { max-width: 1280px; margin: 12px auto; padding: 0 16px; box-sizing: border-box; display: flex; gap: 12px; align-items: center; }
+  #controls button { font: inherit; padding: 6px 18px; border-radius: 6px; border: 0; background: #d64545; color: #fff; cursor: pointer; }
+  #controls input { flex: 1; }
+  #time { font-variant-numeric: tabular-nums; min-width: 7em; text-align: right; }
+  body.capture { background: #000; }
+  body.capture #controls { display: none; }
+  body.capture > :not(#wrap):not(script) { display: none !important; }  /* anything an add-on puts on the page */
+  body.capture #wrap { width: 1280px; height: 720px; max-width: none; margin: 0; }
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage"></div></div>
+<div id="controls">
+  <button id="play">Play</button>
+  <input id="scrub" type="range" min="0" step="0.01" value="0">
+  <span id="time"></span>
+</div>
+<script src="timeline.js"></script>
+<script>
+// Every picture is a function of the time t, so the same page plays live (with the voice) and can be filmed frame by
+// frame (?capture=1 and window.renderAt(t)). The only words shown are the checked on-screen texts and spoken lines.
+// A doctor stands in a consultation room and talks (mouth follows the voice's loudness), blinks, walks in, waves and
+// points at a whiteboard, where each scene's picture slides in; the camera slowly zooms in and out.
+const T = window.TIMELINE;
+const C = { ink: '#1E2A38', muted: '#6E7580', red: '#D64545', redSoft: '#F3C9C4', blue: '#2F5D8A', shirt: '#CFE0F2',
+            skin: '#E9B98F', skinDark: '#D9A378', hair: '#3A2A20', pants: '#2D3B4E', shoe: '#3B2A22', white: '#FFFFFF',
+            wall: '#EDE3D1', wallLow: '#E3D5BD', floor: '#CDB594', floorLine: '#BFA582', sky: '#CFE6F2', leaf: '#4E9A6B',
+            leafDark: '#3C7D55', pot: '#C46A4A', green: '#4E9A6B', amber: '#E3A33B', line: '#D9D0BF' };
+const FONT = 'Segoe UI, system-ui, sans-serif';
+const BOARD = { x: 470, y: 92, w: 770, h: 458 };
+const DOCTOR_X = 250, FLOOR_Y = 662;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, start, dur) => clamp((t - start) / dur);           // 0 -> 1 between start and start + dur
+const out3 = p => 1 - Math.pow(1 - p, 3);                            // ease out
+const inOut = p => p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const pop = p => p < 1 ? 1 + 2.2 * Math.pow(p - 1, 3) + 1.2 * Math.pow(p - 1, 2) : 1;  // ease out with a small overshoot
+const bump = (t, start, up = 0.35, hold = 1.2, down = 0.45) =>       // 0 -> 1, stay, -> 0
+  inOut(prog(t, start, up)) * (1 - inOut(prog(t, start + up + hold, down)));
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const nice = s => s.replace(/‑/g, '-');                          // non-breaking hyphen -> hyphen for the font
+const LINES = T.scenes.flatMap(s => s.lines);
+
+function wrapText(text, max) {   // one row, or two rows of about the same length
+  if (text.length <= max) return [text];
+  const words = text.split(' ');
+  const gap = n => Math.abs(words.slice(0, n).join(' ').length - words.slice(n).join(' ').length);
+  let best = 1;
+  for (let i = 1; i < words.length; i++) if (gap(i) < gap(best)) best = i;
+  return [words.slice(0, best).join(' '), words.slice(best).join(' ')];
+}
+function speaking(t) {           // how open the mouth is (0..1) and whether a line is being spoken
+  const line = LINES.find(l => t >= l.start && t < l.start + l.duration);
+  if (!line) return { open: 0, on: false };
+  const f = (t - line.start) * T.fps, i = Math.floor(f), m = line.mouth;
+  const v = (m[i] || 0) * (1 - (f - i)) + (m[i + 1] || 0) * (f - i);
+  return { open: v, on: true };
+}
+
+// --- the room ---
+function room() {
+  let boards = '';
+  for (let x = -40; x < 1280; x += 150) boards += `<line x1="${x}" y1="580" x2="${x - 60}" y2="720" stroke="${C.floorLine}" stroke-width="3"/>`;
+  return `<rect width="1280" height="720" fill="${C.wall}"/>
+    <rect y="470" width="1280" height="110" fill="${C.wallLow}"/>
+    <rect x="40" y="70" width="250" height="230" rx="8" fill="${C.white}" stroke="${C.ink}" stroke-width="5"/>
+    <rect x="56" y="86" width="218" height="198" fill="${C.sky}"/>
+    <path d="M70,250 Q120,200 170,240 Q220,190 270,236 V284 H56 V262 Z" fill="#B9D8C2"/>
+    <line x1="165" y1="86" x2="165" y2="284" stroke="${C.white}" stroke-width="8"/>
+    <line x1="56" y1="185" x2="274" y2="185" stroke="${C.white}" stroke-width="8"/>
+    <rect y="580" width="1280" height="140" fill="${C.floor}"/>${boards}
+    <rect y="572" width="1280" height="12" fill="${C.white}" stroke="${C.ink}" stroke-width="3"/>
+    <g transform="translate(70 600)">
+      <path d="M-32,0 L32,0 L24,62 L-24,62 Z" fill="${C.pot}" stroke="${C.ink}" stroke-width="4"/>
+      <path d="M0,0 Q-50,-60 -40,-130 Q-10,-80 0,0 Z" fill="${C.leaf}" stroke="${C.ink}" stroke-width="3"/>
+      <path d="M0,0 Q45,-70 30,-150 Q5,-90 0,0 Z" fill="${C.leafDark}" stroke="${C.ink}" stroke-width="3"/>
+      <path d="M0,0 Q10,-80 -5,-175 Q-20,-90 0,0 Z" fill="${C.leaf}" stroke="${C.ink}" stroke-width="3"/></g>
+    <rect x="${BOARD.x - 10}" y="${BOARD.y - 10}" width="${BOARD.w + 20}" height="${BOARD.h + 20}" rx="18" fill="#9AA3AE" stroke="${C.ink}" stroke-width="5"/>
+    <rect x="${BOARD.x}" y="${BOARD.y}" width="${BOARD.w}" height="${BOARD.h}" rx="10" fill="${C.white}"/>
+    <rect x="${BOARD.x + 40}" y="${BOARD.y + BOARD.h + 8}" width="${BOARD.w - 80}" height="12" rx="6" fill="#9AA3AE" stroke="${C.ink}" stroke-width="3"/>
+    <rect x="${BOARD.x + 90}" y="${BOARD.y + BOARD.h + 2}" width="46" height="9" rx="4" fill="${C.red}"/>
+    <rect x="${BOARD.x + 150}" y="${BOARD.y + BOARD.h + 2}" width="46" height="9" rx="4" fill="${C.blue}"/>`;
+}
+
+// --- the doctor; (x, y) is between the feet; arms: 0 = hanging down, more = raised out to that side ---
+function doctor(x, y, { open = 0, blink = false, tilt = 0, left = 8, right = 8, legs = 0, bob = 0 } = {}) {
+  const arm = (side, angle) => {
+    const sx = side * 70, sy = -312, a = -side * angle;
+    return `<g transform="rotate(${a} ${sx} ${sy})">
+      <line x1="${sx}" y1="${sy}" x2="${sx}" y2="${sy + 150}" stroke="${C.ink}" stroke-width="40" stroke-linecap="round"/>
+      <line x1="${sx}" y1="${sy}" x2="${sx}" y2="${sy + 150}" stroke="${C.white}" stroke-width="31" stroke-linecap="round"/>
+      <circle cx="${sx}" cy="${sy + 166}" r="17" fill="${C.skin}" stroke="${C.ink}" stroke-width="4"/></g>`;
+  };
+  const leg = (side, angle) => `<g transform="rotate(${angle} ${side * 22} -128)">
+      <rect x="${side * 22 - 17}" y="-130" width="34" height="122" rx="10" fill="${C.pants}" stroke="${C.ink}" stroke-width="4"/>
+      <ellipse cx="${side * 22 + 10}" cy="-8" rx="30" ry="13" fill="${C.shoe}" stroke="${C.ink}" stroke-width="4"/></g>`;
+  const mouth = open > 0.08
+    ? `<ellipse cx="0" cy="-366" rx="${10 + 3 * open}" ry="${3 + 10 * open}" fill="#7A2E2E" stroke="${C.ink}" stroke-width="3"/>
+       <ellipse cx="0" cy="${-366 + 6 * open}" rx="${6 + 2 * open}" ry="${2 + 3 * open}" fill="#D96A6A"/>`
+    : `<path d="M-13,-370 Q0,-358 13,-370" fill="none" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>`;
+  const eye = ex => blink
+    ? `<path d="M${ex - 7},-398 Q${ex},-394 ${ex + 7},-398" fill="none" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>`
+    : `<ellipse cx="${ex}" cy="-398" rx="5.5" ry="7" fill="${C.ink}"/><circle cx="${ex + 2}" cy="-401" r="2" fill="${C.white}"/>`;
+  return `<g transform="translate(${x} ${y - bob})">
+    <ellipse cx="0" cy="${bob + 2}" rx="${78 - bob}" ry="12" fill="${C.ink}" opacity="0.12"/>
+    ${leg(-1, legs)}${leg(1, -legs)}
+    ${arm(-1, left)}
+    <path d="M-72,-300 Q-72,-326 -44,-330 L44,-330 Q72,-326 72,-300 L80,-118 L-80,-118 Z" fill="${C.white}" stroke="${C.ink}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M-24,-330 L0,-276 L24,-330 Z" fill="${C.shirt}" stroke="${C.ink}" stroke-width="4"/>
+    <path d="M-6,-300 L6,-300 L4,-282 L0,-276 L-4,-282 Z" fill="${C.red}"/>
+    <path d="M-24,-330 L-8,-240 M24,-330 L8,-240" stroke="${C.ink}" stroke-width="4" fill="none"/>
+    <line x1="0" y1="-240" x2="0" y2="-118" stroke="${C.ink}" stroke-width="3"/>
+    <path d="M-34,-326 Q-50,-250 -14,-232" fill="none" stroke="${C.red}" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="-12" cy="-230" r="10" fill="${C.red}" stroke="${C.ink}" stroke-width="3"/>
+    <rect x="28" y="-262" width="30" height="26" rx="3" fill="${C.white}" stroke="${C.ink}" stroke-width="3"/>
+    <line x1="38" y1="-272" x2="38" y2="-250" stroke="${C.blue}" stroke-width="5" stroke-linecap="round"/>
+    ${arm(1, right)}
+    <g transform="rotate(${tilt} 0 -340)">
+      <rect x="-14" y="-352" width="28" height="26" fill="${C.skinDark}"/>
+      <circle cx="-48" cy="-390" r="11" fill="${C.skin}" stroke="${C.ink}" stroke-width="4"/>
+      <circle cx="48" cy="-390" r="11" fill="${C.skin}" stroke="${C.ink}" stroke-width="4"/>
+      <circle cx="0" cy="-392" r="48" fill="${C.skin}" stroke="${C.ink}" stroke-width="5"/>
+      <path d="M-49,-398 Q-52,-452 0,-448 Q52,-452 49,-398 Q40,-424 14,-428 Q-8,-414 -49,-398 Z" fill="${C.hair}" stroke="${C.ink}" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M-25,-414 Q-17,-419 -9,-414 M9,-414 Q17,-419 25,-414" stroke="${C.ink}" stroke-width="4" fill="none" stroke-linecap="round"/>
+      ${eye(-17)}${eye(17)}
+      <path d="M0,-392 Q-6,-380 2,-378" fill="none" stroke="${C.skinDark}" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-30" cy="-374" r="7" fill="${C.redSoft}" opacity="0.8"/><circle cx="30" cy="-374" r="7" fill="${C.redSoft}" opacity="0.8"/>
+      ${mouth}
+    </g></g>`;
+}
+
+// --- small drawings for the board ---
+function heartPath() {
+  return 'M0,-28 C-22,-58 -68,-34 -52,4 C-40,30 -10,46 0,62 C10,46 40,30 52,4 C68,-34 22,-58 0,-28 Z';
+}
+function heart(x, y, s, fill = C.red) {
+  s = Math.max(s, 0.001);
+  return `<g transform="translate(${x} ${y}) scale(${s})"><path d="${heartPath()}" fill="${fill}" stroke="${C.ink}" stroke-width="${4 / s}" stroke-linejoin="round"/>
+    <path d="M-30,-14 C-28,-28 -16,-36 -6,-30" fill="none" stroke="${C.white}" stroke-width="${5 / s}" stroke-linecap="round" opacity="0.7"/></g>`;
+}
+function gauge(x, y, r, value) {   // value 0..1 along the half circle, left to right
+  const pt = (v, rr) => { const a = Math.PI * (1 + v); return [x + rr * Math.cos(a), y + rr * Math.sin(a)]; };
+  const arc = (v0, v1, color) => { const [ax, ay] = pt(v0, r), [bx, by] = pt(v1, r);
+    return `<path d="M${ax},${ay} A${r},${r} 0 0 1 ${bx},${by}" fill="none" stroke="${color}" stroke-width="${r * 0.22}"/>`; };
+  const [nx, ny] = pt(value, r * 0.82);
+  return arc(0, 0.33, C.green) + arc(0.34, 0.66, C.amber) + arc(0.67, 1, C.red) +
+    `<line x1="${x}" y1="${y}" x2="${nx}" y2="${ny}" stroke="${C.ink}" stroke-width="${r * 0.07}" stroke-linecap="round"/>
+     <circle cx="${x}" cy="${y}" r="${r * 0.1}" fill="${C.ink}"/>`;
+}
+function ecg(x, y, w, h, t, periodPx) {   // a heartbeat line scrolling left; a longer period is a slower heart rate
+  const pts = [];
+  for (let i = 0; i <= w; i += 2) {
+    const phase = (((i + t * 90) / periodPx) % 1 + 1) % 1;
+    let dy = 0;
+    if (phase > 0.42 && phase < 0.47) dy = -h * 0.45 * Math.sin((phase - 0.42) / 0.05 * Math.PI);
+    if (phase > 0.47 && phase < 0.51) dy = h * 0.18 * Math.sin((phase - 0.47) / 0.04 * Math.PI);
+    pts.push(`${x + i},${y + dy}`);
+  }
+  return `<polyline points="${pts.join(' ')}" fill="none" stroke="${C.red}" stroke-width="4" stroke-linejoin="round"/>`;
+}
+function pill(x, y, angle, color) {
+  return `<g transform="translate(${x} ${y}) rotate(${angle})"><rect x="-26" y="-12" width="52" height="24" rx="12" fill="${C.white}" stroke="${C.ink}" stroke-width="3"/>
+    <rect x="0" y="-12" width="26" height="24" rx="12" fill="${color}" stroke="${C.ink}" stroke-width="3"/></g>`;
+}
+function pillBox(x, y, name, s) {
+  s = Math.max(s, 0.001);
+  return `<g transform="translate(${x} ${y}) scale(${s})">
+    <rect x="-130" y="-70" width="260" height="150" rx="16" fill="${C.white}" stroke="${C.ink}" stroke-width="4"/>
+    <rect x="-130" y="-70" width="260" height="40" rx="16" fill="${C.red}" stroke="${C.ink}" stroke-width="4"/>
+    <text x="0" y="34" text-anchor="middle" font-family="${FONT}" font-size="32" font-weight="700" fill="${C.ink}">${esc(name)}</text>
+    ${pill(96, 96, -25, C.redSoft)}</g>`;
+}
+function boardHeading(text, local) {
+  const u = out3(prog(local, 0.5, 0.6));
+  return `<text x="40" y="70" font-family="${FONT}" font-size="44" font-weight="800" fill="${C.ink}">${esc(nice(text))}</text>
+    <rect x="42" y="88" width="${u * 150}" height="9" rx="4.5" fill="${C.red}"/>`;
+}
+
+// --- each scene: what is on the board (board coordinates, 770 x 458) and what the doctor's arms do ---
+// local = seconds since the scene started, t = seconds since the video started
+const SCENES = {
+  1: {
+    board: (local, scene, t) => {
+      const beat = 1 + 0.06 * Math.max(0, Math.sin(t * 2 * Math.PI * 1.1)) ** 8;
+      return heart(385, 270, 1.9 * beat * pop(prog(local, 0.5, 0.7))) +
+        [[200, 330, -30, C.redSoft], [590, 190, 20, C.blue], [600, 360, -10, C.amber]]
+          .map(([x, y, a, c], i) => `<g opacity="${out3(prog(local, 1.0 + i * 0.25, 0.4))}">${pill(x, y + 6 * Math.sin(t * 2 + i), a, c)}</g>`).join('');
+    },
+    arms: (local, scene, t) => {
+      const line = scene.lines[0], wave = bump(t, line.start - 0.2, 0.35, line.duration - 0.2, 0.4);
+      return { right: 8 + wave * (140 + 16 * Math.sin((t - line.start) * 10)), left: 8 };
+    },
+  },
+  2: {
+    board: (local, scene, t) => {
+      const needle = 0.18 + 0.025 * Math.sin(t * 2.3);
+      return heart(210, 285, 1.55 * (1 + 0.025 * Math.sin(t * 5)) * pop(prog(local, 0.3, 0.7)), C.redSoft) +
+        `<g opacity="${out3(prog(local, 0.9, 0.6))}">${gauge(560, 330, 120, needle)}</g>`;
+    },
+    arms: (local, scene, t) => ({ right: 8 + 92 * bump(local, 0.6, 0.4, 1.6), left: 8 }),
+  },
+  3: {
+    board: (local, scene, t) => {
+      let svg = '';
+      scene.lines.forEach((line, i) => {
+        const p = out3(prog(t, line.start - 0.15, 0.5)), y = 160 + i * 105;
+        if (p <= 0) return;
+        const since = t - line.start, active = t < line.start + line.duration + 0.3;
+        const box = `<rect x="40" y="${y - 40}" width="130" height="80" rx="12" fill="${C.white}" stroke="${C.line}" stroke-width="3"/>`;
+        const icon = i === 0 ? ecg(46, y + 10, 118, 64, t, 34 + 40 * clamp(since / 2.5))
+          : i === 1 ? gauge(105, y + 26, 46, 0.82 - 0.5 * out3(clamp(since / 1.6)))
+          : heart(105, y - 3, 0.55 * (1 + 0.07 * Math.sin(Math.max(0, since) * 2 * Math.PI)));
+        const rows = wrapText(nice(line.text), 36);
+        svg += `<g opacity="${p}" transform="translate(${(1 - p) * 50} 0)">${box}${icon}
+          ${active ? `<circle cx="192" cy="${y}" r="7" fill="${C.red}"/>` : ''}
+          ${rows.map((r, k) => `<text x="212" y="${y + 10 + (k - (rows.length - 1) / 2) * 34}" font-family="${FONT}" font-size="28" font-weight="${active ? 700 : 600}" fill="${active ? C.ink : C.muted}">${esc(r)}</text>`).join('')}</g>`;
+      });
+      return svg;
+    },
+    arms: (local, scene, t) => ({ right: 8 + 85 * Math.max(...scene.lines.map(l => bump(t, l.start - 0.2, 0.35, 1.0))), left: 8 }),
+  },
+  4: {
+    board: (local) => ['Bisoprolol', 'Carvedilol', 'Metoprolol']
+      .map((name, i) => pillBox(145 + i * 240, 280, name, 0.74 * pop(prog(local, 0.8 + i * 0.75, 0.6)))).join(''),
+    arms: (local) => ({ right: 8 + 88 * bump(local, 0.7, 0.4, 2.2), left: 8 }),
+  },
+  6: {
+    board: (local, scene, t) => {
+      const s = pop(prog(local, 0.6, 0.6));
+      return `<g transform="translate(385 270) scale(${Math.max(s, 0.001) * 1.25})">
+        <path d="M-120,-80 H120 Q145,-80 145,-55 V40 Q145,65 120,65 H-10 L-60,115 L-48,65 H-120 Q-145,65 -145,40 V-55 Q-145,-80 -120,-80 Z" fill="${C.shirt}" stroke="${C.ink}" stroke-width="4"/>
+        <text x="0" y="28" text-anchor="middle" font-family="${FONT}" font-size="104" font-weight="800" fill="${C.red}">?</text></g>`;
+    },
+    arms: (local) => { const o = inOut(prog(local, 0.8, 0.6)); return { right: 8 + 32 * o, left: 8 + 32 * o }; },
+  },
+};
+
+function subtitle(scene, t) {
+  const line = scene.lines.find(l => t >= l.start - 0.1 && t < l.start + l.duration + 0.35);
+  if (!line) return '';
+  const rows = wrapText(nice(line.text), 58), h = 22 + rows.length * 36, y = 708 - h;
+  return `<g opacity="${prog(t, line.start - 0.1, 0.2)}"><rect x="${BOARD.x}" y="${y}" width="${BOARD.w}" height="${h}" rx="12" fill="${C.ink}" opacity="0.88"/>
+    ${rows.map((r, i) => `<text x="${BOARD.x + BOARD.w / 2}" y="${y + 40 + i * 36}" text-anchor="middle" font-family="${FONT}" font-size="26" font-weight="600" fill="${C.white}">${esc(r)}</text>`).join('')}</g>`;
+}
+
+const stage = document.getElementById('stage');
+function renderAt(t) {
+  t = clamp(t, 0, T.total - 0.001);
+  const index = T.scenes.findIndex(s => t >= s.start && t < s.end), k = index < 0 ? T.scenes.length - 1 : index;
+  const scene = T.scenes[k], spec = SCENES[scene.scene];
+  const local = t - scene.start, length = scene.end - scene.start;
+
+  // camera: a slow zoom that turns around at every scene, so it never jumps
+  const p = local / length, z = 1 + 0.035 * (k % 2 === 0 ? inOut(p) : 1 - inOut(p));
+  // the board's picture slides in from the right and out to the left
+  const inP = out3(prog(local, 0, 0.55)), outP = inOut(prog(local, length - 0.45, 0.45));
+  const slide = (1 - inP) * 90 - outP * 90, show = Math.min(inP, 1 - outP);
+
+  // the doctor: walks in during the first scene, then talks, blinks and gestures
+  const walk = prog(t, 0.2, 1.7), walking = walk > 0 && walk < 1;
+  const x = -140 + (DOCTOR_X + 140) * inOut(walk), step = t * 7.5;
+  const talk = speaking(t), blink = ((t + 0.4) % 3.6) < 0.13;
+  const arms = walking ? { right: 8 + 14 * Math.sin(step), left: 8 - 14 * Math.sin(step) } : spec.arms(local, scene, t);
+  const person = doctor(x, FLOOR_Y, {
+    open: talk.open, blink, tilt: talk.on ? 2.5 * Math.sin(t * 3.1) : 0, ...arms,
+    legs: walking ? 22 * Math.sin(step) : 0, bob: walking ? 7 * Math.abs(Math.sin(step)) : 0,
+  });
+
+  const fade = Math.min(prog(t, 0, 0.5), prog(T.total - t, 0, 0.8));
+  stage.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+    <defs><clipPath id="board"><rect x="${BOARD.x}" y="${BOARD.y}" width="${BOARD.w}" height="${BOARD.h}" rx="10"/></clipPath></defs>
+    <rect width="1280" height="720" fill="#000"/>
+    <g opacity="${fade}">
+      <g transform="translate(640 360) scale(${z}) translate(-640 -360)">
+        ${room()}
+        <g clip-path="url(#board)"><g transform="translate(${BOARD.x + slide} ${BOARD.y})" opacity="${show}">
+          ${boardHeading(scene.screen, local)}${spec.board(local, scene, t)}</g></g>
+        ${person}
+      </g>
+      ${scene.scene === 3 ? '' : subtitle(scene, t)}
+    </g></svg>`;
+}
+window.renderAt = renderAt;
+
+// --- capture mode: a fixed 1280x720 stage that a recorder steps through with renderAt(t) ---
+if (new URLSearchParams(location.search).has('capture')) {
+  document.body.classList.add('capture');
+  renderAt(0);
+} else {
+  const wrap = document.getElementById('wrap'), scrub = document.getElementById('scrub'), time = document.getElementById('time');
+  const fit = () => { stage.style.transform = `scale(${wrap.clientWidth / 1280})`; };
+  window.addEventListener('resize', fit); fit();
+  scrub.max = T.total;
+  const show = t => { renderAt(t); scrub.value = t; time.textContent = `${t.toFixed(1)} / ${T.total.toFixed(1)} s`; };
+  let audio, buffers, sources = [], playing = false, started = 0;
+  async function play() {
+    audio = audio || new AudioContext();
+    buffers = buffers || await Promise.all(LINES.map(async l => audio.decodeAudioData(await (await fetch(l.audio)).arrayBuffer())));
+    const from = Number(scrub.value) >= T.total - 0.05 ? 0 : Number(scrub.value);
+    started = audio.currentTime + 0.1 - from;
+    LINES.forEach((l, i) => {
+      if (l.start + l.duration <= from) return;
+      const src = audio.createBufferSource(); src.buffer = buffers[i]; src.connect(audio.destination);
+      const at = started + l.start;
+      at >= audio.currentTime ? src.start(at) : src.start(audio.currentTime, audio.currentTime - at);
+      sources.push(src);
+    });
+    playing = true; document.getElementById('play').textContent = 'Stop';
+    const tick = () => { if (!playing) return; const t = audio.currentTime - started; show(Math.max(0, t));
+      if (t < T.total) requestAnimationFrame(tick); else stop(); };
+    tick();
+  }
+  function stop() { playing = false; sources.forEach(s => { try { s.stop(); } catch (e) {} }); sources = [];
+    document.getElementById('play').textContent = 'Play'; }
+  document.getElementById('play').onclick = () => playing ? stop() : play();
+  scrub.oninput = () => { if (playing) stop(); show(Number(scrub.value)); };
+  show(0);
+}
+</script>
+</body>
+</html>
