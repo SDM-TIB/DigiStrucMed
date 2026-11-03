@@ -1,0 +1,925 @@
+{
+ "request": "Create a brief patient-education scene that explains how atrial fibrillation can contribute to heart failure.",
+ "candidates": [
+  {
+   "text": "In HCM, cardioversion should be considered for persistent atrial fibrillation.",
+   "file": "afc66a906dbd_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "HCM",
+    "Recommendations"
+   ],
+   "entities": [
+    "HCM",
+    "cardioversion",
+    "persistent atrial fibrillation"
+   ]
+  },
+  {
+   "text": "Therapeutic anticoagulation using heparins or VKA is recommended in case of atrial fibrillation, left atrial thrombosis, or prior embolism.",
+   "file": "8ce9250f8b01_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Mitral stenosis"
+   ],
+   "entities": [
+    "Therapeutic anticoagulation",
+    "VKA",
+    "atrial fibrillation, left atrial thrombosis, or prior embolism",
+    "heparins"
+   ]
+  },
+  {
+   "text": "Onset of atrial fibrillation, ventricular arrhythmias, or repetitive ICD shocks",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "atrial fibrillation, ventricular arrhythmias, or repetitive ICD shocks"
+   ]
+  },
+  {
+   "text": "Patients with HF and symptoms attributable to AF Atrial fibrillation ablation (2a)",
+   "file": "74cc59922dba_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [],
+   "headers": [
+    "Additional Therapies in Patients With HF and Comorbidities",
+    "In addition to optimized GDMT",
+    "Patients with HF and symptoms attributable to AF"
+   ],
+   "entities": [
+    "Atrial fibrillation ablation",
+    "Patients with HF and symptoms attributable to AF"
+   ]
+  },
+  {
+   "text": "Adequate control of the ventricular response to atrial fibrillation in patients with HF is recommended. (Level of Evidence = B)",
+   "file": "601974f6f646_annotation.nt",
+   "class": [],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.31"
+   ],
+   "entities": [
+    "Adequate control of the ventricular response to atrial fibrillation",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "Therapeutic anticoagulation with LMWH or vitamin K antagonists according to the stage of pregnancy is recommended for patients with atrial fibrillation.",
+   "file": "afc66a906dbd_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "LMWH",
+    "Therapeutic anticoagulation",
+    "patients with atrial fibrillation",
+    "stage of pregnancy",
+    "vitamin K antagonists"
+   ]
+  },
+  {
+   "text": "Treat according to the current AHA/ACC/HRS Guideline for the Management of Patients with Atrial Fibrillation (158,159)",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Atrial fibrillation/flutter",
+    "Suggested Action"
+   ],
+   "entities": [
+    "Treat according to the current AHA/ACC/HRS Guideline for the Management of Patients with Atrial Fibrillation (158,159)"
+   ]
+  },
+  {
+   "text": "Routine use of amiodarone therapy for asymptomatic arrhythmias that are not felt to contribute to HF or ventricular dysfunction is not recommended. (Strength of Evidence = B)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "7.4"
+   ],
+   "entities": [
+    "amiodarone",
+    "asymptomatic arrhythmias that are not felt to contribute to HF or ventricular dysfunction"
+   ]
+  },
+  {
+   "text": "Digoxin should be considered for achieving adequate control of the ventricular response to atrial fibrillation in patients with HF. (Strength of Evidence = B)",
+   "file": "601974f6f646_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "7.31"
+   ],
+   "entities": [
+    "Digoxin",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "■ May contribute to volume depletion. Consider altering diuretic dose if applicable",
+   "file": "979ee79bc190_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**C) SGLT2 Inhibitors**",
+    "Cautions",
+    "C) SGLT2 Inhibitors"
+   ],
+   "entities": [
+    "diuretic",
+    "volume depletion"
+   ]
+  },
+  {
+   "text": "Treatment with warfarin (goal INR 2.0–3.0) is recommended for all patients with HF and chronic or documented paroxysmal atrial fibrillation (Strength of Evidence = A) or a history of systemic or pulmonary emboli, including stroke or transient ischemic attack, (Strength of Evidence = C) unless contraindicated.",
+   "file": "601974f6f646_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.33",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "a history of systemic or pulmonary emboli, including stroke or transient ischemic attack",
+    "patients with HF and chronic or documented paroxysmal atrial fibrillation",
+    "warfarin"
+   ]
+  },
+  {
+   "text": "Clinical history: cardiovascular disease (e.g. CAD, HF, atrial fibrillation, PAD, stroke, renal failure) and risk factors Concomitant diseases (e.g. COPD, visual/hearing impairment, arthritis, osteoporosis, urinary incontinence, cognitive impairment, dementia) ADLs and falls Formulation of an individualized cardiac rehabilitation programme based on individual goals and internal motivation",
+   "file": "annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "ADLs and falls",
+    "Clinical history",
+    "Concomitant diseases (e.g. COPD, visual/hearing impairment, arthritis, osteoporosis, urinary incontinence, cognitive impairment, dementia)",
+    "cardiovascular disease (e.g. CAD, HF, atrial fibrillation, PAD, stroke, renal failure) and risk factors",
+    "individual goals and internal motivation",
+    "individualized cardiac rehabilitation programme"
+   ]
+  },
+  {
+   "text": "Treatment with warfarin (goal international normalized ratio [INR] 2.0-3.0) is recommended for all patients with HF and chronic or documented paroxysmal, persistent, or long-standing atrial fibrillation (Strength of Evidence = A) or a history of systemic or pulmonary emboli, including stroke or transient ischemic attack (Strength of Evidence = C), unless contraindicated.",
+   "file": "601974f6f646_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.33",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "a history of systemic or pulmonary emboli, including stroke or transient ischemic attack",
+    "patients with HF and chronic or documented paroxysmal, persistent, or long-standing atrial fibrillation",
+    "warfarin"
+   ]
+  },
+  {
+   "text": "Biventricular pacing therapy may be considered for patients with atrial fibrillation with a widened QRS interval (≥120 ms) and severe LV systolic dysfunction LVEF ≤35% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy. (Strength of Evidence = B)",
+   "file": "59bd5a262b56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "9.8",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "Biventricular pacing therapy",
+    "patients with atrial fibrillation with a widened QRS interval (≥120 ms) and severe LV systolic dysfunction LVEF ≤35% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy"
+   ]
+  },
+  {
+   "text": "Evidence of severe ADHF, including: Hypotension Worsening renal function Altered mentation Dyspnea at rest Typically reflected by resting tachypnea Less commonly reflected by oxygen saturation <90% Hemodynamically significant arrhythmia Including new onset of rapid atrial fibrillation Acute coronary syndromes",
+   "file": "5b8d3a139ea7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Clinical Circumstances",
+    "(a) Hospitalization Recommended"
+   ],
+   "entities": [
+    "Acute coronary syndromes",
+    "Altered mentation",
+    "Dyspnea at rest",
+    "Hemodynamically significant arrhythmia",
+    "Hypotension",
+    "Worsening renal function",
+    "oxygen saturation <90%",
+    "rapid atrial fibrillation",
+    "resting tachypnea",
+    "severe ADHF"
+   ]
+  },
+  {
+   "text": "Biventricular pacing therapy may be considered for patients with atrial fibrillation with a widened QRS interval ( \\geq 120 ms) and severe LV systolic dysfunction LVEF \\leq 35\\% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy. (Strength of Evidence = B)",
+   "file": "9004151cab15_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "9.8"
+   ],
+   "entities": [
+    "Biventricular pacing therapy",
+    "patients with atrial fibrillation with a widened QRS interval ( \\geq 120 ms) and severe LV systolic dysfunction LVEF \\leq 35\\% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy"
+   ]
+  },
+  {
+   "text": "(a) Hospitalization Recommended Evidence of severely decompensated HF, including: Hypotension Worsening renal function Altered mentation Dyspnea at rest Typically reflected by resting tachypnea Less commonly reflected by oxygen saturation <90% Hemodynamically significant arrhythmia Including new onset of rapid atrial fibrillation Acute coronary syndromes",
+   "file": "6c98a25621da_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Clinical Circumstances",
+    "Recommendation"
+   ],
+   "entities": [
+    "Acute coronary syndromes",
+    "Altered mentation",
+    "Dyspnea at rest",
+    "Evidence of severely decompensated HF, including:",
+    "Hemodynamically significant arrhythmia",
+    "Hospitalization",
+    "Hypotension",
+    "Worsening renal function",
+    "new onset of rapid atrial fibrillation",
+    "oxygen saturation <90%",
+    "resting tachypnea"
+   ]
+  },
+  {
+   "text": "1. In patients with suspected or new-onset HF, or those presenting with acute decompensated HF, a chest x-ray should be performed to assess heart size and pulmonary congestion and to detect alternative cardiac, pulmonary, and other diseases that may cause or contribute to the patient\\'s symptoms.",
+   "file": "d5002b8091e1_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Evaluation With Cardiac Imaging"
+   ],
+   "entities": [
+    "acute decompensated HF",
+    "alternative cardiac, pulmonary, and other diseases",
+    "chest x-ray",
+    "heart size",
+    "patients with suspected or new-onset HF",
+    "pulmonary congestion",
+    "those presenting with acute decompensated HF"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "Ibutilide or flecainide may be considered for termination of atrial flutter and AF in stable patients with structurally normal hearts.",
+   "file": "674fca27613b_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Acute management (intravenous administration of drugs) of SVT and AF"
+   ],
+   "entities": [
+    "Ibutilide or flecainide"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "5. In patients with CIEDs on RM with atrial arrhythmia monitoring capabilities, it is reasonable that the CIED be programmed to alert the clinic of the first episode, a prolonged episode, or a high burden of atrial arrhythmia.",
+   "file": "646ac322c6d1_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for programming for clinical indications with different types of CIEDs"
+   ],
+   "entities": [
+    "alert the clinic",
+    "first episode, a prolonged episode, or a high burden of atrial arrhythmia",
+    "patients with CIEDs on RM with atrial arrhythmia monitoring capabilities"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "In patients with the bradycardia-tachycardia variant of SND, programming of atrial ATP may be considered.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with the bradycardia-tachycardia variant of SND, programming of atrial ATP"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended for survivors of cardiac arrest from ventricular fibrillation or hemodynamically unstable sustained VT that is not due to a transient, potentially reversible cause, such as acute MI. (Strength of Evidence = A)",
+   "file": "2822d3e8227d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "9.6",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "ICD implantation",
+    "not due to a transient, potentially reversible cause, such as acute MI",
+    "survivors of cardiac arrest from ventricular fibrillation or hemodynamically unstable sustained VT"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "24 or 48-hour ambulatory ECG monitoring to detect atrial and ventricular arrhythmias.",
+   "file": "570cef550975_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 26 Initial diagnostic assessment in patients with suspected cardiomyopathy"
+   ],
+   "entities": [
+    "24 or 48-hour",
+    "ambulatory ECG monitoring",
+    "atrial and ventricular arrhythmias"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Onset of atrial fibrillation, ventricular arrhythmias, or repetitive ICD shocks",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "atrial fibrillation, ventricular arrhythmias, or repetitive ICD shocks"
+   ]
+  },
+  {
+   "text": "Adequate control of the ventricular response to atrial fibrillation in patients with HF is recommended. (Level of Evidence = B)",
+   "file": "601974f6f646_annotation.nt",
+   "class": [],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.31"
+   ],
+   "entities": [
+    "Adequate control of the ventricular response to atrial fibrillation",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "Biventricular pacing therapy may be considered for patients with atrial fibrillation with a widened QRS interval (≥120 ms) and severe LV systolic dysfunction LVEF ≤35% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy. (Strength of Evidence = B)",
+   "file": "59bd5a262b56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "9.8",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "Biventricular pacing therapy",
+    "patients with atrial fibrillation with a widened QRS interval (≥120 ms) and severe LV systolic dysfunction LVEF ≤35% who have persistent, moderate to severe HF (NYHA III) despite optimal medical therapy"
+   ]
+  },
+  {
+   "text": "Evidence of severe ADHF, including: Hypotension Worsening renal function Altered mentation Dyspnea at rest Typically reflected by resting tachypnea Less commonly reflected by oxygen saturation <90% Hemodynamically significant arrhythmia Including new onset of rapid atrial fibrillation Acute coronary syndromes",
+   "file": "5b8d3a139ea7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Clinical Circumstances",
+    "(a) Hospitalization Recommended"
+   ],
+   "entities": [
+    "Acute coronary syndromes",
+    "Altered mentation",
+    "Dyspnea at rest",
+    "Hemodynamically significant arrhythmia",
+    "Hypotension",
+    "Worsening renal function",
+    "oxygen saturation <90%",
+    "rapid atrial fibrillation",
+    "resting tachypnea",
+    "severe ADHF"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Atrial Fibrillation and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Atrial fibrillation makes the heart beat fast and irregular. This can strain the heart and lead to heart failure. Controlling the heart’s response helps protect the heart.",
+    "visual_description": "Person with heart diagram showing irregular beats",
+    "on_screen_text": "Atrial fibrillation strains heart"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Atrial fibrillation makes the heart beat fast and irregular.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 mentions rapid atrial fibrillation, implying a fast heart rate."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This can strain the heart and lead to heart failure.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "None of the listed facts mention that a condition can strain the heart and cause heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Controlling the heart’s response helps protect the heart.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 recommends adequate control of ventricular response to atrial fibrillation in HF patients, implying it protects the heart."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Atrial fibrillation strains heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Atrial fibrillation is listed as a risk factor for chronic heart failure, implying it strains the heart."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Atrial Fibrillation and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Atrial fibrillation makes the heart beat fast and irregular. Rapid atrial fibrillation can worsen heart failure. Controlling the heart’s response helps protect the heart.",
+    "visual_description": "Person with heart diagram showing irregular beats",
+    "on_screen_text": "Atrial fibrillation worsens heart"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Atrial fibrillation makes the heart beat fast and irregular.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 mentions rapid atrial fibrillation, implying a fast heart rate."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Rapid atrial fibrillation can worsen heart failure.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 lists rapid atrial fibrillation as a sign of severe ADHF, indicating it can worsen heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Controlling the heart’s response helps protect the heart.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 recommends adequate control of ventricular response to atrial fibrillation in HF patients, implying it protects the heart."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Atrial fibrillation worsens heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Onset of atrial fibrillation is listed as a risk factor for chronic heart failure, indicating it worsens heart function."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Atrial Fibrillation and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Atrial fibrillation makes the heart beat fast and irregular. Rapid atrial fibrillation can worsen heart failure. Controlling the heart’s response helps protect the heart.",
+    "visual_description": "Person with heart diagram showing irregular beats",
+    "on_screen_text": "Atrial fibrillation worsens heart"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Atrial fibrillation makes the heart beat fast and irregular.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 mentions rapid atrial fibrillation, implying a fast heart rate.",
+   "guideline_fact": "Evidence of severe ADHF, including: Hypotension Worsening renal function Altered mentation Dyspnea at rest Typically reflected by resting tachypnea Less commonly reflected by oxygen saturation <90% Hemodynamically significant arrhythmia Including new onset of rapid atrial fibrillation Acute coronary syndromes",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5b8d3a139ea7_annotation.nt",
+    "headers": [
+     "Clinical Circumstances",
+     "(a) Hospitalization Recommended"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Rapid atrial fibrillation can worsen heart failure.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 lists rapid atrial fibrillation as a sign of severe ADHF, indicating it can worsen heart failure.",
+   "guideline_fact": "Evidence of severe ADHF, including: Hypotension Worsening renal function Altered mentation Dyspnea at rest Typically reflected by resting tachypnea Less commonly reflected by oxygen saturation <90% Hemodynamically significant arrhythmia Including new onset of rapid atrial fibrillation Acute coronary syndromes",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5b8d3a139ea7_annotation.nt",
+    "headers": [
+     "Clinical Circumstances",
+     "(a) Hospitalization Recommended"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Controlling the heart’s response helps protect the heart.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 recommends adequate control of ventricular response to atrial fibrillation in HF patients, implying it protects the heart.",
+   "guideline_fact": "Adequate control of the ventricular response to atrial fibrillation in patients with HF is recommended. (Level of Evidence = B)",
+   "grade": {
+    "class": [],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "601974f6f646_annotation.nt",
+    "headers": [
+     "2006 Guideline Recommendation",
+     "7.31"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Atrial fibrillation worsens heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Onset of atrial fibrillation is listed as a risk factor for chronic heart failure, indicating it worsens heart function.",
+   "guideline_fact": "Onset of atrial fibrillation, ventricular arrhythmias, or repetitive ICD shocks",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "312ed985281c_annotation.nt",
+    "headers": [
+     "Chronic HF with high-risk features",
+     "following risk factors"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

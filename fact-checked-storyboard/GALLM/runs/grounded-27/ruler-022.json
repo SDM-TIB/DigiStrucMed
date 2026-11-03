@@ -1,0 +1,1028 @@
+{
+ "request": "Create a brief patient-education scene that explains what a CRT-D does for people with heart failure.",
+ "candidates": [
+  {
+   "text": "In patients who are candidates for an ICD, and who have CRT indication, implantation of a CRT-D is recommended.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "CRT"
+   ],
+   "entities": [
+    "CRT",
+    "CRT-D",
+    "ICD",
+    "implantation of a CRT-D",
+    "patients who are candidates for an ICD, and who have CRT indication"
+   ]
+  },
+  {
+   "text": "In patients who are candidates for CRT, implantation of a CRT-D should be considered after individual risk assessment and using shared decision-making.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Cardiac resynchronization therapy",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients who are candidates for CRT, implantation of a CRT-D"
+   ]
+  },
+  {
+   "text": "In women with PPCM and DCM, subsequent pregnancy is not recommended if LVEF does not normalize.",
+   "file": "afc66a906dbd_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "LVEF does not normalize",
+    "subsequent pregnancy",
+    "women with PPCM and DCM"
+   ]
+  },
+  {
+   "text": "Does not usually require any change in therapy.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*PROBLEM SOLVINGAsymptomatic low blood pressure:",
+    "Supplementary Table 5"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Cessation of smoking is a prerequisite for transplantation in most centres. Psychological support may be needed so patient does not resume smoking post-transplantation",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Tobacco cessation",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "Cessation of smoking",
+    "Psychological support",
+    "does not resume smoking post-transplantation",
+    "patient",
+    "transplantation"
+   ]
+  },
+  {
+   "text": "Every 3–6 months ICD/CRT-D (In Person or Remote)",
+   "file": "06cdcc049add_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 3",
+    "Minimum frequency of CIED in person or remote monitoring",
+    "Pacemakers/ICDs/CRT"
+   ],
+   "entities": [
+    "Every 3–6 months ICD/CRT-D (In Person or Remote)"
+   ]
+  },
+  {
+   "text": "In selected patients with AVB in context of anterior wall MI and acute HF, early device implantation (CRT-D/CRT-P) may be considered.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Indications for pacing in specific conditions",
+    "Recommendations",
+    "Pacing in acute myocardial infarction"
+   ],
+   "entities": [
+    "In selected patients with AVB in context of anterior wall MI and acute HF, early device implantation (CRT-D/CRT-P)"
+   ]
+  },
+  {
+   "text": "In patients with sarcoidosis and indication for permanent pacing who have LVEF <50%, implantation of a CRT-D should be considered.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Sarcoidosis",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with sarcoidosis and indication for permanent pacing who have LVEF <50%, implantation of a CRT-D"
+   ]
+  },
+  {
+   "text": "Smoking cessation is recommended regardless of weight gain, as weight gain does not lessen the ASCVD benefits of cessation.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "Risk factors and interventions at the individual level – section 4",
+    "Recommendations in 2021 version",
+    "New",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Bariatric surgery for obese high-risk individuals should be considered when lifestyle change does not result in maintained weight loss.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "New",
+    "Risk factors and interventions at the individual level – section 4",
+    "CLASS_OF_RECOMMENDATION: IIa",
+    "Recommendations in 2021 version"
+   ],
+   "entities": []
+  },
+  {
+   "text": "SR with LBBB 130–149 ms or non LBBB ≥150 ms CRT-P/D",
+   "file": "8368212edca3_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SR with LBBB 130–149 ms or non LBBB ≥150 ms",
+    "To reduce HF hospitalization/mortality - for selected patients"
+   ],
+   "entities": [
+    "CRT-P/D",
+    "SR with LBBB 130–149 ms or non LBBB ≥150 ms"
+   ]
+  },
+  {
+   "text": "Patients with HFrEF who have received a conventional pacemaker or an ICD and subsequently develop worsening HF despite OMT and who have a high proportion of RV pacing may be considered for upgrade to CRT. This does not apply to patients with stable HF.",
+   "file": "5a3d8e762b9d_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations for device therapy in HFrEF",
+    "2016"
+   ],
+   "entities": [
+    "ICD",
+    "OMT",
+    "Patients with HFrEF who have received a conventional pacemaker or an ICD and subsequently develop worsening HF despite OMT and who have a high proportion of RV pacing",
+    "conventional pacemaker",
+    "patients with stable HF",
+    "upgrade to CRT",
+    "worsening HF"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "16. For patients whose comorbidities or frailty limit survival with good functional capacity to <1 year, ICD and cardiac resynchronization therapy with defibrillation (CRT-D) are not indicated.",
+   "file": "d2c2b3b20934_annotation.nt",
+   "class": [
+    "3%3A%20No%20Benefit"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for ICDs and CRTs (Continued)"
+   ],
+   "entities": [
+    "<1 year",
+    "ICD",
+    "cardiac resynchronization therapy with defibrillation (CRT-D)",
+    "comorbidities",
+    "frailty",
+    "patients whose comorbidities or frailty limit survival with good functional capacity to <1 year",
+    "survival with good functional capacity"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT may be considered in patients with HFpEF.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Cardiac resynchronization therapy"
+   ],
+   "entities": [
+    "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT is recommended in patients with HFrEF.",
+   "file": "389f4143c8ab_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "2013 Class: IIa",
+    "2021 Class: I"
+   ],
+   "entities": [
+    "CRT",
+    "patients with HFrEF",
+    "patients with symptomatic AF and uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration)"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT is recommended in patients with HFrEF.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "CRT"
+   ],
+   "entities": [
+    "CRT",
+    "patients with HFrEF",
+    "patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration)"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "When a troublesome cough does develop (e.g. one stopping the patient from sleeping) and can be proved to be due to ARNI and ACE-I (i.e. recurs after the drugs withdrawal and re-challenge), substitution of an ARB is recommended.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*Cough:",
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "ARNI",
+    "cough"
+   ]
+  },
+  {
+   "text": "7. In patients with high-degree or complete heart block and LVEF of 36% to 50%, CRT is reasonable to reduce total mortality, reduce hospitalizations, and improve symptoms and QOL.",
+   "file": "58316d730051_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations for ICDs and CRTs",
+    "Recommendations"
+   ],
+   "entities": [
+    "36% to 50%",
+    "CRT",
+    "LVEF",
+    "QOL",
+    "high-degree or complete heart block",
+    "hospitalizations",
+    "patients with high-degree or complete heart block",
+    "symptoms",
+    "total mortality"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT rather than standard RV pacing should be considered in patients with HFmrEF.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Cardiac resynchronization therapy",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT rather than standard RV pacing"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "In patients who are candidates for an ICD, and who have CRT indication, implantation of a CRT-D is recommended.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "CRT"
+   ],
+   "entities": [
+    "CRT",
+    "CRT-D",
+    "ICD",
+    "implantation of a CRT-D",
+    "patients who are candidates for an ICD, and who have CRT indication"
+   ]
+  },
+  {
+   "text": "In patients who are candidates for CRT, implantation of a CRT-D should be considered after individual risk assessment and using shared decision-making.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Cardiac resynchronization therapy",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients who are candidates for CRT, implantation of a CRT-D"
+   ]
+  },
+  {
+   "text": "Every 3–6 months ICD/CRT-D (In Person or Remote)",
+   "file": "06cdcc049add_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 3",
+    "Minimum frequency of CIED in person or remote monitoring",
+    "Pacemakers/ICDs/CRT"
+   ],
+   "entities": [
+    "Every 3–6 months ICD/CRT-D (In Person or Remote)"
+   ]
+  },
+  {
+   "text": "Patients with HFrEF who have received a conventional pacemaker or an ICD and subsequently develop worsening HF despite OMT and who have a high proportion of RV pacing may be considered for upgrade to CRT. This does not apply to patients with stable HF.",
+   "file": "5a3d8e762b9d_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations for device therapy in HFrEF",
+    "2016"
+   ],
+   "entities": [
+    "ICD",
+    "OMT",
+    "Patients with HFrEF who have received a conventional pacemaker or an ICD and subsequently develop worsening HF despite OMT and who have a high proportion of RV pacing",
+    "conventional pacemaker",
+    "patients with stable HF",
+    "upgrade to CRT",
+    "worsening HF"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "7. In patients with high-degree or complete heart block and LVEF of 36% to 50%, CRT is reasonable to reduce total mortality, reduce hospitalizations, and improve symptoms and QOL.",
+   "file": "58316d730051_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations for ICDs and CRTs",
+    "Recommendations"
+   ],
+   "entities": [
+    "36% to 50%",
+    "CRT",
+    "LVEF",
+    "QOL",
+    "high-degree or complete heart block",
+    "hospitalizations",
+    "patients with high-degree or complete heart block",
+    "symptoms",
+    "total mortality"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Understanding Your CRT‑D",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "If you need a pacemaker and defibrillator, doctors may recommend a CRT‑D. They will discuss risks and benefits. Check-ups occur every 3‑6 months. If heart failure worsens despite medicines, an upgrade may be considered.",
+    "visual_description": "Doctor showing a small heart device model to patient.",
+    "on_screen_text": "CRT‑D: Pacemaker + Defibrillator"
+   }
+  ],
+  "not_covered": [
+   "Explanation of how CRT‑D works (device function)"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If you need a pacemaker and defibrillator, doctors may recommend a CRT‑D.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 recommends CRT‑D for patients who need an ICD and have a CRT indication."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "They will discuss risks and benefits.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states shared decision‑making, implying discussion of risks and benefits."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Check-ups occur every 3‑6 months.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states check-ups occur every 3–6 months for ICD/CRT-D."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If heart failure worsens despite medicines, an upgrade may be considered.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "Fact 4 only applies to patients with pacemaker/ICD and high RV pacing, not all patients with worsening HF."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "CRT‑D: Pacemaker + Defibrillator",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "None of the facts define CRT‑D as a pacemaker plus defibrillator."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Understanding Your CRT‑D",
+  "scenes": [
+   {
+    "scene_number": "1",
+    "narration": "If you need both a pacemaker and a defibrillator, doctors may recommend a CRT‑D. They will assess your risks and decide together with you. Follow‑up visits happen every three to six months.",
+    "visual_description": "Doctor showing a small heart device model to patient.",
+    "on_screen_text": "CRT‑D recommended"
+   }
+  ],
+  "not_covered": [
+   "Explanation of how CRT‑D works (device function)"
+  ]
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If you need both a pacemaker and a defibrillator, doctors may recommend a CRT‑D.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states CRT‑D is recommended for patients needing both ICD and CRT indication."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "They will assess your risks and decide together with you.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 mentions shared decision‑making after risk assessment."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Follow‑up visits happen every three to six months.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states follow‑up visits for ICD/CRT‑D occur every 3–6 months."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "CRT‑D recommended",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states CRT‑D is recommended for patients who are candidates for an ICD and have a CRT indication."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Understanding Your CRT‑D",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "If you need both a pacemaker and a defibrillator, doctors may recommend a CRT‑D. They will assess your risks and decide together with you. Follow‑up visits happen every three to six months.",
+    "visual_description": "Doctor showing a small heart device model to patient.",
+    "on_screen_text": "CRT‑D recommended"
+   }
+  ],
+  "not_covered": [
+   "Explanation of how CRT‑D works (device function)"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If you need both a pacemaker and a defibrillator, doctors may recommend a CRT‑D.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states CRT‑D is recommended for patients needing both ICD and CRT indication.",
+   "guideline_fact": "In patients who are candidates for an ICD, and who have CRT indication, implantation of a CRT-D is recommended.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "5f0b7029cbdf_annotation.nt",
+    "headers": [
+     "CRT"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "They will assess your risks and decide together with you.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 mentions shared decision‑making after risk assessment.",
+   "guideline_fact": "In patients who are candidates for CRT, implantation of a CRT-D should be considered after individual risk assessment and using shared decision-making.",
+   "grade": {
+    "class": [
+     "IIa"
+    ],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "791d867ec788_annotation.nt",
+    "headers": [
+     "Cardiac resynchronization therapy",
+     "Recommendations"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Follow‑up visits happen every three to six months.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states follow‑up visits for ICD/CRT‑D occur every 3–6 months.",
+   "guideline_fact": "Every 3–6 months ICD/CRT-D (In Person or Remote)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "06cdcc049add_annotation.nt",
+    "headers": [
+     "Table 3",
+     "Minimum frequency of CIED in person or remote monitoring",
+     "Pacemakers/ICDs/CRT"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "CRT‑D recommended",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states CRT‑D is recommended for patients who are candidates for an ICD and have a CRT indication.",
+   "guideline_fact": "In patients who are candidates for an ICD, and who have CRT indication, implantation of a CRT-D is recommended.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "5f0b7029cbdf_annotation.nt",
+    "headers": [
+     "CRT"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "Explanation of how CRT‑D works (device function)"
+ ],
+ "coverage": "P"
+}

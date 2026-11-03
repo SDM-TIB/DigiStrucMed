@@ -1,0 +1,804 @@
+{
+ "request": "Create a brief patient-education scene that explains the three types of heart failure (HFrEF, HFmrEF, HFpEF) based on the ejection fraction.",
+ "candidates": [
+  {
+   "text": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "It is recommended that all patients with HF have an ECG performed to: • Assess cardiac rhythm and conduction • Detect LV hypertrophy • Evaluate QRS duration, especially when ejection fraction (EF) <35% • Detect evidence of myocardial infarction or ischemia (Strength of Evidence = B)",
+   "file": "1c66b243d1e2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Section 4: Evaluation of Patients for Ventricular Dysfunction and Heart Failure",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ECG",
+    "all patients with HF"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "c In STRONG-HF, the use of ACE-I/ARB/ARNI, beta-blockers, and MRA was evaluated in patients with HFrEF, HFmrEF, and HFpEF.",
+   "file": "064deef5f4c7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "2. Among patients with current or previous symptomatic HFmrEF (LVEF, 41%–49%), use of evidence-based beta blockers for HFrEF, ARNi, ACEi, or ARB, and MRAs may be considered to reduce the risk of HF hospitalization and cardiovascular mortality, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "b8bb1d3f8a09_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Mildly Reduced Ejection Fraction"
+   ],
+   "entities": [
+    "41%–49%",
+    "ACEi",
+    "ARB",
+    "ARNi",
+    "HF hospitalization",
+    "LVEF",
+    "MRAs",
+    "cardiovascular mortality",
+    "current or previous symptomatic HFmrEF",
+    "evidence-based beta blockers for HFrEF",
+    "lower end of this spectrum",
+    "patients with current or previous symptomatic HFmrEF"
+   ]
+  },
+  {
+   "text": "Electrocardiogram (ECG). It is recommended that all patients with HF have an ECG performed to: • Assess cardiac rhythm and conduction (in some cases, using Holter monitoring or event monitors) • Assess electrical dyssynchrony (wide QRS or bundle branch block), especially when left ventricular ejection fraction (LVEF) <35% • Detect LV hypertrophy or other chamber enlargement • Detect evidence of MI or ischemia • Assess QTc interval, especially with drugs that prolong QT intervals (Strength of Evidence = B)",
+   "file": "1c66b243d1e2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "Section 4: Evaluation of Patients for Ventricular Dysfunction and Heart Failure"
+   ],
+   "entities": [
+    "ECG",
+    "all patients with HF"
+   ]
+  },
+  {
+   "text": "Reasonable as adjuvant therapy for HFrEF or HFpEF NYHA II–IV (class IIa) strength of evidence = B",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [
+    "%28class%20IIa%29"
+   ],
+   "level": [],
+   "headers": [
+    "ACC/AHA 2013, 3 ACC/AHA/HFSA 2017 5"
+   ],
+   "entities": [
+    "HFpEF",
+    "HFrEF",
+    "Reasonable as adjuvant therapy for HFrEF or HFpEF NYHA II–IV (class IIa) strength of evidence = B"
+   ]
+  },
+  {
+   "text": "Intravenous iron supplementation is recommended in symptomatic patients with HFrEF and HFmrEF, and iron deficiency, to alleviate HF symptoms and improve quality of life.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "HF symptoms",
+    "HFmrEF",
+    "HFrEF",
+    "Intravenous",
+    "iron deficiency",
+    "iron supplementation",
+    "quality of life",
+    "symptomatic patients"
+   ]
+  },
+  {
+   "text": "Intravenous iron supplementation with ferric carboxymaltose or ferric derisomaltose should be considered in symptomatic patients with HFrEF and HFmrEF, and iron deficiency, to reduce the risk of HF hospitalization.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "HFmrEF",
+    "HFrEF",
+    "Intravenous",
+    "ferric carboxymaltose",
+    "ferric derisomaltose",
+    "iron deficiency",
+    "iron supplementation",
+    "symptomatic patients"
+   ]
+  },
+  {
+   "text": "Right heart catheterization may be considered in selected patients with HFpEF to confirm the diagnosis.",
+   "file": "16ff0a9b6203_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "HFpEF",
+    "Right heart catheterization",
+    "confirm the diagnosis",
+    "selected patients"
+   ]
+  },
+  {
+   "text": "2B) CRT rather than standard RV pacing should be considered in patients with HFmrEF.",
+   "file": "ebe2b8d849fd_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "2) In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration):"
+   ],
+   "entities": [
+    "CRT",
+    "HFmrEF",
+    "patients with HFmrEF",
+    "standard RV pacing"
+   ]
+  },
+  {
+   "text": "Diuretics are recommended in patients with congestion and HFmrEF in order to alleviate symptoms and signs.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFmrEF and HFpEF"
+   ],
+   "entities": [
+    "Diuretics",
+    "HFmrEF",
+    "congestion",
+    "patients with congestion and HFmrEF in order to alleviate symptoms and signs",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "2D) CRT may be considered in patients with HFpEF.",
+   "file": "ebe2b8d849fd_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "2) In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration):",
+    "Recommendations"
+   ],
+   "entities": [
+    "CRT",
+    "HFpEF",
+    "patients with HFpEF"
+   ]
+  },
+  {
+   "text": "An ARB may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF",
+    "Recommendations"
+   ],
+   "entities": [
+    "ARB",
+    "HF hospitalization",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "An MRA may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "MRA",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "A beta-blocker may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "beta-blocker",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "An ACE-I may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF hospitalization",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "Sacubitril/valsartan",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "2C) RV pacing should be considered in patients with HFpEF.188,196,323",
+   "file": "ebe2b8d849fd_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "2) In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration):",
+    "Recommendations"
+   ],
+   "entities": [
+    "HFpEF",
+    "RV pacing",
+    "patients with HFpEF"
+   ]
+  },
+  {
+   "text": "1. In patients with HFmrEF, SGLT2i can be beneficial in decreasing HF hospitalizations and cardiovascular mortality.",
+   "file": "b8bb1d3f8a09_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Mildly Reduced Ejection Fraction"
+   ],
+   "entities": [
+    "HF hospitalizations",
+    "SGLT2i",
+    "cardiovascular mortality",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "Diuretics are recommended in congested patients with HFpEF in order to alleviate symptoms and signs.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for the treatment of HFmrEF and HFpEF"
+   ],
+   "entities": [
+    "Diuretics",
+    "HFpEF",
+    "congested patients with HFpEF in order to alleviate symptoms and signs",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "An SGLT2 inhibitor (dapagliflozin or empagliflozin) is recommended in patients with HFmrEF to reduce the risk of HF hospitalization or CV death.",
+   "file": "071ad8ac87c9_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "An SGLT2 inhibitor (dapagliflozin or empagliflozin)",
+    "CV death",
+    "HF hospitalization",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "Screening for, and treatment of, aetiologies, and CV and non-CV comorbidities is recommended in patients with HFpEF (see relevant sections of this document).",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for the treatment of HFmrEF and HFpEF"
+   ],
+   "entities": [
+    "HFpEF",
+    "patients with HFpEF (see relevant sections of this document)"
+   ]
+  },
+  {
+   "text": "3. In patients with HFpEF, management of AF can be useful to improve symptoms.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "AF",
+    "management of AF",
+    "patients with HFpEF",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year"
+   ]
+  },
+  {
+   "text": "Counsel and educate to follow a Mediterranean-type diet, which is high in vegetables, fruit, whole grains, fish, nuts and olive oil and low in red meat Counsel and educate to have a total intake of free sugars that does not exceed 10% of total daily calorie (energy) intake Counsel and educate to have a daily sodium intake from all sources to no more than 2000 mg/day Counsel and educate patients to follow limit alcohol intake: for women, no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion; for men, no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A",
+    "B",
+    "C"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Diet/nutritional counselling"
+   ],
+   "entities": [
+    "Mediterranean-type diet",
+    "daily sodium intake from all sources",
+    "does not exceed 10% of total daily calorie (energy) intake",
+    "limit alcohol intake",
+    "men",
+    "no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion",
+    "no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+    "no more than 2000 mg/day",
+    "total intake of free sugars",
+    "women"
+   ]
+  },
+  {
+   "text": "1. Patients with HFpEF and hypertension should have medication titrated to attain blood pressure targets in accordance with published clinical practice guidelines to prevent morbidity.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "HFpEF",
+    "Patients with HFpEF and hypertension",
+    "blood pressure targets",
+    "hypertension",
+    "medication",
+    "morbidity"
+   ]
+  },
+  {
+   "text": "2. In patients with HFpEF, SGLT2i can be beneficial in decreasing HF hospitalizations and cardiovascular mortality.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "HF hospitalizations",
+    "SGLT2i",
+    "cardiovascular mortality",
+    "patients with HFpEF"
+   ]
+  },
+  {
+   "text": "7. In patients with HFpEF, routine use of nitrates or phosphodiesterase-5 inhibitors to increase activity or QOL is ineffective.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "3%3A%20No%20Benefit"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "QOL",
+    "activity",
+    "nitrates",
+    "patients with HFpEF",
+    "phosphodiesterase-5 inhibitors"
+   ]
+  },
+  {
+   "text": "An SGLT2 inhibitor (dapagliflozin or empagliflozin) is recommended in patients with HFpEF to reduce the risk of HF hospitalization or CV death.",
+   "file": "b0187cb0fe72_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "An SGLT2 inhibitor (dapagliflozin or empagliflozin)",
+    "CV death",
+    "HF hospitalization",
+    "patients with HFpEF"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "In patients with typical intermittent claudication supervised hospital- or outpatient clinic-based exercise programme is recommended to improve walking distance and time, functional status, and quality of life Three-month SET to be offered as a first-line therapy for intermittent claudication (revascularization and vasodilator therapy to be considered only if exercise provides insufficient symptom relief) 98",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues",
+    "Exercise training"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "4. In selected patients with HFpEF, MRAs may be considered to decrease hospitalizations, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "LVEF",
+    "MRAs",
+    "hospitalizations",
+    "lower end of this spectrum",
+    "selected patients with HFpEF"
+   ]
+  },
+  {
+   "text": "5. In selected patients with HFpEF, the use of ARB may be considered to decrease hospitalizations, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "ARB",
+    "LVEF",
+    "hospitalizations",
+    "lower end of this spectrum",
+    "selected patients with HFpEF"
+   ]
+  },
+  {
+   "text": "6. In selected patients with HFpEF, ARNi may be considered to decrease hospitalizations, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "ARNi",
+    "LVEF",
+    "hospitalizations",
+    "lower end of this spectrum",
+    "selected patients with HFpEF"
+   ]
+  },
+  {
+   "text": "Screening for, and treatment of, aetiologies, and cardiovascular and non-cardiovascular comorbidities is recommended in patients with HFpEF (see relevant sections of this document).",
+   "file": "6420be3131d1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Screening",
+    "aetiologies",
+    "cardiovascular and non-cardiovascular comorbidities",
+    "patients with HFpEF",
+    "treatment"
+   ]
+  },
+  {
+   "text": "Screening for, and treatment of, aetiologies, and CV and non-CV comorbidities are recommended in patients with HFpEF (see relevant sections of this document).",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "HFpEF",
+    "Recommendations",
+    "Recommendations for treatment of chronic HF"
+   ],
+   "entities": [
+    "CV and non-CV comorbidities",
+    "Screening",
+    "aetiologies",
+    "patients with HFpEF",
+    "treatment"
+   ]
+  },
+  {
+   "text": "OCEAN 82 CHF (HFrEF and HFpEF) NYHA II–IV clinical interview (DSM-IV) + HAM-D ≥ 18 108 2:1 EPA/DHA vs. high EPA vs. placebo 12 weeks HAM-D and BDI-II No significant differences between groups (intention-to-treat analysis)",
+   "file": "872b863a1415_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Agent",
+    "Trial",
+    "Results",
+    "n",
+    "Inclusion criteria",
+    "Primary endpoints",
+    "**Table 3** Randomized trials on depression treatment in heart failure",
+    "Mean follow-up"
+   ],
+   "entities": [
+    "12 weeks",
+    "BDI-II",
+    "CHF",
+    "EPA/DHA",
+    "HAM-D",
+    "HAM-D\n≥\n18",
+    "HFpEF",
+    "HFrEF",
+    "NYHA II–IV",
+    "No significant differences\nbetween groups",
+    "high EPA",
+    "placebo"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "c In STRONG-HF, the use of ACE-I/ARB/ARNI, beta-blockers, and MRA was evaluated in patients with HFrEF, HFmrEF, and HFpEF.",
+   "file": "064deef5f4c7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "2. Among patients with current or previous symptomatic HFmrEF (LVEF, 41%–49%), use of evidence-based beta blockers for HFrEF, ARNi, ACEi, or ARB, and MRAs may be considered to reduce the risk of HF hospitalization and cardiovascular mortality, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "b8bb1d3f8a09_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Mildly Reduced Ejection Fraction"
+   ],
+   "entities": [
+    "41%–49%",
+    "ACEi",
+    "ARB",
+    "ARNi",
+    "HF hospitalization",
+    "LVEF",
+    "MRAs",
+    "cardiovascular mortality",
+    "current or previous symptomatic HFmrEF",
+    "evidence-based beta blockers for HFrEF",
+    "lower end of this spectrum",
+    "patients with current or previous symptomatic HFmrEF"
+   ]
+  }
+ ],
+ "status": "no_storyboard",
+ "coverage": "P"
+}

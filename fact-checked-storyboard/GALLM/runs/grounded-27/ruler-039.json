@@ -1,0 +1,785 @@
+{
+ "request": "Create a brief patient-education scene that explains what peripartum cardiomyopathy is.",
+ "candidates": [
+  {
+   "text": "1. In women with a history of HF or cardiomyopathy, including previous peripartum cardiomyopathy, patient-centered counseling regarding contraception and the risks of cardiovascular deterioration during pregnancy should be provided.",
+   "file": "f0961160c9de_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "cardiovascular deterioration during pregnancy",
+    "contraception",
+    "patient-centered counseling",
+    "previous peripartum cardiomyopathy",
+    "women with a history of HF or cardiomyopathy"
+   ]
+  },
+  {
+   "text": "2. In women with acute HF caused by peripartum cardiomyopathy and LVEF <30%, anticoagulation may be reasonable at diagnosis, until 6 to 8 weeks postpartum, although the efficacy and safety are uncertain.",
+   "file": "f0961160c9de_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "6 to 8 weeks postpartum",
+    "<30%",
+    "LVEF",
+    "anticoagulation",
+    "at diagnosis",
+    "efficacy",
+    "safety",
+    "women with acute HF caused by peripartum cardiomyopathy"
+   ]
+  },
+  {
+   "text": "It is recommended to inform women with HFrEF about the risk of deterioration of the condition during gestation and peripartum.",
+   "file": "afc66a906dbd_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "risk of deterioration of the condition during gestation and peripartum",
+    "women with HFrEF"
+   ]
+  },
+  {
+   "text": "It is recommended to anticipate the timing of delivery to ensure safe and effective peripartum anticoagulation.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "safe and effective peripartum anticoagulation",
+    "timing of delivery"
+   ]
+  },
+  {
+   "text": "3. In patients with cardiomyopathy, a 3-generation family history should be obtained or updated when assessing the cause of the cardiomyopathy to identify possible inherited disease.",
+   "file": "4060c392e046_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "3-generation family history",
+    "cardiomyopathy",
+    "cause of the cardiomyopathy",
+    "patients with cardiomyopathy",
+    "possible inherited disease"
+   ]
+  },
+  {
+   "text": "5. In patients with HF or cardiomyopathy, CMR can be useful for diagnosis or management.",
+   "file": "d5002b8091e1_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for Evaluation With Cardiac Imaging (Continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "CMR",
+    "HF or cardiomyopathy",
+    "patients with HF or cardiomyopathy"
+   ]
+  },
+  {
+   "text": "5. In patients at risk of cancer therapy-related cardiomyopathy, initiation of beta blockers and ACEi/ARB for the primary prevention of drug-induced cardiomyopathy is of uncertain benefit.",
+   "file": "1292a83fec52_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Cardio-Oncology (Continued)"
+   ],
+   "entities": [
+    "ACEi/ARB",
+    "beta blockers",
+    "drug-induced cardiomyopathy",
+    "patients at risk of cancer therapy-related cardiomyopathy",
+    "uncertain benefit"
+   ]
+  },
+  {
+   "text": "In patients with suspected PVC-induced cardiomyopathy, CMR should be considered.",
+   "file": "1f5e862d91a1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Idiopathic PVC/VT and PVC-induced cardiomyopathy",
+    "In patients with CAD and haemodynamically well-tolerated SMVT and LVEF \\geq 40\\% , catheter ablation in experienced centres should be considered as an alternative to ICD therapy, provided that established endpoints have been reached. b"
+   ],
+   "entities": [
+    "CMR",
+    "patients with suspected PVC-induced cardiomyopathy"
+   ]
+  },
+  {
+   "text": "Those with propensity to abuse alcohol or with alcoholic cardiomyopathy Abstention",
+   "file": "48f668a7d531_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "continued population",
+    "Excessive alcohol intake"
+   ],
+   "entities": [
+    "Abstention",
+    "Those with propensity to abuse alcohol or with alcoholic cardiomyopathy"
+   ]
+  },
+  {
+   "text": "Annual assessment for risk stratification is recommended in all individuals with cardiomyopathy who exercise regularly.",
+   "file": "d3fba730c25f_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "General recommendation",
+    "Recommendations for exercise in individuals with cardiomyopathy"
+   ],
+   "entities": [
+    "Annual assessment for risk stratification",
+    "all individuals with cardiomyopathy who exercise regularly"
+   ]
+  },
+  {
+   "text": "Amiodarone should be considered to reduce arrhythmia burden in patients with Chagas\\' cardiomyopathy who present with symptomatic PVCs or VT. 857",
+   "file": "93ee226f8675_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "Amiodarone",
+    "PVCs",
+    "VT",
+    "arrhythmia",
+    "arrhythmia burden",
+    "cardiomyopathy",
+    "patients",
+    "to reduce arrhythmia burden in patients with Chagas' cardiomyopathy who present with symptomatic PVCs or VT"
+   ]
+  },
+  {
+   "text": "In patients with a cardiomyopathy suspected to be caused by frequent and predominately monomorphic PVCs, catheter ablation is recommended.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "PVC-induced cardiomyopathy"
+   ],
+   "entities": [
+    "catheter ablation",
+    "patients with a cardiomyopathy suspected to be caused by frequent and predominately monomorphic PVCs"
+   ]
+  },
+  {
+   "text": "2. In select patients with nonischemic cardiomyopathy, referral for genetic counseling and testing is reasonable to identify conditions that could guide treatment for patients and family members.",
+   "file": "103d6dcb35c9_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for Genetic Evaluation and Testing",
+    "Recommendations"
+   ],
+   "entities": [
+    "family members",
+    "genetic counseling and testing",
+    "identify conditions that could guide treatment for patients and family members",
+    "nonischemic cardiomyopathy",
+    "select patients with nonischemic cardiomyopathy"
+   ]
+  },
+  {
+   "text": "11. In patients with genetic arrhythmogenic cardiomyopathy with high-risk features of sudden death, with EF ≤45%, implantation of ICD is reasonable to decrease sudden death.",
+   "file": "d2c2b3b20934_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for ICDs and CRTs (Continued)"
+   ],
+   "entities": [
+    "EF",
+    "ICD",
+    "genetic arrhythmogenic cardiomyopathy",
+    "high-risk features of sudden death",
+    "implantation of ICD",
+    "patients with genetic arrhythmogenic cardiomyopathy",
+    "sudden death",
+    "≤45%"
+   ]
+  },
+  {
+   "text": "In patients with Chagas\\' cardiomyopathy and symptomatic VT in whom AADs (amiodarone and beta-blockers) are ineffective or not tolerated, ICD implantation may be considered.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Inflammatory diseases"
+   ],
+   "entities": [
+    "AADs",
+    "Chagas' cardiomyopathy",
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "amiodarone",
+    "beta-blockers",
+    "patients with Chagas' cardiomyopathy and symptomatic VT in whom AADs (amiodarone and beta-blockers) are ineffective or not tolerated"
+   ]
+  },
+  {
+   "text": "Routine use of aspirin is not recommended in patients with HF not from ischemic cardiomyopathy and without other evidence of atherosclerotic vascular disease. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.36 (previous 7.37)",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "aspirin",
+    "not from ischemic cardiomyopathy",
+    "patients with HF",
+    "without other evidence of atherosclerotic vascular disease"
+   ]
+  },
+  {
+   "text": "In patients with an unexplained reduced EF and a PVC burden of at least 10%, PVC-induced cardiomyopathy should be considered.",
+   "file": "1f5e862d91a1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with CAD and haemodynamically well-tolerated SMVT and LVEF \\geq 40\\% , catheter ablation in experienced centres should be considered as an alternative to ICD therapy, provided that established endpoints have been reached. b",
+    "Idiopathic PVC/VT and PVC-induced cardiomyopathy"
+   ],
+   "entities": [
+    "EF",
+    "PVC burden",
+    "PVC-induced cardiomyopathy",
+    "patients with an unexplained reduced EF and a PVC burden of at least 10%"
+   ]
+  },
+  {
+   "text": "In asymptomatic patients with cancer therapy-related cardiomyopathy (EF <50%) ARB, ACEi, and beta blockers (2a)",
+   "file": "74cc59922dba_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [],
+   "headers": [
+    "In addition to optimized GDMT",
+    "In asymptomatic patients with cancer therapy-related cardiomyopathy (EF <50%)",
+    "Additional Therapies in Patients With HF and Comorbidities"
+   ],
+   "entities": [
+    "<50%",
+    "ACEi",
+    "ARB",
+    "EF",
+    "asymptomatic patients with cancer therapy-related cardiomyopathy",
+    "beta blockers"
+   ]
+  },
+  {
+   "text": "2. In patients with suspected arrhythmogenic right ventricular cardiomyopathy and VA or electrocardiographic abnormalities, cardiac MRI is useful for establishing a diagnosis and for risk stratification (S7.3-5–S7.3-8).",
+   "file": "67636844e063_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "VA",
+    "cardiac MRI",
+    "diagnosis",
+    "electrocardiographic abnormalities",
+    "patients with suspected arrhythmogenic right ventricular cardiomyopathy and VA or electrocardiographic abnormalities",
+    "risk stratification",
+    "suspected arrhythmogenic right ventricular cardiomyopathy"
+   ]
+  },
+  {
+   "text": "4. In patients with arrhythmogenic right ventricular cardiomyopathy and VA, a beta blocker is recommended (S7.3-11,S7.3-14,S7.3-15).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with arrhythmogenic right ventricular cardiomyopathy and VA",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "In patients with SHD in whom predominately monomorphic frequent PVCs are suspected to be contributing to the cardiomyopathy, AAD (amiodarone) treatment or catheter ablation should be considered. 617,621,622,624",
+   "file": "512b6d1e34c0_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "AAD",
+    "PVCs",
+    "amiodarone",
+    "cardiomyopathy",
+    "catheter ablation",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with a cardiomyopathy suspected to be caused by frequent and predominately monomorphic PVCs, treatment with AADs c should be considered if catheter ablation is not desired, suspected to be high-risk, or unsuccessful. 624,626",
+   "file": "512b6d1e34c0_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "AADs",
+    "PVCs",
+    "cardiomyopathy",
+    "catheter ablation",
+    "patients"
+   ]
+  },
+  {
+   "text": "Established or suspected specific cardiomyopathies (e.g., hypertrophic cardiomyopathy, arrhythmogenic right ventricular dysplasia, Chagas disease, restrictive cardiomyopathy, cardiac sarcoidosis, amyloid, aortic stenosis)",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "for example",
+    "Second opinion needed regarding etiology of HF"
+   ],
+   "entities": [
+    "Established or suspected specific cardiomyopathies"
+   ]
+  },
+  {
+   "text": "11. In asymptomatic patients with clinical evidence of arrhythmogenic right ventricular cardiomyopathy, an electrophysiological study may be considered for risk stratification (S7.3-9,S7.3-36).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "electrophysiological study",
+    "patients with clinical evidence of arrhythmogenic right ventricular cardiomyopathy",
+    "risk stratification"
+   ]
+  },
+  {
+   "text": "Can be reversible; Takotsubo cardiomyopathy presentation observed, resolves within weeks",
+   "file": "3b08e00ad4e0_annotation.nt",
+   "class": [
+    "5-FU"
+   ],
+   "level": [
+    "Major%20and%20moderate"
+   ],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: 5-FU",
+    "LEVEL_OF_EVIDENCE: Major and moderate",
+    "SOURCE_DEFINED_OTHER: B",
+    "5-FU"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In patients with Chagas\\' cardiomyopathy and recurrent, symptomatic SMVT or ICD shocks for SMVT in whom AADs are ineffective, contraindicated, or not tolerated, catheter ablation in specialized centres should be considered. 859,860",
+   "file": "93ee226f8675_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "AADs",
+    "ICD",
+    "ICD shocks",
+    "SMVT",
+    "cardiomyopathy",
+    "catheter ablation",
+    "patients"
+   ]
+  },
+  {
+   "text": "8. In patients with clinical evidence of arrhythmogenic right ventricular cardiomyopathy but not VA, a beta blocker can be useful (S7.3-14,S7.3-15).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "In patients with clinical evidence of arrhythmogenic right ventricular cardiomyopathy but not VA",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "In patients with an LVNC cardiomyopathy phenotype based on CMR or echocardiography, implantation of an ICD for primary prevention of SCD should be considered to follow DCM/HNDCM recommendations.",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+    "LVNC and RCM"
+   ],
+   "entities": [
+    "CMR",
+    "DCM/HNDCM",
+    "ICD",
+    "SCD",
+    "echocardiography",
+    "implantation of an ICD",
+    "patients with an LVNC cardiomyopathy phenotype based on CMR or echocardiography"
+   ]
+  },
+  {
+   "text": "3. In victims of SCD with an autopsy that implicates a potentially heritable cardiomyopathy or absence of structural disease, suggesting a potential cardiac channelopathy, postmortem genetic testing is reasonable (S13-4–S13-7).",
+   "file": "4aa9a342f116_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "SCD",
+    "absence of structural disease",
+    "postmortem genetic testing",
+    "potential cardiac channelopathy",
+    "potentially heritable cardiomyopathy",
+    "victims of SCD with an autopsy that implicates a potentially heritable cardiomyopathy or absence of structural disease, suggesting a potential cardiac channelopathy"
+   ]
+  },
+  {
+   "text": "10. In patients with suspected arrhythmogenic right ventricular cardiomyopathy, a signal averaged ECG can be useful for diagnosis and risk stratification (S7.3-14,S7.3-34,S7.3-35).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with suspected arrhythmogenic right ventricular cardiomyopathy",
+    "risk stratification",
+    "signal averaged ECG"
+   ]
+  },
+  {
+   "text": "5. In patients with a clinical diagnosis of arrhythmogenic right ventricular cardiomyopathy, avoiding intensive exercise is recommended (S7.3-11,S7.3-12,S7.3-16–S7.3-21).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "In patients with a clinical diagnosis of arrhythmogenic right ventricular cardiomyopathy",
+    "intensive exercise"
+   ]
+  },
+  {
+   "text": "1. In selected first-degree relatives of patients with arrhythmogenic right ventricular cardiomyopathy, clinical screening for the disease is recommended along with genetic counseling and genetic testing, if the proband has a disease causing mutation (S7.3-1–S7.3-4).",
+   "file": "67636844e063_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "arrhythmogenic right ventricular cardiomyopathy",
+    "clinical screening for the disease",
+    "genetic counseling",
+    "genetic testing",
+    "proband has a disease causing mutation",
+    "selected first-degree relatives of patients with arrhythmogenic right ventricular cardiomyopathy"
+   ]
+  },
+  {
+   "text": "Right heart catheterization should be considered in patients where HF is thought to be due to constrictive pericarditis, restrictive cardiomyopathy, congenital heart disease, and high output states.",
+   "file": "16ff0a9b6203_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "HF",
+    "Right heart catheterization",
+    "congenital heart disease",
+    "constrictive pericarditis",
+    "high output states",
+    "patients",
+    "restrictive cardiomyopathy"
+   ]
+  },
+  {
+   "text": "In idiopathic VF patients, genetic testing of genes related to channelopathy and cardiomyopathy may be considered.",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+    "Idiopathic VF"
+   ],
+   "entities": [
+    "VF",
+    "genetic testing",
+    "patients"
+   ]
+  },
+  {
+   "text": "1. In patients who develop cancer therapy-related cardiomyopathy or HF, a multidisciplinary discussion involving the patient about the risk-benefit ratio of cancer therapy interruption, discontinuation, or continuation is recommended to improve management.",
+   "file": "1292a83fec52_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for Cardio-Oncology",
+    "Recommendations"
+   ],
+   "entities": [
+    "cancer therapy",
+    "management",
+    "multidisciplinary discussion",
+    "patients who develop cancer therapy-related cardiomyopathy or HF",
+    "risk-benefit ratio"
+   ]
+  },
+  {
+   "text": "2. In patients with PVC-induced cardiomyopathy, pharmacological treatment (e.g., beta blocker, amiodarone) is reasonable to reduce recurrent arrhythmias and improve symptoms and LV function (S9-3,S9-4).",
+   "file": "e43b347a5685_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "In patients with PVC-induced cardiomyopathy",
+    "LV function",
+    "amiodarone",
+    "beta blocker",
+    "recurrent arrhythmias",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "2. In asymptomatic patients with cancer therapy-related cardiomyopathy (EF <50%), ARB, ACEi, and beta blockers are reasonable to prevent progression to HF and improve cardiac function.",
+   "file": "1292a83fec52_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for Cardio-Oncology",
+    "Recommendations"
+   ],
+   "entities": [
+    "<50%",
+    "ACEi",
+    "ARB",
+    "EF",
+    "asymptomatic patients with cancer therapy-related cardiomyopathy",
+    "beta blockers",
+    "cardiac function",
+    "progression to HF"
+   ]
+  },
+  {
+   "text": "4. In patients with cardiovascular risk factors or known cardiac disease receiving potentially cardiotoxic anticancer therapies, monitoring of cardiac function is reasonable for the early identification of drug-induced cardiomyopathy.",
+   "file": "1292a83fec52_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for Cardio-Oncology (Continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "drug-induced cardiomyopathy",
+    "monitoring of cardiac function",
+    "patients with cardiovascular risk factors or known cardiac disease",
+    "potentially cardiotoxic anticancer therapies"
+   ]
+  },
+  {
+   "text": "3. In women with HF or cardiomyopathy who are pregnant or currently planning for pregnancy, ACEi, ARB, ARNi, MRA, SGLT2i, ivabradine, and vericiguat should not be administered because of significant risks of fetal harm.",
+   "file": "f0961160c9de_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ACEi",
+    "ARB",
+    "ARNi",
+    "MRA",
+    "SGLT2i",
+    "fetal harm",
+    "ivabradine",
+    "planning for pregnancy",
+    "pregnant",
+    "vericiguat",
+    "women with HF or cardiomyopathy"
+   ]
+  },
+  {
+   "text": "7. In patients with arrhythmogenic right ventricular cardiomyopathy and syncope presumed due to VA, an ICD can be useful if meaningful survival greater than 1 year is expected (S7.3-10,S7.3-11,S7.3-13).",
+   "file": "297307680f4a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "1 year",
+    "ICD",
+    "In patients with arrhythmogenic right ventricular cardiomyopathy and syncope presumed due to VA",
+    "meaningful survival"
+   ]
+  }
+ ],
+ "facts": [],
+ "status": "no_facts",
+ "coverage": "P"
+}

@@ -1,0 +1,1052 @@
+{
+ "request": "Create a brief patient-education scene that explains heart valve disease (narrowed or leaky valves) and its typical symptoms.",
+ "candidates": [
+  {
+   "text": "Valvular heart disease and the possible value of valve repair",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "for example",
+    "Second opinion needed regarding etiology of HF"
+   ],
+   "entities": [
+    "Valvular heart disease",
+    "valve repair"
+   ]
+  },
+  {
+   "text": "PES with standby catheter ablation is recommended in patients with aortic valve disease and SMVT to identify and ablate BBR-VT, especially if it occurs following a valve intervention.",
+   "file": "d74e147d8f95_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Levelb",
+    "Classa"
+   ],
+   "entities": [
+    "BBR-VT",
+    "PES",
+    "SMVT",
+    "aortic valve disease",
+    "catheter ablation",
+    "occurs following a valve intervention",
+    "patients"
+   ]
+  },
+  {
+   "text": "It is recommended to manage pregnancy in women with mechanical valves in a centre with a pregnancy heart team.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "pregnancy",
+    "pregnancy heart team",
+    "women with mechanical valves"
+   ]
+  },
+  {
+   "text": "Right heart catheterization should be considered in patients with probable pulmonary hypertension, assessed by echo in order to confirm the diagnosis and assess its reversibility before the correction of valve/structural heart disease.",
+   "file": "16ff0a9b6203_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "Right heart catheterization",
+    "assess its reversibility",
+    "before the correction of valve/structural heart disease",
+    "confirm the diagnosis",
+    "echo",
+    "patients",
+    "probable pulmonary hypertension"
+   ]
+  },
+  {
+   "text": "It is recommended that the valve prosthesis for a woman contemplating pregnancy is chosen in consultation with a pregnancy heart team.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "a woman contemplating pregnancy",
+    "pregnancy heart team",
+    "valve prosthesis"
+   ]
+  },
+  {
+   "text": "In patients with PVCs/VT and a presentation not typical for an idiopathic origin, c CMR should be considered, despite a normal echocardiogram.",
+   "file": "1f5e862d91a1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Idiopathic PVC/VT and PVC-induced cardiomyopathy",
+    "In patients with CAD and haemodynamically well-tolerated SMVT and LVEF \\geq 40\\% , catheter ablation in experienced centres should be considered as an alternative to ICD therapy, provided that established endpoints have been reached. b"
+   ],
+   "entities": [
+    "CMR",
+    "VT",
+    "echocardiogram",
+    "patients with PVCs/VT and a presentation not typical for an idiopathic origin"
+   ]
+  },
+  {
+   "text": "Mitral regurgitation Surgical or percutaneous mitral valve repair",
+   "file": "9aaf0a8d3f6a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Target",
+    "Therapy",
+    "**TABLE 14** Important Pathophysiological Targets in Chronic, Hemodynamically Stable HFrEF and Treatments"
+   ],
+   "entities": [
+    "Surgical or percutaneous mitral valve repair"
+   ]
+  },
+  {
+   "text": "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate"
+   ]
+  },
+  {
+   "text": "Aorta 40–45 mm in BAV or tricuspid valve",
+   "file": "2485226591ce_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Low-intermediate risk",
+    "Diagnosis"
+   ],
+   "entities": [
+    "40–45 mm",
+    "Aorta",
+    "BAV",
+    "tricuspid valve"
+   ]
+  },
+  {
+   "text": "Intervention is recommended before pregnancy in patients with MS and valve area <1.0 cm2.",
+   "file": "8ce9250f8b01_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Mitral stenosis"
+   ],
+   "entities": [
+    "Intervention",
+    "before pregnancy",
+    "patients with MS",
+    "valve area <1.0 cm2"
+   ]
+  },
+  {
+   "text": "Intervention should be considered before pregnancy in patients with MS and valve area <1.5 cm2.",
+   "file": "8ce9250f8b01_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Mitral stenosis",
+    "Recommendations"
+   ],
+   "entities": [
+    "Intervention",
+    "before pregnancy",
+    "patients with MS",
+    "valve area <1.5 cm2"
+   ]
+  },
+  {
+   "text": "LVEF ≤30% Isolated RV failure Nonoperable severe valve abnormalities Nonoperable severe congenital heart disease EF ≥40%, elevated natriuretic peptide levels and evidence of significant diastolic dysfunction",
+   "file": "e9ad6603eaed_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Severe cardiac dysfunction defined by ≥1 of these:",
+    "ESC Definition of Advanced HF"
+   ],
+   "entities": [
+    "EF",
+    "Isolated RV failure",
+    "LVEF",
+    "Nonoperable severe congenital heart disease",
+    "Nonoperable severe valve abnormalities",
+    "natriuretic peptide levels",
+    "significant diastolic dysfunction",
+    "≤30%",
+    "≥40%"
+   ]
+  },
+  {
+   "text": "Immediate echocardiography is recommended in women with mechanical valves presenting with dyspnoea and/or an embolic event.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Immediate echocardiography",
+    "dyspnoea and/or an embolic event",
+    "women with mechanical valves"
+   ]
+  },
+  {
+   "text": "Aortic valve intervention, TAVI or SAVR, is recommended in patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with HF and aortic stenosis"
+   ],
+   "entities": [
+    "Aortic valve intervention",
+    "HF",
+    "SAVR",
+    "TAVI",
+    "aortic stenosis",
+    "mortality",
+    "patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair When ventricular pacing is indicated, transvenous implantation of a coronary sinus lead or minimally invasive placement of an epicardial ventricular lead should be considered and preferred over a transvenous transvalvular approach.487",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair"
+   ],
+   "entities": [
+    "Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair",
+    "minimally invasive placement of an epicardial ventricular lead",
+    "transvenous implantation of a coronary sinus lead",
+    "transvenous transvalvular approach",
+    "ventricular pacing"
+   ]
+  },
+  {
+   "text": "In patients with HF, severe secondary mitral regurgitation and CAD who need revascularization, CABG and mitral valve surgery should be considered.",
+   "file": "30e3bb93e33c_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Secondary mitral regurgitation",
+    "Recommendations"
+   ],
+   "entities": [
+    "CABG",
+    "mitral valve surgery",
+    "patients with HF, severe secondary mitral regurgitation and CAD who need revascularization"
+   ]
+  },
+  {
+   "text": "DOACs are recommended in preference to VKAs in patients with HF, except in those with moderate or severe mitral stenosis or mechanical prosthetic heart valves. 528,558",
+   "file": "016ccb3f4c61_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Anticoagulation",
+    "Recommendations"
+   ],
+   "entities": [
+    "DOACs",
+    "HF",
+    "VKAs",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "In patients with repaired TOF with SMVT who are undergoing surgical or transcutaneous pulmonary valve replacement, pre-operative catheter mapping and transection of VT-related anatomical isthmuses before or during the intervention should be considered.",
+   "file": "13b1a92325d6_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Tetralogy of Fallot"
+   ],
+   "entities": [
+    "before or during the intervention",
+    "patients with repaired TOF with SMVT",
+    "pre-operative catheter mapping",
+    "surgical or transcutaneous pulmonary valve replacement",
+    "transection of VT-related anatomical isthmuses"
+   ]
+  },
+  {
+   "text": "In patients with repaired TOF undergoing surgical or transcutaneous pulmonary valve replacement, pre-operative catheter mapping and transection of VT-related anatomical isthmuses before or during the intervention may be considered.",
+   "file": "e753165a2507_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Congenital heart disease"
+   ],
+   "entities": [
+    "VT",
+    "patients with repaired TOF undergoing surgical or transcutaneous pulmonary valve replacement",
+    "pre-operative catheter mapping and transection of VT-related anatomical isthmuses before or during the intervention"
+   ]
+  },
+  {
+   "text": "Percutaneous edge-to-edge mitral valve repair may be considered to improve symptoms in carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, who are highly symptomatic despite OMT and who do not fulfil criteria for reducing HF hospitalization.",
+   "file": "50fb089de7d9_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations for management of patients with HF and valvular heart disease"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "Percutaneous edge-to-edge mitral valve repair",
+    "carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, who are highly symptomatic despite OMT and who do not fulfil criteria",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Severe aortic dilatation (>45 mm in MFS or other HTAD, >50 mm in BAV or tricuspid valve, Turner syndrome ASI >25 mm/m2, tetralogy of Fallot >50 mm)",
+   "file": "2485226591ce_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Diagnosis",
+    "High risk"
+   ],
+   "entities": [
+    ">25 mm/m2",
+    ">45 mm",
+    ">50 mm",
+    "BAV",
+    "MFS",
+    "Severe aortic dilatation",
+    "Turner syndrome",
+    "other HTAD",
+    "tetralogy of Fallot",
+    "tricuspid valve"
+   ]
+  },
+  {
+   "text": "Percutaneous edge-to-edge mitral valve repair may be considered to improve symptoms in carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, highly symptomatic despite OMT and who do not fulfil criteria for reducing HF hospitalization. 617",
+   "file": "30e3bb93e33c_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Secondary mitral regurgitation"
+   ],
+   "entities": [
+    "Percutaneous edge-to-edge mitral valve repair",
+    "carefully selected patients with secondary mitral regurgitation",
+    "do not fulfil criteria for reducing HF hospitalization",
+    "highly symptomatic despite OMT",
+    "improve symptoms",
+    "not eligible for surgery",
+    "not needing coronary revascularization"
+   ]
+  },
+  {
+   "text": "Percutaneous edge-to-edge mitral valve repair should be considered in carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, who are symptomatic c despite OMT and who fulfil criteria d for achieving a reduction in HF hospitalizations. 612",
+   "file": "30e3bb93e33c_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Secondary mitral regurgitation"
+   ],
+   "entities": [
+    "Percutaneous edge-to-edge mitral valve repair",
+    "carefully selected patients with secondary mitral regurgitation",
+    "not eligible for surgery",
+    "not needing coronary revascularization",
+    "reduction in HF hospitalizations",
+    "symptomatic"
+   ]
+  },
+  {
+   "text": "Percutaneous edge-to-edge mitral valve repair should be considered in carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, who are symptomatic despite OMT and who fulfil criteria to achieve a reduction in HF hospitalizations.",
+   "file": "50fb089de7d9_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations for management of patients with HF and valvular heart disease"
+   ],
+   "entities": [
+    "HF hospitalizations",
+    "Percutaneous edge-to-edge mitral valve repair",
+    "carefully selected patients with secondary mitral regurgitation, not eligible for surgery and not needing coronary revascularization, who are symptomatic despite OMT and who fulfil criteria"
+   ]
+  },
+  {
+   "text": "Moderate aortic dilatation (40–45 mm in MFS or other HTAD; 45–50 mm in BAV or tricuspid valve, Turner syndrome ASI 20–25 mm/m2, tetralogy of Fallot <50 mm)",
+   "file": "2485226591ce_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Intermediate risk",
+    "Diagnosis"
+   ],
+   "entities": [
+    "20–25 mm/m2",
+    "40–45 mm",
+    "45–50 mm",
+    "<50 mm",
+    "BAV",
+    "MFS",
+    "Moderate aortic dilatation",
+    "Turner syndrome",
+    "other HTAD",
+    "tetralogy of Fallot",
+    "tricuspid valve"
+   ]
+  },
+  {
+   "text": "In patients with typical intermittent claudication supervised hospital- or outpatient clinic-based exercise programme is recommended to improve walking distance and time, functional status, and quality of life Three-month SET to be offered as a first-line therapy for intermittent claudication (revascularization and vasodilator therapy to be considered only if exercise provides insufficient symptom relief) 98",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues",
+    "Exercise training"
+   ],
+   "entities": []
+  },
+  {
+   "text": "5) Patients requiring pacing at the time of tricuspid valve surgery Transvalvular leads should be avoided and epicardial ventricular leads used. During tricuspid valve surgery, removal of pre-existing transvalvular leads should be considered and preferred over sewing in the lead between the annulus and a bioprosthesis or annuloplasty ring. In the case of an isolated tricuspid annuloplasty based on an individual risk–benefit analysis, a pre-existing RV lead may be left in place without jailing it between ring and annulus.",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "5) Patients requiring pacing at the time of tricuspid valve surgery"
+   ],
+   "entities": [
+    "Patients requiring pacing at the time of tricuspid valve surgery",
+    "Transvalvular leads",
+    "epicardial ventricular leads",
+    "individual risk–benefit analysis",
+    "isolated tricuspid annuloplasty",
+    "left in place",
+    "pre-existing RV lead",
+    "removal of pre-existing transvalvular leads",
+    "sewing in the lead between the annulus and a bioprosthesis or annuloplasty ring",
+    "without jailing it between ring and annulus"
+   ]
+  },
+  {
+   "text": "In pregnant women with LMWH, it is recommended to target anti-Xa levels 4–6 h post-dose at 0.8–1.2 U/l (aortic valve prosthesis) or 1.0–1.2 IU/mL (mitral and right-sided valve prostheses).",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "0.8–1.2 U/l",
+    "1.0–1.2 IU/mL",
+    "4–6 h post-dose",
+    "anti-Xa levels",
+    "pregnant women with LMWH"
+   ]
+  },
+  {
+   "text": "Patients requiring pacing at the time of tricuspid valve surgery. Transvalvular leads should be avoided and epicardial ventricular leads used. During tricuspid valve surgery, removal of pre-existing transvalvular leads should be considered and preferred over sewing-in the lead between the annulus and a bio-prosthesis or annuloplasty ring. In the case of an isolated tricuspid annuloplasty based on an individual risk-benefit analysis, a pre-existing right ventricular lead may be left in place without jailing it between ring and annulus.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Transvalvular leads",
+    "a pre-existing right ventricular lead",
+    "epicardial ventricular leads",
+    "removal of pre-existing transvalvular leads"
+   ]
+  },
+  {
+   "text": "2) Surgery for valvular endocarditis and intraoperative complete AVB Immediate epicardial pacemaker implantation should be considered in patients with surgery for valvular endocarditis and complete AVB if one of the following predictors of persistence is present: pre-operative conduction abnormality, Staphylococcus aureus infection, intracardiac abscess, tricuspid valve involvement, or previous valvular surgery.481",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "2) Surgery for valvular endocarditis and intraoperative complete AVB",
+    "Recommendations"
+   ],
+   "entities": [
+    "Immediate epicardial pacemaker implantation",
+    "Staphylococcus aureus infection",
+    "intracardiac abscess",
+    "patients with surgery for valvular endocarditis and complete AVB",
+    "pre-operative conduction abnormality",
+    "predictors of persistence",
+    "previous valvular surgery",
+    "tricuspid valve involvement"
+   ]
+  },
+  {
+   "text": "CRT may be a therapeutic option in ACHD patients with HF, but evidence in this specific setting is still lacking. Efficacy of CRT will depend on the underlying structural and functional substrate, such as anatomy of the systemic ventricle (left, right, or functionally single), presence and degree of structural systemic AV valve regurgitation, primary myocardial disease or scarring, and type of electrical conduction delay. 988",
+   "file": "1d97f44c9d98_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "CRT",
+    "HF",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "6. In patients with HF, an evaluation for possible ischemic heart disease can be useful to identify the cause and guide management.",
+   "file": "d5002b8091e1_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Evaluation With Cardiac Imaging (Continued)"
+   ],
+   "entities": [
+    "HF",
+    "evaluation for possible ischemic heart disease",
+    "ischemic heart disease",
+    "patients with HF"
+   ]
+  },
+  {
+   "text": "10. In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors, ICD implantation may be considered if meaningful survival of greater than 1 year is expected (S10.8-14–S10.8-16,S10.8-20).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "1 year",
+    "ICD implantation",
+    "In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors",
+    "meaningful survival"
+   ]
+  },
+  {
+   "text": "1. In patients with nonischemic DCM or ischemic heart disease at least 40 days post-MI with LVEF ≤35% and NYHA class II or III symptoms on chronic GDMT, who have reasonable expectation of meaningful survival for >1 year, ICD therapy is recommended for primary prevention of SCD to reduce total mortality.",
+   "file": "58316d730051_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for ICDs and CRTs"
+   ],
+   "entities": [
+    "40 days post-MI",
+    ">1 year",
+    "GDMT",
+    "ICD therapy",
+    "LVEF",
+    "NYHA class II or III symptoms",
+    "SCD",
+    "ischemic heart disease",
+    "nonischemic DCM",
+    "patients with nonischemic DCM or ischemic heart disease",
+    "total mortality",
+    "≤35%"
+   ]
+  },
+  {
+   "text": "1. In patients with ischemic heart disease and recurrent VA, with significant symptoms or ICD shocks despite optimal device programming and ongoing treatment with a beta blocker, amiodarone or sotalol is useful to suppress recurrent VA (S7.1.3-1–S7.1.3-3).",
+   "file": "2b744a317a1e_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "ICD shocks",
+    "In patients with ischemic heart disease and recurrent VA",
+    "amiodarone",
+    "beta blocker",
+    "recurrent VA",
+    "sotalol",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Genetic counselling should be considered in women with congenital heart disease or congenital arrhythmia, cardiomyopathies, aortic disease, or genetic malformations associated with CVD.",
+   "file": "c67c1b175776_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Genetic counselling",
+    "congenital heart disease or congenital arrhythmia, cardiomyopathies, aortic disease, or genetic malformations associated with CVD",
+    "women"
+   ]
+  },
+  {
+   "text": "It is recommended that BrS is diagnosed in patients with no other heart disease and a spontaneous type 1 Brugada ECG pattern.",
+   "file": "aa7a74f4527c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Levelb",
+    "Classa",
+    "Diagnosis",
+    "Recommendations"
+   ],
+   "entities": [
+    "BrS",
+    "patients with no other heart disease",
+    "spontaneous type 1 Brugada ECG pattern"
+   ]
+  },
+  {
+   "text": "BrS may be considered as a diagnosis in patients with no other heart disease who exhibit an induced type 1 Brugada ECG.",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+    "Brugada syndrome"
+   ],
+   "entities": [
+    "BrS",
+    "ECG",
+    "patients with no other heart disease who exhibit an induced type 1 Brugada ECG"
+   ]
+  },
+  {
+   "text": "Right heart catheterization should be considered in patients where HF is thought to be due to constrictive pericarditis, restrictive cardiomyopathy, congenital heart disease, and high output states.",
+   "file": "16ff0a9b6203_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "HF",
+    "Right heart catheterization",
+    "congenital heart disease",
+    "constrictive pericarditis",
+    "high output states",
+    "patients",
+    "restrictive cardiomyopathy"
+   ]
+  },
+  {
+   "text": "Phentermine (1959) Appetite suppressant, TAAR-1 agonist −3.6 kg Potential for heart rate and blood pressure elevations; considered to be contraindicated in patients with heart disease, including HF, as well as with arrhythmias, coronary artery disease and uncontrolled hypertension; associated with primary pulmonary hypertension, regurgitant cardiac valvular disease, and palpitations/tachyarrhythmias",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Potential Risks in HF",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Medication (FDA Approval),\nMechanism",
+    "1-yr Placebo-Adjusted Weight Loss"
+   ],
+   "entities": [
+    "Phentermine",
+    "Potential for heart rate and blood pressure elevations",
+    "and palpitations/tachyarrhythmias",
+    "as well as with arrhythmias",
+    "associated with primary pulmonary hypertension",
+    "considered to be contraindicated in patients with heart disease",
+    "coronary artery disease and uncontrolled hypertension",
+    "including HF",
+    "regurgitant cardiac valvular disease",
+    "−3.6 kg"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Valvular heart disease and the possible value of valve repair",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "for example",
+    "Second opinion needed regarding etiology of HF"
+   ],
+   "entities": [
+    "Valvular heart disease",
+    "valve repair"
+   ]
+  },
+  {
+   "text": "Mitral regurgitation Surgical or percutaneous mitral valve repair",
+   "file": "9aaf0a8d3f6a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Target",
+    "Therapy",
+    "**TABLE 14** Important Pathophysiological Targets in Chronic, Hemodynamically Stable HFrEF and Treatments"
+   ],
+   "entities": [
+    "Surgical or percutaneous mitral valve repair"
+   ]
+  },
+  {
+   "text": "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate"
+   ]
+  },
+  {
+   "text": "Aortic valve intervention, TAVI or SAVR, is recommended in patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with HF and aortic stenosis"
+   ],
+   "entities": [
+    "Aortic valve intervention",
+    "HF",
+    "SAVR",
+    "TAVI",
+    "aortic stenosis",
+    "mortality",
+    "patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms",
+    "symptoms"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Understanding Heart Valve Disease",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Valvular heart disease means a narrowed or leaky heart valve. Doctors use ultrasound imaging to see the problem. Repair or replacement can help and may improve symptoms.",
+    "visual_description": "Illustration of a heart showing a narrowed valve and a leaky valve.",
+    "on_screen_text": "Valve disease: narrow or leaky"
+   }
+  ],
+  "not_covered": [
+   "typical symptoms of heart valve disease"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Valvular heart disease means a narrowed or leaky heart valve.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "No fact defines valvular heart disease as a narrowed or leaky heart valve."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors use ultrasound imaging to see the problem.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states that cardiac imaging, including two‑dimensional and Doppler echocardiography (ultrasound), is used to evaluate heart function and valve diseases."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Repair or replacement can help and may improve symptoms.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Valve intervention improves symptoms per fact 4."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Valve disease: narrow or leaky",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Valve disease can be narrow (stenosis) as per aortic stenosis recommendation."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Understanding Heart Valve Disease",
+  "scenes": [
+   {
+    "scene_number": "1",
+    "narration": "Doctors use ultrasound imaging to see valve problems. Valve repair or replacement may improve symptoms. Options include mitral valve repair or aortic valve intervention.",
+    "visual_description": "Heart diagram showing ultrasound view and valve repair tools",
+    "on_screen_text": "Valve repair helps"
+   }
+  ],
+  "not_covered": [
+   "typical symptoms of heart valve disease"
+  ]
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors use ultrasound imaging to see valve problems.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states that two‑dimensional and Doppler echocardiography (ultrasound imaging) is used to evaluate heart valve diseases."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Valve repair or replacement may improve symptoms.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 states that valve intervention improves symptoms."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Options include mitral valve repair or aortic valve intervention.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Both options are supported by the facts."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Valve repair helps",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states valve repair has possible value for valvular heart disease."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Understanding Heart Valve Disease",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Doctors use ultrasound imaging to see valve problems. Valve repair or replacement may improve symptoms. Options include mitral valve repair or aortic valve intervention.",
+    "visual_description": "Heart diagram showing ultrasound view and valve repair tools",
+    "on_screen_text": "Valve repair helps"
+   }
+  ],
+  "not_covered": [
+   "typical symptoms of heart valve disease"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors use ultrasound imaging to see valve problems.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states that two‑dimensional and Doppler echocardiography (ultrasound imaging) is used to evaluate heart valve diseases.",
+   "guideline_fact": "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Patient assessment",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Valve repair or replacement may improve symptoms.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 states that valve intervention improves symptoms.",
+   "guideline_fact": "Aortic valve intervention, TAVI or SAVR, is recommended in patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "05e068c41452_annotation.nt",
+    "headers": [
+     "Recommendations for treatment of patients with HF and aortic stenosis"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Options include mitral valve repair or aortic valve intervention.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Both options are supported by the facts.",
+   "guideline_fact": "Mitral regurgitation Surgical or percutaneous mitral valve repair",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "9aaf0a8d3f6a_annotation.nt",
+    "headers": [
+     "Target",
+     "Therapy",
+     "**TABLE 14** Important Pathophysiological Targets in Chronic, Hemodynamically Stable HFrEF and Treatments"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Valve repair helps",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states valve repair has possible value for valvular heart disease.",
+   "guideline_fact": "Valvular heart disease and the possible value of valve repair",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "312ed985281c_annotation.nt",
+    "headers": [
+     "for example",
+     "Second opinion needed regarding etiology of HF"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "typical symptoms of heart valve disease"
+ ],
+ "coverage": "P"
+}

@@ -1,0 +1,990 @@
+{
+ "request": "Create a brief patient-education scene that explains how high blood pressure can lead to heart failure.",
+ "candidates": [
+  {
+   "text": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+   "file": "1c8bf8688543_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF",
+    "In patients with hypertension",
+    "blood pressure",
+    "hypertension"
+   ]
+  },
+  {
+   "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE A"
+   ],
+   "entities": [
+    "causes of heart dysfunction",
+    "diabetes",
+    "high blood pressure"
+   ]
+  },
+  {
+   "text": "1. Patients with HFpEF and hypertension should have medication titrated to attain blood pressure targets in accordance with published clinical practice guidelines to prevent morbidity.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "HFpEF",
+    "Patients with HFpEF and hypertension",
+    "blood pressure targets",
+    "hypertension",
+    "medication",
+    "morbidity"
+   ]
+  },
+  {
+   "text": "Phentermine (1959) Appetite suppressant, TAAR-1 agonist −3.6 kg Potential for heart rate and blood pressure elevations; considered to be contraindicated in patients with heart disease, including HF, as well as with arrhythmias, coronary artery disease and uncontrolled hypertension; associated with primary pulmonary hypertension, regurgitant cardiac valvular disease, and palpitations/tachyarrhythmias",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Potential Risks in HF",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Medication (FDA Approval),\nMechanism",
+    "1-yr Placebo-Adjusted Weight Loss"
+   ],
+   "entities": [
+    "Phentermine",
+    "Potential for heart rate and blood pressure elevations",
+    "and palpitations/tachyarrhythmias",
+    "as well as with arrhythmias",
+    "associated with primary pulmonary hypertension",
+    "considered to be contraindicated in patients with heart disease",
+    "coronary artery disease and uncontrolled hypertension",
+    "including HF",
+    "regurgitant cardiac valvular disease",
+    "−3.6 kg"
+   ]
+  },
+  {
+   "text": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "1000–2000 Ω",
+    "Insertion of a sensing/pacing lead",
+    "Lead fracture",
+    "Lead- and connector-block failure",
+    "Modern ICDs",
+    "Remote device monitoring",
+    "Reprogramming the ICD",
+    "analysis of intracardiac electrograms and event markers",
+    "conductor coil fracture",
+    "high lead impedance",
+    "inappropriate shocks",
+    "lead fracture",
+    "lead insulation failure",
+    "loose set screws",
+    "low impedance",
+    "malfunction",
+    "non-physiological short intervals <150 ms",
+    "outer insulation failure",
+    "reconnection of the lead",
+    "replacement"
+   ]
+  },
+  {
+   "text": "ACE inhibitors enalapril, captopril, lisinopril Vasotec, Capoten, Zestril Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "Capoten",
+    "Vasotec",
+    "Zestril",
+    "blood pressure",
+    "blood vessels",
+    "captopril",
+    "easier for the heart to pump blood",
+    "enalapril",
+    "lisinopril"
+   ]
+  },
+  {
+   "text": "Liraglutide 3 mg (2014) GLP-1 agonist −6.2 kg −5.4 kg (SCALE trial) Modest reductions in systolic blood pressure; improvements in blood glucose for patients with diabetes and decreased development of diabetes; reductions in major adverse cardiovascular events Minor increases in heart rate; may not be appropriate for patients with advanced systolic heart failure, per FIGHT study results (Margulies 2016)",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "1-yr Placebo-Adjusted Weight Loss",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Potential Risks in HF",
+    "Medication (FDA Approval),\nMechanism"
+   ],
+   "entities": [
+    "3 mg",
+    "Liraglutide",
+    "Minor increases in heart rate",
+    "Modest reductions in systolic blood pressure",
+    "improvements in blood glucose for patients with diabetes and decreased development of diabetes",
+    "may not be appropriate for patients with advanced systolic heart failure",
+    "per FIGHT study results (Margulies 2016)",
+    "reductions in major adverse cardiovascular events",
+    "−5.4 kg",
+    "−6.2 kg"
+   ]
+  },
+  {
+   "text": "In patients with PAD and hypertension, it is recommended to control blood pressure at < 140/90 mmHg (130/80 mmHg or lower in most patients when treatment is well tolerated)",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Blood pressure monitoring",
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "It is recommended to activate lead failure alerts.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": []
+  },
+  {
+   "text": "ARBs candesartan, losartan, valsartan Atacand, Cozaar, Diovan Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood. Alternative to ACE inhibitor.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "What They Do",
+    "Types of Heart Failure Medications",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARBs",
+    "Atacand",
+    "Cozaar",
+    "Diovan",
+    "blood pressure",
+    "blood vessels",
+    "candesartan",
+    "easier for the heart to pump blood",
+    "losartan",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "In individuals with well-controlled hypertension, resistance training ≥3 times per week in addition to moderate or vigorous aerobic exercise (at least 30 min, 5–7 days per week) is recommended to reduce blood pressure and CVD risk.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Special considerations for individuals with obesity, hypertension, dyslipidaemia, or diabetes"
+   ],
+   "entities": [
+    "5–7 days per week",
+    "CVD risk",
+    "at least 30 min",
+    "blood pressure",
+    "individuals with well-controlled hypertension",
+    "moderate or vigorous aerobic exercise",
+    "resistance training",
+    "≥3 times per week"
+   ]
+  },
+  {
+   "text": "Beta blocker Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage. bisoprolol (Zebeta) carvedilol (Coreg) metoprolol succinate (Toprol)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**",
+    "Medications for HFrEF (the 4 pillars)"
+   ],
+   "entities": [
+    "Beta blocker",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "heart damage",
+    "heart rate",
+    "metoprolol succinate"
+   ]
+  },
+  {
+   "text": "Beta blockers carvedilol, metoprolol succinate, metoprolol tartrate, bisoprolol, atenolol Coreg, Toprol XL, Lopressor, Zebeta, Tenormin Slow the heart rate (how fast the heart beats). Reduce blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "Beta blockers",
+    "Coreg",
+    "Lopressor",
+    "Tenormin",
+    "Toprol XL",
+    "Zebeta",
+    "atenolol",
+    "bisoprolol",
+    "blood pressure",
+    "carvedilol",
+    "easier for the heart to pump blood",
+    "heart rate",
+    "metoprolol succinate",
+    "metoprolol tartrate"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hypertension",
+    "Suggested Action"
+   ],
+   "entities": [
+    "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)"
+   ]
+  },
+  {
+   "text": "Bupropion/naltrexone (2014) Inhibits dopamine/norepinephrine reuptake + opioid antagonist −6.2 kg Minor improvements in blood glucose for patients with diabetes Minor increases in blood pressure and heart rate; potential association with palpitations/tachyarrhythmias",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "1-yr Placebo-Adjusted Weight Loss",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Potential Risks in HF",
+    "Medication (FDA Approval),\nMechanism"
+   ],
+   "entities": [
+    "Bupropion/naltrexone",
+    "Minor improvements in blood glucose for patients with diabetes",
+    "Minor increases in blood pressure and heart rate",
+    "potential association with palpitations/tachyarrhythmias",
+    "−6.2 kg"
+   ]
+  },
+  {
+   "text": "Identify CIEDs approaching end of battery life, to identify leads at risk of failure, and to organize CIED replacements in a non-emergent manner",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Goals of monitoring CIEDs",
+    "CIED related"
+   ],
+   "entities": [
+    "Identify CIEDs approaching end of battery life, to identify leads at risk of failure, and to organize CIED replacements in a non-emergent manner"
+   ]
+  },
+  {
+   "text": "In patients with LEAD and hypertension, it is recommended to control BP at <140/90 mmHg. 776,785,786",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "CLASS_OF_RECOMMENDATION: I",
+    "LEVEL_OF_EVIDENCE: A"
+   ],
+   "entities": []
+  },
+  {
+   "text": "A vasopressor, preferably norepinephrine, may be considered in patients with cardiogenic shock to increase blood pressure and vital organ perfusion. 485–487",
+   "file": "ecc2bc4fd6e9_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Vasopressors"
+   ],
+   "entities": [
+    "blood pressure",
+    "cardiogenic shock",
+    "norepinephrine",
+    "patients with cardiogenic shock to increase blood pressure and vital organ perfusion"
+   ]
+  },
+  {
+   "text": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "arterial haemoglobin oxygen saturation",
+    "blood pressure",
+    "body temperature",
+    "conscious level",
+    "haemodynamic status",
+    "heart rate",
+    "respiratory rate",
+    "vital signs"
+   ]
+  },
+  {
+   "text": "Systolic blood pressure ≤90 mm Hg or symptomatic hypotension",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "Systolic blood pressure",
+    "symptomatic hypotension",
+    "≤90 mm Hg"
+   ]
+  },
+  {
+   "text": "Consistently low blood pressure with SBP <90 to 100 mmHg",
+   "file": "b89ec3acb824_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "L — Low blood pressure",
+    "\\'I Need Help\\' markers of advanced heart failure"
+   ],
+   "entities": [
+    "Consistently low blood pressure with SBP <90 to 100 mmHg"
+   ]
+  },
+  {
+   "text": "Close monitoring of maternal blood pressure, heart rate, and volume status, with adjustment of the modified HF regimen as appropriate to avoid hypotension (systemic vasodilation peaks in the second trimester) and placental hypoperfusion.",
+   "file": "c6018cd21eaa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 30. HF Management Strategies Across the Pregnancy Continuum",
+    "During Pregnancy",
+    "Pharmacological strategies"
+   ],
+   "entities": [
+    "heart rate",
+    "hypotension",
+    "maternal blood pressure",
+    "modified HF regimen",
+    "placental hypoperfusion",
+    "second trimester",
+    "systemic vasodilation",
+    "volume status"
+   ]
+  },
+  {
+   "text": "Titrate therapy to control symptoms and to relieve congestion, manage hypoperfusion and optimize blood pressure",
+   "file": "900d79d2de5f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Phase: Intermediate",
+    "Procedures"
+   ],
+   "entities": [
+    "blood pressure",
+    "congestion",
+    "hypoperfusion",
+    "symptoms",
+    "therapy"
+   ]
+  },
+  {
+   "text": "Pulse oximetry and arterial blood gas analysis Admission, during hospitalization a Respiratory failure Useful to assess respiratory function Recommended when respiratory failure is suspected",
+   "file": "f21291ccf29e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Diagnostic value for AHF: Useful to assess respiratory function",
+    "Indication: Recommended when respiratory failure is suspected",
+    "Time of measurement: Admission, during hospitalization",
+    "Possible findings: Respiratory failure",
+    "Exam"
+   ],
+   "entities": [
+    "Pulse oximetry and arterial blood gas analysis"
+   ]
+  },
+  {
+   "text": "Remote device management of pacemakers should be considered in order to provide earlier detection of clinical problems (e.g. arrhythmias) or technical issues (e.g. lead failure or battery depletion).806,810",
+   "file": "2ff6993170ba_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Remote device management of pacemakers",
+    "arrhythmias",
+    "battery depletion",
+    "earlier detection of clinical problems",
+    "lead failure",
+    "pacemakers",
+    "technical issues"
+   ]
+  },
+  {
+   "text": "Profile 3. Stable on inotrope or inotrope-dependent Patient with stable blood pressure, organ function, nutrition, and symptoms on continuous i.v. inotropic support (or a temporary circulatory support device or both) but demonstrating repeated failure to wean from support due to recurrent symptomatic hypotension or renal dysfunction. \\'Dependent stability.\\'",
+   "file": "ff0f6ef51136_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Profile"
+   ],
+   "entities": [
+    "Patient with stable blood pressure, organ function, nutrition, and symptoms on continuous i.v. inotropic support",
+    "Profile 3. Stable on inotrope or inotrope-dependent",
+    "continuous i.v. inotropic support",
+    "recurrent symptomatic hypotension",
+    "renal dysfunction",
+    "repeated failure to wean from support",
+    "temporary circulatory support device"
+   ]
+  },
+  {
+   "text": "Smoking cessation Maintain blood pressure in target range Maintain normal HgA1c, if diabetic",
+   "file": "8727f5ad0650_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Modify risks for HF progression",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "HgA1c",
+    "Smoking cessation",
+    "blood pressure",
+    "diabetic",
+    "normal",
+    "target range"
+   ]
+  },
+  {
+   "text": "2. In patients experiencing mild decrease of renal function or asymptomatic reduction of blood pressure during HF hospitalization, diuresis and other GDMT should not routinely be discontinued.",
+   "file": "6efda446252d_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "asymptomatic reduction of blood pressure",
+    "diuresis",
+    "mild decrease of renal function",
+    "other GDMT",
+    "patients experiencing mild decrease of renal function or asymptomatic reduction of blood pressure during HF hospitalization"
+   ]
+  },
+  {
+   "text": "More than daily Vital signs Orthostatic blood pressure if indicated Oxygen saturation daily until stable",
+   "file": "29f0b1df33cb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Frequency",
+    "Value",
+    "Specifics"
+   ],
+   "entities": [
+    "More than daily",
+    "Orthostatic blood pressure",
+    "Oxygen saturation",
+    "Vital signs",
+    "daily",
+    "stable"
+   ]
+  },
+  {
+   "text": "Intervention should be considered before pregnancy in asymptomatic patients with severe AS when a fall in blood pressure below baseline during exercise testing occurs.",
+   "file": "8ce9250f8b01_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Aortic stenosis",
+    "Recommendations"
+   ],
+   "entities": [
+    "Intervention",
+    "asymptomatic patients with severe AS",
+    "before pregnancy",
+    "exercise testing",
+    "fall in blood pressure below baseline"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "Decision to treat hypertension must consider the patient\\'s clinical status, polypharmacy and frailty. A personalized approach is advised with monitoring of drug induced complication (hypotension, fall, electrolyte imbalance, renal failure)",
+   "file": "df7255efec86_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Blood pressure monitoring"
+   ],
+   "entities": [
+    "hypertension",
+    "hypotension, fall, electrolyte imbalance, renal failure",
+    "monitoring of drug induced complication",
+    "patient's clinical status, polypharmacy and frailty",
+    "personalized approach"
+   ]
+  },
+  {
+   "text": "In SCA survivors, repeated 12-lead ECGs during stable rhythm (including high precordial lead ECG), as well as continuous cardiac monitoring, are recommended.",
+   "file": "658e80922c73_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for evaluation of SCA survivors"
+   ],
+   "entities": [
+    "SCA survivors",
+    "continuous cardiac monitoring",
+    "high precordial lead ECG",
+    "repeated 12-lead ECGs",
+    "stable rhythm"
+   ]
+  },
+  {
+   "text": "It is recommended that blood pressure be aggressively treated to lower systolic and usually diastolic levels. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = C)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "14.1",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "<130",
+    "<80 mm Hg",
+    "blood pressure"
+   ]
+  },
+  {
+   "text": "Other heart rate slowing drugs (amiodarone, CCB, Ivabradine); Normotension/ Hypertension; review",
+   "file": "03eb6902c3f3_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Other heart rate slowing drugs (amiodarone, CCB, Ivabradine)",
+    "Normotension/ Hypertension"
+   ],
+   "entities": [
+    "CCB",
+    "Hypertension",
+    "Ivabradine",
+    "amiodarone",
+    "heart rate"
+   ]
+  },
+  {
+   "text": "Randomized controlled trials have not yet defined the optimal time to initiate blood pressure lowering therapy after stroke or transient ischaemic attack",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Issues requiring further evidence",
+    "Blood pressure management"
+   ],
+   "entities": [
+    "blood pressure lowering therapy",
+    "optimal time to initiate",
+    "stroke or transient ischaemic attack"
+   ]
+  },
+  {
+   "text": "Smoking cessation Maintain blood pressure in target range Maintain normal HgA1c, if diabetic Maintain specific body weight",
+   "file": "a7e8deb3319e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Modify risks for HF progression",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "Smoking cessation",
+    "blood pressure in target range",
+    "diabetic",
+    "normal HgA1c",
+    "specific body weight"
+   ]
+  },
+  {
+   "text": "When a woman with known aortic dilatation, (history of) dissection, or genetic predisposition for dissection becomes pregnant, strict blood pressure control is recommended.",
+   "file": "fd242e198859_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "All aortic diseases",
+    "Recommendations for the management of aortic disease"
+   ],
+   "entities": [
+    "strict blood pressure control",
+    "woman with known aortic dilatation, (history of) dissection, or genetic predisposition for dissection"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+   "file": "1c8bf8688543_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF",
+    "In patients with hypertension",
+    "blood pressure",
+    "hypertension"
+   ]
+  },
+  {
+   "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE A"
+   ],
+   "entities": [
+    "causes of heart dysfunction",
+    "diabetes",
+    "high blood pressure"
+   ]
+  },
+  {
+   "text": "1. Patients with HFpEF and hypertension should have medication titrated to attain blood pressure targets in accordance with published clinical practice guidelines to prevent morbidity.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "HFpEF",
+    "Patients with HFpEF and hypertension",
+    "blood pressure targets",
+    "hypertension",
+    "medication",
+    "morbidity"
+   ]
+  },
+  {
+   "text": "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hypertension",
+    "Suggested Action"
+   ],
+   "entities": [
+    "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)"
+   ]
+  },
+  {
+   "text": "It is recommended that blood pressure be aggressively treated to lower systolic and usually diastolic levels. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = C)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "14.1",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "<130",
+    "<80 mm Hg",
+    "blood pressure"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "High Blood Pressure and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "High blood pressure can cause heart dysfunction. Controlling it helps prevent heart failure. Doctors aim for blood pressure below 130 over 80.",
+    "visual_description": "Doctor showing blood pressure chart and heart illustration.",
+    "on_screen_text": "Control BP, protect heart"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "High blood pressure can cause heart dysfunction.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states hypertension should be controlled to prevent symptomatic heart failure, implying high blood pressure can cause heart dysfunction."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Controlling it helps prevent heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states controlling blood pressure prevents symptomatic heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors aim for blood pressure below 130 over 80.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Fact 5 states the target should be <130/<80 mm Hg."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Control BP, protect heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Controlling BP prevents heart failure."
+  }
+ ],
+ "final_storyboard": {
+  "title": "High Blood Pressure and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "High blood pressure can cause heart dysfunction. Controlling it helps prevent heart failure. Doctors aim for blood pressure below 130 over 80.",
+    "visual_description": "Doctor showing blood pressure chart and heart illustration.",
+    "on_screen_text": "Control BP, protect heart"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "High blood pressure can cause heart dysfunction.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states hypertension should be controlled to prevent symptomatic heart failure, implying high blood pressure can cause heart dysfunction.",
+   "guideline_fact": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+   "grade": {
+    "class": [
+     "1"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "1c8bf8688543_annotation.nt",
+    "headers": [
+     "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+     "Recommendations"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Controlling it helps prevent heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states controlling blood pressure prevents symptomatic heart failure.",
+   "guideline_fact": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+   "grade": {
+    "class": [
+     "1"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "1c8bf8688543_annotation.nt",
+    "headers": [
+     "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+     "Recommendations"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors aim for blood pressure below 130 over 80.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Fact 5 states the target should be <130/<80 mm Hg.",
+   "guideline_fact": "It is recommended that blood pressure be aggressively treated to lower systolic and usually diastolic levels. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = C)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "5b6f878076fd_annotation.nt",
+    "headers": [
+     "14.1",
+     "2006 Guideline Recommendation"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Control BP, protect heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Controlling BP prevents heart failure.",
+   "guideline_fact": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+   "grade": {
+    "class": [
+     "1"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "1c8bf8688543_annotation.nt",
+    "headers": [
+     "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+     "Recommendations"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

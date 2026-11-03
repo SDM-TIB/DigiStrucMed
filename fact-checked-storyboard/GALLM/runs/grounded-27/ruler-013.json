@@ -1,0 +1,860 @@
+{
+ "request": "Create a brief patient-education scene that explains in simple words how ACE inhibitors work.",
+ "candidates": [
+  {
+   "text": "Combination treatment with ACE inhibitors and ARBs is not recommended.",
+   "file": "356449c9ee2d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: III",
+    "Recommendations in patients with chronic kidney disease: best medical therapy",
+    "SOURCE_DEFINED_OTHER: C"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors from cough or angioedema. (Strength of Evidence = C) Routine use of the combination of ACE inhibitors and ARBs for prevention of HF is not recommended in this population. (Strength of Evidence = C)",
+   "file": "135fa57e38a1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "5.6",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "ARBs",
+    "asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors from cough or angioedema",
+    "the combination of ACE inhibitors and ARBs"
+   ]
+  },
+  {
+   "text": "ACE inhibitors or ARBs should be considered as first-line therapy in patients with PAD and hypertension. d 575,787",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "LEVEL_OF_EVIDENCE: B",
+    "CLASS_OF_RECOMMENDATION: IIa",
+    "Recommendations"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors because of cough or angioedema. (Strength of Evidence = C) Routine use of the combination of ACE inhibitors and ARBs for prevention of HF is not recommended in this population. (Strength of Evidence = C)",
+   "file": "135fa57e38a1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "5.6",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ARBs",
+    "asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors because of cough or angioedema",
+    "the combination of ACE inhibitors and ARBs"
+   ]
+  },
+  {
+   "text": "Routine use of the combination of ACE inhibitors and ARBs for prevention of HF is not recommended in this population. (Strength of Evidence = C)",
+   "file": "71bbca28dea4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "5.6"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs"
+   ]
+  },
+  {
+   "text": "ACE inhibitors (or ARB) are recommended if a patient has other conditions (e.g. HF, hypertension, or DM).",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A",
+    "Recommendations for patients with coronary artery disease"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARB"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "Sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors from cough or angioedema. (Strength of Evidence = C)",
+   "file": "71bbca28dea4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "5.6"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs"
+   ]
+  },
+  {
+   "text": "Treatment with an ACE inhibitor or an ARB is recommended in patients with DM, hypertension, and albuminuria. These medications should be titrated to the highest approved dose that is tolerated.",
+   "file": "356449c9ee2d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendations in patients with chronic kidney disease: best medical therapy",
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for asymptomatic patients with reduced LVEF who are intolerant of ACE inhibitors because of cough or angioedema. (Strength of Evidence = C)",
+   "file": "71bbca28dea4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "5.6"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs"
+   ]
+  },
+  {
+   "text": "An ACE inhibitor is recommended, in addition to a beta-blocker and an MRA, for patients with symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "ACE inhibitors a ACE inhibitor D Yes Yes b (maximum of 1.6%) Contraindicated • renal or tubular dysplasia, oligohydramnios, growth retardation, ossification disorders of skull, lung hypoplasia, contractures, large joints, anaemia, intrauterine foetal death",
+   "file": "e3b5020112db_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "ACE inhibitors",
+    "Table 7 Drugs and safety data",
+    "Pre-clinical/clinical safety data"
+   ],
+   "entities": [
+    "ACE inhibitors"
+   ]
+  },
+  {
+   "text": "ACE inhibitors are recommended in all patients with either reduced or preserved LVEF after an MI. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "13.10 (previous 13.9)"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "LVEF",
+    "after",
+    "patients with either reduced or preserved LVEF after an MI",
+    "preserved LVEF"
+   ]
+  },
+  {
+   "text": "A beta-blocker is recommended, in addition to an ACE inhibitor (or an ARNI) and an MRA, for patients with stable, symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF already treated with an ACE inhibitor (or an ARNI) and a beta-blocker, to reduce the risk of HF hospitalization and death. 718,719",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "Hydralazine and isosorbide dinitrate may be considered in patients with symptomatic HFrEF who cannot tolerate ACE inhibitors, ARBs, or ARNIs (or if they are contraindicated), to reduce the risk of death. 728",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIb",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs",
+    "Hydralazine"
+   ]
+  },
+  {
+   "text": "ACE inhibitors are recommended in all patients with systolic dysfunction or preserved systolic function after an MI. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "13.10 (previous 13.9)",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "after",
+    "patients with systolic dysfunction or preserved systolic function after an MI",
+    "systolic dysfunction"
+   ]
+  },
+  {
+   "text": "The routine administration of an ARB is not recommended in addition to ACE inhibitor and beta blocker therapy in patients with a recent acute MI and reduced LVEF. (Strength of Evidence = A)",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.12 (previous 7.13)",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "The routine administration of an ARB is not recommended in addition to ACE inhibitor and beta blocker therapy in patients with recent acute MI and LV dysfunction. (Strength of Evidence = A)",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.12 (previous 7.13)",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "It is recommended that the preferred combinations include a RAS blocker (i.e. an ACE inhibitor or ARB) with a CCB or diuretic, but other combinations of the five major classes can be used (ACE inhibitor, ARB, beta-blocker, CCB, thiazide/thiazide-like diuretic). 566–569",
+   "file": "541a92da3d50_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "SOURCE_DEFINED_OTHER: I",
+    "Treatment of hypertension: drug treatment"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "CCB",
+    "RAS blocker",
+    "beta-blocker",
+    "diuretic",
+    "thiazide-like diuretic"
+   ]
+  },
+  {
+   "text": "An ARB is recommended to reduce the risk of HF hospitalization or CV death in symptomatic patients with HFrEF who are unable to tolerate an ACE inhibitor and/or ARNI (patients should also receive a beta-blocker and an MRA). 706",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "A combination of hydralazine and isosorbide dinitrate is recommended as part of standard therapy in addition to beta blockers and ACE inhibitors for African Americans with HF and reduced LVEF.",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.19",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "beta blockers",
+    "hydralazine",
+    "isosorbide dinitrate"
+   ]
+  },
+  {
+   "text": "A combination of hydralazine and isosorbide dinitrate is recommended as part of standard therapy in addition to beta blockers and ACE inhibitors for African Americans with LV systolic dysfunction.",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.19",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "beta blockers",
+    "hydralazine",
+    "isosorbide dinitrate"
+   ]
+  },
+  {
+   "text": "Dapagliflozin or empagliflozin are recommended, in addition to optimal treatment of an ACE inhibitor (or ARNI), a beta-blocker, and an MRA, for patients with HFrEF to reduce the risk of HF hospitalization and death. 600,601,730",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker",
+    "empagliflozin"
+   ]
+  },
+  {
+   "text": "The addition of an ARB should be considered in patients with HF due to reduced LVEF who have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor and beta blocker. (Strength of Evidence = A)",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "7.13"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "Near optimal pharmacologic therapy achieved, including ACE inhibitor and beta blocker (for patients with reduced LVEF), or intolerance documented (Sections 7 and 11)",
+   "file": "d0d936c6e39a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommended for all HF patients"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "beta blocker",
+    "for patients with reduced LVEF)",
+    "pharmacologic therapy"
+   ]
+  },
+  {
+   "text": "Vericiguat may be considered in patients with symptomatic HFrEF who have experienced HF worsening despite treatment with an ACE inhibitor (or an ARNI), a beta-blocker, and an MRA, to reduce the risk of HF hospitalization or CV death. 722",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIb",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "ARNI, Angiotensin II receptor blocker neprilysin inhibitor or ACE inhibitors, Angiotensin- converting enzyme inhibitors or ARBs, Angiotensin II receptor blockers",
+   "file": "8b8c08cbb883_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "The 4 pillars of heart failure medications"
+   ],
+   "entities": [
+    "ARNI"
+   ]
+  },
+  {
+   "text": "Administration of an aldosterone antagonist should be considered in patients after an acute MI, with clinical HF signs and symptoms and an LVEF < 40\\% . Patients should be on standard therapy, including an ACE inhibitor (or ARB) and a b-blocker. (Strength of Evidence = A)",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.15",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "aldosterone antagonist",
+    "b-blocker"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for administration to symptomatic and asymptomatic women with an LVEF \\leq 40% who are intolerant to ACE inhibitors for reasons other than hyperkalemia or renal insufficiency. (Strength of Evidence = A)",
+   "file": "bd997014e56d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "15.6"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs",
+    "LVEF \\leq 40%",
+    "hyperkalemia",
+    "renal insufficiency",
+    "symptomatic and asymptomatic women"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Administration of an aldosterone antagonist should be considered in patients following an acute MI, with clinical HF signs and symptoms or history of diabetes mellitus, and an LVEF < 40\\% . Patients should be on standard therapy, including an ACE inhibitor (or ARB) and a beta blocker. (Strength of Evidence = A)",
+   "file": "5cfb32fb5390_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.15",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "aldosterone antagonist",
+    "beta blocker"
+   ]
+  },
+  {
+   "text": "It is recommended that ACE-inhibitor and beta blocker therapy be initiated early (<48 hours) during hospitalization in hemodynamically stable post MI patients with LV dysfunction or HF. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "13.12 (previous 13.11)",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "<48",
+    "ACE-inhibitor",
+    "HF",
+    "LV dysfunction",
+    "beta blocker",
+    "during hospitalization",
+    "early",
+    "hospitalization",
+    "patients with LV dysfunction or HF"
+   ]
+  },
+  {
+   "text": "It is recommended that ACE-inhibitor and beta blocker therapy be initiated early (<48 hours) during hospitalization in hemodynamically stable post-MI patients with reduced LVEF or HF. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "13.12 (previous 13.11)",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "<48",
+    "ACE-inhibitor",
+    "HF",
+    "LVEF",
+    "beta blocker",
+    "during hospitalization",
+    "early",
+    "hospitalization",
+    "patients with reduced LVEF or HF",
+    "reduced LVEF"
+   ]
+  },
+  {
+   "text": "The addition of an ARB (or renin inhibitor) to the combination of an ACE-I and an MRA is not recommended in patients with HF, because of the increased risk of renal dysfunction and hyperkalaemia.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "HF",
+    "MRA",
+    "hyperkalaemia",
+    "patients with HF",
+    "renal dysfunction"
+   ]
+  },
+  {
+   "text": "ACE inhibitors enalapril, captopril, lisinopril Vasotec, Capoten, Zestril Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "Capoten",
+    "Vasotec",
+    "Zestril",
+    "blood pressure",
+    "blood vessels",
+    "captopril",
+    "easier for the heart to pump blood",
+    "enalapril",
+    "lisinopril"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in sinus rhythm, and with a resting heart rate ≥70 b.p.m. who are unable to tolerate or have contraindications for a beta-blocker to reduce the risk of HF hospitalization or CV death. Patients should also receive an ACE inhibitor (or ARNI) and an MRA. 726",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIa",
+    "SOURCE_DEFINED_OTHER: C"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "Ivabradine",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "Hydralazine and isosorbide dinitrate should be considered in self-identified black patients with LVEF ≤35% or with LVEF <45% combined with a dilated LV in NYHA class III–IV despite treatment with an ACE inhibitor (or ARNI), a beta-blocker, and an MRA, to reduce the risk of HF hospitalization and death. 731",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIa",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "Hydralazine",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in sinus rhythm, and with a resting heart rate ≥70 bpm despite treatment with an evidence-based dose of a beta-blocker (or maximum tolerated dose below that), an ACE inhibitor (or an ARNI), and an MRA, to reduce the risk of HF hospitalization or CV death. 725",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: IIa"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "Ivabradine",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "ARBs candesartan, losartan, valsartan Atacand, Cozaar, Diovan Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood. Alternative to ACE inhibitor.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "What They Do",
+    "Types of Heart Failure Medications",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARBs",
+    "Atacand",
+    "Cozaar",
+    "Diovan",
+    "blood pressure",
+    "blood vessels",
+    "candesartan",
+    "easier for the heart to pump blood",
+    "losartan",
+    "valsartan"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "ACE inhibitors enalapril, captopril, lisinopril Vasotec, Capoten, Zestril Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "Capoten",
+    "Vasotec",
+    "Zestril",
+    "blood pressure",
+    "blood vessels",
+    "captopril",
+    "easier for the heart to pump blood",
+    "enalapril",
+    "lisinopril"
+   ]
+  },
+  {
+   "text": "An ACE inhibitor is recommended, in addition to a beta-blocker and an MRA, for patients with symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "ACE inhibitors are recommended in all patients with either reduced or preserved LVEF after an MI. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "13.10 (previous 13.9)"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "LVEF",
+    "after",
+    "patients with either reduced or preserved LVEF after an MI",
+    "preserved LVEF"
+   ]
+  },
+  {
+   "text": "Treatment with an ACE inhibitor or an ARB is recommended in patients with DM, hypertension, and albuminuria. These medications should be titrated to the highest approved dose that is tolerated.",
+   "file": "356449c9ee2d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendations in patients with chronic kidney disease: best medical therapy",
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "How ACE Inhibitors Help Your Heart",
+  "scenes": [
+   {
+    "scene_number": "1",
+    "narration": "ACE inhibitors relax your blood vessels, lower your blood pressure, and make it easier for your heart to pump blood.",
+    "visual_description": "Illustration of relaxed blood vessels and a heart pumping smoothly.",
+    "on_screen_text": "ACE inhibitors relax vessels"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "ACE inhibitors relax your blood vessels, lower your blood pressure, and make it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that ACE inhibitors relax blood vessels, lower blood pressure, and make it easier for the heart to pump blood."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "ACE inhibitors relax vessels",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ACE inhibitors relax blood vessels."
+  }
+ ],
+ "final_storyboard": {
+  "title": "How ACE Inhibitors Help Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "ACE inhibitors relax your blood vessels, lower your blood pressure, and make it easier for your heart to pump blood.",
+    "visual_description": "Illustration of relaxed blood vessels and a heart pumping smoothly.",
+    "on_screen_text": "ACE inhibitors relax vessels"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "ACE inhibitors relax your blood vessels, lower your blood pressure, and make it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that ACE inhibitors relax blood vessels, lower blood pressure, and make it easier for the heart to pump blood.",
+   "guideline_fact": "ACE inhibitors enalapril, captopril, lisinopril Vasotec, Capoten, Zestril Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "ACE inhibitors relax vessels",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ACE inhibitors relax blood vessels.",
+   "guideline_fact": "ACE inhibitors enalapril, captopril, lisinopril Vasotec, Capoten, Zestril Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

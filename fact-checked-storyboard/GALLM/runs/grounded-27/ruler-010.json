@@ -1,0 +1,853 @@
+{
+ "request": "Create a brief patient-education scene that explains why heart failure can cause a bloated belly and loss of appetite.",
+ "candidates": [
+  {
+   "text": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Family Members"
+   ],
+   "entities": [
+    "changes in appetite",
+    "muscle wasting",
+    "weight loss"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "At least daily Weight Determine after voiding in the morning Account for possible increased food intake due to improved appetite",
+   "file": "29f0b1df33cb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specifics",
+    "Frequency",
+    "Value"
+   ],
+   "entities": [
+    "At least daily",
+    "Weight",
+    "after voiding in the morning",
+    "possible increased food intake due to improved appetite"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Identify malabsorption history: previous gastrointestinal surgery, including bariatric surgery or bowel resection, gastrointestinal symptoms, including ageusia (loss of taste), dysgeusia (distorted taste), or anorexia (loss of appetite), nausea, vomiting, diarrhea, constipation, dysphagia; dental health; history of aspiration events; history of diabetes and gastroparesis; medication history, including allergies, herbs, and supplements; social history, including food insecurity due to finances, assistance required with activities of daily living (shopping, cooking, eating), ethnic or social dietary preferences, substance abuse",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Tools and Resources",
+    "History"
+   ],
+   "entities": [
+    "Identify malabsorption history",
+    "gastrointestinal symptoms",
+    "previous gastrointestinal surgery"
+   ]
+  },
+  {
+   "text": "Short Nutritional Assessment Questionnaire: http://www.fightmalnutrition.eu/wp-content/uploads/2017/04/SNAQ_Engels.jpg —quick screening tool incorporating weight change, appetite, and supplementation; unlike MUST and MNA (below), does not incorporate medical diagnoses or inpatient status Malnutrition Universal Screening Tool (MUST): https://www.bapen.org.uk/screening-and-must/must-calculator Mini Nutritional Assessment (MNA): https://www.mna-elderly.com/mna_forms.html",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Dietary assessment",
+    "Nutritional risk assessment tools",
+    "Tools and Resources"
+   ],
+   "entities": [
+    "Short Nutritional Assessment Questionnaire",
+    "quick screening tool incorporating weight change, appetite, and supplementation"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "Phentermine (1959) Appetite suppressant, TAAR-1 agonist −3.6 kg Potential for heart rate and blood pressure elevations; considered to be contraindicated in patients with heart disease, including HF, as well as with arrhythmias, coronary artery disease and uncontrolled hypertension; associated with primary pulmonary hypertension, regurgitant cardiac valvular disease, and palpitations/tachyarrhythmias",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Potential Risks in HF",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Medication (FDA Approval),\nMechanism",
+    "1-yr Placebo-Adjusted Weight Loss"
+   ],
+   "entities": [
+    "Phentermine",
+    "Potential for heart rate and blood pressure elevations",
+    "and palpitations/tachyarrhythmias",
+    "as well as with arrhythmias",
+    "associated with primary pulmonary hypertension",
+    "considered to be contraindicated in patients with heart disease",
+    "coronary artery disease and uncontrolled hypertension",
+    "including HF",
+    "regurgitant cardiac valvular disease",
+    "−3.6 kg"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Weight loss may be considered to manage symptoms if BMI 35–45 kg/m 2 , without a specific recommendation",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "ESC 2016 4"
+   ],
+   "entities": [
+    "Weight loss",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Provide specific weight loss diet instructions strength of evidence = B",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "HFSA 2010 2"
+   ],
+   "entities": [
+    "Provide specific weight loss diet instructions strength of evidence = B"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Calculator: https://www.fitwatch.com/calculator/weight-loss-percentage/ —review with patient to determine if weight loss is unintentional and whether diuresis contributed. See also Supplemental Table S1 for diagnostic criteria for malnutrition.",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Anthropometric data",
+    "Tools and Resources"
+   ],
+   "entities": [
+    "review with patient to determine if weight loss is unintentional and whether diuresis contributed"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Weight loss for stage B and C HF with obesity strength of evidence = Weak",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "AND 2017 6"
+   ],
+   "entities": [
+    "HF",
+    "Weight loss for stage B and C HF with obesity strength of evidence = Weak"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE A"
+   ],
+   "entities": [
+    "causes of heart dysfunction",
+    "diabetes",
+    "high blood pressure"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "5%, 7.5%, 10%, or 20% unintentional weight loss thresholds feature in malnutrition diagnostic criteria",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Anthropometric data",
+    "Macronutrients"
+   ],
+   "entities": [
+    "5%, 7.5%, 10%, or 20% unintentional weight loss thresholds",
+    "malnutrition diagnostic criteria"
+   ]
+  },
+  {
+   "text": "Pre-transplant BMI >35 kg/m² (weight loss is recommended to achieve a BMI <35 kg/m²)",
+   "file": "77d198a9565d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 17 Heart transplantation: indications and contraindications",
+    "Contraindications"
+   ],
+   "entities": [
+    "BMI <35 kg/m²",
+    "Pre-transplant BMI >35 kg/m²",
+    "weight loss"
+   ]
+  },
+  {
+   "text": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "1000–2000 Ω",
+    "Insertion of a sensing/pacing lead",
+    "Lead fracture",
+    "Lead- and connector-block failure",
+    "Modern ICDs",
+    "Remote device monitoring",
+    "Reprogramming the ICD",
+    "analysis of intracardiac electrograms and event markers",
+    "conductor coil fracture",
+    "high lead impedance",
+    "inappropriate shocks",
+    "lead fracture",
+    "lead insulation failure",
+    "loose set screws",
+    "low impedance",
+    "malfunction",
+    "non-physiological short intervals <150 ms",
+    "outer insulation failure",
+    "reconnection of the lead",
+    "replacement"
+   ]
+  },
+  {
+   "text": "Encourage weight loss for patients with class II obesity or greater; consultation with an obesity medicine specialist is encouraged when available",
+   "file": "b48847e78d6c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Encourage weight loss for patients with class II obesity or greater; consultation with an obesity medicine specialist",
+    "patients with class II obesity or greater"
+   ]
+  },
+  {
+   "text": "Mineralocorticoid receptor antagonist A type of diuretic that helps the body remove excess water and sodium through the urine but prevents loss of potassium. eplerenone (Inspra) spironolactone (Aldactone)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**",
+    "Medications for HFrEF (the 4 pillars)"
+   ],
+   "entities": [
+    "Mineralocorticoid receptor antagonist",
+    "diuretic",
+    "eplerenone",
+    "excess water",
+    "loss of potassium",
+    "sodium",
+    "spironolactone"
+   ]
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In adults with CHD with biventricular physiology and a left systemic ventricle presenting with symptomatic heart failure (NYHA II/III) and EF ≤35% despite ≥3 months of OMT, ICD implantation is indicated.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in congenital heart disease"
+   ],
+   "entities": [
+    "EF ≤35%",
+    "ICD implantation",
+    "adults with CHD with biventricular physiology and a left systemic ventricle",
+    "symptomatic heart failure (NYHA II/III)",
+    "≥3 months of OMT"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Family Members"
+   ],
+   "entities": [
+    "changes in appetite",
+    "muscle wasting",
+    "weight loss"
+   ]
+  },
+  {
+   "text": "At least daily Weight Determine after voiding in the morning Account for possible increased food intake due to improved appetite",
+   "file": "29f0b1df33cb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specifics",
+    "Frequency",
+    "Value"
+   ],
+   "entities": [
+    "At least daily",
+    "Weight",
+    "after voiding in the morning",
+    "possible increased food intake due to improved appetite"
+   ]
+  },
+  {
+   "text": "Short Nutritional Assessment Questionnaire: http://www.fightmalnutrition.eu/wp-content/uploads/2017/04/SNAQ_Engels.jpg —quick screening tool incorporating weight change, appetite, and supplementation; unlike MUST and MNA (below), does not incorporate medical diagnoses or inpatient status Malnutrition Universal Screening Tool (MUST): https://www.bapen.org.uk/screening-and-must/must-calculator Mini Nutritional Assessment (MNA): https://www.mna-elderly.com/mna_forms.html",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Dietary assessment",
+    "Nutritional risk assessment tools",
+    "Tools and Resources"
+   ],
+   "entities": [
+    "Short Nutritional Assessment Questionnaire",
+    "quick screening tool incorporating weight change, appetite, and supplementation"
+   ]
+  },
+  {
+   "text": "Calculator: https://www.fitwatch.com/calculator/weight-loss-percentage/ —review with patient to determine if weight loss is unintentional and whether diuresis contributed. See also Supplemental Table S1 for diagnostic criteria for malnutrition.",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Anthropometric data",
+    "Tools and Resources"
+   ],
+   "entities": [
+    "review with patient to determine if weight loss is unintentional and whether diuresis contributed"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Heart Failure and Appetite Changes",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Heart failure can make you feel less hungry and lose weight. Watch for changes in appetite, weight loss, and muscle wasting.",
+    "visual_description": "Patient standing, hand on belly, looking at a scale.",
+    "on_screen_text": "Watch appetite, weight"
+   }
+  ],
+  "not_covered": [
+   "Explanation of why heart failure causes a bloated belly (fluid retention)"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Heart failure can make you feel less hungry and lose weight.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 notes changes in appetite and weight loss in heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 verbatim."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Watch appetite, weight",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence matches fact 1, which advises watching for changes in appetite and weight."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Heart Failure and Appetite Changes",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Heart failure can make you feel less hungry and lose weight. Watch for changes in appetite, weight loss, and muscle wasting.",
+    "visual_description": "Patient standing, hand on belly, looking at a scale.",
+    "on_screen_text": "Watch appetite, weight"
+   }
+  ],
+  "not_covered": [
+   "Explanation of why heart failure causes a bloated belly (fluid retention)"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Heart failure can make you feel less hungry and lose weight.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 notes changes in appetite and weight loss in heart failure.",
+   "guideline_fact": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4453defbdcec_annotation.nt",
+    "headers": [
+     "Family Members"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 verbatim.",
+   "guideline_fact": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4453defbdcec_annotation.nt",
+    "headers": [
+     "Family Members"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Watch appetite, weight",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence matches fact 1, which advises watching for changes in appetite and weight.",
+   "guideline_fact": "Watch for changes in appetite, weight loss, and muscle wasting.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4453defbdcec_annotation.nt",
+    "headers": [
+     "Family Members"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "Explanation of why heart failure causes a bloated belly (fluid retention)"
+ ],
+ "coverage": "P"
+}
