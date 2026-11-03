@@ -1,0 +1,881 @@
+{
+ "request": "Create a brief patient-education scene that explains what aerobic (endurance) training is and gives examples for heart-failure patients.",
+ "candidates": [
+  {
+   "text": "High-intensity interval training programmes may be considered in low-risk patients who want to return to high-intensity aerobic and mixed endurance sports.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "High-intensity interval training programmes",
+    "low-risk patients who want to return to high-intensity aerobic and mixed endurance sports"
+   ]
+  },
+  {
+   "text": "Moderate intensity continuous endurance training is recommended as baseline aerobic ET protocol.",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Expected outcomes",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination"
+   ]
+  },
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "• Neuromuscular • Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games • Use as a complement to aerobic, muscular strength/endurance training and stretching activities • 2–3 days/week",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Exercise training",
+    "Neuromuscular"
+   ],
+   "entities": [
+    "2–3 days/week",
+    "Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games",
+    "aerobic, muscular strength/endurance training and stretching activities"
+   ]
+  },
+  {
+   "text": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Exercise training"
+   ],
+   "entities": [
+    "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+   ]
+  },
+  {
+   "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+   "file": "35b293ce9ed8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Lifestyle"
+   ],
+   "entities": [
+    "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+   ]
+  },
+  {
+   "text": "ET prescriptions should depend on the baseline level of physical capacity and the COPD severity. The programme should include endurance (interval training), resistance exercise (especially lower body exercise), breathing exercise and instruction into postures to help shift and cough up phlegm. Patients with measurable obstruction should be advised to use a bronchodilator medication before starting the exercise. In the case of post-bronchodilator FEV1: More than 75%, the patient can be integrated into the regular CR exercise training regime Less than 75% > 50% the level of endurance exercise should be reduced by 10–15% Less than 50%, participation in low dose endurance/interval cycle ergometer training as well as gymnastics Borg-Dyspnoea-Scale value \\leq 5 , breathing rate \\leq 20/\\text{min} is advisable Less than 30%, O 2 saturation should not exceed values less than 90%",
+   "file": "84504738080d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issue"
+   ],
+   "entities": [
+    "10–15%",
+    "90%",
+    "Borg-Dyspnoea-Scale",
+    "COPD severity",
+    "ET prescriptions",
+    "Less than 30%",
+    "Less than 50%",
+    "Less than 75% > 50%",
+    "More than 75%",
+    "O 2 saturation",
+    "Patients with measurable obstruction",
+    "\\leq 20/\\text{min}",
+    "\\leq 5",
+    "baseline level of physical capacity",
+    "before starting the exercise",
+    "breathing rate",
+    "bronchodilator medication",
+    "endurance (interval training), resistance exercise (especially lower body exercise), breathing exercise and instruction into postures to help shift and cough up phlegm",
+    "endurance exercise",
+    "low dose endurance/interval cycle ergometer training as well as gymnastics",
+    "post-bronchodilator FEV1",
+    "regular CR exercise training regime"
+   ]
+  },
+  {
+   "text": "• Flexibility • Stretching (trunk, upper and lower extremities) • Static stretches: hold for 10–30 s • 2–3 days/week (before or after aerobic or strength training)",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Flexibility",
+    "Exercise training"
+   ],
+   "entities": [
+    "10–30 s",
+    "2–3 days/week",
+    "Stretching (trunk, upper and lower extremities)",
+    "before or after aerobic or strength training"
+   ]
+  },
+  {
+   "text": "• Before hospital discharge, respiratory training, active and systematic mobilization of the upper and lower limbs are advisable • After discharge, aerobic exercise may be started in the second or third week after transplant but should be discontinued during corticosteroid bolus therapy for rejection. Resistance exercise should be added after 6–8 weeks • Regimen: at least 30–40 min/day of combined resistance exercise (muscle strength) and aerobic training (walking) at moderate",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Exercise training"
+   ],
+   "entities": [
+    "Before hospital discharge",
+    "Resistance exercise",
+    "active and systematic mobilization of the upper and lower limbs",
+    "aerobic exercise",
+    "after 6–8 weeks",
+    "at least 30–40 min/day",
+    "combined resistance exercise (muscle strength) and aerobic training (walking)",
+    "corticosteroid bolus therapy",
+    "rejection",
+    "respiratory training",
+    "the second or third week after transplant"
+   ]
+  },
+  {
+   "text": "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Physical activity counselling",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof"
+   ]
+  },
+  {
+   "text": "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training"
+   ]
+  },
+  {
+   "text": "All sports permitted with preference for endurance over power sports",
+   "file": "2485226591ce_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice",
+    "Low risk"
+   ],
+   "entities": [
+    "All sports",
+    "endurance",
+    "power sports"
+   ]
+  },
+  {
+   "text": "Two to three strength training sessions per week (add-on to aerobic training) involving large muscle groups at an intensity of 70–85% of 1-RM (8–10 repetitions) are recommended, ideally reaching at least 21 sets",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issue",
+    "Exercise training"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In individuals with well-controlled hypertension, resistance training ≥3 times per week in addition to moderate or vigorous aerobic exercise (at least 30 min, 5–7 days per week) is recommended to reduce blood pressure and CVD risk.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Special considerations for individuals with obesity, hypertension, dyslipidaemia, or diabetes"
+   ],
+   "entities": [
+    "5–7 days per week",
+    "CVD risk",
+    "at least 30 min",
+    "blood pressure",
+    "individuals with well-controlled hypertension",
+    "moderate or vigorous aerobic exercise",
+    "resistance training",
+    "≥3 times per week"
+   ]
+  },
+  {
+   "text": "Only skill sports or mixed or endurance sports at low intensity",
+   "file": "2485226591ce_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Intermediate risk",
+    "Advice"
+   ],
+   "entities": [
+    "endurance sports",
+    "low intensity",
+    "mixed",
+    "skill sports"
+   ]
+  },
+  {
+   "text": "High-intensity power and endurance sports are not recommended in patients with HFrEF irrespective of symptoms.",
+   "file": "79ae1c56ecee_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "High-intensity power and endurance sports",
+    "irrespective of symptoms",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "Low- to moderate-intensity aerobic exercise training (up to 150 min/week), and low- to moderate-intensity resistance exercise training (2 day per week, 8–12 exercises, 12–15 repetitions), and flexibility exercises are recommended in all individuals with CKD.",
+   "file": "8d87290d318a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in chronic kidney disease"
+   ],
+   "entities": [
+    "12–15 repetitions",
+    "2 day per week",
+    "8–12 exercises",
+    "Low- to moderate-intensity aerobic exercise training (up to 150 min/week), and low- to moderate-intensity resistance exercise training (2 day per week, 8–12 exercises, 12–15 repetitions), and flexibility exercises",
+    "all individuals with CKD",
+    "up to 150 min/week"
+   ]
+  },
+  {
+   "text": "Among individuals with diabetes mellitus, resistance training ≥3 times per week in addition to moderate or vigorous aerobic exercise (at least 30 min, 5–7 days per week) is recommended to improve insulin sensitivity and achieve a better CVD risk profile.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Special considerations for individuals with obesity, hypertension, dyslipidaemia, or diabetes"
+   ],
+   "entities": [
+    "5–7 days per week",
+    "at least 30 min",
+    "better CVD risk profile",
+    "individuals with diabetes mellitus",
+    "insulin sensitivity",
+    "moderate or vigorous aerobic exercise",
+    "resistance training",
+    "≥3 times per week"
+   ]
+  },
+  {
+   "text": "• Combination of resistance-strength training to aerobic training: three sets of eight repetitions of exercises for seven different muscle groups at high (50% of 1-RM and then progression over four sessions to 80% of 1-RM) or low (20% of 1-RM and then progression over four sessions to 30% of 1-RM) intensity 99",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "Tailored exercise recommendations: prescriptions for a given patient should: Depend on associated comorbidities and on the baseline physical capacity and existing activity limitation Include activities to develop endurance, strength, flexibility, coordination and balance Start at a very low level and gradually progress to a goal of moderate activity in order to prevent exercise-induced symptoms or complications Aerobic training workload should be prescribed initially at light to moderate intensity 35–70% of peak HR or 40–60 % of VO_{2peak} and raised, if tolerated, to a 70–85% of peak HR or 60–80% of VO_{2peak} Frequency of sessions should range between three and four per aiming for a duration of 30 min per session. Sometimes elderly patients require more than 12 weeks to reach optimal conditioning Resistance training is recommended on alternate days of aerobic sessions at light–moderate intensity (30–70% of 1-RM) and increased, if tolerated and in selected patients, to moderate–high intensity (70–85% 1-RM), with 8–12 repetitions involving 6–8 groups of skeletal muscles. This set may be repeated 2–3 times, if tolerated, for a total duration of 40–60 min Select exercise appropriate to musculoskeletal conditions in older patients Avoid exercises that require rapid postural variations for orthostatic hypotension risk",
+   "file": "annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "2–3 times",
+    "30 min per session",
+    "40–60 min",
+    "70–85% of peak HR or 60–80% of VO_{2peak}",
+    "Aerobic training workload",
+    "Resistance training",
+    "Tailored exercise recommendations",
+    "a goal of moderate activity",
+    "activities to develop endurance, strength, flexibility, coordination and balance",
+    "alternate days of aerobic sessions at light–moderate intensity (30–70% of 1-RM)",
+    "associated comorbidities",
+    "baseline physical capacity and existing activity limitation",
+    "between three and four per",
+    "elderly patients",
+    "exercise-induced symptoms or complications",
+    "exercises that require rapid postural variations",
+    "light to moderate intensity 35–70% of peak HR or 40–60 % of VO_{2peak}",
+    "moderate–high intensity (70–85% 1-RM), with 8–12 repetitions involving 6–8 groups of skeletal muscles",
+    "more than 12 weeks",
+    "musculoskeletal conditions",
+    "older patients",
+    "orthostatic hypotension risk"
+   ]
+  },
+  {
+   "text": "In obese individuals (BMI≥30 kg/m² or a waist circumference >80 cm for females or >94 cm for males) resistance training ≥3 times per week, in addition to moderate or vigorous aerobic exercise (at least 30 min, 5–7 days per week) is recommended to reduce CVD risk.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Special considerations for individuals with obesity, hypertension, dyslipidaemia, or diabetes"
+   ],
+   "entities": [
+    "5–7 days per week",
+    ">94 cm for males",
+    "BMI≥30 kg/m²",
+    "CVD risk",
+    "at least 30 min",
+    "moderate or vigorous aerobic exercise",
+    "obese individuals",
+    "resistance training",
+    "waist circumference >80 cm for females",
+    "≥3 times per week"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "IMT improves exercise capacity and QoL in HFrEF patients with inspiratory muscle weakness ( PI_{\\max} < 70\\% of predicted value). IMT starts at 30% of PI_{\\max} up to a maximum of 60% by readjusting intensity every 7–10 days. Training duration should be 20–30 min/day with a frequency of 3–5 sessions per week for a minimum of eight weeks. Combinations with aerobic ET and aerobic/resistance ET have been proposed 60,61",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "CLASS_OF_RECOMMENDATION: I (A)"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In adults with spinal cord injury participation in 20 min of moderate- to vigorous-intensity aerobic exercise at least 3 times a week, along with moderate-intensity resistance training 2–3 times per week, is recommended for cardiorespiratory fitness, cardiometabolic health, and muscle strength benefits.",
+   "file": "8d87290d318a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in individuals with spinal cord injury"
+   ],
+   "entities": [
+    "20 min",
+    "2–3 times per week",
+    "adults with spinal cord injury",
+    "at least 3 times a week",
+    "cardiorespiratory fitness, cardiometabolic health, and muscle strength benefits",
+    "participation in 20 min of moderate- to vigorous-intensity aerobic exercise at least 3 times a week, along with moderate-intensity resistance training 2–3 times per week"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Non-competitive (low- to moderate-intensity recreational) skill, power, mixed, or endurance sports may be considered in stable, asymptomatic, and optimally treated individuals with HFmrEF.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Non-competitive (low- to moderate-intensity recreational) skill, power, mixed, or endurance sports",
+    "stable, asymptomatic, and optimally treated individuals with HFmrEF"
+   ]
+  },
+  {
+   "text": "Moderate endurance and dynamic resistance exercise, together with lifestyle intervention and optimal treatment of cardiovascular risk factors (i.e. arterial hypertension and type 2 diabetes) are recommended.",
+   "file": "10cb9d93d937_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Moderate endurance and dynamic resistance exercise",
+    "arterial hypertension",
+    "lifestyle intervention",
+    "optimal treatment of cardiovascular risk factors",
+    "type 2 diabetes"
+   ]
+  },
+  {
+   "text": "Moderate endurance and dynamic resistance exercise, together with lifestyle intervention and optimal treatment of CV risk factors (i.e. arterial hypertension and type 2 diabetes) are recommended.",
+   "file": "d3fba730c25f_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for exercise and participation in sports in individuals with heart failure and preserved ejection fraction"
+   ],
+   "entities": [
+    "Moderate endurance and dynamic resistance exercise",
+    "arterial hypertension and type 2 diabetes",
+    "lifestyle intervention",
+    "optimal treatment of CV risk factors"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "PA should be considered to help prevent AF incidence or recurrence, with the exception of excessive endurance exercise, which may promote AF. 805–812",
+   "file": "a2657215ddf1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: IIa",
+    "LEVEL_OF_EVIDENCE: C",
+    "Recommendations"
+   ],
+   "entities": []
+  }
+ ],
+ "facts": [
+  {
+   "text": "Moderate intensity continuous endurance training is recommended as baseline aerobic ET protocol.",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Expected outcomes",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination"
+   ]
+  },
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Exercise training"
+   ],
+   "entities": [
+    "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+   ]
+  },
+  {
+   "text": "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Physical activity counselling",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof"
+   ]
+  },
+  {
+   "text": "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Aerobic (Endurance) Training for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Aerobic training means steady activities like walking, cycling, swimming, or dancing. Do it most days, aiming for about 150 minutes a week at a moderate pace where you can still talk.",
+    "visual_description": "Person walking, cycling, swimming, and dancing icons shown",
+    "on_screen_text": "Aerobic training examples"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Aerobic training means steady activities like walking, cycling, swimming, or dancing.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence lists walking, cycling, swimming, and dancing, which are examples of aerobic training as defined in fact 3."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Do it most days, aiming for about 150 minutes a week at a moderate pace where you can still talk.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Matches the recommendation of at least 150 minutes per week of moderate intensity exercise."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Aerobic training examples",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence refers to aerobic training examples, which are listed in fact 3."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Aerobic (Endurance) Training for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Aerobic training means steady activities like walking, cycling, swimming, or dancing. Do it most days, aiming for about 150 minutes a week at a moderate pace where you can still talk.",
+    "visual_description": "Person walking, cycling, swimming, and dancing icons shown",
+    "on_screen_text": "Aerobic training examples"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Aerobic training means steady activities like walking, cycling, swimming, or dancing.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence lists walking, cycling, swimming, and dancing, which are examples of aerobic training as defined in fact 3.",
+   "guideline_fact": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Exercise training",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Do it most days, aiming for about 150 minutes a week at a moderate pace where you can still talk.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Matches the recommendation of at least 150 minutes per week of moderate intensity exercise.",
+   "guideline_fact": "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Physical activity counselling",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Aerobic training examples",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence refers to aerobic training examples, which are listed in fact 3.",
+   "guideline_fact": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Exercise training",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

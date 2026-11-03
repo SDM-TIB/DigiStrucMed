@@ -1,0 +1,1195 @@
+{
+ "request": "Create a brief patient-education scene that explains SGLT2 inhibitors, which were first developed for diabetes, and how they help in heart failure.",
+ "candidates": [
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Diabetes mellitus Physical activity and healthy diet, SGLT2 inhibitors",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preventive strategies",
+    "Risk factors for heart failure"
+   ],
+   "entities": [
+    "Diabetes mellitus",
+    "Physical activity and healthy diet",
+    "SGLT2 inhibitors"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "SGLT2 inhibitors (canagliflozin, dapagliflozin, empagliflozin, ertugliflozin, sotagliflozin) are recommended in patients with diabetes at high risk of CV disease or with CV disease in order to prevent HF hospitalizations.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for the prevention of chronic HF"
+   ],
+   "entities": [
+    "HF",
+    "HF hospitalizations",
+    "SGLT2 inhibitors",
+    "canagliflozin",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "ertugliflozin",
+    "patients with diabetes at high risk of CV disease or with CV disease in order to prevent HF hospitalizations",
+    "sotagliflozin"
+   ]
+  },
+  {
+   "text": "Due to action of SGLT2 inhibitors, glycosuria is an expected finding on urinalysis.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*ADVICE TO PATIENT",
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "SGLT2 inhibitors"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and CKD, the use of an SGLT2 inhibitor is recommended to improve CVD and/or cardiorenal outcomes.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "New",
+    "CLASS_OF_RECOMMENDATION: I",
+    "Risk factors and interventions at the individual level – section 4",
+    "Recommendations in 2021 version"
+   ],
+   "entities": [
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "SGLT2 inhibitors may intensify the diuresis, particularly when accompanied by Sac/Val and diuretic therapy.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Dehydration, hypotension, and prerenal renal failure"
+   ],
+   "entities": [
+    "SGLT2 inhibitors",
+    "diuretic"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and CVD, use of an SGLT2 inhibitor should be considered early in the course of the disease to reduce CVD and total mortality.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: IIa",
+    "Recommendations in 2013 version",
+    "Revised",
+    "Risk factors and interventions at the individual level – section 4"
+   ],
+   "entities": [
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and CKD, the use of an SGLT2 inhibitor is recommended to improve ASCVD and/or cardiorenal outcomes. 598,599",
+   "file": "d263e382fe68_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "Treatment of hyperglycaemia and ASCVD/cardiorenal risks",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and HFrEF, use of an SGLT2 inhibitor with proven outcome benefits is recommended to lessen HF hospitalizations and CV death.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "New",
+    "Risk factors and interventions at the individual level – section 4",
+    "CLASS_OF_RECOMMENDATION: I",
+    "Recommendations in 2021 version"
+   ],
+   "entities": [
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "In patients with T2DM and CKD, SGLT2 inhibitors are recommended to reduce the risk of HF hospitalization or CV death.",
+   "file": "8908ac51e8e5_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "CV death",
+    "HF hospitalization",
+    "In patients with T2DM and CKD",
+    "SGLT2 inhibitors"
+   ]
+  },
+  {
+   "text": "African-American patients; Expected outcomes of ARNI, SGLT2 inhibitors, and/or ivabradine in those treated with HYD/ISDN",
+   "file": "d6c6cfa7d9a8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Uncertainties",
+    "African-American patients"
+   ],
+   "entities": [
+    "ARNI",
+    "African-American patients",
+    "SGLT2 inhibitors",
+    "ivabradine",
+    "patients"
+   ]
+  },
+  {
+   "text": "An SGLT2 inhibitor (dapagliflozin or empagliflozin) is recommended in patients with HFmrEF to reduce the risk of HF hospitalization or CV death.",
+   "file": "071ad8ac87c9_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "An SGLT2 inhibitor (dapagliflozin or empagliflozin)",
+    "CV death",
+    "HF hospitalization",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "An SGLT2 inhibitor with proven outcome benefits should be considered for the prevention of renal deterioration and mortality in patients with CKD. 599",
+   "file": "8d7416e6d6ff_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: IIa",
+    "LEVEL_OF_EVIDENCE: B",
+    "Recommendations"
+   ],
+   "entities": [
+    "CKD",
+    "SGLT2 inhibitor",
+    "mortality",
+    "patients with CKD",
+    "renal deterioration"
+   ]
+  },
+  {
+   "text": "An SGLT2 inhibitor (dapagliflozin or empagliflozin) is recommended in patients with HFpEF to reduce the risk of HF hospitalization or CV death.",
+   "file": "b0187cb0fe72_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "An SGLT2 inhibitor (dapagliflozin or empagliflozin)",
+    "CV death",
+    "HF hospitalization",
+    "patients with HFpEF"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "CABG should be considered as the first-choice revascularization strategy, in patients suitable for surgery, especially if they have diabetes and for those with multivessel disease. 581,587,588,590",
+   "file": "398861721782_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "CABG",
+    "diabetes",
+    "multivessel disease",
+    "patients suitable for surgery"
+   ]
+  },
+  {
+   "text": "In persons with type 2 DM and ASCVD, the use of a GLP-1RA or SGLT2 inhibitor with proven outcome benefits is recommended to reduce CV and/or cardiorenal outcomes.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "Risk factors and interventions at the individual level – section 4",
+    "CLASS_OF_RECOMMENDATION: I",
+    "Recommendations in 2021 version",
+    "Revised"
+   ],
+   "entities": [
+    "GLP-1RA",
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and TOD, the use of an SGLT2 inhibitor or GLP-1RA with proven outcome benefits may be considered to reduce future CVD and total mortality.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations in 2021 version",
+    "New",
+    "CLASS_OF_RECOMMENDATION: IIb",
+    "Risk factors and interventions at the individual level – section 4"
+   ],
+   "entities": [
+    "GLP-1RA",
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "OACs were recommended during the second and third trimesters until the 36th week.",
+   "file": "c7cf67eb3ffe_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Comment/comparison with 2011 version",
+    "Selected revised recommendations and selected new recommendations"
+   ],
+   "entities": [
+    "OACs"
+   ]
+  },
+  {
+   "text": "Check renal function when starting the therapy and monitor regularly. eGFR is known to dip slightly after initiation but the SGLT2 inhibitors appear to be reno-protective.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*HOW TO USE?"
+   ],
+   "entities": [
+    "SGLT2 inhibitors",
+    "eGFR",
+    "renal function"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM and TOD, c the use of an SGLT2 inhibitor or GLP-1RA with proven outcome benefits may be considered to reduce future CV and total mortality. 594–597",
+   "file": "d263e382fe68_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIb",
+    "SOURCE_DEFINED_OTHER: B",
+    "Treatment of hyperglycaemia and ASCVD/cardiorenal risks"
+   ],
+   "entities": [
+    "GLP-1RA",
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "Liraglutide 3 mg (2014) GLP-1 agonist −6.2 kg −5.4 kg (SCALE trial) Modest reductions in systolic blood pressure; improvements in blood glucose for patients with diabetes and decreased development of diabetes; reductions in major adverse cardiovascular events Minor increases in heart rate; may not be appropriate for patients with advanced systolic heart failure, per FIGHT study results (Margulies 2016)",
+   "file": "6a384647e878_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "1-yr Placebo-Adjusted Weight Loss",
+    "**Table 3.** Weight Loss Medications and Considerations for Use in Heart Failure (HF)",
+    "Potential Benefits in HF Prevention or\nManagement",
+    "Potential Risks in HF",
+    "Medication (FDA Approval),\nMechanism"
+   ],
+   "entities": [
+    "3 mg",
+    "Liraglutide",
+    "Minor increases in heart rate",
+    "Modest reductions in systolic blood pressure",
+    "improvements in blood glucose for patients with diabetes and decreased development of diabetes",
+    "may not be appropriate for patients with advanced systolic heart failure",
+    "per FIGHT study results (Margulies 2016)",
+    "reductions in major adverse cardiovascular events",
+    "−5.4 kg",
+    "−6.2 kg"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Target BP is 130/80 mmHg Hypertension is linked to immunosuppressive therapy and denervation of cardiac volume receptors It is sensitive to a low-sodium diet. Treatment with amlodipine and ACEIs/ARBs are first choice, usually completed by diuretics. Beta-blockers are contra-indicated as they hamper the already delayed chronotropic response of the denervated heart during the early term but they showed the beneficial effects as a treatment more than 1–1.5 years after HTX and in the case of post-transplant heart failure development. Nifedipine and diltiazem may increase the effects of calcineurin inhibitors due to the drug interactions",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Blood pressure monitoring",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "130/80 mmHg",
+    "ACEIs/ARBs",
+    "Beta-blockers",
+    "Hypertension",
+    "Nifedipine and diltiazem",
+    "Target BP",
+    "amlodipine",
+    "calcineurin inhibitors",
+    "denervation of cardiac volume receptors",
+    "diuretics",
+    "early term",
+    "immunosuppressive therapy",
+    "low-sodium diet",
+    "more than 1–1.5 years after HTX",
+    "post-transplant heart failure development"
+   ]
+  },
+  {
+   "text": "SGLT2 inhibitors (dapagliflozin, empagliflozin, and sotagliflozin) are recommended in patients with T2DM and HFrEF to reduce hospitalizations for HF and CV death.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with HF and diabetes"
+   ],
+   "entities": [
+    "CV death",
+    "HF",
+    "HFrEF",
+    "SGLT2 inhibitors",
+    "T2DM",
+    "dapagliflozin",
+    "empagliflozin",
+    "hospitalizations for HF",
+    "patients with T2DM and HFrEF to reduce hospitalizations for HF and CV death",
+    "sotagliflozin"
+   ]
+  },
+  {
+   "text": "CR programmes are optimal to implement and up-titrate HF medication, such as ACEIs/ARBs, beta blockers, MRAs, sacubitril/valsartan, ivabradine and emerging SGLT2 inhibitors",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Medication management"
+   ],
+   "entities": [
+    "ACEIs",
+    "ARBs",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta blockers",
+    "ivabradine",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Among women with CVD who were habitually engaged in strength training or power sport disciplines before pregnancy, discussing the option with the medical team before continuing and avoiding the Valsalva manoeuvre is recommended.",
+   "file": "74434f5d72ff_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in pregnancy"
+   ],
+   "entities": [
+    "avoiding the Valsalva manoeuvre",
+    "discussing the option with the medical team before continuing",
+    "women with CVD who were habitually engaged in strength training or power sport disciplines before pregnancy"
+   ]
+  },
+  {
+   "text": "Sinoatrial node inhibitor This medicine slows heart rate and reduces the amount of oxygen the heart needs and how much the heart needs to work to pump blood. It is used with beta blockers if they do not lower heart rate enough. ivabradine (Corlanor)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)",
+    "Medications that may be added"
+   ],
+   "entities": [
+    "Sinoatrial node inhibitor",
+    "amount of oxygen the heart needs",
+    "beta blockers",
+    "heart rate",
+    "how much the heart needs to work to pump blood",
+    "ivabradine"
+   ]
+  },
+  {
+   "text": "In patients with type 2 DM but without ASCVD, HF, or CKD, use of an SGLT2 inhibitor or GLP-1RA should be considered based on estimated future risks (e.g. with the ADVANCE risk score or DIAL model) for adverse CVD or cardiorenal outcomes from risk factor profiles. 602",
+   "file": "d263e382fe68_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Treatment of hyperglycaemia and ASCVD/cardiorenal risks",
+    "SOURCE_DEFINED_OTHER: IIa",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "GLP-1RA",
+    "SGLT2 inhibitor"
+   ]
+  },
+  {
+   "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE A"
+   ],
+   "entities": [
+    "causes of heart dysfunction",
+    "diabetes",
+    "high blood pressure"
+   ]
+  },
+  {
+   "text": "2. In first-degree relatives of SCD victims who were 40 years of age or younger, cardiac evaluation is recommended, with genetic counseling and genetic testing performed as indicated by clinical findings (S13-3).",
+   "file": "4aa9a342f116_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "40 years of age or younger",
+    "SCD",
+    "cardiac evaluation",
+    "clinical findings",
+    "first-degree relatives of SCD victims who were 40 years of age or younger",
+    "genetic counseling",
+    "genetic testing"
+   ]
+  },
+  {
+   "text": "If urea, creatinine, or $K^+$ does rise excessively, consider stopping concomitant nephrotoxic drugs (e.g. NSAIDsd) and other $K^+$ supplements or retaining agents (triamterene, amiloride) and, if no signs of congestion, reducing the dose of diuretic. This is particularly true in those patients on an SGLT2 inhibitor.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*WRF and hyperkalaemia:",
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "SGLT2 inhibitor",
+    "amiloride",
+    "congestion",
+    "creatinine",
+    "diuretic",
+    "patients",
+    "triamterene"
+   ]
+  },
+  {
+   "text": "OMT (including beta-blocker, ACE-I, ARB or ARNI, MRA and SGLT2 inhibitors), should be continued in chronic HF patients whenever BP and haemodynamic conditions permit and considering drug interaction with infection-related therapies and side effect profile.",
+   "file": "f9390d3d4dc6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "ARNI",
+    "HF",
+    "MRA",
+    "OMT",
+    "SGLT2 inhibitors",
+    "beta-blocker",
+    "patients"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Hydralazine and isosorbide dinitrate may be considered in patients with symptomatic HFrEF who cannot tolerate ACE inhibitors, ARBs, or ARNIs (or if they are contraindicated), to reduce the risk of death. 728",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIb",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs",
+    "Hydralazine"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "SGLT2 inhibitors may intensify the diuresis, particularly when accompanied by Sac/Val and diuretic therapy.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Dehydration, hypotension, and prerenal renal failure"
+   ],
+   "entities": [
+    "SGLT2 inhibitors",
+    "diuretic"
+   ]
+  },
+  {
+   "text": "Check renal function when starting the therapy and monitor regularly. eGFR is known to dip slightly after initiation but the SGLT2 inhibitors appear to be reno-protective.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*HOW TO USE?"
+   ],
+   "entities": [
+    "SGLT2 inhibitors",
+    "eGFR",
+    "renal function"
+   ]
+  },
+  {
+   "text": "SGLT2 inhibitors (dapagliflozin, empagliflozin, and sotagliflozin) are recommended in patients with T2DM and HFrEF to reduce hospitalizations for HF and CV death.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with HF and diabetes"
+   ],
+   "entities": [
+    "CV death",
+    "HF",
+    "HFrEF",
+    "SGLT2 inhibitors",
+    "T2DM",
+    "dapagliflozin",
+    "empagliflozin",
+    "hospitalizations for HF",
+    "patients with T2DM and HFrEF to reduce hospitalizations for HF and CV death",
+    "sotagliflozin"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "SGLT2 Inhibitors for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee. Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+    "visual_description": "Doctor and patient in a calm exam room",
+    "on_screen_text": "Understanding SGLT2 medicine"
+   },
+   {
+    "scene_number": 2,
+    "narration": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+    "visual_description": "Doctor shows a small heart model",
+    "on_screen_text": "Reduces hospitalizations, death"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Ask your doctor if an SGLT2 medicine could be right for you.",
+    "visual_description": "Doctor points to a pill box",
+    "on_screen_text": "Talk to your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "Greeting, no medical statement"
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 about SGLT2 inhibitors starting as diabetes drugs and now treating heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Understanding SGLT2 medicine",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It only names the topic, no medical claim."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states SGLT2 inhibitors were first used for diabetes and also reduce heart‑failure hospitalizations and death."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Reduces hospitalizations, death",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The claim is too general; the facts only state that SGLT2 inhibitors reduce hospitalizations and death in heart‑failure patients, not for everyone."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Ask your doctor if an SGLT2 medicine could be right for you.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The fact only states that SGLT2 inhibitors are used for heart failure, not that all patients should consider them."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Talk to your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a general invitation to speak with the care team, not a medical statement."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "SGLT2 Inhibitors for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee. Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+    "visual_description": "Doctor and patient in a calm exam room",
+    "on_screen_text": "Medicine for diabetes & heart"
+   },
+   {
+    "scene_number": 2,
+    "narration": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+    "visual_description": "Doctor shows a small heart model",
+    "on_screen_text": "Fewer hospital visits, death"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Your care team will check your kidney function when you start this medicine and will monitor it regularly.",
+    "visual_description": "Doctor points to a kidney chart",
+    "on_screen_text": "Kidney tests will be done"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "Greeting, no medical statement"
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 about SGLT2 inhibitors starting as diabetes drugs and now treating heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Medicine for diabetes & heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states a medicine treats diabetes and heart, which is directly supported by fact 1 that SGLT2 inhibitors treat diabetes and heart failure."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states SGLT2 inhibitors were first used for diabetes and also reduce heart‑failure hospitalizations and death."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Fewer hospital visits, death",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states fewer hospital visits and death, which directly matches fact 1 that SGLT2 inhibitors reduce hospitalization and death."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Your care team will check your kidney function when you start this medicine and will monitor it regularly.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "The sentence directly reflects fact 5, which states renal function should be checked when starting therapy and monitored regularly."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Kidney tests will be done",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Fact 5 states renal function should be checked when starting therapy."
+  }
+ ],
+ "final_storyboard": {
+  "title": "SGLT2 Inhibitors for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Lee. Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+    "visual_description": "Doctor and patient in a calm exam room",
+    "on_screen_text": "Medicine for diabetes & heart"
+   },
+   {
+    "scene_number": 2,
+    "narration": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+    "visual_description": "Doctor shows a small heart model",
+    "on_screen_text": "Fewer hospital visits, death"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Your care team will check your kidney function when you start this medicine and will monitor it regularly.",
+    "visual_description": "Doctor points to a kidney chart",
+    "on_screen_text": "Kidney tests will be done"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "Greeting, no medical statement",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lee.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about a medicine that started for diabetes and now helps heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 about SGLT2 inhibitors starting as diabetes drugs and now treating heart failure.",
+   "guideline_fact": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "What They Do",
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Medicine for diabetes & heart",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states a medicine treats diabetes and heart, which is directly supported by fact 1 that SGLT2 inhibitors treat diabetes and heart failure.",
+   "guideline_fact": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "What They Do",
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications"
+    ]
+   }
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "SGLT2 inhibitors were first used for diabetes, but they also lower heart‑failure hospital visits and death.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states SGLT2 inhibitors were first used for diabetes and also reduce heart‑failure hospitalizations and death.",
+   "guideline_fact": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "What They Do",
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications"
+    ]
+   }
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Fewer hospital visits, death",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states fewer hospital visits and death, which directly matches fact 1 that SGLT2 inhibitors reduce hospitalization and death.",
+   "guideline_fact": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "What They Do",
+     "Brand Names*",
+     "Generic Names*",
+     "Types of Heart Failure Medications"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Your care team will check your kidney function when you start this medicine and will monitor it regularly.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "The sentence directly reflects fact 5, which states renal function should be checked when starting therapy and monitored regularly.",
+   "guideline_fact": "Check renal function when starting the therapy and monitor regularly. eGFR is known to dip slightly after initiation but the SGLT2 inhibitors appear to be reno-protective.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4136f3059227_annotation.nt",
+    "headers": [
+     "Supplementary Table 6",
+     "*HOW TO USE?"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Kidney tests will be done",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Fact 5 states renal function should be checked when starting therapy.",
+   "guideline_fact": "Check renal function when starting the therapy and monitor regularly. eGFR is known to dip slightly after initiation but the SGLT2 inhibitors appear to be reno-protective.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4136f3059227_annotation.nt",
+    "headers": [
+     "Supplementary Table 6",
+     "*HOW TO USE?"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

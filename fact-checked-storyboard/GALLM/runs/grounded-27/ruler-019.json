@@ -1,0 +1,950 @@
+{
+ "request": "Create a brief patient-education scene that explains why a doctor may recommend an implantable defibrillator (ICD).",
+ "candidates": [
+  {
+   "text": "In patients with HF and an implantable cardioverter defibrillator (ICD), amiodarone may be considered to reduce the frequency of repetitive discharges. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.38 (previous 7.40)"
+   ],
+   "entities": [
+    "amiodarone",
+    "patients with HF and an implantable cardioverter defibrillator (ICD)",
+    "the frequency of repetitive discharges"
+   ]
+  },
+  {
+   "text": "Discuss deactivation of an implantable-cardioverter defibrillator when present",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "General measures"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Even without an ICD, talk with your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "This depends on your heart problem. Talk to your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "file": "dc5126a14b6e_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ATP",
+    "Subcutaneous defibrillator",
+    "cardiac resynchronization",
+    "pacing therapy for bradycardia",
+    "patients with an indication for an ICD",
+    "transvenous defibrillator"
+   ]
+  },
+  {
+   "text": "ICU staff should develop protocols for withdrawal of life-sustaining treatments and devices (implantable cardioverter-defibrillator, ventilator, ventricular assist device, inotropic or vasopressor infusions, continuous renal replacement therapies, enteral or parenteral tube feedings, and intravenous fluids)",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "Preparedness for withdrawal of life-sustaining measures 312"
+   ],
+   "entities": [
+    "vasopressor"
+   ]
+  },
+  {
+   "text": "Recommend tools that support adherence in real time",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Ten Considerations to Improve Adherence"
+   ],
+   "entities": [
+    "Recommend tools that support adherence in real time"
+   ]
+  },
+  {
+   "text": "Implantable loop recorder in person or remote monitoring: 1–6 months suggested",
+   "file": "9c46642daf6e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Content for CIED in person or remote monitoring",
+    "Implantable loop recorder in person or remote monitoring: 1–6 months suggested",
+    "Table 4"
+   ],
+   "entities": [
+    "Implantable loop recorder in person or remote monitoring: 1–6 months suggested"
+   ]
+  },
+  {
+   "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+   "file": "d51cf8beb85a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "benefit from the defibrillator is not expected",
+    "elderly patients",
+    "patient's age and comorbidities",
+    "primary prevention"
+   ]
+  },
+  {
+   "text": "When an ICD is indicated, it is recommended to evaluate whether the patient could benefit from CRT-defibrillator.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "CRT",
+    "ICD",
+    "patient"
+   ]
+  },
+  {
+   "text": "Implantable hemodynamic monitor in person or remote monitoring: 1 week–3 months suggested",
+   "file": "9c46642daf6e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 4",
+    "Content for CIED in person or remote monitoring",
+    "Implantable hemodynamic monitor in person or remote monitoring: 1 week–3 months suggested"
+   ],
+   "entities": [
+    "Implantable hemodynamic monitor in person or remote monitoring: 1 week–3 months suggested"
+   ]
+  },
+  {
+   "text": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    ">1 year",
+    "cardioverter defibrillator",
+    "patients",
+    "survival"
+   ]
+  },
+  {
+   "text": "An ICD is not indicated for NYHA class IV patients with medication-refractory HF who are not also candidates for cardiac transplantation, an LVAD, or a CRT defibrillator that incorporates both pacing and defibrillation capabilities.",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [
+    "III%3A%20No%20Benefit"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 6"
+   ],
+   "entities": [
+    "CRT defibrillator",
+    "ICD",
+    "LVAD",
+    "NYHA class IV patients",
+    "cardiac transplantation",
+    "defibrillation capabilities",
+    "medication-refractory HF",
+    "pacing"
+   ]
+  },
+  {
+   "text": "Recommend 22 kcal/kg actual body weight nourished or 24 kcal/kg malnourished, or base on REE strength of evidence = Fair",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "AND 2017 6"
+   ],
+   "entities": [
+    "Recommend 22 kcal/kg actual body weight nourished or 24 kcal/kg malnourished, or base on REE strength of evidence = Fair"
+   ]
+  },
+  {
+   "text": "Collect all available information on type, initiation, and termination of all VA episodes, including telemetry strips and recordings from cardiac implantable electronic devices (CIEDs)",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "recordings from cardiac implantable electronic devices (CIEDs)",
+    "telemetry strips",
+    "type, initiation, and termination of all VA episodes"
+   ]
+  },
+  {
+   "text": "ESPEN guidelines recommend against routine preoperative fasting in patients at standard risk of aspiration, instead advising solids until 6 hours before and clear fluids until 2 hours before anesthesia",
+   "file": "3dd948d92864_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Key Recommendations for Nutrition Support Therapy in Perioperative Patients"
+   ],
+   "entities": [
+    "2 hours before anesthesia",
+    "6 hours before",
+    "clear fluids",
+    "patients at standard risk of aspiration",
+    "routine preoperative fasting",
+    "solids"
+   ]
+  },
+  {
+   "text": "Hemoglobin, % iron saturation, and ferritin to screen for intravenous iron eligibility; United States Preventative Services Task force recommends against screening for vitamin D deficiency in asymptomatic adults",
+   "file": "124020325e13_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Micronutrients",
+    "Laboratory data"
+   ],
+   "entities": [
+    "Hemoglobin, % iron saturation, and ferritin",
+    "United States Preventative Services Task force",
+    "asymptomatic adults",
+    "intravenous iron eligibility",
+    "screening for vitamin D deficiency"
+   ]
+  },
+  {
+   "text": "Dabigatran Anticoagulant - Transplacental passage in ex vivo studies of placental transfer Unknown No human data • use not recommend during pregnancy unless clearly necessary Animal data: • female fertility: decrease in implantations/increase in pre-implantation loss (plasma exposure five-fold higher compared with patients) • decrease in foetal body weight and embryofoetal viability in rodents (plasma exposure 5- to 10-fold higher compared with patients) • increased maternal bleeding (vaginal/uterine) in rodents",
+   "file": "336c788e2787_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Pregnancy and reproductive evidence",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0034: inherited source-table context (see source.title_or_context)",
+    "Medication",
+    "Breastfeeding",
+    "Legacy FDA pregnancy category",
+    "Placental transfer",
+    "Therapeutic class"
+   ],
+   "entities": [
+    "Dabigatran"
+   ]
+  },
+  {
+   "text": "In patients with CAD eligible for ICD implantation, catheter ablation may be considered just before (or immediately after) ICD implantation to decrease subsequent VT burden and ICD shocks.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Coronary artery disease"
+   ],
+   "entities": [
+    "CAD",
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "catheter ablation",
+    "patients with CAD eligible for ICD implantation"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in SQTS patients with arrhythmic syncope.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Short QT syndrome",
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD."
+   ],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "SQTS",
+    "patients with arrhythmic syncope"
+   ]
+  },
+  {
+   "text": "ICD implantation is not recommended in asymptomatic patients with an isolated ERP.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [],
+   "headers": [
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD."
+   ],
+   "entities": [
+    "ERP",
+    "ICD",
+    "ICD implantation",
+    "patients with an isolated ERP"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in idiopathic VF. 352,917–919",
+   "file": "f63c3fe9847c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VF"
+   ]
+  },
+  {
+   "text": "Quinidine may be considered in (a) SQTS patients who qualify for an ICD but present a contraindication to the ICD or refuse it, and (b) asymptomatic SQTS patients and a family history of SCD.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD.",
+    "Short QT syndrome"
+   ],
+   "entities": [
+    "ICD",
+    "Quinidine",
+    "SCD",
+    "SQTS",
+    "patients",
+    "patients who qualify for an ICD but present a contraindication to the ICD or refuse it"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in patients with a diagnosis of ERS who have survived a CA. 1017",
+   "file": "04a1361e39c2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "ERS",
+    "ICD",
+    "ICD implantation",
+    "patients"
+   ]
+  },
+  {
+   "text": "Catheter ablation is recommended for ICD patients with recurrent SVT resulting in inappropriate ICD therapies.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "Catheter ablation",
+    "ICD",
+    "patients"
+   ]
+  },
+  {
+   "text": "You will not get a shock from an ICD if you don\\'t get an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I get shocked by the ICD? What will that feel like?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "You",
+    "a shock from an ICD"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in ARVC patients with a haemodynamically tolerated SMVT. 692",
+   "file": "dd8a47678361_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "SMVT",
+    "patients"
+   ]
+  },
+  {
+   "text": "Quinidine should be considered in patients with BrS who qualify for an ICD but have a contraindication, decline, or have recurrent ICD shocks. 922,1006,1007",
+   "file": "a164b73f7014_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "BrS",
+    "ICD",
+    "ICD shocks",
+    "Quinidine",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in ARVC patients with haemodynamically not-tolerated VT or VF.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in HCM patients with haemodynamically not-tolerated VT or VF.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "HCM",
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with HF and an ICD, amiodarone may be considered to reduce the frequency of recurrent symptomatic arrhythmias causing ICD shocks. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.38 (previous 7.40)",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "amiodarone",
+    "patients with HF and an ICD",
+    "recurrent symptomatic arrhythmias causing ICD shocks"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with definite ARVC and an arrhythmic syncope.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "ARVC"
+   ],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "patients with definite ARVC and an arrhythmic syncope"
+   ]
+  },
+  {
+   "text": "If ICD implantation is indicated during pregnancy, implantation is recommended with optimal radiation protection. 1087,1107",
+   "file": "27b327bb9b90_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation"
+   ]
+  },
+  {
+   "text": "In patients with myotonic dystrophy undergoing ablation for BBR-VT, pacemaker/ICD implantation is recommended.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "pacemaker",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with haemodynamically tolerated SMVT occurring in the chronic phase of myocarditis, ICD implantation should be considered.",
+   "file": "dc777386b021_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "SMVT",
+    "myocarditis",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation or quinidine may be considered in individuals with ERP and arrhythmic syncope and additional risk features. k",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+    "Early repolarization syndrome"
+   ],
+   "entities": [
+    "ERP",
+    "ICD",
+    "ICD implantation",
+    "quinidine"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in patients with documented VF or haemodynamically not-tolerated VT in the absence of reversible causes.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with type 1 Brugada pattern and an arrhythmic syncope. 990,992,996",
+   "file": "a164b73f7014_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "patients",
+    "syncope"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in symptomatic d patients with definite ARVC, moderate right or left ventricular dysfunction, and",
+   "file": "dd8a47678361_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "patients"
+   ]
+  },
+  {
+   "text": "1. At the time of ICD implantation or replacement, and during advance care planning, patients should be informed that their ICD shock therapy can be deactivated at any time if it is consistent with their goals and preferences.",
+   "file": "d837c50c99d6_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "ICD implantation or replacement",
+    "ICD shock therapy",
+    "advance care planning",
+    "deactivated at any time",
+    "goals and preferences",
+    "patients",
+    "time of ICD implantation or replacement"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    ">1 year",
+    "cardioverter defibrillator",
+    "patients",
+    "survival"
+   ]
+  },
+  {
+   "text": "An ICD is not indicated for NYHA class IV patients with medication-refractory HF who are not also candidates for cardiac transplantation, an LVAD, or a CRT defibrillator that incorporates both pacing and defibrillation capabilities.",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [
+    "III%3A%20No%20Benefit"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 6"
+   ],
+   "entities": [
+    "CRT defibrillator",
+    "ICD",
+    "LVAD",
+    "NYHA class IV patients",
+    "cardiac transplantation",
+    "defibrillation capabilities",
+    "medication-refractory HF",
+    "pacing"
+   ]
+  },
+  {
+   "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+   "file": "d51cf8beb85a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "benefit from the defibrillator is not expected",
+    "elderly patients",
+    "patient's age and comorbidities",
+    "primary prevention"
+   ]
+  },
+  {
+   "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "file": "dc5126a14b6e_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ATP",
+    "Subcutaneous defibrillator",
+    "cardiac resynchronization",
+    "pacing therapy for bradycardia",
+    "patients with an indication for an ICD",
+    "transvenous defibrillator"
+   ]
+  },
+  {
+   "text": "1. At the time of ICD implantation or replacement, and during advance care planning, patients should be informed that their ICD shock therapy can be deactivated at any time if it is consistent with their goals and preferences.",
+   "file": "d837c50c99d6_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "ICD implantation or replacement",
+    "ICD shock therapy",
+    "advance care planning",
+    "deactivated at any time",
+    "goals and preferences",
+    "patients",
+    "time of ICD implantation or replacement"
+   ]
+  },
+  {
+   "text": "When an ICD is indicated, it is recommended to evaluate whether the patient could benefit from CRT-defibrillator.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "CRT",
+    "ICD",
+    "patient"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Why Your Doctor May Recommend an ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life. A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+    "visual_description": "Doctor talking to patient; heart diagram with ICD and subcutaneous device icons.",
+    "on_screen_text": "Implantable Defibrillator Options"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches the recommendation that ICD is only for patients expected to survive >1 year with good quality life."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Subcutaneous defibrillator is an alternative when pacing isn’t needed, and shocks can be turned off."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Implantable Defibrillator Options",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "No fact addresses this heading."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Why Your Doctor May Recommend an ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life. A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+    "visual_description": "Doctor talking to patient; heart diagram with ICD and subcutaneous device icons.",
+    "on_screen_text": "Implantable Defibrillator Options"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches the recommendation that ICD is only for patients expected to survive >1 year with good quality life."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Subcutaneous defibrillator is an alternative when pacing isn’t needed, and shocks can be turned off."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Implantable Defibrillator Options",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "No fact addresses this heading."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Why Your Doctor May Recommend an ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life. A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+    "visual_description": "Doctor talking to patient; heart diagram with ICD and subcutaneous device icons.",
+    "on_screen_text": ""
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor may recommend an implantable defibrillator if you are expected to live over one year with quality life.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches the recommendation that ICD is only for patients expected to survive >1 year with good quality life.",
+   "guideline_fact": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "C"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A subcutaneous option can be used when pacing isn’t needed, and shocks can be turned off.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Subcutaneous defibrillator is an alternative when pacing isn’t needed, and shocks can be turned off.",
+   "guideline_fact": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "grade": {
+    "class": [
+     "IIa"
+    ],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "dc5126a14b6e_annotation.nt",
+    "headers": [
+     "Recommendations"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Implantable Defibrillator Options",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "No fact addresses this heading.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

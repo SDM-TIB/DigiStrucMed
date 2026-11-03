@@ -1,0 +1,1302 @@
+{
+ "request": "Create a brief patient-education scene that explains how ARNIs (for example sacubitril/valsartan) help the heart.",
+ "candidates": [
+  {
+   "text": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ARB",
+    "ARNIs",
+    "Entresto",
+    "arteries",
+    "easier for the heart to pump blood",
+    "rid the body of salt",
+    "sacubitril",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "Sacubitril/valsartan",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "Sacubitril-valsartan 49 mg sacubitril and 51 mg valsartan twice daily (therapy may be initiated at 24 mg sacubitril and 26 mg valsartan twice daily) 97 mg sacubitril and 103 mg valsartan twice daily 182 mg sacubitril and 193 mg valsartan total daily 22",
+   "file": "73b0beda69b1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 14. Drugs Commonly Used for HFrEF (Stage C HF)**",
+    "Target Doses(s)",
+    "References",
+    "Initial Daily Dose(s)",
+    "ARNi",
+    "Mean Doses Achieved in Clinical Trials",
+    "Drug"
+   ],
+   "entities": [
+    "103 mg",
+    "182 mg",
+    "193 mg",
+    "24 mg",
+    "26 mg",
+    "49 mg",
+    "51 mg",
+    "97 mg",
+    "Sacubitril-valsartan",
+    "daily",
+    "twice"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "Sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan may decrease morbidity, 991–993 however, no recommendation can be made at this moment based on the retrospective or anecdotal nature of these observations.",
+   "file": "1d97f44c9d98_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sacubitril/valsartan",
+    "morbidity"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE-I in patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "Sacubitril/valsartan",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "CR programmes are optimal to implement and up-titrate HF medication, such as ACEIs/ARBs, beta blockers, MRAs, sacubitril/valsartan, ivabradine and emerging SGLT2 inhibitors",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Medication management"
+   ],
+   "entities": [
+    "ACEIs",
+    "ARBs",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta blockers",
+    "ivabradine",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Angiotensin II receptor blocker neprilysin inhibitor (ARNI) -OR- Angiotensin-converting enzyme inhibitors (ACE inhibitors) -OR- Angiotensin II receptor blockers (ARBs) ACE inhibitors and ARBs widen and relax blood vessels and ease the amount of work the heart has to do to pump blood. They also lower blood pressure. ARNIs work similarly but are stronger due to an additional ingredient. To help decide if an ARNI is right for you, the American College of Cardiology has created a tool to help. CardioSmart.org/HFDecisionAids sacubitril/valsartan (Entresto) -OR- captopril (Capoten) enalapril (Vasotec) lisinopril (Prinivil, Zestril) ramipril (Altace) -OR- candesartan (Atacand) losartan (Cozaar) valsartan (Diovan)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Medications for HFrEF (the 4 pillars)",
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**"
+   ],
+   "entities": [
+    "Angiotensin II receptor blocker neprilysin inhibitor (ARNI)",
+    "Angiotensin II receptor blockers (ARBs)",
+    "Angiotensin-converting enzyme inhibitors (ACE inhibitors)",
+    "amount of work the heart has to do to pump blood",
+    "blood pressure",
+    "blood vessels",
+    "candesartan",
+    "captopril",
+    "enalapril",
+    "lisinopril",
+    "losartan",
+    "ramipril",
+    "sacubitril/valsartan",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan Angiotensin receptor neprilysin inhibitor - Unknown Yes (excreted in the milk of lactating rats) Contraindicated • can cause foetal harm • sacubitril: inadequate human data Animal data: • rabbits: decreased foetal body weight and skeletal malformations (5.7× MRHD) • rats: no embryofoetal toxicity or teratogenicity at 2.2× MRHD • valsartan: renal or tubular dysplasia, oligohydramnion, growth retardation, ossification disorders of skull, lung hypoplasia, contractures, large joints, anaemia, and intrauterine foetal death • sacubitril/valsartan: rats/rabbits: increased embryofoetal toxicity, low incidence of foetal hydrocephaly with maternally toxic doses, cardiomegaly (rabbits) at maternally non-toxic doses, foetal skeletal variations (rabbits) • adverse embryofoetal effects are attributed to ARBs",
+   "file": "32ed4f1e31b5_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Pregnancy and reproductive evidence",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0044: inherited source-table context (see source.title_or_context)",
+    "Medication",
+    "Breastfeeding",
+    "Legacy FDA pregnancy category",
+    "Placental transfer",
+    "Therapeutic class"
+   ],
+   "entities": [
+    "Sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan 49/51 mg b.i.d. c 97/103 mg b.i.d.",
+   "file": "5799d6858431_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Target dose",
+    "Starting dose",
+    "**Table 8** Evidence-based doses of disease-modifying drugs in key randomized trials in patients with heart failure with reduced ejection fraction",
+    "ARNI"
+   ],
+   "entities": [
+    "49/51 mg",
+    "97/103 mg"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan 24/26 mg–49/51 mg twice daily 97/103 mg twice daily",
+   "file": "7e62c8597105_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Starting Dose",
+    "Target Dose",
+    "ARNIs",
+    "**TABLE 1** Starting and Target Doses of Select GDMT and Novel Therapies for HF (choice and timing of each therapy and in whom they should be added discussed in the text)\\*"
+   ],
+   "entities": [
+    "24/26 mg",
+    "49/51 mg",
+    "97/103 mg",
+    "daily",
+    "twice"
+   ]
+  },
+  {
+   "text": "ARBs candesartan, losartan, valsartan Atacand, Cozaar, Diovan Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood. Alternative to ACE inhibitor.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "What They Do",
+    "Types of Heart Failure Medications",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARBs",
+    "Atacand",
+    "Cozaar",
+    "Diovan",
+    "blood pressure",
+    "blood vessels",
+    "candesartan",
+    "easier for the heart to pump blood",
+    "losartan",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "Valsartan Diovan 40 mg bid 160 mg bid 254 mg/day 164",
+   "file": "697b02a2301d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Initial Daily Dose",
+    "Angiotensin Receptor Blockers",
+    "Generic Name",
+    "Target Dose",
+    "Mean Dose Achieved in Clinical Trials",
+    "Trade Name",
+    "**Table 7.1.** ACE-inhibitor, Angiotensin Receptor Blocker, and Beta-Blocker Therapy in Heart Failure with Low Ejection Fraction"
+   ],
+   "entities": [
+    "160 mg",
+    "254 mg/day",
+    "40 mg",
+    "Diovan",
+    "Valsartan",
+    "bid"
+   ]
+  },
+  {
+   "text": "Valsartan 20–40 mg once daily 160 mg twice daily 254 mg total daily 21",
+   "file": "73b0beda69b1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 14. Drugs Commonly Used for HFrEF (Stage C HF)**",
+    "Target Doses(s)",
+    "References",
+    "Initial Daily Dose(s)",
+    "Mean Doses Achieved in Clinical Trials",
+    "Drug",
+    "ARB"
+   ],
+   "entities": [
+    "160 mg",
+    "20–40 mg",
+    "254 mg",
+    "Valsartan",
+    "daily",
+    "once",
+    "twice"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Natriuretic and other vasodilator peptides Neprilysin inhibitor (ARNI)",
+   "file": "9aaf0a8d3f6a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Target",
+    "Therapy",
+    "**TABLE 14** Important Pathophysiological Targets in Chronic, Hemodynamically Stable HFrEF and Treatments"
+   ],
+   "entities": [
+    "ARNI",
+    "Neprilysin inhibitor ",
+    "Neprilysin inhibitor (ARNI)"
+   ]
+  },
+  {
+   "text": "ARNi† 16 36 over 27 mo 80 27",
+   "file": "aaa8d8f6da9c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Relative Risk Reduction in All-Cause Mortality in Pivotal RCTs, %",
+    "NNT to Prevent All-Cause Mortality Over Time*",
+    "**Table 15. Benefits of Evidence-Based Therapies for Patients With HFrEF**<sup>3–6,8,10–14,23,31–42</sup>",
+    "NNT for All-Cause Mortality (Standardized to 12 mo)",
+    "Evidence-Based Therapy",
+    "NNT for All-Cause Mortality (Standardized to 36 mo)"
+   ],
+   "entities": [
+    "ARNi"
+   ]
+  },
+  {
+   "text": "To reduce mortality - for all patients ACE-I/ARNI",
+   "file": "eca3c31802ae_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "To reduce mortality - for all patients",
+    "Management of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARNI",
+    "all patients",
+    "mortality"
+   ]
+  },
+  {
+   "text": "Valsartan 40 mg twice daily 160 mg twice daily",
+   "file": "7e62c8597105_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**TABLE 1** Starting and Target Doses of Select GDMT and Novel Therapies for HF (choice and timing of each therapy and in whom they should be added discussed in the text)\\*",
+    "ARBs",
+    "Starting Dose",
+    "Target Dose"
+   ],
+   "entities": [
+    "160 mg",
+    "40 mg",
+    "daily",
+    "twice"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in sinus rhythm, and with a resting heart rate ≥70 b.p.m. who are unable to tolerate or have contraindications for a beta-blocker to reduce the risk of HF hospitalization or CV death. Patients should also receive an ACE inhibitor (or ARNI) and an MRA. 726",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIa",
+    "SOURCE_DEFINED_OTHER: C"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "Ivabradine",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "Use hydralazine/ISDN if an ARNI/ACEI/ARB cannot be used",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Suggested Action",
+    "Chronic kidney disease"
+   ],
+   "entities": [
+    "Use hydralazine/ISDN if an ARNI/ACEI/ARB cannot be used"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in sinus rhythm, and with a resting heart rate ≥70 bpm despite treatment with an evidence-based dose of a beta-blocker (or maximum tolerated dose below that), an ACE inhibitor (or an ARNI), and an MRA, to reduce the risk of HF hospitalization or CV death. 725",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: IIa"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "Ivabradine",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "High-dose ARB | > Valsartan 160-mg total daily dose or therapeutically equivalent dose of another ARB | 49/51 mg twice daily",
+   "file": "3b55c48fa732_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Initial Dose",
+    "Population",
+    "TABLE 3 Dose Adjustments of Sacubitril/Valsartan for Specific Patient Populations"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Some rise in urea (BUN), creatinine, and $K^+$ is to be expected after an ARNI; if an increase is small and asymptomatic, no action is necessary.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*WRF and hyperkalaemia:",
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "ARNI",
+    "creatinine"
+   ]
+  },
+  {
+   "text": "4. In patients with previous or current symptoms of chronic HFrEF, in whom ARNi is not feasible, treatment with an ACEi or ARB provides high economic value.",
+   "file": "ee90c00c8ba9_annotation.nt",
+   "class": [
+    "Value%20Statement%3A%20High%20Value%20%28A%29"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Renin-Angiotensin System Inhibition With ACEi or ARB or ARNi Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "ACEi",
+    "ARB",
+    "ARNi",
+    "In patients with previous or current symptoms of chronic HFrEF",
+    "high economic value",
+    "in whom ARNi is not feasible"
+   ]
+  },
+  {
+   "text": "Low- or medium-dose ARB | ≤ Valsartan 160-mg total daily dose or therapeutically equivalent dose of another ARB | 24/26 mg twice daily",
+   "file": "3b55c48fa732_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "TABLE 3 Dose Adjustments of Sacubitril/Valsartan for Specific Patient Populations",
+    "Population",
+    "Initial Dose"
+   ],
+   "entities": []
+  },
+  {
+   "text": "African-American patients; Expected outcomes of ARNI, SGLT2 inhibitors, and/or ivabradine in those treated with HYD/ISDN",
+   "file": "d6c6cfa7d9a8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Uncertainties",
+    "African-American patients"
+   ],
+   "entities": [
+    "ARNI",
+    "African-American patients",
+    "SGLT2 inhibitors",
+    "ivabradine",
+    "patients"
+   ]
+  },
+  {
+   "text": "ARNI, Angiotensin II receptor blocker neprilysin inhibitor or ACE inhibitors, Angiotensin- converting enzyme inhibitors or ARBs, Angiotensin II receptor blockers",
+   "file": "8b8c08cbb883_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "The 4 pillars of heart failure medications"
+   ],
+   "entities": [
+    "ARNI"
+   ]
+  },
+  {
+   "text": "A beta-blocker is recommended, in addition to an ACE inhibitor (or an ARNI) and an MRA, for patients with stable, symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "1. In patients with HFrEF and NYHA class II to III symptoms, the use of ARNi is recommended to reduce morbidity and mortality.",
+   "file": "ee90c00c8ba9_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for Renin-Angiotensin System Inhibition With ACEi or ARB or ARNi Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+    "Recommendations"
+   ],
+   "entities": [
+    "ARNi",
+    "In patients with HFrEF and NYHA class II to III symptoms",
+    "morbidity",
+    "mortality"
+   ]
+  },
+  {
+   "text": "An ARB c is recommended to reduce the risk of HF hospitalization and CV death in symptomatic patients unable to tolerate an ACE-I or ARNI (patients should also receive a beta-blocker and an MRA). 138",
+   "file": "2858a92259e7_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Recommendations",
+    "Levelb",
+    "ARB"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "ARNI",
+    "CV death",
+    "HF hospitalization",
+    "MRA",
+    "beta-blocker",
+    "symptomatic patients",
+    "unable to tolerate an ACE-I or ARNI"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF already treated with an ACE inhibitor (or an ARNI) and a beta-blocker, to reduce the risk of HF hospitalization and death. 718,719",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "6. In selected patients with HFpEF, ARNi may be considered to decrease hospitalizations, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "ARNi",
+    "LVEF",
+    "hospitalizations",
+    "lower end of this spectrum",
+    "selected patients with HFpEF"
+   ]
+  },
+  {
+   "text": "Inability to tolerate optimally dosed beta-blockers and/or ACEI/ARB/ARNI and/or aldosterone antagonists",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "following risk factors",
+    "Chronic HF with high-risk features"
+   ],
+   "entities": [
+    "ACEI/ARB/ARNI",
+    "Inability to tolerate",
+    "aldosterone antagonists",
+    "beta-blockers"
+   ]
+  },
+  {
+   "text": "It is very rarely necessary to stop an ARNI, and clinical deterioration is likely if treatment is withdrawn. Ideally, specialist advice should be sought before treatment discontinuation.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*HOW TO USE?",
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "ARNI",
+    "specialist advice"
+   ]
+  },
+  {
+   "text": "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs",
+   "file": "b89ec3acb824_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "P — Prognostic medication",
+    "\\'I Need Help\\' markers of advanced heart failure"
+   ],
+   "entities": [
+    "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs"
+   ]
+  },
+  {
+   "text": "6. In patients with chronic symptomatic HFrEF, treatment with an ARNi instead of an ACEi provides high economic value.",
+   "file": "ee90c00c8ba9_annotation.nt",
+   "class": [
+    "Value%20Statement%3A%20High%20Value%20%28A%29"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Renin-Angiotensin System Inhibition With ACEi or ARB or ARNi Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "ACEi",
+    "ARNi",
+    "In patients with chronic symptomatic HFrEF",
+    "high economic value"
+   ]
+  },
+  {
+   "text": "Ivabradine should be considered in symptomatic patients with LVEF ≤35%, in SR and a resting heart rate ≥70 b.p.m. who are unable to tolerate or have contraindications for a beta-blocker to reduce the risk of HF hospitalization and CV death. Patients should also receive an ACE-I (or ARNI) and an MRA. 140",
+   "file": "2858a92259e7_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "I_f-channel inhibitor",
+    "Levelb",
+    "Classa",
+    "Recommendations"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARNI",
+    "CV death",
+    "HF hospitalization",
+    "Ivabradine",
+    "LVEF",
+    "MRA",
+    "SR",
+    "beta-blocker",
+    "resting heart rate",
+    "symptomatic patients",
+    "unable to tolerate or have contraindications for a beta-blocker",
+    "≤35%",
+    "≥70 b.p.m."
+   ]
+  },
+  {
+   "text": "■ Known hypersensitivity to either ARBs or ARNIs",
+   "file": "9cf9de7cdbf8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Contraindications",
+    "A) Sacubitril/Valsartan",
+    "**TABLE 4** Contraindications and Cautions for Sacubitril/Valsartan, Ivabradine, and SGLT2 inhibitors"
+   ],
+   "entities": []
+  }
+ ],
+ "facts": [
+  {
+   "text": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ARB",
+    "ARNIs",
+    "Entresto",
+    "arteries",
+    "easier for the heart to pump blood",
+    "rid the body of salt",
+    "sacubitril",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "Sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Angiotensin II receptor blocker neprilysin inhibitor (ARNI) -OR- Angiotensin-converting enzyme inhibitors (ACE inhibitors) -OR- Angiotensin II receptor blockers (ARBs) ACE inhibitors and ARBs widen and relax blood vessels and ease the amount of work the heart has to do to pump blood. They also lower blood pressure. ARNIs work similarly but are stronger due to an additional ingredient. To help decide if an ARNI is right for you, the American College of Cardiology has created a tool to help. CardioSmart.org/HFDecisionAids sacubitril/valsartan (Entresto) -OR- captopril (Capoten) enalapril (Vasotec) lisinopril (Prinivil, Zestril) ramipril (Altace) -OR- candesartan (Atacand) losartan (Cozaar) valsartan (Diovan)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Medications for HFrEF (the 4 pillars)",
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**"
+   ],
+   "entities": [
+    "Angiotensin II receptor blocker neprilysin inhibitor (ARNI)",
+    "Angiotensin II receptor blockers (ARBs)",
+    "Angiotensin-converting enzyme inhibitors (ACE inhibitors)",
+    "amount of work the heart has to do to pump blood",
+    "blood pressure",
+    "blood vessels",
+    "candesartan",
+    "captopril",
+    "enalapril",
+    "lisinopril",
+    "losartan",
+    "ramipril",
+    "sacubitril/valsartan",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "ARNi† 16 36 over 27 mo 80 27",
+   "file": "aaa8d8f6da9c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Relative Risk Reduction in All-Cause Mortality in Pivotal RCTs, %",
+    "NNT to Prevent All-Cause Mortality Over Time*",
+    "**Table 15. Benefits of Evidence-Based Therapies for Patients With HFrEF**<sup>3–6,8,10–14,23,31–42</sup>",
+    "NNT for All-Cause Mortality (Standardized to 12 mo)",
+    "Evidence-Based Therapy",
+    "NNT for All-Cause Mortality (Standardized to 36 mo)"
+   ],
+   "entities": [
+    "ARNi"
+   ]
+  },
+  {
+   "text": "1. In patients with HFrEF and NYHA class II to III symptoms, the use of ARNi is recommended to reduce morbidity and mortality.",
+   "file": "ee90c00c8ba9_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for Renin-Angiotensin System Inhibition With ACEi or ARB or ARNi Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+    "Recommendations"
+   ],
+   "entities": [
+    "ARNi",
+    "In patients with HFrEF and NYHA class II to III symptoms",
+    "morbidity",
+    "mortality"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "How A R N I Helps Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an A R N I can help your heart.",
+    "visual_description": "Doctor and patient sitting, friendly consultation.",
+    "on_screen_text": "A R N I Overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt, making it easier for your heart to pump blood.",
+    "visual_description": "Doctor shows a simple heart model and a pill bottle.",
+    "on_screen_text": "How A R N I works"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Ask your doctor if switching from your current ACE inhibitor to an A R N I could lower your risk of hospital visits and death.",
+    "visual_description": "Doctor points to a decision‑aid chart on a tablet.",
+    "on_screen_text": "Consider an A R N I"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is only a greeting and introduction, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how an A R N I can help your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ARNIs help the heart by widening arteries and easing pumping."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "A R N I Overview",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It only names the topic of the talk, not a medical statement."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt, making it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence restates fact 1 exactly, describing an ARNI as an ARB plus a drug that widens arteries, removes salt, and eases heart pumping."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "How A R N I works",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 explains the mechanism of ARNI."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Ask your doctor if switching from your current ACE inhibitor to an A R N I could lower your risk of hospital visits and death.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Matches recommendation to replace ACE inhibitor with ARNI to reduce hospitalization and death."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Consider an A R N I",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The sentence gives a general recommendation to consider an ARNI, but the facts only support this for specific patient groups (e.g., HFrEF with NYHA II–III)."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "How A R N I Helps Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an A R N I can help your heart.",
+    "visual_description": "Doctor and patient sitting, friendly consultation.",
+    "on_screen_text": "A R N I Overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt. That makes it easier for your heart to pump blood.",
+    "visual_description": "Doctor shows a simple heart model and a pill bottle.",
+    "on_screen_text": "How A R N I works"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Ask your doctor if switching from your ACE inhibitor to an A R N I could lower your risk. It can reduce hospital visits and death.",
+    "visual_description": "Doctor points to a tablet with decision‑aid chart.",
+    "on_screen_text": "Lower hospitalization risk"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is only a greeting and introduction, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how an A R N I can help your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ARNIs help the heart by widening arteries and easing pumping."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "A R N I Overview",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It only names the topic of the talk, not a medical statement."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 exactly."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "That makes it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that the drug makes it easier for the heart to pump blood."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "How A R N I works",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 explains the mechanism of ARNI."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Ask your doctor if switching from your ACE inhibitor to an A R N I could lower your risk.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The fact applies only to HFrEF patients, but the sentence is general."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "It can reduce hospital visits and death.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The fact applies only to HFrEF patients, but the sentence makes a general claim for all patients."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Lower hospitalization risk",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence states a reduction in hospitalization risk, which is directly supported by fact 2 that sacubitril/valsartan reduces HF hospitalization risk."
+  }
+ ],
+ "emptied_fields": [
+  [
+   2,
+   "narration"
+  ]
+ ],
+ "refill_storyboard": {
+  "title": "How A R N I Helps Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an A R N I can help your heart.",
+    "visual_description": "Doctor and patient sitting, friendly consultation.",
+    "on_screen_text": "A R N I Overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt. That makes it easier for your heart to pump blood.",
+    "visual_description": "Doctor shows a simple heart model and a pill bottle.",
+    "on_screen_text": "How A R N I works"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Talk with your care team about switching to an A R N I; it can lower your risk of heart‑failure hospital visits.",
+    "visual_description": "Doctor points to a tablet with decision‑aid chart.",
+    "on_screen_text": "Lower hospitalization risk"
+   }
+  ],
+  "not_covered": []
+ },
+ "refill_verdicts": [
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Talk with your care team about switching to an A R N I; it can lower your risk of heart‑failure hospital visits.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that sacubitril/valsartan (an ARNI) reduces the risk of heart‑failure hospitalization."
+  }
+ ],
+ "final_storyboard": {
+  "title": "How A R N I Helps Your Heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an A R N I can help your heart.",
+    "visual_description": "Doctor and patient sitting, friendly consultation.",
+    "on_screen_text": "A R N I Overview"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt. That makes it easier for your heart to pump blood.",
+    "visual_description": "Doctor shows a simple heart model and a pill bottle.",
+    "on_screen_text": "How A R N I works"
+   },
+   {
+    "scene_number": 3,
+    "narration": "Talk with your care team about switching to an A R N I; it can lower your risk of heart‑failure hospital visits.",
+    "visual_description": "Doctor points to a tablet with decision‑aid chart.",
+    "on_screen_text": "Lower hospitalization risk"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is only a greeting and introduction, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is just a name, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how an A R N I can help your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ARNIs help the heart by widening arteries and easing pumping.",
+   "guideline_fact": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do",
+     "Brand Names*"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "A R N I Overview",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It only names the topic of the talk, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An A R N I combines a blood‑pressure blocker with a medicine that widens arteries and removes extra salt.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 exactly.",
+   "guideline_fact": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do",
+     "Brand Names*"
+    ]
+   }
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "That makes it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that the drug makes it easier for the heart to pump blood.",
+   "guideline_fact": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do",
+     "Brand Names*"
+    ]
+   }
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "How A R N I works",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 explains the mechanism of ARNI.",
+   "guideline_fact": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Generic Names*",
+     "Types of Heart Failure Medications",
+     "What They Do",
+     "Brand Names*"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Ask your doctor if switching from your ACE inhibitor to an A R N I could lower your risk.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The fact applies only to HFrEF patients, but the sentence is general.",
+   "guideline_fact": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "254744705a64_annotation.nt",
+    "headers": [
+     "SOURCE_DEFINED_OTHER: B",
+     "SOURCE_DEFINED_OTHER: I"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "It can reduce hospital visits and death.",
+   "label": "NOT_SUPPORTED",
+   "fact": 2,
+   "reason": "The fact applies only to HFrEF patients, but the sentence makes a general claim for all patients.",
+   "guideline_fact": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "254744705a64_annotation.nt",
+    "headers": [
+     "SOURCE_DEFINED_OTHER: B",
+     "SOURCE_DEFINED_OTHER: I"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Lower hospitalization risk",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The sentence states a reduction in hospitalization risk, which is directly supported by fact 2 that sacubitril/valsartan reduces HF hospitalization risk.",
+   "guideline_fact": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "254744705a64_annotation.nt",
+    "headers": [
+     "SOURCE_DEFINED_OTHER: B",
+     "SOURCE_DEFINED_OTHER: I"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "Talk with your care team about switching to an A R N I; it can lower your risk of heart‑failure hospital visits.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that sacubitril/valsartan (an ARNI) reduces the risk of heart‑failure hospitalization.",
+   "guideline_fact": "Sacubitril/valsartan is recommended as a replacement for an ACE inhibitor to reduce the risk of HF hospitalization and death in patients with HFrEF. 707,730",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "254744705a64_annotation.nt",
+    "headers": [
+     "SOURCE_DEFINED_OTHER: B",
+     "SOURCE_DEFINED_OTHER: I"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

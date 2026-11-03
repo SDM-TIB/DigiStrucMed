@@ -1,0 +1,998 @@
+{
+ "tuning": [
+  {
+   "id": "ruler-019",
+   "request": "Create a brief patient-education scene that explains why a doctor may recommend an implantable defibrillator (ICD).",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+     "file": "3200bba8455a_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "C"
+     ],
+     "headers": [],
+     "entities": [
+      ">1 year",
+      "cardioverter defibrillator",
+      "patients",
+      "survival"
+     ]
+    },
+    {
+     "text": "An ICD is not indicated for NYHA class IV patients with medication-refractory HF who are not also candidates for cardiac transplantation, an LVAD, or a CRT defibrillator that incorporates both pacing and defibrillation capabilities.",
+     "file": "b17ddeedbbd8_annotation.nt",
+     "class": [
+      "III%3A%20No%20Benefit"
+     ],
+     "level": [
+      "C-EO"
+     ],
+     "headers": [
+      "RECOMMENDATIONS",
+      "Item 6"
+     ],
+     "entities": [
+      "CRT defibrillator",
+      "ICD",
+      "LVAD",
+      "NYHA class IV patients",
+      "cardiac transplantation",
+      "defibrillation capabilities",
+      "medication-refractory HF",
+      "pacing"
+     ]
+    },
+    {
+     "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+     "file": "d51cf8beb85a_annotation.nt",
+     "class": [
+      "IIb"
+     ],
+     "level": [
+      "B"
+     ],
+     "headers": [
+      "Classa",
+      "Levelb",
+      "Recommendations"
+     ],
+     "entities": [
+      "ICD implantation",
+      "benefit from the defibrillator is not expected",
+      "elderly patients",
+      "patient's age and comorbidities",
+      "primary prevention"
+     ]
+    },
+    {
+     "text": "When an ICD is indicated, it is recommended to evaluate whether the patient could benefit from CRT-defibrillator.",
+     "file": "3200bba8455a_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "C"
+     ],
+     "headers": [],
+     "entities": [
+      "CRT",
+      "ICD",
+      "patient"
+     ]
+    },
+    {
+     "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+     "file": "dc5126a14b6e_annotation.nt",
+     "class": [
+      "IIa"
+     ],
+     "level": [
+      "B"
+     ],
+     "headers": [
+      "Recommendations"
+     ],
+     "entities": [
+      "ATP",
+      "Subcutaneous defibrillator",
+      "cardiac resynchronization",
+      "pacing therapy for bradycardia",
+      "patients with an indication for an ICD",
+      "transvenous defibrillator"
+     ]
+    },
+    {
+     "text": "1. At the time of ICD implantation or replacement, and during advance care planning, patients should be informed that their ICD shock therapy can be deactivated at any time if it is consistent with their goals and preferences.",
+     "file": "d837c50c99d6_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "C-EO"
+     ],
+     "headers": [
+      "RECOMMENDATIONS"
+     ],
+     "entities": [
+      "ICD implantation or replacement",
+      "ICD shock therapy",
+      "advance care planning",
+      "deactivated at any time",
+      "goals and preferences",
+      "patients",
+      "time of ICD implantation or replacement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-026",
+   "request": "Create a brief patient-education scene that explains when and why a defibrillator needs to be replaced.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+     "file": "3a64564151a9_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Implant an ICD",
+      "What is involved?"
+     ],
+     "entities": [
+      "5-10 years",
+      "An ICD",
+      "put under the skin on your chest",
+      "the ICD will need to be replaced"
+     ]
+    },
+    {
+     "text": "It is best not to remove the ICD unless it gets infected or it is time to have it replaced when the battery runs out.",
+     "file": "3a64564151a9_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Implant an ICD",
+      "Can the ICD be taken out?"
+     ],
+     "entities": [
+      "it gets infected",
+      "it is time to have it replaced when the battery runs out",
+      "remove the ICD"
+     ]
+    },
+    {
+     "text": "Patients should be carefully evaluated by an experienced cardiologist before generator replacement, because management goals, the patient\\'s needs and clinical status may have changed. 168–172",
+     "file": "9a7526f9cf2b_annotation.nt",
+     "class": [
+      "IIa"
+     ],
+     "level": [
+      "B"
+     ],
+     "headers": [
+      "Primary prevention",
+      "Recommendations"
+     ],
+     "entities": [
+      "Patients",
+      "before generator replacement",
+      "clinical status",
+      "experienced cardiologist",
+      "management goals",
+      "patient's needs"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-030",
+   "request": "Create a brief patient-education scene that explains simple strength training for people with heart failure or an ICD.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Exercise training",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+     ]
+    },
+    {
+     "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Table 1 Core components and objectives common to all clinical conditions",
+      "Exercise training"
+     ],
+     "entities": [
+      "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+     ]
+    },
+    {
+     "text": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+     "file": "6c8b1fef6ed6_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "CLASS_OF_RECOMMENDATION: I (A)",
+      "Established/agreed issues"
+     ],
+     "entities": []
+    },
+    {
+     "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+     "file": "35b293ce9ed8_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [
+      "Lifestyle"
+     ],
+     "entities": [
+      "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+     ]
+    },
+    {
+     "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+     "file": "f2ef453ad477_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [
+      "Recommendations"
+     ],
+     "entities": [
+      "Regular discussion about exercise participation",
+      "all individuals with heart failure",
+      "individualized exercise prescription"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-004",
+   "request": "Create a brief patient-education scene that explains the three types of heart failure (HFrEF, HFmrEF, HFpEF) based on the ejection fraction.",
+   "coverage": "P",
+   "facts": [
+    {
+     "text": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+     "file": "c6c6844112d0_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Recommendation table footnotes"
+     ],
+     "entities": []
+    },
+    {
+     "text": "2. Among patients with current or previous symptomatic HFmrEF (LVEF, 41%–49%), use of evidence-based beta blockers for HFrEF, ARNi, ACEi, or ARB, and MRAs may be considered to reduce the risk of HF hospitalization and cardiovascular mortality, particularly among patients with LVEF on the lower end of this spectrum.",
+     "file": "b8bb1d3f8a09_annotation.nt",
+     "class": [
+      "2b"
+     ],
+     "level": [
+      "B-NR"
+     ],
+     "headers": [
+      "Recommendations",
+      "Recommendations for HF With Mildly Reduced Ejection Fraction"
+     ],
+     "entities": [
+      "41%–49%",
+      "ACEi",
+      "ARB",
+      "ARNi",
+      "HF hospitalization",
+      "LVEF",
+      "MRAs",
+      "cardiovascular mortality",
+      "current or previous symptomatic HFmrEF",
+      "evidence-based beta blockers for HFrEF",
+      "lower end of this spectrum",
+      "patients with current or previous symptomatic HFmrEF"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-006",
+   "request": "Create a brief patient-education scene that explains how high blood pressure can lead to heart failure.",
+   "coverage": "P",
+   "facts": [
+    {
+     "text": "1. In patients with hypertension, blood pressure should be controlled in accordance with GDMT for hypertension to prevent symptomatic HF.",
+     "file": "1c8bf8688543_annotation.nt",
+     "class": [
+      "1"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [
+      "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements.",
+      "Recommendations"
+     ],
+     "entities": [
+      "HF",
+      "In patients with hypertension",
+      "blood pressure",
+      "hypertension"
+     ]
+    },
+    {
+     "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+     "file": "108af9a8d34f_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "STAGE A"
+     ],
+     "entities": [
+      "causes of heart dysfunction",
+      "diabetes",
+      "high blood pressure"
+     ]
+    },
+    {
+     "text": "1. Patients with HFpEF and hypertension should have medication titrated to attain blood pressure targets in accordance with published clinical practice guidelines to prevent morbidity.",
+     "file": "2ada0c1301a2_annotation.nt",
+     "class": [
+      "1"
+     ],
+     "level": [
+      "C-LD"
+     ],
+     "headers": [
+      "Recommendations",
+      "Recommendations for HF With Preserved Ejection Fraction*"
+     ],
+     "entities": [
+      "HFpEF",
+      "Patients with HFpEF and hypertension",
+      "blood pressure targets",
+      "hypertension",
+      "medication",
+      "morbidity"
+     ]
+    },
+    {
+     "text": "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)",
+     "file": "689773c16c56_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Hypertension",
+      "Suggested Action"
+     ],
+     "entities": [
+      "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)"
+     ]
+    },
+    {
+     "text": "It is recommended that blood pressure be aggressively treated to lower systolic and usually diastolic levels. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = C)",
+     "file": "5b6f878076fd_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "14.1",
+      "2006 Guideline Recommendation"
+     ],
+     "entities": [
+      "<130",
+      "<80 mm Hg",
+      "blood pressure"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-007",
+   "request": "Create a brief patient-education scene that explains heart valve disease (narrowed or leaky valves) and its typical symptoms.",
+   "coverage": "P",
+   "facts": [
+    {
+     "text": "Valvular heart disease and the possible value of valve repair",
+     "file": "312ed985281c_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "for example",
+      "Second opinion needed regarding etiology of HF"
+     ],
+     "entities": [
+      "Valvular heart disease",
+      "valve repair"
+     ]
+    },
+    {
+     "text": "Mitral regurgitation Surgical or percutaneous mitral valve repair",
+     "file": "9aaf0a8d3f6a_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Target",
+      "Therapy",
+      "**TABLE 14** Important Pathophysiological Targets in Chronic, Hemodynamically Stable HFrEF and Treatments"
+     ],
+     "entities": [
+      "Surgical or percutaneous mitral valve repair"
+     ]
+    },
+    {
+     "text": "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Patient assessment",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate"
+     ]
+    },
+    {
+     "text": "Aortic valve intervention, TAVI or SAVR, is recommended in patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms.",
+     "file": "05e068c41452_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "B"
+     ],
+     "headers": [
+      "Recommendations for treatment of patients with HF and aortic stenosis"
+     ],
+     "entities": [
+      "Aortic valve intervention",
+      "HF",
+      "SAVR",
+      "TAVI",
+      "aortic stenosis",
+      "mortality",
+      "patients with HF and severe high-gradient aortic stenosis to reduce mortality and improve symptoms",
+      "symptoms"
+     ]
+    }
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "ruler-029",
+   "request": "Create a brief patient-education scene that explains what aerobic (endurance) training is and gives examples for heart-failure patients.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Moderate intensity continuous endurance training is recommended as baseline aerobic ET protocol.",
+     "file": "6c8b1fef6ed6_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Exercise training",
+      "CLASS_OF_RECOMMENDATION: I (A)",
+      "Established/agreed issues"
+     ],
+     "entities": []
+    },
+    {
+     "text": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Expected outcomes",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination"
+     ]
+    },
+    {
+     "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Exercise training",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+     ]
+    },
+    {
+     "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Table 1 Core components and objectives common to all clinical conditions",
+      "Exercise training"
+     ],
+     "entities": [
+      "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+     ]
+    },
+    {
+     "text": "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Physical activity counselling",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Training volume to be recommended: to perform at least 150 min a week of moderate intensity or 75 min a week of vigorous intensity aerobic PA or an equivalent combination thereof"
+     ]
+    },
+    {
+     "text": "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Exercise training",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-036",
+   "request": "Create a brief patient-education scene that explains how alcohol affects the heart in heart failure.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Excessive alcohol intake 286 General population: no/light alcohol intake is beneficial Patients with alcohol-induced CMP should abstain from alcohol",
+     "file": "b6010d058e25_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Preventive strategies",
+      "Risk factors for heart failure"
+     ],
+     "entities": [
+      "Excessive alcohol intake",
+      "General population",
+      "Patients with alcohol-induced CMP",
+      "abstain from alcohol",
+      "beneficial",
+      "no/light alcohol intake"
+     ]
+    },
+    {
+     "text": "To be able to abstain from or avoid excessive alcohol intake, especially for alcohol-induced CMP. To restrict alcohol according to CV prevention guidelines.",
+     "file": "8c1431b64218_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Self-care aspects",
+      "Education topic: Alcohol",
+      "Goal for the patient and caregiver"
+     ],
+     "entities": [
+      "CV prevention guidelines",
+      "alcohol-induced CMP",
+      "excessive alcohol intake",
+      "restrict alcohol"
+     ]
+    },
+    {
+     "text": "Excessive alcohol intake Men Limit alcohol intake to 1-2 drink equivalents per day C",
+     "file": "48f668a7d531_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Excessive alcohol intake"
+     ],
+     "entities": [
+      "1-2 drink equivalents per day",
+      "Excessive alcohol intake",
+      "Men",
+      "alcohol intake"
+     ]
+    },
+    {
+     "text": "Consumption of alcohol should be limited to a maximum of 100 g per week",
+     "file": "f12ffb01cde2_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Healthy diet characteristics"
+     ],
+     "entities": [
+      "Consumption of alcohol",
+      "a maximum of 100 g per week"
+     ]
+    },
+    {
+     "text": "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women.",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Healthy food choices",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women."
+     ]
+    },
+    {
+     "text": "Tailor alcohol advice to aetiology of HF; e.g. abstinence in alcoholic CMP. Inform and discuss alcohol intake according to CV prevention guidelines (2 units per day in men or 1 unit per day in women) a.",
+     "file": "8c1431b64218_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Education topic: Alcohol",
+      "Self-care aspects",
+      "Professional behaviour and educational tools"
+     ],
+     "entities": [
+      "1 unit per day in women",
+      "2 units per day in men",
+      "abstinence",
+      "aetiology of HF",
+      "alcohol advice",
+      "alcohol intake",
+      "alcoholic CMP"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-037",
+   "request": "Create a brief patient-education scene that explains sleep apnea in heart failure and how mask therapy helps.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Patients with HF with obstructive sleep apnea CPAP (2a)",
+     "file": "74cc59922dba_annotation.nt",
+     "class": [
+      "2a"
+     ],
+     "level": [],
+     "headers": [
+      "Additional Therapies in Patients With HF and Comorbidities",
+      "In addition to optimized GDMT",
+      "Patients with HF with obstructive sleep apnea"
+     ],
+     "entities": [
+      "CPAP",
+      "Patients with HF with obstructive sleep apnea"
+     ]
+    },
+    {
+     "text": "5. In patients with HF and obstructive sleep apnea, continuous positive airway pressure may be reasonable to improve sleep quality and decrease daytime sleepiness.",
+     "file": "3292747012ac_annotation.nt",
+     "class": [
+      "2a"
+     ],
+     "level": [
+      "B-R"
+     ],
+     "headers": [
+      "Recommendations",
+      "Management of Sleep Disorders"
+     ],
+     "entities": [
+      "continuous positive airway pressure",
+      "daytime sleepiness",
+      "obstructive sleep apnea",
+      "patients with HF",
+      "sleep quality"
+     ]
+    },
+    {
+     "text": "6. In patients with NYHA class II to IV HFrEF and central sleep apnea, adaptive servo-ventilation causes harm.",
+     "file": "3292747012ac_annotation.nt",
+     "class": [
+      "3%3A%20Harm"
+     ],
+     "level": [
+      "B-R"
+     ],
+     "headers": [
+      "Recommendations",
+      "Management of Sleep Disorders"
+     ],
+     "entities": [
+      "adaptive servo-ventilation",
+      "central sleep apnea",
+      "harm",
+      "patients with NYHA class II to IV HFrEF"
+     ]
+    },
+    {
+     "text": "Ask about sleep quality. Refer patients who report poor sleep, who are obese, and whose bed partner reports snoring for screening for sleep-disordered breathing.",
+     "file": "4453defbdcec_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Healthcare Providers"
+     ],
+     "entities": [
+      "obese",
+      "patients",
+      "poor sleep",
+      "screening for sleep-disordered breathing",
+      "sleep quality",
+      "snoring"
+     ]
+    },
+    {
+     "text": "Review sleep history. Advise and discuss the importance of good sleep and provide advice on \\'sleep health\\' (including timing of diuretics).",
+     "file": "8c1431b64218_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Professional behaviour and educational tools",
+      "Self-care aspects",
+      "Education topic: Sleep and breathing"
+     ],
+     "entities": [
+      "'sleep health'",
+      "diuretics",
+      "sleep history",
+      "timing of diuretics"
+     ]
+    },
+    {
+     "text": "Strongly encourage use of CPAP in patients with sleep-disordered breathing.",
+     "file": "4453defbdcec_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Healthcare Providers"
+     ],
+     "entities": [
+      "CPAP",
+      "patients with sleep-disordered breathing"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-042",
+   "request": "Create a brief patient-education scene that lists early warning signs that heart failure is getting worse.",
+   "coverage": "C",
+   "facts": [
+    {
+     "text": "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Patient assessment",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae"
+     ]
+    },
+    {
+     "text": "An early follow-up visit is recommended at 1–2 weeks after discharge to assess signs of congestion, drug tolerance, and start and/or uptitrate evidence-based therapy.",
+     "file": "467514d416aa_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "C"
+     ],
+     "headers": [
+      "Recommendations for management of patients after HF hospitalization"
+     ],
+     "entities": [
+      "1–2 weeks",
+      "An early follow-up visit",
+      "after discharge",
+      "congestion"
+     ]
+    },
+    {
+     "text": "Close monitoring of vital signs and grading severity of symptoms/signs",
+     "file": "900d79d2de5f_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Phase: Immediate",
+      "Procedures"
+     ],
+     "entities": [
+      "severity of symptoms/signs",
+      "vital signs"
+     ]
+    },
+    {
+     "text": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+     "file": "37e8f0f51dc8_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Advice TO DO"
+     ],
+     "entities": [
+      "arterial haemoglobin oxygen saturation",
+      "blood pressure",
+      "body temperature",
+      "conscious level",
+      "haemodynamic status",
+      "heart rate",
+      "respiratory rate",
+      "vital signs"
+     ]
+    },
+    {
+     "text": "Symptomatic or severe asymptomatic hypotension (SBP $<90$ mmHg)—may be made worse by diuretic-induced hypovolaemia.",
+     "file": "c82791f0532a_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "*Cautions/seek specialist advice:",
+      "Supplementary Table 7"
+     ],
+     "entities": [
+      "<90",
+      "SBP",
+      "diuretic",
+      "hypotension"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-020",
+   "request": "Create a brief patient-education scene that explains the difference between a single-chamber and a dual-chamber transvenous ICD.",
+   "coverage": "P",
+   "facts": [
+    {
+     "text": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+     "file": "4cc8b9b71808_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [],
+     "entities": [
+      "ICD",
+      "patients"
+     ]
+    },
+    {
+     "text": "In single- or dual-chamber ICD patients without bradycardia pacing indications, it is recommended to minimize ventricular pacing.",
+     "file": "3200bba8455a_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [],
+     "entities": [
+      "ICD",
+      "bradycardia",
+      "patients"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ruler-035",
+   "request": "Create a brief patient-education scene that gives practical tips for quitting smoking.",
+   "coverage": "P",
+   "facts": [
+    {
+     "text": "Determine readiness to change; if ready, choose a date for quitting",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Smoking cessation",
+      "Table 1 Core components and objectives common to all clinical conditions"
+     ],
+     "entities": [
+      "Determine readiness to change; if ready, choose a date for quitting"
+     ]
+    },
+    {
+     "text": "Smoking cessation is obligatory and passive smoking should be avoided.",
+     "file": "0b9004ab7668_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "CLASS_OF_RECOMMENDATION: I (A)",
+      "Established/agreed issue",
+      "Tobacco use"
+     ],
+     "entities": []
+    },
+    {
+     "text": "All smoking of tobacco should be stopped, as tobacco use is strongly and independently causal of ASCVD.",
+     "file": "d4b4c98b8e0c_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [
+      "Recommendations for smoking intervention strategies",
+      "Recommendations compilation"
+     ],
+     "entities": [
+      "ASCVD",
+      "smoking of tobacco",
+      "tobacco use"
+     ]
+    },
+    {
+     "text": "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Table 1 Core components and objectives common to all clinical conditions",
+      "Smoking cessation"
+     ],
+     "entities": [
+      "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange"
+     ]
+    },
+    {
+     "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+     "file": "35b293ce9ed8_annotation.nt",
+     "class": [
+      "I"
+     ],
+     "level": [
+      "A"
+     ],
+     "headers": [
+      "Lifestyle"
+     ],
+     "entities": [
+      "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+     ]
+    },
+    {
+     "text": "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year",
+     "file": "28d9c60c4057_annotation.nt",
+     "class": [],
+     "level": [],
+     "headers": [
+      "Table 1 Core components and objectives common to all clinical conditions",
+      "Smoking cessation"
+     ],
+     "entities": [
+      "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year"
+     ]
+    }
+   ]
+  }
+ ]
+}

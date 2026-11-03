@@ -1,0 +1,992 @@
+{
+ "request": "Create a brief patient-education scene that explains why flexibility and balance exercises help and gives two examples.",
+ "candidates": [
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Expected outcomes",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination"
+   ]
+  },
+  {
+   "text": "Low- to moderate-intensity aerobic exercise training (up to 150 min/week), and low- to moderate-intensity resistance exercise training (2 day per week, 8–12 exercises, 12–15 repetitions), and flexibility exercises are recommended in all individuals with CKD.",
+   "file": "8d87290d318a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in chronic kidney disease"
+   ],
+   "entities": [
+    "12–15 repetitions",
+    "2 day per week",
+    "8–12 exercises",
+    "Low- to moderate-intensity aerobic exercise training (up to 150 min/week), and low- to moderate-intensity resistance exercise training (2 day per week, 8–12 exercises, 12–15 repetitions), and flexibility exercises",
+    "all individuals with CKD",
+    "up to 150 min/week"
+   ]
+  },
+  {
+   "text": "In older adults at risk of falls, strength training exercises to improve balance and coordination on at least 2 days a week are recommended.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for exercise in ageing individuals"
+   ],
+   "entities": [
+    "at least 2 days a week",
+    "improve balance and coordination",
+    "older adults at risk of falls",
+    "strength training exercises"
+   ]
+  },
+  {
+   "text": "Monitor fluid balance regularly, particularly when a patient is taking diuretics, is old and/or frail. Consider an adjustment of diuretic therapy and fluid intake.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*HOW TO USE?",
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "diuretic",
+    "diuretics",
+    "fluid balance"
+   ]
+  },
+  {
+   "text": "Profile 7. Advanced NYHA class III symptoms Patient without current or recent episodes of unstable fluid balance, living comfortably with meaningful activity limited to mild physical exertion.",
+   "file": "ff0f6ef51136_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Profile"
+   ],
+   "entities": [
+    "Patient without current or recent episodes of unstable fluid balance",
+    "Profile 7. Advanced NYHA class III symptoms",
+    "mild physical exertion",
+    "unstable fluid balance"
+   ]
+  },
+  {
+   "text": "Fluid balance needs to be monitored. Diuretic doses along with fluid intake should be balanced in order to avoid dehydration, symptomatic hypotension, and prerenal renal failure.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Dehydration, hypotension, and prerenal renal failure"
+   ],
+   "entities": [
+    "Diuretic",
+    "Fluid balance",
+    "dehydration",
+    "hypotension",
+    "renal failure"
+   ]
+  },
+  {
+   "text": "Three BP measurements should be recorded, 1–2 min apart, and additional measurements if the first two readings differ by >10 mmHg. BP is recorded as the average of the last two BP readings.",
+   "file": "f37b08d0854e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 14",
+    "Considerations in blood pressure measurement"
+   ],
+   "entities": [
+    "Three BP measurements should be recorded, 1–2 min apart, and additional measurements if the first two readings differ by >10 mmHg. BP is recorded as the average of the last two BP readings."
+   ]
+  },
+  {
+   "text": "Tailored exercise recommendations: prescriptions for a given patient should: Depend on associated comorbidities and on the baseline physical capacity and existing activity limitation Include activities to develop endurance, strength, flexibility, coordination and balance Start at a very low level and gradually progress to a goal of moderate activity in order to prevent exercise-induced symptoms or complications Aerobic training workload should be prescribed initially at light to moderate intensity 35–70% of peak HR or 40–60 % of VO_{2peak} and raised, if tolerated, to a 70–85% of peak HR or 60–80% of VO_{2peak} Frequency of sessions should range between three and four per aiming for a duration of 30 min per session. Sometimes elderly patients require more than 12 weeks to reach optimal conditioning Resistance training is recommended on alternate days of aerobic sessions at light–moderate intensity (30–70% of 1-RM) and increased, if tolerated and in selected patients, to moderate–high intensity (70–85% 1-RM), with 8–12 repetitions involving 6–8 groups of skeletal muscles. This set may be repeated 2–3 times, if tolerated, for a total duration of 40–60 min Select exercise appropriate to musculoskeletal conditions in older patients Avoid exercises that require rapid postural variations for orthostatic hypotension risk",
+   "file": "annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "2–3 times",
+    "30 min per session",
+    "40–60 min",
+    "70–85% of peak HR or 60–80% of VO_{2peak}",
+    "Aerobic training workload",
+    "Resistance training",
+    "Tailored exercise recommendations",
+    "a goal of moderate activity",
+    "activities to develop endurance, strength, flexibility, coordination and balance",
+    "alternate days of aerobic sessions at light–moderate intensity (30–70% of 1-RM)",
+    "associated comorbidities",
+    "baseline physical capacity and existing activity limitation",
+    "between three and four per",
+    "elderly patients",
+    "exercise-induced symptoms or complications",
+    "exercises that require rapid postural variations",
+    "light to moderate intensity 35–70% of peak HR or 40–60 % of VO_{2peak}",
+    "moderate–high intensity (70–85% 1-RM), with 8–12 repetitions involving 6–8 groups of skeletal muscles",
+    "more than 12 weeks",
+    "musculoskeletal conditions",
+    "older patients",
+    "orthostatic hypotension risk"
+   ]
+  },
+  {
+   "text": "Two or more emergency department visits or hospitalizations for worsening HF in the prior 12 months",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "following risk factors",
+    "Chronic HF with high-risk features"
+   ],
+   "entities": [
+    "Two or more",
+    "emergency department visits or hospitalizations for worsening HF",
+    "prior 12 months"
+   ]
+  },
+  {
+   "text": "Strength exercises of 6/8 major muscle groups of upper and lower extremities Exercise starting at light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions, and gradually increased to moderate-high intensity (70–85% 1-RM) and to 12 repetitions, if tolerated and permitted by session time Two to three sets for a total duration of 40–60 min. 5–10 min allowed between different types of exercises and sets. Frequency of sessions 2/3 per week. Length of the programme at least 3–6 months Aerobic training: in many frail patients unable to perform a baseline or cardiopulmonary exercise stress test aerobic training load should be set at a HR slightly lower than that achieved in 6minWT Borg scale and the \\'speech rule\\' are useful to keep resistance or aerobic training intensity within safe limits, in patients able to report symptoms during exercise HR, BP and clinical monitoring are important for identifying symptoms, fatigue or discomfort Balance training includes static and dynamic balance components Expected outcome: improving physical capacity and quality of life; reducing disability, frailty level, institutionalization In extremely frail patients the intensity and frequency of exercises should be reduced. Some of these patients may only require bed mobilization and postural training or supported walking. Progression needs to be very slow",
+   "file": "df7255efec86_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "'speech rule'",
+    "2/3 per week",
+    "40–60 min",
+    "5–10 min",
+    "Balance training",
+    "Borg scale",
+    "HR, BP and clinical monitoring",
+    "Progression",
+    "Strength exercises",
+    "Two to three sets",
+    "a HR slightly lower than that achieved in 6minWT",
+    "aerobic training load",
+    "at least 3–6 months",
+    "bed mobilization and postural training or supported walking",
+    "extremely frail patients",
+    "frail patients",
+    "improving physical capacity and quality of life; reducing disability, frailty level, institutionalization",
+    "intensity and frequency of exercises",
+    "light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions",
+    "moderate-high intensity (70–85% 1-RM) and to 12 repetitions",
+    "symptoms, fatigue or discomfort",
+    "unable to perform a baseline or cardiopulmonary exercise stress test"
+   ]
+  },
+  {
+   "text": "• Flexibility • Stretching (trunk, upper and lower extremities) • Static stretches: hold for 10–30 s • 2–3 days/week (before or after aerobic or strength training)",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Flexibility",
+    "Exercise training"
+   ],
+   "entities": [
+    "10–30 s",
+    "2–3 days/week",
+    "Stretching (trunk, upper and lower extremities)",
+    "before or after aerobic or strength training"
+   ]
+  },
+  {
+   "text": "The combination of two RAS blockers is not recommended. 575,576",
+   "file": "541a92da3d50_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "Treatment of hypertension: drug treatment",
+    "SOURCE_DEFINED_OTHER: III"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Designing tailored type and intensity of intervention Testing the efficiency of tailored interventions in improving specific outcomes Balance training independent effect on long term independence and fall prevention is still uncertain",
+   "file": "df7255efec86_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Issues requiring further evidence",
+    "Exercise training"
+   ],
+   "entities": [
+    "Balance training",
+    "long term independence and fall prevention",
+    "specific outcomes",
+    "tailored interventions"
+   ]
+  },
+  {
+   "text": "A gain > 1.5 kg over 24 h or > 2.0 kg over two days suggests fluid retention",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Weight control management",
+    "CLASS_OF_RECOMMENDATION: I (C)",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "> 1.5 kg over 24 h or > 2.0 kg over two days",
+    "fluid retention"
+   ]
+  },
+  {
+   "text": "Avoidance of overweight is mandatory to balance the side-effects of immunosuppressants, to limit the classical cardiovascular risk factors Obesity increases the risk of cardiac allograft vasculopathy. It should be controlled by daily exercise and healthy diet",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Weight control management"
+   ],
+   "entities": [
+    "Avoidance of overweight",
+    "Obesity",
+    "cardiac allograft vasculopathy",
+    "classical cardiovascular risk factors",
+    "daily exercise",
+    "healthy diet",
+    "side-effects of immunosuppressants"
+   ]
+  },
+  {
+   "text": "• Screen range of motion, coordination, balance, strength, endurance, functional capacity (bed mobility, transfers, gait, daily living activities)",
+   "file": "39c53df33ae1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preliminary evaluation and precautions during EM in LVAD recipients"
+   ],
+   "entities": []
+  },
+  {
+   "text": "It is recommended that specific attention be paid to nutritional management of patients with advanced HF and unintentional weight loss or muscle wasting (cardiac cachexia). Measurement of nitrogen balance, caloric intake, and prealbumin may be useful in determining appropriate nutritional supplementation. Caloric supplementation is recommended. Anabolic steroids are not recommended for such patients. (Strength of Evidence = C)",
+   "file": "7069f9d2e613_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "6.4",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "Anabolic steroids",
+    "Caloric supplementation",
+    "Measurement of nitrogen balance, caloric intake, and prealbumin",
+    "nutritional management",
+    "patients with advanced HF and unintentional weight loss or muscle wasting (cardiac cachexia)",
+    "such patients"
+   ]
+  },
+  {
+   "text": "Profile 2. Progressive decline Patient with declining function despite i.v. inotropic support, may be manifest by worsening renal function, nutritional depletion, inability to restore volume balance. \\'Sliding on inotropes.\\' Also describes declining status in patients unable to tolerate inotropic therapy.",
+   "file": "ff0f6ef51136_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Profile"
+   ],
+   "entities": [
+    "Patient with declining function",
+    "Profile 2. Progressive decline",
+    "i.v. inotropic support",
+    "inability to restore volume balance",
+    "nutritional depletion",
+    "patients unable to tolerate inotropic therapy",
+    "worsening renal function"
+   ]
+  },
+  {
+   "text": "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women.",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthy food choices",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women."
+   ]
+  },
+  {
+   "text": "It is recommended that specific attention be paid to nutritional management of patients with advanced HF and unintentional weight loss or muscle wasting (cardiac cachexia). Measurement of nitrogen balance, caloric intake, and prealbumin may be useful in determining appropriate nutritional supplementation. Caloric supplementation is recommended. Anabolic steroids are not recommended for cachexic patients. (Strength of Evidence = C)",
+   "file": "7069f9d2e613_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "6.4",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "Anabolic steroids",
+    "Caloric supplementation",
+    "Measurement of nitrogen balance, caloric intake, and prealbumin",
+    "cachexic patients",
+    "nutritional management",
+    "patients with advanced HF and unintentional weight loss or muscle wasting (cardiac cachexia)"
+   ]
+  },
+  {
+   "text": "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Cardiac imaging (two-dimensional and Doppler echocardiography): in particular left ventricular systolic and diastolic function, right ventricular systolic function and heart valve diseases evaluation when appropriate"
+   ]
+  },
+  {
+   "text": "DCM and HNDC can be considered “familial” if two or more first- or second-degree relatives have DCM or HNDC, or a first-degree relative has autopsy proven DCM and sudden death at <50 years of age.",
+   "file": "c3d20a774d4f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Diagnostic criteria and definitions"
+   ],
+   "entities": [
+    "DCM and HNDC",
+    "a first-degree relative has autopsy proven DCM and sudden death at <50 years of age",
+    "two or more first- or second-degree relatives have DCM or HNDC"
+   ]
+  },
+  {
+   "text": "It is recommended that the ERP is diagnosed as J-point elevation of ≥1 mm in two adjacent inferior and/or lateral ECG leads.",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "Early repolarization syndrome",
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered."
+   ],
+   "entities": [
+    "ECG",
+    "ERP",
+    "≥1 "
+   ]
+  },
+  {
+   "text": "Hydrochlorothiazide Diuretic (thiazide) B Yes Yes; milk production can be reduced Oligohydramnios ● impaired foetal–placental perfusion, foetal and neonatal effects like icterus, disturbance of electrolyte balance, and thrombocytopenia",
+   "file": "69f98a314381_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Placental transfer",
+    "Legacy FDA pregnancy category",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0038: inherited source-table context (see source.title_or_context)",
+    "Therapeutic class",
+    "Pregnancy and reproductive evidence",
+    "Medication",
+    "Breastfeeding"
+   ],
+   "entities": [
+    "Hydrochlorothiazide"
+   ]
+  },
+  {
+   "text": "It is recommended that the ERP is diagnosed as J-point elevation of \\geq 1 mm in two adjacent inferior and/or lateral ECG leads. 1017,1018",
+   "file": "04a1361e39c2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ECG",
+    "ERP"
+   ]
+  },
+  {
+   "text": "• Neuromuscular • Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games • Use as a complement to aerobic, muscular strength/endurance training and stretching activities • 2–3 days/week",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Exercise training",
+    "Neuromuscular"
+   ],
+   "entities": [
+    "2–3 days/week",
+    "Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games",
+    "aerobic, muscular strength/endurance training and stretching activities"
+   ]
+  },
+  {
+   "text": "Andersen–Tawil syndrome should be considered in patients without SHD who present with at least two of the following: Prominent U waves with or without prolongation of the QT interval Bidirectional and/or polymorphic PVCs/VT Dysmorphic features Periodic paralysis KCNJ2 pathogenic loss of function mutation.",
+   "file": "004448635013_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Levelb",
+    "Diagnosis",
+    "Classa",
+    "Recommendations"
+   ],
+   "entities": [
+    "Andersen–Tawil syndrome",
+    "at least two of the following: Prominent U waves with or without prolongation of the QT interval Bidirectional and/or polymorphic PVCs/VT Dysmorphic features Periodic paralysis KCNJ2 pathogenic loss of function mutation",
+    "patients without SHD"
+   ]
+  },
+  {
+   "text": "Adoption of a two-step evaluation of PSRFs in CR: first, to ask the patient single-item questions about distinct PSRFs and then to apply standardized questionnaires (i.e. the HeartQoL for quality of life in patients with CHD across European language groups; or HADS for anxiety/depression)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Psychosocial management",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Adoption of a two-step evaluation of PSRFs in CR: first, to ask the patient single-item questions about distinct PSRFs and then to apply standardized questionnaires (i.e. the HeartQoL for quality of life in patients with CHD across European language groups; or HADS for anxiety/depression)"
+   ]
+  },
+  {
+   "text": "Tadalafil Phosphodiesterase type 5 inhibitor B Yes (in rats) Yes (in rats) Inadequate human data Animal data: • rats and mice (up to 11× MRHD): no teratogenicity, embryotoxicity, or foetotoxicity. One of two studies in rats showed decreased post-natal pup survival (at doses >10× MRHD)",
+   "file": "5b52e770c002_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Pregnancy and reproductive evidence",
+    "Therapeutic class",
+    "Placental transfer",
+    "Legacy FDA pregnancy category",
+    "Medication",
+    "Breastfeeding",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0045: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "10× ",
+    "11× ",
+    "Tadalafil",
+    "embryotoxicity",
+    "or foetotoxicity. One of two studies in rats showed decreased post-natal pup survival (at doses >10× MRHD)",
+    "rats and mice (up to 11× MRHD): no teratogenicity"
+   ]
+  },
+  {
+   "text": "It is recommended to initiate antihypertensive treatment with a two-drug combination in most patients, preferably as a single-pill combination. Exceptions are frail older patients and those with low-risk, grade 1 hypertension (particularly if SBP <150 mmHg). 560–565",
+   "file": "541a92da3d50_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I",
+    "Treatment of hypertension: drug treatment"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Two to three strength training sessions per week (add-on to aerobic training) involving large muscle groups at an intensity of 70–85% of 1-RM (8–10 repetitions) are recommended, ideally reaching at least 21 sets",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issue",
+    "Exercise training"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Wall thickness ≥14 mm in one or more LV myocardial segments not sufficiently explained solely by abnormal loading conditions. LVOTO ≥30 mmHg at rest or exercise, asymmetric hypertrophy, or increased LGE in a patchy mid-wall pattern in the most hypertrophied segment, further suggest the presence of HCM. It can be considered familial when two or more first- or second-degree relatives with HCM or a first-degree relative with autopsy proven HCM and sudden death at <50 years of age are detected.",
+   "file": "2a0be3b1cadb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Definition 895,896,923"
+   ],
+   "entities": [
+    "50 years",
+    "<50",
+    "HCM",
+    "LGE",
+    "exercise",
+    "sudden death",
+    "≥14 mm",
+    "≥30 mmHg"
+   ]
+  },
+  {
+   "text": "It is recommended, if BP remains uncontrolled with a two-drug combination, that treatment be increased to a three-drug combination, usually a RAS blocker with a CCB and a diuretic, preferably as a single-pill combination. 563,570,571",
+   "file": "541a92da3d50_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "SOURCE_DEFINED_OTHER: I",
+    "Treatment of hypertension: drug treatment"
+   ],
+   "entities": [
+    "CCB",
+    "RAS blocker",
+    "diuretic"
+   ]
+  },
+  {
+   "text": "Treatment of symptomatic patients with a failing single ventricle in a Fontan circulation, or in the case of a persistent right-to-left shunt, should always be carefully initiated, taking the labile balance of ventricular pre-load and systemic afterload into account.",
+   "file": "1d97f44c9d98_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Treatment of symptomatic patients with a failing single ventricle in a Fontan circulation, or in the case of a persistent right-to-left shunt",
+    "symptomatic patients with a failing single ventricle in a Fontan circulation"
+   ]
+  },
+  {
+   "text": "Frequent episodes of HF decompensation characterize patients requiring frequent emergency visits or hospitalizations for diuretics, ultrafiltration, or temporary i.v. vaso-active therapy. Frequent episodes may be considered as at least two emergency visits/admissions in the past 3 months or three in the past 6 months. 3 if at home, 4, 5, 6. Rarely for profile 7.",
+   "file": "ff0f6ef51136_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Modifiers for profiles",
+    "Possible profiles that can be modified: 3 if at home, 4, 5, 6. Rarely for profile 7."
+   ],
+   "entities": [
+    "Frequent episodes of HF decompensation",
+    "at least two emergency visits/admissions",
+    "diuretics",
+    "emergency visits",
+    "hospitalizations",
+    "past 3 months",
+    "past 6 months",
+    "patients requiring frequent emergency visits or hospitalizations for diuretics, ultrafiltration, or temporary i.v. vaso-active therapy",
+    "temporary i.v. vaso-active therapy",
+    "three",
+    "ultrafiltration"
+   ]
+  },
+  {
+   "text": "Patients presenting more than two weeks following a suspected transient ischaemic attack or non-disabling ischaemic stroke may be considered as being less urgent, and should be seen by a neurologist or stroke specialist for evaluation, ideally within one month of symptom onset Persons at risk of stroke and patients who have had a stroke should be assessed for vascular disease risk factors (including atrial fibrillation), lifestyle management issues (diet, sodium intake, exercise, weight, alcohol intake, smoking), as well as use of oral contraceptives or hormone replacement therapy Patients should be assessed for neurological impairments and functional limitations when appropriate (e.g. cognitive evaluation, screening for depression, screening of fitness to drive, need for potential rehabilitation therapy, and assistance with activities of daily living), especially for patients who are not admitted to hospital",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "B",
+    "C"
+   ],
+   "headers": [
+    "Patient assessment",
+    "Established/agreed issue"
+   ],
+   "entities": [
+    "Patients",
+    "Patients presenting more than two weeks following a suspected transient ischaemic attack or non-disabling ischaemic stroke",
+    "Persons at risk of stroke and patients who have had a stroke",
+    "lifestyle management issues (diet, sodium intake, exercise, weight, alcohol intake, smoking)",
+    "neurological impairments and functional limitations",
+    "neurologist or stroke specialist",
+    "oral contraceptives or hormone replacement therapy",
+    "patients who are not admitted to hospital",
+    "vascular disease risk factors (including atrial fibrillation)",
+    "within one month of symptom onset"
+   ]
+  },
+  {
+   "text": "Dynamic exercise should be considered more suitable than static exercise.",
+   "file": "b9322603fd07_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Dynamic exercise",
+    "static exercise"
+   ]
+  },
+  {
+   "text": "Counsel and educate to follow a Mediterranean-type diet, which is high in vegetables, fruit, whole grains, fish, nuts and olive oil and low in red meat Counsel and educate to have a total intake of free sugars that does not exceed 10% of total daily calorie (energy) intake Counsel and educate to have a daily sodium intake from all sources to no more than 2000 mg/day Counsel and educate patients to follow limit alcohol intake: for women, no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion; for men, no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A",
+    "B",
+    "C"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Diet/nutritional counselling"
+   ],
+   "entities": [
+    "Mediterranean-type diet",
+    "daily sodium intake from all sources",
+    "does not exceed 10% of total daily calorie (energy) intake",
+    "limit alcohol intake",
+    "men",
+    "no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion",
+    "no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+    "no more than 2000 mg/day",
+    "total intake of free sugars",
+    "women"
+   ]
+  },
+  {
+   "text": "Exercise is recommended for all patients who are able in order to improve exercise capacity and QOL, and reduce HF hospitalization. d",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Other recommendations for the management of chronic HF"
+   ],
+   "entities": [
+    "Exercise",
+    "HF",
+    "HF hospitalization",
+    "QOL",
+    "all patients who are able in order to improve exercise capacity and QOL",
+    "exercise",
+    "exercise capacity"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Expected outcomes",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination"
+   ]
+  },
+  {
+   "text": "Strength exercises of 6/8 major muscle groups of upper and lower extremities Exercise starting at light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions, and gradually increased to moderate-high intensity (70–85% 1-RM) and to 12 repetitions, if tolerated and permitted by session time Two to three sets for a total duration of 40–60 min. 5–10 min allowed between different types of exercises and sets. Frequency of sessions 2/3 per week. Length of the programme at least 3–6 months Aerobic training: in many frail patients unable to perform a baseline or cardiopulmonary exercise stress test aerobic training load should be set at a HR slightly lower than that achieved in 6minWT Borg scale and the \\'speech rule\\' are useful to keep resistance or aerobic training intensity within safe limits, in patients able to report symptoms during exercise HR, BP and clinical monitoring are important for identifying symptoms, fatigue or discomfort Balance training includes static and dynamic balance components Expected outcome: improving physical capacity and quality of life; reducing disability, frailty level, institutionalization In extremely frail patients the intensity and frequency of exercises should be reduced. Some of these patients may only require bed mobilization and postural training or supported walking. Progression needs to be very slow",
+   "file": "df7255efec86_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "'speech rule'",
+    "2/3 per week",
+    "40–60 min",
+    "5–10 min",
+    "Balance training",
+    "Borg scale",
+    "HR, BP and clinical monitoring",
+    "Progression",
+    "Strength exercises",
+    "Two to three sets",
+    "a HR slightly lower than that achieved in 6minWT",
+    "aerobic training load",
+    "at least 3–6 months",
+    "bed mobilization and postural training or supported walking",
+    "extremely frail patients",
+    "frail patients",
+    "improving physical capacity and quality of life; reducing disability, frailty level, institutionalization",
+    "intensity and frequency of exercises",
+    "light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions",
+    "moderate-high intensity (70–85% 1-RM) and to 12 repetitions",
+    "symptoms, fatigue or discomfort",
+    "unable to perform a baseline or cardiopulmonary exercise stress test"
+   ]
+  },
+  {
+   "text": "• Flexibility • Stretching (trunk, upper and lower extremities) • Static stretches: hold for 10–30 s • 2–3 days/week (before or after aerobic or strength training)",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Flexibility",
+    "Exercise training"
+   ],
+   "entities": [
+    "10–30 s",
+    "2–3 days/week",
+    "Stretching (trunk, upper and lower extremities)",
+    "before or after aerobic or strength training"
+   ]
+  },
+  {
+   "text": "• Neuromuscular • Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games • Use as a complement to aerobic, muscular strength/endurance training and stretching activities • 2–3 days/week",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Exercise training",
+    "Neuromuscular"
+   ],
+   "entities": [
+    "2–3 days/week",
+    "Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games",
+    "aerobic, muscular strength/endurance training and stretching activities"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Flexibility and Balance Exercise Benefits",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Stretching keeps your muscles loose, so you move easier. Balance activities train your body to stay steady and prevent falls. Try a gentle stretch and a simple Tai chi move.",
+    "visual_description": "Person doing a seated stretch, then another doing a slow Tai chi pose.",
+    "on_screen_text": "Stretch & Tai Chi"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Stretching keeps your muscles loose, so you move easier.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that flexibility is increased by training, implying muscles stay loose and movement improves."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Balance activities train your body to stay steady and prevent falls.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "Facts mention balance training but do not state it prevents falls."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Try a gentle stretch and a simple Tai chi move.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Tai chi is recommended as a balance activity and can be combined with stretching."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Stretch & Tai Chi",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Both stretch and Tai Chi are recommended in the guidelines."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Flexibility and Balance Exercise Benefits",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Stretching keeps your muscles loose, so you move easier. Balance activities help you stay steady. Try a gentle stretch and a simple Tai chi move.",
+    "visual_description": "Person doing a seated stretch, then another doing a slow Tai chi pose.",
+    "on_screen_text": "Stretch & Tai Chi"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Stretching keeps your muscles loose, so you move easier.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that flexibility is increased by training, implying muscles stay loose and movement improves."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Balance activities help you stay steady.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "None of the facts explicitly state that balance activities help you stay steady."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Try a gentle stretch and a simple Tai chi move.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Tai chi is recommended as a balance activity and can be combined with stretching."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Stretch & Tai Chi",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Both stretch and Tai Chi are recommended in the guidelines."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Flexibility and Balance Exercise Benefits",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Stretching keeps your muscles loose, so you move easier. Try a gentle stretch and a simple Tai chi move.",
+    "visual_description": "Person doing a seated stretch, then another doing a slow Tai chi pose.",
+    "on_screen_text": "Stretch & Tai Chi"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Stretching keeps your muscles loose, so you move easier.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that flexibility is increased by training, implying muscles stay loose and movement improves.",
+   "guideline_fact": "Increased aerobic fitness and enhanced flexibility, muscular endurance, strength and coordination",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Expected outcomes",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Balance activities help you stay steady.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "None of the facts explicitly state that balance activities help you stay steady.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Try a gentle stretch and a simple Tai chi move.",
+   "label": "SUPPORTED",
+   "fact": 5,
+   "reason": "Tai chi is recommended as a balance activity and can be combined with stretching.",
+   "guideline_fact": "• Neuromuscular • Balance and coordination activities • Tai chi • Yoga • Recreational activities using paddles/sport balls to challenge hand–eye coordination • Active-play video gaming and interactive computer games • Use as a complement to aerobic, muscular strength/endurance training and stretching activities • 2–3 days/week",
+   "grade": {
+    "class": [],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "2c86deb1dcf5_annotation.nt",
+    "headers": [
+     "Established/agreed issue",
+     "Exercise training",
+     "Neuromuscular"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Stretch & Tai Chi",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Both stretch and Tai Chi are recommended in the guidelines.",
+   "guideline_fact": "• Flexibility • Stretching (trunk, upper and lower extremities) • Static stretches: hold for 10–30 s • 2–3 days/week (before or after aerobic or strength training)",
+   "grade": {
+    "class": [],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "2c86deb1dcf5_annotation.nt",
+    "headers": [
+     "Established/agreed issue",
+     "Flexibility",
+     "Exercise training"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

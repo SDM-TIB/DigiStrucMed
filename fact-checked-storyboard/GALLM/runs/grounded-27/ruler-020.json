@@ -1,0 +1,942 @@
+{
+ "request": "Create a brief patient-education scene that explains the difference between a single-chamber and a dual-chamber transvenous ICD.",
+ "candidates": [
+  {
+   "text": "In-office routine follow-up of single- and dual-chamber pacemakers may be spaced by up to 24 months in patients on remote device management.805,806",
+   "file": "2ff6993170ba_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "In-office routine follow-up of single- and dual-chamber pacemakers",
+    "patients on remote device management",
+    "remote device management",
+    "single- and dual-chamber pacemakers",
+    "up to 24 months"
+   ]
+  },
+  {
+   "text": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "patients"
+   ]
+  },
+  {
+   "text": "In single- or dual-chamber ICD patients without bradycardia pacing indications, it is recommended to minimize ventricular pacing.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "bradycardia",
+    "patients"
+   ]
+  },
+  {
+   "text": "Dual-chamber cardiac pacing may be considered to reduce syncope recurrences in patients with the clinical features of adenosine-sensitive syncope.230",
+   "file": "622017daee52_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Dual-chamber cardiac pacing",
+    "adenosine-sensitive syncope",
+    "patients with the clinical features of adenosine-sensitive syncope",
+    "syncope recurrences"
+   ]
+  },
+  {
+   "text": "Dual-chamber cardiac pacing is indicated to reduce recurrent syncope in patients aged >40 years, with severe, unpredictable, recurrent syncope who have: spontaneous documented symptomatic asystolic pause(s) >3 s or asymptomatic pause(s) >6 s due to sinus arrest or AVB; or cardioinhibitory carotid sinus syndrome; or asystolic syncope during tilt testing.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for pacing for reflex syncope"
+   ],
+   "entities": [
+    "Dual-chamber cardiac pacing",
+    "asymptomatic pause(s) >6 s",
+    "asystolic syncope during tilt testing",
+    "cardioinhibitory carotid sinus syndrome",
+    "patients aged >40 years, with severe, unpredictable, recurrent syncope",
+    "recurrent syncope",
+    "spontaneous documented symptomatic asystolic pause(s) >3 s"
+   ]
+  },
+  {
+   "text": "Electrocardiogram (ECG). It is recommended that all patients with HF have an ECG performed to: • Assess cardiac rhythm and conduction (in some cases, using Holter monitoring or event monitors) • Assess electrical dyssynchrony (wide QRS or bundle branch block), especially when left ventricular ejection fraction (LVEF) <35% • Detect LV hypertrophy or other chamber enlargement • Detect evidence of MI or ischemia • Assess QTc interval, especially with drugs that prolong QT intervals (Strength of Evidence = B)",
+   "file": "1c66b243d1e2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "Section 4: Evaluation of Patients for Ventricular Dysfunction and Heart Failure"
+   ],
+   "entities": [
+    "ECG",
+    "all patients with HF"
+   ]
+  },
+  {
+   "text": "For S-ICDs, a dual detection zone configuration is recommended with activation of discrimination algorithm in the lower conditional shock zone",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "S-ICDs"
+   ]
+  },
+  {
+   "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "file": "dc5126a14b6e_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ATP",
+    "Subcutaneous defibrillator",
+    "cardiac resynchronization",
+    "pacing therapy for bradycardia",
+    "patients with an indication for an ICD",
+    "transvenous defibrillator"
+   ]
+  },
+  {
+   "text": "In patients with advanced single ventricle or systemic RV dysfunction with additional risk factors, c ICD implantation may be considered.",
+   "file": "fa2a1b4beedc_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Risk stratification and primary prevention of SCD",
+    "All CHD patients"
+   ],
+   "entities": [
+    "ICD implantation",
+    "additional risk factors",
+    "advanced single ventricle or systemic RV dysfunction",
+    "patients"
+   ]
+  },
+  {
+   "text": "Temporary transvenous pacing is recommended in cases of haemodynamic-compromising bradycardia refractory to intravenous chronotropic drugs.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Temporary pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Temporary transvenous pacing"
+   ]
+  },
+  {
+   "text": "Measure BP in both arms at the first visit to detect possible between-arm differences. Use the arm with the higher value as the reference.",
+   "file": "f37b08d0854e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 14",
+    "Considerations in blood pressure measurement"
+   ],
+   "entities": [
+    "Measure BP in both arms at the first visit to detect possible between-arm differences. Use the arm with the higher value as the reference."
+   ]
+  },
+  {
+   "text": "Temporary transvenous pacing should be considered as a bridge to permanent pacemaker implantation, when this procedure is not immediately available or possible due to concomitant infection.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Temporary pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Temporary transvenous pacing"
+   ]
+  },
+  {
+   "text": "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair When ventricular pacing is indicated, transvenous implantation of a coronary sinus lead or minimally invasive placement of an epicardial ventricular lead should be considered and preferred over a transvenous transvalvular approach.487",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair"
+   ],
+   "entities": [
+    "Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair",
+    "minimally invasive placement of an epicardial ventricular lead",
+    "transvenous implantation of a coronary sinus lead",
+    "transvenous transvalvular approach",
+    "ventricular pacing"
+   ]
+  },
+  {
+   "text": "Temporary transvenous pacing should be considered when immediate pacing is indicated and pacing indications are expected to be reversible, such as in the context of myocardial ischaemia, myocarditis, electrolyte disturbances, toxic exposure, or after cardiac surgery.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Temporary pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Temporary transvenous pacing"
+   ]
+  },
+  {
+   "text": "SADHART-CHF 80 CHF (EF ≤ 45%) NYHA II–IV clinical interview (DSM-IV) 469 Sertraline 50–200 mg/day vs. placebo 12 weeks 1. Mean ± SE change in HAM-D 2. Composite cardiovascular status 1. Between-group difference -0.4 (95% CI -1.7 to 0.92 , P = 0.89 ) 2. No significant differences between groups ( P = 0.78 )",
+   "file": "872b863a1415_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 3** Randomized trials on depression treatment in heart failure",
+    "Trial",
+    "Results",
+    "Mean follow-up",
+    "Agent",
+    "n",
+    "Inclusion criteria",
+    "Primary endpoints"
+   ],
+   "entities": [
+    "12 weeks",
+    "50–200 mg/day",
+    "Between-group\ndifference\n-0.4",
+    "CHF",
+    "Composite\ncardiovascular status",
+    "EF\n≤\n45%",
+    "HAM-D",
+    "NYHA II–IV",
+    "No significant\ndifferences between\ngroups",
+    "Sertraline",
+    "placebo"
+   ]
+  },
+  {
+   "text": "Temporary transvenous pacing is recommended in cases of haemodynamic-compromising bradyarrhythmia refractory to intravenous chronotropic drugs.",
+   "file": "8cd98e61d5e4_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations regarding temporary cardiac pacing"
+   ],
+   "entities": [
+    "Temporary transvenous pacing",
+    "haemodynamic-compromising bradyarrhythmia refractory to intravenous chronotropic drugs",
+    "intravenous chronotropic drugs"
+   ]
+  },
+  {
+   "text": "2. A transvenous ICD provides high economic value in the primary prevention of SCD particularly when the patient\\'s risk of death caused by ventricular arrhythmia is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status.",
+   "file": "58316d730051_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "Recommendations for ICDs and CRTs"
+   ],
+   "entities": [
+    "SCD",
+    "comorbidities",
+    "functional status",
+    "high economic value",
+    "nonarrhythmic death",
+    "transvenous ICD",
+    "ventricular arrhythmia"
+   ]
+  },
+  {
+   "text": "A transvenous ICD provides high value in the primary prevention of SCD particularly when the patient\\'s risk of death due to a VA is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 3",
+    "Value Statement: High Value"
+   ],
+   "entities": [
+    "burden of comorbidities",
+    "cardiac",
+    "functional status",
+    "high value",
+    "nonarrhythmic death",
+    "noncardiac",
+    "primary prevention of SCD",
+    "risk of death due to a VA",
+    "transvenous ICD"
+   ]
+  },
+  {
+   "text": "For long-term temporary transvenous pacing, an active fixation lead inserted through the skin and connected to an external pacemaker should be considered.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Temporary pacing"
+   ],
+   "entities": [
+    "For long-term temporary transvenous pacing, an active fixation lead inserted through the skin and connected to an external pacemaker"
+   ]
+  },
+  {
+   "text": "SBP <130 mmHg if tolerated b LDL-C <1.4 mmol/L (55 mg/dL) May additionally consider novel upcoming treatments: DAPT, dual pathway inhibition, colchicine, icosapent ethyl, etc.",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patients with established ASCVD",
+    "Intensified/additional prevention goals (STEP 2)"
+   ],
+   "entities": [
+    "DAPT",
+    "LDL-C <1.4 mmol/L (55 mg/dL)",
+    "SBP <130 mmHg if tolerated",
+    "colchicine",
+    "dual pathway inhibition",
+    "icosapent ethyl"
+   ]
+  },
+  {
+   "text": "A transvenous ICD provides intermediate value in the secondary prevention of SCD particularly when the patient\\'s risk of death due to a VA is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status (S7.1.1-6).",
+   "file": "c6fbb8bc00fb_annotation.nt",
+   "class": [],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Value Statement: Intermediate Value (LOE: B-R)"
+   ],
+   "entities": [
+    "burden of comorbidities",
+    "cardiac",
+    "functional status",
+    "intermediate value",
+    "nonarrhythmic death",
+    "noncardiac",
+    "risk of death due to a VA",
+    "secondary prevention of SCD",
+    "transvenous ICD"
+   ]
+  },
+  {
+   "text": "MRI may be considered in pacemaker patients with abandoned transvenous leads if no alternative imaging modality is available.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Miscellaneous"
+   ],
+   "entities": [
+    "MRI"
+   ]
+  },
+  {
+   "text": "*No difference in mortality between high and low dose groups, but 12% lower risk of death or hospitalization in high dose group vs. low dose group.",
+   "file": "697b02a2301d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "**Table 7.1.** ACE-inhibitor, Angiotensin Receptor Blocker, and Beta-Blocker Therapy in Heart Failure with Low Ejection Fraction",
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Isoproterenol or transvenous pacing to increase heart rate is recommended in patients with acquired LQT syndrome and recurrent TdP despite correction of precipitating conditions and magnesium.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "Isoproterenol",
+    "TdP",
+    "heart rate",
+    "magnesium",
+    "patients",
+    "to increase heart rate is recommended in patients with acquired LQT syndrome and recurrent TdP despite correction of precipitating conditions and magnesium",
+    "transvenous pacing"
+   ]
+  },
+  {
+   "text": "Transcutaneous pacing should be considered in cases of haemodynamic compromising bradycardia when temporary transvenous pacing is not possible or available.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Temporary pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Transcutaneous pacing"
+   ]
+  },
+  {
+   "text": "DIG-PEF 73 Digoxin vs. placebo HF with LVEF >45% , SR 3.1 y No difference in combined HF mortality or HF hospitalization (21% vs. 24%, P = 0.14 ) Digoxin – not reported",
+   "file": "3b360b5fe5b9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Mean follow-up",
+    "Intervention",
+    "Major inclusion criteria",
+    "Drug effect on symptoms",
+    "Trial",
+    "**Supplementary Table I2 Continued**",
+    "Primary endpoints"
+   ],
+   "entities": [
+    ", SR",
+    "3.1 y",
+    ">45%",
+    "Digoxin",
+    "Digoxin – not reported",
+    "HF with LVEF",
+    "No difference in combined HF mortality or HF hospitalization (21% vs. 24%,",
+    "P = 0.14"
+   ]
+  },
+  {
+   "text": "Treatment of symptomatic patients with a failing single ventricle in a Fontan circulation, or in the case of a persistent right-to-left shunt, should always be carefully initiated, taking the labile balance of ventricular pre-load and systemic afterload into account.",
+   "file": "1d97f44c9d98_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Treatment of symptomatic patients with a failing single ventricle in a Fontan circulation, or in the case of a persistent right-to-left shunt",
+    "symptomatic patients with a failing single ventricle in a Fontan circulation"
+   ]
+  },
+  {
+   "text": "SBP <130 mmHg if tolerated b LDL-C <1.4 mmol/L (55 mg/dL) and ≥50% reduction SGLT2 inhibitor or GLP-1RA if not already on May additionally consider novel upcoming treatments: DAPT, dual pathway inhibition, a colchicine, icosapent ethyl",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Intensified/additional prevention goals (STEP 2)",
+    "With established ASCVD and/or severe TOD"
+   ],
+   "entities": [
+    "DAPT",
+    "GLP-1RA",
+    "LDL-C <1.4 mmol/L (55 mg/dL) and ≥50% reduction",
+    "SBP <130 mmHg if tolerated",
+    "SGLT2 inhibitor",
+    "colchicine",
+    "dual pathway inhibition",
+    "icosapent ethyl"
+   ]
+  },
+  {
+   "text": "OCEAN 82 CHF (HFrEF and HFpEF) NYHA II–IV clinical interview (DSM-IV) + HAM-D ≥ 18 108 2:1 EPA/DHA vs. high EPA vs. placebo 12 weeks HAM-D and BDI-II No significant differences between groups (intention-to-treat analysis)",
+   "file": "872b863a1415_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Agent",
+    "Trial",
+    "Results",
+    "n",
+    "Inclusion criteria",
+    "Primary endpoints",
+    "**Table 3** Randomized trials on depression treatment in heart failure",
+    "Mean follow-up"
+   ],
+   "entities": [
+    "12 weeks",
+    "BDI-II",
+    "CHF",
+    "EPA/DHA",
+    "HAM-D",
+    "HAM-D\n≥\n18",
+    "HFpEF",
+    "HFrEF",
+    "NYHA II–IV",
+    "No significant differences\nbetween groups",
+    "high EPA",
+    "placebo"
+   ]
+  },
+  {
+   "text": "Leadless pacemakers should be considered as an alternative to transvenous pacemakers when no upper extremity venous access exists or when risk of device pocket infection is particularly high, such as previous infection and patients on haemodialysis.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Leadless pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Leadless pacemakers"
+   ]
+  },
+  {
+   "text": "CVP Continuous A central line is required for delivery of vasoactive medications; single-point-in-time CVP measurements may be unreliable measures of fluid status, but longitudinal CVP trends may provide information on trends in fluid status",
+   "file": "bb85a3450ccd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Monitoring Parameter",
+    "Comment/Rationale",
+    "Frequency"
+   ],
+   "entities": [
+    "CVP",
+    "Continuous",
+    "central line",
+    "fluid status",
+    "longitudinal CVP trends",
+    "single-point-in-time CVP measurements",
+    "vasoactive medications"
+   ]
+  },
+  {
+   "text": "Leadless pacemakers may be considered as an alternative to standard single lead ventricular pacing, taking into consideration life expectancy and using shared decision-making.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Leadless pacing",
+    "Recommendations"
+   ],
+   "entities": [
+    "Leadless pacemakers"
+   ]
+  },
+  {
+   "text": "I-PRESERVE 69 Irbesartan vs. placebo LVEF ≥45% , NYHA III – IV with corroborative evidence, or NYHA II with HF hospitalization in recent 6 months, age ≥60 y 4.1 y No difference in combined all-cause mortality or HF hospitalization (24% vs. 25%, P = 0.54 ) Irbesartan – no improvement in MLHFQ",
+   "file": "3b360b5fe5b9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Primary endpoints",
+    "Mean follow-up",
+    "Intervention",
+    "Major inclusion criteria",
+    "**Supplementary Table I2 Continued**",
+    "Drug effect on symptoms",
+    "Trial"
+   ],
+   "entities": [
+    ", NYHA III – IV with corroborative evidence, or NYHA II with HF hospitalization in recent 6 months, age",
+    "4.1 y",
+    "6 months",
+    "IV",
+    "Irbesartan",
+    "Irbesartan – no improvement in MLHFQ",
+    "LVEF",
+    "No difference in combined all-cause mortality or HF hospitalization (24% vs. 25%,",
+    "P = 0.54",
+    "≥45%",
+    "≥60"
+   ]
+  },
+  {
+   "text": "PEP-CHF 68 Perindopril vs. placebo LV wall motion index ≥1.4 (corresponding to LVEF ≥40% ), symptomatic HF treated with diuretic, diastolic dysfunction in echocardiography, age ≥70 y 2.1 y No difference in combined all-cause mortality or CV hospitalization (36% vs. 37%, P = 0.35 ) Perindopril – improvement in functional class and 6MWT",
+   "file": "3b360b5fe5b9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Intervention",
+    "Major inclusion criteria",
+    "**Supplementary Table I2 Continued**",
+    "Drug effect on symptoms",
+    "Trial",
+    "Mean follow-up",
+    "Primary endpoints"
+   ],
+   "entities": [
+    "(corresponding to LVEF",
+    "), symptomatic HF treated with diuretic, diastolic dysfunction in echocardiography, age",
+    "2.1 y",
+    "LV wall motion index",
+    "No difference in combined all-cause mortality or CV hospitalization (36% vs. 37%,",
+    "P = 0.35",
+    "Perindopril",
+    "Perindopril – improvement in functional class and 6MWT",
+    "≥1.4",
+    "≥40%",
+    "≥70"
+   ]
+  },
+  {
+   "text": "Counsel and educate to follow a Mediterranean-type diet, which is high in vegetables, fruit, whole grains, fish, nuts and olive oil and low in red meat Counsel and educate to have a total intake of free sugars that does not exceed 10% of total daily calorie (energy) intake Counsel and educate to have a daily sodium intake from all sources to no more than 2000 mg/day Counsel and educate patients to follow limit alcohol intake: for women, no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion; for men, no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A",
+    "B",
+    "C"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Diet/nutritional counselling"
+   ],
+   "entities": [
+    "Mediterranean-type diet",
+    "daily sodium intake from all sources",
+    "does not exceed 10% of total daily calorie (energy) intake",
+    "limit alcohol intake",
+    "men",
+    "no more than 10 drinks per week, with no more than two drinks per day most days and no more than three drinks on any single occasion",
+    "no more than 15 drinks per week, with no more than three drinks per day most days and no more than four drinks on any single occasion",
+    "no more than 2000 mg/day",
+    "total intake of free sugars",
+    "women"
+   ]
+  },
+  {
+   "text": "Adoption of a two-step evaluation of PSRFs in CR: first, to ask the patient single-item questions about distinct PSRFs and then to apply standardized questionnaires (i.e. the HeartQoL for quality of life in patients with CHD across European language groups; or HADS for anxiety/depression)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Psychosocial management",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Adoption of a two-step evaluation of PSRFs in CR: first, to ask the patient single-item questions about distinct PSRFs and then to apply standardized questionnaires (i.e. the HeartQoL for quality of life in patients with CHD across European language groups; or HADS for anxiety/depression)"
+   ]
+  },
+  {
+   "text": "MOOD-HF 81 CHF (EF < 45%) NYHA II–IV PHQ-9 + clinical interview (DSM-IV) 372 Escitalopram 10–20 mg/day vs. placebo 24 months 1. Time to all-cause death or hospitalization 2. Mean MADRS score Δ at 12 weeks 1. HR 0.99 (95% CI 0.76 – 1.27 , P = 0.92 ) 2. Between-group difference: -0.9 (95% CI -2.6 to 0.7 , P = 0.26 )",
+   "file": "872b863a1415_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Primary endpoints",
+    "**Table 3** Randomized trials on depression treatment in heart failure",
+    "Mean follow-up",
+    "Agent",
+    "Trial",
+    "Results",
+    "n",
+    "Inclusion criteria"
+   ],
+   "entities": [
+    "10–20 mg/day",
+    "24 months",
+    "Between-group\ndifference:\n-0.9",
+    "CHF",
+    "EF\n<\n45%",
+    "Escitalopram",
+    "HR 0.99",
+    "MADRS score\nΔ\nat 12 weeks",
+    "NYHA II–IV",
+    "PHQ-9",
+    "Time to all-cause death\nor hospitalization",
+    "placebo"
+   ]
+  },
+  {
+   "text": "7. In patients with HF and coronary artery disease (CAD) who are candidates for coronary revascularization, noninvasive stress imaging (stress echocardiography, single-photon emission CT [SPECT], CMR, or positron emission tomography [PET]) may be considered for detection of myocardial ischemia to help guide coronary revascularization.",
+   "file": "d5002b8091e1_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Evaluation With Cardiac Imaging (Continued)"
+   ],
+   "entities": [
+    "HF",
+    "coronary artery disease (CAD)",
+    "coronary revascularization",
+    "myocardial ischemia",
+    "noninvasive stress imaging (stress echocardiography, single-photon emission CT [SPECT], CMR, or positron emission tomography [PET])",
+    "patients with HF and coronary artery disease (CAD)"
+   ]
+  },
+  {
+   "text": "Bosentan 110 8–125 mg Twice a day Multicenter, double-blind, randomized placebo controlled n = 94 NYHA III-IV, EF <35% 20 weeks Treatment +30 days\\' Follow-up Yes Systolic PAP > 40 mm Hg No difference in systolic PAP change, cardiac index shift, or any of the other 22 echocardiographic measurements. More patients in the bosentan arm experienced adverse and serious adverse events",
+   "file": "2c7cfe64aed4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "PH is an Inclusion Criterion",
+    "Patients Population, Duration",
+    "Outcome",
+    "Treatment, Duration",
+    "Study Acronym and Characteristics",
+    "**Table 2.** Clinical Trials with PH Medications in HF Patients"
+   ],
+   "entities": [
+    "+30 days' Follow-up",
+    "20 weeks",
+    "30 days",
+    "8–125 mg",
+    "Bosentan\n110\n8–125 mg\nTwice a day",
+    "IV",
+    "More patients in the bosentan arm experienced adverse and serious adverse events",
+    "NYHA III-IV, EF <35%",
+    "No difference in systolic PAP change, cardiac index shift, or any of the other 22 echocardiographic measurements.",
+    "Treatment",
+    "Twice",
+    "n = 94"
+   ]
+  },
+  {
+   "text": "It is recommended to initiate antihypertensive treatment with a two-drug combination in most patients, preferably as a single-pill combination. Exceptions are frail older patients and those with low-risk, grade 1 hypertension (particularly if SBP <150 mmHg). 560–565",
+   "file": "541a92da3d50_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I",
+    "Treatment of hypertension: drug treatment"
+   ],
+   "entities": []
+  }
+ ],
+ "facts": [
+  {
+   "text": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "patients"
+   ]
+  },
+  {
+   "text": "In single- or dual-chamber ICD patients without bradycardia pacing indications, it is recommended to minimize ventricular pacing.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "bradycardia",
+    "patients"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Understanding Single‑ vs Dual‑Chamber ICDs",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "A single‑chamber ICD is recommended for patients without atrial or AV pacing needs; it has fewer complications. If atrial or AV pacing is needed, a dual‑chamber ICD may be used, but doctors limit ventricular pacing.",
+    "visual_description": "Side‑by‑side pictures of a single‑chamber and a dual‑chamber ICD",
+    "on_screen_text": "Single‑chamber vs Dual‑chamber ICD"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A single‑chamber ICD is recommended for patients without atrial or AV pacing needs; it has fewer complications.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 recommends single‑chamber ICD for patients without atrial or AV pacing needs and cites lower complication risk."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If atrial or AV pacing is needed, a dual‑chamber ICD may be used, but doctors limit ventricular pacing.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states dual‑chamber ICD may be used when atrial or AV pacing is needed."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Single‑chamber vs Dual‑chamber ICD",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The heading reflects the recommendation that single‑chamber ICDs are preferred over dual‑chamber ICDs in primary prevention patients without pacing indications."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Understanding Single‑ vs Dual‑Chamber ICDs",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "A single‑chamber ICD is recommended for patients without atrial or AV pacing needs; it has fewer complications. If atrial or AV pacing is needed, a dual‑chamber ICD may be used, but doctors limit ventricular pacing.",
+    "visual_description": "Side‑by‑side pictures of a single‑chamber and a dual‑chamber ICD",
+    "on_screen_text": "Single‑chamber vs Dual‑chamber ICD"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A single‑chamber ICD is recommended for patients without atrial or AV pacing needs; it has fewer complications.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 recommends single‑chamber ICD for patients without atrial or AV pacing needs and cites lower complication risk.",
+   "guideline_fact": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "4cc8b9b71808_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If atrial or AV pacing is needed, a dual‑chamber ICD may be used, but doctors limit ventricular pacing.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states dual‑chamber ICD may be used when atrial or AV pacing is needed.",
+   "guideline_fact": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "4cc8b9b71808_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Single‑chamber vs Dual‑chamber ICD",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The heading reflects the recommendation that single‑chamber ICDs are preferred over dual‑chamber ICDs in primary prevention patients without pacing indications.",
+   "guideline_fact": "Single-chamber ICD is recommended over dual-chamber ICD in primary prevention patients without current or expected indication for atrial or AV sequential pacing due to a lower risk of device-related complications.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "4cc8b9b71808_annotation.nt",
+    "headers": []
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

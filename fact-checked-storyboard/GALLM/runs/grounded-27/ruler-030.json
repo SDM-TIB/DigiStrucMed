@@ -1,0 +1,933 @@
+{
+ "request": "Create a brief patient-education scene that explains simple strength training for people with heart failure or an ICD.",
+ "candidates": [
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Exercise training"
+   ],
+   "entities": [
+    "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+   ]
+  },
+  {
+   "text": "In adults with CHD with biventricular physiology and a left systemic ventricle presenting with symptomatic heart failure (NYHA II/III) and EF ≤35% despite ≥3 months of OMT, ICD implantation is indicated.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in congenital heart disease"
+   ],
+   "entities": [
+    "EF ≤35%",
+    "ICD implantation",
+    "adults with CHD with biventricular physiology and a left systemic ventricle",
+    "symptomatic heart failure (NYHA II/III)",
+    "≥3 months of OMT"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "10. In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors, ICD implantation may be considered if meaningful survival of greater than 1 year is expected (S10.8-14–S10.8-16,S10.8-20).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "1 year",
+    "ICD implantation",
+    "In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors",
+    "meaningful survival"
+   ]
+  },
+  {
+   "text": "In older adults at risk of falls, strength training exercises to improve balance and coordination on at least 2 days a week are recommended.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for exercise in ageing individuals"
+   ],
+   "entities": [
+    "at least 2 days a week",
+    "improve balance and coordination",
+    "older adults at risk of falls",
+    "strength training exercises"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+   "file": "35b293ce9ed8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Lifestyle"
+   ],
+   "entities": [
+    "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "• Flexibility • Stretching (trunk, upper and lower extremities) • Static stretches: hold for 10–30 s • 2–3 days/week (before or after aerobic or strength training)",
+   "file": "2c86deb1dcf5_annotation.nt",
+   "class": [],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Established/agreed issue",
+    "Flexibility",
+    "Exercise training"
+   ],
+   "entities": [
+    "10–30 s",
+    "2–3 days/week",
+    "Stretching (trunk, upper and lower extremities)",
+    "before or after aerobic or strength training"
+   ]
+  },
+  {
+   "text": "Two to three strength training sessions per week (add-on to aerobic training) involving large muscle groups at an intensity of 70–85% of 1-RM (8–10 repetitions) are recommended, ideally reaching at least 21 sets",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issue",
+    "Exercise training"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Among women with CVD who were habitually engaged in strength training or power sport disciplines before pregnancy, discussing the option with the medical team before continuing and avoiding the Valsalva manoeuvre is recommended.",
+   "file": "74434f5d72ff_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in pregnancy"
+   ],
+   "entities": [
+    "avoiding the Valsalva manoeuvre",
+    "discussing the option with the medical team before continuing",
+    "women with CVD who were habitually engaged in strength training or power sport disciplines before pregnancy"
+   ]
+  },
+  {
+   "text": "Unsupervised exercise training is recommended when supervised exercise training is not feasible or available",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Exercise training",
+    "CLASS_OF_RECOMMENDATION: I (C)"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Then the training frequency and duration per session are increased",
+   "file": "888f19f1175f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "High intensity",
+    "Interval endurance training",
+    "Progression of training"
+   ],
+   "entities": [
+    "training frequency and duration per session"
+   ]
+  },
+  {
+   "text": "• Non-supervised exercise training is recommended when supervised exercise training is not feasible or available.",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "LEVEL_OF_EVIDENCE: C",
+    "Recommendations",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training"
+   ]
+  },
+  {
+   "text": "The training session should last 15 up to 30 min",
+   "file": "888f19f1175f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "High intensity",
+    "Interval endurance training",
+    "Progression of training"
+   ],
+   "entities": [
+    "15 up to 30 min",
+    "The training session"
+   ]
+  },
+  {
+   "text": "• Before hospital discharge, respiratory training, active and systematic mobilization of the upper and lower limbs are advisable • After discharge, aerobic exercise may be started in the second or third week after transplant but should be discontinued during corticosteroid bolus therapy for rejection. Resistance exercise should be added after 6–8 weeks • Regimen: at least 30–40 min/day of combined resistance exercise (muscle strength) and aerobic training (walking) at moderate",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Exercise training"
+   ],
+   "entities": [
+    "Before hospital discharge",
+    "Resistance exercise",
+    "active and systematic mobilization of the upper and lower limbs",
+    "aerobic exercise",
+    "after 6–8 weeks",
+    "at least 30–40 min/day",
+    "combined resistance exercise (muscle strength) and aerobic training (walking)",
+    "corticosteroid bolus therapy",
+    "rejection",
+    "respiratory training",
+    "the second or third week after transplant"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Type: aerobic training (walking, jogging, cycling, swimming, rowing, stair climbing, elliptical trainers, and aerobic dancing), resistance/strength training, flexibility training, balance training, and inspiratory muscle training. Coordination training and other types (non-conventional) may be considered"
+   ]
+  },
+  {
+   "text": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Exercise training"
+   ],
+   "entities": [
+    "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training"
+   ]
+  },
+  {
+   "text": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+   "file": "35b293ce9ed8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Lifestyle"
+   ],
+   "entities": [
+    "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "In older adults at risk of falls, strength training exercises to improve balance and coordination on at least 2 days a week are recommended.",
+   "file": "0eed846cc191_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for exercise in ageing individuals"
+   ],
+   "entities": [
+    "at least 2 days a week",
+    "improve balance and coordination",
+    "older adults at risk of falls",
+    "strength training exercises"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Simple Strength Training for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Strength training improves muscle and heart health. Do it twice weekly. Begin with light weight (<30% of your max) and 5‑10 easy reps. Rest between sets and follow your doctor’s plan.",
+    "visual_description": "Patient lifting light dumbbells at home, smiling, with doctor’s note.",
+    "on_screen_text": "Strength training: 2×/week"
+   }
+  ],
+  "not_covered": [
+   "ICD-specific safety considerations"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Strength training improves muscle and heart health.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states strength training increases muscle strength and aerobic capacity, supporting the claim."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Do it twice weekly.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The guideline states resistance/strength training should be performed 2 times per week."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Begin with light weight (<30% of your max) and 5‑10 easy reps.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Matches the initial instruction phase (<30% 1‑RM, 5–10 reps) described in fact 3."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Rest between sets and follow your doctor’s plan.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 recommends rest between sets during resistance training."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Strength training: 2×/week",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states resistance/strength training should be performed 2 times per week."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Simple Strength Training for Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Strength training improves muscle and heart health. Do it twice weekly. Begin with light weight (<30% of your max) and 5‑10 easy reps. Rest between sets and follow your doctor’s plan.",
+    "visual_description": "Patient lifting light dumbbells at home, smiling, with doctor’s note.",
+    "on_screen_text": "Strength training: 2×/week"
+   }
+  ],
+  "not_covered": [
+   "ICD-specific safety considerations"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Strength training improves muscle and heart health.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states strength training increases muscle strength and aerobic capacity, supporting the claim.",
+   "guideline_fact": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "6c8b1fef6ed6_annotation.nt",
+    "headers": [
+     "CLASS_OF_RECOMMENDATION: I (A)",
+     "Established/agreed issues"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Do it twice weekly.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "The guideline states resistance/strength training should be performed 2 times per week.",
+   "guideline_fact": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Table 1 Core components and objectives common to all clinical conditions",
+     "Exercise training"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Begin with light weight (<30% of your max) and 5‑10 easy reps.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Matches the initial instruction phase (<30% 1‑RM, 5–10 reps) described in fact 3.",
+   "guideline_fact": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "6c8b1fef6ed6_annotation.nt",
+    "headers": [
+     "CLASS_OF_RECOMMENDATION: I (A)",
+     "Established/agreed issues"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Rest between sets and follow your doctor’s plan.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 recommends rest between sets during resistance training.",
+   "guideline_fact": "Resistance/strength training is complimentary to aerobic ET, 2–3 times/week to increase muscle strength and aerobic capacity. 57 Added to interval training, it increases VO_{2peak} , while combined with endurance continuous training, it increases VO_{2peak} , muscle strength and HRQoL. 58,59 Training intensity, frequency and duration should be tailored to each patient\\'s clinical status, stress tolerance and comorbidities. Training intensity should be determined on the basis of the one repetition maximum (1-RM). An initial instruction phase ( <30\\% 1-RM, RPE 11–12, 5–10 repetitions) is followed by the resistance/endurance phase with high number of repetitions (12–25) and a low intensity (30–40% 1-RM, RPE 12) so as to reach the strength training/muscle build-up phase by increasing weights progressively up to 40–60% of the 1-RM (RPE >15 , 8–15 repetitions). Resistance training should be performed as interval training (i.e. with appropriate rest between sets), and single muscles should be trained step by step",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "6c8b1fef6ed6_annotation.nt",
+    "headers": [
+     "CLASS_OF_RECOMMENDATION: I (A)",
+     "Established/agreed issues"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Strength training: 2×/week",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states resistance/strength training should be performed 2 times per week.",
+   "guideline_fact": "Frequency: most days (at least 3 days/week and preferably 6–7 days/week) for aerobic training; 2 times/week for resistance/strength training",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Table 1 Core components and objectives common to all clinical conditions",
+     "Exercise training"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "ICD-specific safety considerations"
+ ],
+ "coverage": "C"
+}

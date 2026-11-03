@@ -1,0 +1,969 @@
+{
+ "request": "Create a brief patient-education scene that explains the driving rules for private drivers after getting an ICD.",
+ "candidates": [
+  {
+   "text": "Even without an ICD, talk with your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "Place patients in private rooms whenever possible or maintain privacy with curtains and signage",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "Preparedness for withdrawal of life-sustaining measures 312"
+   ],
+   "entities": []
+  },
+  {
+   "text": "This depends on your heart problem. Talk to your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "Offer family members a private, quiet, comfortable space, separate from the patient\\'s room, and immediate grief support and referral to community bereavement support services",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preparedness for withdrawal of life-sustaining measures 312",
+    "Patient-Focused Supportive Care Recommendations"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Provide written and oral information about the importance and expectations of implanted devices, and possible ways of follow-up (remote monitoring). Discuss expectations and any possible impact on driving. Clearly identify situations where the device might be deactivated or explanted. Involve patient and caregiver in decision making.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Implanted devices",
+    "Medical treatment",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "decision making",
+    "driving",
+    "expectations",
+    "follow-up",
+    "implanted devices",
+    "situations where the device might be deactivated or explanted",
+    "written and oral information"
+   ]
+  },
+  {
+   "text": "• Chronic dynamic and resistance exercises prevents the side-effects of immunosuppressive therapy • Exercise intensity relies more on perceived exertion than on a specific HR (due to denervation of the heart). The respiratory frequency is also important to control intensity, by using the \\'speech rule\\' (see Table 1)",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Physical activity counselling"
+   ],
+   "entities": [
+    "'speech rule'",
+    "Chronic dynamic and resistance exercises",
+    "Exercise intensity",
+    "perceived exertion",
+    "respiratory frequency",
+    "side-effects of immunosuppressive therapy"
+   ]
+  },
+  {
+   "text": "Invasive coronary angiography or CTCA to rule out significant CAD in patients with cardiac dysfunction.",
+   "file": "570cef550975_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 26 Initial diagnostic assessment in patients with suspected cardiomyopathy"
+   ],
+   "entities": [
+    "Invasive coronary angiography or CTCA",
+    "patients with cardiac dysfunction",
+    "significant CAD"
+   ]
+  },
+  {
+   "text": "Inform and discuss practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation). Provide practical advice related to travel with medication/devices (keep medicines in hand luggage, have a list with medication, device name/card and treating centres). Inform about local/national/international regulation related to driving.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Education topic: Travel, leisure, driving",
+    "Self-care aspects"
+   ],
+   "entities": [
+    "amiodarone",
+    "dehydration",
+    "local/national/international regulation related to driving",
+    "medication/devices",
+    "practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation)"
+   ]
+  },
+  {
+   "text": "CTCA should be considered in patients with a low to intermediate pre-test probability of CAD or those with equivocal non-invasive stress tests in order to rule out coronary artery stenosis.",
+   "file": "5a3d8e762b9d_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "2021",
+    "Recommendations for diagnosis of HF"
+   ],
+   "entities": [
+    "CTCA",
+    "coronary artery stenosis",
+    "patients with a low to intermediate pre-test probability of CAD or those with equivocal non-invasive stress tests"
+   ]
+  },
+  {
+   "text": "Cardiac CT may be considered in patients with HF and low to intermediate pre-test probability of CAD or those with equivocal non-invasive stress tests in order to rule out coronary artery stenosis.",
+   "file": "5a3d8e762b9d_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "2016",
+    "Recommendations for diagnosis of HF"
+   ],
+   "entities": [
+    "Cardiac CT",
+    "coronary artery stenosis",
+    "patients with HF and low to intermediate pre-test probability of CAD or those with equivocal non-invasive stress tests"
+   ]
+  },
+  {
+   "text": "Plasma concentrations of natriuretic peptides are recommended as initial diagnostic tests in patients with symptoms suggestive of HF to rule out the diagnosis. Elevated concentrations support a diagnosis of HF, are useful for prognostication, and may guide further cardiac investigation.",
+   "file": "dffc8193c6f0_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "2021 ESC",
+    "Recommendations",
+    "Evidence"
+   ],
+   "entities": [
+    "Elevated concentrations",
+    "Plasma concentrations of natriuretic peptides",
+    "diagnosis of HF",
+    "further cardiac investigation",
+    "patients with symptoms suggestive of HF",
+    "prognostication"
+   ]
+  },
+  {
+   "text": "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Intensity: moderate (i.e. 45–59% of peak oxygen consumption, 50–70% of W_{peak} (above the first ventilatory threshold), 55–69% of peak heart rate, 40–59% of heart rate reserve (to be calculated on top of rest HR), 4–6 METs, or 12/20–14/20 of the Borg scale) or moderate-to-high intensity for endurance continuous training. Higher intensities of exercise bouts for endurance high intensity interval training according to the selected protocol. The ‘speech rule’ (i.e. the respiratory rate should allow conversation) could be considered as an additional tool to control intensity when HR cannot be used. 30–70% of the 1-RM for the upper body and 40–80% of 1-RM for lower body exercises, with 12–15 repetitions in one set for resistance/strength training"
+   ]
+  },
+  {
+   "text": "Strength exercises of 6/8 major muscle groups of upper and lower extremities Exercise starting at light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions, and gradually increased to moderate-high intensity (70–85% 1-RM) and to 12 repetitions, if tolerated and permitted by session time Two to three sets for a total duration of 40–60 min. 5–10 min allowed between different types of exercises and sets. Frequency of sessions 2/3 per week. Length of the programme at least 3–6 months Aerobic training: in many frail patients unable to perform a baseline or cardiopulmonary exercise stress test aerobic training load should be set at a HR slightly lower than that achieved in 6minWT Borg scale and the \\'speech rule\\' are useful to keep resistance or aerobic training intensity within safe limits, in patients able to report symptoms during exercise HR, BP and clinical monitoring are important for identifying symptoms, fatigue or discomfort Balance training includes static and dynamic balance components Expected outcome: improving physical capacity and quality of life; reducing disability, frailty level, institutionalization In extremely frail patients the intensity and frequency of exercises should be reduced. Some of these patients may only require bed mobilization and postural training or supported walking. Progression needs to be very slow",
+   "file": "df7255efec86_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Exercise training",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "'speech rule'",
+    "2/3 per week",
+    "40–60 min",
+    "5–10 min",
+    "Balance training",
+    "Borg scale",
+    "HR, BP and clinical monitoring",
+    "Progression",
+    "Strength exercises",
+    "Two to three sets",
+    "a HR slightly lower than that achieved in 6minWT",
+    "aerobic training load",
+    "at least 3–6 months",
+    "bed mobilization and postural training or supported walking",
+    "extremely frail patients",
+    "frail patients",
+    "improving physical capacity and quality of life; reducing disability, frailty level, institutionalization",
+    "intensity and frequency of exercises",
+    "light-moderate intensity (30–70% of 1-RM) with 6–8 repetitions",
+    "moderate-high intensity (70–85% 1-RM) and to 12 repetitions",
+    "symptoms, fatigue or discomfort",
+    "unable to perform a baseline or cardiopulmonary exercise stress test"
+   ]
+  },
+  {
+   "text": "In patients with CAD eligible for ICD implantation, catheter ablation may be considered just before (or immediately after) ICD implantation to decrease subsequent VT burden and ICD shocks.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Coronary artery disease"
+   ],
+   "entities": [
+    "CAD",
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "catheter ablation",
+    "patients with CAD eligible for ICD implantation"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in SQTS patients with arrhythmic syncope.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Short QT syndrome",
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD."
+   ],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "SQTS",
+    "patients with arrhythmic syncope"
+   ]
+  },
+  {
+   "text": "ICD implantation is not recommended in asymptomatic patients with an isolated ERP.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [],
+   "headers": [
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD."
+   ],
+   "entities": [
+    "ERP",
+    "ICD",
+    "ICD implantation",
+    "patients with an isolated ERP"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in idiopathic VF. 352,917–919",
+   "file": "f63c3fe9847c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VF"
+   ]
+  },
+  {
+   "text": "Quinidine may be considered in (a) SQTS patients who qualify for an ICD but present a contraindication to the ICD or refuse it, and (b) asymptomatic SQTS patients and a family history of SCD.",
+   "file": "7a23ac47fb2d_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "ICD implantation or quinidine may be considered in asymptomatic individuals who demonstrate a high-risk ERP i in the presence of a family history of unexplained juvenile SD.",
+    "Short QT syndrome"
+   ],
+   "entities": [
+    "ICD",
+    "Quinidine",
+    "SCD",
+    "SQTS",
+    "patients",
+    "patients who qualify for an ICD but present a contraindication to the ICD or refuse it"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in patients with a diagnosis of ERS who have survived a CA. 1017",
+   "file": "04a1361e39c2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "ERS",
+    "ICD",
+    "ICD implantation",
+    "patients"
+   ]
+  },
+  {
+   "text": "Catheter ablation is recommended for ICD patients with recurrent SVT resulting in inappropriate ICD therapies.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "Catheter ablation",
+    "ICD",
+    "patients"
+   ]
+  },
+  {
+   "text": "You will not get a shock from an ICD if you don\\'t get an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I get shocked by the ICD? What will that feel like?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "You",
+    "a shock from an ICD"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in ARVC patients with a haemodynamically tolerated SMVT. 692",
+   "file": "dd8a47678361_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "SMVT",
+    "patients"
+   ]
+  },
+  {
+   "text": "Quinidine should be considered in patients with BrS who qualify for an ICD but have a contraindication, decline, or have recurrent ICD shocks. 922,1006,1007",
+   "file": "a164b73f7014_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "BrS",
+    "ICD",
+    "ICD shocks",
+    "Quinidine",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in ARVC patients with haemodynamically not-tolerated VT or VF.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in HCM patients with haemodynamically not-tolerated VT or VF.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "HCM",
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with HF and an ICD, amiodarone may be considered to reduce the frequency of recurrent symptomatic arrhythmias causing ICD shocks. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.38 (previous 7.40)",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "amiodarone",
+    "patients with HF and an ICD",
+    "recurrent symptomatic arrhythmias causing ICD shocks"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with definite ARVC and an arrhythmic syncope.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "ARVC"
+   ],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "patients with definite ARVC and an arrhythmic syncope"
+   ]
+  },
+  {
+   "text": "If ICD implantation is indicated during pregnancy, implantation is recommended with optimal radiation protection. 1087,1107",
+   "file": "27b327bb9b90_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation"
+   ]
+  },
+  {
+   "text": "In patients with myotonic dystrophy undergoing ablation for BBR-VT, pacemaker/ICD implantation is recommended.",
+   "file": "8159d2507c7a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "pacemaker",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with haemodynamically tolerated SMVT occurring in the chronic phase of myocarditis, ICD implantation should be considered.",
+   "file": "dc777386b021_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "SMVT",
+    "myocarditis",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation or quinidine may be considered in individuals with ERP and arrhythmic syncope and additional risk features. k",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+    "Early repolarization syndrome"
+   ],
+   "entities": [
+    "ERP",
+    "ICD",
+    "ICD implantation",
+    "quinidine"
+   ]
+  },
+  {
+   "text": "ICD implantation is recommended in patients with documented VF or haemodynamically not-tolerated VT in the absence of reversible causes.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "VF",
+    "VT",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with type 1 Brugada pattern and an arrhythmic syncope. 990,992,996",
+   "file": "a164b73f7014_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "patients",
+    "syncope"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in symptomatic d patients with definite ARVC, moderate right or left ventricular dysfunction, and",
+   "file": "dd8a47678361_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "ARVC",
+    "ICD",
+    "ICD implantation",
+    "patients"
+   ]
+  },
+  {
+   "text": "1. At the time of ICD implantation or replacement, and during advance care planning, patients should be informed that their ICD shock therapy can be deactivated at any time if it is consistent with their goals and preferences.",
+   "file": "d837c50c99d6_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "ICD implantation or replacement",
+    "ICD shock therapy",
+    "advance care planning",
+    "deactivated at any time",
+    "goals and preferences",
+    "patients",
+    "time of ICD implantation or replacement"
+   ]
+  },
+  {
+   "text": "5. In patients with incessant VT or VF, an ICD should not be implanted until sufficient control of the VA is achieved to prevent repeated ICD shocks (S7.1.3-14).",
+   "file": "a601e0caa3eb_annotation.nt",
+   "class": [
+    "III%3A%20Harm"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD",
+    "ICD shocks",
+    "In patients with incessant VT or VF",
+    "VA"
+   ]
+  },
+  {
+   "text": "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered.",
+   "file": "0d6faffa5857_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "In patients with HCM and recurrent, symptomatic VA, or recurrent symptomatic ICD therapy, AAD treatment should be considered."
+   ],
+   "entities": [
+    "HCM",
+    "ICD",
+    "ICD therapy",
+    "VA",
+    "patients with HCM and recurrent"
+   ]
+  },
+  {
+   "text": "In patients with HCM presenting with haemodynamically tolerated SMVT, ICD implantation should be considered.",
+   "file": "1f5e862d91a1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "HCM",
+    "In patients with CAD and haemodynamically well-tolerated SMVT and LVEF \\geq 40\\% , catheter ablation in experienced centres should be considered as an alternative to ICD therapy, provided that established endpoints have been reached. b"
+   ],
+   "entities": [
+    "HCM",
+    "ICD",
+    "ICD implantation",
+    "SMVT",
+    "patients with HCM presenting with haemodynamically tolerated SMVT"
+   ]
+  },
+  {
+   "text": "ICD implantation in addition to beta-blockers is recommended in LQTS patients with CA. 952,953,962,963",
+   "file": "5b666801b728_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "ICD",
+    "ICD implantation",
+    "LQTS",
+    "beta-blockers",
+    "patients"
+   ]
+  },
+  {
+   "text": "2. In patients with ICDs on RM, it is recommended that the ICD be programmed to alert the clinic for all ventricular shock therapies.",
+   "file": "646ac322c6d1_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for programming for clinical indications with different types of CIEDs"
+   ],
+   "entities": [
+    "alert the clinic",
+    "all ventricular shock therapies",
+    "patients with ICDs on RM"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Even without an ICD, talk with your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "This depends on your heart problem. Talk to your doctor about driving limitations and other activities.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Are there things I cannot do?"
+   ],
+   "entities": [
+    "driving limitations and other activities",
+    "your doctor"
+   ]
+  },
+  {
+   "text": "Provide written and oral information about the importance and expectations of implanted devices, and possible ways of follow-up (remote monitoring). Discuss expectations and any possible impact on driving. Clearly identify situations where the device might be deactivated or explanted. Involve patient and caregiver in decision making.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Implanted devices",
+    "Medical treatment",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "decision making",
+    "driving",
+    "expectations",
+    "follow-up",
+    "implanted devices",
+    "situations where the device might be deactivated or explanted",
+    "written and oral information"
+   ]
+  },
+  {
+   "text": "Inform and discuss practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation). Provide practical advice related to travel with medication/devices (keep medicines in hand luggage, have a list with medication, device name/card and treating centres). Inform about local/national/international regulation related to driving.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Education topic: Travel, leisure, driving",
+    "Self-care aspects"
+   ],
+   "entities": [
+    "amiodarone",
+    "dehydration",
+    "local/national/international regulation related to driving",
+    "medication/devices",
+    "practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation)"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Driving After ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Talk with your doctor about when you can drive after your ICD. Your heart condition decides the safe time. Follow any local driving rules they give you.",
+    "visual_description": "Patient talking with doctor, holding ICD pamphlet, car keys nearby.",
+    "on_screen_text": "Ask doctor about driving"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Talk with your doctor about when you can drive after your ICD.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 advises discussing driving with doctor after ICD."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your heart condition decides the safe time.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "None of the facts mention a \"safe time\" determined by the heart condition."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Follow any local driving rules they give you.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence aligns with the guidance to follow local driving rules as mentioned in fact 4."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Ask doctor about driving",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Guideline advises talking with your doctor about driving limitations."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Driving After ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Talk with your doctor about when you can drive after your ICD. Your doctor will decide when it is safe based on your heart problem. Follow any local driving rules they give you.",
+    "visual_description": "Patient talking with doctor, holding ICD pamphlet, car keys nearby.",
+    "on_screen_text": "Ask doctor about driving"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Talk with your doctor about when you can drive after your ICD.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 advises discussing driving with doctor after ICD."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor will decide when it is safe based on your heart problem.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states safety depends on the heart problem and involves the doctor."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Follow any local driving rules they give you.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence aligns with the guidance to follow local driving rules as mentioned in fact 4."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Ask doctor about driving",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Guideline advises talking with your doctor about driving limitations."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Driving After ICD",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Talk with your doctor about when you can drive after your ICD. Your doctor will decide when it is safe based on your heart problem. Follow any local driving rules they give you.",
+    "visual_description": "Patient talking with doctor, holding ICD pamphlet, car keys nearby.",
+    "on_screen_text": "Ask doctor about driving"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Talk with your doctor about when you can drive after your ICD.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 advises discussing driving with doctor after ICD.",
+   "guideline_fact": "This depends on your heart problem. Talk to your doctor about driving limitations and other activities.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "Are there things I cannot do?"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor will decide when it is safe based on your heart problem.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states safety depends on the heart problem and involves the doctor.",
+   "guideline_fact": "This depends on your heart problem. Talk to your doctor about driving limitations and other activities.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "Are there things I cannot do?"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Follow any local driving rules they give you.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence aligns with the guidance to follow local driving rules as mentioned in fact 4.",
+   "guideline_fact": "Inform and discuss practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation). Provide practical advice related to travel with medication/devices (keep medicines in hand luggage, have a list with medication, device name/card and treating centres). Inform about local/national/international regulation related to driving.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "8c1431b64218_annotation.nt",
+    "headers": [
+     "Professional behaviour and educational tools",
+     "Education topic: Travel, leisure, driving",
+     "Self-care aspects"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Ask doctor about driving",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Guideline advises talking with your doctor about driving limitations.",
+   "guideline_fact": "Even without an ICD, talk with your doctor about driving limitations and other activities.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Do not implant an ICD",
+     "Are there things I cannot do?"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

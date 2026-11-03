@@ -1,0 +1,949 @@
+{
+ "request": "Create a brief patient-education scene that explains what an S-ICD or EV-ICD is and how it protects the heart.",
+ "candidates": [
+  {
+   "text": "For S-ICDs, a dual detection zone configuration is recommended with activation of discrimination algorithm in the lower conditional shock zone",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "S-ICDs"
+   ]
+  },
+  {
+   "text": "Optimize pacemaker/ICD system function to meet the patient\\'s clinical requirements",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Patient related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Optimize pacemaker/ICD system function to meet the patient's clinical requirements"
+   ]
+  },
+  {
+   "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+   "file": "d51cf8beb85a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "benefit from the defibrillator is not expected",
+    "elderly patients",
+    "patient's age and comorbidities",
+    "primary prevention"
+   ]
+  },
+  {
+   "text": "Digoxin digoxin Lanoxin Strengthen the heart’s pumping action.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*"
+   ],
+   "entities": [
+    "Digoxin",
+    "Lanoxin",
+    "digoxin",
+    "heart’s pumping action"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "• Patient\\'s native heart rate should not exceed 120 beats/min during exercise, unless under physician\\'s supervision: heart rate is not always detectable during EM/ET, and its monitoring depends on device",
+   "file": "39c53df33ae1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "How to set up an EM programme in LVAD recipients"
+   ],
+   "entities": []
+  },
+  {
+   "text": "2. A transvenous ICD provides high economic value in the primary prevention of SCD particularly when the patient\\'s risk of death caused by ventricular arrhythmia is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status.",
+   "file": "58316d730051_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "Recommendations for ICDs and CRTs"
+   ],
+   "entities": [
+    "SCD",
+    "comorbidities",
+    "functional status",
+    "high economic value",
+    "nonarrhythmic death",
+    "transvenous ICD",
+    "ventricular arrhythmia"
+   ]
+  },
+  {
+   "text": "An ICD may stop a dangerous heart rhythm that could cause sudden death by giving an electrical shock to the heart.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What does an ICD do?"
+   ],
+   "entities": [
+    "An ICD",
+    "a dangerous heart rhythm",
+    "an electrical shock to the heart",
+    "sudden death"
+   ]
+  },
+  {
+   "text": "A transvenous ICD provides high value in the primary prevention of SCD particularly when the patient\\'s risk of death due to a VA is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 3",
+    "Value Statement: High Value"
+   ],
+   "entities": [
+    "burden of comorbidities",
+    "cardiac",
+    "functional status",
+    "high value",
+    "nonarrhythmic death",
+    "noncardiac",
+    "primary prevention of SCD",
+    "risk of death due to a VA",
+    "transvenous ICD"
+   ]
+  },
+  {
+   "text": "In patients with complex CHD and asymptomatic bradycardia (awake resting heart rate <40 b.p.m. or pauses >3 s), permanent pacing may be considered on an individual basis.",
+   "file": "54428e00fdc0_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "awake resting heart rate <40 b.p.m.",
+    "patients with complex CHD and asymptomatic bradycardia (awake resting heart rate <40 b.p.m. or pauses >3 s)",
+    "pauses >3 s",
+    "permanent pacing"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Having an ICD will not improve your symptoms or cure your heart problem.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will an ICD improve my symptoms?",
+    "Implant an ICD"
+   ],
+   "entities": [
+    "an ICD",
+    "your heart problem",
+    "your symptoms"
+   ]
+  },
+  {
+   "text": "A transvenous ICD provides intermediate value in the secondary prevention of SCD particularly when the patient\\'s risk of death due to a VA is deemed high and the risk of nonarrhythmic death (either cardiac or noncardiac) is deemed low based on the patient\\'s burden of comorbidities and functional status (S7.1.1-6).",
+   "file": "c6fbb8bc00fb_annotation.nt",
+   "class": [],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Value Statement: Intermediate Value (LOE: B-R)"
+   ],
+   "entities": [
+    "burden of comorbidities",
+    "cardiac",
+    "functional status",
+    "intermediate value",
+    "nonarrhythmic death",
+    "noncardiac",
+    "risk of death due to a VA",
+    "secondary prevention of SCD",
+    "transvenous ICD"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "caregiver\\'s perception of the patient\\'s cognitive and psychological state, including confirmation of patient\\'s decision-making competence.",
+   "file": "483d25e3679f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Written documentation of"
+   ],
+   "entities": [
+    "patient's cognitive and psychological state",
+    "patient's decision-making competence"
+   ]
+  },
+  {
+   "text": "1. In patients with symptomatic outflow tract VA in an otherwise normal heart for whom antiarrhythmic medications are ineffective, not tolerated, or not the patient\\'s preference, catheter ablation is useful (S8.1-1–S8.1-3).",
+   "file": "51e05ca1ccfe_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "In patients with symptomatic outflow tract VA in an otherwise normal heart",
+    "antiarrhythmic medications",
+    "catheter ablation",
+    "patient's preference"
+   ]
+  },
+  {
+   "text": "Reduced tissue Doppler s\\', e\\', and a\\' waves velocities ( $<5$ cm/s)",
+   "file": "9fe3485c1de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Echocardiographic and cardiac magnetic resonance for the diagnosis of amyloidosis",
+    "Supplementary Table 25",
+    "Echocardiography characteristic findings"
+   ],
+   "entities": [
+    "Reduced tissue Doppler s', e', and a' waves velocities ( $<5$  cm/s)"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "In patients with syncope, cardiac pacing may be considered to reduce recurrent syncope when asymptomatic pause(s) >6 s due to sinus arrest is documented.133,134",
+   "file": "e30c63d5ac84_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    ">6 s",
+    "asymptomatic pause(s) >6 s",
+    "cardiac pacing",
+    "patients with syncope",
+    "recurrent syncope",
+    "sinus arrest"
+   ]
+  },
+  {
+   "text": "1. In patients with HFrEF who are awaiting heart transplant and who otherwise would not qualify for an ICD (e.g., NYHA class IV and/or use of inotropes) with a plan to discharge home, an ICD is reasonable (S7.7.1-1–S7.7.1-5).",
+   "file": "53b1903bd51b_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATION"
+   ],
+   "entities": [
+    "HFrEF",
+    "ICD",
+    "NYHA class IV",
+    "awaiting heart transplant",
+    "discharge home",
+    "inotropes",
+    "patients with HFrEF who are awaiting heart transplant and who otherwise would not qualify for an ICD (e.g., NYHA class IV and/or use of inotropes) with a plan to discharge home"
+   ]
+  },
+  {
+   "text": "In patients with syncope, cardiac pacing may be considered to reduce recurrent syncope when asymptomatic pause(s) >6 s due to sinus arrest are documented.",
+   "file": "cb1574faabba_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "2013 class: IIa",
+    "Cardiac pacing for bradycardia and conduction system disease",
+    "2021 class: IIb"
+   ],
+   "entities": [
+    "asymptomatic pause(s) >6 s due to sinus arrest",
+    "cardiac pacing",
+    "patients with syncope",
+    "recurrent syncope"
+   ]
+  },
+  {
+   "text": "Without an ICD, you will have a higher risk of dying suddenly if a dangerous heart rhythm happens.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "What does an ICD do?"
+   ],
+   "entities": [
+    "a dangerous heart rhythm",
+    "higher risk of dying suddenly",
+    "you"
+   ]
+  },
+  {
+   "text": "Dual-chamber cardiac pacing is indicated to reduce recurrent syncope in patients aged >40 years, with severe, unpredictable, recurrent syncope who have: spontaneous documented symptomatic asystolic pause(s) >3 s or asymptomatic pause(s) >6 s due to sinus arrest or AVB; or cardioinhibitory carotid sinus syndrome; or asystolic syncope during tilt testing.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for pacing for reflex syncope"
+   ],
+   "entities": [
+    "Dual-chamber cardiac pacing",
+    "asymptomatic pause(s) >6 s",
+    "asystolic syncope during tilt testing",
+    "cardioinhibitory carotid sinus syndrome",
+    "patients aged >40 years, with severe, unpredictable, recurrent syncope",
+    "recurrent syncope",
+    "spontaneous documented symptomatic asystolic pause(s) >3 s"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "Caesarean delivery should be considered for obstetrical indications or for patients with dilatation of the ascending aorta >45 mm, severe aortic stenosis, pre-term labour while on oral anticoagulants, Eisenmenger\\'s syndrome, or severe heart failure.",
+   "file": "c67c1b175776_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Caesarean delivery",
+    "dilatation of the ascending aorta >45 mm, severe aortic stenosis, pre-term labour while on oral anticoagulants, Eisenmenger's syndrome, or severe heart failure",
+    "obstetrical indications",
+    "patients"
+   ]
+  },
+  {
+   "text": "Start with the goals of therapy (feeling better and living longer) and then discuss how specific actions (medication initiation, intensification, monitoring, and adherence) support those goals (example: ACC\\'s My Heart Failure Action Plan)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Start with the goals of therapy (feeling better and living longer) and then discuss how specific actions (medication initiation, intensification, monitoring, and adherence) support those goals (example: ACC's My Heart Failure Action Plan)"
+   ]
+  },
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  },
+  {
+   "text": "In patients with valvular heart disease and persistent LV dysfunction after surgical correction (if possible) it is recommended that ICD implantation for primary prevention follows DCM/HNDCM recommendations.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in valvular heart disease"
+   ],
+   "entities": [
+    "DCM/HNDCM recommendations",
+    "ICD implantation for primary prevention",
+    "patients with valvular heart disease",
+    "persistent LV dysfunction after surgical correction (if possible)"
+   ]
+  },
+  {
+   "text": "St. John\\'s wort x x x x x x",
+   "file": "fd8a6225a531_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Digoxin",
+    "Amiodarone",
+    "CAM Product",
+    "CCB",
+    "**Table 7. CAMs With Significant Interactions With Cardiovascular Medications Used in Patients With HF<sup>320</sup>**",
+    "β-Blockers",
+    "Warfarin",
+    "ACE-I/ARBs"
+   ],
+   "entities": [
+    "St. John's wort"
+   ]
+  },
+  {
+   "text": "7. In patients with adult congenital heart disease with recurrent sustained monomorphic VT or recurrent ICD shocks for VT, catheter ablation can be effective (S10.8-21–S10.8-25).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "(continued)",
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with adult congenital heart disease with recurrent sustained monomorphic VT or recurrent ICD shocks for VT",
+    "catheter ablation"
+   ]
+  },
+  {
+   "text": "Your heart is weak or stiff. You should keep a close eye on your daily weight, cut out sodium (salt), exercise based on your health team\\'s advice and take medications as directed to reduce the workload on your heart.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE C"
+   ],
+   "entities": [
+    "daily weight",
+    "exercise",
+    "health team",
+    "heart is weak or stiff",
+    "medications",
+    "sodium (salt)",
+    "workload on your heart"
+   ]
+  },
+  {
+   "text": "Pacing and sensing threshold(s) for atrium, right and left ventricles (all leads)",
+   "file": "9c46642daf6e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Content for CIED in person or remote monitoring",
+    "Table 4",
+    "Pacemaker/CRT-P in person follow-up: 6–12 months suggested"
+   ],
+   "entities": [
+    "Pacing and sensing threshold(s) for atrium, right and left ventricles (all leads)"
+   ]
+  },
+  {
+   "text": "4 out of every 100 patients will have some bleeding. 2 out of every 100 patients will have a serious problem, such as damage to the lung, a heart attack, or a stroke. 1 out of every 100 patients will get an infection, which may require removing the ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What are the risks of getting an ICD?"
+   ],
+   "entities": [
+    "a serious problem, such as damage to the lung, a heart attack, or a stroke",
+    "an infection",
+    "bleeding",
+    "patients",
+    "removing the ICD"
+   ]
+  },
+  {
+   "text": "In patients with ischemic heart disease and unexplained syncope who have inducible sustained monomorphic VT on electrophysiological study, an ICD is recommended if meaningful survival of greater than 1 year is expected (S7.1.1-7).",
+   "file": "c6fbb8bc00fb_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 3"
+   ],
+   "entities": [
+    "ICD",
+    "electrophysiological study",
+    "inducible sustained monomorphic VT",
+    "ischemic heart disease",
+    "meaningful survival of greater than 1 year",
+    "patients",
+    "unexplained syncope"
+   ]
+  },
+  {
+   "text": "10. In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors, ICD implantation may be considered if meaningful survival of greater than 1 year is expected (S10.8-14–S10.8-16,S10.8-20).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "1 year",
+    "ICD implantation",
+    "In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors",
+    "meaningful survival"
+   ]
+  },
+  {
+   "text": "In patients with CAD eligible for ICD implantation, catheter ablation may be considered just before (or immediately after) ICD implantation to decrease subsequent VT burden and ICD shocks.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "Coronary artery disease"
+   ],
+   "entities": [
+    "CAD",
+    "ICD",
+    "ICD implantation",
+    "VT",
+    "catheter ablation",
+    "patients with CAD eligible for ICD implantation"
+   ]
+  },
+  {
+   "text": "In patients with MRI-conditional pacemaker systems, g MRI can be performed safely following the manufacturer\\'s instructions.",
+   "file": "8cd98e61d5e4_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for performing magnetic resonance imaging in pacemaker patients"
+   ],
+   "entities": [
+    "MRI",
+    "manufacturer's instructions",
+    "patients with MRI-conditional pacemaker systems"
+   ]
+  },
+  {
+   "text": "In adults with CHD with biventricular physiology and a left systemic ventricle presenting with symptomatic heart failure (NYHA II/III) and EF ≤35% despite ≥3 months of OMT, ICD implantation is indicated.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in congenital heart disease"
+   ],
+   "entities": [
+    "EF ≤35%",
+    "ICD implantation",
+    "adults with CHD with biventricular physiology and a left systemic ventricle",
+    "symptomatic heart failure (NYHA II/III)",
+    "≥3 months of OMT"
+   ]
+  },
+  {
+   "text": "4. In patients with adult congenital heart disease with SCA due to VT or VF in the absence of reversible causes, an ICD is recommended if meaningful survival of greater than 1 year is expected (S10.8-13–S10.8-17).",
+   "file": "bd682239ed19_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "ICD",
+    "SCA due to VT or VF",
+    "adult congenital heart disease",
+    "meaningful survival of greater than 1 year",
+    "patients with adult congenital heart disease with SCA due to VT or VF in the absence of reversible causes",
+    "reversible causes"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "For S-ICDs, a dual detection zone configuration is recommended with activation of discrimination algorithm in the lower conditional shock zone",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": [
+    "S-ICDs"
+   ]
+  },
+  {
+   "text": "An ICD may stop a dangerous heart rhythm that could cause sudden death by giving an electrical shock to the heart.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What does an ICD do?"
+   ],
+   "entities": [
+    "An ICD",
+    "a dangerous heart rhythm",
+    "an electrical shock to the heart",
+    "sudden death"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Without an ICD, you will have a higher risk of dying suddenly if a dangerous heart rhythm happens.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "What does an ICD do?"
+   ],
+   "entities": [
+    "a dangerous heart rhythm",
+    "higher risk of dying suddenly",
+    "you"
+   ]
+  },
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "How an S‑ICD protects your heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "An ICD is a small device under your chest that gives a quick shock to stop a dangerous rhythm. The S‑ICD uses two detection zones to decide when to shock, helping protect your heart.",
+    "visual_description": "Illustration of chest with small box and wires, showing two detection zones",
+    "on_screen_text": "S‑ICD protects heart"
+   }
+  ],
+  "not_covered": [
+   "EV-ICD"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "An ICD is a small device under your chest that gives a quick shock to stop a dangerous rhythm.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states an ICD may stop a dangerous heart rhythm by giving an electrical shock."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "The S‑ICD uses two detection zones to decide when to shock, helping protect your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states S‑ICDs use a dual detection zone configuration."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "S‑ICD protects heart",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "ICD stops dangerous rhythm, protecting the heart."
+  }
+ ],
+ "final_storyboard": {
+  "title": "How an S‑ICD protects your heart",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "An ICD is a small device under your chest that gives a quick shock to stop a dangerous rhythm. The S‑ICD uses two detection zones to decide when to shock, helping protect your heart.",
+    "visual_description": "Illustration of chest with small box and wires, showing two detection zones",
+    "on_screen_text": "S‑ICD protects heart"
+   }
+  ],
+  "not_covered": [
+   "EV-ICD"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "An ICD is a small device under your chest that gives a quick shock to stop a dangerous rhythm.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states an ICD may stop a dangerous heart rhythm by giving an electrical shock.",
+   "guideline_fact": "An ICD may stop a dangerous heart rhythm that could cause sudden death by giving an electrical shock to the heart.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "What does an ICD do?"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "The S‑ICD uses two detection zones to decide when to shock, helping protect your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states S‑ICDs use a dual detection zone configuration.",
+   "guideline_fact": "For S-ICDs, a dual detection zone configuration is recommended with activation of discrimination algorithm in the lower conditional shock zone",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "S‑ICD protects heart",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "ICD stops dangerous rhythm, protecting the heart.",
+   "guideline_fact": "An ICD may stop a dangerous heart rhythm that could cause sudden death by giving an electrical shock to the heart.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "What does an ICD do?"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "EV-ICD"
+ ],
+ "coverage": "P"
+}

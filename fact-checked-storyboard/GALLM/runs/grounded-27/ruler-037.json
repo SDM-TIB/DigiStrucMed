@@ -1,0 +1,958 @@
+{
+ "request": "Create a brief patient-education scene that explains sleep apnea in heart failure and how mask therapy helps.",
+ "candidates": [
+  {
+   "text": "Patients with HF with obstructive sleep apnea CPAP (2a)",
+   "file": "74cc59922dba_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [],
+   "headers": [
+    "Additional Therapies in Patients With HF and Comorbidities",
+    "In addition to optimized GDMT",
+    "Patients with HF with obstructive sleep apnea"
+   ],
+   "entities": [
+    "CPAP",
+    "Patients with HF with obstructive sleep apnea"
+   ]
+  },
+  {
+   "text": "4. In patients with HF and suspicion of sleep-disordered breathing, a formal sleep assessment is reasonable to confirm the diagnosis and differentiate between obstructive and central sleep apnea.",
+   "file": "3292747012ac_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "Management of Sleep Disorders"
+   ],
+   "entities": [
+    "formal sleep assessment",
+    "obstructive and central sleep apnea",
+    "patients with HF",
+    "sleep-disordered breathing"
+   ]
+  },
+  {
+   "text": "in patients with symptomatic HFrEF and central sleep apnea, adaptive servo-ventilation is harmful (170)",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Sleep disordered breathing",
+    "Clinical Trial Evidence for Modulating Comorbidity"
+   ],
+   "entities": [
+    "adaptive servo-ventilation",
+    "harmful",
+    "patients with symptomatic HFrEF and central sleep apnea"
+   ]
+  },
+  {
+   "text": "5. In patients with HF and obstructive sleep apnea, continuous positive airway pressure may be reasonable to improve sleep quality and decrease daytime sleepiness.",
+   "file": "3292747012ac_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Management of Sleep Disorders"
+   ],
+   "entities": [
+    "continuous positive airway pressure",
+    "daytime sleepiness",
+    "obstructive sleep apnea",
+    "patients with HF",
+    "sleep quality"
+   ]
+  },
+  {
+   "text": "6. In patients with NYHA class II to IV HFrEF and central sleep apnea, adaptive servo-ventilation causes harm.",
+   "file": "3292747012ac_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Management of Sleep Disorders"
+   ],
+   "entities": [
+    "adaptive servo-ventilation",
+    "central sleep apnea",
+    "harm",
+    "patients with NYHA class II to IV HFrEF"
+   ]
+  },
+  {
+   "text": "Ask about sleep quality. Refer patients who report poor sleep, who are obese, and whose bed partner reports snoring for screening for sleep-disordered breathing.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "obese",
+    "patients",
+    "poor sleep",
+    "screening for sleep-disordered breathing",
+    "sleep quality",
+    "snoring"
+   ]
+  },
+  {
+   "text": "Review sleep history. Advise and discuss the importance of good sleep and provide advice on \\'sleep health\\' (including timing of diuretics).",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Self-care aspects",
+    "Education topic: Sleep and breathing"
+   ],
+   "entities": [
+    "'sleep health'",
+    "diuretics",
+    "sleep history",
+    "timing of diuretics"
+   ]
+  },
+  {
+   "text": "If there are significant sleep problems, which are not responding within 4 weeks to sleep hygiene, referral to a specialist is recommended.",
+   "file": "c504e4228dc2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Sleep disorders and OSA"
+   ],
+   "entities": [
+    "referral to a specialist",
+    "significant sleep problems",
+    "within 4 weeks"
+   ]
+  },
+  {
+   "text": "Strongly encourage use of CPAP in patients with sleep-disordered breathing.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "CPAP",
+    "patients with sleep-disordered breathing"
+   ]
+  },
+  {
+   "text": "Consider and carefully discuss the benefits and deleterious effects of sleep medication.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Sleep and breathing (continued from source part 1, row 9)",
+    "Professional behaviour and educational tools",
+    "Self-care aspects"
+   ],
+   "entities": [
+    "benefits",
+    "deleterious effects",
+    "sleep medication"
+   ]
+  },
+  {
+   "text": "Screening for SAS is recommended in patients with symptoms of SAS and in the presence of severe bradycardia or advanced AVB during sleep.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Sleep evaluation"
+   ],
+   "entities": [
+    "Screening for SAS",
+    "advanced AVB",
+    "during sleep",
+    "patients with symptoms of SAS",
+    "severe bradycardia"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "In patients with ASCVD, obesity, and hypertension, regular screening for non-restorative sleep is indicated (e.g. by the question: ‘how often have you been bothered by trouble falling or staying asleep, or sleeping too much?’).",
+   "file": "c504e4228dc2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Sleep disorders and OSA"
+   ],
+   "entities": [
+    "patients with ASCVD, obesity, and hypertension",
+    "regular screening for non-restorative sleep"
+   ]
+  },
+  {
+   "text": "In patients with CVD, obesity, and hypertension, regular screening for non-restorative sleep is indicated (e.g. by the question: \\'how often have you been bothered by trouble falling or staying asleep, or sleeping too much?\\').",
+   "file": "d4b4c98b8e0c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations compilation",
+    "Recommendations for cardiovascular disease risk assessment in specific clinical conditions"
+   ],
+   "entities": [
+    "patients with CVD, obesity, and hypertension",
+    "regular screening for non-restorative sleep"
+   ]
+  },
+  {
+   "text": "Hypertension Diabetes Obesity CAD (eg, after MI, revascularization) Peripheral arterial disease or cerebrovascular disease Valvular heart disease Family history of cardiomyopathy in a first-degree relative History of exposure to cardiac toxins Sleep-disordered breathing Sustained arrhythmias",
+   "file": "8514f7290883_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Indications for Evaluation of Clinical Manifestations of HF",
+    "Conditions"
+   ],
+   "entities": [
+    "CAD (eg, after MI, revascularization)",
+    "Diabetes",
+    "Family history of cardiomyopathy in a first-degree relative",
+    "History of exposure to cardiac toxins",
+    "Hypertension",
+    "Obesity",
+    "Peripheral arterial disease or cerebrovascular disease",
+    "Sleep-disordered breathing",
+    "Sustained arrhythmias",
+    "Valvular heart disease"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "Coronary angiography, haemodynamic measurements, endomyocardial biopsy, sleep test for selected patients or cardiac transplantation candidates",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Patient assessment"
+   ],
+   "entities": []
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Renal replacement therapy should be considered in patients with refractory volume overload and end-stage kidney failure.",
+   "file": "afa35a92daf3_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Renal replacement therapy",
+    "end-stage kidney failure",
+    "patients with refractory volume overload and end-stage kidney failure",
+    "refractory volume overload"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Start with the goals of therapy (feeling better and living longer) and then discuss how specific actions (medication initiation, intensification, monitoring, and adherence) support those goals (example: ACC\\'s My Heart Failure Action Plan)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Start with the goals of therapy (feeling better and living longer) and then discuss how specific actions (medication initiation, intensification, monitoring, and adherence) support those goals (example: ACC's My Heart Failure Action Plan)"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Patients with HF with obstructive sleep apnea CPAP (2a)",
+   "file": "74cc59922dba_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [],
+   "headers": [
+    "Additional Therapies in Patients With HF and Comorbidities",
+    "In addition to optimized GDMT",
+    "Patients with HF with obstructive sleep apnea"
+   ],
+   "entities": [
+    "CPAP",
+    "Patients with HF with obstructive sleep apnea"
+   ]
+  },
+  {
+   "text": "5. In patients with HF and obstructive sleep apnea, continuous positive airway pressure may be reasonable to improve sleep quality and decrease daytime sleepiness.",
+   "file": "3292747012ac_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Management of Sleep Disorders"
+   ],
+   "entities": [
+    "continuous positive airway pressure",
+    "daytime sleepiness",
+    "obstructive sleep apnea",
+    "patients with HF",
+    "sleep quality"
+   ]
+  },
+  {
+   "text": "6. In patients with NYHA class II to IV HFrEF and central sleep apnea, adaptive servo-ventilation causes harm.",
+   "file": "3292747012ac_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Management of Sleep Disorders"
+   ],
+   "entities": [
+    "adaptive servo-ventilation",
+    "central sleep apnea",
+    "harm",
+    "patients with NYHA class II to IV HFrEF"
+   ]
+  },
+  {
+   "text": "Ask about sleep quality. Refer patients who report poor sleep, who are obese, and whose bed partner reports snoring for screening for sleep-disordered breathing.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "obese",
+    "patients",
+    "poor sleep",
+    "screening for sleep-disordered breathing",
+    "sleep quality",
+    "snoring"
+   ]
+  },
+  {
+   "text": "Review sleep history. Advise and discuss the importance of good sleep and provide advice on \\'sleep health\\' (including timing of diuretics).",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Self-care aspects",
+    "Education topic: Sleep and breathing"
+   ],
+   "entities": [
+    "'sleep health'",
+    "diuretics",
+    "sleep history",
+    "timing of diuretics"
+   ]
+  },
+  {
+   "text": "Strongly encourage use of CPAP in patients with sleep-disordered breathing.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "CPAP",
+    "patients with sleep-disordered breathing"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Sleep Apnea and CPAP in Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "If you have heart failure and trouble breathing at night, you may have obstructive sleep apnea. A CPAP mask can improve sleep and reduce daytime sleepiness. Tell your doctor if you snore or feel tired.",
+    "visual_description": "Patient in bed with CPAP mask, partner listening, doctor chart.",
+    "on_screen_text": "CPAP improves sleep"
+   }
+  ],
+  "not_covered": [
+   "3",
+   "5"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If you have heart failure and trouble breathing at night, you may have obstructive sleep apnea.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 recommends screening patients with poor sleep for sleep‑disordered breathing, implying they may have obstructive sleep apnea."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A CPAP mask can improve sleep and reduce daytime sleepiness.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states CPAP may improve sleep quality and decrease daytime sleepiness."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Tell your doctor if you snore or feel tired.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The guideline advises patients to report snoring and sleepiness to their doctor for screening."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "CPAP improves sleep",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states CPAP may improve sleep quality."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Sleep Apnea and CPAP in Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "If you have heart failure and trouble breathing at night, you may have obstructive sleep apnea. A CPAP mask can improve sleep and reduce daytime sleepiness. Tell your doctor if you snore or feel tired.",
+    "visual_description": "Patient in bed with CPAP mask, partner listening, doctor chart.",
+    "on_screen_text": "CPAP improves sleep"
+   }
+  ],
+  "not_covered": [
+   "3",
+   "5"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If you have heart failure and trouble breathing at night, you may have obstructive sleep apnea.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 recommends screening patients with poor sleep for sleep‑disordered breathing, implying they may have obstructive sleep apnea.",
+   "guideline_fact": "Ask about sleep quality. Refer patients who report poor sleep, who are obese, and whose bed partner reports snoring for screening for sleep-disordered breathing.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4453defbdcec_annotation.nt",
+    "headers": [
+     "Healthcare Providers"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "A CPAP mask can improve sleep and reduce daytime sleepiness.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states CPAP may improve sleep quality and decrease daytime sleepiness.",
+   "guideline_fact": "5. In patients with HF and obstructive sleep apnea, continuous positive airway pressure may be reasonable to improve sleep quality and decrease daytime sleepiness.",
+   "grade": {
+    "class": [
+     "2a"
+    ],
+    "level": [
+     "B-R"
+    ]
+   },
+   "source": {
+    "file": "3292747012ac_annotation.nt",
+    "headers": [
+     "Recommendations",
+     "Management of Sleep Disorders"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Tell your doctor if you snore or feel tired.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The guideline advises patients to report snoring and sleepiness to their doctor for screening.",
+   "guideline_fact": "Ask about sleep quality. Refer patients who report poor sleep, who are obese, and whose bed partner reports snoring for screening for sleep-disordered breathing.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "4453defbdcec_annotation.nt",
+    "headers": [
+     "Healthcare Providers"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "CPAP improves sleep",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states CPAP may improve sleep quality.",
+   "guideline_fact": "5. In patients with HF and obstructive sleep apnea, continuous positive airway pressure may be reasonable to improve sleep quality and decrease daytime sleepiness.",
+   "grade": {
+    "class": [
+     "2a"
+    ],
+    "level": [
+     "B-R"
+    ]
+   },
+   "source": {
+    "file": "3292747012ac_annotation.nt",
+    "headers": [
+     "Recommendations",
+     "Management of Sleep Disorders"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "3",
+  "5"
+ ],
+ "coverage": "C"
+}

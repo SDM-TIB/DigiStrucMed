@@ -1,0 +1,344 @@
+[
+ {
+  "topic": "ruler-004",
+  "status": "no_storyboard",
+  "facts": 3,
+  "first_draft_supported": 0,
+  "first_draft_sentences": 0,
+  "final_supported": 0,
+  "removed": 0,
+  "valid_format": false,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-006",
+  "status": "done",
+  "facts": 5,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-007",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "typical symptoms of heart valve disease"
+  ],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-008",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-010",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "Explanation of why heart failure causes a bloated belly (fluid retention)"
+  ],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-011",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-012",
+  "status": "done",
+  "facts": 5,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "Specific patient eligibility criteria (NYHA class)",
+   "Detailed clinical recommendations"
+  ],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-013",
+  "status": "done",
+  "facts": 5,
+  "first_draft_supported": 2,
+  "first_draft_sentences": 2,
+  "final_supported": 2,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-014",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-015",
+  "status": "done",
+  "facts": 5,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-016",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-017",
+  "status": "done",
+  "facts": 3,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-019",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 2,
+  "first_draft_sentences": 3,
+  "final_supported": 2,
+  "removed": 1,
+  "valid_format": false,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-020",
+  "status": "done",
+  "facts": 2,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-021",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "EV-ICD"
+  ],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-022",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 5,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "Explanation of how CRT‑D works (device function)"
+  ],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-024",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-026",
+  "status": "done",
+  "facts": 3,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-029",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 3,
+  "final_supported": 3,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-030",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 5,
+  "first_draft_sentences": 5,
+  "final_supported": 5,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "ICD-specific safety considerations"
+  ],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-031",
+  "status": "done",
+  "facts": 5,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 4,
+  "final_supported": 3,
+  "removed": 1,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-035",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 6,
+  "first_draft_sentences": 6,
+  "final_supported": 6,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-036",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 5,
+  "first_draft_sentences": 5,
+  "final_supported": 5,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-037",
+  "status": "done",
+  "facts": 6,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "3",
+   "5"
+  ],
+  "coverage": "C"
+ },
+ {
+  "topic": "ruler-038",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 3,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-039",
+  "status": "no_facts",
+  "facts": 0,
+  "first_draft_supported": 0,
+  "first_draft_sentences": 0,
+  "final_supported": 0,
+  "removed": 0,
+  "valid_format": false,
+  "not_covered": [],
+  "coverage": "P"
+ },
+ {
+  "topic": "ruler-042",
+  "status": "done",
+  "facts": 4,
+  "first_draft_supported": 4,
+  "first_draft_sentences": 4,
+  "final_supported": 4,
+  "removed": 0,
+  "valid_format": true,
+  "not_covered": [
+   "specific early warning signs such as shortness of breath, swelling, weight gain, fatigue"
+  ],
+  "coverage": "C"
+ }
+]

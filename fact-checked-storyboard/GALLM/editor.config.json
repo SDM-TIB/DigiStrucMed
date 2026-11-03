@@ -1,0 +1,38 @@
+{
+  "about": "GAAPO for the grounded editor prompt (agreed 2026-10-30). Mahsa's GAAPO operators, smaller budget for Groq's free plan: population 5, 2 generations, 1 candidate per method. Fitness: fact support (x2), fact coverage, readability, format; refusals 0. The fine-tuned model is not used. checker_llm: gpt-oss-20b, a second model with its own daily allowance, passed the same proof as gpt-oss-120b.",
+  "gaapo": {
+    "population_size": 5,
+    "generations": 2,
+    "parents_per_generation": 2,
+    "random_seed": 42
+  },
+  "generation_methods": {
+    "opro": {"enabled": true, "candidates_per_generation": 1, "dropout": 0.2},
+    "apo": {"enabled": true, "candidates_per_generation": 1, "batch_size": 2, "error_threshold": 0.8},
+    "mutation": {"enabled": true, "candidates_per_generation": 1},
+    "crossover": {"enabled": true, "candidates_per_generation": 1},
+    "fewshot": {"enabled": true, "candidates_per_generation": 1, "min_examples": 1, "max_examples": 2}
+  },
+  "evaluation": {"method": "complete"},
+  "topics": "GALLM/data/editor_topics.json",
+  "train_run": "GALLM/runs/grounded-v1",
+  "initial_prompts": [
+    "University-GuidelineQA/web/gaapo/best_prompt.txt",
+    "GAAPO INITIAL",
+    "GALLM/runs/rerun-02/best_prompt.txt"
+  ],
+  "checker_llm": {
+    "model": "openai/gpt-oss-20b",
+    "base_url": "https://api.groq.com/openai/v1",
+    "api_key_env": "GROQ_API_KEY",
+    "max_retries": 8,
+    "max_tokens": 4096
+  },
+  "optimizer_llm": {
+    "model": "openai/gpt-oss-120b",
+    "base_url": "https://api.groq.com/openai/v1",
+    "api_key_env": "GROQ_API_KEY",
+    "max_retries": 8,
+    "max_tokens": 4096
+  }
+}

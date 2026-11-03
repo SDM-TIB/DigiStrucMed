@@ -1,0 +1,987 @@
+{
+ "request": "Create a brief patient-education scene that introduces a module about medicines for heart failure with reduced ejection fraction (HFrEF) and explains why it focuses on HFrEF.",
+ "candidates": [
+  {
+   "text": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "It is recommended that all patients with HF have an ECG performed to: • Assess cardiac rhythm and conduction • Detect LV hypertrophy • Evaluate QRS duration, especially when ejection fraction (EF) <35% • Detect evidence of myocardial infarction or ischemia (Strength of Evidence = B)",
+   "file": "1c66b243d1e2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Section 4: Evaluation of Patients for Ventricular Dysfunction and Heart Failure",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "ECG",
+    "all patients with HF"
+   ]
+  },
+  {
+   "text": "Talk to a pharmacist or other provider about herbal medicines",
+   "file": "568569a7ea2a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-Care Behaviors Recommended for Patients With HF"
+   ],
+   "entities": [
+    "herbal medicines",
+    "other provider",
+    "pharmacist"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "It is recommended to inform women with HFrEF about the risk of deterioration of the condition during gestation and peripartum.",
+   "file": "afc66a906dbd_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "risk of deterioration of the condition during gestation and peripartum",
+    "women with HFrEF"
+   ]
+  },
+  {
+   "text": "Electrocardiogram (ECG). It is recommended that all patients with HF have an ECG performed to: • Assess cardiac rhythm and conduction (in some cases, using Holter monitoring or event monitors) • Assess electrical dyssynchrony (wide QRS or bundle branch block), especially when left ventricular ejection fraction (LVEF) <35% • Detect LV hypertrophy or other chamber enlargement • Detect evidence of MI or ischemia • Assess QTc interval, especially with drugs that prolong QT intervals (Strength of Evidence = B)",
+   "file": "1c66b243d1e2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "Section 4: Evaluation of Patients for Ventricular Dysfunction and Heart Failure"
+   ],
+   "entities": [
+    "ECG",
+    "all patients with HF"
+   ]
+  },
+  {
+   "text": "You can continue to use medicine to treat your heart problem.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Do not implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "medicine",
+    "your heart problem"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "2A) CRT is recommended in patients with HFrEF.196,197,306,308",
+   "file": "ebe2b8d849fd_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "2) In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration):",
+    "Recommendations"
+   ],
+   "entities": [
+    "CRT",
+    "HFrEF",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT is recommended in patients with HFrEF.",
+   "file": "389f4143c8ab_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "2013 Class: IIa",
+    "2021 Class: I"
+   ],
+   "entities": [
+    "CRT",
+    "patients with HFrEF",
+    "patients with symptomatic AF and uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration)"
+   ]
+  },
+  {
+   "text": "In patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration), CRT is recommended in patients with HFrEF.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "CRT"
+   ],
+   "entities": [
+    "CRT",
+    "patients with HFrEF",
+    "patients with symptomatic AF and an uncontrolled heart rate who are candidates for AVJ ablation (irrespective of QRS duration)"
+   ]
+  },
+  {
+   "text": "Carry out medicine reconciliation at visits, with focus on discrepancies",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Monitor adherence and target patients at risk"
+   ],
+   "entities": [
+    "Carry out medicine reconciliation at visits, with focus on discrepancies"
+   ]
+  },
+  {
+   "text": "MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "MRA",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "Dapagliflozin or empagliflozin are recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "Dapagliflozin",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "empagliflozin",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "ACE-I is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "Multidisciplinary management with obstetrics and maternal-fetal medicine teams during pregnancy.",
+   "file": "c6018cd21eaa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Multidisciplinary care beyond the cardiology team",
+    "Table 30. HF Management Strategies Across the Pregnancy Continuum",
+    "During Pregnancy"
+   ],
+   "entities": [
+    "Multidisciplinary management",
+    "during pregnancy",
+    "obstetrics and maternal-fetal medicine teams"
+   ]
+  },
+  {
+   "text": "Diltiazem or verapamil are not recommended in patients with HFrEF, as they increase the risk of HF worsening and HF hospitalization.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with HF and AF"
+   ],
+   "entities": [
+    "Diltiazem",
+    "HF",
+    "HF hospitalization",
+    "HF worsening",
+    "HFrEF",
+    "patients with HFrEF",
+    "verapamil"
+   ]
+  },
+  {
+   "text": "Beta-blocker is recommended for patients with stable HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "Beta-blocker",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "patients with stable HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "Patients with HFrEF (regardless of concomitant diabetes mellitus).",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*IN WHOM AND WHEN?Indications:",
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "HFrEF",
+    "Patients",
+    "diabetes",
+    "diabetes mellitus"
+   ]
+  },
+  {
+   "text": "1. In patients with HFrEF who are awaiting heart transplant and who otherwise would not qualify for an ICD (e.g., NYHA class IV and/or use of inotropes) with a plan to discharge home, an ICD is reasonable (S7.7.1-1–S7.7.1-5).",
+   "file": "53b1903bd51b_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATION"
+   ],
+   "entities": [
+    "HFrEF",
+    "ICD",
+    "NYHA class IV",
+    "awaiting heart transplant",
+    "discharge home",
+    "inotropes",
+    "patients with HFrEF who are awaiting heart transplant and who otherwise would not qualify for an ICD (e.g., NYHA class IV and/or use of inotropes) with a plan to discharge home"
+   ]
+  },
+  {
+   "text": "HF treatment for HFrEF (see sections 5 and 6)",
+   "file": "c3d20a774d4f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Therapeutic options"
+   ],
+   "entities": [
+    "HF treatment",
+    "HFrEF"
+   ]
+  },
+  {
+   "text": "Reasonable as adjuvant therapy for HFrEF NYHA II–IV strength of evidence = B",
+   "file": "112b712a41fa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "HFSA 2010 2"
+   ],
+   "entities": [
+    "HFrEF",
+    "Reasonable as adjuvant therapy for HFrEF NYHA II–IV strength of evidence = B"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE-I in patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "Sacubitril/valsartan",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "Patients with HFrEF as a replacement for ACE-I/ARB.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5",
+    "Indications:"
+   ],
+   "entities": [
+    "ACE-I",
+    "ACE-I/ARB",
+    "ARB",
+    "HFrEF",
+    "Patients"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death. 121,122",
+   "file": "bd15fcc67db0_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Levelb",
+    "Classa",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "MRA",
+    "death",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "Simplify the medication regimen whenever possible. Use once-daily medicines and fixed-dose combinations whenever possible.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "fixed-dose combinations",
+    "medication regimen",
+    "once-daily medicines"
+   ]
+  },
+  {
+   "text": "Eliminate medications with daytime sleepiness as a side effect when possible (including as-needed medicines and OTC and herbal remedies).",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "OTC",
+    "as-needed medicines",
+    "daytime sleepiness",
+    "herbal remedies",
+    "medications"
+   ]
+  },
+  {
+   "text": "Close maternal monitoring for HF signs or symptoms or other cardiovascular instability by cardiology and obstetric and maternal-fetal medicine teams; close fetal monitoring by the obstetric and maternal-fetal medicine teams.",
+   "file": "c6018cd21eaa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "During Pregnancy",
+    "Table 30. HF Management Strategies Across the Pregnancy Continuum",
+    "Nonpharmacological strategies"
+   ],
+   "entities": [
+    "HF signs or symptoms",
+    "cardiology",
+    "cardiovascular instability",
+    "fetal monitoring",
+    "maternal monitoring",
+    "obstetric and maternal-fetal medicine teams"
+   ]
+  },
+  {
+   "text": "Adaptive servo-ventilation is not recommended in patients with HFrEF and a predominant CSA because of an increased all-cause and CV mortality.",
+   "file": "05e068c41452_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendation for treatment of patients with HF and sleep apnoea"
+   ],
+   "entities": [
+    "Adaptive servo-ventilation",
+    "HFrEF",
+    "mortality",
+    "patients with HFrEF and a predominant CSA because of an increased all-cause and CV mortality"
+   ]
+  },
+  {
+   "text": "Consultation with genetics, gynecology, and maternal-fetal medicine teams, as appropriate to the outcome of shared decision-making.",
+   "file": "c6018cd21eaa_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preconception",
+    "Multidisciplinary care beyond the cardiology team",
+    "Table 30. HF Management Strategies Across the Pregnancy Continuum"
+   ],
+   "entities": [
+    "Consultation",
+    "genetics",
+    "gynecology",
+    "maternal-fetal medicine teams",
+    "shared decision-making"
+   ]
+  },
+  {
+   "text": "Patients with HFrEF and iron deficiency IV iron replacement (2a)",
+   "file": "74cc59922dba_annotation.nt",
+   "class": [
+    "2a"
+   ],
+   "level": [],
+   "headers": [
+    "Patients with HFrEF and iron deficiency",
+    "Additional Therapies in Patients With HF and Comorbidities",
+    "In addition to optimized GDMT"
+   ],
+   "entities": [
+    "IV iron replacement",
+    "Patients with HFrEF and iron deficiency"
+   ]
+  },
+  {
+   "text": "3. In patients with HFrEF, nondihydropyridine calcium channel-blocking drugs are not recommended.",
+   "file": "ee99a7024e2d_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "nondihydropyridine calcium channel-blocking drugs",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "3. In patients with HFrEF, GDMT should be initiated during hospitalization after clinical stability is achieved.",
+   "file": "6efda446252d_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "GDMT",
+    "clinical stability is achieved",
+    "during hospitalization",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "An ACE-I is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death. 110–113",
+   "file": "bd15fcc67db0_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Recommendations",
+    "Levelb"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF hospitalization",
+    "death",
+    "patients with HFrEF"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+   "file": "c6c6844112d0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendation table footnotes"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Sacubitril/valsartan is recommended as a replacement for an ACE-I in patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "Sacubitril/valsartan",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "MRA",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "Beta-blocker is recommended for patients with stable HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "Beta-blocker",
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "patients with stable HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Medicines for HFrEF – Introduction",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Welcome. This short video explains medicines for heart failure with reduced ejection fraction. Most studies focus on patients with ejection fraction 45% or less, so the treatments are designed for this group.",
+    "visual_description": "Doctor pointing at heart diagram showing reduced pumping.",
+    "on_screen_text": "HFrEF Medicines"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Welcome.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "No relevant fact"
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This short video explains medicines for heart failure with reduced ejection fraction.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced ejection fraction."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Most studies focus on patients with ejection fraction 45% or less, so the treatments are designed for this group.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states most evidence refers to patients with EF ≤45%."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "HFrEF Medicines",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced EF, supporting the existence of medicines for HFrEF."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "Medicines for HFrEF – Introduction",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "This video introduces medicines for heart failure with reduced ejection fraction. Most studies involve patients with ejection fraction 45% or less. Optimal medical treatment is recommended for all patients with reduced ejection fraction.",
+    "visual_description": "Doctor pointing at heart diagram showing reduced pumping.",
+    "on_screen_text": "HFrEF Medicines"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This video introduces medicines for heart failure with reduced ejection fraction.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced EF."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Most studies involve patients with ejection fraction 45% or less.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 stating most evidence refers to patients with EF ≤45%."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Optimal medical treatment is recommended for all patients with reduced ejection fraction.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states optimal medical treatment is indicated in all heart failure patients with reduced EF."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "HFrEF Medicines",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced EF, supporting the existence of medicines for HFrEF."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Medicines for HFrEF – Introduction",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "This video introduces medicines for heart failure with reduced ejection fraction. Most studies involve patients with ejection fraction 45% or less. Optimal medical treatment is recommended for all patients with reduced ejection fraction.",
+    "visual_description": "Doctor pointing at heart diagram showing reduced pumping.",
+    "on_screen_text": "HFrEF Medicines"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "This video introduces medicines for heart failure with reduced ejection fraction.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced EF.",
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Most studies involve patients with ejection fraction 45% or less.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 stating most evidence refers to patients with EF ≤45%.",
+   "guideline_fact": "c Most of the evidence refers to patients with left ventricular ejection fraction ≤45%.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "c6c6844112d0_annotation.nt",
+    "headers": [
+     "Recommendation table footnotes"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Optimal medical treatment is recommended for all patients with reduced ejection fraction.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states optimal medical treatment is indicated in all heart failure patients with reduced EF.",
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "HFrEF Medicines",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states that optimal medical treatment is indicated for all heart failure patients with reduced EF, supporting the existence of medicines for HFrEF.",
+   "guideline_fact": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "grade": {
+    "class": [
+     "I"
+    ],
+    "level": [
+     "A"
+    ]
+   },
+   "source": {
+    "file": "3200bba8455a_annotation.nt",
+    "headers": []
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

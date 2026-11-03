@@ -1,0 +1,860 @@
+{
+ "request": "Create a brief patient-education scene that explains when and why a defibrillator needs to be replaced.",
+ "candidates": [
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  },
+  {
+   "text": "It is best not to remove the ICD unless it gets infected or it is time to have it replaced when the battery runs out.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Can the ICD be taken out?"
+   ],
+   "entities": [
+    "it gets infected",
+    "it is time to have it replaced when the battery runs out",
+    "remove the ICD"
+   ]
+  },
+  {
+   "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "file": "dc5126a14b6e_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ATP",
+    "Subcutaneous defibrillator",
+    "cardiac resynchronization",
+    "pacing therapy for bradycardia",
+    "patients with an indication for an ICD",
+    "transvenous defibrillator"
+   ]
+  },
+  {
+   "text": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    ">1 year",
+    "cardioverter defibrillator",
+    "patients",
+    "survival"
+   ]
+  },
+  {
+   "text": "In patients with HF and an implantable cardioverter defibrillator (ICD), amiodarone may be considered to reduce the frequency of repetitive discharges. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.38 (previous 7.40)"
+   ],
+   "entities": [
+    "amiodarone",
+    "patients with HF and an implantable cardioverter defibrillator (ICD)",
+    "the frequency of repetitive discharges"
+   ]
+  },
+  {
+   "text": "Discuss deactivation of an implantable-cardioverter defibrillator when present",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "General measures"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+   "file": "d51cf8beb85a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "benefit from the defibrillator is not expected",
+    "elderly patients",
+    "patient's age and comorbidities",
+    "primary prevention"
+   ]
+  },
+  {
+   "text": "When an ICD is indicated, it is recommended to evaluate whether the patient could benefit from CRT-defibrillator.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "CRT",
+    "ICD",
+    "patient"
+   ]
+  },
+  {
+   "text": "An ICD is not indicated for NYHA class IV patients with medication-refractory HF who are not also candidates for cardiac transplantation, an LVAD, or a CRT defibrillator that incorporates both pacing and defibrillation capabilities.",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [
+    "III%3A%20No%20Benefit"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 6"
+   ],
+   "entities": [
+    "CRT defibrillator",
+    "ICD",
+    "LVAD",
+    "NYHA class IV patients",
+    "cardiac transplantation",
+    "defibrillation capabilities",
+    "medication-refractory HF",
+    "pacing"
+   ]
+  },
+  {
+   "text": "ICU staff should develop protocols for withdrawal of life-sustaining treatments and devices (implantable cardioverter-defibrillator, ventilator, ventricular assist device, inotropic or vasopressor infusions, continuous renal replacement therapies, enteral or parenteral tube feedings, and intravenous fluids)",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "Preparedness for withdrawal of life-sustaining measures 312"
+   ],
+   "entities": [
+    "vasopressor"
+   ]
+  },
+  {
+   "text": "Sinoatrial node inhibitor This medicine slows heart rate and reduces the amount of oxygen the heart needs and how much the heart needs to work to pump blood. It is used with beta blockers if they do not lower heart rate enough. ivabradine (Corlanor)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)",
+    "Medications that may be added"
+   ],
+   "entities": [
+    "Sinoatrial node inhibitor",
+    "amount of oxygen the heart needs",
+    "beta blockers",
+    "heart rate",
+    "how much the heart needs to work to pump blood",
+    "ivabradine"
+   ]
+  },
+  {
+   "text": "In patients with permanent AF in need of a pacemaker, ventricular pacing with rate response function is recommended.",
+   "file": "5f0b7029cbdf_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Cardiac pacing for bradycardia and conduction system disease"
+   ],
+   "entities": [
+    "pacemaker",
+    "patients with permanent AF in need of a pacemaker",
+    "ventricular pacing with rate response function"
+   ]
+  },
+  {
+   "text": "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs",
+   "file": "b89ec3acb824_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "P — Prognostic medication",
+    "\\'I Need Help\\' markers of advanced heart failure"
+   ],
+   "entities": [
+    "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs"
+   ]
+  },
+  {
+   "text": "In patients with HF, severe secondary mitral regurgitation and CAD who need revascularization, CABG and mitral valve surgery should be considered.",
+   "file": "30e3bb93e33c_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Secondary mitral regurgitation",
+    "Recommendations"
+   ],
+   "entities": [
+    "CABG",
+    "mitral valve surgery",
+    "patients with HF, severe secondary mitral regurgitation and CAD who need revascularization"
+   ]
+  },
+  {
+   "text": "Fluid restriction is temporary indicated in patients with severe HF and it needs to be balanced with diuretics and weather conditions. Renal function needs to be supervised. Modulate intake during periods of high heat and humidity, nausea/vomiting",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (C)",
+    "Diet and nutritional counselling",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "diuretics"
+   ]
+  },
+  {
+   "text": "Reconsider need for any other vasodilators and reduce dose/stop, if possible.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5",
+    "*Symptomatic hypotension:"
+   ],
+   "entities": []
+  },
+  {
+   "text": "An informed discussion about CVD risk and treatment benefits tailored to the needs of a patient is recommended.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "New",
+    "CLASS_OF_RECOMMENDATION: I",
+    "Risk factors and clinical conditions – section 3",
+    "Recommendations in 2021 version"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Identify risk of thromboembolism and need for anticoagulant therapy",
+   "file": "bed6ae0d583e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Treatment Goals for Patients Admitted for ADHF"
+   ],
+   "entities": [
+    "anticoagulant therapy",
+    "risk of thromboembolism"
+   ]
+  },
+  {
+   "text": "Reconsider need for nitrates, calcium-channel blockersd and other vasodilators.",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*Symptomatic hypotension:",
+    "Supplementary Table 7"
+   ],
+   "entities": [
+    "nitrates"
+   ]
+  },
+  {
+   "text": "Regularly communicate information on disease, treatment options and self-care. Regularly discuss the need for support. Treat or referral to specialist for psychological support when necessary.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Psychological issues",
+    "Living with HF",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "information on disease, treatment options and self-care",
+    "need for support",
+    "psychological support",
+    "specialist"
+   ]
+  },
+  {
+   "text": "Patients should be carefully evaluated by an experienced cardiologist before generator replacement, because management goals, the patient\\'s needs and clinical status may have changed. 168–172",
+   "file": "9a7526f9cf2b_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Primary prevention",
+    "Recommendations"
+   ],
+   "entities": [
+    "Patients",
+    "before generator replacement",
+    "clinical status",
+    "experienced cardiologist",
+    "management goals",
+    "patient's needs"
+   ]
+  },
+  {
+   "text": "1. In patients with CIEDs on RM, patient education should be delivered in plain language, at a basic reading level, and be individualized to support patient communication preferences and educational needs throughout the continuum of care.",
+   "file": "2e965006fc8b_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendations",
+    "References",
+    "Recommendations for patient education for participation and compliance"
+   ],
+   "entities": [
+    "a basic reading level",
+    "individualized",
+    "patient communication preferences and educational needs",
+    "patient education",
+    "patients with CIEDs on RM",
+    "plain language",
+    "throughout the continuum of care"
+   ]
+  },
+  {
+   "text": "Patients with mental disorders need intensified attention and support to improve adherence to lifestyle changes and drug treatment.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "New",
+    "Risk factors and interventions at the individual level – section 4",
+    "CLASS_OF_RECOMMENDATION: I",
+    "Recommendations in 2021 version"
+   ],
+   "entities": []
+  },
+  {
+   "text": "To recognise that the carer or family members may be greatly affected and need to seek help.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Living with HF",
+    "Education topic: Psychological issues (continued from source part 2, row 12)",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "carer or family members",
+    "seek help"
+   ]
+  },
+  {
+   "text": "No goal for triglycerides, but $< 1.7$ mmol/L ( $< 150$ mg/dL) indicates lower risk and higher levels indicate a need to look for other risk factors",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Lipid management"
+   ],
+   "entities": [
+    "No goal for triglycerides, but  $< 1.7$  mmol/L ( $< 150$  mg/dL) indicates lower risk and higher levels indicate a need to look for other risk factors"
+   ]
+  },
+  {
+   "text": "To be aware of the need for immunization for influenza and pneumococcal disease.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Goal for the patient and caregiver",
+    "Education topic: Immunization"
+   ],
+   "entities": [
+    "immunization for influenza and pneumococcal disease",
+    "influenza",
+    "pneumococcal disease"
+   ]
+  },
+  {
+   "text": "Dose may need to be decreased if there is fluid loss (e.g. due to diarrhoea/vomiting, excessive sweating).",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "ADVICE TO PATIENT",
+    "Supplementary Table 7"
+   ],
+   "entities": []
+  },
+  {
+   "text": "During the second and third trimesters, LMWHc with anti-Xa level monitoring and dose adjustment (see separate recommendations) may be considered in women who need a high dose of VKAe after patient information and consent.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "LMWH",
+    "anti-Xa level monitoring and dose adjustment",
+    "patient information and consent",
+    "second and third trimesters",
+    "women who need a high dose of VKA"
+   ]
+  },
+  {
+   "text": "Dose may need to be increased or decreased according to the patient\\'s volume status (remember that excessive diuresis is more dangerous than oedema itself).",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 7",
+    "*HOW TO USE?"
+   ],
+   "entities": [
+    "oedema"
+   ]
+  },
+  {
+   "text": "Patients can be educated to alter their own diuretic dose, according to need (based on symptoms, signs, and weight changes).",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*HOW TO USE?",
+    "Supplementary Table 7"
+   ],
+   "entities": [
+    "Patients",
+    "diuretic",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Other diabetic drugs (particularly, insulin and/or sulfonylurea derivatives) may predispose to hypoglycaemia; in this case, the diabetic treatment strategy needs to be modified.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Hypoglycaemia"
+   ],
+   "entities": [
+    "hypoglycaemia",
+    "insulin",
+    "sulfonylurea derivatives"
+   ]
+  },
+  {
+   "text": "Understand and comply with sodium restriction Demonstrate how to read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups Reiterate limits for alcohol consumption or need for abstinence if history of alcohol abuse",
+   "file": "a7e8deb3319e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specific diet recommendations: individualized low-sodium diet; recommendation for alcohol intake",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "history of alcohol abuse",
+    "limits for alcohol consumption or need for abstinence",
+    "read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups",
+    "sodium restriction"
+   ]
+  },
+  {
+   "text": "Be sensitive to the need for a particularly strong support network for adolescents, young adults, and older adults with HF.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Family Members"
+   ],
+   "entities": [
+    "adolescents",
+    "older adults with HF",
+    "strong support network",
+    "young adults"
+   ]
+  },
+  {
+   "text": "Physical activity level: domestic, occupational and recreational needs, activities relevant to age, gender and daily life, readiness to change behaviour, self-confidence, barriers to increased physical activity, and social support in making positive changes",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Physical activity level: domestic, occupational and recreational needs, activities relevant to age, gender and daily life, readiness to change behaviour, self-confidence, barriers to increased physical activity, and social support in making positive changes"
+   ]
+  },
+  {
+   "text": "Routine administration of statins in patients with HF without other indications for their use (e.g. CAD) is not recommended. Because there is no evidence of harm in patients on statin treatment after the occurrence of HF, there is no need for statin discontinuation for patients already on treatment",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: III",
+    "Established/agreed issues",
+    "Lipid management"
+   ],
+   "entities": [
+    "statin",
+    "statins"
+   ]
+  },
+  {
+   "text": "Maintain specific body weight Understand and comply with sodium restriction Demonstrate how to read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups Reiterate limits for alcohol consumption or need for abstinence if history of alcohol abuse",
+   "file": "8727f5ad0650_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specific diet recommendations: individualized low-sodium diet; recommendation for alcohol intake",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "history of alcohol abuse",
+    "limits for alcohol consumption or need for abstinence",
+    "read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups",
+    "sodium restriction",
+    "specific body weight"
+   ]
+  },
+  {
+   "text": "Fluid balance needs to be monitored. Diuretic doses along with fluid intake should be balanced in order to avoid dehydration, symptomatic hypotension, and prerenal renal failure.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Dehydration, hypotension, and prerenal renal failure"
+   ],
+   "entities": [
+    "Diuretic",
+    "Fluid balance",
+    "dehydration",
+    "hypotension",
+    "renal failure"
+   ]
+  },
+  {
+   "text": "Despite a possible correctable cause for the presenting VA, the need for ICD implantation should be considered based on an individual evaluation of the risk of subsequent VA/SCD.",
+   "file": "186ca5067fc1_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "individual evaluation",
+    "possible correctable cause",
+    "presenting VA",
+    "risk of subsequent VA/SCD"
+   ]
+  },
+  {
+   "text": "In patients with pre-discharge LVEF \\leq 40\\% , re-evaluation of LVEF 6–12 weeks after MI is recommended to assess the potential need for primary prevention ICD implantation.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "6–12 weeks",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "MI",
+    "patients"
+   ]
+  },
+  {
+   "text": "4. In patients with ILRs on RM for unexplained syncope, it is recommended to emphasize to the patient the need to perform a symptom marking or manual transmission immediately following syncope to obtain a symptom-rhythm correlation.",
+   "file": "8456985f1e61_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations for special programming considerations for ILRs",
+    "Recommendations"
+   ],
+   "entities": [
+    "immediately following syncope",
+    "patient",
+    "patients with ILRs on RM for unexplained syncope",
+    "symptom marking or manual transmission",
+    "symptom-rhythm correlation"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  },
+  {
+   "text": "It is best not to remove the ICD unless it gets infected or it is time to have it replaced when the battery runs out.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Can the ICD be taken out?"
+   ],
+   "entities": [
+    "it gets infected",
+    "it is time to have it replaced when the battery runs out",
+    "remove the ICD"
+   ]
+  },
+  {
+   "text": "Patients should be carefully evaluated by an experienced cardiologist before generator replacement, because management goals, the patient\\'s needs and clinical status may have changed. 168–172",
+   "file": "9a7526f9cf2b_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Primary prevention",
+    "Recommendations"
+   ],
+   "entities": [
+    "Patients",
+    "before generator replacement",
+    "clinical status",
+    "experienced cardiologist",
+    "management goals",
+    "patient's needs"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "When and Why an ICD Needs Replacement",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your ICD works for about five to ten years. When its battery runs out, it must be replaced. Doctors will check your health before the new device is put in.",
+    "visual_description": "Patient with chest scar, doctor holding ICD model, calendar showing 5‑10 years",
+    "on_screen_text": "ICD Battery Replacement"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your ICD works for about five to ten years.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states the ICD needs replacement in about 5-10 years when the battery runs out."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "When its battery runs out, it must be replaced.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that when the battery runs out, the ICD will need to be replaced."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors will check your health before the new device is put in.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states patients are evaluated by a cardiologist before generator replacement."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "ICD Battery Replacement",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ICD battery replacement occurs after 5-10 years."
+  }
+ ],
+ "final_storyboard": {
+  "title": "When and Why an ICD Needs Replacement",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your ICD works for about five to ten years. When its battery runs out, it must be replaced. Doctors will check your health before the new device is put in.",
+    "visual_description": "Patient with chest scar, doctor holding ICD model, calendar showing 5‑10 years",
+    "on_screen_text": "ICD Battery Replacement"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your ICD works for about five to ten years.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states the ICD needs replacement in about 5-10 years when the battery runs out.",
+   "guideline_fact": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "What is involved?"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "When its battery runs out, it must be replaced.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that when the battery runs out, the ICD will need to be replaced.",
+   "guideline_fact": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "What is involved?"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors will check your health before the new device is put in.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states patients are evaluated by a cardiologist before generator replacement.",
+   "guideline_fact": "Patients should be carefully evaluated by an experienced cardiologist before generator replacement, because management goals, the patient\\'s needs and clinical status may have changed. 168–172",
+   "grade": {
+    "class": [
+     "IIa"
+    ],
+    "level": [
+     "B"
+    ]
+   },
+   "source": {
+    "file": "9a7526f9cf2b_annotation.nt",
+    "headers": [
+     "Primary prevention",
+     "Recommendations"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "ICD Battery Replacement",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states ICD battery replacement occurs after 5-10 years.",
+   "guideline_fact": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "3a64564151a9_annotation.nt",
+    "headers": [
+     "Implant an ICD",
+     "What is involved?"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

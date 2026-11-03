@@ -1,0 +1,1189 @@
+{
+ "request": "Create a brief patient-education scene that explains how MRAs help the body get rid of extra fluid.",
+ "candidates": [
+  {
+   "text": "Mineralocorticoid Antagonists (MRA) spironolactone, eplerenone Aldactone, Inspra Help the body get rid of salt and fluids. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Types of Heart Failure Medications",
+    "Brand Names*",
+    "Generic Names*",
+    "What They Do"
+   ],
+   "entities": [
+    "Aldactone",
+    "Inspra",
+    "Mineralocorticoid Antagonists (MRA)",
+    "easier for the heart to pump blood",
+    "eplerenone",
+    "get rid of salt and fluids",
+    "spironolactone"
+   ]
+  },
+  {
+   "text": "Diuretic (water pill), as needed Diuretics help get rid of excess water (fluid buildup) in the body. furosemide (Lasix) bumetanide (Bumex) torsemide (Demadex)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Medications that may be added",
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Diuretic (water pill)",
+    "bumetanide",
+    "excess water",
+    "furosemide",
+    "torsemide"
+   ]
+  },
+  {
+   "text": "ARNIs sacubitril combined with valsartan Entresto Combines an ARB with a drug that helps the arteries widen and rid the body of salt. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*"
+   ],
+   "entities": [
+    "ARB",
+    "ARNIs",
+    "Entresto",
+    "arteries",
+    "easier for the heart to pump blood",
+    "rid the body of salt",
+    "sacubitril",
+    "valsartan"
+   ]
+  },
+  {
+   "text": "The investigation of a SCA survivor without obvious extra-cardiac cause is recommended to be overseen by a multidisciplinary team.",
+   "file": "2b646c705d66_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations",
+    "Diagnostic evaluation"
+   ],
+   "entities": [
+    "SCA survivor without obvious extra-cardiac cause",
+    "investigation",
+    "multidisciplinary team"
+   ]
+  },
+  {
+   "text": "ICD implantation may be considered in selected asymptomatic BrS patients with inducible VF during PES using up to 2 extra stimuli. 155",
+   "file": "a164b73f7014_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "BrS",
+    "ICD",
+    "ICD implantation",
+    "PES",
+    "VF",
+    "patients"
+   ]
+  },
+  {
+   "text": "Diuretics furosemide, bumetanide, torsemide, hydrochlorothiazide Lasix, Bumex, Demadex, HCTZ Reduce excess fluids and salt which decrease the buildup of fluid in the lungs and other parts of the body, such as the ankles, legs and abdomen. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Generic Names*",
+    "Types of Heart Failure Medications",
+    "What They Do",
+    "Brand Names*"
+   ],
+   "entities": [
+    "Bumex",
+    "Demadex",
+    "Diuretics",
+    "HCTZ",
+    "Lasix",
+    "abdomen",
+    "ankles",
+    "buildup of fluid",
+    "bumetanide",
+    "easier for the heart to pump blood",
+    "excess fluids and salt",
+    "furosemide",
+    "hydrochlorothiazide",
+    "legs",
+    "lungs",
+    "torsemide"
+   ]
+  },
+  {
+   "text": "To reduce mortality - for all patients MRA",
+   "file": "eca3c31802ae_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "To reduce mortality - for all patients",
+    "Management of HFrEF"
+   ],
+   "entities": [
+    "MRA",
+    "all patients",
+    "mortality"
+   ]
+  },
+  {
+   "text": "Monitor fluid balance regularly, particularly when a patient is taking diuretics, is old and/or frail. Consider an adjustment of diuretic therapy and fluid intake.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*HOW TO USE?",
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "diuretic",
+    "diuretics",
+    "fluid balance"
+   ]
+  },
+  {
+   "text": "Ezetemibe Lipid-lowering drug - Yes (data in rats and rabbits; no human data available) Unknown (increased plasma concentration in nursing rat pups) Inadequate human data • use only when benefit outweighs risk Animal data: • no evidence of embryolethal effects in rats and rabbits • increased incidence of common foetal skeletal findings in rats (at ~10× the human exposure at 10 mg/day) • increased incidence of extra thoracic ribs in rabbits (at 150× the human exposure at 10 mg/day) • combination with statins in rats and rabbits during organogenesis results in higher ezetimibe and statin exposure",
+   "file": "7283c2879b40_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Therapeutic class",
+    "Legacy FDA pregnancy category",
+    "Pregnancy and reproductive evidence",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0036: inherited source-table context (see source.title_or_context)",
+    "Medication",
+    "Breastfeeding",
+    "Placental transfer"
+   ],
+   "entities": [
+    "10 mg/day",
+    "10× ",
+    "150× ",
+    "Ezetemibe",
+    "combination with statins in rats and rabbits during organogenesis results in higher ezetimibe and statin exposure",
+    "increased incidence of common foetal skeletal findings in rats (at ~10× the human exposure at 10 mg/day)",
+    "increased incidence of extra thoracic ribs in rabbits (at 150× the human exposure at 10 mg/day)",
+    "no evidence of embryolethal effects in rats and rabbits",
+    "use only when benefit outweighs risk"
+   ]
+  },
+  {
+   "text": "Fluid balance needs to be monitored. Diuretic doses along with fluid intake should be balanced in order to avoid dehydration, symptomatic hypotension, and prerenal renal failure.",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6",
+    "*Dehydration, hypotension, and prerenal renal failure"
+   ],
+   "entities": [
+    "Diuretic",
+    "Fluid balance",
+    "dehydration",
+    "hypotension",
+    "renal failure"
+   ]
+  },
+  {
+   "text": "Intravenous loop diuretics are recommended for all patients with AHF admitted with signs/symptoms of fluid overload to improve symptoms.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for treatment of patients with acute HF"
+   ],
+   "entities": [
+    "AHF",
+    "all patients with AHF admitted with signs/symptoms of fluid overload to improve symptoms",
+    "fluid overload",
+    "loop diuretics",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "An MRA may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "MRA",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "MRA; Cr < 2.5, eGFR > 30; reduce",
+   "file": "03eb6902c3f3_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cr < 2.5, eGFR > 30",
+    "MRA"
+   ],
+   "entities": [
+    "< 2.5",
+    "> 30",
+    "MRA",
+    "eGFR"
+   ]
+  },
+  {
+   "text": "To avoid large volumes of fluid intake. A fluid restriction of 1.5–2 L/day may be considered in patients with severe HF/hyponatraemia to relieve symptoms and congestion. To avoid dehydration: where fluids are restricted, increase intake during periods of high heat/humidity and/or nausea/vomiting.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Education topic: Fluids",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "1.5–2 L/day",
+    "congestion",
+    "fluid restriction",
+    "increase intake",
+    "large volumes of fluid intake",
+    "patients with severe HF/hyponatraemia",
+    "periods of high heat/humidity and/or nausea/vomiting",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "1. Patients with HF admitted with evidence of significant fluid overload should be promptly treated with intravenous loop diuretics to improve symptoms and reduce morbidity.",
+   "file": "27307df67f51_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Patients with HF admitted with evidence of significant fluid overload",
+    "intravenous loop diuretics",
+    "morbidity",
+    "significant fluid overload",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "MRA; Cr > 2.5, eGFR < 30; stop",
+   "file": "03eb6902c3f3_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cr > 2.5, eGFR < 30",
+    "MRA"
+   ],
+   "entities": [
+    "< 30",
+    "> 2.5",
+    "MRA",
+    "eGFR"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death. 121,122",
+   "file": "bd15fcc67db0_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Levelb",
+    "Classa",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "MRA",
+    "death",
+    "patients with HFrEF"
+   ]
+  },
+  {
+   "text": "Provide information and discuss the advantages and disadvantages of fluid restriction. Advise to adapt fluid intake to weight, and in times of high heat and humidity, nausea/vomiting. Adjust advice during periods of acute decompensation and consider altering this advice towards end-of-life.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Fluids",
+    "Self-care aspects",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "advantages and disadvantages of fluid restriction",
+    "end-of-life",
+    "fluid intake",
+    "high heat and humidity",
+    "periods of acute decompensation",
+    "weight"
+   ]
+  },
+  {
+   "text": "3. In patients taking MRA whose serum potassium cannot be maintained at <5.5 mEq/L, MRA should be discontinued to avoid life-threatening hyperkalemia.",
+   "file": "27e3153b8153_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Mineralocorticoid Receptor Antagonists (MRAs) Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "<5.5 mEq/L",
+    "In patients taking MRA whose serum potassium cannot be maintained at <5.5 mEq/L",
+    "MRA",
+    "hyperkalemia"
+   ]
+  },
+  {
+   "text": "MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "MRA",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "1. For patients with advanced HF and hyponatremia, the benefit of fluid restriction to reduce congestive symptoms is uncertain.",
+   "file": "41820ac45cf2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Recommendation",
+    "Recommendation for Nonpharmacological Management: Advanced HF"
+   ],
+   "entities": [
+    "advanced HF",
+    "congestive symptoms",
+    "fluid restriction",
+    "hyponatremia",
+    "patients with advanced HF and hyponatremia"
+   ]
+  },
+  {
+   "text": "An ACE inhibitor is recommended, in addition to a beta-blocker and an MRA, for patients with symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "1. In patients with HF who have fluid retention, diuretics are recommended to relieve congestion, improve symptoms, and prevent worsening HF.",
+   "file": "3407b20ce64f_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "In patients with HF who have fluid retention",
+    "congestion",
+    "diuretics",
+    "symptoms",
+    "worsening HF"
+   ]
+  },
+  {
+   "text": "Profile 7. Advanced NYHA class III symptoms Patient without current or recent episodes of unstable fluid balance, living comfortably with meaningful activity limited to mild physical exertion.",
+   "file": "ff0f6ef51136_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Profile"
+   ],
+   "entities": [
+    "Patient without current or recent episodes of unstable fluid balance",
+    "Profile 7. Advanced NYHA class III symptoms",
+    "mild physical exertion",
+    "unstable fluid balance"
+   ]
+  },
+  {
+   "text": "A beta-blocker is recommended, in addition to an ACE inhibitor (or an ARNI) and an MRA, for patients with stable, symptomatic HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: A",
+    "Recommendations regarding pharmacological and nonpharmacological interventions for patients with symptomatic (New York Heart Association class II-IV) heart failure with reduced ejection fraction (left ventricular ejection fraction <40%) with proven benefits on clinical outcomes, including cardiovascular morbidity and mortality",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "Diuretics are recommended to control symptoms of fluid retention.",
+   "file": "1d97f44c9d98_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Diuretics",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "CVP Continuous A central line is required for delivery of vasoactive medications; single-point-in-time CVP measurements may be unreliable measures of fluid status, but longitudinal CVP trends may provide information on trends in fluid status",
+   "file": "bb85a3450ccd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Monitoring Parameter",
+    "Comment/Rationale",
+    "Frequency"
+   ],
+   "entities": [
+    "CVP",
+    "Continuous",
+    "central line",
+    "fluid status",
+    "longitudinal CVP trends",
+    "single-point-in-time CVP measurements",
+    "vasoactive medications"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF already treated with an ACE inhibitor (or an ARNI) and a beta-blocker, to reduce the risk of HF hospitalization and death. 718,719",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "4. In selected patients with HFpEF, MRAs may be considered to decrease hospitalizations, particularly among patients with LVEF on the lower end of this spectrum.",
+   "file": "2ada0c1301a2_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for HF With Preserved Ejection Fraction*"
+   ],
+   "entities": [
+    "LVEF",
+    "MRAs",
+    "hospitalizations",
+    "lower end of this spectrum",
+    "selected patients with HFpEF"
+   ]
+  },
+  {
+   "text": "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs",
+   "file": "b89ec3acb824_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "P — Prognostic medication",
+    "\\'I Need Help\\' markers of advanced heart failure"
+   ],
+   "entities": [
+    "Inability to uptitrate (or need to decrease/cease) ACE-Is, beta-blockers, ARNIs, or MRAs"
+   ]
+  },
+  {
+   "text": "A gain > 1.5 kg over 24 h or > 2.0 kg over two days suggests fluid retention",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Weight control management",
+    "CLASS_OF_RECOMMENDATION: I (C)",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "> 1.5 kg over 24 h or > 2.0 kg over two days",
+    "fluid retention"
+   ]
+  },
+  {
+   "text": "Careful assessment of fluid status, in addition to clinical signs of HF, is mandatory during hospitalization in patients with concomitant sepsis. Repeated measures of inferior vena cava diameter and collapsibility by echocardiography may be used to assess fluid status.",
+   "file": "f9390d3d4dc6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "HF",
+    "echocardiography",
+    "hospitalization",
+    "patients with concomitant sepsis"
+   ]
+  },
+  {
+   "text": "The addition of an ARB (or renin inhibitor) to the combination of an ACE-I and an MRA is not recommended in patients with HF, because of the increased risk of renal dysfunction and hyperkalaemia.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "HF",
+    "MRA",
+    "hyperkalaemia",
+    "patients with HF",
+    "renal dysfunction"
+   ]
+  },
+  {
+   "text": "An ARB is recommended to reduce the risk of HF hospitalization or CV death in symptomatic patients with HFrEF who are unable to tolerate an ACE inhibitor and/or ARNI (patients should also receive a beta-blocker and an MRA). 706",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: B",
+    "SOURCE_DEFINED_OTHER: I"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARB",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "2. In patients with HFrEF and NYHA class II to IV symptoms, MRA therapy provides high economic value.",
+   "file": "27e3153b8153_annotation.nt",
+   "class": [
+    "Value%20Statement%3A%20High%20Value%20%28A%29"
+   ],
+   "level": [],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Mineralocorticoid Receptor Antagonists (MRAs) Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "In patients with HFrEF and NYHA class II to IV symptoms",
+    "MRA therapy",
+    "high economic value"
+   ]
+  },
+  {
+   "text": "Dapagliflozin or empagliflozin are recommended, in addition to optimal treatment of an ACE inhibitor (or ARNI), a beta-blocker, and an MRA, for patients with HFrEF to reduce the risk of HF hospitalization and death. 600,601,730",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker",
+    "empagliflozin"
+   ]
+  },
+  {
+   "text": "Reduction in energy intake is recommended to patients, to help achieve lower body weight or prevent or slow weight gain.",
+   "file": "35b293ce9ed8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Lifestyle"
+   ],
+   "entities": [
+    "Reduction in energy intake",
+    "lower body weight",
+    "patients",
+    "prevent or slow weight gain"
+   ]
+  },
+  {
+   "text": "Vericiguat may be considered in patients with symptomatic HFrEF who have experienced HF worsening despite treatment with an ACE inhibitor (or an ARNI), a beta-blocker, and an MRA, to reduce the risk of HF hospitalization or CV death. 722",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: IIb",
+    "SOURCE_DEFINED_OTHER: B"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  },
+  {
+   "text": "When used, should always be used in a combination with an ACE-I (or an ARB), a beta-blocker, and an MRA in patients with HFrEF (unless any of these drugs is not tolerated/contraindicated), until signs of congestion have been relieved.",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 7",
+    "*IN WHOM AND WHEN?Indications:"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "HFrEF",
+    "MRA",
+    "beta-blocker",
+    "congestion",
+    "patients"
+   ]
+  },
+  {
+   "text": "Start with a low dose but target an effective dose for a patient to achieve positive diuresis with a simultaneous reduction of body weight by 0.75–1.0 kg per day.",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 7",
+    "*HOW TO USE?"
+   ],
+   "entities": [
+    "body weight"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Mineralocorticoid Antagonists (MRA) spironolactone, eplerenone Aldactone, Inspra Help the body get rid of salt and fluids. Make it easier for the heart to pump blood.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Types of Heart Failure Medications",
+    "Brand Names*",
+    "Generic Names*",
+    "What They Do"
+   ],
+   "entities": [
+    "Aldactone",
+    "Inspra",
+    "Mineralocorticoid Antagonists (MRA)",
+    "easier for the heart to pump blood",
+    "eplerenone",
+    "get rid of salt and fluids",
+    "spironolactone"
+   ]
+  },
+  {
+   "text": "To reduce mortality - for all patients MRA",
+   "file": "eca3c31802ae_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "To reduce mortality - for all patients",
+    "Management of HFrEF"
+   ],
+   "entities": [
+    "MRA",
+    "all patients",
+    "mortality"
+   ]
+  },
+  {
+   "text": "An MRA may be considered for patients with HFmrEF to reduce the risk of HF hospitalization and death.",
+   "file": "cf21a717aa73_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [],
+   "headers": [
+    "HFmrEF",
+    "Recommendations for treatment of chronic HF",
+    "Recommendations"
+   ],
+   "entities": [
+    "HF hospitalization",
+    "MRA",
+    "death",
+    "patients with HFmrEF"
+   ]
+  },
+  {
+   "text": "MRA is recommended for patients with HFrEF to reduce the risk of HF hospitalization and death.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "HF",
+    "HF hospitalization",
+    "HFrEF",
+    "MRA",
+    "patients with HFrEF to reduce the risk of HF hospitalization and death"
+   ]
+  },
+  {
+   "text": "An MRA is recommended for patients with HFrEF already treated with an ACE inhibitor (or an ARNI) and a beta-blocker, to reduce the risk of HF hospitalization and death. 718,719",
+   "file": "254744705a64_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: A"
+   ],
+   "entities": [
+    "ACE inhibitor",
+    "ARNI",
+    "MRA",
+    "beta-blocker"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "How MRAs Help Remove Extra Fluid",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how a medicine called an MRA helps your heart.",
+    "visual_description": "Doctor greeting patient in a calm exam room",
+    "on_screen_text": "What is an MRA?"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An MRA helps your body get rid of salt and fluid, making it easier for your heart to pump blood. It also reduces the risk of hospital stays and death.",
+    "visual_description": "Doctor shows a heart model and a water droplet",
+    "on_screen_text": "Removes fluid, protects heart"
+   },
+   {
+    "scene_number": 3,
+    "narration": "If you have any questions about your MRA, please ask your care team.",
+    "visual_description": "Doctor gestures toward patient, showing a pill box",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a greeting, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It does not contain a medical claim."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how a medicine called an MRA helps your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states that an MRA helps the heart, which directly follows from fact 1 that MRAs help the heart by making it easier to pump blood."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "What is an MRA?",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a question asking for a definition, not a medical statement."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An MRA helps your body get rid of salt and fluid, making it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 exactly."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "It also reduces the risk of hospital stays and death.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The sentence adds a general claim about reducing hospital stays that is not stated for all patients in the facts."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Removes fluid, protects heart",
+   "label": "NOT_SUPPORTED",
+   "fact": 1,
+   "reason": "The fact states the drug helps remove salt and fluids and eases heart pumping, but does not say it protects the heart."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "If you have any questions about your MRA, please ask your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to ask their care team and does not make a medical statement."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a non-medical statement inviting the patient to consult their care team."
+  }
+ ],
+ "repaired_storyboard": {
+  "title": "How MRAs Help Remove Extra Fluid",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an MRA helps your heart.",
+    "visual_description": "Doctor greets patient in a calm exam room",
+    "on_screen_text": "What is an MRA?"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An MRA helps your body remove salt and fluid, making it easier for your heart to pump blood. It also lowers the chance of hospital visits and death.",
+    "visual_description": "Doctor shows heart model and water droplet illustration",
+    "on_screen_text": "Removes salt and fluid"
+   },
+   {
+    "scene_number": 3,
+    "narration": "If you have questions about an MRA, please talk with your care team.",
+    "visual_description": "Doctor gestures toward patient, holding a pill box",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "repaired_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a greeting, not a medical statement."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It does not contain a medical claim."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how an MRA helps your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states MRAs help the heart by making it easier to pump blood."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "What is an MRA?",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a question asking for a definition, not a medical statement."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An MRA helps your body remove salt and fluid, making it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 exactly."
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "It also lowers the chance of hospital visits and death.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The sentence generalizes the benefit to all patients, while the facts apply only to specific heart‑failure groups."
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Removes salt and fluid",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states that MRA removes salt and fluid, which directly matches fact 1 that MRA helps the body get rid of salt and fluids."
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "If you have questions about an MRA, please talk with your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to discuss MRA questions with their care team, which is a general suggestion and not a medical claim."
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a non-medical statement inviting the patient to consult their care team."
+  }
+ ],
+ "final_storyboard": {
+  "title": "How MRAs Help Remove Extra Fluid",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Hello, I’m Dr. Smith. Today we’ll talk about how an MRA helps your heart.",
+    "visual_description": "Doctor greets patient in a calm exam room",
+    "on_screen_text": "What is an MRA?"
+   },
+   {
+    "scene_number": 2,
+    "narration": "An MRA helps your body remove salt and fluid, making it easier for your heart to pump blood.",
+    "visual_description": "Doctor shows heart model and water droplet illustration",
+    "on_screen_text": "Removes salt and fluid"
+   },
+   {
+    "scene_number": 3,
+    "narration": "If you have questions about an MRA, please talk with your care team.",
+    "visual_description": "Doctor gestures toward patient, holding a pill box",
+    "on_screen_text": "Ask your care team"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Hello, I’m Dr.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a greeting, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smith.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It does not contain a medical claim.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Today we’ll talk about how an MRA helps your heart.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states MRAs help the heart by making it easier to pump blood.",
+   "guideline_fact": "Mineralocorticoid Antagonists (MRA) spironolactone, eplerenone Aldactone, Inspra Help the body get rid of salt and fluids. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Types of Heart Failure Medications",
+     "Brand Names*",
+     "Generic Names*",
+     "What They Do"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "What is an MRA?",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a question asking for a definition, not a medical statement.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "An MRA helps your body remove salt and fluid, making it easier for your heart to pump blood.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Matches fact 1 exactly.",
+   "guideline_fact": "Mineralocorticoid Antagonists (MRA) spironolactone, eplerenone Aldactone, Inspra Help the body get rid of salt and fluids. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Types of Heart Failure Medications",
+     "Brand Names*",
+     "Generic Names*",
+     "What They Do"
+    ]
+   }
+  },
+  {
+   "scene": 1,
+   "field": "narration",
+   "sentence": "It also lowers the chance of hospital visits and death.",
+   "label": "NOT_SUPPORTED",
+   "fact": null,
+   "reason": "The sentence generalizes the benefit to all patients, while the facts apply only to specific heart‑failure groups.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 1,
+   "field": "on_screen_text",
+   "sentence": "Removes salt and fluid",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "The sentence states that MRA removes salt and fluid, which directly matches fact 1 that MRA helps the body get rid of salt and fluids.",
+   "guideline_fact": "Mineralocorticoid Antagonists (MRA) spironolactone, eplerenone Aldactone, Inspra Help the body get rid of salt and fluids. Make it easier for the heart to pump blood.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "40cf9da0baf0_annotation.nt",
+    "headers": [
+     "Types of Heart Failure Medications",
+     "Brand Names*",
+     "Generic Names*",
+     "What They Do"
+    ]
+   }
+  },
+  {
+   "scene": 2,
+   "field": "narration",
+   "sentence": "If you have questions about an MRA, please talk with your care team.",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "The sentence merely invites the patient to discuss MRA questions with their care team, which is a general suggestion and not a medical claim.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  },
+  {
+   "scene": 2,
+   "field": "on_screen_text",
+   "sentence": "Ask your care team",
+   "label": "NO_CLAIM",
+   "fact": null,
+   "reason": "It is a non-medical statement inviting the patient to consult their care team.",
+   "guideline_fact": null,
+   "grade": null,
+   "source": null
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

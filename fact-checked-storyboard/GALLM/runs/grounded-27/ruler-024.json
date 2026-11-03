@@ -1,0 +1,996 @@
+{
+ "request": "Create a brief patient-education scene that explains what can go wrong with defibrillator leads and how it is fixed.",
+ "candidates": [
+  {
+   "text": "Subcutaneous defibrillator should be considered as an alternative to transvenous defibrillator in patients with an indication for an ICD when pacing therapy for bradycardia, cardiac resynchronization, or ATP is not needed.",
+   "file": "dc5126a14b6e_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "ATP",
+    "Subcutaneous defibrillator",
+    "cardiac resynchronization",
+    "pacing therapy for bradycardia",
+    "patients with an indication for an ICD",
+    "transvenous defibrillator"
+   ]
+  },
+  {
+   "text": "Simplify the medication regimen whenever possible. Use once-daily medicines and fixed-dose combinations whenever possible.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "fixed-dose combinations",
+    "medication regimen",
+    "once-daily medicines"
+   ]
+  },
+  {
+   "text": "Implantation of a cardioverter defibrillator is only recommended in patients who have an expectation of good quality survival >1 year.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    ">1 year",
+    "cardioverter defibrillator",
+    "patients",
+    "survival"
+   ]
+  },
+  {
+   "text": "Frailty assessment: walking speed (gait speed test), timed up-and-go test, PRISMA 7 questionnaire, Frail Score, SPPB",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Established/agreed issues"
+   ],
+   "entities": []
+  },
+  {
+   "text": "In patients with HF and an implantable cardioverter defibrillator (ICD), amiodarone may be considered to reduce the frequency of repetitive discharges. (Strength of Evidence = C)",
+   "file": "27fe20611ec6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.38 (previous 7.40)"
+   ],
+   "entities": [
+    "amiodarone",
+    "patients with HF and an implantable cardioverter defibrillator (ICD)",
+    "the frequency of repetitive discharges"
+   ]
+  },
+  {
+   "text": "Discuss deactivation of an implantable-cardioverter defibrillator when present",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "General measures"
+   ],
+   "entities": []
+  },
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  },
+  {
+   "text": "In elderly patients in whom a benefit from the defibrillator is not expected due to the patient\\'s age and comorbidities, omission of ICD implantation for primary prevention may be considered.",
+   "file": "d51cf8beb85a_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Recommendations"
+   ],
+   "entities": [
+    "ICD implantation",
+    "benefit from the defibrillator is not expected",
+    "elderly patients",
+    "patient's age and comorbidities",
+    "primary prevention"
+   ]
+  },
+  {
+   "text": "When an ICD is indicated, it is recommended to evaluate whether the patient could benefit from CRT-defibrillator.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "CRT",
+    "ICD",
+    "patient"
+   ]
+  },
+  {
+   "text": "An ICD is not indicated for NYHA class IV patients with medication-refractory HF who are not also candidates for cardiac transplantation, an LVAD, or a CRT defibrillator that incorporates both pacing and defibrillation capabilities.",
+   "file": "b17ddeedbbd8_annotation.nt",
+   "class": [
+    "III%3A%20No%20Benefit"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "RECOMMENDATIONS",
+    "Item 6"
+   ],
+   "entities": [
+    "CRT defibrillator",
+    "ICD",
+    "LVAD",
+    "NYHA class IV patients",
+    "cardiac transplantation",
+    "defibrillation capabilities",
+    "medication-refractory HF",
+    "pacing"
+   ]
+  },
+  {
+   "text": "‡ The ACC/AHA/HFSA guideline considers either the fixed-dose combination or the separate combination of isosorbide dinitrate and hydralazine as appropriate guideline-directed therapy for HF.",
+   "file": "7e62c8597105_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnotes and abbreviations"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Fixed dose combination 20 mg isosorbide dinitrate and 37.5 mg hydralazine 3 times daily 40 mg isosorbide dinitrate and 75 mg hydralazine 3 times daily 90 mg isosorbide dinitrate and ~175 mg hydralazine total daily 10",
+   "file": "73b0beda69b1_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "References",
+    "**Table 14. Drugs Commonly Used for HFrEF (Stage C HF)**",
+    "Target Doses(s)",
+    "Isosorbide dinitrate and hydralazine",
+    "Initial Daily Dose(s)",
+    "Drug",
+    "Mean Doses Achieved in Clinical Trials"
+   ],
+   "entities": [
+    "20 mg",
+    "37.5 mg",
+    "40 mg",
+    "75 mg",
+    "90 mg",
+    "Fixed dose combination",
+    "daily",
+    "~175 mg"
+   ]
+  },
+  {
+   "text": "Fixed dose Hydralazine/ Isosorbide dinitrate BiDil 37.5 mg hydralazine/20 mg isosorbide dinitrate tid 75 mg hydralazine/40 mg isosorbide dinitrate tid 142.5 mg hydralazine/76 mg isosorbide dinitrate/day 166",
+   "file": "697b02a2301d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Other Vasodilators",
+    "Generic Name",
+    "Initial Daily Dose",
+    "Target Dose",
+    "Mean Dose Achieved in Clinical Trials",
+    "Trade Name",
+    "**Table 7.1.** ACE-inhibitor, Angiotensin Receptor Blocker, and Beta-Blocker Therapy in Heart Failure with Low Ejection Fraction"
+   ],
+   "entities": [
+    "142.5 mg h",
+    "20 mg",
+    "37.5 mg h",
+    "40 mg",
+    "75 mg h",
+    "76 mg",
+    "BiDil",
+    "Fixed dose Hydralazine/",
+    "Isosorbide dinitrate",
+    "tid"
+   ]
+  },
+  {
+   "text": "Fixed-dose combination isosorbide dinitrate/hydralazine‡ 20 mg/37.5 mg (1 tab) 3× daily 2 tabs 3× daily",
+   "file": "7e62c8597105_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Starting Dose",
+    "Vasodilators",
+    "**TABLE 1** Starting and Target Doses of Select GDMT and Novel Therapies for HF (choice and timing of each therapy and in whom they should be added discussed in the text)\\*",
+    "Target Dose"
+   ],
+   "entities": [
+    "20 mg",
+    "37.5 mg",
+    "3× daily"
+   ]
+  },
+  {
+   "text": "It is recommended to start low and go slow [for the very deconditioned] e.g. start with alternation of shorter (10 s) bout of lower intensity exercise workload (50% of peak capacity) and longer recovery period (80 s) for 5–10 min",
+   "file": "888f19f1175f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Interval endurance training",
+    "How to start"
+   ],
+   "entities": [
+    "5–10 min",
+    "lower intensity exercise workload",
+    "the very deconditioned"
+   ]
+  },
+  {
+   "text": "ICU staff should develop protocols for withdrawal of life-sustaining treatments and devices (implantable cardioverter-defibrillator, ventilator, ventricular assist device, inotropic or vasopressor infusions, continuous renal replacement therapies, enteral or parenteral tube feedings, and intravenous fluids)",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient-Focused Supportive Care Recommendations",
+    "Preparedness for withdrawal of life-sustaining measures 312"
+   ],
+   "entities": [
+    "vasopressor"
+   ]
+  },
+  {
+   "text": "For implantation of coronary sinus leads, quadri-polar leads should be considered as first choice.665,666,687",
+   "file": "64365ff46259_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "implantation of coronary sinus leads",
+    "quadri-polar leads"
+   ]
+  },
+  {
+   "text": "Patients requiring pacing at the time of tricuspid valve surgery. Transvalvular leads should be avoided and epicardial ventricular leads used. During tricuspid valve surgery, removal of pre-existing transvalvular leads should be considered and preferred over sewing-in the lead between the annulus and a bio-prosthesis or annuloplasty ring. In the case of an isolated tricuspid annuloplasty based on an individual risk-benefit analysis, a pre-existing right ventricular lead may be left in place without jailing it between ring and annulus.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Transvalvular leads",
+    "a pre-existing right ventricular lead",
+    "epicardial ventricular leads",
+    "removal of pre-existing transvalvular leads"
+   ]
+  },
+  {
+   "text": "5) Patients requiring pacing at the time of tricuspid valve surgery Transvalvular leads should be avoided and epicardial ventricular leads used. During tricuspid valve surgery, removal of pre-existing transvalvular leads should be considered and preferred over sewing in the lead between the annulus and a bioprosthesis or annuloplasty ring. In the case of an isolated tricuspid annuloplasty based on an individual risk–benefit analysis, a pre-existing RV lead may be left in place without jailing it between ring and annulus.",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "5) Patients requiring pacing at the time of tricuspid valve surgery"
+   ],
+   "entities": [
+    "Patients requiring pacing at the time of tricuspid valve surgery",
+    "Transvalvular leads",
+    "epicardial ventricular leads",
+    "individual risk–benefit analysis",
+    "isolated tricuspid annuloplasty",
+    "left in place",
+    "pre-existing RV lead",
+    "removal of pre-existing transvalvular leads",
+    "sewing in the lead between the annulus and a bioprosthesis or annuloplasty ring",
+    "without jailing it between ring and annulus"
+   ]
+  },
+  {
+   "text": "In CRT candidates in whom coronary sinus lead implantation is unsuccessful, HBP should be considered as a treatment option along with other techniques such as surgical epicardial lead.318,424,440,443",
+   "file": "644fc21c4654_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "CRT candidates in whom coronary sinus lead implantation is unsuccessful",
+    "HBP",
+    "coronary sinus lead implantation",
+    "surgical epicardial lead"
+   ]
+  },
+  {
+   "text": "Myopotentials Detection of pectoral myopotentials Very uncommon. Has been reported due to reversal of the proximal and distal coil in the header. Oversensing of diaphragmatic myopotentials occurs more frequently with integrated bipolar leads. Decreasing the sensitivity is the initial step. Repositioning of the lead or implantation of a true bipolar lead may be required",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "Decreasing the sensitivity",
+    "Myopotentials",
+    "Repositioning of the lead",
+    "diaphragmatic myopotentials",
+    "implantation of a true bipolar lead",
+    "integrated bipolar leads",
+    "pectoral myopotentials",
+    "reversal of the proximal and distal coil"
+   ]
+  },
+  {
+   "text": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "1000–2000 Ω",
+    "Insertion of a sensing/pacing lead",
+    "Lead fracture",
+    "Lead- and connector-block failure",
+    "Modern ICDs",
+    "Remote device monitoring",
+    "Reprogramming the ICD",
+    "analysis of intracardiac electrograms and event markers",
+    "conductor coil fracture",
+    "high lead impedance",
+    "inappropriate shocks",
+    "lead fracture",
+    "lead insulation failure",
+    "loose set screws",
+    "low impedance",
+    "malfunction",
+    "non-physiological short intervals <150 ms",
+    "outer insulation failure",
+    "reconnection of the lead",
+    "replacement"
+   ]
+  },
+  {
+   "text": "In SCA survivors, repeated 12-lead ECGs during stable rhythm (including high precordial lead ECG), as well as continuous cardiac monitoring, are recommended.",
+   "file": "658e80922c73_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations for evaluation of SCA survivors"
+   ],
+   "entities": [
+    "SCA survivors",
+    "continuous cardiac monitoring",
+    "high precordial lead ECG",
+    "repeated 12-lead ECGs",
+    "stable rhythm"
+   ]
+  },
+  {
+   "text": "Record a 12-lead ECG of VA, whenever possible",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "12-lead ECG",
+    "VA"
+   ]
+  },
+  {
+   "text": "In patients with non-MRI-conditional pacemaker systems, MRI should be considered if no alternative imaging mode is available and if no epicardial leads, abandoned or damaged leads, or lead adaptors/extenders are present.",
+   "file": "aaa11316594b_annotation.nt",
+   "class": [
+    "IIb",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "2013 Class: IIb",
+    "Management considerations",
+    "2021 Class: IIa"
+   ],
+   "entities": [
+    "MRI"
+   ]
+  },
+  {
+   "text": "To confirm target ventricular lead position, use of multiple fluoroscopic views should be considered.",
+   "file": "64365ff46259_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "multiple fluoroscopic views",
+    "target ventricular lead position"
+   ]
+  },
+  {
+   "text": "Record a 12-lead ECG after VA termination and repeat 12-lead ECG at least on a daily basis in selected cases (ST changes, QT prolongation)",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "12-lead ECG",
+    "QT prolongation",
+    "ST changes",
+    "VA termination",
+    "daily basis"
+   ]
+  },
+  {
+   "text": "Pacing and sensing threshold(s) for atrium, right and left ventricles (all leads)",
+   "file": "9c46642daf6e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Content for CIED in person or remote monitoring",
+    "Table 4",
+    "Pacemaker/CRT-P in person follow-up: 6–12 months suggested"
+   ],
+   "entities": [
+    "Pacing and sensing threshold(s) for atrium, right and left ventricles (all leads)"
+   ]
+  },
+  {
+   "text": "It is recommended to activate lead failure alerts.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": []
+  },
+  {
+   "text": "Healthy diet and PA are recommended for all patients with LEAD.",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "CLASS_OF_RECOMMENDATION: I",
+    "LEVEL_OF_EVIDENCE: C"
+   ],
+   "entities": []
+  },
+  {
+   "text": "HBP with a ventricular backup lead may be considered in patients in whom a “pace-and-ablate” strategy for rapidly conducted supraventricular arrhythmia is indicated, particularly when intrinsic QRS is narrow.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "HBP with a ventricular backup lead",
+    "HBP with a ventricular backup lead may be considered in patients in whom a “pace-and-ablate” strategy for rapidly conducted supraventricular arrhythmia"
+   ]
+  },
+  {
+   "text": "3. For all patients presenting with HF, a 12-lead ECG should be performed at the initial encounter to optimize management.",
+   "file": "763516a6397a_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "C-EO"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "12-lead ECG",
+    "all patients presenting with HF",
+    "initial encounter",
+    "optimize management"
+   ]
+  },
+  {
+   "text": "Smoking cessation is recommended in all patients with LEAD. 29,781",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "LEVEL_OF_EVIDENCE: B",
+    "Recommendations",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Historical reliability of the CIED system (consider lead and pulse generator independently, defibrillation thresholds)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Historical reliability of the CIED system (consider lead and pulse generator independently, defibrillation thresholds)"
+   ]
+  },
+  {
+   "text": "2. In patients with CIEDs on RM, routine surveillance of lead function and battery status is recommended to ensure device integrity.",
+   "file": "435fcd692059_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for RM considerations"
+   ],
+   "entities": [
+    "device integrity",
+    "patients with CIEDs on RM",
+    "routine surveillance of lead function and battery status"
+   ]
+  },
+  {
+   "text": "In patients with LEAD and DM, strict glycaemic control is recommended. 768",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "LEVEL_OF_EVIDENCE: A",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Antiplatelet therapy is recommended in patients with symptomatic LEAD.",
+   "file": "b221433f2124_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommendations for patients with lower extremity artery disease: best medical therapy",
+    "SOURCE_DEFINED_OTHER: I",
+    "SOURCE_DEFINED_OTHER: C"
+   ],
+   "entities": [
+    "Antiplatelet therapy"
+   ]
+  },
+  {
+   "text": "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair When ventricular pacing is indicated, transvenous implantation of a coronary sinus lead or minimally invasive placement of an epicardial ventricular lead should be considered and preferred over a transvenous transvalvular approach.487",
+   "file": "2b6bfe30d771_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "6) Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair"
+   ],
+   "entities": [
+    "Patients requiring pacing after biological tricuspid valve replacement/tricuspid valve ring repair",
+    "minimally invasive placement of an epicardial ventricular lead",
+    "transvenous implantation of a coronary sinus lead",
+    "transvenous transvalvular approach",
+    "ventricular pacing"
+   ]
+  },
+  {
+   "text": "T-wave oversensing (Figure 3C) False-positive arrhythmia detection. ICD misclassifies T-wave as R-wave Common cause of inappropriate shocks112 often in the setting of low sensing thresholds due to low-amplitude R-waves. Can be addressed by (i) decreased ventricular sensing (sensing of low-amplitude VF must be enabled), (ii) lengthening of the refractory period to suppress T-wave detection (may limit the detection of VT), (iii) changing sensing decay parameters (not available in all devices). Nevertheless, lead revision is often required. A true bipolar defibrillation lead may be preferred compared with integrated bipolar leads.113 Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Problem",
+    "Comment",
+    "Cause"
+   ],
+   "entities": [
+    "False-positive arrhythmia detection",
+    "Insertion of a sensing/pacing lead",
+    "T-wave detection",
+    "T-wave oversensing",
+    "changing sensing decay parameters",
+    "decreased ventricular sensing",
+    "detection of VT",
+    "inappropriate shocks",
+    "integrated bipolar leads",
+    "lead revision",
+    "lengthening of the refractory period",
+    "low sensing thresholds",
+    "low-amplitude R-waves",
+    "low-amplitude VF",
+    "true bipolar defibrillation lead"
+   ]
+  },
+  {
+   "text": "Standard 12-lead ECG and echocardiography to detect arrhythmias and assess cardiac structure and function and concomitant abnormalities.",
+   "file": "570cef550975_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 26 Initial diagnostic assessment in patients with suspected cardiomyopathy"
+   ],
+   "entities": [
+    "Standard 12-lead ECG and echocardiography",
+    "arrhythmias",
+    "cardiac structure and function",
+    "concomitant abnormalities"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "An ICD is put under the skin on your chest and wires (\\'leads\\') go into your heart. You will probably stay one night in the hospital. In about 5-10 years, when the battery runs out, and the ICD will need to be replaced.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "What is involved?"
+   ],
+   "entities": [
+    "5-10 years",
+    "An ICD",
+    "put under the skin on your chest",
+    "the ICD will need to be replaced"
+   ]
+  },
+  {
+   "text": "Myopotentials Detection of pectoral myopotentials Very uncommon. Has been reported due to reversal of the proximal and distal coil in the header. Oversensing of diaphragmatic myopotentials occurs more frequently with integrated bipolar leads. Decreasing the sensitivity is the initial step. Repositioning of the lead or implantation of a true bipolar lead may be required",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "Decreasing the sensitivity",
+    "Myopotentials",
+    "Repositioning of the lead",
+    "diaphragmatic myopotentials",
+    "implantation of a true bipolar lead",
+    "integrated bipolar leads",
+    "pectoral myopotentials",
+    "reversal of the proximal and distal coil"
+   ]
+  },
+  {
+   "text": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cause",
+    "Problem",
+    "Comment"
+   ],
+   "entities": [
+    "1000–2000 Ω",
+    "Insertion of a sensing/pacing lead",
+    "Lead fracture",
+    "Lead- and connector-block failure",
+    "Modern ICDs",
+    "Remote device monitoring",
+    "Reprogramming the ICD",
+    "analysis of intracardiac electrograms and event markers",
+    "conductor coil fracture",
+    "high lead impedance",
+    "inappropriate shocks",
+    "lead fracture",
+    "lead insulation failure",
+    "loose set screws",
+    "low impedance",
+    "malfunction",
+    "non-physiological short intervals <150 ms",
+    "outer insulation failure",
+    "reconnection of the lead",
+    "replacement"
+   ]
+  },
+  {
+   "text": "T-wave oversensing (Figure 3C) False-positive arrhythmia detection. ICD misclassifies T-wave as R-wave Common cause of inappropriate shocks112 often in the setting of low sensing thresholds due to low-amplitude R-waves. Can be addressed by (i) decreased ventricular sensing (sensing of low-amplitude VF must be enabled), (ii) lengthening of the refractory period to suppress T-wave detection (may limit the detection of VT), (iii) changing sensing decay parameters (not available in all devices). Nevertheless, lead revision is often required. A true bipolar defibrillation lead may be preferred compared with integrated bipolar leads.113 Insertion of a sensing/pacing lead may be considered",
+   "file": "d4b3acdfe211_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Problem",
+    "Comment",
+    "Cause"
+   ],
+   "entities": [
+    "False-positive arrhythmia detection",
+    "Insertion of a sensing/pacing lead",
+    "T-wave detection",
+    "T-wave oversensing",
+    "changing sensing decay parameters",
+    "decreased ventricular sensing",
+    "detection of VT",
+    "inappropriate shocks",
+    "integrated bipolar leads",
+    "lead revision",
+    "lengthening of the refractory period",
+    "low sensing thresholds",
+    "low-amplitude R-waves",
+    "low-amplitude VF",
+    "true bipolar defibrillation lead"
+   ]
+  },
+  {
+   "text": "It is recommended to activate lead failure alerts.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [],
+   "entities": []
+  },
+  {
+   "text": "2. In patients with CIEDs on RM, routine surveillance of lead function and battery status is recommended to ensure device integrity.",
+   "file": "435fcd692059_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for RM considerations"
+   ],
+   "entities": [
+    "device integrity",
+    "patients with CIEDs on RM",
+    "routine surveillance of lead function and battery status"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Defibrillator Lead Problems and Fixes",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Lead problems include fractures, insulation breaks, and loose connections. They can cause false shocks by sensing muscle or T‑waves (heart’s signal). Fixes involve repositioning, replacing the lead, or adding a new sensing lead.",
+    "visual_description": "Illustration of a heart with a wire showing break and a doctor fixing it.",
+    "on_screen_text": "Lead problems and fixes"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lead problems include fractures, insulation breaks, and loose connections.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 lists fractures, insulation failure, and loose set screws as lead problems."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "They can cause false shocks by sensing muscle or T‑waves (heart’s signal).",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states oversensing of muscle can cause inappropriate shocks."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Fixes involve repositioning, replacing the lead, or adding a new sensing lead.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states that replacement or reconnection of the lead and insertion of a sensing lead may be required."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Lead problems and fixes",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 discusses lead problems and their fixes."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Defibrillator Lead Problems and Fixes",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Lead problems include fractures, insulation breaks, and loose connections. They can cause false shocks by sensing muscle or T‑waves (heart’s signal). Fixes involve repositioning, replacing the lead, or adding a new sensing lead.",
+    "visual_description": "Illustration of a heart with a wire showing break and a doctor fixing it.",
+    "on_screen_text": "Lead problems and fixes"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Lead problems include fractures, insulation breaks, and loose connections.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 lists fractures, insulation failure, and loose set screws as lead problems.",
+   "guideline_fact": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "d4b3acdfe211_annotation.nt",
+    "headers": [
+     "Cause",
+     "Problem",
+     "Comment"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "They can cause false shocks by sensing muscle or T‑waves (heart’s signal).",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states oversensing of muscle can cause inappropriate shocks.",
+   "guideline_fact": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "d4b3acdfe211_annotation.nt",
+    "headers": [
+     "Cause",
+     "Problem",
+     "Comment"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Fixes involve repositioning, replacing the lead, or adding a new sensing lead.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states that replacement or reconnection of the lead and insertion of a sensing lead may be required.",
+   "guideline_fact": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "d4b3acdfe211_annotation.nt",
+    "headers": [
+     "Cause",
+     "Problem",
+     "Comment"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Lead problems and fixes",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 discusses lead problems and their fixes.",
+   "guideline_fact": "Lead- and connector-block failure Includes lead fracture, lead insulation failure, conductor coil fracture, and loose set screws Frequent cause of inappropriate shocks. Lead fracture usually causes high lead impedance (1000–2000 Ω) and outer insulation failure low impedance. Inner insulation failure allows the two conductor coils to communicate. A conductor coil exposed to skeletal muscle may cause inappropriate shock due to oversensing (Figure 3D). Can be revealed by an analysis of intracardiac electrograms and event markers (oversensing, non-physiological short intervals <150 ms). Modern ICDs provide alert features for lead integrity. Remote device monitoring is helpful to identify malfunction early. Reprogramming the ICD is usually not sufficient and replacement or reconnection of the lead is necessary. Insertion of a sensing/pacing lead may be considered",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "d4b3acdfe211_annotation.nt",
+    "headers": [
+     "Cause",
+     "Problem",
+     "Comment"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

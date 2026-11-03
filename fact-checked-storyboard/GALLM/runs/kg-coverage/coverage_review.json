@@ -1,0 +1,227 @@
+{
+ "ruler-001": {
+  "coverage": "N",
+  "note": "only medicines that \"help the heart pump\"; no anatomy",
+  "request": "Create a brief patient-education scene that explains how the healthy heart works as a pump with four chambers."
+ },
+ "ruler-002": {
+  "coverage": "N",
+  "note": "no circulation basics",
+  "request": "Create a brief patient-education scene that explains the two phases of the blood's journey through the heart and lungs."
+ },
+ "ruler-003": {
+  "coverage": "N",
+  "note": "abbreviation footnotes and a reference title; no definition of HF",
+  "request": "Create a brief patient-education scene that explains what heart failure ('weak heart') means, using a comparison with a car engine."
+ },
+ "ruler-004": {
+  "coverage": "P",
+  "note": "abbreviation footnote names HFrEF/HFmrEF, but no ejection-fraction cut-offs",
+  "request": "Create a brief patient-education scene that explains the three types of heart failure (HFrEF, HFmrEF, HFpEF) based on the ejection fraction."
+ },
+ "ruler-005": {
+  "coverage": "N",
+  "note": "nothing on coronary disease or heart attack leading to HF",
+  "request": "Create a brief patient-education scene that explains how coronary artery disease and a heart attack can lead to heart failure."
+ },
+ "ruler-006": {
+  "coverage": "P",
+  "note": "\"Treat the causes of heart dysfunction, such as high blood pressure\" - cause named, no mechanism",
+  "request": "Create a brief patient-education scene that explains how high blood pressure can lead to heart failure."
+ },
+ "ruler-007": {
+  "coverage": "P",
+  "note": "section title on valvular heart disease and valve repair; no symptoms",
+  "request": "Create a brief patient-education scene that explains heart valve disease (narrowed or leaky valves) and its typical symptoms."
+ },
+ "ruler-008": {
+  "coverage": "P",
+  "note": "AF ablation for HF patients (2a); not how AF causes HF",
+  "request": "Create a brief patient-education scene that explains how atrial fibrillation can contribute to heart failure."
+ },
+ "ruler-009": {
+  "coverage": "N",
+  "note": "genetic counselling in pregnancy; no definition",
+  "request": "Create a brief patient-education scene that explains what cardiomyopathies (heart muscle diseases) are and how they can cause heart failure."
+ },
+ "ruler-010": {
+  "coverage": "P",
+  "note": "\"Watch for changes in appetite, weight loss, and muscle wasting\"",
+  "request": "Create a brief patient-education scene that explains why heart failure can cause a bloated belly and loss of appetite."
+ },
+ "ruler-011": {
+  "coverage": "P",
+  "note": "HFrEF drug classes exist (ACE-I/ARB/ARNI lists) but the top hits are footnotes",
+  "request": "Create a brief patient-education scene that introduces a module about medicines for heart failure with reduced ejection fraction (HFrEF) and explains why it focuses on HFrEF."
+ },
+ "ruler-012": {
+  "coverage": "C",
+  "note": "ARNI: \"helps the arteries widen and rid the body of salt. Make it easier for the heart to pump\"",
+  "request": "Create a brief patient-education scene that explains how ARNIs (for example sacubitril/valsartan) help the heart."
+ },
+ "ruler-013": {
+  "coverage": "C",
+  "note": "ACE inhibitors: \"Relax blood vessels. Lower blood pressure. Make it easier for the heart to pump blood.\"",
+  "request": "Create a brief patient-education scene that explains in simple words how ACE inhibitors work."
+ },
+ "ruler-014": {
+  "coverage": "C",
+  "note": "\"Beta blockers slow the heart rate, lower blood pressure and may reverse some of the heart damage.\"",
+  "request": "Create a brief patient-education scene that explains how beta-blockers protect the heart in heart failure."
+ },
+ "ruler-015": {
+  "coverage": "C",
+  "note": "MRA: \"Help the body get rid of salt and fluids.\"",
+  "request": "Create a brief patient-education scene that explains how MRAs help the body get rid of extra fluid."
+ },
+ "ruler-016": {
+  "coverage": "C",
+  "note": "SGLT2: \"Originally used to treat diabetes, these medicines have clear benefits for people with heart failure\"",
+  "request": "Create a brief patient-education scene that explains SGLT2 inhibitors, which were first developed for diabetes, and how they help in heart failure."
+ },
+ "ruler-017": {
+  "coverage": "C",
+  "note": "MRA stopped if potassium cannot be kept <5.5 \"to avoid life-threatening hyperkalemia\" (3: Harm, B-NR)",
+  "request": "Create a brief patient-education scene that explains why a high potassium level in the blood is dangerous and why it is checked."
+ },
+ "ruler-018": {
+  "coverage": "N",
+  "note": "nothing on pill organizers",
+  "request": "Create a brief patient-education scene that explains how a weekly pill organizer helps patients take their heart medicines regularly."
+ },
+ "ruler-019": {
+  "coverage": "C",
+  "note": "\"An ICD may stop a dangerous heart rhythm that could cause sudden death by giving an electrical shock\"",
+  "request": "Create a brief patient-education scene that explains why a doctor may recommend an implantable defibrillator (ICD)."
+ },
+ "ruler-020": {
+  "coverage": "P",
+  "note": "single- vs dual-chamber ICD recommendation (I, A); does not explain the difference",
+  "request": "Create a brief patient-education scene that explains the difference between a single-chamber and a dual-chamber transvenous ICD."
+ },
+ "ruler-021": {
+  "coverage": "P",
+  "note": "subcutaneous defibrillator as an alternative (IIa, B); no explanation of S-ICD/EV-ICD",
+  "request": "Create a brief patient-education scene that explains what an S-ICD or EV-ICD is and how it protects the heart."
+ },
+ "ruler-022": {
+  "coverage": "P",
+  "note": "when a CRT-D is recommended (I, A); not what it does",
+  "request": "Create a brief patient-education scene that explains what a CRT-D does for people with heart failure."
+ },
+ "ruler-023": {
+  "coverage": "N",
+  "note": "pocket rinsing before closure; nothing on haematoma",
+  "request": "Create a brief patient-education scene that explains what a pocket hematoma after defibrillator surgery is and how it is prevented."
+ },
+ "ruler-024": {
+  "coverage": "P",
+  "note": "patient text: leads go into the heart; nothing on lead problems",
+  "request": "Create a brief patient-education scene that explains what can go wrong with defibrillator leads and how it is fixed."
+ },
+ "ruler-025": {
+  "coverage": "N",
+  "note": "nothing on device check-ups",
+  "request": "Create a brief patient-education scene that explains why regular defibrillator check-ups are important."
+ },
+ "ruler-026": {
+  "coverage": "C",
+  "note": "\"replaced when the battery runs out\"; \"In about 5-10 years, when the battery...\"",
+  "request": "Create a brief patient-education scene that explains when and why a defibrillator needs to be replaced."
+ },
+ "ruler-027": {
+  "coverage": "N",
+  "note": "nothing on warning signs before a shock",
+  "request": "Create a brief patient-education scene that explains warning signs that a defibrillator shock may be coming and what to do."
+ },
+ "ruler-028": {
+  "coverage": "N",
+  "note": "only \"pacemaker function\" fragments",
+  "request": "Create a brief patient-education scene that explains whether an implantable defibrillator can also work as a pacemaker."
+ },
+ "ruler-029": {
+  "coverage": "C",
+  "note": "aerobic training types (walking, cycling, swimming...) and moderate continuous endurance training",
+  "request": "Create a brief patient-education scene that explains what aerobic (endurance) training is and gives examples for heart-failure patients."
+ },
+ "ruler-030": {
+  "coverage": "C",
+  "note": "resistance/strength training 2-3 times a week complements aerobic training (HF; not ICD-specific)",
+  "request": "Create a brief patient-education scene that explains simple strength training for people with heart failure or an ICD."
+ },
+ "ruler-031": {
+  "coverage": "P",
+  "note": "balance training for older adults at risk of falls (I, B); flexibility only listed",
+  "request": "Create a brief patient-education scene that explains why flexibility and balance exercises help and gives two examples."
+ },
+ "ruler-032": {
+  "coverage": "N",
+  "note": "nothing on medical examinations with an ICD",
+  "request": "Create a brief patient-education scene that explains which medical examinations are safe with an ICD and which need a doctor's approval first."
+ },
+ "ruler-033": {
+  "coverage": "N",
+  "note": "nothing on work with an ICD",
+  "request": "Create a brief patient-education scene that explains whether people with an ICD can keep working and which jobs need extra caution."
+ },
+ "ruler-034": {
+  "coverage": "N",
+  "note": "nothing on how smoking harms the heart",
+  "request": "Create a brief patient-education scene that explains how smoking harms the heart and blood vessels."
+ },
+ "ruler-035": {
+  "coverage": "P",
+  "note": "ask about smoking status; support people who quit in hospital",
+  "request": "Create a brief patient-education scene that gives practical tips for quitting smoking."
+ },
+ "ruler-036": {
+  "coverage": "C",
+  "note": "alcohol limits (2 glasses men, 1 women); abstinence in alcoholic cardiomyopathy",
+  "request": "Create a brief patient-education scene that explains how alcohol affects the heart in heart failure."
+ },
+ "ruler-037": {
+  "coverage": "C",
+  "note": "CPAP in HF with obstructive sleep apnea (2a, B-R); formal sleep assessment (2a)",
+  "request": "Create a brief patient-education scene that explains sleep apnea in heart failure and how mask therapy helps."
+ },
+ "ruler-038": {
+  "coverage": "P",
+  "note": "only \"talk with your doctor about driving limitations\"; no rules",
+  "request": "Create a brief patient-education scene that explains the driving rules for private drivers after getting an ICD."
+ },
+ "ruler-039": {
+  "coverage": "P",
+  "note": "peripartum cardiomyopathy named in counselling advice; not defined",
+  "request": "Create a brief patient-education scene that explains what peripartum cardiomyopathy is."
+ },
+ "ruler-040": {
+  "coverage": "N",
+  "note": "nothing on depression signs",
+  "request": "Create a brief patient-education scene that explains the main signs of depression that people with heart failure should watch for."
+ },
+ "ruler-041": {
+  "coverage": "N",
+  "note": "nothing defining acute HF or decompensation",
+  "request": "Create a brief patient-education scene that explains what acute heart failure and 'decompensation' mean."
+ },
+ "ruler-042": {
+  "coverage": "C",
+  "note": "\"signs/symptoms of shortness of breath, swelling, fatigue, and other indicators of worsening HF\"",
+  "request": "Create a brief patient-education scene that lists early warning signs that heart failure is getting worse."
+ },
+ "ruler-043": {
+  "coverage": "N",
+  "note": "nothing on calling 112",
+  "request": "Create a brief patient-education scene that explains when to call the emergency number 112 immediately."
+ },
+ "ruler-044": {
+  "coverage": "N",
+  "note": "nothing on shock position",
+  "request": "Create a brief patient-education scene that explains why raising the legs (shock position) can be harmful for unconscious heart-failure patients and what to do instead."
+ },
+ "ruler-045": {
+  "coverage": "N",
+  "note": "nothing on harmless symptoms",
+  "request": "Create a brief patient-education scene that explains which everyday symptoms are usually harmless and not warning signs of worsening heart failure."
+ }
+}

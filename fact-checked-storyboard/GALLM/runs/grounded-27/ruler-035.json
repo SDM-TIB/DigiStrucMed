@@ -1,0 +1,908 @@
+{
+ "request": "Create a brief patient-education scene that gives practical tips for quitting smoking.",
+ "candidates": [
+  {
+   "text": "Determine readiness to change; if ready, choose a date for quitting",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Determine readiness to change; if ready, choose a date for quitting"
+   ]
+  },
+  {
+   "text": "Provide support by making low-sodium foods available, preparing low-sodium meals, quitting smoking or smoking elsewhere, reducing alcohol intake, and joining in the patient\\'s exercise regimen.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Family Members"
+   ],
+   "entities": [
+    "alcohol intake",
+    "low-sodium foods",
+    "low-sodium meals",
+    "patient's exercise regimen",
+    "smoking"
+   ]
+  },
+  {
+   "text": "Explore practical ways to overcome barriers to exercise, that is, the link between primary care and local community-based structures for activity, recreation and sport",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Physical activity counselling"
+   ],
+   "entities": [
+    "Explore practical ways to overcome barriers to exercise, that is, the link between primary care and local community-based structures for activity, recreation and sport"
+   ]
+  },
+  {
+   "text": "Inform and discuss practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation). Provide practical advice related to travel with medication/devices (keep medicines in hand luggage, have a list with medication, device name/card and treating centres). Inform about local/national/international regulation related to driving.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Education topic: Travel, leisure, driving",
+    "Self-care aspects"
+   ],
+   "entities": [
+    "amiodarone",
+    "dehydration",
+    "local/national/international regulation related to driving",
+    "medication/devices",
+    "practical issues related to long haul travel, staying abroad, exposure to sun (amiodarone effects), high humidity or heat (dehydration), and high altitude (oxygenation)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Provide written and oral information on indication, benefits, dosing, effects and side effects. Discuss practical issues such as optimal time-schedule, what to do in case of a missed dose etc. Discuss possible barriers for medication taking. Advise on support aids such as dosette box, electronic reminders etc. when appropriate. 320",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Professional behaviour and educational tools",
+    "Medical treatment",
+    "Education topic: Medication"
+   ],
+   "entities": [
+    "barriers for medication taking",
+    "dosette box",
+    "electronic reminders",
+    "missed dose",
+    "practical issues",
+    "support aids",
+    "written and oral information"
+   ]
+  },
+  {
+   "text": "Discuss advanced care decisions, personal goals, emotional/practical/spiritual support, symptom control and care, and illness understanding and trajectory in preparation for supportive care decision making",
+   "file": "9fd255374e92_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consultation services",
+    "Patient-Focused Supportive Care Recommendations"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Ask the patient about his/her smoking status and use of other tobacco products. Specify both amount of smoking (cigarettes per day) and duration of smoking (number of years)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Ask the patient about his/her smoking status and use of other tobacco products. Specify both amount of smoking (cigarettes per day) and duration of smoking (number of years)"
+   ]
+  },
+  {
+   "text": "Smoking cessation is obligatory and passive smoking should be avoided.",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issue",
+    "Tobacco use"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Cessation of smoking is a prerequisite for transplantation in most centres. Psychological support may be needed so patient does not resume smoking post-transplantation",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Tobacco cessation",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "Cessation of smoking",
+    "Psychological support",
+    "does not resume smoking post-transplantation",
+    "patient",
+    "transplantation"
+   ]
+  },
+  {
+   "text": "Smokers who quit smoking during hospitalization should be strongly supported to stay smoke free using the above steps in smoking cessation",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "Smokers who quit smoking during hospitalization should be strongly supported to stay smoke free using the above steps in smoking cessation"
+   ]
+  },
+  {
+   "text": "To be aware of the consequences for health of smoking and use of recreational drugs. Stop smoking (including e-cigarettes) and taking recreational drugs.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Education topic: Smoking and recreational drugs",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "e-cigarettes",
+    "recreational drugs",
+    "smoking"
+   ]
+  },
+  {
+   "text": "All smoking of tobacco should be stopped, as tobacco use is strongly and independently causal of ASCVD.",
+   "file": "d4b4c98b8e0c_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for smoking intervention strategies",
+    "Recommendations compilation"
+   ],
+   "entities": [
+    "ASCVD",
+    "smoking of tobacco",
+    "tobacco use"
+   ]
+  },
+  {
+   "text": "Stopping smoking is a particularly important intervention and all forms of treatment programme should be offered",
+   "file": "84504738080d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issue",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "Stopping smoking",
+    "all forms of treatment programme"
+   ]
+  },
+  {
+   "text": "Advise smoking and recreational substances cessation. To support smoking cessation cognitive behavioural theory and psychological support may be needed",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (C)",
+    "Established/agreed issues",
+    "Smoking cessation"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Stopping smoking is exceptionally important in PAD, smoking-cessation programmes involving nicotine-replacement therapy, and the use of medications such as bupropion or varenicline should be encouraged",
+   "file": "e02f6fb1c49a_annotation.nt",
+   "class": [
+    "I%20%28B%29"
+   ],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Established/agreed issues",
+    "CLASS_OF_RECOMMENDATION: I (B)"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Inform, discuss and help in decision making. Refer for specialist advice for smoking cessation and drug withdrawal and replacement therapy. Consider referral for cognitive behavioural theory and psychological support if patient wishes to stop smoking or taking drugs.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Professional behaviour and educational tools",
+    "Education topic: Smoking and recreational drugs"
+   ],
+   "entities": [
+    "cognitive behavioural theory",
+    "decision making",
+    "drug withdrawal",
+    "patient wishes to stop smoking or taking drugs",
+    "psychological support",
+    "replacement therapy",
+    "smoking cessation",
+    "specialist advice"
+   ]
+  },
+  {
+   "text": "Smoking cessation is recommended in all patients with LEAD. 29,781",
+   "file": "9c8949ff9c69_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "LEVEL_OF_EVIDENCE: B",
+    "Recommendations",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Smoking cessation Maintain blood pressure in target range Maintain normal HgA1c, if diabetic",
+   "file": "8727f5ad0650_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Modify risks for HF progression",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "HgA1c",
+    "Smoking cessation",
+    "blood pressure",
+    "diabetic",
+    "normal",
+    "target range"
+   ]
+  },
+  {
+   "text": "Counselling against sedentary habit, obesity, cigarette smoking, and alcohol abuse is recommended to prevent or delay the onset of HF.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for the prevention of chronic HF"
+   ],
+   "entities": [
+    "Counselling against sedentary habit, obesity, cigarette smoking, and alcohol abuse",
+    "HF"
+   ]
+  },
+  {
+   "text": "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange"
+   ]
+  },
+  {
+   "text": "Smoking cessation Maintain blood pressure in target range Maintain normal HgA1c, if diabetic Maintain specific body weight",
+   "file": "a7e8deb3319e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Modify risks for HF progression",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "Smoking cessation",
+    "blood pressure in target range",
+    "diabetic",
+    "normal HgA1c",
+    "specific body weight"
+   ]
+  },
+  {
+   "text": "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training are recommended.",
+   "file": "35b293ce9ed8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Lifestyle"
+   ],
+   "entities": [
+    "Lifestyle changes including smoking cessation, a low saturated fat, high-fibre diet, aerobic PA, and strength training"
+   ]
+  },
+  {
+   "text": "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "Patients trying to quit smoking should be helped in maintaining weight during this period, since are more likely to put on between 3 and 5 kg in the first three months to a year"
+   ]
+  },
+  {
+   "text": "Smoking cessation is recommended regardless of weight gain, as weight gain does not lessen the ASCVD benefits of cessation.",
+   "file": "2c1c3b6820b1_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [],
+   "headers": [
+    "Risk factors and interventions at the individual level – section 4",
+    "Recommendations in 2021 version",
+    "New",
+    "CLASS_OF_RECOMMENDATION: I"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Cough is common in patients with HF, many of whom have smoking-related lung disease.",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*Cough:",
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "Cough",
+    "HF",
+    "patients"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimization SBP <140 mmHg if tolerated b LDL-C <2.6 mmol/L (100 mg/dL)",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Prevention goals (STEP 1)",
+    "≥70 years"
+   ],
+   "entities": [
+    "LDL-C <2.6 mmol/L (100 mg/dL)",
+    "SBP <140 mmHg if tolerated",
+    "Stop smoking and lifestyle optimization"
+   ]
+  },
+  {
+   "text": "1. In patients with VA due to coronary artery spasm, treatment with maximally tolerated doses of a calcium channel blocker and smoking cessation are indicated to reduce recurrent ischemia and VA (S7.1.1.1-1,S7.1.1.1-2).",
+   "file": "13f099c98618_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "In patients with VA due to coronary artery spasm",
+    "VA",
+    "calcium channel blocker",
+    "smoking cessation"
+   ]
+  },
+  {
+   "text": "No role of e-cigarettes for smoking cessation (unclear evidence about whether e-cigarettes or other Electronic Nicotine Delivery Systems are useful and safe<sup>26</sup>)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "No role of e-cigarettes for smoking cessation (unclear evidence about whether e-cigarettes or other Electronic Nicotine Delivery Systems are useful and safe<sup>26</sup>)"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimization SBP <140 down to 130 mmHg if tolerated b LDL-C <2.6 mmol/L (100 mg/dL)",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "<50 years",
+    "Prevention goals (STEP 1)"
+   ],
+   "entities": [
+    "LDL-C <2.6 mmol/L (100 mg/dL)",
+    "SBP <140 down to 130 mmHg if tolerated",
+    "Stop smoking and lifestyle optimization"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimization SBP <140 down to 130 mmHg if tolerated b LDL-C <2.6 mmol/L (100 mg/dL) HbA1c <53 mmol/mol (7.0%)",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Prevention goals (STEP 1)",
+    "Without established ASCVD or severe TOD"
+   ],
+   "entities": [
+    "HbA1c <53 mmol/mol (7.0%)",
+    "LDL-C <2.6 mmol/L (100 mg/dL)",
+    "SBP <140 down to 130 mmHg if tolerated",
+    "Stop smoking and lifestyle optimization"
+   ]
+  },
+  {
+   "text": "Systematic global CVD risk assessment is recommended in individuals with any major vascular risk factor (i.e. family history of premature CVD, FH, CVD risk factors such as smoking, arterial hypertension, DM, raised lipid level, obesity, or comorbidities increasing CVD risk).",
+   "file": "56b234d658e8_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Systematic global CVD risk assessment",
+    "family history of premature CVD, FH, CVD risk factors such as smoking, arterial hypertension, DM, raised lipid level, obesity, or comorbidities increasing CVD risk",
+    "individuals with any major vascular risk factor"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimization SBP <140 down to 130 mmHg if tolerated b LDL-C <2.6 mmol/L (100 mg/dL) and ≥50% LDL-C reduction Otherwise according to ASCVD and DM history",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patients with FH",
+    "Prevention goals (STEP 1)"
+   ],
+   "entities": [
+    "ASCVD and DM history",
+    "LDL-C <2.6 mmol/L (100 mg/dL) and ≥50% LDL-C reduction",
+    "SBP <140 down to 130 mmHg if tolerated",
+    "Stop smoking and lifestyle optimization"
+   ]
+  },
+  {
+   "text": "3. In the general population, healthy lifestyle habits such as regular physical activity, maintaining normal weight, healthy dietary patterns, and avoiding smoking are helpful to reduce future risk of HF.",
+   "file": "1c8bf8688543_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Patients at Risk for HF (Stage A: Primary Prevention) Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "HF",
+    "general population",
+    "physical activity"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimization SBP <140 down to 130 mmHg if tolerated b Intensive oral lipid-lowering therapy aiming at ≥50% LDL-C reduction and LDL-C <1.8 mmol/L (70 mg/dL) Antiplatelet therapy",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patients with established ASCVD",
+    "Prevention goals (STEP 1)"
+   ],
+   "entities": [
+    "Antiplatelet therapy",
+    "Intensive oral lipid-lowering therapy",
+    "SBP <140 down to 130 mmHg if tolerated",
+    "Stop smoking and lifestyle optimization",
+    "≥50% LDL-C reduction and LDL-C <1.8 mmol/L (70 mg/dL)"
+   ]
+  },
+  {
+   "text": "Stop smoking and lifestyle optimisation SBP <140 down to 130 mmHg if tolerated b LDL-C <1.8 mmol/L (70 mg/dL) HbA1c <64 mmol/mol (8.0%) SGLT2 inhibitor or GLP1-RA CVD: antiplatelet therapy",
+   "file": "d1aae60f4de9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "With established ASCVD and/or severe TOD",
+    "Prevention goals (STEP 1)"
+   ],
+   "entities": [
+    "GLP1-RA",
+    "HbA1c <64 mmol/mol (8.0%)",
+    "LDL-C <1.8 mmol/L (70 mg/dL)",
+    "SBP <140 down to 130 mmHg if tolerated",
+    "SGLT2 inhibitor",
+    "Stop smoking and lifestyle optimisation",
+    "antiplatelet therapy"
+   ]
+  },
+  {
+   "text": "Discharge planning is recommended as part of the management of patients with ADHF. Discharge planning should address the following issues: • Details regarding medication, dietary sodium restriction, and recommended activity level • Follow-up by phone or clinic visit early after discharge to reassess volume status • Medication and dietary compliance • Alcohol moderation and smoking cessation • Monitoring of body weight, electrolytes and renal function • Consideration of referral for formal disease management (Strength of Evidence = C)",
+   "file": "7a232429a6ea_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "12.26 (previous 12.24)"
+   ],
+   "entities": [
+    "Alcohol moderation and smoking cessation",
+    "Details regarding medication, dietary sodium restriction, and recommended activity level",
+    "Discharge planning",
+    "Follow-up by phone or clinic visit early after discharge to reassess volume status",
+    "Medication and dietary compliance",
+    "Monitoring of body weight, electrolytes and renal function",
+    "patients with ADHF",
+    "referral for formal disease management"
+   ]
+  },
+  {
+   "text": "Weight reduction by means of diet, exercise and behaviour modification. It is recommended in obese patients (BMI \\geq 30 \\text{ kg/m}^2, or waist circumference \\geq 102 \\text{ cm} in men or \\geq 88 \\text{ cm} in women), and should be considered in overweight patients (BMI \\geq 25 \\text{ kg/m}^2, or waist circumference \\geq 94 \\text{ cm} in men or \\geq 80 \\text{ cm} in women), particularly if associated with multiple risk factors (such as hypertension, hypercholesterolemia, smoking and insulin resistance or diabetes)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Weight control management",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Weight reduction by means of diet, exercise and behaviour modification. It is recommended in obese patients (BMI \\geq 30 \\text{ kg/m}^2, or waist circumference \\geq 102 \\text{ cm} in men or \\geq 88 \\text{ cm} in women), and should be considered in overweight patients (BMI \\geq 25 \\text{ kg/m}^2, or waist circumference \\geq 94 \\text{ cm} in men or \\geq 80 \\text{ cm} in women), particularly if associated with multiple risk factors (such as hypertension, hypercholesterolemia, smoking and insulin resistance or diabetes)"
+   ]
+  },
+  {
+   "text": "• Exacerbating factors addressed. • Near optimal volume status observed. • Transition from intravenous to oral diuretic successfully completed. • Patient and family education completed, including clear discharge instructions • LVEF documented • Smoking cessation counseling initiated • Near optimal pharmacologic therapy achieved, including ACE inhibitor and beta blocker (for patients with reduced LVEF), or intolerance documented (Sections 7 and 11) • Follow-up clinic visit scheduled, usually for 7-10 days",
+   "file": "5ece191d6a2b_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommended for all HF patients"
+   ],
+   "entities": []
+  }
+ ],
+ "facts": [
+  {
+   "text": "Determine readiness to change; if ready, choose a date for quitting",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Determine readiness to change; if ready, choose a date for quitting"
+   ]
+  },
+  {
+   "text": "Ask the patient about his/her smoking status and use of other tobacco products. Specify both amount of smoking (cigarettes per day) and duration of smoking (number of years)",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Smoking cessation",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Ask the patient about his/her smoking status and use of other tobacco products. Specify both amount of smoking (cigarettes per day) and duration of smoking (number of years)"
+   ]
+  },
+  {
+   "text": "Smoking cessation is obligatory and passive smoking should be avoided.",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (A)",
+    "Established/agreed issue",
+    "Tobacco use"
+   ],
+   "entities": []
+  },
+  {
+   "text": "To be aware of the consequences for health of smoking and use of recreational drugs. Stop smoking (including e-cigarettes) and taking recreational drugs.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Education topic: Smoking and recreational drugs",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "e-cigarettes",
+    "recreational drugs",
+    "smoking"
+   ]
+  },
+  {
+   "text": "Advise smoking and recreational substances cessation. To support smoking cessation cognitive behavioural theory and psychological support may be needed",
+   "file": "6c8b1fef6ed6_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: I (C)",
+    "Established/agreed issues",
+    "Smoking cessation"
+   ],
+   "entities": []
+  },
+  {
+   "text": "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Smoking cessation"
+   ],
+   "entities": [
+    "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Practical Tips to Quit Smoking",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Set a quit date if ready. Write how many cigarettes you smoke daily and years smoked. Avoid second‑hand smoke. Smoking harms health. Ask your doctor for a 5 As plan: Ask, Advise, Assess, Assist, Arrange.",
+    "visual_description": "Patient holding a calendar, notebook, and talking with doctor.",
+    "on_screen_text": "Set quit date – 5 As plan"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Set a quit date if ready.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states to choose a quit date if the patient is ready."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Write how many cigarettes you smoke daily and years smoked.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Matches fact 2's requirement to specify amount of smoking and duration."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Avoid second‑hand smoke.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states passive smoking should be avoided."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smoking harms health.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 states smoking has health consequences."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Ask your doctor for a 5 As plan: Ask, Advise, Assess, Assist, Arrange.",
+   "label": "SUPPORTED",
+   "fact": 6,
+   "reason": "Fact 6 explicitly mentions the 5As plan."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Set quit date – 5 As plan",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states to choose a quit date if ready."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Practical Tips to Quit Smoking",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Set a quit date if ready. Write how many cigarettes you smoke daily and years smoked. Avoid second‑hand smoke. Smoking harms health. Ask your doctor for a 5 As plan: Ask, Advise, Assess, Assist, Arrange.",
+    "visual_description": "Patient holding a calendar, notebook, and talking with doctor.",
+    "on_screen_text": "Set quit date – 5 As plan"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Set a quit date if ready.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states to choose a quit date if the patient is ready.",
+   "guideline_fact": "Determine readiness to change; if ready, choose a date for quitting",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Smoking cessation",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Write how many cigarettes you smoke daily and years smoked.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Matches fact 2's requirement to specify amount of smoking and duration.",
+   "guideline_fact": "Ask the patient about his/her smoking status and use of other tobacco products. Specify both amount of smoking (cigarettes per day) and duration of smoking (number of years)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Smoking cessation",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Avoid second‑hand smoke.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Fact 3 states passive smoking should be avoided.",
+   "guideline_fact": "Smoking cessation is obligatory and passive smoking should be avoided.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "0b9004ab7668_annotation.nt",
+    "headers": [
+     "CLASS_OF_RECOMMENDATION: I (A)",
+     "Established/agreed issue",
+     "Tobacco use"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Smoking harms health.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 states smoking has health consequences.",
+   "guideline_fact": "To be aware of the consequences for health of smoking and use of recreational drugs. Stop smoking (including e-cigarettes) and taking recreational drugs.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "8c1431b64218_annotation.nt",
+    "headers": [
+     "Self-care aspects",
+     "Education topic: Smoking and recreational drugs",
+     "Goal for the patient and caregiver"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Ask your doctor for a 5 As plan: Ask, Advise, Assess, Assist, Arrange.",
+   "label": "SUPPORTED",
+   "fact": 6,
+   "reason": "Fact 6 explicitly mentions the 5As plan.",
+   "guideline_fact": "All smokers should be professionally encouraged to permanently stop smoking all forms of tobacco. Follow-up, referral to special multidisciplinary programmes and/or pharmacotherapy (including nicotine replacement) are recommended, as a stepwise strategy for smoking cessation. Structured approaches are to be used, for example, 5As: Ask, Advise, Assess, Assist, Arrange",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Table 1 Core components and objectives common to all clinical conditions",
+     "Smoking cessation"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Set quit date – 5 As plan",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states to choose a quit date if ready.",
+   "guideline_fact": "Determine readiness to change; if ready, choose a date for quitting",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Smoking cessation",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "P"
+}

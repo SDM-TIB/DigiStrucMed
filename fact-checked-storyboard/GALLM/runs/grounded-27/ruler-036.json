@@ -1,0 +1,932 @@
+{
+ "request": "Create a brief patient-education scene that explains how alcohol affects the heart in heart failure.",
+ "candidates": [
+  {
+   "text": "Evaluation and management of structural heart disease, thyroid dysfunction, alcohol or drug abuse, or other primary causes of AF is recommended before engaging in sports.",
+   "file": "74434f5d72ff_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations for exercise in individuals with arrhythmias and implantable cardiac devices",
+    "Exercise recommendations in individuals with atrial fibrillation"
+   ],
+   "entities": [
+    "Evaluation and management of structural heart disease, thyroid dysfunction, alcohol or drug abuse, or other primary causes of AF",
+    "before engaging in sports"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Excessive alcohol intake 286 General population: no/light alcohol intake is beneficial Patients with alcohol-induced CMP should abstain from alcohol",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preventive strategies",
+    "Risk factors for heart failure"
+   ],
+   "entities": [
+    "Excessive alcohol intake",
+    "General population",
+    "Patients with alcohol-induced CMP",
+    "abstain from alcohol",
+    "beneficial",
+    "no/light alcohol intake"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "To be able to abstain from or avoid excessive alcohol intake, especially for alcohol-induced CMP. To restrict alcohol according to CV prevention guidelines.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Education topic: Alcohol",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "CV prevention guidelines",
+    "alcohol-induced CMP",
+    "excessive alcohol intake",
+    "restrict alcohol"
+   ]
+  },
+  {
+   "text": "Chlorhexidine—alcohol instead of povidone-iodine—alcohol should be considered for skin antisepsis.647,648",
+   "file": "64365ff46259_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "B"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Chlorhexidine—alcohol",
+    "povidone-iodine—alcohol",
+    "skin antisepsis"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Excessive alcohol intake Men Limit alcohol intake to 1-2 drink equivalents per day C",
+   "file": "48f668a7d531_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Excessive alcohol intake"
+   ],
+   "entities": [
+    "1-2 drink equivalents per day",
+    "Excessive alcohol intake",
+    "Men",
+    "alcohol intake"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Those with propensity to abuse alcohol or with alcoholic cardiomyopathy Abstention",
+   "file": "48f668a7d531_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "continued population",
+    "Excessive alcohol intake"
+   ],
+   "entities": [
+    "Abstention",
+    "Those with propensity to abuse alcohol or with alcoholic cardiomyopathy"
+   ]
+  },
+  {
+   "text": "10. In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors, ICD implantation may be considered if meaningful survival of greater than 1 year is expected (S10.8-14–S10.8-16,S10.8-20).",
+   "file": "466c212db777_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "(continued)"
+   ],
+   "entities": [
+    "1 year",
+    "ICD implantation",
+    "In patients with adult congenital heart disease and severe ventricular dysfunction (LVEF <35%) and symptoms of heart failure despite GDMT or additional risk factors",
+    "meaningful survival"
+   ]
+  },
+  {
+   "text": "Consumption of alcohol should be limited to a maximum of 100 g per week",
+   "file": "f12ffb01cde2_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthy diet characteristics"
+   ],
+   "entities": [
+    "Consumption of alcohol",
+    "a maximum of 100 g per week"
+   ]
+  },
+  {
+   "text": "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women.",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthy food choices",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Consumption of alcoholic beverages should be limited to two glasses per day (20 g/day of alcohol) for men and one glass per day (10 g/day of alcohol) for women."
+   ]
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Tailor alcohol advice to aetiology of HF; e.g. abstinence in alcoholic CMP. Inform and discuss alcohol intake according to CV prevention guidelines (2 units per day in men or 1 unit per day in women) a.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Alcohol",
+    "Self-care aspects",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "1 unit per day in women",
+    "2 units per day in men",
+    "abstinence",
+    "aetiology of HF",
+    "alcohol advice",
+    "alcohol intake",
+    "alcoholic CMP"
+   ]
+  },
+  {
+   "text": "In adults with CHD with biventricular physiology and a left systemic ventricle presenting with symptomatic heart failure (NYHA II/III) and EF ≤35% despite ≥3 months of OMT, ICD implantation is indicated.",
+   "file": "d8723c40017a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for sudden cardiac death prevention, and treatment of ventricular arrhythmia in congenital heart disease"
+   ],
+   "entities": [
+    "EF ≤35%",
+    "ICD implantation",
+    "adults with CHD with biventricular physiology and a left systemic ventricle",
+    "symptomatic heart failure (NYHA II/III)",
+    "≥3 months of OMT"
+   ]
+  },
+  {
+   "text": "Individualize treatment on the basis of prognosis and QOL. For example, alcohol intake may be acceptable for an HF patient in hospice.",
+   "file": "4453defbdcec_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Healthcare Providers"
+   ],
+   "entities": [
+    "HF patient in hospice",
+    "QOL",
+    "alcohol intake",
+    "prognosis",
+    "treatment"
+   ]
+  },
+  {
+   "text": "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae"
+   ]
+  },
+  {
+   "text": "Participation in sports activities should be considered in individuals with heart failure who are at low risk, based on a complete assessment and exclusion of all contraindications, in stable condition for at least 4 weeks, optimal treatment, and NYHA functional class I status.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "NYHA functional class I status",
+    "Participation in sports activities",
+    "all contraindications",
+    "at least 4 weeks",
+    "at low risk",
+    "complete assessment",
+    "individuals with heart failure",
+    "optimal treatment",
+    "stable condition"
+   ]
+  },
+  {
+   "text": "LVEF ≤30% Isolated RV failure Nonoperable severe valve abnormalities Nonoperable severe congenital heart disease EF ≥40%, elevated natriuretic peptide levels and evidence of significant diastolic dysfunction",
+   "file": "e9ad6603eaed_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Severe cardiac dysfunction defined by ≥1 of these:",
+    "ESC Definition of Advanced HF"
+   ],
+   "entities": [
+    "EF",
+    "Isolated RV failure",
+    "LVEF",
+    "Nonoperable severe congenital heart disease",
+    "Nonoperable severe valve abnormalities",
+    "natriuretic peptide levels",
+    "significant diastolic dysfunction",
+    "≤30%",
+    "≥40%"
+   ]
+  },
+  {
+   "text": "Understand and comply with sodium restriction Demonstrate how to read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups Reiterate limits for alcohol consumption or need for abstinence if history of alcohol abuse",
+   "file": "a7e8deb3319e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specific diet recommendations: individualized low-sodium diet; recommendation for alcohol intake",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "history of alcohol abuse",
+    "limits for alcohol consumption or need for abstinence",
+    "read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups",
+    "sodium restriction"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Excessive alcohol intake 286 General population: no/light alcohol intake is beneficial Patients with alcohol-induced CMP should abstain from alcohol",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Preventive strategies",
+    "Risk factors for heart failure"
+   ],
+   "entities": [
+    "Excessive alcohol intake",
+    "General population",
+    "Patients with alcohol-induced CMP",
+    "abstain from alcohol",
+    "beneficial",
+    "no/light alcohol intake"
+   ]
+  },
+  {
+   "text": "To be able to abstain from or avoid excessive alcohol intake, especially for alcohol-induced CMP. To restrict alcohol according to CV prevention guidelines.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-care aspects",
+    "Education topic: Alcohol",
+    "Goal for the patient and caregiver"
+   ],
+   "entities": [
+    "CV prevention guidelines",
+    "alcohol-induced CMP",
+    "excessive alcohol intake",
+    "restrict alcohol"
+   ]
+  },
+  {
+   "text": "Tailor alcohol advice to aetiology of HF; e.g. abstinence in alcoholic CMP. Inform and discuss alcohol intake according to CV prevention guidelines (2 units per day in men or 1 unit per day in women) a.",
+   "file": "8c1431b64218_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Education topic: Alcohol",
+    "Self-care aspects",
+    "Professional behaviour and educational tools"
+   ],
+   "entities": [
+    "1 unit per day in women",
+    "2 units per day in men",
+    "abstinence",
+    "aetiology of HF",
+    "alcohol advice",
+    "alcohol intake",
+    "alcoholic CMP"
+   ]
+  },
+  {
+   "text": "Understand and comply with sodium restriction Demonstrate how to read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups Reiterate limits for alcohol consumption or need for abstinence if history of alcohol abuse",
+   "file": "a7e8deb3319e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Specific diet recommendations: individualized low-sodium diet; recommendation for alcohol intake",
+    "Skill Building and Critical Target Behaviors"
+   ],
+   "entities": [
+    "history of alcohol abuse",
+    "limits for alcohol consumption or need for abstinence",
+    "read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups",
+    "sodium restriction"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Alcohol and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Drinking too much alcohol can worsen heart failure. If alcohol caused your heart problem, stop drinking. If not, limit to 2 drinks daily for men, 1 for women. With alcohol abuse history, avoid alcohol.",
+    "visual_description": "Doctor talking to patient; icons of drinks with red cross.",
+    "on_screen_text": "Alcohol limits for heart health"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Drinking too much alcohol can worsen heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Excessive alcohol intake worsens heart failure."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If alcohol caused your heart problem, stop drinking.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states patients with alcohol‑induced cardiomyopathy should abstain from alcohol."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If not, limit to 2 drinks daily for men, 1 for women.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Matches the guideline of 2 units per day for men and 1 unit per day for women."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "With alcohol abuse history, avoid alcohol.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence matches the recommendation to abstain for those with an alcohol abuse history."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Alcohol limits for heart health",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The guideline states specific alcohol limits (2 units/day men, 1 unit/day women) for heart health."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Alcohol and Heart Failure",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Drinking too much alcohol can worsen heart failure. If alcohol caused your heart problem, stop drinking. If not, limit to 2 drinks daily for men, 1 for women. With alcohol abuse history, avoid alcohol.",
+    "visual_description": "Doctor talking to patient; icons of drinks with red cross.",
+    "on_screen_text": "Alcohol limits for heart health"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Drinking too much alcohol can worsen heart failure.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Excessive alcohol intake worsens heart failure.",
+   "guideline_fact": "Excessive alcohol intake 286 General population: no/light alcohol intake is beneficial Patients with alcohol-induced CMP should abstain from alcohol",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "b6010d058e25_annotation.nt",
+    "headers": [
+     "Preventive strategies",
+     "Risk factors for heart failure"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If alcohol caused your heart problem, stop drinking.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states patients with alcohol‑induced cardiomyopathy should abstain from alcohol.",
+   "guideline_fact": "Excessive alcohol intake 286 General population: no/light alcohol intake is beneficial Patients with alcohol-induced CMP should abstain from alcohol",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "b6010d058e25_annotation.nt",
+    "headers": [
+     "Preventive strategies",
+     "Risk factors for heart failure"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "If not, limit to 2 drinks daily for men, 1 for women.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "Matches the guideline of 2 units per day for men and 1 unit per day for women.",
+   "guideline_fact": "Tailor alcohol advice to aetiology of HF; e.g. abstinence in alcoholic CMP. Inform and discuss alcohol intake according to CV prevention guidelines (2 units per day in men or 1 unit per day in women) a.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "8c1431b64218_annotation.nt",
+    "headers": [
+     "Education topic: Alcohol",
+     "Self-care aspects",
+     "Professional behaviour and educational tools"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "With alcohol abuse history, avoid alcohol.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "The sentence matches the recommendation to abstain for those with an alcohol abuse history.",
+   "guideline_fact": "Understand and comply with sodium restriction Demonstrate how to read a food label to check sodium amount per serving and sort foods into high- and low-sodium groups Reiterate limits for alcohol consumption or need for abstinence if history of alcohol abuse",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "a7e8deb3319e_annotation.nt",
+    "headers": [
+     "Specific diet recommendations: individualized low-sodium diet; recommendation for alcohol intake",
+     "Skill Building and Critical Target Behaviors"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Alcohol limits for heart health",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The guideline states specific alcohol limits (2 units/day men, 1 unit/day women) for heart health.",
+   "guideline_fact": "Tailor alcohol advice to aetiology of HF; e.g. abstinence in alcoholic CMP. Inform and discuss alcohol intake according to CV prevention guidelines (2 units per day in men or 1 unit per day in women) a.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "8c1431b64218_annotation.nt",
+    "headers": [
+     "Education topic: Alcohol",
+     "Self-care aspects",
+     "Professional behaviour and educational tools"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}

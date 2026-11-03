@@ -1,0 +1,906 @@
+{
+ "request": "Create a brief patient-education scene that lists early warning signs that heart failure is getting worse.",
+ "candidates": [
+  {
+   "text": "Smartphone or other mobile health applications that provide an interactive platform for education, reminders, warnings, and adherence tracking",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Recommend tools that support adherence in real time"
+   ],
+   "entities": [
+    "Smartphone or other mobile health applications that provide an interactive platform for education, reminders, warnings, and adherence tracking"
+   ]
+  },
+  {
+   "text": "Symptomatic or severe asymptomatic hypotension (SBP $<90$ mmHg)—may be made worse by diuretic-induced hypovolaemia.",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*Cautions/seek specialist advice:",
+    "Supplementary Table 7"
+   ],
+   "entities": [
+    "<90",
+    "SBP",
+    "diuretic",
+    "hypotension"
+   ]
+  },
+  {
+   "text": "Significant hypokalaemia ( $K^+ \\leq 3.5$ mmol/L)—may be made worse by diuretic.",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "*Cautions/seek specialist advice:",
+    "Supplementary Table 7"
+   ],
+   "entities": [
+    "\\leq 3.5",
+    "diuretic",
+    "hypokalaemia"
+   ]
+  },
+  {
+   "text": "Tezosentan 155 50 or 100 mg/hour IV RITZ-5 Placebo controlled, randomized, blinded n = 84 Acute pulmonary edema 24 hours No No change in oxygen saturation Outcome worse with higher dose",
+   "file": "2c7cfe64aed4_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "PH is an Inclusion Criterion",
+    "Patients Population, Duration",
+    "Outcome",
+    "Treatment, Duration",
+    "Study Acronym and Characteristics",
+    "**Table 2.** Clinical Trials with PH Medications in HF Patients"
+   ],
+   "entities": [
+    "100 mg/h",
+    "24 hours",
+    "Acute pulmonary edema",
+    "IV",
+    "No change in oxygen saturation",
+    "Outcome worse with higher dose",
+    "Tezosentan\n155\n50 or 100 mg/hour IV",
+    "n = 84"
+   ]
+  },
+  {
+   "text": "Verapamil is not recommended in children < 1 year of age with PVC/VT, particularly if they have signs of heart failure or concurrent use of other AADs.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "1 year",
+    "< 1 year",
+    "AADs",
+    "PVC",
+    "VT",
+    "Verapamil",
+    "children",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae"
+   ]
+  },
+  {
+   "text": "An early follow-up visit is recommended at 1–2 weeks after discharge to assess signs of congestion, drug tolerance, and start and/or uptitrate evidence-based therapy.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for management of patients after HF hospitalization"
+   ],
+   "entities": [
+    "1–2 weeks",
+    "An early follow-up visit",
+    "after discharge",
+    "congestion"
+   ]
+  },
+  {
+   "text": "Risk factors for heart failure Sedentary habit Regular physical activity",
+   "file": "b6010d058e25_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Risk factors for heart failure",
+    "Preventive strategies"
+   ],
+   "entities": [
+    "Regular physical activity",
+    "Sedentary habit",
+    "heart failure"
+   ]
+  },
+  {
+   "text": "Significant renal dysfunction [creatinine $>221$ $\\mu$ mol/L ( $>2.5$ mg/dL) or eGFR $<30$ mL/min/1.73 m2]a—may be made worse by diuretic or patient may not respond to diuretic (especially thiazide diuretic).",
+   "file": "c82791f0532a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 7",
+    "*Cautions/seek specialist advice:"
+   ],
+   "entities": [
+    "<30",
+    ">2.5",
+    ">221",
+    "creatinine",
+    "diuretic",
+    "eGFR",
+    "renal dysfunction"
+   ]
+  },
+  {
+   "text": "Use decision aids when available (example: CardioSmart Heart Failure Resources)",
+   "file": "ee588d7989f7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Consider the patient\\'s perspective"
+   ],
+   "entities": [
+    "Use decision aids when available (example: CardioSmart Heart Failure Resources)"
+   ]
+  },
+  {
+   "text": "There may be some early changes to the structure of the heart that you have not noticed but are found on echocardiogram or other cardiac testing. Talk with your provider about possibly taking medications that ease the stress on the heart.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE B"
+   ],
+   "entities": [
+    "early changes to the structure of the heart",
+    "echocardiogram",
+    "medications",
+    "other cardiac testing",
+    "provider",
+    "stress on the heart"
+   ]
+  },
+  {
+   "text": "High mortality risk using a validated risk model for further assessment and consideration of advanced therapies, such as the Seattle Heart Failure Model",
+   "file": "312ed985281c_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Chronic HF with high-risk features",
+    "following risk factors"
+   ],
+   "entities": [
+    "High mortality risk",
+    "Seattle Heart Failure Model"
+   ]
+  },
+  {
+   "text": "A baseline CV risk assessment should be considered in all cancer patients scheduled to receive a cancer treatment with the potential to cause heart failure. 846,865",
+   "file": "6223e4337374_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendation"
+   ],
+   "entities": [
+    "A baseline CV risk assessment",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)",
+   "file": "42b909f157bd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CIED related",
+    "Table 2",
+    "Factors determining the type and frequency of CIED follow-up"
+   ],
+   "entities": [
+    "Arrhythmia/heart failure diagnostics (including physiologic monitoring, transthoracic impedance, patient activity)"
+   ]
+  },
+  {
+   "text": "Supplementary Table 5 Practical guidance on the use of sacubitril/valsartan (angiotensin receptor-neprilysin inhibitor) in patients with heart failure with reduced ejection fractiona",
+   "file": "4a8cf3cd3dd8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 5"
+   ],
+   "entities": [
+    "heart failure",
+    "patients",
+    "sacubitril/valsartan"
+   ]
+  },
+  {
+   "text": "Symptomatic patients with Ebstein\\'s anomaly with saturations <85% and/or heart failure should be advised against pregnancy.",
+   "file": "f3d48fb4bf1a_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Symptomatic patients with Ebstein's anomaly",
+    "pregnancy",
+    "saturations <85% and/or heart failure"
+   ]
+  },
+  {
+   "text": "1. Severe and persistent symptoms of heart failure [NYHA class III (advanced) or IV].",
+   "file": "8f24922e4333_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "All the following criteria must be present despite optimal medical treatment:"
+   ],
+   "entities": [
+    "NYHA class III (advanced) or IV",
+    "Severe and persistent symptoms of heart failure"
+   ]
+  },
+  {
+   "text": "Regular discussion about exercise participation and provision of an individualized exercise prescription is recommended in all individuals with heart failure.",
+   "file": "f2ef453ad477_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Regular discussion about exercise participation",
+    "all individuals with heart failure",
+    "individualized exercise prescription"
+   ]
+  },
+  {
+   "text": "Supplementary Table 6 Practical guidance on the use of the sodium-glucose co-transporter 2 inhibitors dapagliflozin and empagliflozin in patients with heart failure with reduced ejection fractiona",
+   "file": "4136f3059227_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 6"
+   ],
+   "entities": [
+    "dapagliflozin",
+    "empagliflozin",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Target BP is 130/80 mmHg Hypertension is linked to immunosuppressive therapy and denervation of cardiac volume receptors It is sensitive to a low-sodium diet. Treatment with amlodipine and ACEIs/ARBs are first choice, usually completed by diuretics. Beta-blockers are contra-indicated as they hamper the already delayed chronotropic response of the denervated heart during the early term but they showed the beneficial effects as a treatment more than 1–1.5 years after HTX and in the case of post-transplant heart failure development. Nifedipine and diltiazem may increase the effects of calcineurin inhibitors due to the drug interactions",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Blood pressure monitoring",
+    "Established/agreed issues"
+   ],
+   "entities": [
+    "130/80 mmHg",
+    "ACEIs/ARBs",
+    "Beta-blockers",
+    "Hypertension",
+    "Nifedipine and diltiazem",
+    "Target BP",
+    "amlodipine",
+    "calcineurin inhibitors",
+    "denervation of cardiac volume receptors",
+    "diuretics",
+    "early term",
+    "immunosuppressive therapy",
+    "low-sodium diet",
+    "more than 1–1.5 years after HTX",
+    "post-transplant heart failure development"
+   ]
+  },
+  {
+   "text": "Patients without an ICD are more likely to die suddenly from a dangerous heart rhythm. Without an ICD, 36 out of 100 patients with heart failure will die over a 5-year period.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Will I live longer with an ICD?",
+    "Do not implant an ICD"
+   ],
+   "entities": [
+    "36 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients without an ICD",
+    "die suddenly from a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Early identification of asymptomatic relatives may lead to early treatment and prevention of progression to HF and proper genetic counseling.",
+   "file": "c3d20a774d4f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Genetic counselling and testing"
+   ],
+   "entities": [
+    "Early identification of asymptomatic relatives",
+    "early treatment",
+    "genetic counseling",
+    "prevention of progression to HF"
+   ]
+  },
+  {
+   "text": "Care of the patient with heart failure should extend to their loved ones, including beyond their death, to offer support to families and help them cope with loss.",
+   "file": "3075fbcb3de7_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What Palliative Care Adds to Overall HF Management",
+    "Caregiver support"
+   ],
+   "entities": [
+    "Care of the patient with heart failure",
+    "beyond their death",
+    "cope with loss",
+    "support to families",
+    "their loved ones"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations.",
+   "file": "4cc42bc97880_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "diabetes",
+    "fewer heart-related deaths and hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "ICD therapy is recommended in patients with CAD, symptomatic heart failure (NYHA class II–III), and LVEF \\leq 35\\% despite \\geq 3 months of OMT.",
+   "file": "4cc8b9b71808_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "3 months",
+    "CAD",
+    "ICD",
+    "ICD therapy",
+    "LVEF",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Before considering a sport activity, a preliminary optimization of heart failure risk factor control and therapy, including device implantation (if appropriate), is recommended.",
+   "file": "6215becef4a2_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "device implantation",
+    "if appropriate",
+    "preliminary optimization of heart failure risk factor control and therapy",
+    "sport activity"
+   ]
+  },
+  {
+   "text": "Optimal medical treatment including ACE-I/ARB/ARNIs, MRAs, beta-blockers, and SGLT2 inhibitors is indicated in all heart failure patients with reduced EF.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [],
+   "entities": [
+    "ACE-I/ARB",
+    "ARNIs",
+    "EF",
+    "MRAs",
+    "SGLT2 inhibitors",
+    "beta-blockers",
+    "heart failure",
+    "patients"
+   ]
+  },
+  {
+   "text": "Patients with an ICD are less likely to die suddenly of a dangerous heart rhythm. With an ICD, 29 out of 100 patients with heart failure will die over a 5-year period. This is 7 fewer deaths than if they did not have an ICD.",
+   "file": "3a64564151a9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Implant an ICD",
+    "Will I live longer with an ICD?"
+   ],
+   "entities": [
+    "29 out of 100 patients with heart failure will die over a 5-year period",
+    "Patients with an ICD",
+    "die suddenly of a dangerous heart rhythm"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitor Originally used to treat diabetes, these medicines have clear benefits for people with heart failure, including fewer heart-related deaths and hospitalizations. dapagliflozin (Farxiga) empagliflozin (Jardiance)",
+   "file": "f97f13656e4e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "lu_b29f299caf695e4d1a260496f956e83a1483db61e441c35be8c74d610987aa64_n0006: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Sodium-glucose cotransporter 2 (SGLT2) inhibitor",
+    "dapagliflozin",
+    "diabetes",
+    "empagliflozin",
+    "fewer heart-related deaths",
+    "hospitalizations",
+    "people with heart failure"
+   ]
+  },
+  {
+   "text": "3. In patients with early repolarization pattern on ECG, genetic testing is not recommended (S7.9.1.4-5).",
+   "file": "d62fb0e6af8a_annotation.nt",
+   "class": [
+    "III%3A%20No%20Benefit"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "early repolarization pattern on ECG",
+    "genetic testing",
+    "patients with early repolarization pattern on ECG"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III), and LVEF ≤35% after ≥3 months of OMT.",
+   "file": "c704df87253f_annotation.nt",
+   "class": [
+    "IIa"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Classa",
+    "Levelb",
+    "Risk stratification and primary prevention of SCD",
+    "Recommendation"
+   ],
+   "entities": [
+    "DCM/HNDCM",
+    "ICD implantation",
+    "LVEF ≤35%",
+    "after ≥3 months of OMT",
+    "patients",
+    "symptomatic heart failure (NYHA class II–III)"
+   ]
+  },
+  {
+   "text": "ICD implantation should be considered in patients with DCM/HNDCM, symptomatic heart failure (NYHA class II–III) and LVEF \\leq 35\\% after \\geq 3 months of OMT.",
+   "file": "20686034e102_annotation.nt",
+   "class": [
+    "I",
+    "IIa"
+   ],
+   "level": [],
+   "headers": [
+    "DCM/HNDCM"
+   ],
+   "entities": [
+    "3 months",
+    "DCM/HNDCM",
+    "ICD",
+    "ICD implantation",
+    "LVEF",
+    "\\geq 3 ",
+    "\\leq 35",
+    "heart failure",
+    "patients with DCM/HNDCM"
+   ]
+  },
+  {
+   "text": "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure",
+   "file": "f8250b307897_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1",
+    "Disease related",
+    "Goals of monitoring CIEDs"
+   ],
+   "entities": [
+    "Document (where feasible) hemodynamic status, transthoracic impedance, patient activity and other physiologic parameters over time as part of chronic disease monitoring in heart failure"
+   ]
+  },
+  {
+   "text": "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor dapagliflozin, empagliflozin Farxiga, Jardiance Used to treat diabetes but are also to treat heart failure in people with or without diabetes to reduce hospitalization and death.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "What They Do",
+    "Brand Names*",
+    "Generic Names*",
+    "Types of Heart Failure Medications"
+   ],
+   "entities": [
+    "Farxiga",
+    "Jardiance",
+    "Sodium-glucose cotransporter-2 (SGLT2) Inhibitor",
+    "dapagliflozin",
+    "death",
+    "diabetes",
+    "empagliflozin",
+    "heart failure",
+    "hospitalization",
+    "people with or without diabetes"
+   ]
+  },
+  {
+   "text": "Do not ignore emotional distress, especially depression and anxiety. Seek treatment early",
+   "file": "568569a7ea2a_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Self-Care Behaviors Recommended for Patients With HF"
+   ],
+   "entities": [
+    "anxiety",
+    "depression",
+    "early",
+    "emotional distress",
+    "treatment"
+   ]
+  },
+  {
+   "text": "A documented assessment of risk factors for VTE before pregnancy or in early pregnancy is recommended in all women.",
+   "file": "ed3da2c86b38_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "all women",
+    "before pregnancy or in early pregnancy",
+    "documented assessment of risk factors for VTE"
+   ]
+  },
+  {
+   "text": "1. In asymptomatic patients with an early repolarization pattern on ECG, observation without treatment is recommended (S7.9.1.4-1,S7.9.1.4-2).",
+   "file": "d62fb0e6af8a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "RECOMMENDATIONS"
+   ],
+   "entities": [
+    "asymptomatic",
+    "asymptomatic patients with an early repolarization pattern on ECG",
+    "early repolarization pattern on ECG",
+    "observation without treatment"
+   ]
+  },
+  {
+   "text": "Close monitoring of vital signs and grading severity of symptoms/signs",
+   "file": "900d79d2de5f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Phase: Immediate",
+    "Procedures"
+   ],
+   "entities": [
+    "severity of symptoms/signs",
+    "vital signs"
+   ]
+  },
+  {
+   "text": "* Partial list of commonly used drugs for heart failure. Talk with your health care team for additional information about your personal regimen.",
+   "file": "40cf9da0baf0_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table footnote"
+   ],
+   "entities": []
+  },
+  {
+   "text": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "arterial haemoglobin oxygen saturation",
+    "blood pressure",
+    "body temperature",
+    "conscious level",
+    "haemodynamic status",
+    "heart rate",
+    "respiratory rate",
+    "vital signs"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Patient assessment",
+    "Table 1 Core components and objectives common to all clinical conditions"
+   ],
+   "entities": [
+    "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae"
+   ]
+  },
+  {
+   "text": "An early follow-up visit is recommended at 1–2 weeks after discharge to assess signs of congestion, drug tolerance, and start and/or uptitrate evidence-based therapy.",
+   "file": "467514d416aa_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations for management of patients after HF hospitalization"
+   ],
+   "entities": [
+    "1–2 weeks",
+    "An early follow-up visit",
+    "after discharge",
+    "congestion"
+   ]
+  },
+  {
+   "text": "Close monitoring of vital signs and grading severity of symptoms/signs",
+   "file": "900d79d2de5f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Phase: Immediate",
+    "Procedures"
+   ],
+   "entities": [
+    "severity of symptoms/signs",
+    "vital signs"
+   ]
+  },
+  {
+   "text": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "arterial haemoglobin oxygen saturation",
+    "blood pressure",
+    "body temperature",
+    "conscious level",
+    "haemodynamic status",
+    "heart rate",
+    "respiratory rate",
+    "vital signs"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "When Heart Failure Gets Worse",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your doctor watches your heart rate, breathing rate, blood pressure, and oxygen level. Changes can show heart failure getting worse. Call your doctor if these numbers change.",
+    "visual_description": "Doctor reviewing vital signs chart with patient.",
+    "on_screen_text": "Watch your vital signs"
+   }
+  ],
+  "not_covered": [
+   "specific early warning signs such as shortness of breath, swelling, weight gain, fatigue"
+  ]
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor watches your heart rate, breathing rate, blood pressure, and oxygen level.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 lists heart rate, respiratory rate, blood pressure, and oxygen saturation as vital signs to assess."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Changes can show heart failure getting worse.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Physical examination includes heart failure signs, so changes in these signs can indicate worsening."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Call your doctor if these numbers change.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The guideline recommends close monitoring of vital signs and grading severity, implying patients should seek care if those numbers change."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Watch your vital signs",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence aligns with the guideline that recommends close monitoring of vital signs."
+  }
+ ],
+ "final_storyboard": {
+  "title": "When Heart Failure Gets Worse",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Your doctor watches your heart rate, breathing rate, blood pressure, and oxygen level. Changes can show heart failure getting worse. Call your doctor if these numbers change.",
+    "visual_description": "Doctor reviewing vital signs chart with patient.",
+    "on_screen_text": "Watch your vital signs"
+   }
+  ],
+  "not_covered": [
+   "specific early warning signs such as shortness of breath, swelling, weight gain, fatigue"
+  ]
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Your doctor watches your heart rate, breathing rate, blood pressure, and oxygen level.",
+   "label": "SUPPORTED",
+   "fact": 4,
+   "reason": "Fact 4 lists heart rate, respiratory rate, blood pressure, and oxygen saturation as vital signs to assess.",
+   "guideline_fact": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "37e8f0f51dc8_annotation.nt",
+    "headers": [
+     "Advice TO DO"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Changes can show heart failure getting worse.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Physical examination includes heart failure signs, so changes in these signs can indicate worsening.",
+   "guideline_fact": "Physical examination: general health status, heart failure signs, cardiac and carotid murmurs, BP control, extremities for presence of arterial pulses and orthopaedic pathology, cerebrovascular events with/without neurological sequelae",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "28d9c60c4057_annotation.nt",
+    "headers": [
+     "Patient assessment",
+     "Table 1 Core components and objectives common to all clinical conditions"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Call your doctor if these numbers change.",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The guideline recommends close monitoring of vital signs and grading severity, implying patients should seek care if those numbers change.",
+   "guideline_fact": "Close monitoring of vital signs and grading severity of symptoms/signs",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "900d79d2de5f_annotation.nt",
+    "headers": [
+     "Phase: Immediate",
+     "Procedures"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "Watch your vital signs",
+   "label": "SUPPORTED",
+   "fact": 3,
+   "reason": "The sentence aligns with the guideline that recommends close monitoring of vital signs.",
+   "guideline_fact": "Close monitoring of vital signs and grading severity of symptoms/signs",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "900d79d2de5f_annotation.nt",
+    "headers": [
+     "Phase: Immediate",
+     "Procedures"
+    ]
+   }
+  }
+ ],
+ "not_covered": [
+  "specific early warning signs such as shortness of breath, swelling, weight gain, fatigue"
+ ],
+ "coverage": "C"
+}

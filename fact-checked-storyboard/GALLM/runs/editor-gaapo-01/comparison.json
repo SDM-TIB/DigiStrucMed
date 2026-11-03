@@ -1,0 +1,9 @@
+{
+  "mahsa_best_start": 0.7277777777777777,
+  "gaapo_initial": 0.7643518518518518,
+  "editor_gaapo_best": 0.7643518518518518,
+  "test_topics": 6,
+  "editor_calls": 100,
+  "dry_run": false,
+  "smoke_test": false
+}

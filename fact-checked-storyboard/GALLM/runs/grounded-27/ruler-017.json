@@ -1,0 +1,940 @@
+{
+ "request": "Create a brief patient-education scene that explains why a high potassium level in the blood is dangerous and why it is checked.",
+ "candidates": [
+  {
+   "text": "2. In patients with HF who experience hyperkalemia (serum potassium level ≥5.5 mEq/L) while taking a renin-angiotensin-aldosterone system inhibitor (RAASi), the effectiveness of potassium binders (patiromer, sodium zirconium cyclosilicate) to improve outcomes by facilitating continuation of RAASi therapy is uncertain.",
+   "file": "62e929fcbbfd_annotation.nt",
+   "class": [
+    "2b"
+   ],
+   "level": [
+    "B-R"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "RAASi therapy",
+    "hyperkalemia",
+    "outcomes",
+    "patients with HF who experience hyperkalemia",
+    "patiromer",
+    "potassium binders",
+    "renin-angiotensin-aldosterone system inhibitor (RAASi)",
+    "serum potassium level",
+    "sodium zirconium cyclosilicate",
+    "≥5.5 mEq/L"
+   ]
+  },
+  {
+   "text": "Acute hyperkalaemia: if ECG abnormalities present, then prevent arrhythmias by IV calcium. Intermediate strategies include: insulin/albuterol/sodium \\text{HCO}_3 IV. Ultimately potassium must be removed from the body with either diuretics, potassium binding resins, or RRT. Chronic hyperkalaemia: reduces dose RAAS blocker; increase loop diuretic, potassium binders",
+   "file": "7ccf08b03352_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hyperkalaemia"
+   ],
+   "entities": [
+    "ECG",
+    "IV calcium",
+    "RAAS blocker",
+    "RRT",
+    "albuterol",
+    "diuretics",
+    "hyperkalaemia",
+    "insulin",
+    "potassium binders",
+    "potassium binding resins"
+   ]
+  },
+  {
+   "text": "Acute hyperkalaemia : if ECG abnormalities present, then prevent arrhythmias by IV calcium. Intermediate strategies include: insulin/albuterol/sodium HCO 3 IV. Ultimately potassium must be removed from the body with either diuretics, potassium binding resins, or RRT. Chronic hyperkalaemia : reduces dose RAAS blocker; increase loop diuretic, potassium binders",
+   "file": "e2a1db086067_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hyperkalaemia"
+   ],
+   "entities": [
+    "ECG",
+    "IV calcium",
+    "RAAS blocker",
+    "RRT",
+    "albuterol",
+    "diuretics",
+    "hyperkalaemia",
+    "insulin",
+    "potassium binders",
+    "potassium binding resins",
+    "sodium HCO 3"
+   ]
+  },
+  {
+   "text": "3. In patients taking MRA whose serum potassium cannot be maintained at <5.5 mEq/L, MRA should be discontinued to avoid life-threatening hyperkalemia.",
+   "file": "27e3153b8153_annotation.nt",
+   "class": [
+    "3%3A%20Harm"
+   ],
+   "level": [
+    "B-NR"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Mineralocorticoid Receptor Antagonists (MRAs) Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "<5.5 mEq/L",
+    "In patients taking MRA whose serum potassium cannot be maintained at <5.5 mEq/L",
+    "MRA",
+    "hyperkalemia"
+   ]
+  },
+  {
+   "text": "In patients with chronic or recurrent hyperkalaemia on RAAS inhibitors therapy an approved $K^+$ -lowering agent may be initiated as soon as $K^+$ levels are confirmed as $>5.0$ mEq/L. Closely monitor $K^+$ levels. Maintain treatment unless alternative treatable aetiology is identified.",
+   "file": "5fd34acb13af_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 24"
+   ],
+   "entities": [
+    ">5.0",
+    "hyperkalaemia",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with chronic or recurrent hyperkalaemia not on maximal tolerated guideline-recommended target dose of RAAS inhibitors, an approved $K^+$ -lowering agent may be initiated as soon as confirmed $K^+$ levels are $>5.0$ mEq/L. Closely monitor $K^+$ levels. Maintain treatment unless alternative treatable aetiology is identified. RAAS inhibitors should be optimized when $K^+$ levels are $<5.0$ mEq/L.",
+   "file": "5fd34acb13af_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 24"
+   ],
+   "entities": [
+    "<5.0",
+    ">5.0",
+    "hyperkalaemia",
+    "patients"
+   ]
+  },
+  {
+   "text": "In patients with $K^+$ levels of $>5.0$ – $\\leq 6.5$ mEq/L on maximal tolerated, guideline-recommended target dose of RAAS inhibitor therapy, treatment with a $K^+$ -lowering agent may be initiated. $K^+$ level should be closely monitored and $K^+$ -lowering treatment should be maintained unless alternative treatable aetiology for hyperkalaemia is identified.",
+   "file": "5fd34acb13af_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 24"
+   ],
+   "entities": [
+    ">5.0",
+    "RAAS inhibitor",
+    "\\leq 6.5",
+    "hyperkalaemia",
+    "patients"
+   ]
+  },
+  {
+   "text": "1. In patients with HFrEF and NYHA class II to IV symptoms, an MRA (spironolactone or eplerenone) is recommended to reduce morbidity and mortality, if eGFR is >30 mL/min/1.73 m² and serum potassium is <5.0 mEq/L. Careful monitoring of potassium, renal function, and diuretic dosing should be performed at initiation and closely monitored thereafter to minimize risk of hyperkalemia and renal insufficiency.",
+   "file": "27e3153b8153_annotation.nt",
+   "class": [
+    "1"
+   ],
+   "level": [
+    "A"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for Mineralocorticoid Receptor Antagonists (MRAs) Referenced studies that support the recommendations are summarized in the Online Data Supplements."
+   ],
+   "entities": [
+    "<5.0 mEq/L",
+    ">30 mL/min/1.73 m²",
+    "In patients with HFrEF and NYHA class II to IV symptoms",
+    "MRA",
+    "diuretic",
+    "eGFR",
+    "eplerenone",
+    "hyperkalemia",
+    "morbidity",
+    "mortality",
+    "renal function",
+    "renal insufficiency",
+    "serum potassium",
+    "spironolactone"
+   ]
+  },
+  {
+   "text": "In patients with $K^+$ levels of $>5.0$ – $\\leq 6.5$ mEq/L not on maximal tolerated, guideline-recommended target dose of RAAS inhibitor therapy, an approved $K^+$ -lowering agent should be initiated. If levels $<5.0$ mEq/L are detected, up-titrate RAAS inhibitor; $K^+$ level should be closely monitored and $K^+$ -lowering treatment should be maintained unless another aetiology for hyperkalaemia is identified.",
+   "file": "5fd34acb13af_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Supplementary Table 24"
+   ],
+   "entities": [
+    "<5.0",
+    ">5.0",
+    "RAAS inhibitor",
+    "\\leq 6.5",
+    "hyperkalaemia",
+    "patients"
+   ]
+  },
+  {
+   "text": "The addition of an ARB (or renin inhibitor) to the combination of an ACE-I and an MRA is not recommended in patients with HF, because of the increased risk of renal dysfunction and hyperkalaemia.",
+   "file": "75cc9ee1a46c_annotation.nt",
+   "class": [
+    "III"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Recommendations for the treatment of HFrEF"
+   ],
+   "entities": [
+    "ACE-I",
+    "ARB",
+    "HF",
+    "MRA",
+    "hyperkalaemia",
+    "patients with HF",
+    "renal dysfunction"
+   ]
+  },
+  {
+   "text": "ARBs are recommended for administration to symptomatic and asymptomatic women with an LVEF \\leq 40% who are intolerant to ACE inhibitors for reasons other than hyperkalemia or renal insufficiency. (Strength of Evidence = A)",
+   "file": "bd997014e56d_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "15.6"
+   ],
+   "entities": [
+    "ACE inhibitors",
+    "ARBs",
+    "LVEF \\leq 40%",
+    "hyperkalemia",
+    "renal insufficiency",
+    "symptomatic and asymptomatic women"
+   ]
+  },
+  {
+   "text": "Careful observation for development of a variety of side effects, including renal dysfunction, electrolyte abnormalities and symptomatic hypotension, is recommended in patients treated with diuretics, especially when used at high doses and in combination. Patients should undergo routine laboratory studies and clinical examination as dictated by their clinical response. (Strength of Evidence = C) Serum potassium and magnesium levels should be monitored at least daily and maintained in the normal range. More frequent monitoring may be necessary when diuresis is rapid. (Strength of Evidence = C) Overly rapid diuresis may be associated with severe muscle cramps, which should be treated with potassium replacement if indicated. (Strength of Evidence = C)",
+   "file": "2a4f7b73d7fb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "12.9"
+   ],
+   "entities": [
+    "More frequent",
+    "Serum potassium and magnesium levels",
+    "at least daily",
+    "clinical examination",
+    "diuretics",
+    "electrolyte abnormalities",
+    "hypotension",
+    "muscle cramps",
+    "patients treated with diuretics, especially when used at high doses and in combination",
+    "potassium replacement",
+    "renal dysfunction",
+    "routine laboratory studies",
+    "symptomatic hypotension"
+   ]
+  },
+  {
+   "text": "Careful observation for development of a variety of side effects, including renal dysfunction, electrolyte abnormalities, symptomatic hypotension, and gout is recommended in patients treated with diuretics, especially when used at high doses and in combination. Patients should undergo routine laboratory studies and clinical examination as dictated by their clinical response. (Strength of Evidence = C) It is recommended that serum potassium and magnesium levels should be monitored at least daily and maintained in the normal range. More frequent monitoring may be necessary when diuresis is rapid. (Strength of Evidence = C) Overly rapid diuresis may be associated with severe muscle cramps. If indicated, treatment with potassium replacement is recommended. (Strength of Evidence = C)",
+   "file": "2a4f7b73d7fb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "12.9",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "More frequent",
+    "at least daily",
+    "clinical examination",
+    "diuretics",
+    "electrolyte abnormalities",
+    "gout",
+    "hypotension",
+    "muscle cramps",
+    "patients treated with diuretics, especially when used at high doses and in combination",
+    "potassium replacement",
+    "renal dysfunction",
+    "routine laboratory studies",
+    "serum potassium and magnesium levels",
+    "symptomatic hypotension"
+   ]
+  },
+  {
+   "text": "Intravenous magnesium with supplementation of potassium is recommended in patients with TdP.",
+   "file": "3200bba8455a_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [],
+   "entities": [
+    "TdP",
+    "magnesium",
+    "patients",
+    "potassium"
+   ]
+  },
+  {
+   "text": "In addition to pre-implant laboratory tests, d specific laboratory tests are recommended in patients with clinical suspicion for potential causes of bradycardia (e.g. thyroid function tests, Lyme titre, digitalis level, potassium, calcium, and pH) to diagnose and treat these conditions.",
+   "file": "61de07be69f7_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Evaluation of the patient with suspected or documented bradycardia or conduction system disease",
+    "Recommendations",
+    "Laboratory tests"
+   ],
+   "entities": [
+    "Lyme titre",
+    "calcium",
+    "digitalis level",
+    "pH",
+    "patients with clinical suspicion for potential causes of bradycardia",
+    "potassium",
+    "potential causes of bradycardia",
+    "pre-implant laboratory tests",
+    "specific laboratory tests",
+    "thyroid function tests",
+    "to diagnose and treat these conditions"
+   ]
+  },
+  {
+   "text": "It is recommended that blood pressure be aggressively treated to lower systolic and usually diastolic levels. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = C)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "14.1",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "<130",
+    "<80 mm Hg",
+    "blood pressure"
+   ]
+  },
+  {
+   "text": "In addition to pre-implantation laboratory tests,c specific laboratory tests are recommended in patients with clinical suspicion for potential underlying causes of reversible bradycardia (e.g. thyroid function tests, Lyme titre, digitalis level, potassium, calcium, and pH) to diagnose and treat these conditions.90–94",
+   "file": "d74b74c5eadd_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "Lyme titre",
+    "calcium",
+    "digitalis level",
+    "pH",
+    "patients with clinical suspicion for potential underlying causes of reversible bradycardia",
+    "potassium",
+    "potential underlying causes of reversible bradycardia",
+    "pre-implantation laboratory tests",
+    "specific laboratory tests",
+    "thyroid function tests"
+   ]
+  },
+  {
+   "text": "It is recommended that blood pressure be optimally treated to lower systolic and usually diastolic levels. More than 1 drug may be required. Target resting levels should be <130/<80 mm Hg, if tolerated. (Strength of Evidence = A)",
+   "file": "5b6f878076fd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "14.1"
+   ],
+   "entities": [
+    "<130",
+    "<80 mm Hg",
+    "blood pressure"
+   ]
+  },
+  {
+   "text": "■ Assess patients who present with signs and symptoms of metabolic acidosis for ketoacidosis, regardless of blood glucose level",
+   "file": "979ee79bc190_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Cautions",
+    "C) SGLT2 Inhibitors",
+    "**C) SGLT2 Inhibitors**"
+   ],
+   "entities": [
+    "ketoacidosis",
+    "patients",
+    "symptoms"
+   ]
+  },
+  {
+   "text": "Ticarcillin/clavulanate potassium, injection 301 429 mg/3.1 g vial",
+   "file": "41337691b4ac_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Sodium Content Per Unit",
+    "**Table 6. Selected Intravenous and Oral Prescription Medications High in Sodium**",
+    "Medication"
+   ],
+   "entities": [
+    "3.1 g",
+    "429 mg",
+    "Ticarcillin/clavulanate potassium",
+    "injection"
+   ]
+  },
+  {
+   "text": "Serum electrolytes (sodium, potassium, chloride) Admission, during hospitalization, a pre-discharge Electrolyte disorders None Recommended for prognostic assessment and treatment",
+   "file": "f21291ccf29e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Indication: Recommended for prognostic assessment and treatment",
+    "Exam",
+    "Time of measurement: Admission, during hospitalization, pre-discharge",
+    "Possible findings: Electrolyte disorders",
+    "Diagnostic value for AHF: None"
+   ],
+   "entities": [
+    "Serum electrolytes (sodium, potassium, chloride)"
+   ]
+  },
+  {
+   "text": "Assess vital signs and haemodynamic status, including conscious level, heart rate, respiratory rate, blood pressure, body temperature, and arterial haemoglobin oxygen saturation.",
+   "file": "37e8f0f51dc8_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "arterial haemoglobin oxygen saturation",
+    "blood pressure",
+    "body temperature",
+    "conscious level",
+    "haemodynamic status",
+    "heart rate",
+    "respiratory rate",
+    "vital signs"
+   ]
+  },
+  {
+   "text": "• Oral potassium chloride: 40–100 mmol • i.v. 20–40 mmol/L potassium chloride in 500 mL of saline (not exceed 20 mmol/h; higher rates in emergency situation via central venous catheter)",
+   "file": "f5c1e8956572_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hypokalaemia"
+   ],
+   "entities": [
+    "20 mmol/h",
+    "20–40 mmol",
+    "40–100 mmol",
+    "500 mL",
+    "potassium chloride",
+    "• Oral potassium chloride: 40–100 mmol • i.v. 20–40 mmol/L potassium chloride in 500 mL of saline (not exceed 20 mmol/h; higher rates in eme"
+   ]
+  },
+  {
+   "text": "In addition to preimplant laboratory tests, specific laboratory tests are recommended in patients with clinical suspicion for potential causes of bradycardia (e.g. thyroid function tests, Lyme titre, digitalis level, potassium, calcium, and pH) to diagnose and treat these conditions.",
+   "file": "791d867ec788_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations",
+    "Laboratory tests"
+   ],
+   "entities": [
+    "In addition to preimplant laboratory tests, specific laboratory tests"
+   ]
+  },
+  {
+   "text": "Additional pharmacologic therapy should be considered in patients with HF due to systolic dysfunction who have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor and beta blocker. The choice of specific agent will be influenced by clinical considerations, including renal function status, chronic serum potassium concentration, blood pressure, and volume status. The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist is not recommended because of the high risk of hyperkalemia. (Strength of Evidence = C) • Addition of an ARB. (Strength of Evidence = A) • Addition of an aldosterone antagonist: ◦ For severe HF (Strength of Evidence = A) ◦ For moderate HF (Strength of Evidence = C) • Addition of the combination of hydralazine/isosorbide dinitrate: ◦ For African Americans (Strength of Evidence = A) ◦ For others (Strength of Evidence = C)",
+   "file": "ff9f2016d3f9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "7.21"
+   ],
+   "entities": [
+    "Addition of an ARB",
+    "Addition of an aldosterone antagonist",
+    "Addition of the combination of hydralazine/isosorbide dinitrate",
+    "African Americans",
+    "The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist",
+    "moderate HF",
+    "others",
+    "patients with HF due to systolic dysfunction who have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor and beta blocker",
+    "severe HF"
+   ]
+  },
+  {
+   "text": "Intravenous magnesium and potassium supplementation is useful in the acute phase of LQTS-associated TdP. Remove or correct external triggers (i.e. drugs, electrolyte imbalance). 134,135,137",
+   "file": "a297acaf5d76_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Advice TO DO"
+   ],
+   "entities": [
+    "Intravenous magnesium and potassium supplementation",
+    "LQTS"
+   ]
+  },
+  {
+   "text": "Treat the causes of heart dysfunction, such a high blood pressure and diabetes.",
+   "file": "108af9a8d34f_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "STAGE A"
+   ],
+   "entities": [
+    "causes of heart dysfunction",
+    "diabetes",
+    "high blood pressure"
+   ]
+  },
+  {
+   "text": "Additional pharmacological therapy should be considered in patients with HF and reduced LVEF who are unable to tolerate a beta blocker and have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor. The choice of specific agent will be influenced by clinical considerations, including renal function status, chronic serum potassium concentration, blood pressure and volume status. The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist is not recommended due to the high risk of hyperkalemia. (Strength of Evidence = C) • Addition of an ARB. (Strength of Evidence = C) • Addition of an aldosterone antagonist: ◦ for severe HF (Strength of Evidence = C) ◦ for moderate HF (Strength of Evidence = C) • Addition of the combination of hydralazine/isosorbide dinitrate: ◦ for African Americans (Strength of Evidence = C) ◦ for others (Strength of Evidence = C)",
+   "file": "ff9f2016d3f9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.22",
+    "2010 Guideline Recommendation"
+   ],
+   "entities": [
+    "Addition of an ARB",
+    "Addition of an aldosterone antagonist",
+    "Addition of the combination of hydralazine/isosorbide dinitrate",
+    "African Americans",
+    "The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist",
+    "moderate HF",
+    "others",
+    "patients with HF and reduced LVEF who are unable to tolerate a beta blocker and have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor",
+    "severe HF"
+   ]
+  },
+  {
+   "text": "Additional pharmacologic therapy should be considered in patients with HF and reduced LVEF who have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor and beta blocker. The choice of specific agent will be influenced by clinical considerations, including renal function status, chronic serum potassium concentration, blood pressure, and volume status. The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist is not recommended because of the high risk of hyperkalemia. (Strength of Evidence = C) • Addition of an ARB. (Strength of Evidence = A) • Addition of an aldosterone antagonist: ◦ for severe HF (Strength of Evidence = A) ◦ for moderate HF (Strength of Evidence = C) ◦ for post-MI HF (Strength of Evidence = A) • Addition of the combination of hydralazine/isosorbide dinitrate: ◦ for African Americans (Strength of Evidence = A) ◦ for others (Strength of Evidence = C)",
+   "file": "ff9f2016d3f9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2010 Guideline Recommendation",
+    "7.21"
+   ],
+   "entities": [
+    "Addition of an ARB",
+    "Addition of an aldosterone antagonist",
+    "Addition of the combination of hydralazine/isosorbide dinitrate",
+    "African Americans",
+    "The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist",
+    "moderate HF",
+    "others",
+    "patients with HF and reduced LVEF who have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor and beta blocker",
+    "post-MI HF",
+    "severe HF"
+   ]
+  },
+  {
+   "text": "Additional pharmacological therapy should be considered in patients with HF due to systolic dysfunction who are unable to tolerate a beta blocker and have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor. The choice of specific agent will be influenced by clinical considerations, including renal function status, chronic serum potassium concentration, blood pressure and volume status. The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist is not recommended due to the high risk of hyperkalemia. (Strength of Evidence = C) • Addition of an ARB. (Strength of Evidence = C) • Addition of an aldosterone antagonist: ◦ for severe HF (Strength of Evidence = C) ◦ for moderate HF (Strength of Evidence = C) • Addition of the combination of hydralazine/isosorbide dinitrate: ◦ For African-Americans (Strength of Evidence = C) ◦ for others (Strength of Evidence = C)",
+   "file": "ff9f2016d3f9_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "7.22",
+    "2006 Guideline Recommendation"
+   ],
+   "entities": [
+    "Addition of an ARB",
+    "Addition of an aldosterone antagonist",
+    "Addition of the combination of hydralazine/isosorbide dinitrate",
+    "African-Americans",
+    "The triple combination of an ACE inhibitor, an ARB, and an aldosterone antagonist",
+    "moderate HF",
+    "others",
+    "patients with HF due to systolic dysfunction who are unable to tolerate a beta blocker and have persistent symptoms or progressive worsening despite optimized therapy with an ACE inhibitor",
+    "severe HF"
+   ]
+  },
+  {
+   "text": "Mineralocorticoid receptor antagonist A type of diuretic that helps the body remove excess water and sodium through the urine but prevents loss of potassium. eplerenone (Inspra) spironolactone (Aldactone)",
+   "file": "5eb0ba5cf757_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Common examples - listed by the generic followed by (brand) name",
+    "**Check off which medications you are already taking and which ones are being added.**",
+    "Medications for HFrEF (the 4 pillars)"
+   ],
+   "entities": [
+    "Mineralocorticoid receptor antagonist",
+    "diuretic",
+    "eplerenone",
+    "excess water",
+    "loss of potassium",
+    "sodium",
+    "spironolactone"
+   ]
+  },
+  {
+   "text": "Complete blood counts Every 12–24 h Consider more frequently in patients with CS with, or at high risk for, bleeding",
+   "file": "bb85a3450ccd_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Monitoring Parameter",
+    "Comment/Rationale",
+    "Frequency"
+   ],
+   "entities": [
+    "Complete blood counts",
+    "Every 12–24 h",
+    "patients with CS with, or at high risk for, bleeding"
+   ]
+  },
+  {
+   "text": "During the second and third trimesters, LMWHc with anti-Xa level monitoring and dose adjustment (see separate recommendations) may be considered in women who need a high dose of VKAe after patient information and consent.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "LMWH",
+    "anti-Xa level monitoring and dose adjustment",
+    "patient information and consent",
+    "second and third trimesters",
+    "women who need a high dose of VKA"
+   ]
+  },
+  {
+   "text": "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)",
+   "file": "689773c16c56_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hypertension",
+    "Suggested Action"
+   ],
+   "entities": [
+    "Treat according to current ACC/AHA Guidelines for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults (164)"
+   ]
+  },
+  {
+   "text": "Statins should be considered in patients with T1DM at high CV risk (microalbuminuria and/or renal disease), irrespective of the basal LDL-C level (target lowering \\geq 50\\% )",
+   "file": "0b9004ab7668_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "CLASS_OF_RECOMMENDATION: IIa (A)",
+    "Established/agreed issue",
+    "Lipid management"
+   ],
+   "entities": [
+    "Statins"
+   ]
+  },
+  {
+   "text": "4. For patients with torsades de pointes associated with acquired QT prolongation, potassium repletion to 4.0 mmol per L or more and magnesium repletion to normal values (e.g., ≥2.0 mmol/L) are beneficial (S10.7-6,S10.7-7).",
+   "file": "79e06da2350e_annotation.nt",
+   "class": [
+    "I"
+   ],
+   "level": [
+    "C-LD"
+   ],
+   "headers": [
+    "Medication-Induced QT Prolongation and Torsades de Pointes",
+    "RECOMMENDATIONS",
+    "(continued)"
+   ],
+   "entities": [
+    "4.0 mmol per L or more",
+    "For patients with torsades de pointes associated with acquired QT prolongation",
+    "magnesium repletion",
+    "potassium repletion",
+    "≥2.0 mmol/L"
+   ]
+  },
+  {
+   "text": "In pregnant women with LMWH, in addition to monitoring peak anti-Xa levels, monitoring pre-dose levels targeted at ≥0.6 IU/mL may be considered.",
+   "file": "d85a8f76ef80_annotation.nt",
+   "class": [
+    "IIb"
+   ],
+   "level": [
+    "C"
+   ],
+   "headers": [
+    "Recommendations"
+   ],
+   "entities": [
+    "monitoring peak anti-Xa levels",
+    "monitoring pre-dose levels",
+    "pregnant women with LMWH",
+    "≥0.6 IU/mL"
+   ]
+  },
+  {
+   "text": "Explore motivation and opportunities to increase the PA level",
+   "file": "28d9c60c4057_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Table 1 Core components and objectives common to all clinical conditions",
+    "Physical activity counselling"
+   ],
+   "entities": [
+    "Explore motivation and opportunities to increase the PA level"
+   ]
+  },
+  {
+   "text": "Clear medical information and advice on life after transplant are needed to manage challenges such as patient guilt or problems with high levels of anxiety and apprehensiveness Careful presentation of recommendations is necessary, leaving the choice up to the patient and offering every possible support he/she may need to adjust",
+   "file": "c928ccde5eef_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Established/agreed issues",
+    "Psychosocial management"
+   ],
+   "entities": [
+    "Careful presentation of recommendations",
+    "Clear medical information and advice on life after transplant",
+    "every possible support",
+    "patient",
+    "patient guilt or problems with high levels of anxiety and apprehensiveness"
+   ]
+  },
+  {
+   "text": "Triamterene Diuretic (potassium-sparing) C Yes Yes (excretion shown in animal milk) Inadequate human data Animal data • no foetal harm in rats (at 6× MRHD)",
+   "file": "2cd8279c2eb3_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Placental transfer",
+    "Legacy FDA pregnancy category",
+    "Therapeutic class",
+    "Pregnancy and reproductive evidence",
+    "Medication",
+    "Breastfeeding",
+    "lu_43204eb005113090db3476895a76cc14f70698fd23b8582928d6dd3b8f43e10b_n0046: inherited source-table context (see source.title_or_context)"
+   ],
+   "entities": [
+    "Triamterene"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "text": "Acute hyperkalaemia: if ECG abnormalities present, then prevent arrhythmias by IV calcium. Intermediate strategies include: insulin/albuterol/sodium \\text{HCO}_3 IV. Ultimately potassium must be removed from the body with either diuretics, potassium binding resins, or RRT. Chronic hyperkalaemia: reduces dose RAAS blocker; increase loop diuretic, potassium binders",
+   "file": "7ccf08b03352_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Hyperkalaemia"
+   ],
+   "entities": [
+    "ECG",
+    "IV calcium",
+    "RAAS blocker",
+    "RRT",
+    "albuterol",
+    "diuretics",
+    "hyperkalaemia",
+    "insulin",
+    "potassium binders",
+    "potassium binding resins"
+   ]
+  },
+  {
+   "text": "Careful observation for development of a variety of side effects, including renal dysfunction, electrolyte abnormalities and symptomatic hypotension, is recommended in patients treated with diuretics, especially when used at high doses and in combination. Patients should undergo routine laboratory studies and clinical examination as dictated by their clinical response. (Strength of Evidence = C) Serum potassium and magnesium levels should be monitored at least daily and maintained in the normal range. More frequent monitoring may be necessary when diuresis is rapid. (Strength of Evidence = C) Overly rapid diuresis may be associated with severe muscle cramps, which should be treated with potassium replacement if indicated. (Strength of Evidence = C)",
+   "file": "2a4f7b73d7fb_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "2006 Guideline Recommendation",
+    "12.9"
+   ],
+   "entities": [
+    "More frequent",
+    "Serum potassium and magnesium levels",
+    "at least daily",
+    "clinical examination",
+    "diuretics",
+    "electrolyte abnormalities",
+    "hypotension",
+    "muscle cramps",
+    "patients treated with diuretics, especially when used at high doses and in combination",
+    "potassium replacement",
+    "renal dysfunction",
+    "routine laboratory studies",
+    "symptomatic hypotension"
+   ]
+  },
+  {
+   "text": "Serum electrolytes (sodium, potassium, chloride) Admission, during hospitalization, a pre-discharge Electrolyte disorders None Recommended for prognostic assessment and treatment",
+   "file": "f21291ccf29e_annotation.nt",
+   "class": [],
+   "level": [],
+   "headers": [
+    "Indication: Recommended for prognostic assessment and treatment",
+    "Exam",
+    "Time of measurement: Admission, during hospitalization, pre-discharge",
+    "Possible findings: Electrolyte disorders",
+    "Diagnostic value for AHF: None"
+   ],
+   "entities": [
+    "Serum electrolytes (sodium, potassium, chloride)"
+   ]
+  }
+ ],
+ "status": "done",
+ "first_storyboard": {
+  "title": "Understanding High Potassium and Its Monitoring",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Too much potassium can make the heart beat irregularly, which can be life‑threatening. Doctors test potassium regularly to spot problems early and keep it in a safe range.",
+    "visual_description": "Doctor drawing blood, lab screen showing potassium number, heart monitor showing normal rhythm",
+    "on_screen_text": "High potassium = heart risk"
+   }
+  ],
+  "not_covered": []
+ },
+ "first_verdicts": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Too much potassium can make the heart beat irregularly, which can be life‑threatening.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that acute hyperkalaemia can cause ECG abnormalities, implying irregular heartbeats that can be life‑threatening."
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors test potassium regularly to spot problems early and keep it in a safe range.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states serum potassium should be monitored at least daily to maintain a normal range."
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "High potassium = heart risk",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "High potassium can cause arrhythmias, a heart risk."
+  }
+ ],
+ "final_storyboard": {
+  "title": "Understanding High Potassium and Its Monitoring",
+  "scenes": [
+   {
+    "scene_number": 1,
+    "narration": "Too much potassium can make the heart beat irregularly, which can be life‑threatening. Doctors test potassium regularly to spot problems early and keep it in a safe range.",
+    "visual_description": "Doctor drawing blood, lab screen showing potassium number, heart monitor showing normal rhythm",
+    "on_screen_text": "High potassium = heart risk"
+   }
+  ],
+  "not_covered": []
+ },
+ "fact_report": [
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Too much potassium can make the heart beat irregularly, which can be life‑threatening.",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "Fact 1 states that acute hyperkalaemia can cause ECG abnormalities, implying irregular heartbeats that can be life‑threatening.",
+   "guideline_fact": "Acute hyperkalaemia: if ECG abnormalities present, then prevent arrhythmias by IV calcium. Intermediate strategies include: insulin/albuterol/sodium \\text{HCO}_3 IV. Ultimately potassium must be removed from the body with either diuretics, potassium binding resins, or RRT. Chronic hyperkalaemia: reduces dose RAAS blocker; increase loop diuretic, potassium binders",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "7ccf08b03352_annotation.nt",
+    "headers": [
+     "Hyperkalaemia"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "narration",
+   "sentence": "Doctors test potassium regularly to spot problems early and keep it in a safe range.",
+   "label": "SUPPORTED",
+   "fact": 2,
+   "reason": "Fact 2 states serum potassium should be monitored at least daily to maintain a normal range.",
+   "guideline_fact": "Careful observation for development of a variety of side effects, including renal dysfunction, electrolyte abnormalities and symptomatic hypotension, is recommended in patients treated with diuretics, especially when used at high doses and in combination. Patients should undergo routine laboratory studies and clinical examination as dictated by their clinical response. (Strength of Evidence = C) Serum potassium and magnesium levels should be monitored at least daily and maintained in the normal range. More frequent monitoring may be necessary when diuresis is rapid. (Strength of Evidence = C) Overly rapid diuresis may be associated with severe muscle cramps, which should be treated with potassium replacement if indicated. (Strength of Evidence = C)",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "2a4f7b73d7fb_annotation.nt",
+    "headers": [
+     "2006 Guideline Recommendation",
+     "12.9"
+    ]
+   }
+  },
+  {
+   "scene": 0,
+   "field": "on_screen_text",
+   "sentence": "High potassium = heart risk",
+   "label": "SUPPORTED",
+   "fact": 1,
+   "reason": "High potassium can cause arrhythmias, a heart risk.",
+   "guideline_fact": "Acute hyperkalaemia: if ECG abnormalities present, then prevent arrhythmias by IV calcium. Intermediate strategies include: insulin/albuterol/sodium \\text{HCO}_3 IV. Ultimately potassium must be removed from the body with either diuretics, potassium binding resins, or RRT. Chronic hyperkalaemia: reduces dose RAAS blocker; increase loop diuretic, potassium binders",
+   "grade": {
+    "class": [],
+    "level": []
+   },
+   "source": {
+    "file": "7ccf08b03352_annotation.nt",
+    "headers": [
+     "Hyperkalaemia"
+    ]
+   }
+  }
+ ],
+ "not_covered": [],
+ "coverage": "C"
+}
