@@ -66,8 +66,6 @@ The stricter checker caught "take your beta-blocker daily", "heal heart", "life-
 
 7. **A checklist makes the checker safer.** The checker was not consistent on group claims (see Limits), so the one-sentence check became a checklist that the code turns into a label. In a test with marks set in advance it kept none of the false or stretched sentences. The three doctor-talk runs above were made before this change.
 
-8. **One doctor talk became a 40-second video.** A six-scene doctor prompt (`--style doctor-long`) on the beta-blocker topic gave 6 scenes; the checker emptied one (side effects), so the video has 5. Every spoken line is a checked sentence, word for word. Claude Code wrote the animation in `video/`: the Windows voice reads the lines, the page is filmed frame by frame with Edge, and ffmpeg joins picture and voice into `video/beta-blockers.mp4`.
-
 ## Limits
 
 - **6 test topics is a small test.** One added line moved the fact scores by up to 0.25, so these totals are not a proven ranking.
@@ -86,11 +84,9 @@ The stricter checker caught "take your beta-blocker daily", "heal heart", "life-
 | `GALLM/scorecard.py` | Readability and format checks; refusals score 0 |
 | `GALLM/run_grounded_topics.py` | The pipeline on all 27 covered topics, or the doctor-talk style on the 6 medicine topics |
 | `GALLM/prompts/doctor_style.txt` | The doctor-talk style prompt |
-| `GALLM/prompts/doctor_style_long.txt` | The same doctor in six scenes, about one minute |
-| `video/` | The doctor video (`beta-blockers.mp4`) and the scripts that make it |
 | `GALLM/core.py`, `experiment.py`, `gaapo_rerun.py`, `models.py` | Shared helpers the code above imports |
 | `GALLM/data/editor_topics.json` | The 6 tuning and 6 test topics, each with its chosen guideline facts |
-| `GALLM/runs/` | Results: `grounded-v1` (6 storyboards; GAAPO also uses them as examples), `editor-gaapo-01` (GAAPO run: scores per round, test result, best prompt, all prompts tried), `grounded-27` (27 topics; `prompt_example_ruler-012.txt` shows one full writer prompt and answer), `kg-coverage/coverage_review.json` (which of the 45 topics the graph covers), `doctor-talk-refill` (the doctor talks), `doctor-talk-long` (the six-scene beta-blocker talk used for the video), `rerun-02/best_prompt.txt` (a GAAPO starting prompt) |
+| `GALLM/runs/` | Results: `grounded-v1` (6 storyboards; GAAPO also uses them as examples), `editor-gaapo-01` (GAAPO run: scores per round, test result, best prompt, all prompts tried), `grounded-27` (27 topics; `prompt_example_ruler-012.txt` shows one full writer prompt and answer), `kg-coverage/coverage_review.json` (which of the 45 topics the graph covers), `doctor-talk-refill` (the doctor talks), `rerun-02/best_prompt.txt` (a GAAPO starting prompt) |
 | `GALLM/tests/` | Unit tests |
 
 The topic requests are short one-scene rewrites of topics from the students' exchanges.
@@ -105,7 +101,6 @@ The code imports GAAPO from the thesis repo and reads the knowledge graph from i
 4. Run the tests: `python -m unittest GALLM.tests.test_fact_check GALLM.tests.test_grounded_pipeline GALLM.tests.test_editor_gaapo GALLM.tests.test_scorecard`.
 5. Run GAAPO on the writer's prompt: `python -m GALLM.editor_gaapo --output GALLM/runs/my-run`. Add `--dry-run` to check the wiring with fake models in seconds.
 6. Run the pipeline on the 27 covered topics: `python -m GALLM.run_grounded_topics`. Add `--only ruler-012` for a single topic.
-7. Run the doctor-talk style: `python -m GALLM.run_grounded_topics --style doctor` (or `--style doctor-long` for six scenes).
-8. Make the video (Windows, with Node and Edge; `pip install imageio-ffmpeg`), in `video/`: `python make_script.py`, `powershell -File make_voice.ps1`, `python make_timeline.py`, `python make_soundtrack.py`; serve the folder with `python -m http.server 8766 --bind 127.0.0.1` (open it in a browser to watch), then `node capture.mjs --all` and `python make_mp4.py`.
+7. Run the doctor-talk style: `python -m GALLM.run_grounded_topics --style doctor`.
 
 Every model call is saved to disk, so a run stopped by Groq's daily limit continues where it stopped.

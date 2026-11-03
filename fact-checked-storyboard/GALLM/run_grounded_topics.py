@@ -4,7 +4,6 @@ GAAPO prompt plus the scene_number line, the best scorer in the re-test. Every m
 limit is waited out, and each topic is saved as it finishes, so a stopped run continues where it stopped.
 --style doctor (2026-11-01): the doctor-talks-to-patient style (GALLM/prompts/doctor_style.txt) in three scenes,
 on the 6 medicine topics, with the same facts and checker.
---style doctor-long (2026-11-03): the same doctor in six scenes, about one minute (GALLM/prompts/doctor_style_long.txt).
 Run from the thesis repo root: python -m GALLM.run_grounded_topics [--style doctor] [--only ruler-012]"""
 import argparse
 import json
@@ -21,8 +20,6 @@ from .models import ChatLLM
 OLD = '  - `on_screen_text`\n'
 NEW = OLD + '- `scene_number` must be a whole number such as 1, not text such as "1".\n'
 MEDICINE_TOPICS = ['ruler-012', 'ruler-013', 'ruler-014', 'ruler-015', 'ruler-016', 'ruler-017']  # as in grounded-v1
-DOCTOR_STYLES = {'doctor': ('doctor_style.txt', 'three scenes', 'doctor-talk'),  # prompt file, scenes, default output
-                 'doctor-long': ('doctor_style_long.txt', 'six scenes', 'doctor-talk-long')}
 
 
 def summary(rid, record):
@@ -41,11 +38,11 @@ def summary(rid, record):
 
 def main():
     parser = argparse.ArgumentParser(__doc__)
-    parser.add_argument('--style', choices=('thesis', *DOCTOR_STYLES), default='thesis')
-    parser.add_argument('--output', help='Default: GALLM/runs/grounded-27, or GALLM/runs/doctor-talk(-long) for a doctor style')
+    parser.add_argument('--style', choices=('thesis', 'doctor'), default='thesis')
+    parser.add_argument('--output', help='Default: GALLM/runs/grounded-27, or GALLM/runs/doctor-talk for --style doctor')
     parser.add_argument('--only', nargs='*', help='Run just these topic ids (a quick check before the full run)')
     args = parser.parse_args()
-    doctor = DOCTOR_STYLES.get(args.style)
+    doctor = args.style == 'doctor'
     try:
         import truststore  # Norton's HTTPS scanning needs the system certificates
         truststore.inject_into_ssl()
@@ -60,12 +57,12 @@ def main():
                         str(cache.with_suffix('')) + '-checker-' + config['checker_llm']['model'].replace('/', '_') + '.jsonl')
     thesis_prompt = Path(config['initial_prompts'][0]).read_text(encoding='utf-8').strip()
     assert thesis_prompt.count(OLD) == 1
-    gaapo_prompt = (Path('GALLM/prompts', doctor[0]).read_text(encoding='utf-8').strip() if doctor
+    gaapo_prompt = (Path('GALLM/prompts/doctor_style.txt').read_text(encoding='utf-8').strip() if doctor
                     else thesis_prompt.replace(OLD, NEW))
     coverage = json.loads(Path('GALLM/runs/kg-coverage/coverage_review.json').read_text(encoding='utf-8'))
     topics = args.only or (MEDICINE_TOPICS if doctor else [rid for rid, c in coverage.items() if c['coverage'] in ('C', 'P')])
     index = FactIndex.from_graph()
-    out = Path(args.output or ('GALLM/runs/' + doctor[2] if doctor else 'GALLM/runs/grounded-27'))
+    out = Path(args.output or ('GALLM/runs/doctor-talk' if doctor else 'GALLM/runs/grounded-27'))
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     for number, rid in enumerate(topics, 1):
@@ -74,7 +71,7 @@ def main():
             print(f'[{number}/{len(topics)}] {rid} ...', flush=True)
             try:
                 record = run(coverage[rid]['request'], index, editor, checker, gaapo_prompt,
-                             doctor[1] if doctor else 'one scene')
+                             'three scenes' if doctor else 'one scene')
             except Exception:
                 print(rid, 'FAILED\n' + traceback.format_exc()[-600:], flush=True)
                 continue
