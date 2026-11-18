@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guideline-checked video script</title>
+<style>
+:root { --bg:#fbfaf7; --card:#ffffff; --ink:#1f1f1c; --muted:#6b6a64; --line:#e3e1da; --accent:#185fa5; --accent-bg:#e6f1fb;
+        --ok:#3b6d11; --ok-bg:#eaf3de; --bad:#a32d2d; --bad-bg:#fcebeb; --warn:#854f0b; --warn-bg:#faeeda; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#1c1c1a; --card:#262624; --ink:#ecebe6; --muted:#a3a19a; --line:#3a3936; --accent:#85b7eb; --accent-bg:#0c2a47;
+          --ok:#97c459; --ok-bg:#1f3310; --bad:#f09595; --bad-bg:#4a1717; --warn:#ef9f27; --warn-bg:#3d2606; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui, "Segoe UI", sans-serif; }
+main { max-width: 920px; margin: 0 auto; padding: 28px 16px 60px; }
+h1 { font-size: 24px; font-weight: 600; margin: 0 0 4px; }
+h2 { font-size: 17px; font-weight: 600; margin: 28px 0 10px; }
+.sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+.ask { display:flex; gap:10px; }
+textarea { flex:1; resize: vertical; min-height: 52px; padding: 12px; border:1px solid var(--line); border-radius: 8px;
+           background: var(--card); color: var(--ink); font: inherit; }
+button { border:0; border-radius: 8px; padding: 0 20px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 0; }
+.chip { background: var(--accent-bg); color: var(--accent); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; border: 0; font-weight: 500; }
+.steps { display:flex; flex-wrap:wrap; gap: 6px 18px; margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+.steps .on { color: var(--ink); font-weight: 600; }
+.steps .done::before { content: "✓ "; color: var(--ok); }
+.card { background: var(--card); border:1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 8px 0; }
+.fact { display:grid; grid-template-columns: 28px 1fr; gap: 8px; font-size: 14px; }
+.n { color: var(--muted); font-weight: 600; }
+.meta { color: var(--muted); font-size: 12.5px; }
+.tag { display:inline-block; font-size: 12px; font-weight: 600; border-radius: 6px; padding: 1px 8px; margin-right: 6px; }
+.kept { background: var(--ok-bg); color: var(--ok); }
+.rewritten { background: var(--warn-bg); color: var(--warn); }
+.dropped, .failed { background: var(--bad-bg); color: var(--bad); }
+.pending { background: var(--line); color: var(--muted); }
+.narr { font-size: 16px; margin: 6px 0 2px; }
+.why { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+.first { font-size: 13.5px; color: var(--muted); text-decoration: line-through; }
+pre { white-space: pre-wrap; background: var(--card); border:1px solid var(--line); border-radius: 10px; padding: 14px; font-size: 13.5px; }
+table { width:100%; border-collapse: collapse; font-size: 13.5px; }
+td, th { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+.err { background: var(--bad-bg); color: var(--bad); border-radius: 8px; padding: 10px 14px; margin-top: 16px; }
+.hidden { display: none; }
+.row { display:flex; justify-content: space-between; align-items: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Guideline-checked video script</h1>
+  <p class="sub">Question → facts from the guideline knowledge graph → writer (gpt-oss-20b) writes one line per fact → code checks and a
+    second model (gpt-oss-120b) check each line against its own fact → video prompt.</p>
+
+  <div class="ask">
+    <textarea id="q" placeholder="Ask a patient question, e.g. When can I drive again after getting an ICD?"></textarea>
+    <button id="go">Ask</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="steps" id="steps"></div>
+  <div id="error" class="err hidden"></div>
+
+  <section id="factsBox" class="hidden">
+    <h2>Facts from the knowledge graph — one slot per fact</h2>
+    <div class="meta" id="concepts"></div>
+    <div id="facts"></div>
+  </section>
+
+  <section id="linesBox" class="hidden">
+    <h2>Script lines and their checks</h2>
+    <div id="lines"></div>
+    <div id="skipped" class="meta"></div>
+  </section>
+
+  <section id="promptBox" class="hidden">
+    <div class="row"><h2>Video prompt</h2><button id="copy" class="chip">Copy</button></div>
+    <pre id="prompt"></pre>
+    <h2>Where each spoken line comes from</h2>
+    <table id="sources"></table>
+    <p class="meta" id="cost"></p>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const STEPS = [['graph', 'Finding graph facts'], ['writing', 'Writing lines'], ['checking', 'Checking lines'], ['done', 'Video prompt']];
+let lineCards = {}, timer = null;
+
+function steps(current) {
+  const box = $('steps'); box.textContent = '';
+  const at = STEPS.findIndex(s => s[0] === current);
+  STEPS.forEach(([key, label], i) => box.appendChild(el('span', i < at || current === 'done' ? 'done' : i === at ? 'on' : '', label)));
+}
+
+function showFacts(event) {
+  $('factsBox').classList.remove('hidden');
+  const names = (event.concepts || []).map(c => c.name || c.words).filter(Boolean);
+  $('concepts').textContent = names.length ? 'Concepts found: ' + names.join(', ') : 'No concept of the question was found in the graph.';
+  const box = $('facts'); box.textContent = '';
+  event.slots.forEach(s => {
+    const card = el('div', 'card fact');
+    card.appendChild(el('div', 'n', s.n));
+    const body = el('div');
+    body.appendChild(el('div', null, s.statement));
+    // the slot as code built it: what the writer must respect and the judge checks against
+    const tags = el('div', 'meta');
+    tags.appendChild(el('span', 'tag pending', s.kind));
+    tags.appendChild(el('span', 'tag ' + (s.grade ? 'kept' : 'pending'), s.grade || 'no grade given'));
+    if (s.caution) tags.appendChild(el('span', 'tag rewritten', '"may": caution must stay'));
+    body.appendChild(tags);
+    const meanings = Object.entries(s.abbreviations || {}).map(([a, full]) => full ? `${a} = ${full}` : `${a}: two meanings in the graph, kept as written`);
+    if (meanings.length) body.appendChild(el('div', 'meta', 'Abbreviations (from the graph): ' + meanings.join('; ')));
+    body.appendChild(el('div', 'meta', 'Source: ' + s.source));
+    card.appendChild(body); box.appendChild(card);
+  });
+}
+
+function lineCard(line) {
+  let card = lineCards[line.slot];
+  if (!card) { card = el('div', 'card'); lineCards[line.slot] = card; $('lines').appendChild(card); }
+  card.textContent = '';
+  const status = line.status || 'pending';
+  const label = {kept: '✓ supported', rewritten: '✓ supported after one rewrite', dropped: '✗ dropped', failed: '✗ failed, rewriting', pending: 'checking…'}[status];
+  const head = el('div', 'meta'); head.appendChild(el('span', 'tag ' + status, label)); head.append('fact ' + line.slot);
+  card.appendChild(head);
+  if (line.first_try) card.appendChild(el('div', 'first', line.first_try.narration));
+  card.appendChild(el('div', 'narr', line.narration));
+  if (line.on_screen_text) card.appendChild(el('div', 'meta', 'On screen: ' + line.on_screen_text + (line.screen_check && line.screen_check !== 'ok' ? ' (left out: ' + line.screen_check + ')' : '')));
+  const v = line.verdict;
+  if (v) card.appendChild(el('div', 'why', (v.decided_by ? v.decided_by + ': ' : '') + (v.why || v.reason || '')));
+  if (line.first_try && line.first_try.verdict) card.appendChild(el('div', 'why', 'First try failed — ' + (line.first_try.verdict.why || '')));
+}
+
+function plainLine(part, result) {
+  const card = el('div', 'card');
+  const ok = result.label === 'NO_CLAIM' || result.label === 'SUPPORTED';
+  const head = el('div', 'meta'); head.appendChild(el('span', 'tag ' + (ok ? 'kept' : 'dropped'), ok ? '✓ no medical claim' : '✗ dropped')); head.append(part);
+  card.appendChild(head); card.appendChild(el('div', 'narr', result.sentence));
+  if (part === 'opening') $('lines').prepend(card); else $('lines').appendChild(card);
+}
+
+function finish(record) {
+  steps('done');
+  if (record.status !== 'done') { showError(record.why || record.status); return; }
+  (record.lines || []).forEach(lineCard);
+  if ((record.skipped || []).length) $('skipped').textContent = 'Facts the writer left out: ' + record.skipped.map(s => s.fact + ' (' + s.why + ')').join('; ');
+  $('promptBox').classList.remove('hidden');
+  $('prompt').textContent = record.video_prompt || record.why_no_prompt;
+  const table = $('sources'); table.textContent = '';
+  const head = el('tr'); ['Scene', 'Spoken line', 'Guideline statement', 'Source'].forEach(h => head.appendChild(el('th', null, h))); table.appendChild(head);
+  (record.sources || []).forEach(s => {
+    const row = el('tr');
+    [s.scene, s.line, s.statement, [s.kind, s.grade, s.source].filter(Boolean).join(' · ')].forEach(x => row.appendChild(el('td', null, x)));
+    table.appendChild(row);
+  });
+  const t = record.tokens || {};
+  $('cost').textContent = `Took ${record.seconds} s. Groq tokens: writer ${t.writer ?? '?'}, judge ${t.judge ?? '?'} (0 when the answer came from the saved calls).`;
+}
+
+function showError(message) { const e = $('error'); e.textContent = message; e.classList.remove('hidden'); }
+
+function handle(event) {
+  if (event.step === 'graph') steps('graph');
+  else if (event.step === 'facts') { steps('writing'); showFacts(event); }
+  else if (event.step === 'written') {
+    steps('checking'); $('linesBox').classList.remove('hidden');
+    event.lines.forEach(lineCard);
+    if (!event.lines.length) $('skipped').textContent = 'The writer used none of the facts.';
+  }
+  else if (event.step === 'checked') { if (event.part === 'line') lineCard(event.line); else plainLine(event.part, event.result); }
+  else if (event.step === 'done') finish(event.record);
+  else if (event.step === 'error') showError(event.message);
+}
+
+async function ask(question) {
+  ['factsBox', 'linesBox', 'promptBox', 'error'].forEach(id => $(id).classList.add('hidden'));
+  $('lines').textContent = ''; $('skipped').textContent = ''; lineCards = {};
+  $('go').disabled = true; steps('graph');
+  const response = await fetch('/ask', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question})});
+  const answer = await response.json();
+  if (!response.ok) { showError(answer.error); $('go').disabled = false; return; }
+  let next = 0;
+  const poll = async () => {
+    const job = await (await fetch(`/job/${answer.id}?since=${next}`)).json();
+    job.events.forEach(handle); next = job.next;
+    if (job.done) { $('go').disabled = false; return; }
+    timer = setTimeout(poll, 1000);
+  };
+  poll();
+}
+
+$('go').onclick = () => { const q = $('q').value.trim(); if (!q) { showError('Type a question first.'); return; } ask(q); };
+$('q').addEventListener('input', () => $('error').classList.add('hidden'));
+$('copy').onclick = () => navigator.clipboard.writeText($('prompt').textContent);
+fetch('/examples').then(r => r.json()).then(list => list.forEach(q => {
+  const chip = el('button', 'chip', q); chip.onclick = () => { $('q').value = q; }; $('chips').appendChild(chip);
+}));
+</script>
+</body>
+</html>
