@@ -1,5 +1,5 @@
-.env
 __pycache__/
 *.pyc
-# saved model answers: large, rebuilt on the next run
-GALLM/runs/*model-calls*.jsonl
+.env
+GALLM/data/
+GALLM/runs/
