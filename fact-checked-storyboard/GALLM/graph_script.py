@@ -230,7 +230,8 @@ def stem(word):
     if word == 'not':  # "No driving" on screen for "Do not drive" spoken
         return 'no'
     word = word[:-1] if len(word) > 3 and word.endswith('s') else word
-    return word[:-3] if len(word) > 5 and word.endswith('ing') else word
+    word = word[:-3] if len(word) > 5 and word.endswith('ing') else word
+    return word[:-1] if len(word) > 3 and word.endswith('e') else word  # "drive" and "driving" both give "driv"
 
 
 def code_checks(line, slot):
