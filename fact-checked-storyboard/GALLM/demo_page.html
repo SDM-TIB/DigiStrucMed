@@ -3,490 +3,816 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Checked patient video</title>
+<title>Heart question, step by step</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a30; --muted:#5f6b73; --line:#e1e5e8;
-  --code:#0f6e56; --code-bg:#e1f5ee; --llm:#534ab7; --llm-bg:#eeedfe; --ok:#3b6d11; --ok-bg:#eaf3de;
-  --bad:#a32d2d; --bad-bg:#fcebeb; --warn:#854f0b; --warn-bg:#faeeda; --shadow:0 1px 3px rgba(20,30,40,.08); }
-@media (prefers-color-scheme: dark) {
-  :root { --bg:#171a1c; --card:#22262a; --ink:#e9ecee; --muted:#a2acb2; --line:#363c41;
-    --code:#5dcaa5; --code-bg:#0e3328; --llm:#afa9ec; --llm-bg:#2a2650; --ok:#97c459; --ok-bg:#1f3310;
-    --bad:#f09595; --bad-bg:#4a1717; --warn:#ef9f27; --warn-bg:#3d2606; --shadow:none; } }
+/* Look C (approved by Diya 21 Nov 2026): the sunrise path with five stations and a hopping heart; the drawn room with
+   speech bubbles; rounded letters (Fredoka); plum outlines with a hard shadow. */
+:root {
+  --dawn: #ffd8c2; --sun: #ffc542; --sun-soft: #fff1c9; --mint: #8fd9b6; --mint-2: #6cc7a0; --mint-soft: #e6f7ef; --ok: #1f8a63;
+  --rose: #f2557a; --rose-deep: #d93d63; --rose-soft: #ffe4ea; --sky: #7cc6f0; --plum: #3d2a4d; --plum-soft: #6f5d7c;
+  --white: #ffffff; --blush: #fff1ec; --room: #e7eeec;
+  --line: 3px solid var(--plum); --pop: 5px 5px 0 var(--plum);
+}
 * { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 "Segoe UI", system-ui, sans-serif; }
-main { max-width: 1120px; margin: 0 auto; padding: 32px 20px 64px; }
-h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -.01em; }
-h2 { font-size: 19px; margin: 0 0 4px; }
-.lead { color: var(--muted); margin: 0 0 22px; max-width: 820px; }
-.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 18px 0; box-shadow: var(--shadow); }
-.explain { color: var(--muted); font-size: 14px; margin: 2px 0 14px; }
-.ask { display: flex; gap: 12px; }
-textarea { flex: 1; resize: vertical; min-height: 56px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font: inherit; }
-button.primary { border: 0; border-radius: 10px; padding: 0 26px; background: var(--code); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
-button.primary:disabled { opacity: .5; cursor: default; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.chip { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 5px 14px; font-size: 13.5px; cursor: pointer; }
-.chip:hover { border-color: var(--code); }
-/* the pipeline strip */
-.pipeline { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; margin-top: 4px; }
-.stage { border: 1px solid var(--line); border-radius: 10px; padding: 10px 10px 12px; background: var(--card); position: relative; transition: border-color .2s, background .2s; }
-.stage .who { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-.stage.code .who { color: var(--code); } .stage.llm .who { color: var(--llm); } .stage.plain .who { color: var(--muted); }
-.stage .name { font-weight: 650; font-size: 14px; margin: 3px 0 2px; }
-.stage .what { font-size: 12px; color: var(--muted); line-height: 1.35; }
-.stage .state { position: absolute; top: 8px; right: 9px; font-size: 13px; }
-.stage.active { border-color: var(--llm); background: var(--llm-bg); }
-.stage.active.code { border-color: var(--code); background: var(--code-bg); }
-.stage.done .state::after { content: "✓"; color: var(--ok); font-weight: 700; }
-.stage.active .state::after { content: "…"; color: var(--muted); }
-@media (max-width: 900px) { .pipeline { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-/* results */
-.section-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.tagline { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
-.tagline.code { color: var(--code); } .tagline.llm { color: var(--llm); }
-.concepts { display: flex; flex-wrap: wrap; gap: 8px; }
-.concept { background: var(--code-bg); color: var(--code); border-radius: 8px; padding: 6px 12px; font-weight: 600; font-size: 14px; }
-.concept small { font-weight: 400; opacity: .85; }
-.stats { display: flex; gap: 22px; flex-wrap: wrap; margin: 12px 0 2px; }
-.stat b { display: block; font-size: 24px; }
-.stat span { font-size: 13px; color: var(--muted); }
-.fact { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); }
-.fact:first-of-type { border-top: 0; }
-.num { width: 26px; height: 26px; border-radius: 50%; background: var(--code); color: #fff; font-size: 13px; font-weight: 700; display: grid; place-items: center; }
-.tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { font-size: 12px; font-weight: 600; border-radius: 6px; padding: 1px 8px; background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
-.tag.grade { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
-.tag.caution { background: var(--warn-bg); color: var(--warn); border-color: transparent; }
-.meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
-.line-card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin: 12px 0; }
-.line-card .from { font-size: 13px; color: var(--muted); }
-.line-card .from q { font-style: italic; }
-.spoken { font-size: 18px; margin: 8px 0 6px; }
-.first-try { font-size: 14px; color: var(--muted); text-decoration: line-through; margin-top: 6px; }
-.gates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
-.gate { border-radius: 8px; padding: 8px 10px; font-size: 13px; background: var(--bg); color: var(--muted); }
-.gate b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }
-.gate.pass { background: var(--ok-bg); color: var(--ok); } .gate.fail { background: var(--bad-bg); color: var(--bad); }
-.gate.skip { opacity: .7; }
-@media (max-width: 700px) { .gates { grid-template-columns: 1fr; } .ask { flex-direction: column; } button.primary { padding: 12px; } }
-.badge { font-size: 12px; font-weight: 700; border-radius: 6px; padding: 2px 9px; }
-.badge.kept { background: var(--ok-bg); color: var(--ok); } .badge.rewritten { background: var(--warn-bg); color: var(--warn); }
-.badge.dropped, .badge.failed { background: var(--bad-bg); color: var(--bad); } .badge.pending { background: var(--bg); color: var(--muted); }
-.fixed { font-size: 15px; color: var(--muted); border-left: 0; padding: 8px 0; }
-.skipped li { margin: 4px 0; font-size: 14px; }
-pre { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px; font-size: 13.5px; margin: 0; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 14px; }
-th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
-th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
-.copy { float: right; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 8px; padding: 4px 12px; cursor: pointer; font-size: 13px; }
-.err { background: var(--bad-bg); color: var(--bad); border-radius: 10px; padding: 12px 16px; margin-top: 14px; }
-.hidden { display: none; }
-.summary { display: flex; gap: 22px; flex-wrap: wrap; }
-/* what happens between the query and the facts kept */
-.funnel { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
-.fstep { flex: 1 1 150px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--bg); }
-.fstep b { display: block; font-size: 24px; line-height: 1.2; }
-.fstep span { font-weight: 650; font-size: 14px; }
-.fstep small { display: block; font-size: 12px; color: var(--muted); line-height: 1.35; margin-top: 3px; }
-.fstep.kept { background: var(--code-bg); border-color: transparent; } .fstep.kept b { color: var(--code); }
-.farrow { align-self: center; color: var(--muted); font-size: 18px; }
-.cuts { margin: 8px 0 4px; padding-left: 20px; font-size: 13.5px; color: var(--muted); }
-.cuts li { margin: 3px 0; } .cuts b { color: var(--bad); }
-details.queries { margin: 12px 0 6px; }
-details.queries summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--code); }
-.qname { font-size: 13px; font-weight: 700; margin: 14px 0 4px; }
-pre.sparql { font-family: Consolas, "Cascadia Mono", monospace; font-size: 12.5px; }
-.nop { background: var(--warn-bg); border-radius: 10px; padding: 14px 18px; }
-.nop h3 { margin: 0 0 6px; font-size: 16px; color: var(--warn); }
-.nop ul { margin: 0; padding-left: 20px; } .nop li { margin: 5px 0; font-size: 14.5px; }
-@media (max-width: 700px) { .farrow { display: none; } }
-/* Part 3 and the video */
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--plum); background: var(--dawn); font: 400 18px/1.5 "Fredoka", "Segoe UI", system-ui, sans-serif; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 4px solid var(--sky); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+/* the map: sun, hills and the path of five stations; the heart walks it */
+.map { position: relative; height: 300px; overflow: hidden; }
+.map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.title { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 26px 24px 0; }
+h1 { margin: 0; font-weight: 700; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.02; letter-spacing: -.01em; }
+.station-name { font: 600 17px "Fredoka", sans-serif; fill: var(--plum); }
+.station circle.ring { fill: var(--white); stroke: var(--plum); stroke-width: 4; }
+.station.done circle.ring { fill: var(--sky); }
+.station.now circle.ring { fill: var(--sun); }
+.station.view circle.ring { stroke: var(--rose); stroke-width: 6; }
+.station.view .station-name { fill: var(--rose-deep); }
+.station.open { cursor: pointer; }
+.station.open:hover circle.ring { stroke-width: 6; }
+.station:focus { outline: none; }
+.station:focus-visible circle.ring { stroke: var(--sky); stroke-width: 7; }
+.station .icon { fill: none; stroke: var(--plum); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+
+main { max-width: 1120px; margin: 0 auto; padding: 0 24px 90px; }
+.screen.enter { animation: enter .35s ease-out; }
+@keyframes enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+h2 { font-weight: 700; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.08; margin: 34px 0 6px; }
+.sub { margin: 0 0 22px; font-size: 19px; color: var(--plum-soft); max-width: 62ch; }
+.alert { margin: 18px 0 0; background: var(--rose-soft); border: var(--line); border-radius: 24px; padding: 12px 20px; font-weight: 500; }
+.small { font-size: 15px; color: var(--plum-soft); }
+
+/* buttons */
+.big { border: var(--line); border-radius: 999px; background: var(--rose); color: var(--white); font-weight: 600; font-size: 20px;
+  padding: 10px 26px; box-shadow: 4px 4px 0 var(--plum); cursor: pointer; }
+.big:hover { background: var(--rose-deep); }
+.big:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--plum); }
+.big:disabled { opacity: .55; cursor: default; transform: none; box-shadow: 4px 4px 0 var(--plum); }
+.plain { border: var(--line); border-radius: 999px; background: var(--white); padding: 8px 20px; font-weight: 500; cursor: pointer; }
+.plain:hover { background: var(--mint-soft); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+/* screen 1: the whole room, with the question in the patient's speech bubble */
+.stage { position: relative; margin-top: -26px; z-index: 3; }
+.window { border: var(--line); border-radius: 40px; overflow: hidden; box-shadow: 8px 8px 0 var(--plum); background: var(--room); aspect-ratio: 16 / 9; }
+.window svg { width: 100%; height: 100%; display: block; }
+.say { position: absolute; z-index: 1; background: var(--white); border: var(--line); border-radius: 34px; box-shadow: var(--pop); }
+.say::after { content: ""; position: absolute; z-index: -1; width: 34px; height: 34px; background: var(--white); border-right: var(--line); border-bottom: var(--line); }
+.say.patient { right: 3%; top: 5%; width: min(470px, 46%); padding: 18px 20px; }
+.say.patient::after { left: 46px; bottom: -19px; transform: rotate(45deg) skew(12deg, 12deg); }
+.say.doctor { left: 7%; top: 9%; padding: 12px 20px; font-weight: 500; font-size: 19px; }
+.say.doctor::after { right: 38px; bottom: -19px; transform: rotate(45deg) skew(12deg, 12deg); }
+.say label { display: block; font-weight: 600; font-size: 15px; color: var(--plum-soft); margin-bottom: 6px; }
+textarea { width: 100%; border: 0; resize: none; font: 500 22px/1.3 "Fredoka", sans-serif; color: var(--plum); background: transparent; outline: none; min-height: 58px; }
+textarea::placeholder { color: #b9aac2; }
+.say.patient:focus-within { box-shadow: 5px 5px 0 var(--plum), 0 0 0 5px var(--sky); }
+.tries { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 0; align-items: center; }
+.tries b { font-weight: 600; margin-right: 4px; }
+.try { border: var(--line); border-radius: 999px; background: var(--white); padding: 6px 16px; font-weight: 500; font-size: 16px; cursor: pointer; }
+.try:hover { background: var(--mint); }
+body.asked .say.patient { animation: pop-away .8s cubic-bezier(.5, -0.3, .7, 1) forwards; }
+@keyframes pop-away { 0% { transform: scale(1); } 25% { transform: scale(1.06); } 100% { transform: translate(-20vw, -50vh) scale(.1); opacity: 0; } }
+
+/* screen 2: guideline facts */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.concept { background: var(--mint-soft); border: 2px solid var(--mint-2); border-radius: 999px; padding: 5px 16px; font-weight: 600; }
+.concept small { font-weight: 400; color: var(--plum-soft); font-size: 15px; }
+.funnel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 24px 0 8px; }
+.count { flex: 1 1 160px; background: var(--white); border: var(--line); border-radius: 28px; padding: 12px 18px; }
+.count b { display: block; font-size: 32px; font-weight: 700; line-height: 1.1; }
+.count span { font-weight: 500; }
+.count small { display: block; font-size: 14px; color: var(--plum-soft); line-height: 1.35; margin-top: 2px; }
+.count.kept { background: var(--sun-soft); box-shadow: var(--pop); }
+.arrow { font-size: 24px; color: var(--plum-soft); }
+.cuts { margin: 10px 0 0; padding-left: 22px; font-size: 16px; color: var(--plum-soft); }
+.cuts li { margin: 4px 0; } .cuts b { color: var(--rose-deep); }
+details { margin: 18px 0 0; }
+details > summary { cursor: pointer; font-weight: 600; color: var(--plum); display: inline-block; border-bottom: 2px dotted var(--plum-soft); }
+pre { white-space: pre-wrap; background: var(--white); border: 2px solid var(--plum); border-radius: 18px; padding: 14px; font: 13px/1.5 Consolas, "Cascadia Mono", monospace; margin: 8px 0 0; }
+.qname { font-weight: 600; margin: 14px 0 0; font-size: 15px; }
+.facts { display: grid; gap: 16px; margin-top: 26px; }
+.fact { display: grid; grid-template-columns: 48px 1fr; gap: 14px; background: var(--white); border: var(--line); border-radius: 28px; padding: 16px 20px; }
+.num { width: 44px; height: 44px; border-radius: 50%; background: var(--sun); border: var(--line); display: grid; place-items: center; font-weight: 700; }
+.fact p { margin: 0; font-size: 18px; line-height: 1.45; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tag { font-size: 14px; font-weight: 500; border-radius: 999px; padding: 1px 10px; background: var(--blush); border: 2px solid #f6c9b6; }
+.tag.grade { background: var(--mint-soft); border-color: var(--mint-2); }
+.tag.caution { background: var(--sun-soft); border-color: var(--sun); }
+.searching { display: flex; align-items: center; gap: 14px; background: var(--white); border: var(--line); border-radius: 28px; padding: 14px 20px; font-weight: 500; }
+.dots span { display: inline-block; width: 10px; height: 10px; margin: 0 2px; border-radius: 50%; background: var(--rose); animation: bob 1s infinite ease-in-out; }
+.dots span:nth-child(2) { animation-delay: .15s; background: var(--sun); } .dots span:nth-child(3) { animation-delay: .3s; background: var(--mint-2); }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+/* the retrieved subgraph */
+.graph-box { margin-top: 26px; background: var(--white); border: var(--line); border-radius: 32px; padding: 18px 20px 12px; box-shadow: var(--pop); }
+.graph-box h3 { margin: 0 0 4px; font-size: 22px; }
+.graph-box .small { margin: 0 0 6px; max-width: 80ch; }
+#graph { display: block; width: 100%; min-width: 760px; height: auto; font-family: "Fredoka", sans-serif; }
+#graph .col { font-size: 14px; font-weight: 600; fill: var(--plum-soft); }
+#graph .edge { fill: none; stroke: var(--plum); stroke-opacity: .3; stroke-width: 2.2; transition: stroke-opacity .2s, stroke .2s; }
+#graph .edge.broader { stroke-dasharray: 5 6; stroke-opacity: .55; }
+#graph .node { transition: opacity .2s; }
+#graph .node rect, #graph .node circle { stroke: var(--plum); stroke-width: 2.5; }
+#graph .concept rect { fill: var(--white); } #graph .concept.asked rect { fill: var(--mint); stroke-width: 3.5; }
+#graph .claim rect { fill: var(--sun-soft); }
+#graph .fnode circle { fill: var(--sun); } #graph .fnode { cursor: pointer; }
+#graph .source rect { fill: var(--rose-soft); }
+#graph text.label { font-size: 14px; font-weight: 500; fill: var(--plum); }
+#graph .claim text.label { font-size: 13px; }
+#graph .fnode text.label { font-size: 14px; font-weight: 700; }
+#graph .page { font-size: 12px; fill: var(--plum-soft); }
+#graph.focus .node:not(.hot) { opacity: .2; }
+#graph.focus .edge:not(.hot) { stroke-opacity: .07; }
+#graph.focus .edge.hot { stroke: var(--rose); stroke-opacity: .95; stroke-width: 3; }
+#graph .fnode:focus { outline: none; } #graph .fnode:focus-visible circle { stroke: var(--sky); stroke-width: 5; }
+.fact.flash { animation: flash 1.2s ease-out; }
+@keyframes flash { 0%, 40% { background: var(--sun-soft); box-shadow: var(--pop); } 100% { background: var(--white); } }
+.nothing { background: var(--sun-soft); border: var(--line); border-radius: 28px; padding: 16px 22px; margin-top: 22px; }
+.nothing h3 { margin: 0 0 6px; font-size: 21px; }
+.nothing ul { margin: 0; padding-left: 22px; } .nothing li { margin: 5px 0; }
+
+/* screen 3: the doctor's lines, checked, as speech bubbles with stamps */
+.lines { display: grid; gap: 22px; }
+.line { display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: start; }
+.face { width: 76px; height: 76px; border-radius: 50%; border: var(--line); overflow: hidden; background: var(--room); }
+.face svg { width: 100%; height: 100%; display: block; }
+.bubble { position: relative; background: var(--white); border: var(--line); border-radius: 28px; box-shadow: var(--pop); padding: 16px 22px; }
+.bubble::before { content: ""; position: absolute; left: -15px; top: 24px; width: 24px; height: 24px; background: var(--white); border-left: var(--line); border-bottom: var(--line); transform: rotate(45deg); }
+.bubble p { margin: 0; font-size: 21px; font-weight: 500; line-height: 1.35; padding-right: 170px; }
+.bubble .first { font-size: 17px; color: var(--plum-soft); text-decoration: line-through; text-decoration-color: var(--rose); margin: 0 0 6px; padding-right: 170px; }
+.how { margin-top: 8px; font-size: 15px; color: var(--plum-soft); }
+.how.bad { color: var(--rose-deep); font-weight: 500; }
+.bubble details { margin-top: 6px; font-size: 15px; }
+.bubble details > summary { font-weight: 500; color: var(--plum-soft); }
+.bubble details q { display: block; margin-top: 6px; color: var(--plum); font-style: italic; }
+.stamp { position: absolute; right: 18px; top: 14px; transform: rotate(-7deg); border: 3px solid currentColor; border-radius: 14px; padding: 2px 12px; font-weight: 700; font-size: 16px; background: var(--white); white-space: nowrap; }
+.stamp.ok { color: var(--ok); } .stamp.no { color: var(--rose-deep); } .stamp.wait { color: var(--plum-soft); transform: none; border-style: dashed; animation: breathe 1.4s infinite ease-in-out; }
+.stamp.fixed { color: var(--plum-soft); transform: rotate(-4deg); }
+@keyframes breathe { 50% { opacity: .45; } }
+.line.dropped .bubble { background: var(--blush); box-shadow: none; }
+.line.dropped .bubble::before { background: var(--blush); }
+.line.dropped p { color: var(--plum-soft); text-decoration: line-through; text-decoration-color: var(--rose); text-decoration-thickness: 2px; }
+.line.fixed .bubble { background: var(--mint-soft); box-shadow: none; }
+.line.fixed .bubble::before { background: var(--mint-soft); }
+.left-out li { margin: 4px 0; font-size: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 12px; background: var(--white); border-radius: 18px; overflow: hidden; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 2px solid var(--blush); }
+th { font-weight: 600; color: var(--plum-soft); }
 .wrap { overflow-x: auto; }
-#board td.who { font-weight: 650; white-space: nowrap; }
-#board tr.patient td.who { color: var(--llm); } #board tr.doctor td.who { color: var(--code); }
-#board td.fixed-row { color: var(--muted); font-style: italic; }
-.obj { background: var(--code-bg); color: var(--code); border-radius: 6px; padding: 1px 8px; font-weight: 600; font-size: 13px; white-space: nowrap; }
-.make { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 6px 0 4px; }
-.make button.primary { padding: 10px 24px; }
-.vsteps { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
-.vsteps li { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 13px; color: var(--muted); background: var(--bg); }
-.vsteps li b { display: block; font-size: 12px; color: var(--ink); }
-.vsteps li.active { border-color: var(--code); background: var(--code-bg); color: var(--code); }
-.vsteps li.done { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
-.vsteps li.fail { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
-@media (max-width: 900px) { .vsteps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.film { margin-top: 16px; }
-.film video { width: 100%; border-radius: 12px; background: #000; display: block; }
-.notice { display: inline-block; background: var(--warn-bg); color: var(--warn); font-weight: 650; font-size: 13.5px; border-radius: 8px; padding: 4px 12px; margin-bottom: 10px; }
-.reviewer { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 10px 16px; margin-top: 12px; font-size: 14px; }
-.reviewer ul { margin: 4px 0 0; padding-left: 20px; }
+
+/* screen 4: the scenes as a comic strip drawn with the real kit */
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
+.panel { background: var(--white); border: var(--line); border-radius: 26px; overflow: hidden; box-shadow: var(--pop); display: flex; flex-direction: column; }
+.panel .pic { position: relative; aspect-ratio: 16 / 9; border-bottom: var(--line); background: var(--room); }
+.panel .pic svg { width: 100%; height: 100%; display: block; }
+.panel .n { position: absolute; left: 10px; top: 10px; width: 34px; height: 34px; border-radius: 50%; background: var(--sun); border: var(--line); display: grid; place-items: center; font-weight: 700; font-size: 15px; }
+.panel .words { padding: 12px 16px 4px; font-weight: 500; line-height: 1.35; }
+.panel .words.notice { font-style: italic; color: var(--plum-soft); }
+.panel .meta { padding: 0 16px 14px; margin-top: auto; font-size: 14px; color: var(--plum-soft); display: flex; flex-wrap: wrap; gap: 6px; }
+.panel .meta span { background: var(--blush); border-radius: 999px; padding: 1px 10px; }
+.panel .meta .obj { background: var(--mint-soft); color: var(--ok); font-weight: 600; }
+.panel.patient .words::before { content: "Patient: "; color: var(--rose-deep); font-weight: 600; }
+.panel.doctor .words::before { content: "Doctor: "; color: var(--ok); font-weight: 600; }
+.make { margin-top: 30px; background: var(--white); border: var(--line); border-radius: 32px; padding: 20px 24px; box-shadow: var(--pop); display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
+.make p { margin: 0; flex: 1 1 300px; color: var(--plum-soft); }
+
+/* screen 5: the video */
+.vsteps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.vsteps li { background: var(--white); border: var(--line); border-radius: 22px; padding: 10px 12px; font-size: 15px; font-weight: 500; line-height: 1.3; }
+.vsteps li b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--plum); margin-bottom: 6px; font-size: 14px; }
+.vsteps li.active { background: var(--sun-soft); } .vsteps li.active b { background: var(--sun); animation: breathe 1.2s infinite; }
+.vsteps li.done { background: var(--mint-soft); } .vsteps li.done b { background: var(--mint-2); color: var(--white); border-color: var(--plum); }
+.vsteps li.fail { background: var(--rose-soft); } .vsteps li.fail b { background: var(--rose); color: var(--white); }
+.film { margin-top: 26px; }
+.notice { display: inline-block; background: var(--sun-soft); border: 2px solid var(--sun); font-weight: 600; font-size: 15px; border-radius: 999px; padding: 3px 14px; margin-bottom: 12px; }
+.tv { border: var(--line); border-radius: 30px; overflow: hidden; box-shadow: 8px 8px 0 var(--plum); background: var(--plum); }
+.tv video { width: 100%; display: block; }
+.passed { margin-top: 14px; font-weight: 500; }
+.review { margin-top: 18px; background: var(--sun-soft); border: 2px solid var(--sun); border-radius: 24px; padding: 12px 20px; font-size: 16px; }
+.review ul { margin: 6px 0 0; padding-left: 20px; }
+
+@media (max-width: 820px) {
+  .map { height: auto; }
+  .map svg { position: static; display: block; height: auto; aspect-ratio: 1200 / 300; margin-top: 10px; }
+  .station-name { font-size: 26px; }
+  .stage { margin-top: 8px; }
+  .say.patient { position: relative; right: auto; top: auto; width: 100%; margin-top: 22px; }
+  .say.patient::after { left: 70%; top: -19px; bottom: auto; transform: rotate(225deg) skew(12deg, 12deg); }
+  .say.doctor { font-size: 14px; padding: 6px 12px; top: 6%; }
+  .say.doctor::after { width: 20px; height: 20px; bottom: -12px; right: 24px; }
+  .line { grid-template-columns: 52px 1fr; gap: 12px; } .face { width: 52px; height: 52px; }
+  .bubble p, .bubble .first { padding-right: 0; padding-top: 42px; } .bubble .first + p { padding-top: 0; }
+  .vsteps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arrow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
+<header class="map">
+  <div class="title"><h1>Your heart question,<br>step by step</h1></div>
+  <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" role="group" aria-label="The five steps; finished steps can be opened">
+    <circle cx="1080" cy="78" r="46" fill="#ffc542"/>
+    <path d="M0 210 C 180 150, 330 190, 520 170 S 900 120, 1200 170 V300 H0Z" fill="#6cc7a0"/>
+    <path d="M0 240 C 220 200, 420 250, 640 225 S 1000 190, 1200 230 V300 H0Z" fill="#8fd9b6"/>
+    <path d="M120 232 C 230 200, 300 250, 380 226 S 540 196, 620 222 S 780 250, 860 214 S 1000 196, 1080 226" fill="none" stroke="#3d2a4d" stroke-width="4" stroke-dasharray="1 14" stroke-linecap="round"/>
+    <g id="stations"></g>
+    <g id="heart" aria-hidden="true"><path d="M0 8 C -26 -8, -16 -30, 0 -18 C 16 -30, 26 -8, 0 8Z" fill="#f2557a" stroke="#3d2a4d" stroke-width="3.5" stroke-linejoin="round"/></g>
+  </svg>
+</header>
+
 <main>
-  <h1>From a patient question to a checked video</h1>
-  <p class="lead">Ask a patient question. The answer is built live: facts come from a knowledge graph of clinical guidelines, one model writes a
-    line for each fact, and a different model checks every line against its own fact. Lines that fail are rewritten once or removed.
-    Then code picks what the video shows and makes it: two voices, a word-by-word speech check, and an animated doctor and patient.</p>
+  <div id="error" class="alert" role="alert" hidden></div>
 
-  <div class="panel">
-    <div class="ask">
-      <textarea id="q" placeholder="e.g. When can I drive again after getting an ICD?"></textarea>
-      <button id="go" class="primary">Ask</button>
+  <section class="screen" id="screen-0">
+    <div class="stage">
+      <div class="window" id="room" role="img" aria-label="The cartoon doctor and patient in the consultation room"></div>
+      <div class="say doctor">Hello! What would you like to know?</div>
+      <form class="say patient" id="ask-form">
+        <label for="q">The patient asks</label>
+        <textarea id="q" rows="2" maxlength="300" placeholder="Type a question about your heart"></textarea>
+        <button class="big" id="go" type="submit">Ask the doctor</button>
+      </form>
     </div>
-    <div class="chips" id="chips"></div>
-    <div id="error" class="err hidden"></div>
-  </div>
+    <div class="tries" id="tries"><b>Or try:</b></div>
+  </section>
 
-  <div class="pipeline" id="pipeline"></div>
-
-  <section id="part1" class="panel hidden">
-    <div class="section-head"><span class="tagline code">Part 1 · Steps 1–3 · Code only</span><h2>What the knowledge graph returned</h2></div>
-    <p class="explain">The question's words are matched to the graph's own concept names, two fixed SPARQL queries collect claims and
-      recommendations that mention them, and the best facts (at most 10) are kept with their guideline and page. The row below shows
-      how many were found and why the rest were left out.</p>
-    <div class="concepts" id="concepts"></div>
+  <section class="screen" id="screen-1" hidden>
+    <h2>What the heart guidelines say</h2>
+    <p class="sub" id="facts-sub">The question's words are matched to the guideline graph, and fixed queries collect what the guidelines say about them.</p>
+    <div id="searching" class="searching"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>Looking up your question in the guideline graph</div>
+    <div class="chips" id="concepts"></div>
     <div id="funnel"></div>
-    <details class="queries hidden" id="queries"><summary>Show the SPARQL queries that were run for this question</summary>
-      <p class="meta">Fixed queries written once in the code (graph_facts.py); only the concepts of the question are filled in. No model writes or changes them.</p>
+    <details id="queries" hidden><summary>Show the graph queries that were run</summary>
+      <p class="small">Written once in the code (graph_facts.py); only the question's concepts are filled in. No AI writes or changes them.</p>
       <div id="query-list"></div></details>
-    <div id="facts" style="margin-top:10px"></div>
+    <div id="graph-box" class="graph-box" hidden>
+      <h3>How the facts hang together in the graph</h3>
+      <p class="small">Read it left to right: the concepts, what each guideline sentence says about them, the facts kept, and the guideline they come from. Concepts from your question are green; a dashed line means "reached through a broader concept". Point at a fact to follow its path, or click it to read it.</p>
+      <div class="wrap"><svg id="graph" role="img" aria-label="The part of the knowledge graph that was retrieved"></svg></div>
+    </div>
+    <div class="facts" id="facts"></div>
+    <div id="nothing-1"></div>
   </section>
 
-  <section id="part2" class="panel hidden">
-    <div class="section-head"><span class="tagline llm">Part 2 · Steps 4–7</span><h2>The script, line by line</h2></div>
-    <p class="explain">Each fact becomes one slot. The writer (gpt-oss-20b) turns it into one plain spoken line. Every line then passes
-      code checks and a judge (gpt-oss-120b) that sees only that line's own fact.</p>
-    <div id="lines"></div>
-    <div id="skipped" class="skipped"></div>
+  <section class="screen" id="screen-2" hidden>
+    <h2>The doctor's lines, checked one by one</h2>
+    <p class="sub">One model (gpt-oss-20b) writes a line for each fact. Code checks the numbers, cautions and abbreviations, and a second model (gpt-oss-120b) checks the line against its own fact only. A line that fails is rewritten once or removed.</p>
+    <div id="writing" class="searching"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>The writer is turning the facts into spoken lines</div>
+    <div class="lines" id="lines"></div>
+    <div id="nothing-2"></div>
+    <details id="left-out" hidden><summary>Facts the writer left out, and why</summary><ul class="left-out" id="left-out-list"></ul></details>
+    <details id="prompt-box" hidden><summary>The video prompt and its sources</summary>
+      <div class="row" style="margin-top:10px"><button class="plain" id="copy" type="button">Copy the prompt</button></div>
+      <pre id="prompt"></pre>
+      <div class="wrap"><table id="sources"></table></div></details>
+    <p class="small" id="summary"></p>
   </section>
 
-  <section id="out" class="panel hidden">
-    <button class="copy" id="copy">Copy prompt</button>
-    <div class="section-head"><span class="tagline code">Part 2 output · built by code</span><h2>The video prompt</h2></div>
-    <p class="explain">Only checked lines are used, word for word. The table shows where each spoken line comes from.</p>
-    <div id="nop" class="nop hidden"></div>
-    <pre id="prompt"></pre>
-    <table id="sources"></table>
-    <div class="summary meta" id="summary" style="margin-top:14px"></div>
+  <section class="screen" id="screen-3" hidden>
+    <h2>What the video shows</h2>
+    <p class="sub">For every line, code picks the camera, what the doctor and the patient do, and at most one object, only from fixed lists. An object must fit its line, and an object the line warns against is never shown. No words are added here, and no AI is used.</p>
+    <div id="board-problems" class="alert" hidden></div>
+    <div class="strip" id="strip"></div>
+    <div class="make">
+      <p>Two voices read the lines, every word is checked, and the doctor and patient are drawn frame by frame. If any check fails, no video is made. It takes about a minute or two.</p>
+      <button class="big" id="make" type="button">Make the video</button>
+    </div>
   </section>
 
-  <section id="part3" class="panel hidden">
-    <div class="section-head"><span class="tagline code">Part 3 · Step 8 · Code only</span><h2>What the video shows, line by line</h2></div>
-    <p class="explain">For each spoken line, code picks the camera, what the doctor and the patient do, and at most one object, only from fixed
-      lists. An object must fit the words of its line, and an object the line warns against (a cigarette pack, a wine glass) is never shown.
-      Nothing here writes or changes words: the patient's own question comes first, then the checked lines, with the spoken AI notice after
-      the greeting. No model, no tokens.</p>
-    <div id="board-problems" class="err hidden"></div>
-    <div class="wrap"><table id="board"></table></div>
-  </section>
-
-  <section id="video" class="panel hidden">
-    <div class="section-head"><span class="tagline code">Step 9 · Code and fixed tools</span><h2>The video</h2></div>
-    <p class="explain">Kokoro reads every line (the patient's question in a second voice, slower than normal speech). Whisper listens to each
-      line and then to the finished sound track: one added, dropped or changed word stops the video. The approved doctor and patient are
-      drawn frame by frame from the table above, and every caption must stay on screen long enough to read. No model and no tokens; it
-      takes a few minutes. If any check fails, no video is made.</p>
-    <div class="make"><button id="make" class="primary">Make the video</button><span class="meta" id="vtime"></span></div>
+  <section class="screen" id="screen-4" hidden>
+    <h2>Your video</h2>
+    <p class="sub" id="video-sub">Making the video. Every check must pass before you see it.</p>
     <ol class="vsteps" id="vsteps"></ol>
+    <p class="small" id="vtime"></p>
     <div id="vresult"></div>
+    <div class="row" style="margin-top:22px"><button class="plain" id="again" type="button" hidden>Make it again</button><button class="plain" id="new-question" type="button">Ask a new question</button></div>
   </section>
 </main>
+
+<script src="/kit.js"></script>
 <script>
+'use strict';
 const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
-const STAGES = [
-  ['question', 'plain', 'Input', 'Question', 'the patient asks in free text'],
-  ['concepts', 'code', 'Code', '1  Concepts', "words matched to the graph's names"],
-  ['graph', 'code', 'Code', '2  Graph query', 'fixed SPARQL: claims + readings'],
-  ['rank', 'code', 'Code', '3  Rank & filter', 'best ≤ 10 facts, with sources'],
-  ['slots', 'code', 'Code', '4  Slots', 'one prepared slot per fact'],
-  ['writer', 'llm', 'gpt-oss-20b', '5  Writer', 'one plain line per fact'],
-  ['checks', 'code', 'Code', '6  Code checks', 'numbers, cautions, abbreviations'],
-  ['judge', 'llm', 'gpt-oss-120b', '7  Judge', 'line vs its own fact'],
-  ['director', 'code', 'Code', '8  Director', 'camera, actions, object per line'],
-  ['video', 'code', 'Code + tools', '9  Video', 'voices, word checks, animation']];
-const VSTEPS = ['Voices', 'Speech check, every line', 'Timeline and sound', 'Speech check, whole sound track', 'Reading time, then drawing', 'Picture + sound'];
-const CHECKS = { speech_lines: 'every line, word for word', speech_mix: 'the finished sound track', reading_time: 'reading time' };
-let lineCards = {}, slotsByN = {}, closingDiv = null, recordName = null;
+const STILL = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const STATIONS = [[120, 232, 'Your question', 'q'], [380, 226, 'Guideline facts', 'book'], [620, 222, 'Checked script', 'check'],
+                  [860, 214, 'Scenes', 'panels'], [1080, 226, 'Your video', 'play']];
+const ICONS = {
+  q: '<path d="M-7 -6a7 7 0 1 1 10 6c-2 1-3 2.5-3 4.5"/><circle cx="0" cy="11" r="1.2" fill="#3d2a4d"/>',
+  book: '<path d="M0 -8c-5-3-11-3-15-1v18c4-2 10-2 15 1 5-3 11-3 15-1V-9c-4-2-10-2-15 1z"/><path d="M0 -8v18"/>',
+  check: '<path d="M-11 0l7 7 14-15"/>',
+  panels: '<rect x="-13" y="-11" width="11" height="10" rx="2"/><rect x="2" y="-11" width="11" height="10" rx="2"/><rect x="-13" y="3" width="26" height="9" rx="2"/>',
+  play: '<path d="M-5 -10v20l15-10z" fill="#3d2a4d"/>'};
+const VSTEPS = ['Voices', 'Every line, word for word', 'Timeline and sound', 'The whole sound track', 'Reading time, then drawing', 'Picture and sound together'];
+const CHECKS = {speech_lines: 'every line, word for word', speech_mix: 'the whole sound track', reading_time: 'reading time'};
 
-function buildPipeline() {
-  const box = $('pipeline'); box.textContent = '';
-  STAGES.forEach(([key, kind, who, name, what]) => {
-    const s = el('div', 'stage ' + kind); s.id = 'st-' + key;
-    s.append(el('span', 'state'), el('div', 'who', who), el('div', 'name', name), el('div', 'what', what));
-    box.appendChild(s);
+let reached = 0, viewing = 0, heartAt = 0, hopping = false, hops = Promise.resolve();
+let recordName = null, slotsByN = {}, cards = {}, closingCard = null, autoNext = null;
+let videoRun = 0;   // a new question or a new video stops the page from following an older video
+
+/* ---- the map ---------------------------------------------------------------------------------------------------- */
+function drawStations() {
+  $('stations').innerHTML = STATIONS.map(([x, y, name, icon], i) => {
+    const cls = ['station', i < reached ? 'done' : i === reached ? 'now' : '', i === viewing ? 'view' : '', i <= reached ? 'open' : ''].join(' ');
+    const open = i <= reached ? ` role="button" tabindex="0" aria-label="Open: ${name}"` : ` aria-label="${name}, not reached yet"`;
+    return `<g class="${cls}" data-i="${i}" transform="translate(${x} ${y})"${open}><circle class="ring" r="${i === reached ? 30 : 26}"/>
+      <g class="icon">${ICONS[icon]}</g><text class="station-name" y="-42" text-anchor="middle">${name}</text></g>`;
+  }).join('');
+  if (!hopping) placeHeart(STATIONS[heartAt][0], STATIONS[heartAt][1]);
+}
+function placeHeart(x, y) { $('heart').setAttribute('transform', `translate(${x + 26} ${y + 22})`); }
+function hopOne(from, to) {
+  return new Promise(done => {
+    const [x0, y0] = STATIONS[from], [x1, y1] = STATIONS[to], t0 = performance.now(), ms = STILL ? 1 : 750;
+    hopping = true;
+    (function step(t) {
+      const k = Math.min(1, (t - t0) / ms), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      placeHeart(x0 + (x1 - x0) * e, y0 + (y1 - y0) * e - Math.sin(Math.PI * k) * 70);
+      if (k < 1) requestAnimationFrame(step); else { hopping = false; heartAt = to; done(); }
+    })(t0);
   });
 }
-function stage(keys, state) { keys.forEach(k => { const s = $('st-' + k); s.classList.remove('active', 'done'); if (state) s.classList.add(state); }); }
-
-function showFacts(event) {
-  $('part1').classList.remove('hidden');
-  const box = $('concepts'); box.textContent = '';
-  (event.concepts || []).forEach(c => {
-    const chip = el('span', 'concept', c.name || c.words);
-    chip.appendChild(el('small', null, c.method === 'name' ? `  ← "${c.words}"` : `  ← "${c.words}" (meaning match)`));
-    box.appendChild(chip);
+const STAY = 3000;   // each page stays at least this long, so saved answers (which come at once) do not flash by
+let shownAt = 0;
+const wait = ms => new Promise(r => setTimeout(r, Math.max(0, ms)));
+function reach(i, openIt = true, stay = true) {   // the heart hops station by station to i; then the page for i opens
+  hops = hops.then(async () => {
+    while (heartAt < i) {
+      if (stay && viewing === heartAt && heartAt > 0) await wait(STAY - (performance.now() - shownAt));
+      reached = heartAt + 1; drawStations(); await hopOne(heartAt, heartAt + 1);
+    }
+    reached = Math.max(reached, i);
+    if (openIt) show(i); else drawStations();
   });
-  if (!(event.concepts || []).length) box.appendChild(el('span', 'meta', 'No concept of the question was found in the graph.'));
-  showFunnel(event.funnel, event.concepts || []);
+  return hops;
+}
+function show(i) {
+  viewing = i; shownAt = performance.now();
+  document.querySelectorAll('.screen').forEach(s => { s.hidden = s.id !== 'screen-' + i; });
+  const screen = $('screen-' + i);
+  screen.classList.remove('enter'); void screen.offsetWidth; screen.classList.add('enter');
+  drawStations();
+  if (i > 0) window.scrollTo({top: Math.max(0, document.querySelector('main').offsetTop - 20)});
+}
+function openStation(target) {
+  const g = target.closest && target.closest('.station.open');
+  if (!g) return;
+  clearTimeout(autoNext);
+  show(+g.dataset.i);
+}
+$('stations').addEventListener('click', e => openStation(e.target));
+$('stations').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openStation(e.target); } });
+
+/* ---- screen 1: the room ----------------------------------------------------------------------------------------- */
+function drawRoom(blink) {
+  $('room').innerHTML = KIT.scene({doctor: {action: 'smiles warmly', ...(blink === 'doctor' ? {eyes: 'closed'} : {})},
+                                   patient: {action: 'asks the question', ...(blink === 'patient' ? {eyes: 'closed'} : {})}, shot: 'wide'});
+}
+drawRoom();
+if (!STILL) {   // the two of them blink now and then while you type
+  let turn = 0;
+  setInterval(() => {
+    if (viewing !== 0 || document.hidden) return;
+    const who = turn++ % 2 ? 'patient' : 'doctor';
+    drawRoom(who); setTimeout(() => drawRoom(), 140);
+  }, 2300);
+}
+const FACE = KIT.scene({doctor: 'explains', patient: 'listens', view: [470, 390, 250, 250]});
+function face() { const f = el('div', 'face'); f.innerHTML = FACE; f.setAttribute('aria-hidden', 'true'); return f; }
+
+function showError(message) { const e = $('error'); e.textContent = message; e.hidden = false; }
+function hideError() { $('error').hidden = true; }
+
+function reset() {
+  clearTimeout(autoNext); videoRun++;
+  reached = 0; heartAt = 0; recordName = null; slotsByN = {}; cards = {}; closingCard = null;
+  ['concepts', 'funnel', 'query-list', 'graph', 'facts', 'nothing-1', 'lines', 'nothing-2', 'left-out-list', 'prompt', 'sources', 'summary', 'strip', 'vresult', 'vsteps', 'vtime'].forEach(id => { $(id).textContent = ''; });
+  ['queries', 'graph-box', 'left-out', 'prompt-box', 'board-problems', 'again'].forEach(id => { $(id).hidden = true; });
+  $('searching').hidden = false; $('writing').hidden = false;
+  $('facts-sub').textContent = "The question's words are matched to the guideline graph, and fixed queries collect what the guidelines say about them.";
+  hideError(); drawStations();
+}
+
+async function ask(question) {
+  reset();
+  document.body.classList.add('asked');
+  $('go').disabled = true;
+  let answer;
+  try {
+    const response = await fetch('/ask', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question})});
+    answer = await response.json();
+    if (!response.ok) throw new Error(answer.error);
+  } catch (error) {
+    document.body.classList.remove('asked'); $('go').disabled = false;
+    showError(error.message.includes('fetch') ? 'The demo page is not answering. Start it again with demo_page.py.' : error.message);
+    return;
+  }
+  setTimeout(() => document.body.classList.remove('asked'), 900);
+  setTimeout(() => reach(1), STILL ? 0 : 600);
+  let next = 0;
+  const poll = async () => {
+    try {
+      const job = await (await fetch(`/job/${answer.id}?since=${next}`)).json();
+      job.events.forEach(handle); next = job.next;
+      if (job.done) { $('go').disabled = false; return; }
+    } catch (error) { showError('Lost contact with the demo page. Is demo_page.py still running?'); $('go').disabled = false; return; }
+    setTimeout(poll, 800);
+  };
+  poll();
+}
+$('ask-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const q = $('q').value.trim();
+  if (!q) { showError('Type a question first.'); $('q').focus(); return; }
+  ask(q);
+});
+$('q').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('ask-form').requestSubmit(); } });
+$('q').addEventListener('input', hideError);
+fetch('/examples').then(r => r.json()).then(list => list.forEach(q => {
+  const b = el('button', 'try', q); b.type = 'button';
+  b.onclick = () => { $('q').value = q; $('ask-form').requestSubmit(); };
+  $('tries').appendChild(b);
+})).catch(() => {});
+
+/* ---- events from the pipeline ----------------------------------------------------------------------------------- */
+function handle(event) {
+  if (event.step === 'facts') showFacts(event);
+  else if (event.step === 'written') { reach(2); event.lines.forEach(lineCard); if (!event.lines.length) $('writing').hidden = true; }
+  else if (event.step === 'checked') { $('writing').hidden = true; if (event.part === 'line') lineCard(event.line); else fixedLine(event.part, event.result); }
+  else if (event.step === 'done') finish(event.record);
+  else if (event.step === 'storyboard') showBoard(event);
+  else if (event.step === 'error') { showError(event.message); $('searching').hidden = true; $('writing').hidden = true; }
+}
+
+/* ---- screen 2: facts -------------------------------------------------------------------------------------------- */
+function showFacts(event) {
+  $('searching').hidden = true;
+  const concepts = event.concepts || [];
+  concepts.forEach(c => {
+    const chip = el('span', 'concept', c.name || c.words);
+    chip.appendChild(el('small', null, c.method === 'name' ? `  from “${c.words}”` : `  from “${c.words}”, by meaning`));
+    $('concepts').appendChild(chip);
+  });
+  if (!concepts.length) $('concepts').appendChild(el('span', 'small', 'No word of the question matched a concept in the graph.'));
+  showFunnel(event.funnel, concepts);
   showQueries(event.queries || []);
-  const facts = $('facts'); facts.textContent = ''; slotsByN = {};
-  event.slots.forEach(s => {
-    slotsByN[s.n] = s;
-    const row = el('div', 'fact');
+  slotsByN = {};
+  (event.slots || []).forEach(s => { slotsByN[s.n] = s; });
+  drawGraph(event);
+  (event.slots || []).forEach(s => {
+    const row = el('div', 'fact'); row.id = 'fact-' + s.n;
     row.appendChild(el('div', 'num', s.n));
     const body = el('div');
-    body.appendChild(el('div', null, s.statement));
+    body.appendChild(el('p', null, s.statement));
     const tags = el('div', 'tags');
     tags.appendChild(el('span', 'tag', s.kind));
-    if (s.kind !== 'definition') tags.appendChild(el('span', 'tag' + (s.grade ? ' grade' : ''), s.grade || 'no grade given'));
-    if (s.caution) tags.appendChild(el('span', 'tag caution', '"may" — the caution must stay'));
+    if (s.kind !== 'definition') tags.appendChild(el('span', 'tag' + (s.grade ? ' grade' : ''), s.grade ? 'grade ' + s.grade : 'no grade given'));
+    if (s.caution) tags.appendChild(el('span', 'tag caution', '“may”: the caution must stay'));
     body.appendChild(tags);
     const meanings = Object.entries(s.abbreviations || {}).map(([a, full]) => full ? `${a} = ${full}` : `${a}: two meanings in the graph, kept as written`);
-    if (meanings.length) body.appendChild(el('div', 'meta', 'Abbreviations, from the graph: ' + meanings.join('; ')));
-    body.appendChild(el('div', 'meta', 'Source: ' + s.source));
-    row.appendChild(body); facts.appendChild(row);
+    if (meanings.length) body.appendChild(el('div', 'small', 'Abbreviations, from the graph: ' + meanings.join('; ')));
+    body.appendChild(el('div', 'small', 'Source: ' + s.source));
+    row.appendChild(body); $('facts').appendChild(row);
   });
+  const slots = event.slots || [], defs = slots.filter(s => s.kind === 'definition').length, facts = slots.length - defs;
+  $('facts-sub').textContent = slots.length
+    ? `${facts} guideline facts kept, best first${defs ? `, plus ${defs} word definition${defs > 1 ? 's' : ''} from UMLS` : ''}. They go to the writer, each with its source.`
+    : 'The graph has nothing to pass on for this question.';
 }
 
 function showFunnel(f, concepts) {
-  const box = $('funnel'); box.textContent = '';
   if (!f) return;
   const row = el('div', 'funnel');
-  const step = (n, name, why, cls) => { const d = el('div', 'fstep' + (cls ? ' ' + cls : '')); d.append(el('b', null, n ?? '–'), el('span', null, name), el('small', null, why)); return d; };
-  [step(f.claims_found, 'claims & readings found', 'Query A + B: they name a concept of the question · English, professional guidelines only'),
-   step(f.statements, 'guideline statements', 'the sentences these claims and readings come from'),
-   step(f.on_topic, 'on topic', "they name the question's most specific concept"),
-   step(f.kept, 'facts kept', 'best first, at most 10 — passed on to the writer', 'kept')]
-    .forEach((d, i) => { if (i) row.appendChild(el('div', 'farrow', '→')); row.appendChild(d); });
-  box.appendChild(row);
+  const count = (n, name, why, cls) => { const d = el('div', 'count' + (cls ? ' ' + cls : '')); d.append(el('b', null, n ?? '–'), el('span', null, name), el('small', null, why)); return d; };
+  [count(f.claims_found, 'claims found', 'they name a concept of the question; English, professional guidelines only'),
+   count(f.statements, 'guideline sentences', 'the sentences these claims come from'),
+   count(f.on_topic, 'on topic', "they name the question's most specific concept"),
+   count(f.kept, 'facts kept', 'best first, at most 10', 'kept')]
+    .forEach((d, i) => { if (i) row.appendChild(el('span', 'arrow', '→')); row.appendChild(d); });
+  $('funnel').appendChild(row);
   const cuts = el('ul', 'cuts');
   const cut = (n, text) => { if (!n) return; const li = el('li'); li.append(el('b', null, '− ' + n), ' ' + text); cuts.appendChild(li); };
   const top = Math.max(0, ...concepts.map(c => c.weight || 0)), name = c => `“${c.name || c.words}”`;
   const common = concepts.filter(c => (c.weight || 0) < top / 2).map(name), specific = concepts.filter(c => (c.weight || 0) === top).map(name);
   cut(f.statements - f.on_topic, common.length && specific.length
-    ? `left out as off topic: they only name ${common.join(', ')}, a far more common concept in the guidelines than ${specific.join(', ')}, so they say little about this question`
-    : 'left out as off topic: they only name a far more common concept in the guidelines than the question\'s most specific one');
-  cut(f.near_copies, 'left out as near-copies of a fact already kept (the same sentence in two guidelines, or as sentence and table row)');
-  cut(f.below_cut, 'not used, ranked below the 10th: closest concept first, then the grade, then recommendation before explanation');
-  if (cuts.children.length) box.appendChild(cuts);
+    ? `left out as off topic: they only name ${common.join(', ')}, far more common in the guidelines than ${specific.join(', ')}`
+    : "left out as off topic: they only name a far more common concept than the question's most specific one");
+  cut(f.near_copies, 'left out as near-copies of a fact already kept');
+  cut(f.below_cut, 'not used: ranked below the 10th');
+  if (cuts.children.length) $('funnel').appendChild(cuts);
 }
 
 function showQueries(queries) {
-  const list = $('query-list'); list.textContent = '';
-  $('queries').classList.toggle('hidden', !queries.length);
-  const why = q => q.name.startsWith('Query') ? ' — sent once per concept of the question; the first is shown'
-    : q.name.includes('statements') ? ' — sent in batches of statements; the first batch is shown' : ' — sent once per level';
-  queries.forEach(q => { list.appendChild(el('div', 'qname', q.name + (q.times > 1 ? why(q) : ''))); list.appendChild(el('pre', 'sparql', q.text)); });
+  $('queries').hidden = !queries.length;
+  queries.forEach(q => { $('query-list').appendChild(el('div', 'qname', q.name + (q.times > 1 ? `, sent ${q.times} times (the first is shown)` : ''))); $('query-list').appendChild(el('pre', null, q.text)); });
 }
 
-function showNoPrompt(record) {
+/* the retrieved subgraph: concepts -> claims -> facts -> guidelines, laid out in four columns */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function svg(tag, attrs, text) {
+  const e = document.createElementNS(SVGNS, tag);
+  Object.entries(attrs || {}).forEach(([k, v]) => e.setAttribute(k, v));
+  if (text != null) e.textContent = text;
+  return e;
+}
+const short = (text, n) => text.length > n ? text.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : text;
+function drawGraph(event) {
+  const facts = (event.graph || []).filter(f => (f.claims || []).length);
+  $('graph-box').hidden = !facts.length;
+  const g = $('graph'); g.textContent = ''; g.classList.remove('focus');
+  if (!facts.length) return;
+  const asked = new Set((event.concepts || []).map(c => c.cui));
+  const concepts = new Map(), claims = [], sources = new Map(), edges = [];
+  const concept = (cui, name) => {
+    if (!concepts.has(cui)) concepts.set(cui, {id: 'k' + cui, label: name, asked: asked.has(cui), facts: new Set(), near: []});
+    return concepts.get(cui);
+  };
+  facts.forEach(f => {
+    const source = (slotsByN[f.n] || {}).source || '', [title, page] = source.split('; ');
+    if (!sources.has(title)) sources.set(title, {id: 's' + sources.size, label: title, facts: new Set()});
+    const s = sources.get(title); s.facts.add(f.n);
+    edges.push({from: 'f' + f.n, to: s.id, facts: [f.n]});
+    f.page = page || '';
+    f.claims.forEach((c, k) => {
+      const id = `c${f.n}-${k}`;
+      claims.push({id, label: c.claim, fact: f.n});
+      edges.push({from: id, to: 'f' + f.n, facts: [f.n]});
+      c.concepts.forEach(x => { const node = concept(x.cui, x.name); node.facts.add(f.n); node.near.push(id); edges.push({from: node.id, to: id, facts: [f.n]}); });
+    });
+    (f.paths || []).forEach(path => path.slice(1).forEach((x, i) => {
+      const a = concept(path[i].cui, path[i].name), b = concept(x.cui, x.name);
+      a.facts.add(f.n); b.facts.add(f.n);
+      edges.push({from: a.id, to: b.id, facts: [f.n], broader: true});
+    }));
+  });
+  // rows: facts in rank order, claims under their fact, concepts and guidelines next to what they link to
+  const ROW = 46, TOP = 44, n = Math.max(facts.length, claims.length, concepts.size, sources.size), H = TOP + n * ROW + 10;
+  const place = (list, x) => list.forEach((node, i) => { node.x = x; node.y = TOP + (i + 0.5) * (n * ROW / list.length); });
+  const factNodes = facts.map(f => ({id: 'f' + f.n, label: String(f.n), page: f.page, facts: new Set([f.n])}));
+  place(factNodes, 640);
+  place(claims, 400);
+  const yOf = id => (claims.find(c => c.id === id) || {}).y;
+  const conceptList = [...concepts.values()];
+  conceptList.forEach(c => { const ys = c.near.map(yOf).filter(y => y != null); c.order = ys.length ? ys.reduce((a, b) => a + b) / ys.length : 1e6; });
+  conceptList.sort((a, b) => a.order - b.order || (b.asked - a.asked));
+  place(conceptList, 130);
+  const sourceList = [...sources.values()];
+  sourceList.forEach(s => { const ys = [...s.facts].map(n => factNodes.find(f => f.id === 'f' + n).y); s.order = ys.reduce((a, b) => a + b) / ys.length; });
+  sourceList.sort((a, b) => a.order - b.order);
+  place(sourceList, 862);
+  const all = new Map([...conceptList, ...claims.map(c => ({...c, facts: new Set([c.fact])})), ...factNodes, ...sourceList].map(x => [x.id, x]));
+  claims.forEach(c => { all.get(c.id).x = c.x; all.get(c.id).y = c.y; });
+  g.setAttribute('viewBox', `-70 0 1070 ${H}`);   // room on the left for the dashed "broader" loops
+  [['Concepts', 130], ['What the sentence says', 400], ['Facts kept', 640], ['Guideline', 862]]
+    .forEach(([t, x]) => g.appendChild(svg('text', {x, y: 22, 'text-anchor': 'middle', class: 'col'}, t)));
+  // widths, so the lines meet the edges of the bubbles
+  const width = node => node.id[0] === 'f' ? 32 : Math.min({c: 190, k: 220, s: 236}[node.id[0]], 22 + short(node.label, node.id[0] === 's' ? 30 : 28).length * (node.id[0] === 'c' ? 6.6 : 7.3));
+  all.forEach(node => { node.w = width(node); });
+  const layer = svg('g'); g.appendChild(layer);
+  edges.forEach(e => {
+    const a = all.get(e.from), b = all.get(e.to);
+    let d;
+    if (e.broader) {   // both in the concept column: a dashed loop on the left
+      const x = a.x - a.w / 2, bend = Math.min(90, 30 + Math.abs(b.y - a.y) / 3);
+      d = `M${x} ${a.y} C${x - bend} ${a.y}, ${b.x - b.w / 2 - bend} ${b.y}, ${b.x - b.w / 2} ${b.y}`;
+    } else {
+      const x1 = a.x + a.w / 2, x2 = b.x - b.w / 2, mid = (x2 - x1) / 2;
+      d = `M${x1} ${a.y} C${x1 + mid} ${a.y}, ${x2 - mid} ${b.y}, ${x2} ${b.y}`;
+    }
+    layer.appendChild(svg('path', {d, class: 'edge' + (e.broader ? ' broader' : ''), 'data-facts': e.facts.join(' ')}));
+  });
+  all.forEach(node => {
+    const kind = {k: 'concept', c: 'claim', f: 'fnode', s: 'source'}[node.id[0]];
+    const grp = svg('g', {class: `node ${kind}${node.asked ? ' asked' : ''}`, 'data-facts': [...node.facts].join(' '), transform: `translate(${node.x} ${node.y})`});
+    const full = kind === 'fnode' ? `Fact ${node.label}` : node.label;
+    grp.appendChild(svg('title', {}, full));
+    if (kind === 'fnode') {
+      grp.appendChild(svg('circle', {r: 16}));
+      grp.appendChild(svg('text', {class: 'label', 'text-anchor': 'middle', y: 5}, node.label));
+      if (node.page) grp.appendChild(svg('text', {class: 'page', x: 22, y: 4}, node.page));
+      grp.setAttribute('tabindex', '0'); grp.setAttribute('role', 'button'); grp.setAttribute('aria-label', `Fact ${node.label}: show its card`);
+    } else {
+      const h = kind === 'claim' ? 26 : 30;
+      grp.appendChild(svg('rect', {x: -node.w / 2, y: -h / 2, width: node.w, height: h, rx: h / 2}));
+      grp.appendChild(svg('text', {class: 'label', 'text-anchor': 'middle', y: 5}, short(node.label.charAt(0).toUpperCase() + node.label.slice(1), kind === 'source' ? 30 : 28)));
+    }
+    g.appendChild(grp);
+  });
+  // point at a node: its facts' paths light up; click a fact: jump to its card
+  const light = facts => {
+    g.classList.toggle('focus', !!facts);
+    g.querySelectorAll('[data-facts]').forEach(e => e.classList.toggle('hot', !!facts && e.dataset.facts.split(' ').some(f => facts.includes(f))));
+  };
+  g.querySelectorAll('.node').forEach(node => {
+    const facts = node.dataset.facts.split(' ');
+    node.addEventListener('mouseenter', () => light(facts));
+    node.addEventListener('mouseleave', () => light(null));
+    node.addEventListener('focus', () => light(facts));
+    node.addEventListener('blur', () => light(null));
+  });
+  const open = node => {
+    const card = $('fact-' + node.querySelector('.label').textContent);
+    if (!card) return;
+    card.scrollIntoView({behavior: STILL ? 'auto' : 'smooth', block: 'center'});
+    card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+  };
+  g.querySelectorAll('.fnode').forEach(node => {
+    node.addEventListener('click', () => open(node));
+    node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(node); } });
+  });
+}
+
+function nothingBox(target, record) {
   const p1 = record.part1 || {}, facts = p1.facts || [], lines = record.lines || [], skipped = record.skipped || [];
   const names = (p1.concepts || []).map(c => c.name || c.words);
-  const box = $('nop'); box.textContent = '';
-  box.appendChild(el('h3', null, 'No video prompt for this question — why'));
+  const box = el('div', 'nothing');
+  box.appendChild(el('h3', null, 'No video for this question'));
   const ul = el('ul'), add = t => ul.appendChild(el('li', null, t));
   if (!names.length) add("None of the question's words matched a concept in the knowledge graph.");
-  else if (!facts.length) add(`The graph knows the concepts (${names.join(', ')}), but has no claim or recommendation about them in English professional guidelines.`);
+  else if (!facts.length) add(`The graph knows ${names.join(', ')}, but has no claim or recommendation about it in English professional guidelines.`);
   else {
-    add(`The graph returned ${facts.length} facts about ${names.join(', ')}. They are listed in Part 1.`);
+    add(`The graph returned ${facts.length} facts about ${names.join(', ')}.`);
     if (record.status === 'no_script') add(record.why);
-    else if (!lines.length) add('The writer used none of them, because none of them answers this question.' +
-      (skipped.length ? ' Its reasons, for example: ' + skipped.slice(0, 3).map(s => `“${s.why}”`).join(' ') : ''));
-    else add(`${lines.filter(l => l.status === 'dropped').length} of ${lines.length} written lines failed the checks twice and were removed, so no checked medical line is left.`);
+    else if (!lines.length) add('The writer used none of them, because none answers this question.' + (skipped.length ? ' For example: ' + skipped.slice(0, 2).map(s => `“${s.why}”`).join(' ') : ''));
+    else add(`${lines.filter(l => l.status === 'dropped').length} of ${lines.length} lines failed the checks twice and were removed, so no checked medical line is left.`);
   }
-  add("The pipeline never falls back on the model's own knowledge: if the guidelines in the graph do not answer a question, it says nothing medical instead of guessing.");
-  add('Planned for such questions (future work): look in the patient documents, give an honest "not covered" message, or show a fixed emergency message approved by a clinician.');
+  add('The pipeline never falls back on the model\'s own knowledge: if the guidelines do not answer, it says nothing medical instead of guessing.');
   box.appendChild(ul);
+  $(target).textContent = ''; $(target).appendChild(box);
 }
 
-function gates(line) {
-  const v = line.verdict || {}, box = el('div', 'gates');
-  const g = (cls, head, text) => { const d = el('div', 'gate ' + cls); d.appendChild(el('b', null, head)); d.append(text); return d; };
-  if (!line.status || line.status === 'pending') { box.append(g('', 'Code checks', 'waiting'), g('', 'Judge', 'waiting'), g('skip', 'Rewrite', '—')); return box; }
-  const byCode = v.decided_by === 'code check';
-  box.appendChild(g(byCode ? 'fail' : 'pass', 'Code checks', byCode ? v.why : 'numbers, cautions and abbreviations match the fact'));
-  if (byCode) box.appendChild(g('skip', 'Judge', 'not asked — the code checks failed'));
-  else box.appendChild(g(['kept', 'rewritten'].includes(line.status) ? 'pass' : 'fail', 'Judge', (v.verdict ? v.verdict.toLowerCase() + ' — ' : '') + (v.why || v.reason || '')));
-  const rw = line.first_try ? (line.status === 'rewritten' ? g('pass', 'Rewrite', 'first try failed; the rewrite passed') : g('fail', 'Rewrite', 'failed again — the line was removed'))
-    : line.status === 'failed' ? g('', 'Rewrite', 'sent back to the writer with the reason') : g('skip', 'Rewrite', 'not needed');
-  box.appendChild(rw);
-  return box;
+/* ---- screen 3: checked lines ------------------------------------------------------------------------------------ */
+const STAMPS = {kept: ['ok', '✓ matches'], rewritten: ['ok', '✓ after a rewrite'], dropped: ['no', '✗ removed'], failed: ['no', '↻ rewriting'], pending: ['wait', 'checking']};
+function how(line) {
+  const v = line.verdict || {};
+  if (!line.status || line.status === 'pending') return null;
+  if (v.decided_by === 'code check') return el('div', 'how bad', 'Code check: ' + v.why);
+  const ok = ['kept', 'rewritten'].includes(line.status);
+  return el('div', 'how' + (ok ? '' : ' bad'), 'Judge: ' + (v.why || v.reason || (v.verdict || '').toLowerCase()));
 }
-
 function lineCard(line) {
-  let card = lineCards[line.slot];
-  if (!card) { card = el('div', 'line-card'); lineCards[line.slot] = card; $('lines').appendChild(card); }
-  card.textContent = '';
-  const status = line.status || 'pending';
-  const label = { kept: '✓ kept', rewritten: '✓ kept after one rewrite', dropped: '✗ removed', failed: '✗ failed — rewriting', pending: 'checking…' }[status];
-  const head = el('div', 'section-head'); head.append(el('span', 'badge ' + status, label), el('span', 'meta', 'from fact ' + line.slot));
-  card.appendChild(head);
+  let card = cards[line.slot];
+  if (!card) {
+    card = el('div', 'line'); cards[line.slot] = card;
+    if (closingCard) $('lines').insertBefore(card, closingCard); else $('lines').appendChild(card);
+  }
+  const status = line.status || 'pending', [kind, label] = STAMPS[status] || STAMPS.pending;
+  card.className = 'line ' + status; card.textContent = '';
+  card.appendChild(face());
+  const b = el('div', 'bubble');
+  b.appendChild(el('span', 'stamp ' + kind, label));
+  if (line.first_try) b.appendChild(el('p', 'first', line.first_try.narration));
+  b.appendChild(el('p', null, line.narration));
+  const h = how(line); if (h) b.appendChild(h);
+  if (line.on_screen_text) b.appendChild(el('div', 'how', 'Heading on screen: ' + line.on_screen_text + (line.screen_check && line.screen_check !== 'ok' ? ` (left out: ${line.screen_check})` : '')));
   const fact = slotsByN[line.slot];
-  if (fact) { const from = el('div', 'from'); from.append('Guideline: '); from.appendChild(el('q', null, fact.statement)); card.appendChild(from); }
-  if (line.first_try) card.appendChild(el('div', 'first-try', line.first_try.narration));
-  card.appendChild(el('div', 'spoken', '“' + line.narration + '”'));
-  if (line.on_screen_text) card.appendChild(el('div', 'meta', 'On screen: ' + line.on_screen_text + (line.screen_check && line.screen_check !== 'ok' ? '  (left out: ' + line.screen_check + ')' : '')));
-  card.appendChild(gates(line));
+  if (fact) { const d = el('details'); d.appendChild(el('summary', null, `From fact ${line.slot}: ${fact.source}`)); d.appendChild(el('q', null, fact.statement)); b.appendChild(d); }
+  card.appendChild(b);
 }
-
 function fixedLine(part, result) {
-  const d = el('div', 'fixed', (part === 'opening' ? 'Opening (fixed text, no medical claim): ' : 'Closing (fixed text, no medical claim): ') + '“' + result.sentence + '”');
-  if (part === 'opening') $('lines').prepend(d); else { $('lines').appendChild(d); closingDiv = d; }
+  const card = el('div', 'line fixed');
+  card.appendChild(face());
+  const b = el('div', 'bubble');
+  b.appendChild(el('span', 'stamp fixed', 'fixed words'));
+  b.appendChild(el('p', null, result.sentence));
+  b.appendChild(el('div', 'how', part === 'opening' ? 'Written by code, so it holds no medical claim.' : 'Picked by code to fit the question; no medical claim.'));
+  card.appendChild(b);
+  if (part === 'opening') $('lines').prepend(card); else { $('lines').appendChild(card); closingCard = card; }
 }
 
 function finish(record) {
-  stage(STAGES.slice(0, 8).map(s => s[0]), 'done');
-  if (closingDiv && record.closing && record.closing_kind) closingDiv.textContent =
-    `Closing (fixed text, no medical claim; picked by code for a “${record.closing_kind}” question): “${record.closing.sentence}”`;
+  $('searching').hidden = true; $('writing').hidden = true;
   if (!['done', 'no_facts', 'no_script'].includes(record.status)) { showError(record.why || record.status); return; }
   (record.lines || []).forEach(lineCard);
+  if (closingCard && record.closing_kind) closingCard.querySelector('.how').textContent = `Picked by code for a “${record.closing_kind}” question; no medical claim.`;
   const skipped = record.skipped || [];
-  $('skipped').textContent = '';
-  if (skipped.length) {
-    $('skipped').appendChild(el('h2', null, 'Facts the writer left out — and why'));
-    const ul = el('ul'); skipped.forEach(s => ul.appendChild(el('li', null, `Fact ${s.fact}: ${s.why}`))); $('skipped').appendChild(ul);
-  }
-  $('out').classList.remove('hidden');
+  $('left-out').hidden = !skipped.length;
+  skipped.forEach(s => $('left-out-list').appendChild(el('li', null, `Fact ${s.fact}: ${s.why}`)));
   const prompt = record.video_prompt;
-  ['prompt', 'sources', 'copy'].forEach(id => $(id).classList.toggle('hidden', !prompt));
-  $('nop').classList.toggle('hidden', !!prompt);
-  if (!prompt) showNoPrompt(record);
-  $('prompt').textContent = prompt || '';
-  const t = $('sources'); t.textContent = '';
-  const h = el('tr'); ['Scene', 'Spoken line', 'Guideline statement', 'Source'].forEach(x => h.appendChild(el('th', null, x))); t.appendChild(h);
-  (record.sources || []).forEach(s => { const r = el('tr'); [s.scene, s.line, s.statement, [s.kind, s.grade, s.source].filter(Boolean).join(' · ')].forEach(x => r.appendChild(el('td', null, x))); t.appendChild(r); });
+  if (!prompt) {
+    const where = (record.part1 || {}).facts && record.part1.facts.length ? 'nothing-2' : 'nothing-1';
+    nothingBox(where, record);
+    if (where === 'nothing-2') reach(2);
+  } else {
+    $('prompt-box').hidden = false; $('prompt').textContent = prompt;
+    const t = $('sources'), h = el('tr');
+    ['Scene', 'Spoken line', 'Guideline sentence', 'Source'].forEach(x => h.appendChild(el('th', null, x))); t.appendChild(h);
+    (record.sources || []).forEach(s => { const r = el('tr'); [s.scene, s.line, s.statement, [s.kind, s.grade, s.source].filter(Boolean).join(', ')].forEach(x => r.appendChild(el('td', null, x))); t.appendChild(r); });
+  }
   const p1 = record.part1 || {}, lines = record.lines || [], tok = record.tokens || {};
-  const count = st => lines.filter(l => l.status === st).length;
-  $('summary').textContent = `Graph: ${p1.claims_found ?? '?'} claims and readings found, ${(p1.facts || []).length} facts kept · Lines: ${count('kept')} kept, ${count('rewritten')} rewritten, ${count('dropped')} removed · ${record.seconds ?? '–'} s · Groq tokens: writer ${tok.writer ?? 0}, judge ${tok.judge ?? 0} (0 = answered from saved calls or no model needed)`;
+  const n = st => lines.filter(l => l.status === st).length;
+  $('summary').textContent = `${n('kept') + n('rewritten')} lines kept (${n('rewritten')} after a rewrite), ${n('dropped')} removed. ` +
+    `${record.seconds ?? '–'} s. Groq tokens: writer ${tok.writer ?? 0}, judge ${tok.judge ?? 0} (0 means the answer came from saved calls).`;
 }
+$('copy').onclick = () => navigator.clipboard.writeText($('prompt').textContent);
 
-function showError(message) { const e = $('error'); e.textContent = message; e.classList.remove('hidden'); }
-
+/* ---- screen 4: the scenes --------------------------------------------------------------------------------------- */
+function picture(s) {
+  const prop = s.prop && s.prop !== 'none' ? {name: s.prop, at: s.doctor === 'holds up the prop' ? 'doctor-hand' : 'desk'} : null;
+  const shot = s.shot === 'close-up on prop' && !prop ? 'medium' : s.shot;
+  try { return KIT.scene({doctor: s.doctor, patient: s.patient, prop, shot}); }
+  catch (error) { return KIT.scene({doctor: 'explains', patient: 'listens', shot: 'medium'}); }
+}
 function showBoard(event) {
   recordName = event.record;
-  stage(['director'], 'done');
-  $('part3').classList.remove('hidden');
   const problems = event.problems || [];
+  $('board-problems').hidden = !problems.length;
   $('board-problems').textContent = problems.length ? 'The storyboard breaks a rule, so no video can be made: ' + problems.join('; ') : '';
-  $('board-problems').classList.toggle('hidden', !problems.length);
-  const t = $('board'); t.textContent = '';
-  const h = el('tr'); ['', 'Who speaks', 'Spoken words (= caption)', 'Camera', 'Doctor', 'Patient', 'Object'].forEach(x => h.appendChild(el('th', null, x))); t.appendChild(h);
+  $('make').disabled = !!problems.length;
   event.segments.forEach((s, i) => {
-    const r = el('tr', s.speaker);
-    r.append(el('td', 'meta', i + 1), el('td', 'who', s.speaker === 'patient' ? 'Patient' : 'Doctor'));
-    r.appendChild(el('td', s.id === 'label' ? 'fixed-row' : null, s.id === 'label' ? s.text + '  (spoken AI notice)' : s.text));
-    [s.shot, s.doctor, s.patient].forEach(x => r.appendChild(el('td', null, x)));
-    const obj = el('td'); if (s.prop && s.prop !== 'none') obj.appendChild(el('span', 'obj', s.prop)); else obj.append('—');
-    r.appendChild(obj); t.appendChild(r);
+    const p = el('article', 'panel ' + s.speaker);
+    const pic = el('div', 'pic'); pic.innerHTML = picture(s); pic.appendChild(el('span', 'n', i + 1)); p.appendChild(pic);
+    p.appendChild(el('div', 'words' + (s.id === 'label' ? ' notice' : ''), s.text));
+    const meta = el('div', 'meta');
+    [s.shot, 'doctor ' + s.doctor, 'patient ' + s.patient].forEach(x => meta.appendChild(el('span', null, x)));
+    if (s.prop && s.prop !== 'none') meta.appendChild(el('span', 'obj', s.prop));
+    p.appendChild(meta);
+    $('strip').appendChild(p);
   });
-  resetVideo(!problems.length);
+  clearTimeout(autoNext);
+  autoNext = setTimeout(() => hops.then(() => reach(3, viewing === 2)), 500);   // the script is done: on to the scenes
 }
 
-function resetVideo(possible) {
-  $('video').classList.remove('hidden');
-  $('make').disabled = !possible; $('make').textContent = 'Make the video';
-  $('vtime').textContent = possible ? 'about 2–5 minutes · nothing is sent to an AI model' : '';
-  $('vresult').textContent = '';
+/* ---- screen 5: the video ---------------------------------------------------------------------------------------- */
+function videoSteps(n, failed) {
   const ol = $('vsteps'); ol.textContent = '';
-  VSTEPS.forEach((name, i) => { const li = el('li'); li.append(el('b', null, (i + 1) + '/6'), name); ol.appendChild(li); });
+  VSTEPS.forEach((name, i) => {
+    const li = el('li', i + 1 < n ? 'done' : i + 1 === n ? (failed ? 'fail' : 'active') : '');
+    li.append(el('b', null, i + 1 < n ? '✓' : failed && i + 1 === n ? '✗' : i + 1), name); ol.appendChild(li);
+  });
 }
-
-function videoStep(n) {
-  [...$('vsteps').children].forEach((li, i) => { li.className = i + 1 < n ? 'done' : i + 1 === n ? 'active' : ''; });
+async function makeVideo() {
+  if (!recordName) return;
+  clearTimeout(autoNext);
+  const mine = ++videoRun;
+  $('make').disabled = true; $('again').hidden = true; $('vresult').textContent = '';
+  $('video-sub').textContent = 'Making the video. Every check must pass before you see it.';
+  videoSteps(1);
+  reach(4, true, false);   // you asked for it: no waiting
+  let answer;
+  try {
+    const response = await fetch('/video', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({record: recordName})});
+    answer = await response.json();
+    if (answer.busy) { videoBusy(answer.error); return; }
+    if (!response.ok) throw new Error(answer.error);
+  } catch (error) { videoDone({status: 'TOOL_ERROR', why: error.message}); return; }
+  let next = 0, step = 1;
+  const poll = async () => {
+    if (mine !== videoRun) return;
+    const job = await (await fetch(`/video-job/${answer.id}?since=${next}`)).json();
+    if (mine !== videoRun) return;
+    $('vtime').textContent = `Running for ${job.seconds} s`;
+    job.events.forEach(e => { if (e.step === 'progress') { step = e.n; videoSteps(step); } else if (e.step === 'finished') { videoDone(e, step); $('vtime').textContent = `Took ${job.seconds} s`; } });
+    next = job.next;
+    if (!job.done) setTimeout(poll, 1000);
+  };
+  poll();
 }
-
-function videoFinished(event) {
+function videoBusy(message) {   // not a failed check: the page makes one video at a time
+  $('vsteps').textContent = '';
+  $('video-sub').textContent = 'Waiting for the other video to finish.';
+  $('vresult').textContent = '';
+  $('vresult').appendChild(el('div', 'nothing', message));
+  $('make').disabled = false; $('again').hidden = false; $('again').textContent = 'Try again';
+}
+function videoDone(event, step = 1) {
+  $('again').textContent = 'Make it again';
   const box = $('vresult'); box.textContent = '';
-  const checks = Object.entries(event.checks || {}).map(([k, v]) => `${CHECKS[k] || k}: ${v}`).join(' · ');
+  const checks = Object.entries(event.checks || {}).map(([k, v]) => `${CHECKS[k] || k}: ${v === 'PASS' ? 'passed' : v}`).join(', ');
   if (event.status === 'PASS') {
-    stage(['video'], 'done');
-    [...$('vsteps').children].forEach(li => { li.className = 'done'; });
+    videoSteps(7);
+    $('video-sub').textContent = 'Every check passed.';
     const film = el('div', 'film');
-    film.appendChild(el('div', 'notice', 'Automatic answer · not yet reviewed by a person'));
-    const v = el('video'); v.controls = true; v.preload = 'metadata'; v.src = event.video + '?t=' + Date.now();
-    film.appendChild(v);
-    film.appendChild(el('div', 'meta', `${(event.seconds || 0).toFixed(1)} s · every check passed (${checks})`));
+    film.appendChild(el('div', 'notice', 'Automatic answer, not yet reviewed by a person'));
+    const tv = el('div', 'tv'), v = el('video'); v.controls = true; v.preload = 'metadata'; v.src = event.video + '?t=' + Date.now();
+    tv.appendChild(v); film.appendChild(tv);
+    film.appendChild(el('p', 'passed', `${(event.seconds || 0).toFixed(1)} seconds. Checked: ${checks}.`));
     box.appendChild(film);
     if ((event.reviewer || []).length) {
-      const r = el('div', 'reviewer'); r.appendChild(el('b', null, 'For the person who reviews this video (not shown in the video):'));
+      const r = el('div', 'review'); r.appendChild(el('b', null, 'For the person who reviews this video (not shown in the video)'));
       const ul = el('ul');
       event.reviewer.forEach(s => ul.appendChild(el('li', null, `Line ${s.scene}: ${[s.warning, s.readable_name_missing ? 'no readable source name yet' : ''].filter(Boolean).join('; ')} (${s.source})`)));
       r.appendChild(ul); box.appendChild(r);
     }
-    $('make').textContent = 'Make it again';
   } else {
-    stage(['video'], null);
-    const active = [...$('vsteps').children].find(li => li.className === 'active');
-    if (active) active.className = 'fail';
-    const e = el('div', 'err', `Stopped (${event.status === 'CONTENT_FAIL' ? 'wrong content' : 'a check could not run'}): ${event.why}. No video was made.` + (checks ? ` Checks: ${checks}.` : ''));
-    box.appendChild(e);
-    $('make').textContent = 'Try again';
+    videoSteps(step, true);
+    $('video-sub').textContent = 'The video was stopped, so no video was made.';
+    box.appendChild(el('div', 'alert', `${event.status === 'CONTENT_FAIL' ? 'Wrong content' : 'A check could not run'}: ${event.why}.` + (checks ? ` Checks: ${checks}.` : '')));
   }
-  $('make').disabled = false;
+  $('make').disabled = false; $('again').hidden = false;
 }
-
-async function makeVideo() {
-  if (!recordName) return;
-  resetVideo(true); $('make').disabled = true; $('make').textContent = 'Making the video…';
-  stage(['video'], 'active');
-  const response = await fetch('/video', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ record: recordName }) });
-  const answer = await response.json();
-  if (!response.ok) { videoFinished({ status: 'TOOL_ERROR', why: answer.error }); return; }
-  let next = 0;
-  const poll = async () => {
-    const job = await (await fetch(`/video-job/${answer.id}?since=${next}`)).json();
-    $('vtime').textContent = `running for ${job.seconds} s`;
-    job.events.forEach(e => { if (e.step === 'progress') videoStep(e.n); else if (e.step === 'finished') { videoFinished(e); $('vtime').textContent = `took ${job.seconds} s`; } });
-    next = job.next;
-    if (!job.done) setTimeout(poll, 1000);
-  };
-  videoStep(1); poll();
-}
-
-function handle(event) {
-  if (event.step === 'graph') { stage(['question'], 'done'); stage(['concepts', 'graph', 'rank'], 'active'); }
-  else if (event.step === 'facts') { stage(['concepts', 'graph', 'rank', 'slots'], 'done'); stage(['writer'], 'active'); showFacts(event); }
-  else if (event.step === 'written') {
-    stage(['writer'], 'done'); stage(['checks', 'judge'], 'active'); $('part2').classList.remove('hidden');
-    event.lines.forEach(lineCard);
-    if (!event.lines.length) $('skipped').textContent = 'The writer used none of the facts.';
-  }
-  else if (event.step === 'rewriting') stage(['writer'], 'active');
-  else if (event.step === 'checked') { if (event.part === 'line') lineCard(event.line); else fixedLine(event.part, event.result); }
-  else if (event.step === 'done') finish(event.record);
-  else if (event.step === 'storyboard') showBoard(event);
-  else if (event.step === 'error') showError(event.message);
-}
-
-async function ask(question) {
-  ['part1', 'part2', 'out', 'error', 'part3', 'video'].forEach(id => $(id).classList.add('hidden'));
-  $('lines').textContent = ''; $('skipped').textContent = ''; $('funnel').textContent = ''; $('query-list').textContent = ''; lineCards = {};
-  $('vresult').textContent = ''; closingDiv = null; recordName = null;
-  ['queries', 'nop'].forEach(id => $(id).classList.add('hidden'));
-  buildPipeline(); stage(['question'], 'active'); $('go').disabled = true;
-  const response = await fetch('/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question }) });
-  const answer = await response.json();
-  if (!response.ok) { showError(answer.error); $('go').disabled = false; return; }
-  let next = 0;
-  const poll = async () => {
-    const job = await (await fetch(`/job/${answer.id}?since=${next}`)).json();
-    job.events.forEach(handle); next = job.next;
-    if (job.done) { $('go').disabled = false; return; }
-    setTimeout(poll, 800);
-  };
-  poll();
-}
-
-buildPipeline();
-$('go').onclick = () => { const q = $('q').value.trim(); if (!q) { showError('Type a question first.'); return; } ask(q); };
-$('q').addEventListener('input', () => $('error').classList.add('hidden'));
-$('copy').onclick = () => navigator.clipboard.writeText($('prompt').textContent);
 $('make').onclick = makeVideo;
-fetch('/examples').then(r => r.json()).then(list => list.forEach(q => {
-  const chip = el('button', 'chip', q); chip.onclick = () => { $('q').value = q; ask(q); }; $('chips').appendChild(chip);
-}));
+$('again').onclick = makeVideo;
+$('new-question').onclick = () => { show(0); $('q').focus(); window.scrollTo({top: 0}); };
+
+drawStations();
 </script>
 </body>
 </html>

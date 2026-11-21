@@ -577,6 +577,25 @@ def fact_text(fact, names, labels):
     return f'{head} — {tail} — {source}{via}\n    statement: "{s["text"]}"'
 
 
+def fact_graph(fact, names, labels):
+    """The fact's own piece of the graph, for drawing it on the demo page (21 Nov 2026): each claim or reading with its
+    action (or claim type) and the concepts it links, by role, plus the broader-concept path that reached it. Read only:
+    nothing here changes which facts are chosen."""
+    claims = []
+    for claim in fact['claims']:
+        parts = claim['parts']
+        if claim['type'] == 'RecommendationReading':
+            action = ' '.join(x for x in (claim.get('advice', ''), claim.get('operation', '').lower()) if x) or 'reading'
+            roles = [(role[3:].lower(), parts.get(role, set())) for role in ROLES]
+        else:
+            action = labels.get(claim['type'], claim['type'])
+            roles = [(part.replace('Concept', '').replace('secondMedication', 'medication'), parts.get(part, set())) for part in PARTS]
+        claims.append({'claim': action, 'concepts': [{'role': role, 'cui': c, 'name': names.get(c, c)}
+                                                     for role, cs in roles for c in sorted(cs)]})
+    paths = [[{'cui': c, 'name': names.get(c, c)} for c in path] for path in fact['paths'].values() if len(path) > 1]
+    return {'claims': sorted(claims, key=lambda x: x['claim']), 'paths': paths}
+
+
 # ---- run ---------------------------------------------------------------------------------------------------------------------
 
 def run(request, names, similar=None, query=sparql, labels=None, total=None):
@@ -614,7 +633,8 @@ def run(request, names, similar=None, query=sparql, labels=None, total=None):
                    'levels': sorted(v['statement']['levels']), 'recommendation': v['statement']['recommendation'],
                    'classes': sorted(v['statement']['classes']), 'pages': sorted(v['statement']['pages'], key=int),
                    'guideline': v['statement']['guideline'], 'joins': sorted(v['joins']), 'hops': v['hops'],
-                   'terms': terms_of(v['statement']['text'], fact_terms.get(k, {}), concept_names)}
+                   'terms': terms_of(v['statement']['text'], fact_terms.get(k, {}), concept_names),
+                   'graph': fact_graph(v, concept_names, labels)}
                   for k, v in chosen],
     }
 

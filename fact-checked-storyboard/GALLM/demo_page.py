@@ -117,6 +117,7 @@ class Videos:
     are passed on to the page as they come."""
     def __init__(self, records):
         self.records, self.jobs, self.made, self.busy = records, {}, set(), threading.Lock()
+        self.current = None   # the job being made now; a second click follows it instead of failing
 
     def start(self, name):
         path = self.records.get(name)
@@ -126,6 +127,7 @@ class Videos:
             return None
         job = {'id': uuid.uuid4().hex[:8], 'record': name, 'events': [], 'done': False, 'started': time.time()}
         self.jobs[job['id']] = job
+        self.current = job
 
         def work():
             output = []
@@ -149,6 +151,7 @@ class Videos:
                                       'checks': {}})
             finally:
                 job['done'] = True
+                self.current = None
                 self.busy.release()
         threading.Thread(target=work, daemon=True).start()
         return job
@@ -206,6 +209,8 @@ def handler_for(jobs, videos):
                 return self.send(200, PAGE.read_bytes(), 'text/html')
             if self.path == '/examples':
                 return self.send(200, EXAMPLES)
+            if self.path == '/kit.js':   # the drawn doctor, patient and room, the same kit the videos use
+                return self.send(200, (mv.KIT / 'kit.js').read_bytes(), 'application/javascript')
             if self.path.startswith('/job/'):
                 return self.poll(jobs.jobs, self.path[5:])
             if self.path.startswith('/video-job/'):
@@ -224,7 +229,11 @@ def handler_for(jobs, videos):
                 if job == 'unknown':
                     return self.send(404, {'error': 'Ask the question again: this page does not know that script.'})
                 if job is None:
-                    return self.send(409, {'error': 'Another video is still being made. Wait for it to finish.'})
+                    running = videos.current or {}
+                    if running.get('record') == body.get('record'):   # the same video: follow it
+                        return self.send(200, {'id': running['id'], 'following': True})
+                    return self.send(409, {'error': 'Another question\'s video is being made right now. Try again when it is done '
+                                                    '(about a minute or two).', 'busy': True})
                 return self.send(200, {'id': job['id']})
             question = ' '.join(str(body.get('question', '')).split())[:300]
             if not question:

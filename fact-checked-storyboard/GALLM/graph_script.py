@@ -402,7 +402,9 @@ def run(question, part1, writer, judge_llm, progress=lambda event: None, meaning
     slots = slots_of(part1.get('facts', []), meanings, part1.get('definitions'))
     record['slots'] = slots
     progress({'step': 'facts', 'slots': slots, 'concepts': part1.get('concepts', []), 'funnel': part1.get('funnel'),
-              'queries': part1.get('queries', [])})
+              'queries': part1.get('queries', []),
+              'graph': [{'n': n, 'joins': f.get('joins', []), 'hops': f.get('hops', 0), **f.get('graph', {})}   # for the picture
+                        for n, f in enumerate(part1.get('facts', []), 1)]})
     if not slots:
         record.update(status='no_facts', why='The graph has no fact for this question, so nothing medical can be said.')
         progress({'step': 'done', 'record': record})
