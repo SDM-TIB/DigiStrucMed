@@ -293,6 +293,19 @@ STATEMENTS = PREFIX + '''SELECT ?fact ?text ?rec ?grade ?level ?page ?title ?yea
 # Helper — BROADER: the parent concept, used only when a concept has no facts (the stop rule in walk(), at most 3 levels).
 BROADER = PREFIX + 'SELECT ?c ?parent WHERE { VALUES ?c { %s } ?c dl:broader ?parent }'
 
+# Helper — DEFINITIONS: the UMLS definition of each question concept (4,275 concepts have one, mostly from MeSH). Part 2 may
+# turn one into a plain "what it is" line, checked against the definition like any fact.
+DEFINITIONS = PREFIX + 'SELECT ?c ?def WHERE { VALUES ?c { %s } ?c dl:definition ?def }'
+
+# Helper — TERMS: the UMLS definitions of the concepts each kept statement names, so part 2 can say a technical word in
+# plain words ("arrhythmia" -> "a heart rhythm problem") that the judge can check, the way it checks abbreviation meanings.
+TERMS = PREFIX + 'SELECT ?f ?c ?def WHERE { VALUES ?f { %s } ?f dl:mentionsConcept ?c . ?c dl:definition ?def }'
+MOST_TERMS = 3  # per statement
+# Off since 2026-11-21: the first live run passed a wrong graph link to writer and judge ("lead", the ICD wire, defined as the
+# metal), and the definitions of labels like "primary prevention" were too general to help. Switch on only after the
+# concept links are validated.
+USE_TERMS = False
+
 NAMES_OF = PREFIX + 'SELECT ?c ?name WHERE { VALUES ?c { %s } ?c dl:name ?name }'
 
 LABELS = PREFIX + 'SELECT ?x ?label WHERE { VALUES ?x { %s } ?x rdfs:label ?label }'
@@ -441,23 +454,95 @@ def near_copy(a_text, b_text):
     return bool(small) and small <= big and len(small) / len(big) >= COPY_SHARE and not (big - small) & NEGATION
 
 
-def choose(facts, request_cuis=None, most=MOST_FACTS, weight=None):
+def choose(facts, request_cuis=None, most=MOST_FACTS, weight=None, stats=None):
     """The best `most` facts: direct before via broader; then the most specific request concept they name (rounded, so
     near-equal concepts tie); then grade; then the weight of all request concepts they name; then recommendation before
     explanation; then the shorter statement. A fact that names only request concepts less than half as specific as the
     request's most specific one is left out: fewer facts beat off-topic ones (KAPING, SubgraphRAG), so "loss of appetite
     in heart failure" does not fill its places with heart-failure drug advice. A near copy of a fact already chosen is
-    skipped, so its place goes to the next fact."""
+    skipped, so its place goes to the next fact. `stats`, if given, is filled with how many facts each cut left (the page's
+    funnel)."""
     if weight:
         floor = max(weight.values()) / 2
         facts = {k: v for k, v in facts.items() if any(weight.get(c, 0.0) >= floor for c in v['joins'])}
-    chosen = []
+    chosen, copies = [], 0
     for key, fact in sorted(facts.items(), key=lambda kv: (rank_key(kv[1]), kv[0])):
         if len(chosen) == most:
             break
-        if not any(near_copy(fact['statement']['text'], kept['statement']['text']) for _, kept in chosen):
-            chosen.append((key, fact))
+        if any(near_copy(fact['statement']['text'], kept['statement']['text']) for _, kept in chosen):
+            copies += 1
+            continue
+        chosen.append((key, fact))
+    if stats is not None:
+        stats.update(on_topic=len(facts), near_copies=copies, kept=len(chosen), below_cut=len(facts) - copies - len(chosen))
     return chosen
+
+
+# The queries the page shows: the SPARQL texts actually sent for one question, by name. Long VALUES lists are cut to three
+# items plus a comment, so the text stays readable and still runs.
+QUERY_NAMES = [('Query A — claims', CLAIMS), ('Query B — recommendation readings', READINGS),
+               ('Helper — statements (sentence, grade, page, guideline)', STATEMENTS), ('Helper — broader concept', BROADER),
+               ('Helper — definitions of the question concepts', DEFINITIONS),
+               ('Helper — definitions of the words in the kept statements', TERMS)]
+
+
+def first_sentence(text, most=240):
+    text = re.sub(r'\s+', ' ', str(text)).strip()
+    cut = re.split(r'(?<=[a-z)\]])\. ', text, maxsplit=1)[0].rstrip('.') + '.'
+    return cut if len(cut) <= most else cut[:most].rsplit(' ', 1)[0] + ' …'
+
+
+def term_rows(fact_iris, query=sparql):
+    """fact IRI -> {cui: definition} for the concepts the statement names that have a UMLS definition."""
+    out = defaultdict(dict)
+    if fact_iris:
+        for row in query(TERMS % ' '.join(f'<{f}>' for f in sorted(fact_iris))):
+            out[row['f']].setdefault(cui_of(row['c']), row['def'])
+    return out
+
+
+def terms_of(statement, defined, names, most=MOST_TERMS):
+    """The technical words of one statement that the graph defines: a concept counts only if every word of its name is in
+    the statement (so it is a word the patient would hear) and it is not a generic word. At most `most`, longest name first."""
+    said = {singular(w) for w in words(statement)}
+    found = []
+    for cui, definition in defined.items():
+        name = names.get(cui, '')
+        parts = [singular(w) for w in words(name)]
+        if parts and all(p in said for p in parts) and name.lower() not in SKIP:
+            found.append({'cui': cui, 'term': name, 'definition': first_sentence(definition)})
+    return sorted(found, key=lambda t: -len(t['term']))[:most]
+
+
+def definitions_of(cuis, query=sparql):
+    """cui -> its UMLS definition (one per concept), for the question's own concepts."""
+    if not cuis:
+        return {}
+    found = {}
+    for row in query(DEFINITIONS % values(cuis)):
+        found.setdefault(cui_of(row['c']), row['def'])
+    return found
+
+
+def shorten_values(text, most=6):
+    def cut(m):
+        items = m.group(2).split()
+        if len(items) <= most:
+            return m.group(0)
+        return f'VALUES ?{m.group(1)} {{ ' + ' '.join(items[:3]) + f'\n    # … and {len(items) - 3} more\n  }}'
+    return re.sub(r'VALUES \?(c|fact|f) \{ ([^}]*) \}', cut, text)
+
+
+def shown_queries(sent):
+    """One entry per query name, in the order first sent: the first text sent and how often that query was sent (once per
+    question concept or broader level for A and B, once per batch of statements for the helper)."""
+    out = {}
+    for text in sent:
+        for name, template in QUERY_NAMES:
+            if text.startswith(template.split('%s')[0]):
+                out.setdefault(name, {'name': name, 'text': shorten_values(text), 'times': 0})['times'] += 1
+                break
+    return list(out.values())
 
 
 # ---- 4. fact text ------------------------------------------------------------------------------------------------------------
@@ -495,15 +580,24 @@ def fact_text(fact, names, labels):
 # ---- run ---------------------------------------------------------------------------------------------------------------------
 
 def run(request, names, similar=None, query=sparql, labels=None, total=None):
+    sent = []
+
+    def recorded(text):
+        sent.append(text)
+        return query(text)
     concepts = find_concepts(request, names, similar)
     cuis = [c['cui'] for c in concepts]
-    reached, claims = walk(cuis, query)
-    statements = statements_of({c['fact'] for c in claims.values()}, query)
+    reached, claims = walk(cuis, recorded)
+    statements = statements_of({c['fact'] for c in claims.values()}, recorded)
     weight = specificity(reached, claims, total or claim_total(query))
     facts = facts_of(reached, claims, statements, weight)
-    chosen = choose(facts, weight=weight)
+    funnel = {}
+    chosen = choose(facts, weight=weight, stats=funnel)
+    defined = definitions_of(cuis, recorded)
+    fact_terms = term_rows({k for k, _ in chosen}, recorded) if USE_TERMS else {}
     shown = set(cuis) | {c for hits in reached.values() for _, path in hits for c in path}
     shown |= {c for _, f in chosen for claim in f['claims'] for part in claim['parts'].values() for c in part}
+    shown |= {c for d in fact_terms.values() for c in d}
     concept_names = names_of(shown, query)
     labels = labels if labels is not None else labels_of(CLAIM_TYPES, query)
     return {
@@ -513,10 +607,14 @@ def run(request, names, similar=None, query=sparql, labels=None, total=None):
             for c in concepts],
         'claims_found': len(claims),
         'statements_found': len(facts),
+        'funnel': {'claims_found': len(claims), 'statements': len(facts), **funnel},
+        'queries': shown_queries(sent),
+        'definitions': [{'cui': c, 'name': concept_names.get(c, ''), 'definition': defined[c]} for c in cuis if c in defined],
         'facts': [{'fact': k, 'text': fact_text(v, concept_names, labels), 'statement': v['statement']['text'],
                    'levels': sorted(v['statement']['levels']), 'recommendation': v['statement']['recommendation'],
                    'classes': sorted(v['statement']['classes']), 'pages': sorted(v['statement']['pages'], key=int),
-                   'guideline': v['statement']['guideline'], 'joins': sorted(v['joins']), 'hops': v['hops']}
+                   'guideline': v['statement']['guideline'], 'joins': sorted(v['joins']), 'hops': v['hops'],
+                   'terms': terms_of(v['statement']['text'], fact_terms.get(k, {}), concept_names)}
                   for k, v in chosen],
     }
 

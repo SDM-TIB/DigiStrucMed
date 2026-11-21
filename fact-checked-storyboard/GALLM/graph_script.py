@@ -32,39 +32,79 @@ SMALL = set('a an the and or of to in on for with by is are be your you it this 
 # Opening and closing are written by code: the writer kept putting claims in them ("how it helps your heart"), and fixed
 # words need no judge call (TFTS: code owns what recurs).
 OPENING = "Hello. Let's look at what the heart guidelines say about your question."
-CLOSING = 'If you have questions, please ask your care team.'
+# The closing fits the question (approved by Diya 2026-11-21): code picks one fixed sentence by question type, the first
+# type whose words appear in the question (whole words, a plural "s" allowed). No AI writes it, so it holds no claim.
+CLOSINGS = [
+    ('symptoms', "If your symptoms get worse, contact your care team straight away.",
+     ['symptom', 'sign', 'warning', 'worse', 'worsening', 'breathless', 'breathlessness', 'short of breath', 'shortness of breath',
+      'swelling', 'swollen', 'pain', 'chest pain', 'dizzy', 'dizziness', 'faint', 'fainting', 'cough', 'weight gain', 'tired',
+      'tiredness', 'palpitation']),
+    ('medicines', "Talk to your care team before you change how you take your medicines.",
+     ['medicine', 'medication', 'pill', 'tablet', 'dose', 'side effect', 'beta-blocker', 'beta blocker', 'ace inhibitor',
+      'arni', 'sglt2', 'sglt2 inhibitor', 'mra', 'diuretic', 'water pill', 'sacubitril', 'valsartan', 'spironolactone',
+      'eplerenone', 'dapagliflozin', 'empagliflozin', 'furosemide', 'digoxin', 'statin']),
+    ('daily life', "Your care team can tell you what is right for you.",
+     ['drive', 'driving', 'car', 'work', 'working', 'job', 'travel', 'travelling', 'traveling', 'fly', 'flying', 'holiday',
+      'sport', 'exercise', 'exercising', 'swim', 'swimming', 'alcohol', 'drink', 'drinking', 'smoke', 'smoking', 'sex']),
+]
+CLOSING_OTHER = "Your care team can tell you what this means for you."
+
+
+def closing_for(question):
+    """The fixed closing sentence for this question, and its type."""
+    low = question.lower()
+    for kind, sentence, words in CLOSINGS:
+        if any(re.search(r'\b' + re.escape(w) + r's?\b', low) for w in words):
+            return sentence, kind
+    return CLOSING_OTHER, 'other'
 # An abbreviation as guidelines write it: two or more capitals, maybe with digits or small letters (HFrEF, SGLT2i, ALVD).
 ABBREVIATION = re.compile(r'\b[A-Za-z0-9]*[A-Z][A-Za-z0-9]*[A-Z][A-Za-z0-9]*\b')
 
-WRITER = '''You write the spoken lines of a short patient-education video. A friendly heart doctor speaks to the patient as "you".
+WRITER = '''You write the spoken lines of a short patient-education video. A friendly heart doctor sits with the patient and explains, speaking to them as "you".
 
 The patient asked: "{question}"
 
-Below are numbered guideline facts, chosen and ordered by code. Write one spoken line for each fact you use, in this order.
+Below are numbered items chosen by code: guideline facts, and dictionary definitions (UMLS) of words in the question. Write one spoken line for each item you use.
+Make the lines a short, clear talk, listed in the order they are spoken:
+  a. What it is: if a definition would help the patient understand the answer, start with one plain line from it.
+  b. The answer: the facts that answer the question. When facts are about different situations (for example different reasons for getting a device), make each line open with its situation in words the patient understands ("If you got your ICD after ..."), so the patient hears which answer is theirs.
+  c. What you can do: a fact about what the patient can do, if there is one.
 Rules:
-1. A line says what its one fact says, in plain words, and nothing more: no other medical facts, numbers, medicine names or advice from your own knowledge, even when you are sure they are true.
-2. Keep the fact's group ("people with ...", "after ...") and its caution ("may", "can be considered").
-3. A line has at most {most} words and sounds like a doctor talking to a patient, not like a guideline. Use everyday words a patient knows instead of technical terms ("task force", "system integrity check", "secondary prevention", "prognosis", "cessation", "obligatory"), meaning exactly the same. Do not copy the guideline sentence.
-   Abbreviations: a fact may say what an abbreviation means (from the knowledge graph); then say that meaning in plain words. Never guess what an abbreviation means: if the fact does not say, keep the abbreviation as written or leave the fact out.
-4. Never join two facts in one line.
-5. Use at most {lines} facts: the ones that best answer the patient's question. Skip the others and say why, for example:
+1. A line says what its one item says, in plain words, and nothing more: no other medical facts, numbers, medicine names or advice from your own knowledge, even when you are sure they are true.
+2. Keep the item's group ("people with ...", "after ...") and its caution ("may", "can be considered").
+3. A line has at most {most} words and sounds like a doctor talking to a patient, not like a guideline. Use everyday words a patient knows instead of technical terms ("task force", "system integrity check", "prognosis", "cessation", "obligatory"), meaning exactly the same. Do not copy the guideline sentence.
+   Prefer what the item itself says over a technical label: for "secondary prevention ... after the index arrhythmia", say "after your heart rhythm problem", not "secondary prevention". An item may say what a technical word means (from the graph's medical dictionary, in brackets after it); then say that meaning in plain words instead of the word. Never explain a technical word from your own knowledge: if no item explains it and a patient would not understand it, leave that item out and say why.
+   Abbreviations: an item may say what an abbreviation means (from the knowledge graph); then say that meaning in plain words. Never guess what an abbreviation means: if the item does not say, keep the abbreviation as written or leave the item out.
+4. Never join two items in one line.
+5. Use at most {lines} items: the ones that best answer the patient's question. Skip the others and say why, for example:
    - it does not help answer the question, or it is a table fragment;
    - it says the same as a fact you already used (name that fact). A fact about a different situation (after a shock, after a device replacement, for another group) is not the same: use it if it helps answer the question;
    - it is mainly about a different topic than the question, even if it also mentions the topic (for example a blood pressure target in a video about smoking);
    - it gives a different number or rule for the same situation as another fact (a conflict, not a duplicate; name that fact). Say only one, so the video never tells the patient two different things: use the guideline's own advice ("should", "is recommended", "the task force recommends") and skip a fact that only reports what others did or used to do ("most societies recommended", "previously", "on the basis of these data").
 6. on_screen_text: at most {screen} words, taken from that line.
-7. visual: one simple, calm picture for that line, with no words or numbers in it. Never show the thing the line says not to do.
+7. visual: what the doctor shows or does at that moment (for example points to a heart model, holds up a calendar), with no words or numbers in it. Never show the thing the line says not to do.
 
-Facts:
+Items:
 {slots}
 
-Answer with JSON only:
+Answer with JSON only, lines in the order they are spoken ("fact" is the item number):
 {{"title": "...", "lines": [{{"fact": <number>, "narration": "...", "on_screen_text": "...", "visual": "..."}}], "skipped": [{{"fact": <number>, "why": "..."}}]}}'''
+PLAIN_WORDS = '''Below are spoken lines of a patient-education video; under each is the item it must stay true to. Rewrite each line so that a patient with no medical training understands every word.
+- Replace technical words and labels with everyday words, using only what the item itself says, including the meanings given in brackets from the graph's medical dictionary (for example "smoking cessation" -> "stopping smoking"; "hypotension" -> "low blood pressure"; "after the index arrhythmia" -> "after your heart rhythm problem"). Never explain a word from your own knowledge; if the item gives no plain way to say it, keep the word.
+- A definition line says only the main point of the definition, in a few plain words, not every detail.
+- Keep every number, group ("people with ...", "after ...") and caution ("may", "can be considered"). Add nothing.
+- At most {most} words, spoken to the patient as "you". on_screen_text: at most {screen} words, taken from the new line.
+
+{items}
+
+Answer with JSON only: {{"lines": [{{"fact": <number>, "narration": "...", "on_screen_text": "..."}}]}}'''
 REPAIR = '''Some lines of your patient-education video did not pass the fact check. Rewrite only these lines, with the same rules:
 a line says only what its own fact says, keeps the fact's group and caution, adds no number or medicine the fact does not
-have, and has at most {most} words. It sounds like a doctor talking to a patient, in everyday words, not like the guideline
-sentence. Never guess what an abbreviation means: use only a meaning the fact gives, or keep the abbreviation as written.
-on_screen_text has at most {screen} words, taken from the new line.
+have, and has at most {most} words. It sounds like a doctor talking to a patient, in everyday words a patient with no
+medical training understands, not like the guideline sentence: keep the plain words of your line and change only what the
+problem names; never bring back a technical word your line had already put in plain words. Use only what the fact says,
+including the meanings in brackets. Never guess what an abbreviation means: use only a meaning the fact gives, or keep the
+abbreviation as written. on_screen_text has at most {screen} words, taken from the new line.
 
 {items}
 
@@ -82,10 +122,14 @@ STRICT RULE - this is a medically fact-checked script:
 {scenes}
 
 Voice: one calm, warm, clear English voice, the same in every scene. Very soft background music or none.
-Look: calm, reassuring, simple flat illustrations, easy to read for patients.'''
+Look: a friendly doctor explains this to a patient in a calm consultation room; reassuring, easy to follow for patients.'''
 
 
 # ---- models ------------------------------------------------------------------------------------------------------------------
+
+class EmptyAnswer(ValueError):
+    """The model sent back no text: gpt-oss can spend its whole token allowance on thinking."""
+
 
 class GroqModel:
     """gpt-oss on Groq's free plan through the OpenAI client. Counts the tokens Groq reports, waits out the per-minute limit
@@ -93,19 +137,32 @@ class GroqModel:
     with a clear message at the daily limit, because a live demo must not hang for hours."""
     window_seconds = 60
 
-    def __init__(self, model, api_key=None, client=None):
+    def __init__(self, model, api_key=None, client=None, extra=None, retry_empty=None):
         if client is None:
             from openai import OpenAI
             client = OpenAI(base_url=GROQ, api_key=api_key or os.environ['GROQ_API_KEY'], max_retries=8)
         self.client, self.model = client, model
+        self.extra = extra or {}  # e.g. {'reasoning_effort': 'low'}: long prompts can use up the answer on thinking
+        # Settings for one more try when an answer comes back empty, e.g. {'reasoning_effort': 'low'}: thinking less leaves
+        # room for the answer. None: no second try.
+        self.retry_empty = retry_empty
         self.tokens, self.calls = 0, 0
 
     def generate(self, prompt, system=None, temperature=0, top_p=1.0):
         messages = ([{'role': 'system', 'content': system}] if system else []) + [{'role': 'user', 'content': prompt}]
+        content = self.ask(messages, temperature, top_p, self.extra)
+        if not content.strip() and self.retry_empty:
+            content = self.ask(messages, temperature, top_p, {**self.extra, **self.retry_empty})
+        if not content.strip():
+            raise EmptyAnswer('The model returned an empty answer')
+        return content.strip()
+
+    def ask(self, messages, temperature, top_p, extra):
+        """One call to the model, with the waits described above. Returns its text, '' when there is none."""
         for attempt in range(4):
             try:
                 answer = self.client.chat.completions.create(model=self.model, messages=messages, temperature=temperature,
-                                                             top_p=top_p, max_tokens=4096)
+                                                             top_p=top_p, max_tokens=4096, **extra)
                 break
             except Exception as error:
                 text = str(error)
@@ -117,10 +174,7 @@ class GroqModel:
         usage = getattr(answer, 'usage', None)
         self.tokens += getattr(usage, 'total_tokens', 0) or 0
         self.calls += 1
-        content = answer.choices[0].message.content
-        if not content or not content.strip():
-            raise ValueError('The model returned an empty answer')
-        return content.strip()
+        return answer.choices[0].message.content or ''
 
 
 class DiskCache:
@@ -182,10 +236,11 @@ def abbreviations_in(text, meanings):
     return {a: meanings[a] for a in dict.fromkeys(ABBREVIATION.findall(text)) if a in meanings}
 
 
-def slots_of(facts, meanings=None):
+def slots_of(facts, meanings=None, definitions=None):
     """One slot per part-1 fact, in rank order. The statement is the guideline's own sentence; code adds what kind it is,
     its grade, its source, whether it is only a "may" (so the caution check knows), and what its abbreviations mean
-    according to the graph."""
+    according to the graph. Then one slot per UMLS definition of a question concept (part 1's `definitions`), numbered
+    after the facts: the writer may use one for a plain "what it is" line, checked against the definition like a fact."""
     slots = []
     for n, fact in enumerate(facts, 1):
         statement = fact.get('statement') or re.search(r'statement: "(.*)"', fact['text'], re.S).group(1)
@@ -193,14 +248,25 @@ def slots_of(facts, meanings=None):
         slots.append({'n': n, 'fact': fact['fact'], 'statement': statement,
                       'kind': 'recommendation' if fact.get('recommendation') else 'explanation', 'grade': grade,
                       'source': '; '.join(x for x in (fact.get('guideline', ''), ', '.join(f'p. {p}' for p in fact.get('pages', []))) if x),
-                      'caution': bool(CAUTION_IN_FACT.search(statement)), 'abbreviations': abbreviations_in(statement, meanings or {})})
+                      'caution': bool(CAUTION_IN_FACT.search(statement)), 'abbreviations': abbreviations_in(statement, meanings or {}),
+                      'terms': [{'term': t['term'], 'definition': t['definition']} for t in fact.get('terms', [])]})
+    if not slots:
+        return slots  # a definition alone never makes a video
+    for d in definitions or []:
+        text = re.sub(r'\s+', ' ', str(d.get('definition') or '')).strip()
+        if text:
+            slots.append({'n': len(slots) + 1, 'fact': f'definition/{d["cui"]}', 'statement': text, 'kind': 'definition',
+                          'term': d.get('name') or d['cui'], 'grade': '', 'source': f'UMLS definition of "{d.get("name") or d["cui"]}"',
+                          'caution': bool(CAUTION_IN_FACT.search(text)), 'abbreviations': abbreviations_in(text, meanings or {})})
     return slots
 
 
 def meaning_note(slot):
-    """What the slot's abbreviations mean, as the graph says, for the writer and the judge."""
+    """What the slot's abbreviations and technical words mean, as the graph says, for the writer and the judge: the writer
+    may say a word in plain words only through this meaning, and the judge sees the same meaning when it checks the line."""
     notes = [f'{a} means {full}' if full else f'{a}: two meanings in the graph, keep it as written'
              for a, full in slot.get('abbreviations', {}).items()]
+    notes += [f'"{t["term"]}" means: {t["definition"]}' for t in slot.get('terms', [])]
     return f' ({"; ".join(notes)})' if notes else ''
 
 
@@ -210,7 +276,8 @@ def evidence(slot):
 
 
 def slot_lines(slots):
-    return '\n'.join(f'{s["n"]}. [{s["kind"]}{", " + s["grade"] if s["grade"] else ""}{", a may: keep the caution" if s["caution"] else ""}] '
+    kind = lambda s: f'definition of "{s["term"]}"' if s['kind'] == 'definition' else s['kind']
+    return '\n'.join(f'{s["n"]}. [{kind(s)}{", " + s["grade"] if s["grade"] else ""}{", a may: keep the caution" if s["caution"] else ""}] '
                      f'{s["statement"]}{meaning_note(s)}' for s in slots)
 
 
@@ -285,7 +352,8 @@ def judge_plain(judge_llm, sentence, question, previous):
 # ---- the run -----------------------------------------------------------------------------------------------------------------
 
 def read_lines(answer, slots):
-    """The writer's lines, kept only when they name a real slot, at most one line per slot, in slot order."""
+    """The writer's lines, kept only when they name a real slot, at most one line per slot, in the order the writer gives
+    (it orders them as a talk: what it is, the answer, what to do)."""
     by_n = {s['n']: s for s in slots}
     seen, lines = set(), []
     for item in (answer or {}).get('lines', []) or []:
@@ -295,7 +363,18 @@ def read_lines(answer, slots):
             seen.add(n)
             lines.append({'slot': n, 'narration': str(item.get('narration') or '').strip(),
                           'on_screen_text': str(item.get('on_screen_text') or '').strip(), 'visual': str(item.get('visual') or '').strip()})
-    return sorted(lines, key=lambda line: line['slot'])
+    return lines
+
+
+def plain_words(writer, lines, by_n):
+    """One writer call that rewrites the wording of every line for patients (Devaraj et al.: simplifying is where facts get
+    lost, so the judge checks the simplified line, not the draft). Returns {slot: line}; a missing answer keeps the draft."""
+    if not lines:
+        return {}
+    items = '\n\n'.join(f'{line["slot"]}. Line: "{line["narration"]}"\n   Item ({by_n[line["slot"]]["kind"]}): "{evidence(by_n[line["slot"]])}"'
+                        for line in lines)
+    answer = json_object(writer.generate(PLAIN_WORDS.format(items=items, most=MOST_WORDS, screen=SCREEN_WORDS)))
+    return {line['slot']: line for line in read_lines(answer, list(by_n.values()))}
 
 
 def build_prompt(question, scenes):
@@ -320,9 +399,10 @@ def run(question, part1, writer, judge_llm, progress=lambda event: None, meaning
     shows."""
     started, spent = time.perf_counter(), (used(writer) or 0, used(judge_llm) or 0)
     record = {'question': question, 'part1': part1, 'status': 'started'}
-    slots = slots_of(part1.get('facts', []), meanings)
+    slots = slots_of(part1.get('facts', []), meanings, part1.get('definitions'))
     record['slots'] = slots
-    progress({'step': 'facts', 'slots': slots, 'concepts': part1.get('concepts', [])})
+    progress({'step': 'facts', 'slots': slots, 'concepts': part1.get('concepts', []), 'funnel': part1.get('funnel'),
+              'queries': part1.get('queries', [])})
     if not slots:
         record.update(status='no_facts', why='The graph has no fact for this question, so nothing medical can be said.')
         progress({'step': 'done', 'record': record})
@@ -337,10 +417,17 @@ def run(question, part1, writer, judge_llm, progress=lambda event: None, meaning
         return record
     lines = read_lines(answer, slots)[:MOST_LINES]  # the cap holds even if the writer writes more
     by_n = {s['n']: s for s in slots}
+    plainer = plain_words(writer, lines, by_n)  # a second pass only for wording; the judge still checks every line
+    for line in lines:
+        new = plainer.get(line['slot'])
+        if new and new['narration']:
+            line['draft'] = line['narration']
+            line.update(narration=new['narration'], on_screen_text=new['on_screen_text'] or line['on_screen_text'])
     record.update(title=str(answer.get('title') or ''), skipped=[s for s in answer.get('skipped', []) or [] if isinstance(s, dict)])
     progress({'step': 'written', 'lines': lines, 'skipped': record['skipped']})
 
-    opening, closing = OPENING, CLOSING
+    opening, (closing, closing_kind) = OPENING, closing_for(question)
+    record['closing_kind'] = closing_kind
     record['opening'] = {'sentence': opening, 'label': 'NO_CLAIM', 'why': 'Fixed words written by code.', 'decided_by': 'code'}
     progress({'step': 'checked', 'part': 'opening', 'result': record['opening']})
 
@@ -357,17 +444,21 @@ def run(question, part1, writer, judge_llm, progress=lambda event: None, meaning
         progress({'step': 'rewriting', 'lines': [line['slot'] for line in failed]})
         items = '\n\n'.join(f'Fact {line["slot"]}: "{evidence(by_n[line["slot"]])}"\nYour line: "{line["narration"]}"\n'
                             f'Problem: {line["verdict"].get("why")}' for line in failed)
-        fixed = {line['slot']: line for line in read_lines(json_object(writer.generate(REPAIR.format(
-            items=items, most=MOST_WORDS, screen=SCREEN_WORDS))), slots)}
+        try:
+            rewrite, no_line = json_object(writer.generate(REPAIR.format(items=items, most=MOST_WORDS, screen=SCREEN_WORDS))), \
+                'The rewrite gave no line for this fact.'
+        except EmptyAnswer:  # nothing came back, even after a second try: the failed lines are dropped, the kept ones stay
+            rewrite, no_line = None, 'The rewrite came back empty.'
+        fixed = {line['slot']: line for line in read_lines(rewrite, slots)}
         for line in failed:
             new = fixed.get(line['slot'])
             line['first_try'] = {'narration': line['narration'], 'verdict': line['verdict']}
             if new is None:
                 line['status'] = 'dropped'
-                line['verdict'] = {**line['verdict'], 'why': f'{line["verdict"].get("why")} The rewrite gave no line for this fact.'}
+                line['verdict'] = {**line['verdict'], 'why': f'{line["verdict"].get("why")} {no_line}'}
             else:
                 line.update(narration=new['narration'], on_screen_text=new['on_screen_text'] or line['on_screen_text'])
-                before = [x['narration'] for x in lines if x['slot'] < line['slot'] and x['status'] in ('kept', 'rewritten')]
+                before = [x['narration'] for x in lines[:lines.index(line)] if x['status'] in ('kept', 'rewritten')]
                 previous = before[-1] if before else opening
                 line['verdict'] = judge(judge_llm, line, by_n[line['slot']], question, previous)
                 line['status'] = 'rewritten' if line['verdict']['label'] in KEPT else 'dropped'
@@ -415,7 +506,7 @@ RUNS = 'GALLM/runs/part2'
 class Pipeline:
     """Part 1 (live on GraphDB) and part 2 (live on Groq) for any question. Loads the name index and the meaning look-up once."""
 
-    def __init__(self, writer=None, judge_llm=None):
+    def __init__(self, writer=None, judge_llm=None, writer_model=None):
         from pathlib import Path
         from . import graph_facts as gf
         os.environ.pop('SSLKEYLOGFILE', None)  # Norton sets it, and Python's HTTPS then crashes (dev-machine note)
@@ -432,13 +523,19 @@ class Pipeline:
         self.similar = gf.MeaningLookup(self.names)
         self.labels, self.total = gf.labels_of(gf.CLAIM_TYPES), gf.claim_total()
         self.meanings = graph_abbreviations()
-        self.writer = writer or DiskCache(GroqModel(WRITER_MODEL), Path(CACHE + '-writer.jsonl'))
+        self.writer_model = writer_model or WRITER_MODEL
+        if self.writer_model == JUDGE_MODEL:
+            raise ValueError('The writer must be a different model from the judge: a model never judges its own lines.')
+        retry = {'reasoning_effort': 'low'} if 'gpt-oss' in self.writer_model else None  # an empty answer: once more, thinking less
+        self.writer = writer or DiskCache(GroqModel(self.writer_model, retry_empty=retry), Path(CACHE + '-writer.jsonl'))
         self.judge = judge_llm or DiskCache(GroqModel(JUDGE_MODEL), Path(CACHE + '-judge.jsonl'))
 
     def ask(self, question, progress=lambda event: None):
         progress({'step': 'graph'})
         part1 = self.gf.run(question, self.names, self.similar, labels=self.labels, total=self.total)
-        return run(question, part1, self.writer, self.judge, progress, self.meanings)
+        record = run(question, part1, self.writer, self.judge, progress, self.meanings)
+        record['models'] = {'writer': self.writer_model, 'judge': JUDGE_MODEL}
+        return record
 
 
 def main():
@@ -447,9 +544,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('question')
     parser.add_argument('--name', default='question')
+    parser.add_argument('--writer-model', default=WRITER_MODEL, help=f'Groq model that writes (default {WRITER_MODEL}); never the judge model')
     args = parser.parse_args()
     show = lambda event: print(event['step'], event.get('part', ''), (event.get('line') or {}).get('status', ''), flush=True)
-    record = Pipeline().ask(args.question, show)
+    record = Pipeline(writer_model=args.writer_model).ask(args.question, show)
     save(record, Path(RUNS, f'{args.name}.json'))
     print(json.dumps({k: record.get(k) for k in ('status', 'tokens', 'seconds')}))
     print(record.get('video_prompt') or record.get('why_no_prompt') or record.get('why'))

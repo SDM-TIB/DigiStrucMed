@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Checked video prompt</title>
+<title>Checked patient video</title>
 <style>
 :root { --bg:#f6f7f8; --card:#ffffff; --ink:#1f2a30; --muted:#5f6b73; --line:#e1e5e8;
   --code:#0f6e56; --code-bg:#e1f5ee; --llm:#534ab7; --llm-bg:#eeedfe; --ok:#3b6d11; --ok-bg:#eaf3de;
@@ -28,7 +28,7 @@ button.primary:disabled { opacity: .5; cursor: default; }
 .chip { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 5px 14px; font-size: 13.5px; cursor: pointer; }
 .chip:hover { border-color: var(--code); }
 /* the pipeline strip */
-.pipeline { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px; margin-top: 4px; }
+.pipeline { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; margin-top: 4px; }
 .stage { border: 1px solid var(--line); border-radius: 10px; padding: 10px 10px 12px; background: var(--card); position: relative; transition: border-color .2s, background .2s; }
 .stage .who { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .stage.code .who { color: var(--code); } .stage.llm .who { color: var(--llm); } .stage.plain .who { color: var(--muted); }
@@ -82,13 +82,52 @@ th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: v
 .err { background: var(--bad-bg); color: var(--bad); border-radius: 10px; padding: 12px 16px; margin-top: 14px; }
 .hidden { display: none; }
 .summary { display: flex; gap: 22px; flex-wrap: wrap; }
+/* what happens between the query and the facts kept */
+.funnel { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
+.fstep { flex: 1 1 150px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--bg); }
+.fstep b { display: block; font-size: 24px; line-height: 1.2; }
+.fstep span { font-weight: 650; font-size: 14px; }
+.fstep small { display: block; font-size: 12px; color: var(--muted); line-height: 1.35; margin-top: 3px; }
+.fstep.kept { background: var(--code-bg); border-color: transparent; } .fstep.kept b { color: var(--code); }
+.farrow { align-self: center; color: var(--muted); font-size: 18px; }
+.cuts { margin: 8px 0 4px; padding-left: 20px; font-size: 13.5px; color: var(--muted); }
+.cuts li { margin: 3px 0; } .cuts b { color: var(--bad); }
+details.queries { margin: 12px 0 6px; }
+details.queries summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--code); }
+.qname { font-size: 13px; font-weight: 700; margin: 14px 0 4px; }
+pre.sparql { font-family: Consolas, "Cascadia Mono", monospace; font-size: 12.5px; }
+.nop { background: var(--warn-bg); border-radius: 10px; padding: 14px 18px; }
+.nop h3 { margin: 0 0 6px; font-size: 16px; color: var(--warn); }
+.nop ul { margin: 0; padding-left: 20px; } .nop li { margin: 5px 0; font-size: 14.5px; }
+@media (max-width: 700px) { .farrow { display: none; } }
+/* Part 3 and the video */
+.wrap { overflow-x: auto; }
+#board td.who { font-weight: 650; white-space: nowrap; }
+#board tr.patient td.who { color: var(--llm); } #board tr.doctor td.who { color: var(--code); }
+#board td.fixed-row { color: var(--muted); font-style: italic; }
+.obj { background: var(--code-bg); color: var(--code); border-radius: 6px; padding: 1px 8px; font-weight: 600; font-size: 13px; white-space: nowrap; }
+.make { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 6px 0 4px; }
+.make button.primary { padding: 10px 24px; }
+.vsteps { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.vsteps li { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 13px; color: var(--muted); background: var(--bg); }
+.vsteps li b { display: block; font-size: 12px; color: var(--ink); }
+.vsteps li.active { border-color: var(--code); background: var(--code-bg); color: var(--code); }
+.vsteps li.done { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+.vsteps li.fail { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+@media (max-width: 900px) { .vsteps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.film { margin-top: 16px; }
+.film video { width: 100%; border-radius: 12px; background: #000; display: block; }
+.notice { display: inline-block; background: var(--warn-bg); color: var(--warn); font-weight: 650; font-size: 13.5px; border-radius: 8px; padding: 4px 12px; margin-bottom: 10px; }
+.reviewer { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 10px 16px; margin-top: 12px; font-size: 14px; }
+.reviewer ul { margin: 4px 0 0; padding-left: 20px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>From a patient question to a checked video prompt</h1>
+  <h1>From a patient question to a checked video</h1>
   <p class="lead">Ask a patient question. The answer is built live: facts come from a knowledge graph of clinical guidelines, one model writes a
-    line for each fact, and a different model checks every line against its own fact. Lines that fail are rewritten once or removed.</p>
+    line for each fact, and a different model checks every line against its own fact. Lines that fail are rewritten once or removed.
+    Then code picks what the video shows and makes it: two voices, a word-by-word speech check, and an animated doctor and patient.</p>
 
   <div class="panel">
     <div class="ask">
@@ -104,9 +143,13 @@ th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: v
   <section id="part1" class="panel hidden">
     <div class="section-head"><span class="tagline code">Part 1 · Steps 1–3 · Code only</span><h2>What the knowledge graph returned</h2></div>
     <p class="explain">The question's words are matched to the graph's own concept names, two fixed SPARQL queries collect claims and
-      recommendations that mention them, and the best facts (at most 10) are kept with their guideline and page.</p>
+      recommendations that mention them, and the best facts (at most 10) are kept with their guideline and page. The row below shows
+      how many were found and why the rest were left out.</p>
     <div class="concepts" id="concepts"></div>
-    <div class="stats" id="stats"></div>
+    <div id="funnel"></div>
+    <details class="queries hidden" id="queries"><summary>Show the SPARQL queries that were run for this question</summary>
+      <p class="meta">Fixed queries written once in the code (graph_facts.py); only the concepts of the question are filled in. No model writes or changes them.</p>
+      <div id="query-list"></div></details>
     <div id="facts" style="margin-top:10px"></div>
   </section>
 
@@ -120,11 +163,33 @@ th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: v
 
   <section id="out" class="panel hidden">
     <button class="copy" id="copy">Copy prompt</button>
-    <div class="section-head"><span class="tagline code">Output · built by code</span><h2>The video prompt</h2></div>
+    <div class="section-head"><span class="tagline code">Part 2 output · built by code</span><h2>The video prompt</h2></div>
     <p class="explain">Only checked lines are used, word for word. The table shows where each spoken line comes from.</p>
+    <div id="nop" class="nop hidden"></div>
     <pre id="prompt"></pre>
     <table id="sources"></table>
     <div class="summary meta" id="summary" style="margin-top:14px"></div>
+  </section>
+
+  <section id="part3" class="panel hidden">
+    <div class="section-head"><span class="tagline code">Part 3 · Step 8 · Code only</span><h2>What the video shows, line by line</h2></div>
+    <p class="explain">For each spoken line, code picks the camera, what the doctor and the patient do, and at most one object, only from fixed
+      lists. An object must fit the words of its line, and an object the line warns against (a cigarette pack, a wine glass) is never shown.
+      Nothing here writes or changes words: the patient's own question comes first, then the checked lines, with the spoken AI notice after
+      the greeting. No model, no tokens.</p>
+    <div id="board-problems" class="err hidden"></div>
+    <div class="wrap"><table id="board"></table></div>
+  </section>
+
+  <section id="video" class="panel hidden">
+    <div class="section-head"><span class="tagline code">Step 9 · Code and fixed tools</span><h2>The video</h2></div>
+    <p class="explain">Kokoro reads every line (the patient's question in a second voice, slower than normal speech). Whisper listens to each
+      line and then to the finished sound track: one added, dropped or changed word stops the video. The approved doctor and patient are
+      drawn frame by frame from the table above, and every caption must stay on screen long enough to read. No model and no tokens; it
+      takes a few minutes. If any check fails, no video is made.</p>
+    <div class="make"><button id="make" class="primary">Make the video</button><span class="meta" id="vtime"></span></div>
+    <ol class="vsteps" id="vsteps"></ol>
+    <div id="vresult"></div>
   </section>
 </main>
 <script>
@@ -139,8 +204,11 @@ const STAGES = [
   ['writer', 'llm', 'gpt-oss-20b', '5  Writer', 'one plain line per fact'],
   ['checks', 'code', 'Code', '6  Code checks', 'numbers, cautions, abbreviations'],
   ['judge', 'llm', 'gpt-oss-120b', '7  Judge', 'line vs its own fact'],
-  ['prompt', 'code', 'Code', 'Video prompt', 'checked lines + sources']];
-let lineCards = {}, slotsByN = {};
+  ['director', 'code', 'Code', '8  Director', 'camera, actions, object per line'],
+  ['video', 'code', 'Code + tools', '9  Video', 'voices, word checks, animation']];
+const VSTEPS = ['Voices', 'Speech check, every line', 'Timeline and sound', 'Speech check, whole sound track', 'Reading time, then drawing', 'Picture + sound'];
+const CHECKS = { speech_lines: 'every line, word for word', speech_mix: 'the finished sound track', reading_time: 'reading time' };
+let lineCards = {}, slotsByN = {}, closingDiv = null, recordName = null;
 
 function buildPipeline() {
   const box = $('pipeline'); box.textContent = '';
@@ -161,6 +229,8 @@ function showFacts(event) {
     box.appendChild(chip);
   });
   if (!(event.concepts || []).length) box.appendChild(el('span', 'meta', 'No concept of the question was found in the graph.'));
+  showFunnel(event.funnel, event.concepts || []);
+  showQueries(event.queries || []);
   const facts = $('facts'); facts.textContent = ''; slotsByN = {};
   event.slots.forEach(s => {
     slotsByN[s.n] = s;
@@ -170,7 +240,7 @@ function showFacts(event) {
     body.appendChild(el('div', null, s.statement));
     const tags = el('div', 'tags');
     tags.appendChild(el('span', 'tag', s.kind));
-    tags.appendChild(el('span', 'tag' + (s.grade ? ' grade' : ''), s.grade || 'no grade given'));
+    if (s.kind !== 'definition') tags.appendChild(el('span', 'tag' + (s.grade ? ' grade' : ''), s.grade || 'no grade given'));
     if (s.caution) tags.appendChild(el('span', 'tag caution', '"may" — the caution must stay'));
     body.appendChild(tags);
     const meanings = Object.entries(s.abbreviations || {}).map(([a, full]) => full ? `${a} = ${full}` : `${a}: two meanings in the graph, kept as written`);
@@ -178,6 +248,57 @@ function showFacts(event) {
     body.appendChild(el('div', 'meta', 'Source: ' + s.source));
     row.appendChild(body); facts.appendChild(row);
   });
+}
+
+function showFunnel(f, concepts) {
+  const box = $('funnel'); box.textContent = '';
+  if (!f) return;
+  const row = el('div', 'funnel');
+  const step = (n, name, why, cls) => { const d = el('div', 'fstep' + (cls ? ' ' + cls : '')); d.append(el('b', null, n ?? '–'), el('span', null, name), el('small', null, why)); return d; };
+  [step(f.claims_found, 'claims & readings found', 'Query A + B: they name a concept of the question · English, professional guidelines only'),
+   step(f.statements, 'guideline statements', 'the sentences these claims and readings come from'),
+   step(f.on_topic, 'on topic', "they name the question's most specific concept"),
+   step(f.kept, 'facts kept', 'best first, at most 10 — passed on to the writer', 'kept')]
+    .forEach((d, i) => { if (i) row.appendChild(el('div', 'farrow', '→')); row.appendChild(d); });
+  box.appendChild(row);
+  const cuts = el('ul', 'cuts');
+  const cut = (n, text) => { if (!n) return; const li = el('li'); li.append(el('b', null, '− ' + n), ' ' + text); cuts.appendChild(li); };
+  const top = Math.max(0, ...concepts.map(c => c.weight || 0)), name = c => `“${c.name || c.words}”`;
+  const common = concepts.filter(c => (c.weight || 0) < top / 2).map(name), specific = concepts.filter(c => (c.weight || 0) === top).map(name);
+  cut(f.statements - f.on_topic, common.length && specific.length
+    ? `left out as off topic: they only name ${common.join(', ')}, a far more common concept in the guidelines than ${specific.join(', ')}, so they say little about this question`
+    : 'left out as off topic: they only name a far more common concept in the guidelines than the question\'s most specific one');
+  cut(f.near_copies, 'left out as near-copies of a fact already kept (the same sentence in two guidelines, or as sentence and table row)');
+  cut(f.below_cut, 'not used, ranked below the 10th: closest concept first, then the grade, then recommendation before explanation');
+  if (cuts.children.length) box.appendChild(cuts);
+}
+
+function showQueries(queries) {
+  const list = $('query-list'); list.textContent = '';
+  $('queries').classList.toggle('hidden', !queries.length);
+  const why = q => q.name.startsWith('Query') ? ' — sent once per concept of the question; the first is shown'
+    : q.name.includes('statements') ? ' — sent in batches of statements; the first batch is shown' : ' — sent once per level';
+  queries.forEach(q => { list.appendChild(el('div', 'qname', q.name + (q.times > 1 ? why(q) : ''))); list.appendChild(el('pre', 'sparql', q.text)); });
+}
+
+function showNoPrompt(record) {
+  const p1 = record.part1 || {}, facts = p1.facts || [], lines = record.lines || [], skipped = record.skipped || [];
+  const names = (p1.concepts || []).map(c => c.name || c.words);
+  const box = $('nop'); box.textContent = '';
+  box.appendChild(el('h3', null, 'No video prompt for this question — why'));
+  const ul = el('ul'), add = t => ul.appendChild(el('li', null, t));
+  if (!names.length) add("None of the question's words matched a concept in the knowledge graph.");
+  else if (!facts.length) add(`The graph knows the concepts (${names.join(', ')}), but has no claim or recommendation about them in English professional guidelines.`);
+  else {
+    add(`The graph returned ${facts.length} facts about ${names.join(', ')}. They are listed in Part 1.`);
+    if (record.status === 'no_script') add(record.why);
+    else if (!lines.length) add('The writer used none of them, because none of them answers this question.' +
+      (skipped.length ? ' Its reasons, for example: ' + skipped.slice(0, 3).map(s => `“${s.why}”`).join(' ') : ''));
+    else add(`${lines.filter(l => l.status === 'dropped').length} of ${lines.length} written lines failed the checks twice and were removed, so no checked medical line is left.`);
+  }
+  add("The pipeline never falls back on the model's own knowledge: if the guidelines in the graph do not answer a question, it says nothing medical instead of guessing.");
+  add('Planned for such questions (future work): look in the patient documents, give an honest "not covered" message, or show a fixed emergency message approved by a clinician.');
+  box.appendChild(ul);
 }
 
 function gates(line) {
@@ -212,12 +333,14 @@ function lineCard(line) {
 
 function fixedLine(part, result) {
   const d = el('div', 'fixed', (part === 'opening' ? 'Opening (fixed text, no medical claim): ' : 'Closing (fixed text, no medical claim): ') + '“' + result.sentence + '”');
-  if (part === 'opening') $('lines').prepend(d); else $('lines').appendChild(d);
+  if (part === 'opening') $('lines').prepend(d); else { $('lines').appendChild(d); closingDiv = d; }
 }
 
 function finish(record) {
-  stage(STAGES.map(s => s[0]), 'done');
-  if (record.status !== 'done') { showError(record.why || record.status); return; }
+  stage(STAGES.slice(0, 8).map(s => s[0]), 'done');
+  if (closingDiv && record.closing && record.closing_kind) closingDiv.textContent =
+    `Closing (fixed text, no medical claim; picked by code for a “${record.closing_kind}” question): “${record.closing.sentence}”`;
+  if (!['done', 'no_facts', 'no_script'].includes(record.status)) { showError(record.why || record.status); return; }
   (record.lines || []).forEach(lineCard);
   const skipped = record.skipped || [];
   $('skipped').textContent = '';
@@ -226,18 +349,101 @@ function finish(record) {
     const ul = el('ul'); skipped.forEach(s => ul.appendChild(el('li', null, `Fact ${s.fact}: ${s.why}`))); $('skipped').appendChild(ul);
   }
   $('out').classList.remove('hidden');
-  $('prompt').textContent = record.video_prompt || record.why_no_prompt;
+  const prompt = record.video_prompt;
+  ['prompt', 'sources', 'copy'].forEach(id => $(id).classList.toggle('hidden', !prompt));
+  $('nop').classList.toggle('hidden', !!prompt);
+  if (!prompt) showNoPrompt(record);
+  $('prompt').textContent = prompt || '';
   const t = $('sources'); t.textContent = '';
   const h = el('tr'); ['Scene', 'Spoken line', 'Guideline statement', 'Source'].forEach(x => h.appendChild(el('th', null, x))); t.appendChild(h);
   (record.sources || []).forEach(s => { const r = el('tr'); [s.scene, s.line, s.statement, [s.kind, s.grade, s.source].filter(Boolean).join(' · ')].forEach(x => r.appendChild(el('td', null, x))); t.appendChild(r); });
   const p1 = record.part1 || {}, lines = record.lines || [], tok = record.tokens || {};
   const count = st => lines.filter(l => l.status === st).length;
-  $('summary').textContent = `Graph: ${p1.claims_found ?? '?'} claims and readings found, ${(p1.facts || []).length} facts kept · Lines: ${count('kept')} kept, ${count('rewritten')} rewritten, ${count('dropped')} removed · ${record.seconds} s · Groq tokens: writer ${tok.writer ?? '?'}, judge ${tok.judge ?? '?'} (0 = answered from saved calls)`;
-  const stats = $('stats'); stats.textContent = '';
-  [[p1.claims_found, 'claims and readings found'], [p1.statements_found, 'guideline statements'], [(p1.facts || []).length, 'facts kept']].forEach(([n, l]) => { const d = el('div', 'stat'); d.append(el('b', null, n ?? '–'), el('span', null, l)); stats.appendChild(d); });
+  $('summary').textContent = `Graph: ${p1.claims_found ?? '?'} claims and readings found, ${(p1.facts || []).length} facts kept · Lines: ${count('kept')} kept, ${count('rewritten')} rewritten, ${count('dropped')} removed · ${record.seconds ?? '–'} s · Groq tokens: writer ${tok.writer ?? 0}, judge ${tok.judge ?? 0} (0 = answered from saved calls or no model needed)`;
 }
 
 function showError(message) { const e = $('error'); e.textContent = message; e.classList.remove('hidden'); }
+
+function showBoard(event) {
+  recordName = event.record;
+  stage(['director'], 'done');
+  $('part3').classList.remove('hidden');
+  const problems = event.problems || [];
+  $('board-problems').textContent = problems.length ? 'The storyboard breaks a rule, so no video can be made: ' + problems.join('; ') : '';
+  $('board-problems').classList.toggle('hidden', !problems.length);
+  const t = $('board'); t.textContent = '';
+  const h = el('tr'); ['', 'Who speaks', 'Spoken words (= caption)', 'Camera', 'Doctor', 'Patient', 'Object'].forEach(x => h.appendChild(el('th', null, x))); t.appendChild(h);
+  event.segments.forEach((s, i) => {
+    const r = el('tr', s.speaker);
+    r.append(el('td', 'meta', i + 1), el('td', 'who', s.speaker === 'patient' ? 'Patient' : 'Doctor'));
+    r.appendChild(el('td', s.id === 'label' ? 'fixed-row' : null, s.id === 'label' ? s.text + '  (spoken AI notice)' : s.text));
+    [s.shot, s.doctor, s.patient].forEach(x => r.appendChild(el('td', null, x)));
+    const obj = el('td'); if (s.prop && s.prop !== 'none') obj.appendChild(el('span', 'obj', s.prop)); else obj.append('—');
+    r.appendChild(obj); t.appendChild(r);
+  });
+  resetVideo(!problems.length);
+}
+
+function resetVideo(possible) {
+  $('video').classList.remove('hidden');
+  $('make').disabled = !possible; $('make').textContent = 'Make the video';
+  $('vtime').textContent = possible ? 'about 2–5 minutes · nothing is sent to an AI model' : '';
+  $('vresult').textContent = '';
+  const ol = $('vsteps'); ol.textContent = '';
+  VSTEPS.forEach((name, i) => { const li = el('li'); li.append(el('b', null, (i + 1) + '/6'), name); ol.appendChild(li); });
+}
+
+function videoStep(n) {
+  [...$('vsteps').children].forEach((li, i) => { li.className = i + 1 < n ? 'done' : i + 1 === n ? 'active' : ''; });
+}
+
+function videoFinished(event) {
+  const box = $('vresult'); box.textContent = '';
+  const checks = Object.entries(event.checks || {}).map(([k, v]) => `${CHECKS[k] || k}: ${v}`).join(' · ');
+  if (event.status === 'PASS') {
+    stage(['video'], 'done');
+    [...$('vsteps').children].forEach(li => { li.className = 'done'; });
+    const film = el('div', 'film');
+    film.appendChild(el('div', 'notice', 'Automatic answer · not yet reviewed by a person'));
+    const v = el('video'); v.controls = true; v.preload = 'metadata'; v.src = event.video + '?t=' + Date.now();
+    film.appendChild(v);
+    film.appendChild(el('div', 'meta', `${(event.seconds || 0).toFixed(1)} s · every check passed (${checks})`));
+    box.appendChild(film);
+    if ((event.reviewer || []).length) {
+      const r = el('div', 'reviewer'); r.appendChild(el('b', null, 'For the person who reviews this video (not shown in the video):'));
+      const ul = el('ul');
+      event.reviewer.forEach(s => ul.appendChild(el('li', null, `Line ${s.scene}: ${[s.warning, s.readable_name_missing ? 'no readable source name yet' : ''].filter(Boolean).join('; ')} (${s.source})`)));
+      r.appendChild(ul); box.appendChild(r);
+    }
+    $('make').textContent = 'Make it again';
+  } else {
+    stage(['video'], null);
+    const active = [...$('vsteps').children].find(li => li.className === 'active');
+    if (active) active.className = 'fail';
+    const e = el('div', 'err', `Stopped (${event.status === 'CONTENT_FAIL' ? 'wrong content' : 'a check could not run'}): ${event.why}. No video was made.` + (checks ? ` Checks: ${checks}.` : ''));
+    box.appendChild(e);
+    $('make').textContent = 'Try again';
+  }
+  $('make').disabled = false;
+}
+
+async function makeVideo() {
+  if (!recordName) return;
+  resetVideo(true); $('make').disabled = true; $('make').textContent = 'Making the video…';
+  stage(['video'], 'active');
+  const response = await fetch('/video', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ record: recordName }) });
+  const answer = await response.json();
+  if (!response.ok) { videoFinished({ status: 'TOOL_ERROR', why: answer.error }); return; }
+  let next = 0;
+  const poll = async () => {
+    const job = await (await fetch(`/video-job/${answer.id}?since=${next}`)).json();
+    $('vtime').textContent = `running for ${job.seconds} s`;
+    job.events.forEach(e => { if (e.step === 'progress') videoStep(e.n); else if (e.step === 'finished') { videoFinished(e); $('vtime').textContent = `took ${job.seconds} s`; } });
+    next = job.next;
+    if (!job.done) setTimeout(poll, 1000);
+  };
+  videoStep(1); poll();
+}
 
 function handle(event) {
   if (event.step === 'graph') { stage(['question'], 'done'); stage(['concepts', 'graph', 'rank'], 'active'); }
@@ -250,12 +456,15 @@ function handle(event) {
   else if (event.step === 'rewriting') stage(['writer'], 'active');
   else if (event.step === 'checked') { if (event.part === 'line') lineCard(event.line); else fixedLine(event.part, event.result); }
   else if (event.step === 'done') finish(event.record);
+  else if (event.step === 'storyboard') showBoard(event);
   else if (event.step === 'error') showError(event.message);
 }
 
 async function ask(question) {
-  ['part1', 'part2', 'out', 'error'].forEach(id => $(id).classList.add('hidden'));
-  $('lines').textContent = ''; $('skipped').textContent = ''; $('stats').textContent = ''; lineCards = {};
+  ['part1', 'part2', 'out', 'error', 'part3', 'video'].forEach(id => $(id).classList.add('hidden'));
+  $('lines').textContent = ''; $('skipped').textContent = ''; $('funnel').textContent = ''; $('query-list').textContent = ''; lineCards = {};
+  $('vresult').textContent = ''; closingDiv = null; recordName = null;
+  ['queries', 'nop'].forEach(id => $(id).classList.add('hidden'));
   buildPipeline(); stage(['question'], 'active'); $('go').disabled = true;
   const response = await fetch('/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question }) });
   const answer = await response.json();
@@ -274,6 +483,7 @@ buildPipeline();
 $('go').onclick = () => { const q = $('q').value.trim(); if (!q) { showError('Type a question first.'); return; } ask(q); };
 $('q').addEventListener('input', () => $('error').classList.add('hidden'));
 $('copy').onclick = () => navigator.clipboard.writeText($('prompt').textContent);
+$('make').onclick = makeVideo;
 fetch('/examples').then(r => r.json()).then(list => list.forEach(q => {
   const chip = el('button', 'chip', q); chip.onclick = () => { $('q').value = q; ask(q); }; $('chips').appendChild(chip);
 }));

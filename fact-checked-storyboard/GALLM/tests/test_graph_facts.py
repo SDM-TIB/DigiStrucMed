@@ -51,6 +51,10 @@ class FakeKG:
                     row['page'] = page
                 rows.append(row)
             return rows
+        if 'dl:mentionsConcept ?c' in query:
+            return [{'f': F + f, 'c': C + c, 'def': d} for f in sorted(ids) for c, d in TERM_DEFINITIONS.get(f, {}).items()]
+        if 'dl:definition ?def' in query:
+            return [{'c': C + c, 'def': DEFINITIONS[c]} for c in sorted(ids) if c in DEFINITIONS]
         if 'dl:name ?name' in query:
             return [{'c': C + c, 'name': self.names[c]} for c in sorted(ids) if c in self.names]
         if 'rdfs:label' in query:
@@ -58,6 +62,12 @@ class FakeKG:
         if 'COUNT(DISTINCT ?claim)' in query:
             return [{'n': '100'}]
         raise AssertionError('unexpected query: ' + query[:80])
+
+
+DEFINITIONS = {'DAPA': 'A drug that lowers blood sugar by making the kidneys remove more sugar in urine.'}
+# what the statements name that the graph defines: HFrEF is said in f1; "type 2 diabetes" is not said in f1, so it is no term
+TERM_DEFINITIONS = {'f1': {'HFREF': 'Heart failure in which the heart pumps too weakly. More detail follows here.',
+                           'T2D': 'A form of diabetes.'}}
 
 
 def kg():
@@ -255,6 +265,22 @@ class NearCopies(unittest.TestCase):
         facts = {k: {'statement': statement(*v), 'claims': [], 'joins': {'X'}, 'hops': 0, 'paths': {}, 'weight': 1.0, 'top': 1.0}
                  for k, v in texts.items()}
         self.assertEqual([k for k, _ in gf.choose(facts, most=2)], ['a', 'c'])
+        stats = {}
+        gf.choose(facts, most=1, stats=stats)  # the page's funnel: 3 on topic, 1 kept, 0 copies met, 2 below the cut
+        self.assertEqual(stats, {'on_topic': 3, 'near_copies': 0, 'kept': 1, 'below_cut': 2})
+        gf.choose(facts, most=2, stats=stats)
+        self.assertEqual(stats, {'on_topic': 3, 'near_copies': 1, 'kept': 2, 'below_cut': 0})
+
+
+class ShownQueries(unittest.TestCase):
+    def test_the_page_gets_the_queries_sent_by_name_with_long_lists_cut(self):
+        many = ' '.join(f'<x{i}>' for i in range(10))
+        sent = [gf.CLAIMS % '<c1>', gf.CLAIMS % '<c1>', gf.STATEMENTS % many, gf.NAMES_OF % '<c1>']
+        shown = gf.shown_queries(sent)
+        self.assertEqual([(q['name'], q['times']) for q in shown],
+                         [('Query A — claims', 2), ('Helper — statements (sentence, grade, page, guideline)', 1)])
+        self.assertIn('<x0> <x1> <x2>\n    # … and 7 more', shown[1]['text'])
+        self.assertNotIn('<x3>', shown[1]['text'])
 
 
 class Run(unittest.TestCase):
@@ -270,6 +296,29 @@ class Run(unittest.TestCase):
         via = [f for f in record['facts'] if f['hops'] > 0]
         self.assertTrue(via and 'via pill organizer -> broader -> device -> broader -> grand concept' in via[0]['text'])
         self.assertLessEqual(len(record['facts']), gf.MOST_FACTS)
+        funnel = record['funnel']
+        self.assertEqual(funnel['kept'], len(record['facts']))
+        self.assertEqual(funnel['on_topic'], funnel['kept'] + funnel['near_copies'] + funnel['below_cut'])
+        self.assertTrue(any(q['name'] == 'Query A — claims' for q in record['queries']))
+        # the question's own concepts bring their UMLS definition, for a "what it is" line in part 2
+        self.assertEqual(record['definitions'], [{'cui': 'DAPA', 'name': 'dapagliflozin', 'definition': DEFINITIONS['DAPA']}])
+        self.assertEqual(first['terms'], [])  # word meanings are switched off until the concept links are validated
+
+    def test_word_meanings_when_switched_on(self):
+        names = {'dapagliflozin': {'DAPA': 3}, 'hfref': {'HFREF': 2}}
+        gf.USE_TERMS = True
+        try:
+            first = gf.run('Explain dapagliflozin in HFrEF', names, query=kg())['facts'][0]
+        finally:
+            gf.USE_TERMS = False
+        # a word the statement says gets the graph's meaning (first sentence only); a defined concept it does not say does not
+        self.assertEqual(first['terms'], [{'cui': 'HFREF', 'term': 'HFrEF', 'definition': 'Heart failure in which the heart pumps too weakly.'}])
+
+    def test_terms_must_be_said_and_not_generic(self):
+        names = {'A': 'Arrhythmia', 'P': 'Patients', 'S': 'Secondary Prevention'}
+        defined = {'A': 'Any disturbance of the heart rhythm.', 'P': 'Persons who receive care.', 'S': 'Stopping a disease from coming back.'}
+        terms = gf.terms_of('Patients with an ICD for secondary prevention should wait 3 months after the index arrhythmia.', defined, names)
+        self.assertEqual([t['term'] for t in terms], ['Secondary Prevention', 'Arrhythmia'])
 
     def test_lifestyle_advice_comes_from_the_readings(self):
         names = {'quitting smoking': {'QUIT': 4}}

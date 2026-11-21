@@ -58,6 +58,21 @@ class Slots(unittest.TestCase):
         self.assertEqual((slots[1]['kind'], slots[1]['caution']), ('explanation', True))
         self.assertEqual(slots[0]['source'], 'vijgen 2009; p. 12')
 
+    def test_definitions_come_after_the_facts_and_never_alone(self):
+        icd = {'cui': 'C0162589', 'name': 'Implantable defibrillator',
+               'definition': 'Implantable devices which continuously monitor the electrical activity of the heart.'}
+        slots = gs.slots_of([fact(1, DRIVE_4W)], definitions=[icd])
+        self.assertEqual([(s['n'], s['kind']) for s in slots], [(1, 'recommendation'), (2, 'definition')])
+        self.assertEqual(slots[1]['source'], 'UMLS definition of "Implantable defibrillator"')
+        self.assertIn('2. [definition of "Implantable defibrillator"]', gs.slot_lines(slots))
+        self.assertEqual(gs.slots_of([], definitions=[icd]), [])  # no fact, no video, even with a definition
+
+    def test_a_terms_meaning_reaches_writer_and_judge(self):
+        with_term = {**fact(1, DRIVE_3M), 'terms': [{'cui': 'C0003811', 'term': 'Arrhythmia', 'definition': 'Any disturbance of the heart rhythm.'}]}
+        slot = gs.slots_of([with_term])[0]
+        self.assertIn('"Arrhythmia" means: Any disturbance of the heart rhythm.', gs.slot_lines([slot]))
+        self.assertIn('"Arrhythmia" means: Any disturbance of the heart rhythm.', gs.evidence(slot))
+
     def test_the_statement_is_read_from_the_fact_text_when_missing(self):
         old = fact(1, DRIVE_4W)
         del old['statement']
@@ -105,7 +120,7 @@ class Run(unittest.TestCase):
         self.assertEqual(second['first_try']['verdict']['decided_by'], 'code check')  # "6" is not in the fact
         self.assertEqual(record['skipped'][0]['fact'], 3)
         prompt = record['video_prompt']
-        for text in (gs.OPENING, first['narration'], second['narration'], gs.CLOSING):
+        for text in (gs.OPENING, first['narration'], second['narration'], gs.closing_for('When can I drive after an ICD?')[0]):
             self.assertIn(f'Narration: "{text}"', prompt)
         self.assertNotIn('6 months', prompt)
         self.assertEqual([s['statement'] for s in record['sources']], [DRIVE_4W, DRIVE_3M])
@@ -127,6 +142,21 @@ class Run(unittest.TestCase):
         self.assertIsNone(record['video_prompt'])  # nothing medical is left, so there is no prompt
         self.assertEqual(record['why_no_prompt'], 'No checked medical line is left to say.')
 
+    def test_an_empty_rewrite_drops_only_the_failed_line(self):
+        class EmptyRewrite(Writer):
+            def generate(self, prompt, system=None, **_):
+                if prompt.startswith('Some lines'):
+                    self.prompts.append(prompt)
+                    raise gs.EmptyAnswer('The model returned an empty answer')
+                return super().generate(prompt, system)
+        writer = EmptyRewrite(answer([{'fact': 1, 'narration': 'After an ICD for prevention, do not drive for 4 weeks.'},
+                                      {'fact': 2, 'narration': 'After a shock, do not drive for 6 months.'}]))
+        record = gs.run('When can I drive after an ICD?', self.part1, writer, Judge())
+        self.assertEqual([line['status'] for line in record['lines']], ['kept', 'dropped'])  # "6" is not in the fact
+        self.assertIn('The rewrite came back empty.', record['lines'][1]['verdict']['why'])
+        self.assertIn('do not drive for 4 weeks', record['video_prompt'])
+        self.assertNotIn('6 months', record['video_prompt'])
+
     def test_no_facts_means_no_writer_call(self):
         writer = Writer(answer([]))
         record = gs.run('What is the emergency number?', {'concepts': [], 'facts': []}, writer, Judge())
@@ -139,11 +169,49 @@ class Run(unittest.TestCase):
         record = gs.run('When can I drive?', {'concepts': [], 'facts': facts}, writer, Judge())
         self.assertEqual([line['slot'] for line in record['lines']], list(range(1, gs.MOST_LINES + 1)))
 
+    def test_lines_keep_the_writers_spoken_order_and_definitions_are_checked_like_facts(self):
+        icd = {'cui': 'C0162589', 'name': 'Implantable defibrillator',
+               'definition': 'Implantable devices which continuously monitor the electrical activity of the heart.'}
+        part1 = {**self.part1, 'definitions': [icd]}
+        writer = Writer(answer([{'fact': 4, 'narration': 'An ICD keeps watching the electrical activity of your heart.'},
+                                {'fact': 2, 'narration': 'After your heart rhythm problem, do not drive for 3 months.'},
+                                {'fact': 1, 'narration': 'After an ICD for prevention, do not drive for 4 weeks.'}]))
+        judge = Judge()
+        record = gs.run('When can I drive after an ICD?', part1, writer, judge)
+        self.assertEqual([line['slot'] for line in record['lines']], [4, 2, 1])
+        self.assertTrue(any(icd['definition'] in p for p in judge.prompts))  # the definition line was judged against it
+        self.assertEqual(record['sources'][0]['source'], 'UMLS definition of "Implantable defibrillator"')
+        prompt = record['video_prompt']
+        self.assertLess(prompt.index('An ICD keeps watching'), prompt.index('3 months'))
+
     def test_a_line_for_a_fact_that_does_not_exist_is_ignored(self):
         writer = Writer(answer([{'fact': 9, 'narration': 'Something from nowhere.'},
                                 {'fact': 1, 'narration': 'After an ICD for prevention, do not drive for 4 weeks.'}]))
         record = gs.run('When can I drive after an ICD?', self.part1, writer, Judge())
         self.assertEqual([line['slot'] for line in record['lines']], [1])
+
+
+class Closing(unittest.TestCase):
+    def test_the_closing_fits_the_question(self):
+        kind = lambda q: gs.closing_for(q)[1]
+        self.assertEqual(gs.closing_for('When can I drive again after getting an ICD?'),
+                         ('Your care team can tell you what is right for you.', 'daily life'))
+        self.assertEqual(kind('How can alcohol affect my heart if I have heart failure?'), 'daily life')
+        self.assertEqual(kind('How do ACE inhibitors work in my body?'), 'medicines')
+        self.assertEqual(kind('How can beta-blockers help protect my heart?'), 'medicines')
+        self.assertEqual(kind('What changes might mean my heart failure is getting worse?'), 'symptoms')
+        self.assertEqual(kind('What signs of depression should I look out for while living with heart failure?'), 'symptoms')
+        self.assertEqual(kind('What is cardiomyopathy, and how can it affect my heart?'), 'other')
+
+    def test_symptoms_win_when_two_types_match(self):
+        self.assertEqual(gs.closing_for('Can I exercise if my legs are swollen?')[1], 'symptoms')
+
+    def test_no_closing_is_a_medical_claim_and_the_record_says_which_one(self):
+        writer = Writer(answer([{'fact': 1, 'narration': 'After an ICD for prevention, do not drive for 4 weeks.'}]))
+        record = gs.run('When can I drive after an ICD?', {'concepts': [], 'facts': [fact(1, DRIVE_4W)]}, writer, Judge())
+        self.assertEqual(record['closing_kind'], 'daily life')
+        self.assertEqual(record['scenes'][-1]['narration'], 'Your care team can tell you what is right for you.')
+        self.assertEqual(record['closing']['decided_by'], 'code')
 
 
 class Cache(unittest.TestCase):
@@ -165,6 +233,38 @@ class Cache(unittest.TestCase):
             cached.generate('p')
             self.assertEqual((model.calls, gs.used(cached)), (1, 10))
             self.assertEqual(gs.DiskCache(Model(), Path(folder, 'calls.jsonl')).generate('p'), 'answer')
+
+
+class EmptyAnswers(unittest.TestCase):
+    class Client:
+        """Plays Groq's chat API: gives the texts in turn and records the extra settings of every call."""
+        def __init__(self, texts):
+            from types import SimpleNamespace
+            self.texts, self.settings, self.ns = list(texts), [], SimpleNamespace
+            self.chat = SimpleNamespace(completions=self)
+
+        def create(self, model, messages, temperature, top_p, max_tokens, **extra):
+            self.settings.append(extra)
+            ns = self.ns
+            return ns(usage=ns(total_tokens=5), choices=[ns(message=ns(content=self.texts.pop(0)))])
+
+    def test_an_empty_answer_is_asked_once_more_thinking_less(self):
+        client = self.Client(['', '{"lines": []}'])
+        model = gs.GroqModel('openai/gpt-oss-20b', client=client, retry_empty={'reasoning_effort': 'low'})
+        self.assertEqual(model.generate('write'), '{"lines": []}')
+        self.assertEqual(client.settings, [{}, {'reasoning_effort': 'low'}])
+        self.assertEqual((model.calls, model.tokens), (2, 10))
+
+    def test_still_empty_after_the_second_try_raises(self):
+        model = gs.GroqModel('m', client=self.Client(['', ' ']), retry_empty={'reasoning_effort': 'low'})
+        with self.assertRaises(gs.EmptyAnswer):
+            model.generate('write')
+
+    def test_without_a_retry_setting_there_is_one_call(self):
+        client = self.Client([''])
+        with self.assertRaises(gs.EmptyAnswer):
+            gs.GroqModel('m', client=client).generate('write')
+        self.assertEqual(len(client.settings), 1)
 
 
 class Abbreviations(unittest.TestCase):
